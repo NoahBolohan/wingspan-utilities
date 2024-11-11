@@ -298,7 +298,47 @@ $(document).ready(
     }
 )
 
-// Set an event listener for opening the round 1 end goal modal by clicking the round 1 end goal button
+// Generate round end choice buttons for each appropriate round end goal
+function generate_round_end_goal_buttons_for_round(round_number, round_end_goals) {
+
+    $(document).ready(
+        function() {
+            $.each(
+                round_end_goals,
+                function(index, round_end_goal) {
+
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+
+                    $("<button>").attr(
+                        {
+                            class : "col-3 btn btn-xs round_end_button",
+                            id : `button_round_${round_number}_${round_end_goal}`,
+                            type : "button",
+                            style : `background-image : url(${new_url})`
+                        }
+                    ).appendTo(
+                        `#row_modal_round_${round_number}_end_buttons`
+                    );
+
+                    $(`#button_round_${round_number}_${round_end_goal}`).on(
+                        "click",
+                        function() {
+            
+                            update_round_end_goal_image(
+                                round_number,
+                                round_end_goal
+                            );
+            
+                            $(`#modal_round_${round_number}_end_goal_images`).modal("hide");
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
+
+// Set an event listener for opening the round end modals by clicking the round end goal buttons
 $(document).ready(
     function() {
         $(`#button_round_1_end_goal`).on(
@@ -315,14 +355,53 @@ $(document).ready(
         $(`#button_round_2_end_goal`).on(
             "click",
             function() {
-
-                update_round_end_goal_image(
-                    1,
-                    "eggs_in_bowl"
-                );
-
-                $("#model_round_end_goal_images").modal("hide");
+                $(`#modal_round_2_end_goal_images`).modal("show");
             }
         )
+    }
+)
+
+$(document).ready(
+    function() {
+        $(`#button_round_3_end_goal`).on(
+            "click",
+            function() {
+                $(`#modal_round_3_end_goal_images`).modal("show");
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function() {
+        $(`#button_round_4_end_goal`).on(
+            "click",
+            function() {
+                $(`#modal_round_4_end_goal_images`).modal("show");
+            }
+        )
+    }
+)
+
+// Generate round end goal choice buttons options
+$(document).ready(
+    function() {
+
+        $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/base.json", function(data) {
+
+            var round_end_goals = [];
+    
+                Object.keys(data).forEach(
+                    function (key) {
+                        round_end_goals.push(data[key]["side_1"]);
+                        round_end_goals.push(data[key]["side_2"]);
+                    }
+                );
+
+            for (var round_number=1; round_number<=4; round_number++) {
+                generate_round_end_goal_buttons_for_round(round_number, round_end_goals);
+            }
+        })
+        
     }
 )
