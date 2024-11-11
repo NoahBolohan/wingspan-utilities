@@ -41,12 +41,18 @@ function custom_hide(div_id) {
     );
 }
 
-function update_round_end_goal_image(round_number,round_end_goal) {
+function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_base_values) {
 
     // Assign round end goal to the round end image data
     $(`#img_round_${round_number}_end_goal`).data(
         "round_end_goal",
         round_end_goal
+    );
+
+    // Assign round end goal to the round end image data
+    $(`#col_round_${round_number}_end_cube_count`).data(
+        "base_values",
+        round_end_goal_base_values
     );
 
     // Assign the round end goal image to the button as well as the automa gameplay page
@@ -98,6 +104,8 @@ function new_round(round_number) {
                 "round"
             )
         )
+
+        update_round_end_cube_counter(round_number,0)
 
     })
 }
@@ -164,10 +172,11 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     );
 
     $(`#col_round_${round_number}_end_cube_count`).text(
-        $(`#col_round_${round_number}_end_cube_count`).data("counter")
+        $(`#col_round_${round_number}_end_cube_count`).data("counter") + $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
     )
 }
 
+// Append a new row to the automa table
 function append_automa_action_row(automa_action) {
 
     var tr = `<tr>\
@@ -260,10 +269,7 @@ $(document).ready(
             function() {
 
                 // Reset current round counter
-                update_round_end_cube_counter(
-                    $("#row_round_info").data("round"),
-                    -99
-                );
+                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
 
                 // Empty automa actions tables
                 $("#table_automa_actions tbody").empty();
@@ -341,12 +347,16 @@ function generate_round_end_goal_buttons_for_round(round_number, round_end_goals
                     $(`#button_round_${round_number}_${round_end_goal}`).on(
                         "click",
                         function() {
-            
-                            update_round_end_goal_image(
-                                round_number,
-                                round_end_goal
-                            );
-            
+
+                            $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/base.json", function(data) {
+
+                                update_round_end_goal_image(
+                                    round_number,
+                                    round_end_goal,
+                                    data[round_end_goal]
+                                );
+                            })
+
                             $(`#modal_round_${round_number}_end_goal_images`).modal("hide");
                         }
                     );
