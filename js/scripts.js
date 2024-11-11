@@ -67,7 +67,7 @@ function update_round_end_goal_image(round_number,round_end_goal) {
 // Appropriate changes for new round
 function new_round(round_number) {
 
-    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json', function(data) { 
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) { 
 
         // Setup round number and length, reset turn counter
         $("#row_round_info").data(
@@ -98,7 +98,7 @@ function new_round(round_number) {
 // Create the automa deck for the round
 function create_automa_deck(round_number) {
 
-    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/base.json', function(data) {
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/base.json", function(data) {
 
         var automa_deck = [];
 
@@ -164,9 +164,9 @@ function update_round_end_cube_counter(round_number,cube_increment) {
 function append_automa_action_row(automa_action) {
 
     var tr = `<tr>\
-        <th scope='row'>${$('#table_automa_actions tr').length}</th>\
-        <td>${automa_action['round_1']['primary_action']}</td>\
-        <td>${automa_action['round_1']['secondary_action']}</td>\
+        <th scope="row">${$("#table_automa_actions tr").length}</th>\
+        <td>${automa_action["round_1"]["primary_action"]}</td>\
+        <td>${automa_action["round_1"]["secondary_action"]}</td>\
     </tr>;`;
 
     $("#table_automa_actions tbody").append(tr);
@@ -259,7 +259,7 @@ $(document).ready(
                 );
 
                 // Empty automa actions tables
-                $('#table_automa_actions tbody').empty();
+                $("#table_automa_actions tbody").empty();
 
                 // Show and hide buttons
                 custom_hide(
@@ -298,32 +298,157 @@ $(document).ready(
     }
 )
 
-// Set an event listener for opening the round 1 end goal modal by clicking the round 1 end goal button
+function generate_round_end_goal_buttons_for_round(round_number, round_end_goals) {
+
+    $(document).ready(
+        function() {
+            $.each(
+                round_end_goals,
+                function(index, round_end_goal) {
+
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+
+                    $("<button>").attr(
+                        {
+                            class : "col-3 btn btn-xs round_end_button",
+                            id : `button_round_${round_number}_${round_end_goal}`,
+                            type : "button",
+                            style : `background-image : url(${new_url})`
+                        }
+                    ).appendTo(
+                        `#row_modal_round_${round_number}_end_buttons`
+                    );
+
+                    $(`#button_round_${round_number}_${round_end_goal}`).on(
+                        "click",
+                        function() {
+            
+                            update_round_end_goal_image(
+                                round_number,
+                                round_end_goal
+                            );
+            
+                            $(`#modal_round_${round_number}_end_goal_images`).modal("hide");
+                        }
+                    );
+                }
+            );
+        }
+    );
+}
+
 $(document).ready(
     function() {
-        $("#button_round_1_end_goal").on(
+        $(`#button_round_1_end_goal`).on(
             "click",
             function() {
-                $("#model_round_end_goal_images").modal("show");
+                $(`#modal_round_1_end_goal_images`).modal("show");
             }
         )
     }
 )
 
-// Set an event listener for setting round 1 end goal image by selecting a round 1 goal
 $(document).ready(
     function() {
-        $("#button_round_1_eggs_in_bowl").on(
+        $(`#button_round_2_end_goal`).on(
             "click",
             function() {
+                $(`#modal_round_2_end_goal_images`).modal("show");
+            }
+        )
+    }
+)
 
-                update_round_end_goal_image(
-                    1,
-                    "eggs_in_bowl"
+$(document).ready(
+    function() {
+        $(`#button_round_3_end_goal`).on(
+            "click",
+            function() {
+                $(`#modal_round_3_end_goal_images`).modal("show");
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function() {
+        $(`#button_round_4_end_goal`).on(
+            "click",
+            function() {
+                $(`#modal_round_4_end_goal_images`).modal("show");
+            }
+        )
+    }
+)
+
+// Generate round end goal choice buttons options
+$(document).ready(
+    function() {
+
+        $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/base.json", function(data) {
+
+            var round_end_goals = [];
+    
+                Object.keys(data).forEach(
+                    function (key) {
+                        round_end_goals.push(data[key]["side_1"]);
+                        round_end_goals.push(data[key]["side_2"]);
+                    }
                 );
 
-                $("#model_round_end_goal_images").modal("hide");
+            for (var round_number=1; round_number<=4; round_number++) {
+                generate_round_end_goal_buttons_for_round(round_number, round_end_goals);
             }
-        )
+        })
+        
     }
 )
+
+// // Set an event listener for resetting the  element data counters when the reset button is pressed
+// $(document).ready(
+//     function() {
+//         $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/base.json", function(data) {
+
+//             var round_end_goals = [];
+
+//             Object.keys(data).forEach(
+//                 function (key) {
+//                     round_end_goals.push(data[key]["side_1"]);
+//                     round_end_goals.push(data[key]["side_2"]);
+//                 }
+//             );
+
+//             $.each(
+//                 round_end_goals,
+//                 function(index, round_end_goal) {
+
+//                     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+
+//                     $("<button>").attr(
+//                         {
+//                             class : "col-3 btn btn-xs round_end_button",
+//                             id : `button_round_1_${round_end_goal}`,
+//                             type : "button",
+//                             style : `background-image : url(${new_url})`
+//                         }
+//                     ).appendTo(
+//                         "#row_modal_round_1_end_buttons"
+//                     );
+
+//                     $(`#button_round_1_${round_end_goal}`).on(
+//                         "click",
+//                         function() {
+            
+//                             update_round_end_goal_image(
+//                                 1,
+//                                 round_end_goal
+//                             );
+            
+//                             $("#model_round_end_goal_images").modal("hide");
+//                         }
+//                     );
+//                 }
+//             );
+//         });
+//     }
+// );
