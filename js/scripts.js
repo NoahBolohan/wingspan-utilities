@@ -81,20 +81,34 @@ function create_automa_deck(round_number) {
 
         Object.keys(data).forEach(
             function(key) {
-                if (key == "automubon_society" & $("#col_automubon_society_checkbox").value == "yes") {
-                    automa_deck.push(data[key])
-                }
-                else if (key == "round_1" & 1 >= round_number ) {
-                    automa_deck.push(data[key])
-                }
-                else if (key == "round_2" & 2 >= round_number ) {
-                    automa_deck.push(data[key])
-                }
-                else if (key == "round_3" & 3 >= round_number ) {
-                    automa_deck.push(data[key])
-                }
-                else {
-                    automa_deck.push(data[key])
+                switch (key) {
+
+                    case "automubon_society":
+                        if ($("#col_automubon_society_checkbox").val() == "yes") {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+
+                    case "round_1":
+                        if (1 >= round_number) {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+
+                    case "round_2":
+                        if (2 >= round_number) {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+
+                    case "round_3":
+                        if (3 >= round_number) {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+                    
+                    default:
+                        automa_deck.push(data[key]);
                 }
             }
         )
@@ -105,11 +119,6 @@ function create_automa_deck(round_number) {
         )
     })
 }
-
-// Setup on startup
-$(document).ready(
-    new_round(1)
-)
 
 // Increment a round counter
 function update_round_end_cube_counter(round_number,cube_increment) {
@@ -251,6 +260,10 @@ $(document).ready(
             "click",
             function() {
 
+                // Setup for first round
+                new_round(1);
+
+                // Show and hide buttons
                 custom_hide(
                     "#container_game_setup"
                 );
