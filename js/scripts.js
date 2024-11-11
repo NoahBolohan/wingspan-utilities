@@ -1,8 +1,19 @@
-// Choose random entry from dictionary
-function random_entry_from_dict(object) {
-    var keys = Object.keys(object);
-    return object[keys[Math.floor(keys.length * Math.random())]];
-};
+// Shuffle array (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+function shuffle(array) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
 
 // Custom show div
 function custom_show(div_id) {
@@ -33,20 +44,64 @@ function new_round(round_number) {
 
     $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json', function(data) { 
 
+        // Setup round number and length, reset turn counter
         $("#row_round_info").data(
             "round",
             round_number
         );
-    
+
         $("#row_round_info").data(
             "round_length",
             data["round_lengths"][round_number + ""]
         );
+
+        $("#row_round_info").data(
+            "turn",
+            0
+        );
+
+        // Create automa deck for round
+        create_automa_deck(
+            $("#row_round_info").data(
+                "round"
+            )
+        )
+
     })
 }
 
-function create_automa_deck(include_automubon_society) {
-    
+// Create the automa deck for the round
+function create_automa_deck(round_number) {
+
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/automa_actions/base.json', function(data) {
+
+        var automa_deck = {};
+
+        Object.keys(data).forEach(
+            function(key) {
+                if (key == "automubon_society" & $("#col_automubon_society_checkbox").value == "yes") {
+                    automa_deck["automubon_society"] = data[key]
+                }
+                else if (key == "round_1" & 1 >= round_number ) {
+                    automa_deck["round_1"] = data[key]
+                }
+                else if (key == "round_2" & 2 >= round_number ) {
+                    automa_deck["round_2"] = data[key]
+                }
+                else if (key == "round_3" & 3 >= round_number ) {
+                    automa_deck["round_3"] = data[key]
+                }
+                else {
+                    automa_deck[key] = data[key]
+                }
+            }
+        )
+
+        $("#table_automa_actions").data(
+            "automa_deck",
+            Object.values(automa_deck)
+        )
+    })
 }
 
 // Setup on startup
@@ -97,6 +152,14 @@ function append_automa_action_row(automa_action) {
             -1
         );
     }
+
+    // Increment turn counter
+    $("#row_round_info").data(
+        "turn",
+        $("#row_round_info").data(
+            "turn"
+        ) + 1
+    )
 }
 
 // Set an event listener for performing a new automa action by clicking the automa action button
@@ -106,40 +169,42 @@ $(document).ready(
             "click",
             function() {
 
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/automa_actions/base.json', function(data) {
+                if ($("#row_round_info").data("turn") <= $("#row_round_info").data("round_length") - 2) {
 
-                    if ($("#table_automa_actions tr").length <= $("#row_round_info").data("round_length") - 1) {
+                    // Append new automa action to table
+                    append_automa_action_row(
+                        $("#table_automa_actions").data(
+                            "automa_deck"
+                        )[$("#row_round_info").data("turn")]
+                    );
+                }
+                else {
+                    // Append new automa action to table
+                    append_automa_action_row(
+                        $("#table_automa_actions").data(
+                            "automa_deck"
+                        )[$("#row_round_info").data("turn")]
+                    );
 
-                        // Get new row to append to table
-                        var automa_action = random_entry_from_dict(data);
+                    // Show and hide buttons
+                    custom_hide(
+                        "#row_automa_action_button"
+                    );
 
-                        append_automa_action_row(automa_action);
+                    if ($("#row_round_info").data("round") < 4) {
+
+                        custom_show(
+                            "#row_end_round_button"
+                        );
                     }
                     else {
-                        // Get new row to append to table
-                        var automa_action = random_entry_from_dict(data);
 
-                        append_automa_action_row(automa_action);
-
-                        // Show and hide buttons
-                        custom_hide(
-                            "#row_automa_action_button"
+                        custom_show(
+                            "#row_end_game_button"
                         );
-                        if ($("#row_round_info").data("round") < 4) {
-
-                            custom_show(
-                                "#row_end_round_button"
-                            );
-                        }
-                        else {
-
-                            custom_show(
-                                "#row_end_game_button"
-                            );
-                        }
-                        
                     }
-                })
+                    
+                }
                 
             }
         )
