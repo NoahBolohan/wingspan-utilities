@@ -28,6 +28,28 @@ function custom_hide(div_id) {
     );
 }
 
+// Appropriate changes for new round
+function new_round(round_number) {
+
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json', function(data) { 
+
+        $("#row_round_info").data(
+            "round",
+            round_number
+        );
+    
+        $("#row_round_info").data(
+            "round_length",
+            data["round_lengths"][round_number + ""]
+        );
+    })
+}
+
+// Setup on startup
+$(document).ready(
+    new_round(1)
+)
+
 // Increment a round counter
 function update_round_end_cube_counter(round_number,cube_increment) {
     
@@ -99,9 +121,19 @@ $(document).ready(
                         custom_hide(
                             "#row_automa_action_button"
                         );
-                        custom_show(
-                            "#row_end_round_button"
-                        );
+                        if ($("#row_round_info").data("round") < 4) {
+
+                            custom_show(
+                                "#row_end_round_button"
+                            );
+                        }
+                        else {
+
+                            custom_show(
+                                "#row_end_game_button"
+                            );
+                        }
+                        
                     }
                 })
                 
@@ -123,12 +155,6 @@ $(document).ready(
                     -99
                 );
 
-                // Increment round number
-                $("#row_round_info").data(
-                    "round",
-                    $("#row_round_info").data("round") + 1
-                );
-
                 // Empty automa actions tables
                 $('#table_automa_actions tbody').empty();
 
@@ -139,7 +165,9 @@ $(document).ready(
                 custom_show(
                     "#row_automa_action_button"
                 );
-                
+
+                // Setup for new round
+                new_round($("#row_round_info").data("round") + 1);
             }
         )
     }
