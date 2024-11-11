@@ -49,7 +49,7 @@ function update_round_end_goal_image(round_number,round_end_goal) {
         round_end_goal
     );
 
-    // Assign the round end goal image
+    // Assign the round end goal image to the button as well as the automa gameplay page
     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
 
     $(`#img_round_${round_number}_end_goal`).attr(
@@ -57,9 +57,16 @@ function update_round_end_goal_image(round_number,round_end_goal) {
         new_url
     );
 
-    $(`#button_round_${round_number}_end_goal`).attr(
-        "style",
-        `background-image : url(${new_url});`
+    $(`#button_round_${round_number}_end_goal`).empty();
+
+    $("<img>").attr(
+        {
+            "src" : new_url,
+            "class" : "col-3 p-0",
+            "style" : "width : 100%"
+        }
+    ).appendTo(
+        `#button_round_${round_number}_end_goal`
     );
 
 }
@@ -309,14 +316,25 @@ function generate_round_end_goal_buttons_for_round(round_number, round_end_goals
 
                     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
 
-                    $("<button>").attr(
+                    var button = $("<button>").attr(
                         {
                             class : "col-3 btn btn-xs round_end_button",
                             id : `button_round_${round_number}_${round_end_goal}`,
-                            type : "button",
-                            style : `background-image : url(${new_url})`
+                            type : "button"
+                        }
+                    )
+
+                    $("<img>").attr(
+                        {
+                            "src" : new_url,
+                            "class" : "col-3 p-0",
+                            "style" : "width : 100%"
                         }
                     ).appendTo(
+                        button
+                    );
+                    
+                    button.appendTo(
                         `#row_modal_round_${round_number}_end_buttons`
                     );
 
