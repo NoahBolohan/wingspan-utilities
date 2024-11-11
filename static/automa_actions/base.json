@@ -28,7 +28,6 @@
                 "grain_or_insect",
                 "insect",
                 "grain"
-
             ]
         }
     },
@@ -76,6 +75,178 @@
             "primary_action" : "lay_eggs",
             "secondary_action" : "place_end-of-round_cube",
             "number_of_eggs" : 3
+        }
+    },
+    "action_2" : {
+        "round_1" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "grain_or_insect",
+                "insect",
+                "grain",
+                "mouse",
+                "fish",
+                "berries"
+            ]
+        },
+        "round_2" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "place_end-of-round_cube",
+            "number_of_eggs" : 2
+        },
+        "round_3" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "none"
+        },
+        "round_4" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 3
+        }
+    },
+    "action_3" : {
+        "round_1" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "none"
+        },
+        "round_2" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "none"
+        },
+        "round_3" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "mouse",
+                "fish",
+                "berries",
+                "grain_or_insect",
+                "insect",
+                "grain"
+            ]
+        },
+        "round_4" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "place_end-of-round_cube",
+            "number_of_eggs" : 3
+        }
+    },
+    "action_4" : {
+        "round_1" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "place_end-of-round_cube",
+            "number_of_eggs" : 1
+        },
+        "round_2" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "berries",
+                "mouse",
+                "fish",
+                "grain_or_insect",
+                "insect",
+                "grain"
+            ]
+        },
+        "round_3" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 3
+        },
+        "round_4" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "remove_end-of-round_cube"
+        }
+    },
+    "action_5" : {
+        "round_1" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "remove_end-of-round_cube"
+        },
+        "round_2" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "grain_or_insect",
+                "insect",
+                "grain",
+                "mouse",
+                "fish",
+                "berries"
+            ]
+        },
+        "round_3" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "berries",
+                "mouse",
+                "fish",
+                "grain_or_insect",
+                "insect",
+                "grain"
+            ]
+        },
+        "round_4" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "none"
+        }
+    },
+    "action_6" : {
+        "round_1" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "mouse",
+                "fish",
+                "berries",
+                "grain_or_insect",
+                "insect",
+                "grain"
+            ]
+        },
+        "round_2" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "none"
+        },
+        "round_3" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "place_end-of-round_cube",
+            "number_of_eggs" : 2
+        },
+        "round_4" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "place_end-of-round_cube"
+        }
+    },
+    "action_7" : {
+        "round_1" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "none"
+        },
+        "round_2" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 2
+        },
+        "round_3" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 2
+        },
+        "round_4" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "activate_pink_powers",
+            "food_order" : [
+                "mouse",
+                "fish",
+                "berries",
+                "grain_or_insect",
+                "insect",
+                "grain"
+            ]
         }
     }
 }
