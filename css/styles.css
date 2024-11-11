@@ -31,3 +31,8 @@ body {
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
 }
+
+.round_end_button {
+    background-size: center;
+    background-size: cover;
+}

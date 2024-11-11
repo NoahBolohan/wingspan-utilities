@@ -41,6 +41,24 @@ function custom_hide(div_id) {
     );
 }
 
+function update_round_end_goal_image(round_number,round_end_goal) {
+
+    // Assign round end goal to the round end image data
+    $(`#img_round_${round_number}_end_goal`).data(
+        "round_end_goal",
+        round_end_goal
+    );
+
+    // Assign the round end goal image
+    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+
+    $(`#button_round_${round_number}_end_goal`).attr(
+        "style",
+        `background-image : url(${new_url});`
+    );
+
+}
+
 // Appropriate changes for new round
 function new_round(round_number) {
 
@@ -263,6 +281,23 @@ $(document).ready(
                 // Setup for first round
                 new_round(1);
 
+                update_round_end_goal_image(
+                    1,
+                    "eggs_in_cavity"
+                );
+                update_round_end_goal_image(
+                    2,
+                    "cards_in_hand"
+                );
+                update_round_end_goal_image(
+                    3,
+                    "eggs_in_ground"
+                );
+                update_round_end_goal_image(
+                    4,
+                    "eggs_in_platform"
+                );
+
                 // Show and hide buttons
                 custom_hide(
                     "#container_game_setup"
@@ -270,6 +305,17 @@ $(document).ready(
                 custom_show(
                     "#container_automa_gameplay"
                 );
+            }
+        )
+    }
+)
+
+// Set an event listener for setting round 1 end goal image by selecting a round 1 goal
+$(document).ready(
+    function() {
+        $("#button_round_1_end_goal").on(
+            "click",
+            function() {
             }
         )
     }
