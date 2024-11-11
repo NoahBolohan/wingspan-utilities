@@ -1,0 +1,22 @@
+{
+    "1" : {
+        "side_1" : "birds_with_tucked_cards",
+        "side_2" : "food_cost_of_played_birds"
+    },
+    "2" : {
+        "side_1" : "birds_in_one_row",
+        "side_2" : "filled_columns"
+    },
+    "3" : {
+        "side_1" : "birds_worth_more_than_4_points",
+        "side_2" : "birds_with_no_egg"
+    },
+    "4" : {
+        "side_1" : "wild_food_in_personal_supply",
+        "side_2" : "cards_in_hand"
+    },
+    "5" : {
+        "side_1" : "birds_with_brown_powers",
+        "side_2" : "birds_with_white_and_no_powers"
+    }
+}
