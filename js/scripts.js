@@ -16,11 +16,37 @@ $(document).ready(
 
                     var tr = `<tr>\
                         <th scope='row'>${$('#table_automa_actions tr').length}</th>\
-                        <td>${automa_action["round_1"]["primary_action"]}</td>\
-                        <td>${automa_action["round_1"]["secondary_action"]}</td>\
+                        <td>${automa_action['round_1']['primary_action']}</td>\
+                        <td>${automa_action['round_1']['secondary_action']}</td>\
                     </tr>;`;
 
-                    $('#table_automa_actions tbody').append(tr);
+                    $("#table_automa_actions tbody").append(tr);
+
+                    if (automa_action["round_1"]["secondary_action"] == "place_end-of-round_cube") {
+
+                        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                            "counter",
+                            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                                "counter"
+                            ) + 1
+                        );
+                    }
+                    else if (automa_action["round_1"]["secondary_action"] == "remove_end-of-round_cube") {
+
+                        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                            "counter",
+                            Math.max(
+                                0,
+                                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                                    "counter"
+                                ) - 1
+                            )
+                        );
+                    }
+
+                    $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
+                        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("counter")
+                    )
                 })
                 
             }
