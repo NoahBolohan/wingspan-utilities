@@ -1,18 +1,20 @@
 // Shuffle array (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 function shuffle(array) {
-    let currentIndex = array.length;
+    var current_index = array.length;
   
     // While there remain elements to shuffle...
-    while (currentIndex != 0) {
+    while (current_index != 0) {
   
       // Pick a remaining element...
-      let randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+      let random_index = Math.floor(Math.random() * current_index);
+      current_index--;
   
       // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      [array[current_index], array[random_index]] = [
+        array[random_index], array[current_index]];
     }
+
+    return array;
   }
 
 // Custom show div
@@ -75,31 +77,31 @@ function create_automa_deck(round_number) {
 
     $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/automa_actions/base.json', function(data) {
 
-        var automa_deck = {};
+        var automa_deck = [];
 
         Object.keys(data).forEach(
             function(key) {
                 if (key == "automubon_society" & $("#col_automubon_society_checkbox").value == "yes") {
-                    automa_deck["automubon_society"] = data[key]
+                    automa_deck.push(data[key])
                 }
                 else if (key == "round_1" & 1 >= round_number ) {
-                    automa_deck["round_1"] = data[key]
+                    automa_deck.push(data[key])
                 }
                 else if (key == "round_2" & 2 >= round_number ) {
-                    automa_deck["round_2"] = data[key]
+                    automa_deck.push(data[key])
                 }
                 else if (key == "round_3" & 3 >= round_number ) {
-                    automa_deck["round_3"] = data[key]
+                    automa_deck.push(data[key])
                 }
                 else {
-                    automa_deck[key] = data[key]
+                    automa_deck.push(data[key])
                 }
             }
         )
 
         $("#table_automa_actions").data(
             "automa_deck",
-            Object.values(automa_deck)
+            shuffle(automa_deck)
         )
     })
 }
