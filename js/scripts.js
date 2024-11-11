@@ -45,6 +45,10 @@ function new_round(round_number) {
     })
 }
 
+function create_automa_deck(include_automubon_society) {
+    
+}
+
 // Setup on startup
 $(document).ready(
     new_round(1)
@@ -142,7 +146,7 @@ $(document).ready(
     }
 )
 
-// Set an event listener for performing a new automa action by clicking the automa action button
+// Set an event listener for performing end round cleanup by clicking the end round button
 $(document).ready(
     function() {
         $("#button_end_round").on(
@@ -168,6 +172,24 @@ $(document).ready(
 
                 // Setup for new round
                 new_round($("#row_round_info").data("round") + 1);
+            }
+        )
+    }
+)
+
+// Set an event listener for starting the game by clicking the start game button
+$(document).ready(
+    function() {
+        $("#button_start_game").on(
+            "click",
+            function() {
+
+                custom_hide(
+                    "#container_game_setup"
+                );
+                custom_show(
+                    "#container_automa_gameplay"
+                );
             }
         )
     }
