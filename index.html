@@ -15,6 +15,45 @@
 
 <body class="parallax" onload="on_load()">
 
+	<div class="modal fade" id="model_round_end_goal_images">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<h5 class="modal-title" id="exampleModalLabel">Choose the round 1 end goal:</h5>
+				</div>
+
+				<div class="modal-body">
+
+					<div class="container-fluid">
+
+						<div class = "row p-0 mt_2 justify-content-center margin_auto">
+
+							<button class="col-3 btn btn-xs" id="button_round_1_eggs_in_bowl" type="button">
+								Eggs in bowl
+							</button>
+	
+							<button class="col-3 btn btn-xs" id="button_round_1_eggs_in_cavity" type="button">
+								Eggs in cavity
+							</button>
+	
+							<button class="col-3 btn btn-xs" id="button_round_1_eggs_in_ground" type="button">
+								Eggs in ground
+							</button>
+	
+							<button class="col-3 btn btn-xs" id="button_round_1_eggs_in_platform" type="button">
+								Eggs in platform
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
     <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycby-PTJu5rlK8xD58CYgFr-AB_Qd6u39L6LsVPsB2ynKC_PbiwhNh8_vKgdIB6nyjEVWdw/exec">
 
 		<div class="container-fluid mb-1" id="container_header">
@@ -82,6 +121,25 @@
 				</fieldset>
 			</div>
 
+			<div class="row p-0 justify-content-center margin_auto" id="row_round_info">
+
+				<button class="col-3 btn btn-xs round_end_button" id="button_round_1_end_goal" type="button">
+					Add round 1 end goal
+				</button>
+
+				<button class="col-3 btn btn-xs round_end_button" id="button_round_2_end_goal" type="button">
+					Add round 2 end goal
+				</button>
+
+				<button class="col-3 btn btn-xs round_end_button" id="button_round_3_end_goal" type="button">
+					Add round 3 end goal
+				</button>
+
+				<button class="col-3 btn btn-xs round_end_button" id="button_round_4_end_goal" type="button">
+					Add round 4 end goal
+				</button>
+			</div>
+
 			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_start_game_button">
 
 				<button class="col btn btn-primary" id="button_start_game" type="button">
@@ -92,23 +150,15 @@
 
 		<div class="container-fluid mb-1 is_hidden" id="container_automa_gameplay">
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_round_info">
+			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_goals">
 
-				<button class="col-3 btn btn-xs round_end_button" id="button_round_1_end_goal" type="button">
-					Add round 1 end goal
-				</button>
+				<img class="col-3" id="img_round_1_end_goal">
 
-				<button class="col-3 btn btn-xs" id="button_round_2_end_goal" type="button">
-					Add round 2 end goal
-				</button>
+				<img class="col-3" id="img_round_2_end_goal">
 
-				<button class="col-3 btn btn-xs" id="button_round_3_end_goal" type="button">
-					Add round 3 end goal
-				</button>
+				<img class="col-3" id="img_round_3_end_goal">
 
-				<button class="col-3 btn btn-xs" id="button_round_4_end_goal" type="button">
-					Add round 4 end goal
-				</button>
+				<img class="col-3" id="img_round_4_end_goal">
 			</div>
 
 			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_cube_counts">

@@ -52,6 +52,11 @@ function update_round_end_goal_image(round_number,round_end_goal) {
     // Assign the round end goal image
     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
 
+    $(`#img_round_${round_number}_end_goal`).attr(
+        "src",
+        new_url
+    );
+
     $(`#button_round_${round_number}_end_goal`).attr(
         "style",
         `background-image : url(${new_url});`
@@ -281,23 +286,6 @@ $(document).ready(
                 // Setup for first round
                 new_round(1);
 
-                update_round_end_goal_image(
-                    1,
-                    "eggs_in_cavity"
-                );
-                update_round_end_goal_image(
-                    2,
-                    "cards_in_hand"
-                );
-                update_round_end_goal_image(
-                    3,
-                    "eggs_in_ground"
-                );
-                update_round_end_goal_image(
-                    4,
-                    "eggs_in_platform"
-                );
-
                 // Show and hide buttons
                 custom_hide(
                     "#container_game_setup"
@@ -310,12 +298,31 @@ $(document).ready(
     }
 )
 
-// Set an event listener for setting round 1 end goal image by selecting a round 1 goal
+// Set an event listener for opening the round 1 end goal modal by clicking the round 1 end goal button
 $(document).ready(
     function() {
         $("#button_round_1_end_goal").on(
             "click",
             function() {
+                $("#model_round_end_goal_images").modal("show");
+            }
+        )
+    }
+)
+
+// Set an event listener for setting round 1 end goal image by selecting a round 1 goal
+$(document).ready(
+    function() {
+        $("#button_round_1_eggs_in_bowl").on(
+            "click",
+            function() {
+
+                update_round_end_goal_image(
+                    1,
+                    "eggs_in_bowl"
+                );
+
+                $("#model_round_end_goal_images").modal("hide");
             }
         )
     }
