@@ -1,0 +1,12 @@
+{
+    "birds_in_one_row" : [1,1,2,3],
+    "filled_columns" : [-1,-1,0,1],
+    "birds_with_tucked_cards" : [-1,-1,1,2,2],
+    "birds_with_white_and_no_powers" : [-1,0,1,1],
+    "birds_worth_more_than_4_points" : [-1,0,1,2],
+    "food_in_personal_supply" : [2,1,3,3],
+    "cards_in_hand" : [2,2,3,3],
+    "birds_with_no_egg" : [1,3,5,6],
+    "birds_with_brown_powers" : [0,2,6,5],
+    "food_cost_of_played_birds" : [3,8,14,20]
+}
