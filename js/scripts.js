@@ -171,8 +171,11 @@ function update_round_end_cube_counter(round_number,cube_increment) {
         )
     );
 
+    var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
+    var base_value = $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
+
     $(`#col_round_${round_number}_end_cube_count`).text(
-        $(`#col_round_${round_number}_end_cube_count`).data("counter") + $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
+        `${n_cubes + base_value} (${base_value}+${n_cubes})`
     )
 }
 
