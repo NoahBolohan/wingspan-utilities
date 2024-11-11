@@ -75,7 +75,7 @@ function new_round(round_number) {
 // Create the automa deck for the round
 function create_automa_deck(round_number) {
 
-    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/automa_actions/base.json', function(data) {
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/base.json', function(data) {
 
         var automa_deck = [];
 

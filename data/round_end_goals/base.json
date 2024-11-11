@@ -1,0 +1,34 @@
+{
+    "1" : {
+        "side_1" : "birds_in_forest",
+        "side_2" : "eggs_in_forest"
+    },
+    "2" : {
+        "side_1" : "birds_in_grassland",
+        "side_2" : "eggs_in_grassland"
+    },
+    "3" : {
+        "side_1" : "birds_in_wetland",
+        "side_2" : "eggs_in_wetland"
+    },
+    "4" : {
+        "side_1" : "total_birds",
+        "side_2" : "sets_of_eggs_in_forest_grassland_wetland"
+    },
+    "5" : {
+        "side_1" : "bowl_birds_with_egg",
+        "side_2" : "eggs_in_bowl"
+    },
+    "6" : {
+        "side_1" : "cavity_birds_with_egg",
+        "side_2" : "eggs_in_cavity"
+    },
+    "7" : {
+        "side_1" : "ground_birds_with_egg",
+        "side_2" : "eggs_in_ground"
+    },
+    "8" : {
+        "side_1" : "platform_birds_with_egg",
+        "side_2" : "eggs_in_platform"
+    }
+}

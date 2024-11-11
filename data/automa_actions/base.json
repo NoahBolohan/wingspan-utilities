@@ -22,12 +22,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "place_end-of-round_cube",
             "food_order" : [
-                "mouse",
+                "rodent",
                 "fish",
-                "berries",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "fruit",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         }
     },
@@ -82,12 +82,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "grain_or_insect",
-                "insect",
-                "grain",
-                "mouse",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed",
+                "rodent",
                 "fish",
-                "berries"
+                "fruit"
             ]
         },
         "round_2" : {
@@ -118,12 +118,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "mouse",
+                "rodent",
                 "fish",
-                "berries",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "fruit",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         },
         "round_4" : {
@@ -142,12 +142,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "berries",
-                "mouse",
+                "fruit",
+                "rodent",
                 "fish",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         },
         "round_3" : {
@@ -169,24 +169,24 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "grain_or_insect",
-                "insect",
-                "grain",
-                "mouse",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed",
+                "rodent",
                 "fish",
-                "berries"
+                "fruit"
             ]
         },
         "round_3" : {
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "berries",
-                "mouse",
+                "fruit",
+                "rodent",
                 "fish",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         },
         "round_4" : {
@@ -199,12 +199,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "mouse",
+                "rodent",
                 "fish",
-                "berries",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "fruit",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         },
         "round_2" : {
@@ -240,12 +240,12 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "mouse",
+                "rodent",
                 "fish",
-                "berries",
-                "grain_or_insect",
-                "insect",
-                "grain"
+                "fruit",
+                "seed_or_invertebrate",
+                "invertebrate",
+                "seed"
             ]
         }
     }
