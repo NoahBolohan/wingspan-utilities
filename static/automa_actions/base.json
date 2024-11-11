@@ -1,0 +1,81 @@
+{
+    "automubon_society" : {
+        "round_1" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_2" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_3" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_4" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        }
+    },
+    "round_1" : {
+        "round_1" : {
+            "primary_action" : "gain_food",
+            "secondary_action" : "place_end-of-round_cube",
+            "food_order" : [
+                "mouse",
+                "fish",
+                "berries",
+                "grain_or_insect",
+                "insect",
+                "grain"
+
+            ]
+        }
+    },
+    "round_2" : {
+        "round_1" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 1
+        },
+        "round_2" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "place_end-of-round_cube"
+        }
+    },
+    "round_3" : {
+        "round_1" : {
+            "primary_action" : "draw_cards",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_2" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "remove_end-of-round_cube",
+            "number_of_eggs" : 2
+        },
+        "round_3" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        }
+    },
+    "action_1" : {
+        "round_1" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "none",
+            "number_of_eggs" : 1
+        },
+        "round_2" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_3" : {
+            "primary_action" : "play_a_bird",
+            "secondary_action" : "place_end-of-round_cube"
+        },
+        "round_4" : {
+            "primary_action" : "lay_eggs",
+            "secondary_action" : "place_end-of-round_cube",
+            "number_of_eggs" : 3
+        }
+    }
+}

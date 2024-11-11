@@ -8,20 +8,10 @@
     margin-right : auto;
 }
 
-/* @font-face {
-    font-family: CardenioModern;
-    src: url("static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: CardenioModern;
-    font-weight: bold;
-    src: url("static/cardenio_modern_font/CardenioModern-Bold.otf") format("opentype");
-} */
-
 @font-face {
     font-family: "CardenioModern";
-    src: url("static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
+    src: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
+
 }
 
 .fonttest {
@@ -31,8 +21,6 @@
 body {
     margin:0;
     padding:0;
-
-    background-color: blue;
 
     min-height: 99svh;
     background-attachment: fixed;
