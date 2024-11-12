@@ -167,6 +167,9 @@ function new_round(round_number) {
 
         update_round_end_cube_counter(round_number,0)
 
+        custom_show(
+            "#row_automa_action_button"
+        );
     })
 }
 
@@ -307,6 +310,8 @@ function update_automa_played_birds(bird_points) {
             )
         );
     }
+
+    update_automa_total_score();
     
 }
 
@@ -342,6 +347,8 @@ function update_automa_drawn_cards() {
             "counter"
         )
     );
+
+    update_automa_total_score();
 }
 
 // Reset automa drawn cards counter
@@ -376,6 +383,8 @@ function update_automa_laid_eggs(n_eggs) {
             "counter"
         )
     );
+
+    update_automa_total_score();
 }
 
 // Reset automa laid eggs counter
@@ -389,6 +398,44 @@ function reset_automa_laid_eggs(n_eggs) {
     $("#col_automa_eggs_count").empty();
     $("#col_automa_eggs_count").text(
         $("#col_automa_eggs_count").data(
+            "counter"
+        )
+    );
+}
+
+// Update automa total score counter
+function update_automa_total_score() {
+
+    $("#col_automa_total_score").data(
+        "counter",
+        $("#col_automa_played_birds").data(
+            "counter"
+        ) + $("#col_automa_drawn_birds_count").data(
+            "counter"
+        ) + $("#col_automa_eggs_count").data(
+            "counter"
+        )
+    );
+
+    $("#col_automa_total_score").empty();
+    $("#col_automa_total_score").text(
+        $("#col_automa_total_score").data(
+            "counter"
+        )
+    );
+}
+
+// Reset automa total score counter
+function reset_automa_total_score() {
+
+    $("#col_automa_total_score").data(
+        "counter",
+        0
+    );
+
+    $("#col_automa_total_score").empty();
+    $("#col_automa_total_score").text(
+        $("#col_automa_total_score").data(
             "counter"
         )
     );
@@ -531,14 +578,6 @@ function append_automa_action_row(automa_action) {
     // Append row(s) to table
     $("#table_automa_actions tbody").append(tr);
 
-    // if (automa_action["round_1"]["primary_action"] == "gain_food") {
-    //     $("#table_automa_actions tbody").append(
-    //         generate_food_row(
-    //             automa_action["round_1"]["food_order"]
-    //         )
-    //     );
-    // }
-
     // Update end-of-round cubes if necessary
     if (automa_action["round_1"]["secondary_action"] == "place_end-of-round_cube") {
 
@@ -621,9 +660,6 @@ $(document).ready(
                 // Show and hide buttons
                 custom_hide(
                     "#row_end_round_button"
-                );
-                custom_show(
-                    "#row_automa_action_button"
                 );
 
                 // Setup for new round
@@ -803,6 +839,11 @@ $(document).ready(
                 reset_automa_played_birds();
                 reset_automa_drawn_cards();
                 reset_automa_laid_eggs();
+                reset_automa_total_score();
+
+                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
+
+                $("#table_automa_actions tbody").empty();
                 
                 $("#radio_difficulty_choice_eaglet").prop('checked', false);
                 $("#radio_difficulty_choice_eagle").prop('checked', false);
@@ -824,6 +865,17 @@ $(document).ready(
                 );
                 custom_hide(
                     "#button_end_game"
+                );
+
+                // Reset current round counter
+                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
+
+                // Empty automa actions tables
+                $("#table_automa_actions tbody").empty();
+
+                // Show and hide buttons
+                custom_hide(
+                    "#row_end_round_button"
                 );
             }
         )
