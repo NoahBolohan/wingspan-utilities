@@ -25,7 +25,7 @@
                 "rodent",
                 "fish",
                 "fruit",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
@@ -82,7 +82,7 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed",
                 "rodent",
@@ -121,7 +121,7 @@
                 "rodent",
                 "fish",
                 "fruit",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
@@ -145,7 +145,7 @@
                 "fruit",
                 "rodent",
                 "fish",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
@@ -169,7 +169,7 @@
             "primary_action" : "gain_food",
             "secondary_action" : "activate_pink_powers",
             "food_order" : [
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed",
                 "rodent",
@@ -184,7 +184,7 @@
                 "fruit",
                 "rodent",
                 "fish",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
@@ -202,7 +202,7 @@
                 "rodent",
                 "fish",
                 "fruit",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
@@ -243,7 +243,7 @@
                 "rodent",
                 "fish",
                 "fruit",
-                "seed_or_invertebrate",
+                "invertebrate_or_seed",
                 "invertebrate",
                 "seed"
             ]
