@@ -304,7 +304,7 @@ function append_automa_action_row(automa_action) {
 
         case "none":
             secondary_action_text = "";
-            secondary_action_class = "table-default";
+            secondary_action_class = "table-dark";
             break;
     }
 
