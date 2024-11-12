@@ -310,6 +310,22 @@ function update_automa_played_birds(bird_points) {
     
 }
 
+// Reset automa played birds counter
+function reset_automa_played_birds() {
+
+    $("#col_automa_played_birds").data(
+        "counter",
+        0
+    );
+
+    $("#col_automa_played_birds").empty();
+    $("#col_automa_played_birds").text(
+        $("#col_automa_played_birds").data(
+            "counter"
+        )
+    );
+}
+
 // Update automa drawn cards counter
 function update_automa_drawn_cards() {
 
@@ -328,6 +344,22 @@ function update_automa_drawn_cards() {
     );
 }
 
+// Reset automa drawn cards counter
+function reset_automa_drawn_cards() {
+
+    $("#col_automa_drawn_birds_count").data(
+        "counter",
+        0
+    );
+
+    $("#col_automa_drawn_birds_count").empty();
+    $("#col_automa_drawn_birds_count").text(
+        $("#col_automa_drawn_birds_count").data(
+            "counter"
+        )
+    );
+}
+
 // Update automa laid eggs counter
 function update_automa_laid_eggs(n_eggs) {
 
@@ -336,6 +368,22 @@ function update_automa_laid_eggs(n_eggs) {
         $("#col_automa_eggs_count").data(
             "counter"
         ) + n_eggs
+    );
+
+    $("#col_automa_eggs_count").empty();
+    $("#col_automa_eggs_count").text(
+        $("#col_automa_eggs_count").data(
+            "counter"
+        )
+    );
+}
+
+// Reset automa laid eggs counter
+function reset_automa_laid_eggs(n_eggs) {
+
+    $("#col_automa_eggs_count").data(
+        "counter",
+        0
     );
 
     $("#col_automa_eggs_count").empty();
@@ -751,6 +799,10 @@ $(document).ready(
                         `Add round ${round_number} end goal`
                     )
                 }
+
+                reset_automa_played_birds();
+                reset_automa_drawn_cards();
+                reset_automa_laid_eggs();
                 
                 $("#radio_difficulty_choice_eaglet").prop('checked', false);
                 $("#radio_difficulty_choice_eagle").prop('checked', false);
