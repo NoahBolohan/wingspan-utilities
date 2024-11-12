@@ -41,6 +41,52 @@ function custom_hide(div_id) {
     );
 }
 
+function start_game_enabler() {
+    var idx_to_check = [
+        "#col_difficulty_radio",
+        "#button_round_1_end_goal",
+        "#button_round_2_end_goal",
+        "#button_round_3_end_goal",
+        "#button_round_4_end_goal"
+    ]
+    
+    var enable_button_checker = 1;
+
+    for (var i=0; i < idx_to_check.length; i++) {
+        enable_button_checker *= $(idx_to_check[i]).data(
+            "enable_start_game"
+        );
+    }
+
+    // alert(enable_button_checker);
+
+    if (enable_button_checker == 1) {
+        $("#button_start_game").prop(
+            "disabled",
+            false
+        );
+    }
+}
+
+$(document).ready(
+    function() {
+
+        $("#col_difficulty_radio").on(
+            "change",
+            function() {
+
+                $("#col_difficulty_radio").data(
+                    "enable_start_game",
+                    1
+                );
+
+                start_game_enabler();
+            }
+        )
+    }
+)
+
+// Update round end goal images
 function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_base_values) {
 
     // Assign round end goal to the round end image data
@@ -57,7 +103,7 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
 
     // Store that round end goal is chosen
     $(`#button_round_${round_number}_end_goal`).data(
-        "has_round_end_goal",
+        "enable_start_game",
         1
     );
 
@@ -82,22 +128,7 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
     );
 
     // Check whether to enable start game button
-    var all_round_end_goals_checker = 1;
-
-    for (var round_number = 1; round_number <= 4; round_number++) {
-        
-        all_round_end_goals_checker *= $(`#button_round_${round_number}_end_goal`).data(
-            "has_round_end_goal"
-        );
-    }
-
-    if (all_round_end_goals_checker == 1) {
-        $("#button_start_game").prop(
-            "disabled",
-            false
-        );
-    }
-
+    start_game_enabler();
 }
 
 // Appropriate changes for new round
