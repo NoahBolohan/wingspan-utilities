@@ -28,7 +28,7 @@
 
 				<div class="modal-body">
 
-					<div class="container-fluid">
+					<div class="p-0 container-fluid">
 
 						<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_modal_round_1_end_buttons"></div>
 					</div>
@@ -50,7 +50,7 @@
 
 				<div class="modal-body">
 
-					<div class="container-fluid">
+					<div class="p-0 container-fluid">
 
 						<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_modal_round_2_end_buttons"></div>
 					</div>
@@ -72,7 +72,7 @@
 
 				<div class="modal-body">
 
-					<div class="container-fluid">
+					<div class="p-0 container-fluid">
 
 						<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_modal_round_3_end_buttons"></div>
 					</div>
@@ -94,9 +94,58 @@
 
 				<div class="modal-body">
 
-					<div class="container-fluid">
+					<div class="p-0 container-fluid">
 
 						<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_modal_round_4_end_buttons"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal_play_a_card">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<h5 class="modal-title">Choose played card points, or drawn card:</h5>
+				</div>
+
+				<div class="modal-body">
+
+					<div class="p-0 container-fluid">
+
+						<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_modal_play_a_card">
+
+							<div class="col-12 p-0" id="col_modal_play_a_card">
+
+								<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_draw_card">
+
+									<button class="col-4" id="col_button_draw_card">
+										Drawn card
+									</button>
+								</div>
+
+								<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_buttons_play_card_0_to_4_points">
+									<button class="col-2 m-1" id="col_button_play_card_0_points">0</button>
+									<button class="col-2 m-1" id="col_button_play_card_1_points">1</button>
+									<button class="col-2 m-1" id="col_button_play_card_2_points">2</button>
+									<button class="col-2 m-1" id="col_button_play_card_3_points">3</button>
+									<button class="col-2 m-1" id="col_button_play_card_4_points">4</button>
+								</div>
+
+								<div class="row p-0 mt_2 justify-content-center margin_auto" id="row_buttons_play_card_5_to_9_points">
+									<button class="col-2 m-1" id="col_button_play_card_5_points">5</button>
+									<button class="col-2 m-1" id="col_button_play_card_6_points">6</button>
+									<button class="col-2 m-1" id="col_button_play_card_7_points">7</button>
+									<button class="col-2 m-1" id="col_button_play_card_8_points">8</button>
+									<button class="col-2 m-1" id="col_button_play_card_9_points">9</button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -218,6 +267,18 @@
 				<div class="col-3" id="col_round_3_end_cube_count" align="center" data-counter = 0></div>
 
 				<div class="col-3" id="col_round_4_end_cube_count" align="center" data-counter = 0></div>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_automa_counts">
+
+				<div class="col-2" id="col_automa_played_birds_text" align="center">Played birds:</div>
+				<div class="col-2" id="col_automa_played_birds" align="center" data-counter = 0>0</div>
+
+				<div class="col-2" id="col_automa_drawn_birds_text" align="center">Drawn birds:</div>
+				<div class="col-2" id="col_automa_drawn_birds_count" align="center" data-counter = 0>0</div>
+
+				<div class="col-2" id="col_automa_eggs_text" align="center">Eggs:</div>
+				<div class="col-2" id="col_automa_eggs_count" align="center" data-counter = 0>0</div>	
 			</div>
 
 			<div class="row p-0 justify-content-center margin_auto" id="row_automa_actions">

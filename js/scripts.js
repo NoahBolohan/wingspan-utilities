@@ -274,6 +274,104 @@ function generate_food_order_string(food_order) {
     return food_order_string;
 }
 
+// Update automa played birds counter
+function update_automa_played_birds(bird_points) {
+
+    if (bird_points >= 0) {
+        $("#col_automa_played_birds").data(
+            "counter",
+            $("#col_automa_played_birds").data(
+                "counter"
+            ) + bird_points
+        );
+    
+        $("#col_automa_played_birds").empty();
+        $("#col_automa_played_birds").text(
+            $("#col_automa_played_birds").data(
+                "counter"
+            )
+        );
+    }
+    else {
+        $("#col_automa_drawn_birds_count").data(
+            "counter",
+            $("#col_automa_drawn_birds_count").data(
+                "counter"
+            ) + 1
+        );
+    
+        $("#col_automa_drawn_birds_count").empty();
+        $("#col_automa_drawn_birds_count").text(
+            $("#col_automa_drawn_birds_count").data(
+                "counter"
+            )
+        );
+    }
+    
+}
+
+// Update automa drawn cards counter
+function update_automa_drawn_cards() {
+
+    $("#col_automa_drawn_birds_count").data(
+        "counter",
+        $("#col_automa_drawn_birds_count").data(
+            "counter"
+        ) + 1
+    );
+
+    $("#col_automa_drawn_birds_count").empty();
+    $("#col_automa_drawn_birds_count").text(
+        $("#col_automa_drawn_birds_count").data(
+            "counter"
+        )
+    );
+}
+
+// Update automa laid eggs counter
+function update_automa_laid_eggs(n_eggs) {
+
+    $("#col_automa_eggs_count").data(
+        "counter",
+        $("#col_automa_eggs_count").data(
+            "counter"
+        ) + n_eggs
+    );
+
+    $("#col_automa_eggs_count").empty();
+    $("#col_automa_eggs_count").text(
+        $("#col_automa_eggs_count").data(
+            "counter"
+        )
+    );
+}
+
+// Drawn card button
+$(document).ready(
+    function() {
+        $("#col_button_draw_card").on(
+            "click",
+            function() {
+                update_automa_played_birds(-1);
+                $(`#modal_play_a_card`).modal("hide");
+            }
+        )
+
+        $.each(
+            [...Array(10).keys()],
+            function(key,value) {
+                $(`#col_button_play_card_${value}_points`).on(
+                    "click",
+                    function() {
+                        update_automa_played_birds(value);
+                        $(`#modal_play_a_card`).modal("hide");
+                    }
+                )
+            }
+        )
+    }
+)
+
 // Append a new row to the automa table
 function append_automa_action_row(automa_action) {
 
@@ -311,17 +409,20 @@ function append_automa_action_row(automa_action) {
         case "play_a_bird":
             primary_action_text = "Play a card";
             primary_action_class = "table-light";
+            $(`#modal_play_a_card`).modal("show");
             break;
 
         case "draw_cards":
             primary_action_text = "Draw cards";
             primary_action_class = "table-info";
+            update_automa_drawn_cards();
             break;
 
         case "lay_eggs":
             // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.jpg'/>";
             primary_action_text = `Lay ${automa_action["round_1"]["number_of_eggs"]} egg(s)`;
             primary_action_class = "table-warning";
+            update_automa_laid_eggs(automa_action["round_1"]["number_of_eggs"])
             break;
 
         case "gain_food":
