@@ -179,16 +179,161 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     )
 }
 
+function generate_food_row(food_order) {
+
+    var food_order_string = "";
+
+    for (var i = 0; i < food_order.length; i++) {
+
+        food_order_string += food_order[i];
+
+        if (i < food_order.length - 1) {
+            food_order_string += " > ";
+        }
+    }
+
+    var tr = $("<tr>");
+
+    // Append blank turn number to row
+    $("<th>").attr(
+        {
+            scope : "row",
+            style : "width: 10%"
+        }
+    ).text(
+        ""
+    ).appendTo(
+        tr
+    );
+
+    // Append food order
+    $("<td>").attr(
+        {
+            style : "width: 45%"
+        }
+    ).text(
+        food_order_string
+    ).appendTo(
+        tr
+    );
+
+    // Append empty secondary action string
+    $("<td>").attr(
+        {
+            style : "width: 45%"
+        }
+    ).text(
+        ""
+    ).appendTo(
+        tr
+    );
+
+    return tr;
+}
+
 // Append a new row to the automa table
 function append_automa_action_row(automa_action) {
 
-    var tr = `<tr>\
-        <th scope="row">${$("#table_automa_actions tr").length}</th>\
-        <td>${automa_action["round_1"]["primary_action"]}</td>\
-        <td>${automa_action["round_1"]["secondary_action"]}</td>\
-    </tr>;`;
+    // Increment turn counter
+    $("#row_round_info").data(
+        "turn",
+        $("#row_round_info").data(
+            "turn"
+        ) + 1
+    )
 
+    // Initialize row
+    var tr = $("<tr>");
+
+    // Append turn number to row
+    $("<th>").attr(
+        {
+            scope : "row",
+            style : "width: 10%"
+        }
+    ).text(
+        $("#row_round_info").data(
+            "turn"
+        )
+    ).appendTo(
+        tr
+    );
+
+    // Append primary automa action to row: options are play_a_bird, draw_cards, lay_eggs, gain_food
+    var primary_action_text;
+
+    switch(automa_action["round_1"]["primary_action"]) {
+
+        case "play_a_bird":
+            primary_action_text = "Play a card";
+            break;
+
+        case "draw_cards":
+            primary_action_text = "Draw cards";
+            break;
+
+        case "lay_eggs":
+            // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.jpg'/>";
+            primary_action_text = `Lay ${automa_action["round_1"]["number_of_eggs"]} egg(s)`
+            break;
+
+        case "gain_food":
+            primary_action_text = `Gain food:`
+            break;
+    }
+
+    $("<td>").attr(
+        {
+            style : "width: 45%"
+        }
+    ).text(
+        primary_action_text
+    ).appendTo(
+        tr
+    );
+
+    // Append secondary automa action to row: options are place_end-of-round_cube, remove_end-of-round_cube, activate_pink_powers, none
+    var secondary_action_text;
+
+    switch(automa_action["round_1"]["secondary_action"]) {
+
+        case "place_end-of-round_cube":
+            secondary_action_text = "Place end-of-round cube";
+            break;
+
+        case "remove_end-of-round_cube":
+            secondary_action_text = "Remove end-of-round cube";
+            break;
+
+        case "activate_pink_powers":
+            secondary_action_text = `Activate pink powers`
+            break;
+
+        case "none":
+            secondary_action_text = "";
+            break;
+    }
+
+    $("<td>").attr(
+        {
+            style : "width: 45%"
+        }
+    ).text(
+        secondary_action_text
+    ).appendTo(
+        tr
+    );
+
+    // Append row(s) to table
     $("#table_automa_actions tbody").append(tr);
+
+    if (automa_action["round_1"]["primary_action"] == "gain_food") {
+        $("#table_automa_actions tbody").append(
+            generate_food_row(
+                automa_action["round_1"]["food_order"]
+            )
+        );
+    }
 
     // Update end-of-round cubes if necessary
     if (automa_action["round_1"]["secondary_action"] == "place_end-of-round_cube") {
@@ -205,14 +350,6 @@ function append_automa_action_row(automa_action) {
             -1
         );
     }
-
-    // Increment turn counter
-    $("#row_round_info").data(
-        "turn",
-        $("#row_round_info").data(
-            "turn"
-        ) + 1
-    )
 }
 
 // Set an event listener for performing a new automa action by clicking the automa action button
