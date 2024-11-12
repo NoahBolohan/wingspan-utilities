@@ -66,6 +66,12 @@ function start_game_enabler() {
             false
         );
     }
+    else {
+        $("#button_start_game").prop(
+            "disabled",
+            true
+        );
+    }
 }
 
 $(document).ready(
@@ -620,5 +626,53 @@ $(document).ready(
             }
         })
         
+    }
+)
+
+// Set an event listener for ending the game by clicking the end game button
+$(document).ready(
+    function() {
+        $("#button_end_game").on(
+            "click",
+            function() {
+
+                // Reset some data
+                for (var round_number = 1; round_number <= 4; round_number++) {
+
+                    $(`#button_round_${round_number}_end_goal`).data(
+                        "enable_start_game",
+                        0
+                    )
+
+                    $(`#button_round_${round_number}_end_goal`).empty();
+
+                    $(`#button_round_${round_number}_end_goal`).text(
+                        `Add round ${round_number} end goal`
+                    )
+                }
+                
+                $("#radio_difficulty_choice_eaglet").prop('checked', false);
+                $("#radio_difficulty_choice_eagle").prop('checked', false);
+                $("#radio_difficulty_choice_eagle-eyed_eagle").prop('checked', false);
+
+                $("#col_difficulty_radio" ).data(
+                    "enable_start_game",
+                    0
+                )
+
+                start_game_enabler();
+
+                // Show and hide buttons
+                custom_show(
+                    "#container_game_setup"
+                );
+                custom_hide(
+                    "#container_automa_gameplay"
+                );
+                custom_hide(
+                    "#button_end_game"
+                );
+            }
+        )
     }
 )
