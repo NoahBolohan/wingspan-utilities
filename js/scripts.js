@@ -179,7 +179,7 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     )
 }
 
-function generate_food_row(food_order) {
+function generate_food_order_string(food_order) {
 
     var food_order_string = "";
 
@@ -211,44 +211,7 @@ function generate_food_row(food_order) {
         }
     }
 
-    var tr = $("<tr>");
-
-    // Append blank turn number to row
-    $("<th>").attr(
-        {
-            scope : "row",
-            style : "width: 10%"
-        }
-    ).text(
-        ""
-    ).appendTo(
-        tr
-    );
-
-    // Append food order
-    $("<td>").attr(
-        {
-            class : "table-success",
-            style : "width: 45%"
-        }
-    ).text(
-        food_order_string
-    ).appendTo(
-        tr
-    );
-
-    // Append empty secondary action string
-    $("<td>").attr(
-        {
-            style : "width: 45%"
-        }
-    ).text(
-        ""
-    ).appendTo(
-        tr
-    );
-
-    return tr;
+    return food_order_string;
 }
 
 // Append a new row to the automa table
@@ -302,7 +265,7 @@ function append_automa_action_row(automa_action) {
             break;
 
         case "gain_food":
-            primary_action_text = `Gain food:`
+            primary_action_text = "Gain food: " + generate_food_order_string(automa_action["round_1"]["food_order"]);
             primary_action_class = "table-success";
             break;
     }
@@ -359,13 +322,13 @@ function append_automa_action_row(automa_action) {
     // Append row(s) to table
     $("#table_automa_actions tbody").append(tr);
 
-    if (automa_action["round_1"]["primary_action"] == "gain_food") {
-        $("#table_automa_actions tbody").append(
-            generate_food_row(
-                automa_action["round_1"]["food_order"]
-            )
-        );
-    }
+    // if (automa_action["round_1"]["primary_action"] == "gain_food") {
+    //     $("#table_automa_actions tbody").append(
+    //         generate_food_row(
+    //             automa_action["round_1"]["food_order"]
+    //         )
+    //     );
+    // }
 
     // Update end-of-round cubes if necessary
     if (automa_action["round_1"]["secondary_action"] == "place_end-of-round_cube") {
