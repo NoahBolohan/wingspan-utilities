@@ -49,10 +49,16 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
         round_end_goal
     );
 
-    // Assign round end goal to the round end image data
+    // Assign round end automa base values to the round end column
     $(`#col_round_${round_number}_end_cube_count`).data(
         "base_values",
         round_end_goal_base_values
+    );
+
+    // Store that round end goal is chosen
+    $(`#button_round_${round_number}_end_goal`).data(
+        "has_round_end_goal",
+        1
     );
 
     // Assign the round end goal image to the button as well as the automa gameplay page
@@ -74,6 +80,23 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
     ).appendTo(
         `#button_round_${round_number}_end_goal`
     );
+
+    // Check whether to enable start game button
+    var all_round_end_goals_checker = 1;
+
+    for (var round_number = 1; round_number <= 4; round_number++) {
+        
+        all_round_end_goals_checker *= $(`#button_round_${round_number}_end_goal`).data(
+            "has_round_end_goal"
+        );
+    }
+
+    if (all_round_end_goals_checker == 1) {
+        $("#button_start_game").prop(
+            "disabled",
+            false
+        );
+    }
 
 }
 
