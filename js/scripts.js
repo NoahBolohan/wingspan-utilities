@@ -442,6 +442,14 @@ function update_automa_total_score() {
             "counter"
         ) + $("#col_automa_eggs_count").data(
             "counter"
+        ) + $("#col_round_1_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_2_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_3_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_4_end_cube_count").data(
+            "automa_round_end_points"
         )
     );
 
@@ -686,25 +694,78 @@ $(document).ready(
 )
 
 function end_round_cleanup(who_won) {
+    
     // Reset current round counter
     $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
 
     if (who_won == "me") {
-        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
-            "I won"
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "me_round_end_points",
+            $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][0]
+        )
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "automa_round_end_points",
+            $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][1]
         )
     }
     else if (who_won == "automa") {
-        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
-            "Automa won"
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "me_round_end_points",
+            $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][1]
+        )
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "automa_round_end_points",
+            $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][0]
         )
     }
     else if (who_won == "we_tied") {
-        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
-            "We tied"
+
+        var points = Math.floor(
+            ($("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][0] + $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][1])/2
+        )
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "me_round_end_points",
+            points
+        )
+
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "automa_round_end_points",
+            points
         )
     }
 
+    // Update round-end text with result
+    $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
+        `Me: ${
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "me_round_end_points"
+            )
+        }, Automa: ${
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "automa_round_end_points"
+            )
+        }`
+    )
+
+    update_automa_total_score();
+    
     // Empty automa actions tables
     $("#table_automa_actions tbody").empty();
 
@@ -765,6 +826,14 @@ $(document).ready(
         $("#button_start_game").on(
             "click",
             function() {
+
+                $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/round_end_points.json", function(data) {
+
+                    $("#row_round_end_cube_counts").data(
+                        "round_end_points",
+                        data
+                    )
+                })
 
                 // Setup for first round
                 new_round(1);
