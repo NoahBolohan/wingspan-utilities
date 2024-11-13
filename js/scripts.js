@@ -41,6 +41,23 @@ function custom_hide(div_id) {
     );
 }
 
+// Check base-game checkbox on startup
+$(document).ready(
+    function() {
+
+        $("#col_base_game_checkbox").prop(
+            "checked",
+            true
+        );
+
+        update_round_end_goals();
+        generate_round_end_goal_buttons_for_expansions(
+            $("#row_checkbox_expansions").data("expansions_to_include")
+        );
+    }
+)
+
+// Check if start game button should be enabled
 function start_game_enabler() {
     var idx_to_check = [
         "#col_difficulty_radio",
@@ -58,8 +75,6 @@ function start_game_enabler() {
         );
     }
 
-    // alert(enable_button_checker);
-
     if (enable_button_checker == 1) {
         $("#button_start_game").prop(
             "disabled",
@@ -74,6 +89,7 @@ function start_game_enabler() {
     }
 }
 
+// Set difficulty
 $(document).ready(
     function() {
 
@@ -85,7 +101,7 @@ $(document).ready(
                     "enable_start_game",
                     1
                 );
-                
+
                 switch($("input[name='difficulty']:checked").val()) {
 
                     case "eaglet":
@@ -704,56 +720,46 @@ $(document).ready(
 )
 
 // Generate round end choice buttons for each appropriate round end goal
-function generate_round_end_goal_buttons_for_round(round_number, round_end_goals) {
+function generate_round_end_goal_button_for_round(round_number, round_end_goal, expansion) {
 
-    $(document).ready(
+    var new_url = encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/${round_end_goal}.jpg`);
+
+    var button = $("<button>").attr(
+        {
+            class : "col-3 btn btn-xs round_end_button",
+            id : `button_round_${round_number}_${round_end_goal}`,
+            type : "button"
+        }
+    )
+
+    $("<img>").attr(
+        {
+            "src" : new_url,
+            "class" : "col-3 p-0",
+            "style" : "width : 100%"
+        }
+    ).appendTo(
+        button
+    );
+    
+    button.appendTo(
+        `#row_modal_round_${round_number}_end_buttons`
+    );
+
+    $(`#button_round_${round_number}_${round_end_goal}`).on(
+        "click",
         function() {
-            $.each(
-                round_end_goals,
-                function(index, round_end_goal) {
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/${expansion}.json`, function(data) {
 
-                    var button = $("<button>").attr(
-                        {
-                            class : "col-3 btn btn-xs round_end_button",
-                            id : `button_round_${round_number}_${round_end_goal}`,
-                            type : "button"
-                        }
-                    )
+                update_round_end_goal_image(
+                    round_number,
+                    round_end_goal,
+                    data[round_end_goal]
+                );
+            })
 
-                    $("<img>").attr(
-                        {
-                            "src" : new_url,
-                            "class" : "col-3 p-0",
-                            "style" : "width : 100%"
-                        }
-                    ).appendTo(
-                        button
-                    );
-                    
-                    button.appendTo(
-                        `#row_modal_round_${round_number}_end_buttons`
-                    );
-
-                    $(`#button_round_${round_number}_${round_end_goal}`).on(
-                        "click",
-                        function() {
-
-                            $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/base.json", function(data) {
-
-                                update_round_end_goal_image(
-                                    round_number,
-                                    round_end_goal,
-                                    data[round_end_goal]
-                                );
-                            })
-
-                            $(`#modal_round_${round_number}_end_goal_images`).modal("hide");
-                        }
-                    );
-                }
-            );
+            $(`#modal_round_${round_number}_end_goal_images`).modal("hide");
         }
     );
 }
@@ -804,24 +810,110 @@ $(document).ready(
 )
 
 // Generate round end goal choice buttons options
+function generate_round_end_goal_buttons_for_expansions(expansions_to_include) {
+
+    for (var round_number=1; round_number<=4; round_number++) {
+        $(`#row_modal_round_${round_number}_end_buttons`).empty();
+    }
+
+    $.each(
+        expansions_to_include,
+        function(idx,expansion) {
+            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/${expansion}.json`, function(data) {
+
+                Object.keys(data).forEach(
+                    function (key) {
+                        for (var round_number=1; round_number<=4; round_number++) {
+
+                            generate_round_end_goal_button_for_round(
+                                round_number,
+                                data[key]["side_1"],
+                                expansion
+                            );
+
+                            generate_round_end_goal_button_for_round(
+                                round_number,
+                                data[key]["side_2"],
+                                expansion
+                            );
+                        }
+                    }
+                );
+            })
+        }
+    )
+}
+
+// Update round-end goals from appropriate expansions
+function update_round_end_goals() {
+    var expansions_to_include = [];
+    
+    if ($("#col_base_game_checkbox").is(':checked')) {
+        expansions_to_include.push("base");
+    }
+
+    if ($("#col_european_expansion_checkbox").is(':checked')) {
+        expansions_to_include.push("european_expansion");
+    }
+
+    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+        expansions_to_include.push("oceania_expansion");
+    }
+
+    if ($("#col_asia_checkbox").is(':checked')) {
+        expansions_to_include.push("asia");
+    }
+
+    $("#row_checkbox_expansions").data(
+        "expansions_to_include",
+        expansions_to_include
+    )
+}
+
+// Define expansion checkbox behaviour
 $(document).ready(
     function() {
 
-        $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/base.json", function(data) {
-
-            var round_end_goals = [];
-    
-                Object.keys(data).forEach(
-                    function (key) {
-                        round_end_goals.push(data[key]["side_1"]);
-                        round_end_goals.push(data[key]["side_2"]);
-                    }
+        $("#col_base_game_checkbox").on(
+            "change",
+            function() {
+                update_round_end_goals();
+                generate_round_end_goal_buttons_for_expansions(
+                    $("#row_checkbox_expansions").data("expansions_to_include")
                 );
-
-            for (var round_number=1; round_number<=4; round_number++) {
-                generate_round_end_goal_buttons_for_round(round_number, round_end_goals);
             }
-        })
+           
+        );
+
+        $("#col_european_expansion_checkbox").on(
+            "change",
+            function() {
+                update_round_end_goals();
+                generate_round_end_goal_buttons_for_expansions(
+                    $("#row_checkbox_expansions").data("expansions_to_include")
+                );
+            }
+        );
+
+        $("#col_oceania_expansion_checkbox").on(
+            "change",
+            function() {
+                update_round_end_goals();
+                generate_round_end_goal_buttons_for_expansions(
+                    $("#row_checkbox_expansions").data("expansions_to_include")
+                );
+            }
+        );
+
+        $("#col_asia_checkbox").on(
+            "change",
+            function() {
+                update_round_end_goals();
+                generate_round_end_goal_buttons_for_expansions(
+                    $("#row_checkbox_expansions").data("expansions_to_include")
+                );
+            }
+        );
         
     }
 )
