@@ -699,7 +699,7 @@ function end_round_cleanup(who_won) {
             "Automa won"
         )
     }
-    else if (who_won == "we tied") {
+    else if (who_won == "we_tied") {
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
             "We tied"
         )
