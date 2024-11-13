@@ -52,7 +52,7 @@ $(document).ready(
 
         update_round_end_goals();
         generate_round_end_goal_buttons_for_expansions(
-            $("#row_checkbox_expansions").data("expansions_to_include")
+            $("#container_game_setup").data("expansions_to_include")
         );
     }
 )
@@ -995,7 +995,7 @@ function update_round_end_goals() {
         expansions_to_include.push("asia");
     }
 
-    $("#row_checkbox_expansions").data(
+    $("#container_game_setup").data(
         "expansions_to_include",
         expansions_to_include
     )
@@ -1010,7 +1010,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_checkbox_expansions").data("expansions_to_include")
+                    $("#container_game_setup").data("expansions_to_include")
                 );
             }
            
@@ -1021,7 +1021,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_checkbox_expansions").data("expansions_to_include")
+                    $("#container_game_setup").data("expansions_to_include")
                 );
             }
         );
@@ -1031,7 +1031,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_checkbox_expansions").data("expansions_to_include")
+                    $("#container_game_setup").data("expansions_to_include")
                 );
             }
         );
@@ -1041,7 +1041,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_checkbox_expansions").data("expansions_to_include")
+                    $("#container_game_setup").data("expansions_to_include")
                 );
             }
         );
