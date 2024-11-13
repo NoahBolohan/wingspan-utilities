@@ -368,16 +368,16 @@ function reset_automa_played_birds() {
 // Update automa drawn cards counter
 function update_automa_drawn_cards() {
 
-    $("#col_automa_drawn_birds_count").data(
+    $("#col_automa_drawn_cards_count").data(
         "counter",
-        $("#col_automa_drawn_birds_count").data(
+        $("#col_automa_drawn_cards_count").data(
             "counter"
         ) + 1
     );
 
-    $("#col_automa_drawn_birds_count").empty();
-    $("#col_automa_drawn_birds_count").text(
-        $("#col_automa_drawn_birds_count").data(
+    $("#col_automa_drawn_cards_count").empty();
+    $("#col_automa_drawn_cards_count").text(
+        $("#col_automa_drawn_cards_count").data(
             "counter"
         )
     );
@@ -388,14 +388,14 @@ function update_automa_drawn_cards() {
 // Reset automa drawn cards counter
 function reset_automa_drawn_cards() {
 
-    $("#col_automa_drawn_birds_count").data(
+    $("#col_automa_drawn_cards_count").data(
         "counter",
         0
     );
 
-    $("#col_automa_drawn_birds_count").empty();
-    $("#col_automa_drawn_birds_count").text(
-        $("#col_automa_drawn_birds_count").data(
+    $("#col_automa_drawn_cards_count").empty();
+    $("#col_automa_drawn_cards_count").text(
+        $("#col_automa_drawn_cards_count").data(
             "counter"
         )
     );
@@ -446,7 +446,7 @@ function update_automa_total_score() {
             "counter"
         ) + $("#col_difficulty_radio").data(
             "points_per_drawn_card"
-        ) * $("#col_automa_drawn_birds_count").data(
+        ) * $("#col_automa_drawn_cards_count").data(
             "counter"
         ) + $("#col_automa_eggs_count").data(
             "counter"
@@ -1049,26 +1049,66 @@ $(document).ready(
 
 function populate_game_end_modal() {
 
-    $("#row_automa_score_breakdown").text(
-        `Automa's final score: ${
-            $("#col_automa_played_birds").data(
-                "counter"
-            ) + $("#col_difficulty_radio").data(
+    $("#table_cell_played_birds_points").text(
+        $("#col_automa_played_birds").data(
+            "counter"
+        )
+    )
+
+    $("#table_cell_drawn_cards_points").text(
+        `${
+            $("#col_difficulty_radio").data(
                 "points_per_drawn_card"
-            ) * $("#col_automa_drawn_birds_count").data(
+            ) * $("#col_automa_drawn_cards_count").data(
                 "counter"
-            ) + $("#col_automa_eggs_count").data(
-                "counter"
-            ) + $("#col_round_1_end_cube_count").data(
-                "automa_round_end_points"
-            ) + $("#col_round_2_end_cube_count").data(
-                "automa_round_end_points"
-            ) + $("#col_round_3_end_cube_count").data(
-                "automa_round_end_points"
-            ) + $("#col_round_4_end_cube_count").data(
-                "automa_round_end_points"
             )
-        }`
+        } (${
+            $("#col_difficulty_radio").data(
+                "points_per_drawn_card"
+            )
+        } * ${
+            $("#col_automa_drawn_cards_count").data(
+                "counter"
+            )
+        })`
+    )
+
+    $("#table_cell_round_end_goals_points").text(
+        $("#col_round_1_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_2_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_3_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_4_end_cube_count").data(
+            "automa_round_end_points"
+        )
+    )
+
+    $("#table_cell_laid_eggs_points").text(
+        $("#col_automa_eggs_count").data(
+            "counter"
+        )
+    )
+
+    $("#table_cell_total_points").text(
+        $("#col_automa_played_birds").data(
+            "counter"
+        ) + $("#col_difficulty_radio").data(
+            "points_per_drawn_card"
+        ) * $("#col_automa_drawn_cards_count").data(
+            "counter"
+        ) + $("#col_automa_eggs_count").data(
+            "counter"
+        ) + $("#col_round_1_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_2_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_3_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_4_end_cube_count").data(
+            "automa_round_end_points"
+        )
     )
 }
 
