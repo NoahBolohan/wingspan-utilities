@@ -85,6 +85,28 @@ $(document).ready(
                     "enable_start_game",
                     1
                 );
+                
+                switch($("input[name='difficulty']:checked").val()) {
+
+                    case "eaglet":
+                        $("#col_difficulty_radio").data(
+                            "points_per_drawn_card",
+                            3
+                        );
+                        break;
+                    case "eagle":
+                        $("#col_difficulty_radio").data(
+                            "points_per_drawn_card",
+                            4
+                        );
+                        break;
+                    case "eagle-eyed_eagle":
+                        $("#col_difficulty_radio").data(
+                            "points_per_drawn_card",
+                            5
+                        );
+                        break;
+                }
 
                 start_game_enabler();
             }
@@ -296,19 +318,7 @@ function update_automa_played_birds(bird_points) {
         );
     }
     else {
-        $("#col_automa_drawn_birds_count").data(
-            "counter",
-            $("#col_automa_drawn_birds_count").data(
-                "counter"
-            ) + 1
-        );
-    
-        $("#col_automa_drawn_birds_count").empty();
-        $("#col_automa_drawn_birds_count").text(
-            $("#col_automa_drawn_birds_count").data(
-                "counter"
-            )
-        );
+        update_automa_drawn_cards();
     }
 
     update_automa_total_score();
@@ -410,7 +420,9 @@ function update_automa_total_score() {
         "counter",
         $("#col_automa_played_birds").data(
             "counter"
-        ) + $("#col_automa_drawn_birds_count").data(
+        ) + $("#col_difficulty_radio").data(
+            "points_per_drawn_card"
+        ) * $("#col_automa_drawn_birds_count").data(
             "counter"
         ) + $("#col_automa_eggs_count").data(
             "counter"
