@@ -685,9 +685,25 @@ $(document).ready(
     }
 )
 
-function end_round_cleanup() {
+function end_round_cleanup(who_won) {
     // Reset current round counter
     $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
+
+    if (who_won == "me") {
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
+            "I won"
+        )
+    }
+    else if (who_won == "automa") {
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
+            "Automa won"
+        )
+    }
+    else if (who_won == "we tied") {
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).text(
+            "We tied"
+        )
+    }
 
     // Empty automa actions tables
     $("#table_automa_actions tbody").empty();
@@ -709,7 +725,7 @@ $(document).ready(
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup(); 
+                end_round_cleanup("me"); 
             }
         )
     }
@@ -718,12 +734,26 @@ $(document).ready(
 // Set an event listener for performing automa won action by clicking the automa won button
 $(document).ready(
     function() {
-        $("#button_i_won").on(
+        $("#button_automa_won").on(
             "click",
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup(); 
+                end_round_cleanup("automa"); 
+            }
+        )
+    }
+)
+
+// Set an event listener for performing we tied action by clicking the we tied button
+$(document).ready(
+    function() {
+        $("#button_we_tied").on(
+            "click",
+            function() {
+
+                $("#modal_end_of_round").modal("hide");
+                end_round_cleanup("we_tied"); 
             }
         )
     }
