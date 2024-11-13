@@ -679,19 +679,51 @@ $(document).ready(
             "click",
             function() {
 
-                // Reset current round counter
-                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
+                $("#modal_end_of_round").modal("show");
+            }
+        )
+    }
+)
 
-                // Empty automa actions tables
-                $("#table_automa_actions tbody").empty();
+function end_round_cleanup() {
+    // Reset current round counter
+    $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
 
-                // Show and hide buttons
-                custom_hide(
-                    "#row_end_round_button"
-                );
+    // Empty automa actions tables
+    $("#table_automa_actions tbody").empty();
 
-                // Setup for new round
-                new_round($("#row_round_info").data("round") + 1);
+    // Show and hide buttons
+    custom_hide(
+        "#row_end_round_button"
+    );
+
+    // Setup for new round
+    new_round($("#row_round_info").data("round") + 1);
+}
+
+// Set an event listener for performing I won action by clicking the I won button
+$(document).ready(
+    function() {
+        $("#button_i_won").on(
+            "click",
+            function() {
+
+                $("#modal_end_of_round").modal("hide");
+                end_round_cleanup(); 
+            }
+        )
+    }
+)
+
+// Set an event listener for performing automa won action by clicking the automa won button
+$(document).ready(
+    function() {
+        $("#button_i_won").on(
+            "click",
+            function() {
+
+                $("#modal_end_of_round").modal("hide");
+                end_round_cleanup(); 
             }
         )
     }
