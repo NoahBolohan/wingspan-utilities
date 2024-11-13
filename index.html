@@ -185,15 +185,19 @@
 
 			<div class="row" id="row_header">
 
-				<div class="col text-center" style="font-size:1.5em;">
-					<b>Wingspan Tracker</b>
+				<div class="col text-center">
+					<h1>Wingspan Tracker</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="container-fluid mb-1" id="container_game_setup">
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_base_game_expansion">
+			<div class="row p-0 mt-2" id="row_expansions_header">
+				<h2>Expansions</h2>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_base_game_expansion">
 
 				<div class="col-6" id="col_base_game_checkbox_text">
 					Base game:
@@ -229,38 +233,33 @@
 				<input class="col-6" id="col_asia_checkbox" name="base" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-between margin_auto" id="row_extra_cards">
+			<div class="row p-0 mt-2" id="row_extra_cards_header">
+				<h2>Extra Cards</h2>
+			</div>
 
-				<div class="col-7" id="col_automubon_society">
+			<div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
 
-					<div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
-
-						<div class="col-10" id="col_automubon_society_checkbox_text">
-							Automubon society:
-						</div>
-		
-						<input class="col-2" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
-					</div>
+				<div class="col-6" id="col_automubon_society_checkbox_text">
+					Automubon society:
 				</div>
 
-				<div class="col-5" id="col_RAOUtoma">
+				<input class="col-6" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
+			</div>
 
-					<div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
+			<div class="row p-0 mt-2 justify-content-between margin_auto" id="row_automubon_society_">
 						
-						<div class="col-5" id="col_RAOUtoma_checkbox_text">
-							RAOUtoma:
-						</div>
-		
-						<input class="col-2" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
-					</div>
+				<div class="col-6" id="col_RAOUtoma_checkbox_text">
+					RAOUtoma:
 				</div>
+
+				<input class="col-6" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-2" id="row_difficulty_header">
+				<h2>Difficulty</h2>
 			</div>
 
 			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_difficulty">
-
-				<div class="col-3" id="col_difficulty_radio_text">
-					Difficulty:
-				</div>
 
 				<fieldset class="col-9" id="col_difficulty_radio" data-enable_start_game = 0 data-points_per_drawn_card = 0>
 
