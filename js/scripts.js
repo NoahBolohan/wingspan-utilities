@@ -178,37 +178,45 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
 // Appropriate changes for new round
 function new_round(round_number) {
 
-    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) { 
+    if (round_number <= 4) {
+        $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) { 
 
-        // Setup round number and length, reset turn counter
-        $("#row_round_info").data(
-            "round",
-            round_number
-        );
-
-        $("#row_round_info").data(
-            "round_length",
-            data["round_lengths"][round_number + ""]
-        );
-
-        $("#row_round_info").data(
-            "turn",
-            0
-        );
-
-        // Create automa deck for round
-        create_automa_deck(
+            // Setup round number and length, reset turn counter
             $("#row_round_info").data(
-                "round"
+                "round",
+                round_number
+            );
+    
+            $("#row_round_info").data(
+                "round_length",
+                data["round_lengths"][round_number + ""]
+            );
+    
+            $("#row_round_info").data(
+                "turn",
+                0
+            );
+    
+            // Create automa deck for round
+            create_automa_deck(
+                $("#row_round_info").data(
+                    "round"
+                )
             )
-        )
+    
+            update_round_end_cube_counter(round_number,0)
 
-        update_round_end_cube_counter(round_number,0)
+            custom_show(
+                "#row_automa_action_button"
+            );
+        })
+    }
+    else {
 
         custom_show(
-            "#row_automa_action_button"
+            "#row_proceed_to_game_end_button"
         );
-    })
+    }
 }
 
 // Create the automa deck for the round
@@ -660,19 +668,9 @@ $(document).ready(
                         "#row_automa_action_button"
                     );
 
-                    if ($("#row_round_info").data("round") < 4) {
-
-                        custom_show(
-                            "#row_end_round_button"
-                        );
-                    }
-                    else {
-
-                        custom_show(
-                            "#row_end_game_button"
-                        );
-                    }
-                    
+                    custom_show(
+                        "#row_end_round_button"
+                    );
                 }
                 
             }
@@ -1049,6 +1047,19 @@ $(document).ready(
     }
 )
 
+
+// Set an event listener for proceeding to end of game by clicking the proceed to end of game button
+$(document).ready(
+    function() {
+        $("#button_proceed_to_game_end").on(
+            "click",
+            function() {
+                $(`#modal_end_of_game`).modal("show");
+            }
+        )
+    }
+)
+
 // Set an event listener for ending the game by clicking the end game button
 $(document).ready(
     function() {
@@ -1068,6 +1079,13 @@ $(document).ready(
 
                     $(`#button_round_${round_number}_end_goal`).text(
                         `Add round ${round_number} end goal`
+                    )
+
+                    $(`#col_round_${round_number}_end_cube_count`).empty();
+
+                    $(`#col_round_${round_number}_end_cube_count`).data(
+                        "counter",
+                        0
                     )
                 }
 
@@ -1102,16 +1120,19 @@ $(document).ready(
                     "#button_end_game"
                 );
 
-                // Reset current round counter
-                $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).empty();
-
                 // Empty automa actions tables
                 $("#table_automa_actions tbody").empty();
 
-                // Show and hide buttons
+                // Show and hide buttons / modals
                 custom_hide(
                     "#row_end_round_button"
                 );
+
+                custom_hide(
+                    "#row_proceed_to_game_end_button"
+                );
+
+                $(`#modal_end_of_game`).modal("hide");
             }
         )
     }
