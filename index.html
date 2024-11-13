@@ -191,7 +191,7 @@
 			</div>
 		</div>
 
-		<div class="container-fluid mb-1" id="container_game_setup">
+		<div class="container-fluid" id="container_game_setup">
 
 			<div class="row p-0 mt-2" id="row_expansions_header">
 				<h2>Expansions</h2>
@@ -206,7 +206,7 @@
 				<input class="col-6" id="col_base_game_checkbox" name="base" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_european_expansion_expansion">
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_european_expansion_expansion">
 
 				<div class="col-6" id="col_european_expansion_checkbox_text">
 					European Expansion:
@@ -215,7 +215,7 @@
 				<input class="col-6" id="col_european_expansion_checkbox" name="base" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
 
 				<div class="col-6" id="col_oceania_expansion_checkbox_text">
 					Oceania Expansion:
@@ -224,7 +224,7 @@
 				<input class="col-6" id="col_oceania_expansion_checkbox" name="base" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_asia_expansion">
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_asia_expansion">
 
 				<div class="col-6" id="col_asia_checkbox_text">
 					Wingspan Asia:
@@ -233,7 +233,7 @@
 				<input class="col-6" id="col_asia_checkbox" name="base" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2" id="row_extra_cards_header">
+			<div class="row p-0 mt-3" id="row_extra_cards_header">
 				<h2>Extra Cards</h2>
 			</div>
 
@@ -246,7 +246,7 @@
 				<input class="col-6" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-between margin_auto" id="row_automubon_society_">
+			<div class="row p-0 mt-1 justify-content-between margin_auto" id="row_automubon_society_">
 						
 				<div class="col-6" id="col_RAOUtoma_checkbox_text">
 					RAOUtoma:
@@ -255,28 +255,35 @@
 				<input class="col-6" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 mt-2" id="row_difficulty_header">
+			<div class="row p-0 mt-3" id="row_difficulty_header">
 				<h2>Difficulty</h2>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_difficulty">
+			<div class="row p-0 justify-content-center margin_auto" id="row_difficulty">
 
-				<fieldset class="col-9" id="col_difficulty_radio" data-enable_start_game = 0 data-points_per_drawn_card = 0>
-
+				<fieldset id="col_difficulty_radio" data-enable_start_game = 0 data-points_per_drawn_card = 0>
 					<div>
 						<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
-						<label for="radio_difficulty_choice_eaglet">Eaglet</label>
+						<label for="radio_difficulty_choice_eaglet">Eaglet (3 points per drawn card)</label>
+					</div>
 				
+					<div>
 						<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
-						<label for="radio_difficulty_choice_eagle">Eagle</label>
-
+						<label for="radio_difficulty_choice_eagle">Eagle (4 points per drawn card)</label>
+					</div>
+				
+					<div>
 						<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
-						<label for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle</label>
+						<label for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle (5 points per drawn card)</label>
 					</div>
 				</fieldset>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_round_info">
+			<div class="row p-0 mt-3" id="row_round_end_goals_header">
+				<h2>Rounds-End Goals</h2>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_round_info">
 
 				<button class="col-3 p-0 btn btn-xs btn-primary" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
 					Add round 1 end goal
@@ -295,7 +302,7 @@
 				</button>
 			</div>
 
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_start_game_button">
+			<div class="row p-0 mt-5 justify-content-center margin_auto" id="row_start_game_button">
 
 				<button class="col btn btn-primary" id="button_start_game" type="button" disabled = "true">
 					Start game
