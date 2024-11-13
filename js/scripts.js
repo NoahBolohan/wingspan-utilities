@@ -1047,6 +1047,30 @@ $(document).ready(
     }
 )
 
+function populate_game_end_modal() {
+
+    $("#row_automa_score_breakdown").text(
+        `Automa's final score: ${
+            $("#col_automa_played_birds").data(
+                "counter"
+            ) + $("#col_difficulty_radio").data(
+                "points_per_drawn_card"
+            ) * $("#col_automa_drawn_birds_count").data(
+                "counter"
+            ) + $("#col_automa_eggs_count").data(
+                "counter"
+            ) + $("#col_round_1_end_cube_count").data(
+                "automa_round_end_points"
+            ) + $("#col_round_2_end_cube_count").data(
+                "automa_round_end_points"
+            ) + $("#col_round_3_end_cube_count").data(
+                "automa_round_end_points"
+            ) + $("#col_round_4_end_cube_count").data(
+                "automa_round_end_points"
+            )
+        }`
+    )
+}
 
 // Set an event listener for proceeding to end of game by clicking the proceed to end of game button
 $(document).ready(
@@ -1054,6 +1078,7 @@ $(document).ready(
         $("#button_proceed_to_game_end").on(
             "click",
             function() {
+                populate_game_end_modal()
                 $(`#modal_end_of_game`).modal("show");
             }
         )
@@ -1133,6 +1158,8 @@ $(document).ready(
                 );
 
                 $(`#modal_end_of_game`).modal("hide");
+
+                $("#row_automa_score_breakdown").empty();
             }
         )
     }
