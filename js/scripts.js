@@ -41,6 +41,19 @@ function custom_hide(div_id) {
     );
 }
 
+// Assign config parameter on ready
+$(document).ready(
+
+    // Read config
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) {
+
+        $("#row_round_end_goals").data(
+            "round_lengths",
+            data["round_lengths"]
+        );
+    })
+)
+
 // Check base-game checkbox on startup
 $(document).ready(
     function() {
@@ -179,37 +192,37 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
 function new_round(round_number) {
 
     if (round_number <= 4) {
-        $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) { 
+        
+        // Setup round number and length, reset turn counter
+        $("#row_round_info").data(
+            "round",
+            round_number
+        );
 
-            // Setup round number and length, reset turn counter
+        $("#row_round_info").data(
+            "round_length",
+            $("#row_round_end_goals").data(
+                "round_lengths",
+            )[round_number + ""]
+        );
+
+        $("#row_round_info").data(
+            "turn",
+            0
+        );
+
+        // Create automa deck for round
+        create_automa_deck(
             $("#row_round_info").data(
-                "round",
-                round_number
-            );
-    
-            $("#row_round_info").data(
-                "round_length",
-                data["round_lengths"][round_number + ""]
-            );
-    
-            $("#row_round_info").data(
-                "turn",
-                0
-            );
-    
-            // Create automa deck for round
-            create_automa_deck(
-                $("#row_round_info").data(
-                    "round"
-                )
+                "round"
             )
-    
-            update_round_end_cube_counter(round_number,0)
+        )
 
-            custom_show(
-                "#row_automa_action_button"
-            );
-        })
+        update_round_end_cube_counter(round_number,0)
+
+        custom_show(
+            "#row_automa_action_button"
+        );
     }
     else {
 
