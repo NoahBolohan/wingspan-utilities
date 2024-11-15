@@ -684,7 +684,11 @@ $(document).ready(
         $("#button_end_round").on(
             "click",
             function() {
-
+                $("#automa_score_for_round_end_modal").text(
+                    $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                        "counter"
+                    )
+                )
                 $("#modal_end_of_round").modal("show");
             }
         )
@@ -698,6 +702,7 @@ function end_round_cleanup(who_won) {
 
     if (who_won == "me") {
 
+        // Update users round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "me_round_end_points",
             $("#row_round_end_cube_counts").data(
@@ -705,15 +710,29 @@ function end_round_cleanup(who_won) {
             )[`round_${$("#row_round_info").data("round")}`][0]
         )
 
-        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-            "automa_round_end_points",
-            $("#row_round_end_cube_counts").data(
-                "round_end_points"
-            )[`round_${$("#row_round_info").data("round")}`][1]
-        )
+        // Update automa's round end points (0 if automa didn't score)
+        if (
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "counter"
+            ) > 0
+        ) {
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "automa_round_end_points",
+                $("#row_round_end_cube_counts").data(
+                    "round_end_points"
+                )[`round_${$("#row_round_info").data("round")}`][1]
+            )
+        }
+        else {
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "automa_round_end_points",
+                0
+            )
+        }
     }
-    else if (who_won == "automa") {
+    else if (who_won == "automa_user_scored") {
 
+        // Update user's round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "me_round_end_points",
             $("#row_round_end_cube_counts").data(
@@ -721,6 +740,24 @@ function end_round_cleanup(who_won) {
             )[`round_${$("#row_round_info").data("round")}`][1]
         )
 
+        // Update automa's round end points
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "automa_round_end_points",
+            $("#row_round_end_cube_counts").data(
+                "round_end_points"
+            )[`round_${$("#row_round_info").data("round")}`][0]
+        )
+    }
+
+    else if (who_won == "automa_user_did_not_score") {
+
+        // Update user's round end points
+        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+            "me_round_end_points",
+            0
+        )
+
+        // Update automa's round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "automa_round_end_points",
             $("#row_round_end_cube_counts").data(
@@ -730,13 +767,23 @@ function end_round_cleanup(who_won) {
     }
     else if (who_won == "we_tied") {
 
-        var points = Math.floor(
-            ($("#row_round_end_cube_counts").data(
-                "round_end_points"
-            )[`round_${$("#row_round_info").data("round")}`][0] + $("#row_round_end_cube_counts").data(
-                "round_end_points"
-            )[`round_${$("#row_round_info").data("round")}`][1])/2
-        )
+        // Update both's round end points (0 if neither automa nor user scored)
+        if (
+            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                "counter"
+            ) > 0
+        ) {
+            var points = Math.floor(
+                ($("#row_round_end_cube_counts").data(
+                    "round_end_points"
+                )[`round_${$("#row_round_info").data("round")}`][0] + $("#row_round_end_cube_counts").data(
+                    "round_end_points"
+                )[`round_${$("#row_round_info").data("round")}`][1])/2
+            )
+        }
+        else {
+            var points = 0;
+        }
 
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "me_round_end_points",
@@ -764,8 +811,10 @@ function end_round_cleanup(who_won) {
 
     update_automa_total_score();
     
-    // Empty automa actions tables
+    // Empty automa actions table and round end cube count text in modal
     $("#table_automa_actions tbody").empty();
+
+    $("#automa_score_for_round_end_modal").empty();
 
     // Show and hide buttons
     custom_hide(
@@ -790,15 +839,29 @@ $(document).ready(
     }
 )
 
-// Set an event listener for performing automa won action by clicking the automa won button
+// Set an event listener for performing automa won action by clicking the automa won button (user scored)
 $(document).ready(
     function() {
-        $("#button_automa_won").on(
+        $("#button_automa_won_user_scored").on(
             "click",
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup("automa"); 
+                end_round_cleanup("automa_user_scored"); 
+            }
+        )
+    }
+)
+
+// Set an event listener for performing automa won action by clicking the automa won button (user did not score)
+$(document).ready(
+    function() {
+        $("#button_automa_won_user_did_not_score").on(
+            "click",
+            function() {
+
+                $("#modal_end_of_round").modal("hide");
+                end_round_cleanup("automa_user_did_not_score"); 
             }
         )
     }

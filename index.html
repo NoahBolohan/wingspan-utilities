@@ -167,11 +167,21 @@
 
 					<div class="p-0 container-fluid">
 
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round">
+						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_automa_score">
+							<div class="col-5 justify-content-center"> Automa's score:</div>
+							<div class="col-2 justify-content-center" id="automa_score_for_round_end_modal"></div>
+						</div>
 
-							<button class="col-4 m-1 p-0 btn btn-success" id="button_i_won">Me</button>
-							<button class="col-4 m-1 p-0 btn btn-danger" id="button_automa_won">Automa</button>
-							<button class="col-4 m-1 p-0 btn btn-warning" id="button_we_tied">We tied</button>
+						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_1">
+
+							<button class="col-5 m-1 p-0 btn btn-success" id="button_i_won">Me</button>
+							<button class="col-5 m-1 p-0 btn btn-warning" id="button_we_tied">We tied</button>
+						</div>
+						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_2">
+
+							
+							<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_scored">Automa <br>(but I scored)</button>
+							<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_did_not_score">Automa <br>(but I didn't score)</button>
 						</div>
 					</div>
 				</div>
