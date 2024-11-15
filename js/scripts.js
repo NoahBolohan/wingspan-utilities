@@ -1188,6 +1188,18 @@ function populate_game_end_modal() {
     )
 }
 
+function reset_automa_score_breakdown_table() {
+    $("#table_cell_played_birds_points").empty();
+
+    $("#table_cell_drawn_cards_points").empty();
+
+    $("#table_cell_round_end_goals_points").empty();
+
+    $("#table_cell_laid_eggs_points").empty();
+
+    $("#table_cell_total_points").empty();
+}
+
 // Set an event listener for proceeding to end of game by clicking the proceed to end of game button
 $(document).ready(
     function() {
@@ -1257,9 +1269,6 @@ $(document).ready(
                 custom_hide(
                     "#container_automa_gameplay"
                 );
-                custom_hide(
-                    "#button_end_game"
-                );
 
                 // Empty automa actions tables
                 $("#table_automa_actions tbody").empty();
@@ -1275,7 +1284,7 @@ $(document).ready(
 
                 $(`#modal_end_of_game`).modal("hide");
 
-                $("#row_automa_score_breakdown").empty();
+                reset_automa_score_breakdown_table();
             }
         )
     }
