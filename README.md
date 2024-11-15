@@ -1,6 +1,6 @@
 # Wingspan Tracker
 
-Web app to track Wingspan games.
+Web app to track Wingspan games. Designed for mobile use.
 
 ## Links
 
