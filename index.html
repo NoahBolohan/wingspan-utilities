@@ -15,134 +15,137 @@
 
 <body class="parallax" onload="on_load()">
 
-	<div class="modal fade" id="modal_round_1_end_goal_images">
+    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbyM1pVrw7RtdIbvj-lEZwtX1O2ali4DIOxswmUohrxduSOobcSHKyOA0hWwy6hFBa5AsQ/exec">
 
-		<div class="modal-dialog" role="document">
+		<div class="modal fade" id="modal_round_1_end_goal_images">
 
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Choose the round 1 end goal:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_1_end_buttons"></div>
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 1 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_1_end_buttons"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_round_2_end_goal_images">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Choose the round 2 end goal:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_2_end_buttons"></div>
+	
+		<div class="modal fade" id="modal_round_2_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 2 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_2_end_buttons"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_round_3_end_goal_images">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Choose the round 3 end goal:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_3_end_buttons"></div>
+	
+		<div class="modal fade" id="modal_round_3_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 3 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_3_end_buttons"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_round_4_end_goal_images">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Choose the round 4 end goal:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_4_end_buttons"></div>
+	
+		<div class="modal fade" id="modal_round_4_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 4 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_4_end_buttons"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_play_a_card">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Choose played card points, or drawn card:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_play_a_card">
-
-							<div class="col-12 p-0" id="col_modal_play_a_card">
-
-								<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_draw_card">
-
-									<button class="col-4 btn btn-info" id="col_button_draw_card">
-										Drawn card
-									</button>
-								</div>
-
-								<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_0_to_4_points">
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_0_points">0</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_1_points">1</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_2_points">2</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_3_points">3</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_4_points">4</button>
-								</div>
-
-								<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_5_to_9_points">
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_5_points">5</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_6_points">6</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_7_points">7</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_8_points">8</button>
-									<button class="col-2 m-1 btn btn-light" id="col_button_play_card_9_points">9</button>
+	
+		<div class="modal fade" id="modal_play_a_card">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose played card points, or drawn card:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_play_a_card">
+	
+								<div class="col-12 p-0" id="col_modal_play_a_card">
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_draw_card">
+	
+										<button class="col-4 btn btn-info" id="col_button_draw_card" type="button">
+											Drawn card
+										</button>
+									</div>
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_0_to_4_points">
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_0_points" type="button">0</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_1_points" type="button">1</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_2_points" type="button">2</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_3_points" type="button">3</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_4_points" type="button">4</button>
+									</div>
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_5_to_9_points">
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_5_points" type="button">5</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_6_points" type="button">6</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_7_points" type="button">7</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_8_points" type="button">8</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_9_points" type="button">9</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -150,110 +153,113 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_end_of_round">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Don't forget your teal powers! Who won this round?</h5>
+	
+		<div class="modal fade" id="modal_end_of_round">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Don't forget your teal powers! Who won this round?</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_automa_score">
+								<div class="col-5 justify-content-center"> Automa's score:</div>
+								<div class="col-2 justify-content-center" id="automa_score_for_round_end_modal"></div>
+							</div>
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_1">
+	
+								<button class="col-5 m-1 p-0 btn btn-success" id="button_i_won" type="button">Me</button>
+								<button class="col-5 m-1 p-0 btn btn-warning" id="button_we_tied" type="button">We tied</button>
+							</div>
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_2">
+	
+								
+								<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_scored" type="button">Automa <br>(but I scored)</button>
+								<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_did_not_score" type="button">Automa <br>(but I didn't score)</button>
+							</div>
+						</div>
+					</div>
 				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_automa_score">
-							<div class="col-5 justify-content-center"> Automa's score:</div>
-							<div class="col-2 justify-content-center" id="automa_score_for_round_end_modal"></div>
-						</div>
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_1">
-
-							<button class="col-5 m-1 p-0 btn btn-success" id="button_i_won">Me</button>
-							<button class="col-5 m-1 p-0 btn btn-warning" id="button_we_tied">We tied</button>
-						</div>
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_2">
-
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_end_of_game">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Don't forget your gold powers! Automa final score breakdown:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_score_breakdown">
+	
+								<table class="table">
+	
+									<tbody>
+	
+										<tr>
+											<th scope="row">Played birds</th>
+											<td id="table_cell_played_birds_points" name="automa_played_birds"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Drawn cards</th>
+											<td id="table_cell_drawn_cards_points" name="automa_drawn_cards"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Round-end goals</th>
+											<td id="table_cell_round_end_goals_points" name="automa_end-of-round_goals"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Laid eggs</th>
+											<td id="table_cell_laid_eggs_points" name="automa_laid_eggs"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Total</th>
+											<td id="table_cell_total_points"></td>
+										</tr>
+	
+										
+									</tbody>
+								</table>
+							</div>
+	
+							<div class="row p-0 justify-content-center margin_auto" id="row_end_game_button">
+	
+								<button class="col btn btn-danger" id="button_end_game" type="button">
+									End game
+								</button>
+							</div>
+	
+							<!-- <div class="row p-0 justify-content-center margin_auto">
+								<button class="btn btn-danger" id="submit" name="submit" access="false" style="default" type="submit">
+									Submit
+								</button>
+							</div> -->
 							
-							<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_scored">Automa <br>(but I scored)</button>
-							<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_did_not_score">Automa <br>(but I didn't score)</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="modal fade" id="modal_end_of_game">
-
-		<div class="modal-dialog" role="document">
-
-			<div class="modal-content">
-
-				<div class="modal-header">
-
-					<h5 class="modal-title">Don't forget your gold powers! Automa final score breakdown:</h5>
-				</div>
-
-				<div class="modal-body">
-
-					<div class="p-0 container-fluid">
-
-						<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_score_breakdown">
-
-							<table class="table">
-
-								<tbody>
-
-									<tr>
-										<th scope="row">Played birds</th>
-										<td id="table_cell_played_birds_points"></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Drawn cards</th>
-										<td id="table_cell_drawn_cards_points"></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Round-end goals</th>
-										<td id="table_cell_round_end_goals_points"></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Laid eggs</th>
-										<td id="table_cell_laid_eggs_points"></td>
-									</tr>
-
-									<tr>
-										<th scope="row">Total</th>
-										<td id="table_cell_total_points"></td>
-									</tr>
-
-									
-								</tbody>
-							</table>
-						</div>
-
-						<div class="row p-0 justify-content-center margin_auto" id="row_end_game_button">
-
-							<button class="col btn btn-danger" id="button_end_game" type="button">
-								End game
-							</button>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycby-PTJu5rlK8xD58CYgFr-AB_Qd6u39L6LsVPsB2ynKC_PbiwhNh8_vKgdIB6nyjEVWdw/exec">
 
 		<div class="container-fluid mb-1" id="container_header">
 

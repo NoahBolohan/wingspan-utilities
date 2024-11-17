@@ -24,7 +24,7 @@ function doPost (e) {
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': newRow }))
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': newRow}))
       .setMimeType(ContentService.MimeType.JSON)
   }
 
