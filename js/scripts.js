@@ -199,13 +199,22 @@ function new_round(round_number) {
             round_number
         );
 
-        $("#row_round_info").data(
-            "round_length",
-            $("#row_round_end_goals").data(
-                "round_lengths",
-            )[round_number + ""]
-        );
+        //Debug option
+        if ($("#col_debug_mode_round_length_checkbox").is(":checked")) {
+            $("#row_round_info").data(
+                "round_length",
+                1
+            );
 
+        } else {
+            $("#row_round_info").data(
+                "round_length",
+                $("#row_round_end_goals").data(
+                    "round_lengths",
+                )[round_number + ""]
+            );
+        }
+        
         $("#row_round_info").data(
             "turn",
             0
@@ -561,7 +570,14 @@ function append_automa_action_row(automa_action) {
         case "play_a_bird":
             primary_action_text = "Play a card";
             primary_action_class = "table-light";
-            $(`#modal_play_a_card`).modal("show");
+
+            // Debug option
+            if ($("#col_debug_mode_play_a_bird_checkbox").is(":checked")) {
+                update_automa_played_birds(-1);
+            }
+            else {
+                $(`#modal_play_a_card`).modal("show");
+            }
             break;
 
         case "draw_cards":
@@ -697,12 +713,17 @@ $(document).ready(
         $("#button_end_round").on(
             "click",
             function() {
-                $("#automa_score_for_round_end_modal").text(
-                    $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-                        "counter"
+                if ($("#col_debug_mode_round_end_winner_checkbox").is(":checked")) {
+                    end_round_cleanup("automa_user_scored");
+                }
+                else {
+                    $("#automa_score_for_round_end_modal").text(
+                        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
+                            "counter"
+                        )
                     )
-                )
-                $("#modal_end_of_round").modal("show");
+                    $("#modal_end_of_round").modal("show");
+                }
             }
         )
     }
@@ -1287,5 +1308,62 @@ $(document).ready(
                 reset_automa_score_breakdown_table();
             }
         )
+    }
+)
+
+// Debug mode checkbox
+$(document).ready(
+    function() {
+        $("#col_debug_mode_checkbox").on(
+            "change",
+            function() {
+                
+                if (($("#col_debug_mode_checkbox").is(":checked"))) {
+                    // Debug option: round length
+                    custom_show("#row_debug_mode_round_length");
+                    $("#col_debug_mode_round_length_checkbox").prop(
+                        "checked",
+                        true
+                    )
+
+                    // Debug option: play a bird
+                    custom_show("#row_debug_mode_play_a_bird");
+                    $("#col_debug_mode_play_a_bird_checkbox").prop(
+                        "checked",
+                        true
+                    )
+
+                    // Debug option: round end winner
+                    custom_show("#row_debug_mode_round_end_winner");
+                    $("#col_debug_mode_round_end_winner_checkbox").prop(
+                        "checked",
+                        true
+                    )
+
+                }
+                else {
+                    // Debug option: round length
+                    custom_hide("#row_debug_mode_round_length");
+                    $("#col_debug_mode_round_length_checkbox").prop(
+                        "checked",
+                        false
+                    )
+
+                    // Debug option: play a bird
+                    custom_hide("#row_debug_mode_play_a_bird");
+                    $("#col_debug_mode_play_a_bird_checkbox").prop(
+                        "checked",
+                        false
+                    )
+
+                    // Debug option: round end winner
+                    custom_hide("#row_debug_mode_round_end_winner");
+                    $("#col_debug_mode_round_end_winner_checkbox").prop(
+                        "checked",
+                        false
+                    )
+                }
+            }
+        );
     }
 )
