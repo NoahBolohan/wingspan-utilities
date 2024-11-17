@@ -2,8 +2,42 @@
 $(document).ready(
     function() {
         // custom_show("#row_debug_mode");
+        custom_show("#submit");
     }
 )
+
+// Populate certain divs before submitting form
+function populate_form_data() {
+
+    // Automa: drawn cards
+    $("#automa_drawn_cards_for_post").val(
+        $("#col_difficulty_radio").data(
+            "points_per_drawn_card"
+        ) * $("#col_automa_drawn_cards_count").data(
+            "counter"
+        )
+    )
+
+    // Automa: played birds
+    $("#automa_played_birds_for_post").val(
+        $("#table_cell_played_birds_points").text()
+    )
+
+    // Automa: end-of-round goals
+    $("#automa_end-of-round_goals_for_post").val(
+        $("#table_cell_round_end_goals_points").text()
+    )
+
+    // Automa: laid eggs
+    $("#automa_laid_eggs_for_post").val(
+        $("#table_cell_laid_eggs_points").text()
+    )
+
+    // Automa: final score
+    $("#automa_final_score_for_post").val(
+        $("#table_cell_total_points").text()
+    )
+}
 
 // Shuffle array (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 function shuffle(array) {

@@ -15,8 +15,17 @@
 
 <body class="parallax" onload="on_load()">
 
-    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbyM1pVrw7RtdIbvj-lEZwtX1O2ali4DIOxswmUohrxduSOobcSHKyOA0hWwy6hFBa5AsQ/exec">
+    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
 
+		<div class="is_hidden" id="data_to_submit">
+			<input name="automa_drawn_cards" id="automa_drawn_cards_for_post" />
+			<input name="automa_played_birds" id="automa_played_birds_for_post" />
+			<input name="automa_end-of-round_goals" id="automa_end-of-round_goals_for_post" />
+			<input name="automa_laid_eggs" id="automa_laid_eggs_for_post" />
+			<input name="automa_final_score" id="automa_final_score_for_post" />
+		</div>
+
+		</div>
 		<div class="modal fade" id="modal_round_1_end_goal_images">
 
 			<div class="modal-dialog" role="document">
@@ -211,25 +220,25 @@
 								<table class="table">
 	
 									<tbody>
-	
+
 										<tr>
-											<th scope="row">Played birds</th>
-											<td id="table_cell_played_birds_points" name="automa_played_birds"></td>
+											<th scope="row">Drawn cards</th>
+											<td id="table_cell_drawn_cards_points"></td>
 										</tr>
 	
 										<tr>
-											<th scope="row">Drawn cards</th>
-											<td id="table_cell_drawn_cards_points" name="automa_drawn_cards"></td>
+											<th scope="row">Played birds</th>
+											<td id="table_cell_played_birds_points"></td>
 										</tr>
 	
 										<tr>
 											<th scope="row">Round-end goals</th>
-											<td id="table_cell_round_end_goals_points" name="automa_end-of-round_goals"></td>
+											<td id="table_cell_round_end_goals_points"></td>
 										</tr>
 	
 										<tr>
 											<th scope="row">Laid eggs</th>
-											<td id="table_cell_laid_eggs_points" name="automa_laid_eggs"></td>
+											<td id="table_cell_laid_eggs_points"></td>
 										</tr>
 	
 										<tr>
@@ -249,11 +258,11 @@
 								</button>
 							</div>
 	
-							<!-- <div class="row p-0 justify-content-center margin_auto">
-								<button class="btn btn-danger" id="submit" name="submit" access="false" style="default" type="submit">
+							<div class="row p-0 justify-content-center margin_auto is_hidden">
+								<button class="btn btn-danger" id="submit" name="submit" access="false" style="default" type="submit" onclick="populate_form_data()">
 									Submit
 								</button>
-							</div> -->
+							</div>
 							
 						</div>
 					</div>
@@ -337,7 +346,7 @@
 					European Expansion:
 				</div>
 
-				<input class="col-6" id="col_european_expansion_checkbox" name="base" type="checkbox" value="yes"></input>
+				<input class="col-6" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
 			</div>
 
 			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
@@ -346,7 +355,7 @@
 					Oceania Expansion:
 				</div>
 
-				<input class="col-6" id="col_oceania_expansion_checkbox" name="base" type="checkbox" value="yes"></input>
+				<input class="col-6" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
 			</div>
 
 			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_asia_expansion">
@@ -355,7 +364,7 @@
 					Wingspan Asia:
 				</div>
 
-				<input class="col-6" id="col_asia_checkbox" name="base" type="checkbox" value="yes"></input>
+				<input class="col-6" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
 			</div>
 
 			<div class="row p-0 mt-3" id="row_extra_cards_header">
