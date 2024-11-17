@@ -1,3 +1,10 @@
+// Open with debug options
+$(document).ready(
+    function() {
+        // custom_show("#row_debug_mode");
+    }
+)
+
 // Shuffle array (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 function shuffle(array) {
     var current_index = array.length;
@@ -940,6 +947,14 @@ $(document).ready(
                 custom_show(
                     "#container_automa_gameplay"
                 );
+
+                // Debug option
+                if ($("#col_debug_mode_quick_start_checkbox").is(":checked")) {
+                    $("#col_debug_mode_quick_start_checkbox").prop(
+                        "checked",
+                        false
+                    )
+                }
             }
         )
     }
@@ -993,10 +1008,10 @@ function generate_round_end_goal_button_for_round(round_number, round_end_goal, 
 // Set an event listener for opening the round end modals by clicking the round end goal buttons
 $(document).ready(
     function() {
-        $(`#button_round_1_end_goal`).on(
+        $("#button_round_1_end_goal").on(
             "click",
             function() {
-                $(`#modal_round_1_end_goal_images`).modal("show");
+                $("#modal_round_1_end_goal_images").modal("show");
             }
         )
     }
@@ -1004,10 +1019,10 @@ $(document).ready(
 
 $(document).ready(
     function() {
-        $(`#button_round_2_end_goal`).on(
+        $("#button_round_2_end_goal").on(
             "click",
             function() {
-                $(`#modal_round_2_end_goal_images`).modal("show");
+                $("#modal_round_2_end_goal_images").modal("show");
             }
         )
     }
@@ -1015,10 +1030,10 @@ $(document).ready(
 
 $(document).ready(
     function() {
-        $(`#button_round_3_end_goal`).on(
+        $("#button_round_3_end_goal").on(
             "click",
             function() {
-                $(`#modal_round_3_end_goal_images`).modal("show");
+                $("#modal_round_3_end_goal_images").modal("show");
             }
         )
     }
@@ -1026,10 +1041,10 @@ $(document).ready(
 
 $(document).ready(
     function() {
-        $(`#button_round_4_end_goal`).on(
+        $("#button_round_4_end_goal").on(
             "click",
             function() {
-                $(`#modal_round_4_end_goal_images`).modal("show");
+                $("#modal_round_4_end_goal_images").modal("show");
             }
         )
     }
@@ -1319,21 +1334,29 @@ $(document).ready(
             function() {
                 
                 if (($("#col_debug_mode_checkbox").is(":checked"))) {
-                    // Debug option: round length
+
+                    // Debug option: quick start (Starts unchecked)
+                    custom_show("#row_debug_mode_quick_start");
+                    $("#col_debug_mode_quick_start_checkbox").prop(
+                        "checked",
+                        false
+                    )
+
+                    // Debug option: round length (Starts checked)
                     custom_show("#row_debug_mode_round_length");
                     $("#col_debug_mode_round_length_checkbox").prop(
                         "checked",
                         true
                     )
 
-                    // Debug option: play a bird
+                    // Debug option: play a bird (Starts checked)
                     custom_show("#row_debug_mode_play_a_bird");
                     $("#col_debug_mode_play_a_bird_checkbox").prop(
                         "checked",
                         true
                     )
 
-                    // Debug option: round end winner
+                    // Debug option: round end winner (Starts checked)
                     custom_show("#row_debug_mode_round_end_winner");
                     $("#col_debug_mode_round_end_winner_checkbox").prop(
                         "checked",
@@ -1342,6 +1365,14 @@ $(document).ready(
 
                 }
                 else {
+
+                    // Debug option: quick start
+                    custom_hide("#row_debug_mode_quick_start");
+                    $("#col_debug_mode_quick_start_checkbox").prop(
+                        "checked",
+                        false
+                    )
+
                     // Debug option: round length
                     custom_hide("#row_debug_mode_round_length");
                     $("#col_debug_mode_round_length_checkbox").prop(
@@ -1362,6 +1393,64 @@ $(document).ready(
                         "checked",
                         false
                     )
+                }
+            }
+        );
+    }
+)
+
+// Debug mode: quick start functionality
+$(document).ready(
+    function() {
+        $("#col_debug_mode_quick_start_checkbox").on(
+            "change",
+            function() {
+                
+                if (($("#col_debug_mode_quick_start_checkbox").is(":checked"))) {
+
+                    $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+                    $("#col_difficulty_radio").data(
+                        "enable_start_game",
+                        1
+                    );
+
+                    $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/base.json`, function(data) {
+
+                        update_round_end_goal_image(
+                            1,
+                            "birds_in_forest",
+                            data["birds_in_forest"]
+                        );
+    
+                        update_round_end_goal_image(
+                            2,
+                            "birds_in_grassland",
+                            data["birds_in_grassland"]
+                        );
+    
+                        update_round_end_goal_image(
+                            3,
+                            "birds_in_wetland",
+                            data["birds_in_wetland"]
+                        );
+    
+                        update_round_end_goal_image(
+                            4,
+                            "total_birds",
+                            data["total_birds"]
+                        );
+                    })
+
+                    $("#button_start_game").prop(
+                        "disabled",
+                        false
+                    );
+                }
+                else {
+                    $("#button_start_game").prop(
+                        "disabled",
+                        true
+                    );
                 }
             }
         );
