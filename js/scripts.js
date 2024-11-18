@@ -1503,3 +1503,29 @@ $(document).ready(
         );
     }
 )
+
+// Set an event listener for checking expansion checkboxes on submit
+$(document).ready(
+    function() {
+        $("#google_form").on(
+            "submit",
+            function() {
+                if(document.getElementById("col_base_game_checkbox").checked) {
+                    document.getElementById("col_base_game_checkbox_hidden").disabled = true;
+                }
+
+                if(document.getElementById("col_european_expansion_checkbox").checked) {
+                    document.getElementById("col_european_expansion_checkbox_hidden").disabled = true;
+                }
+
+                if(document.getElementById("col_oceania_expansion_checkbox").checked) {
+                    document.getElementById("col_oceania_expansion_checkbox_hidden").disabled = true;
+                }
+
+                if(document.getElementById("col_asia_checkbox").checked) {
+                    document.getElementById("col_asia_checkbox_hidden").disabled = true;
+                }
+            }
+        )
+    }
+)
