@@ -346,6 +346,19 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
     var base_value = $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
 
+    if (n_cubes > 0) {
+        $(`#col_round_${round_number}_end_cube_count`).data(
+            "round_end_goal_score",
+            n_cubes + base_value
+        )
+    }
+    else {
+        $(`#col_round_${round_number}_end_cube_count`).data(
+            "round_end_goal_score",
+            0
+        )
+    }
+    
     $(`#col_round_${round_number}_end_cube_count`).text(
         `${n_cubes + base_value} (${base_value}+${n_cubes})`
     )
@@ -760,7 +773,7 @@ $(document).ready(
                 else {
                     $("#automa_score_for_round_end_modal").text(
                         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-                            "counter"
+                            "round_end_goal_score"
                         )
                     )
                     $("#modal_end_of_round").modal("show");
