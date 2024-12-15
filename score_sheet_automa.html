@@ -26,11 +26,99 @@
                 </div>
             </div>
 
+            <div class="row p-0 justify-content-center margin_auto" id="row_score_sheet">
+
+                <table class="table table-bordered">
+
+                    <thead class="col-12">
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="col"></th>
+                            <th class="col-3 bg-info" scope="col">Player</th>
+                            <th class="col-3 bg-info" scope="col">Automa</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">Birds</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_birds" name="player_birds" min="0">
+                            </td>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_automa_birds" name="automa_played_birds" min="0">
+                            </td>
+                        </tr>
+                        
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">Bonus cards</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0">
+                            </td>
+                            <td class="col-3 bg-secondary"></td>
+                        </tr>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">End-of-round goals</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0">
+                            </td>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_automa_end-of-round_goals" name="automa_automa_end-of-round_goals" min="0">
+                            </td>
+                        </tr>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">Eggs</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_eggs" name="player_eggs" min="0">
+                            </td>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_automa_laid_eggs" name="automa_automa_laid_eggs" min="0">
+                            </td>
+                        </tr>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">Food on cards</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0">
+                            </td>
+                            <td class="col-3 bg-secondary"></td>
+                        </tr>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-info" scope="row">Tucked cards</th>
+                            <td class="col-3 bg-info">
+                                <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0">
+                            </td>
+                            <td class="col-3 bg-secondary"></td>
+                        </tr>
+
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-6 bg-success" scope="row">Total</th>
+                            <td class="col-3 bg-success">
+                                <div type="number" id="cell_player_total_score" min="0"></div>
+                            </td>
+                            <td class="col-3 bg-success">
+                                <div type="number" id="cell_automa_final_score" min="0"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="is_hidden" id="data_to_submit">
+                <input id="input_player_total_score" name="player_total_score"/>
+                <input id="input_automa_final_score" name="automa_final_score"/>
+            </div>
+
             <div class="row p-0 justify-content-center margin_auto" id="row_submit_button">
 
-                <!-- <button class="btn btn-primary" id="submit" name="submit" access="false" style="default" type="submit" onclick="populate_form_data()">
+                <button class="btn btn-primary" id="submit" name="submit" access="false" style="default" type="submit" onclick="populate_form_data()">
                     Submit score
-                </button> -->
+                </button>
             </div>
         </div>
     </form>
