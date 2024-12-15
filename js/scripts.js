@@ -346,18 +346,18 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
     var base_value = $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
 
-    if (n_cubes > 0) {
-        $(`#col_round_${round_number}_end_cube_count`).data(
-            "round_end_goal_score",
-            n_cubes + base_value
-        )
-    }
-    else {
-        $(`#col_round_${round_number}_end_cube_count`).data(
-            "round_end_goal_score",
-            0
-        )
-    }
+    // if (n_cubes > 0) {
+    $(`#col_round_${round_number}_end_cube_count`).data(
+        "round_end_goal_score",
+        n_cubes + base_value
+    )
+    // }
+    // else {
+    //     $(`#col_round_${round_number}_end_cube_count`).data(
+    //         "round_end_goal_score",
+    //         0
+    //     )
+    // }
     
     $(`#col_round_${round_number}_end_cube_count`).text(
         `${n_cubes + base_value} (${base_value}+${n_cubes})`
@@ -798,12 +798,11 @@ function end_round_cleanup(who_won) {
             )[`round_${$("#row_round_info").data("round")}`][0]
         )
 
+        var n_cubes = $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("counter");
+        var base_value = $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("base_values")[$("#row_round_info").data("round") - 1]
+
         // Update automa's round end points (0 if automa didn't score)
-        if (
-            $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-                "counter"
-            ) > 0
-        ) {
+        if (n_cubes + base_value > 0) {
             $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
                 "automa_round_end_points",
                 $("#row_round_end_cube_counts").data(
@@ -858,7 +857,7 @@ function end_round_cleanup(who_won) {
         // Update both's round end points (0 if neither automa nor user scored)
         if (
             $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-                "counter"
+                "automa_round_end_points"
             ) > 0
         ) {
             var points = Math.floor(
