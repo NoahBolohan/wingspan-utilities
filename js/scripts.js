@@ -2,7 +2,6 @@
 $(document).ready(
     function() {
         // custom_show("#row_debug_mode");
-        custom_show("#submit");
     }
 )
 
