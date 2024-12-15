@@ -1,0 +1,530 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> -->
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+</head>
+
+<body class="parallax" onload="on_load()">
+
+    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
+
+		<div class="is_hidden" id="data_to_submit">
+			<input name="automa_drawn_cards" id="automa_drawn_cards_for_post" />
+			<input name="automa_played_birds" id="automa_played_birds_for_post" />
+			<input name="automa_end-of-round_goals" id="automa_end-of-round_goals_for_post" />
+			<input name="automa_laid_eggs" id="automa_laid_eggs_for_post" />
+			<input name="automa_final_score" id="automa_final_score_for_post" />
+		</div>
+
+		</div>
+		<div class="modal fade" id="modal_round_1_end_goal_images">
+
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 1 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_1_end_buttons"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_round_2_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 2 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_2_end_buttons"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_round_3_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 3 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_3_end_buttons"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_round_4_end_goal_images">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose the round 4 end goal:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_round_4_end_buttons"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_play_a_card">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Choose played card points, or drawn card:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_play_a_card">
+	
+								<div class="col-12 p-0" id="col_modal_play_a_card">
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_draw_card">
+	
+										<button class="col-4 btn btn-info" id="col_button_draw_card" type="button">
+											Drawn card
+										</button>
+									</div>
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_0_to_4_points">
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_0_points" type="button">0</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_1_points" type="button">1</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_2_points" type="button">2</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_3_points" type="button">3</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_4_points" type="button">4</button>
+									</div>
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_buttons_play_card_5_to_9_points">
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_5_points" type="button">5</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_6_points" type="button">6</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_7_points" type="button">7</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_8_points" type="button">8</button>
+										<button class="col-2 m-1 btn btn-light" id="col_button_play_card_9_points" type="button">9</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_end_of_round">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Don't forget your teal powers! Who won this round?</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_automa_score">
+								<div class="col-5 justify-content-center"> Automa's score:</div>
+								<div class="col-2 justify-content-center" id="automa_score_for_round_end_modal"></div>
+							</div>
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_1">
+	
+								<button class="col-5 m-1 p-0 btn btn-success" id="button_i_won" type="button">Me</button>
+								<button class="col-5 m-1 p-0 btn btn-warning" id="button_we_tied" type="button">We tied</button>
+							</div>
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_end_of_round_buttons_2">
+	
+								
+								<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_scored" type="button">Automa <br>(but I scored)</button>
+								<button class="col-5 m-1 p-0 btn btn-danger" id="button_automa_won_user_did_not_score" type="button">Automa <br>(but I didn't score)</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="modal fade" id="modal_end_of_game">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header">
+	
+						<h5 class="modal-title">Don't forget your gold powers! Automa final score breakdown:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_score_breakdown">
+	
+								<table class="table">
+	
+									<tbody>
+
+										<tr>
+											<th scope="row">Drawn cards</th>
+											<td id="table_cell_drawn_cards_points"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Played birds</th>
+											<td id="table_cell_played_birds_points"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Round-end goals</th>
+											<td id="table_cell_round_end_goals_points"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Laid eggs</th>
+											<td id="table_cell_laid_eggs_points"></td>
+										</tr>
+	
+										<tr>
+											<th scope="row">Total</th>
+											<td id="table_cell_total_points"></td>
+										</tr>
+	
+										
+									</tbody>
+								</table>
+							</div>
+	
+							<div class="row p-0 justify-content-center margin_auto" id="row_end_game_button">
+	
+								<button class="col btn btn-danger" id="button_end_game" type="button">
+									End game
+								</button>
+							</div>
+	
+							<div class="row p-0 justify-content-center margin_auto" id="row_submit_button">
+
+								<button class="btn btn-danger" id="submit" name="submit" access="false" style="default" type="submit" onclick="populate_form_data()">
+									Submit
+								</button>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid mb-1" id="container_header">
+
+			<div class="row" id="row_header">
+
+				<div class="col text-center">
+					<h1>Wingspan Tracker</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="container_game_setup">
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode">
+
+				<div class="col-6" id="col_debug_mode_checkbox_text">
+					<h2>Debug mode:</h2>
+				</div>
+
+				<input class="col-6" id="col_debug_mode_checkbox" name="debug_mode" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_quick_start">
+
+				<div class="col-6" id="col_debug_mode_quick_start_checkbox_text">
+					Quick start:
+				</div>
+
+				<input class="col-6" id="col_debug_mode_quick_start_checkbox" name="debug_mode_quick_start" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_round_length">
+
+				<div class="col-6" id="col_debug_mode_round_length_checkbox_text">
+					Round length:
+				</div>
+
+				<input class="col-6" id="col_debug_mode_round_length_checkbox" name="debug_mode_round_length" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_play_a_bird">
+
+				<div class="col-6" id="col_debug_mode_play_a_bird_checkbox_text">
+					Play a bird:
+				</div>
+
+				<input class="col-6" id="col_debug_mode_play_a_bird_checkbox" name="debug_mode_play_a_bird" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_round_end_winner">
+
+				<div class="col-6" id="col_debug_mode_round_end_winner_checkbox_text">
+					Round-end winner:
+				</div>
+
+				<input class="col-6" id="col_debug_mode_round_end_winner_checkbox" name="debug_mode_round_end_winner" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-2" id="row_expansions_header">
+				<h2>Expansions</h2>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_base_game_expansion">
+
+				<div class="col-6" id="col_base_game_checkbox_text">
+					Base game:
+				</div>
+
+				<input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"></input>
+				<input class="col-6" id="col_base_game_checkbox" name="base" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_european_expansion_expansion">
+
+				<div class="col-6" id="col_european_expansion_checkbox_text">
+					European Expansion:
+				</div>
+
+				<input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+				<input class="col-6" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
+
+				<div class="col-6" id="col_oceania_expansion_checkbox_text">
+					Oceania Expansion:
+				</div>
+
+				<input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+				<input class="col-6" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_asia_expansion">
+
+				<div class="col-6" id="col_asia_checkbox_text">
+					Wingspan Asia:
+				</div>
+
+				<input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+				<input class="col-6" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-3" id="row_extra_cards_header">
+				<h2>Extra Cards</h2>
+			</div>
+
+			<div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
+
+				<div class="col-6" id="col_automubon_society_checkbox_text">
+					Automubon society:
+				</div>
+
+				<input class="col-6" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-between margin_auto" id="row_automubon_society_">
+						
+				<div class="col-6" id="col_RAOUtoma_checkbox_text">
+					RAOUtoma:
+				</div>
+
+				<input class="col-6" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-3" id="row_difficulty_header">
+				<h2>Difficulty</h2>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_difficulty">
+
+				<fieldset id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0 data-points_per_drawn_card = 0>
+					<div>
+						<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+						<label for="radio_difficulty_choice_eaglet">Eaglet (3 points per drawn card)</label>
+					</div>
+				
+					<div>
+						<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+						<label for="radio_difficulty_choice_eagle">Eagle (4 points per drawn card)</label>
+					</div>
+				
+					<div>
+						<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+						<label for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle (5 points per drawn card)</label>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="row p-0 mt-3" id="row_round_end_goals_header">
+				<h2>Rounds-End Goals</h2>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_round_info">
+
+				<button class="col-3 p-0 btn btn-xs btn-primary" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
+					Add round 1 end goal
+				</button>
+
+				<button class="col-3 p-0 btn btn-xs btn-primary" id="button_round_2_end_goal" type="button" data-enable_start_game = 0>
+					Add round 2 end goal
+				</button>
+
+				<button class="col-3 p-0 btn btn-xs btn-primary" id="button_round_3_end_goal" type="button" data-enable_start_game = 0>
+					Add round 3 end goal
+				</button>
+
+				<button class="col-3 p-0 btn btn-xs btn-primary" id="button_round_4_end_goal" type="button" data-enable_start_game = 0>
+					Add round 4 end goal
+				</button>
+			</div>
+
+			<div class="row p-0 mt-5 justify-content-center margin_auto" id="row_start_game_button">
+
+				<button class="col btn btn-primary" id="button_start_game" type="button" disabled = "true">
+					Start game
+				</button>
+			</div>
+		</div>
+
+		<div class="container-fluid mb-1 is_hidden" id="container_automa_gameplay">
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_goals">
+
+				<img class="col-3" id="img_round_1_end_goal">
+
+				<img class="col-3" id="img_round_2_end_goal">
+
+				<img class="col-3" id="img_round_3_end_goal">
+
+				<img class="col-3" id="img_round_4_end_goal">
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_cube_counts">
+
+				<div class="col-3" id="col_round_1_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0></div>
+
+				<div class="col-3" id="col_round_2_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0></div>
+
+				<div class="col-3" id="col_round_3_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0></div>
+
+				<div class="col-3" id="col_round_4_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0></div>
+			</div>
+
+			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_counts">
+
+				<div class="col-2" id="col_automa_played_birds_text" align="center">Played birds:</div>
+				<div class="col-1" id="col_automa_played_birds" align="center" data-counter = 0>0</div>
+
+				<div class="col-2" id="col_automa_drawn_cards_text" align="center">Drawn cards:</div>
+				<div class="col-1" id="col_automa_drawn_cards_count" align="center" data-counter = 0>0</div>
+
+				<div class="col-2" id="col_automa_eggs_text" align="center">Eggs:</div>
+				<div class="col-1" id="col_automa_eggs_count" align="center" data-counter = 0>0</div>
+
+				<div class="col-2" id="col_automa_total_score_text" align="center">Total:</div>
+				<div class="col-1" id="col_automa_total_score" align="center" data-counter = 0>0</div>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_automa_actions">
+
+				<table class="table" id="table_automa_actions">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col" style="width: 10%">Turn #</th>
+							<th scope="col" style="width: 45%">Primary</th>
+							<th scope="col" style="width: 45%">Secondary</th>
+						</tr>
+					</thead>
+					<tbody id="table_automa_actions_body">
+					</tbody>
+				</table>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_automa_action_button">
+
+				<button class="col btn btn-primary" id="button_automa_action" type="button">
+					Automa action
+				</button>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_end_round_button">
+
+				<button class="col btn btn-danger" id="button_end_round" type="button">
+					End round
+				</button>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_proceed_to_game_end_button">
+
+				<button class="col btn btn-danger" id="button_proceed_to_game_end" type="button">
+					Proceed to game end
+				</button>
+			</div>
+		</div>
+
+    </form>
+
+</body>
