@@ -17,6 +17,38 @@
 
     <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
 
+        <div class="modal fade" id="modal_n_players">
+
+            <div class="modal-dialog" role="document">
+    
+                <div class="modal-content">
+    
+                    <div class="modal-header">
+    
+                        <h5 class="modal-title">Choose how many players are in the game:</h5>
+                    </div>
+    
+                    <div class="modal-body">
+    
+                        <div class="p-0 container-fluid">
+    
+                            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_n_players_2_to_4">
+                                <button class="col-2 m-1 btn btn-light" id="col_button_2_players" type="button">2</button>
+                                <button class="col-2 m-1 btn btn-light" id="col_button_3_players" type="button">3</button>
+                                <button class="col-2 m-1 btn btn-light" id="col_button_4_players" type="button">4</button>
+                            </div>
+    
+                            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_n_players_5_to_7">
+                                <button class="col-2 m-1 btn btn-light" id="col_button_5_players" type="button">5</button>
+                                <button class="col-2 m-1 btn btn-light" id="col_button_6_players" type="button">6</button>
+                                <button class="col-2 m-1 btn btn-light" id="col_button_7_players" type="button">7</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid mb-1" id="container_header">
 
             <div class="row" id="row_header">
@@ -76,72 +108,47 @@
 
                     <thead>
 
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto"  id="row_player_names">
 
                             <th class="col-4 bg-info"></th>
-
-                            <th class="col-4 bg-info">
-                                <div class="row p-0 justify-content-center margin_auto">
-                                    <input class="col-12" type="text" id="cell_player_1_name" name="player_1_name" value="Player 1">
-                                </div>
-                            </th>
-
-                            <th class="col-4 bg-info">
-                                <div class="row p-0 justify-content-center margin_auto">
-                                    <input class="col-12" type="text" id="cell_player_2_name" name="player_2_name" value="Player 2">
-                                </div>
-                            </th>
                         </tr>
                     </thead>
                 
                     <tbody>
 
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_birds">
 
                             <th class="col-4 bg-info">Birds</th>
-
-                            <td class="col-4"><input type="number" id="cell_player_1_birds" name="player_1_birds" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_bonus_cards">
 
                             <th class="col-4 bg-info">Bonus cards</th>
-
-                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_bonus_cards" name="player_1_bonus_cards" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_end-of-round_goals">
+
                             <th class="col-4 bg-info" scope="row">End-of-round goals</th>
-
-                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_end-of-round_goals" name="player_1_end-of-round_goals" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_eggs">
 
                             <th class="col-4 bg-info" scope="row">Eggs</th>
-
-                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_eggs" name="player_1_eggs" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_food_on_cards">
 
                             <th class="col-4 bg-info" scope="row">Food on cards</th>
-
-                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_food_on_cards" name="player_1_food_on_cards" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_tucked_cards">
 
                             <th class="col-4 bg-info" scope="row">Tucked cards</th>
-
-                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_tucked_cards" name="player_1_tucked_cards" required></td>
                         </tr>
         
-                        <tr class="row p-0 justify-content-center margin_auto">
+                        <tr class="row p-0 justify-content-center margin_auto" id="row_total">
 
                             <th class="col-4 bg-success" scope="row">Total</th>
-
-                            <td class="col-4 bg-success"><div type="number" id="cell_player_1_total_score" min="0" required></div></td>
                         </tr>
                     </tbody>
                 </table>
