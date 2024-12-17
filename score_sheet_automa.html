@@ -31,74 +31,113 @@
                 <table class="col-12 table table-bordered">
 
                     <thead>
+
                         <tr>
-                        <th class="bg-info"></th>
-                        <th class="bg-info">Player</th>
-                        <th class="bg-info">Automa</th>
+
+                            <th class="bg-info"></th>
+
+                            <th class="bg-info">Player</th>
+
+                            <th class="bg-info" colspan="3">Automa</th>
                         </tr>
                     </thead>
                 
                     <tbody>
+
                         <tr>
+
                             <th class="bg-info" rowspan="2">Birds</th>
+
                             <td rowspan="2"><input type="number" id="cell_player_birds" name="player_birds" min="0"></td>
-                            <td>Radio</td>
+
+                                <td>
+                                    <input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+                                    <label for="radio_difficulty_choice_eaglet">3</label>
+                                </td>
+                            
+                                <td>
+                                    <input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+                                    <label for="radio_difficulty_choice_eagle">4</label>
+                                </td>
+                            
+                                <td>
+                                    <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+                                    <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
+                                </td>
                         </tr>
                 
                         <tr>
-                            <td>Secret text<input type="number" id="cell_automa_birds" name="automa_played_birds" min="0"></td>
+
+                            <td colspan="3">Secret text<input type="number" id="cell_automa_birds" name="automa_played_birds" min="0"></td>
                         </tr>
         
                         <tr>
+
                             <th class="bg-info">Bonus cards</th>
+
                             <td><input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0"></td>
-                            <td class="bg-secondary"></td>
+
+                            <td class="bg-secondary" colspan="3"></td>
                         </tr>
         
                         <tr>
                             <th class="bg-info" scope="row">End-of-round goals</th>
+
                             <td class="bg-info">
                                 <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0">
                             </td>
-                            <td class="bg-info">
+                            
+                            <td class="bg-info" colspan="3">
                                 <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0">
                             </td>
                         </tr>
         
                         <tr>
+
                             <th class="bg-info" scope="row">Eggs</th>
+
                             <td class="bg-info">
                                 <input type="number" id="cell_player_eggs" name="player_eggs" min="0">
                             </td>
-                            <td class="bg-info">
+
+                            <td class="bg-info" colspan="3">
                                 <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0">
                             </td>
                         </tr>
         
                         <tr>
+
                             <th class="bg-info" scope="row">Food on cards</th>
+
                             <td class="bg-info">
                                 <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0">
                             </td>
-                            <td class="bg-secondary"></td>
+
+                            <td class="bg-secondary" colspan="3"></td>
                         </tr>
         
                         <tr>
+
                             <th class="bg-info" scope="row">Tucked cards</th>
+
                             <td class="bg-info">
                                 <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0">
                             </td>
-                            <td class="bg-info">
+
+                            <td class="bg-info" colspan="3">
                                 <input type="number" id="cell_automa_tucked_cards" name="automa_drawn_cards" min="0">
                             </td>
                         </tr>
         
                         <tr>
+
                             <th class="bg-success" scope="row">Total</th>
+
                             <td class="bg-success">
                                 <div type="number" id="cell_player_total_score" min="0"></div>
                             </td>
-                            <td class="bg-success">
+
+                            <td class="bg-success" colspan="3">
                                 <div type="number" id="cell_automa_final_score" min="0"></div>
                             </td>
                         </tr>

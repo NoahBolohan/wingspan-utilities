@@ -110,9 +110,24 @@ $(document).ready(
 // Recompute automa total score
 function recompute_automa_total_score() {
 
+    var face_down_card_multiplier = 0;
+
+    switch($("input[name='difficulty']:checked").val()) {
+
+        case "eaglet":
+            face_down_card_multiplier = 3;
+            break;
+        case "eagle":
+            face_down_card_multiplier = 4;
+            break;
+        case "eagle-eyed_eagle":
+            face_down_card_multiplier = 5;
+            break;
+    }
+
     $("#cell_automa_final_score").text(
 
-        parseNaNOrInt(
+        face_down_card_multiplier * parseNaNOrInt(
             $("#cell_automa_birds").val()
         ) + parseNaNOrInt(
             $("#cell_automa_end-of-round_goals").val()
@@ -123,6 +138,43 @@ function recompute_automa_total_score() {
         )
    )
 }
+
+// Update automa total score on automa difficulty changes
+$(document).ready(
+    function() {
+
+        $("#radio_difficulty_choice_eaglet").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function() {
+
+        $("#radio_difficulty_choice_eagle").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function() {
+
+        $("#radio_difficulty_choice_eagle-eyed_eagle").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
 
 // Update automa total score on automa_birds change
 $(document).ready(
