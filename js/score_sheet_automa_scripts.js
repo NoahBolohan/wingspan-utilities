@@ -107,6 +107,75 @@ $(document).ready(
     }
 )
 
+// Recompute automa total score
+function recompute_automa_total_score() {
+
+    $("#cell_automa_final_score").text(
+
+        parseNaNOrInt(
+            $("#cell_automa_birds").val()
+        ) + parseNaNOrInt(
+            $("#cell_automa_end-of-round_goals").val()
+        )+ parseNaNOrInt(
+            $("#cell_automa_laid_eggs").val()
+        ) + parseNaNOrInt(
+            $("#cell_automa_tucked_cards").val()
+        )
+   )
+}
+
+// Update automa total score on automa_birds change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_birds").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+// Update automa total score on end-of-round_goals change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_end-of-round_goals").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+// Update automa total score on eggs change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_laid_eggs").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+// Update automa total score on tucked_cards change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_tucked_cards").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
 // Populate certain divs before submitting form
 function populate_form_data() {
 
