@@ -76,82 +76,72 @@
 
                     <thead>
 
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info"></th>
+                            <th class="col-4 bg-info"></th>
 
-                            <th class="bg-info">
-                                <input type="text" id="cell_player_1_name" name="player_1_name" value="Player 1">
+                            <th class="col-4 bg-info">
+                                <div class="row p-0 justify-content-center margin_auto">
+                                    <input class="col-12" type="text" id="cell_player_1_name" name="player_1_name" value="Player 1">
+                                </div>
                             </th>
 
-                            <th class="bg-info">
-                                <input type="text" id="cell_player_2_name" name="player_2_name" value="Player 2">
+                            <th class="col-4 bg-info">
+                                <div class="row p-0 justify-content-center margin_auto">
+                                    <input class="col-12" type="text" id="cell_player_2_name" name="player_2_name" value="Player 2">
+                                </div>
                             </th>
                         </tr>
                     </thead>
                 
                     <tbody>
 
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info">Birds</th>
+                            <th class="col-4 bg-info">Birds</th>
 
-                            <td><input type="number" id="cell_player_1_birds" name="player_1_birds" required></td>
-
-                            <td><input type="number" id="cell_player_2_birds" name="player_2_birds" required></td>
+                            <td class="col-4"><input type="number" id="cell_player_1_birds" name="player_1_birds" required></td>
                         </tr>
         
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info">Bonus cards</th>
+                            <th class="col-4 bg-info">Bonus cards</th>
 
-                            <td><input type="number" id="cell_player_1_bonus_cards" name="player_1_bonus_cards" required></td>
-
-                            <td><input type="number" id="cell_player_2_bonus_cards" name="player_2_bonus_cards" required></td>
+                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_bonus_cards" name="player_1_bonus_cards" required></td>
                         </tr>
         
-                        <tr>
-                            <th class="bg-info" scope="row">End-of-round goals</th>
+                        <tr class="row p-0 justify-content-center margin_auto">
+                            <th class="col-4 bg-info" scope="row">End-of-round goals</th>
 
-                            <td class="bg-info"><input type="number" id="cell_player_1_end-of-round_goals" name="player_1_end-of-round_goals" required></td>
-
-                            <td class="bg-info"><input type="number" id="cell_player_2_end-of-round_goals" name="player_2_end-of-round_goals" required></td>
+                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_end-of-round_goals" name="player_1_end-of-round_goals" required></td>
                         </tr>
         
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info" scope="row">Eggs</th>
+                            <th class="col-4 bg-info" scope="row">Eggs</th>
 
-                            <td class="bg-info"><input type="number" id="cell_player_1_eggs" name="player_1_eggs" required></td>
-
-                            <td class="bg-info"><input type="number" id="cell_player_2_eggs" name="player_2_eggs" required></td>
+                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_eggs" name="player_1_eggs" required></td>
                         </tr>
         
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info" scope="row">Food on cards</th>
+                            <th class="col-4 bg-info" scope="row">Food on cards</th>
 
-                            <td class="bg-info"><input type="number" id="cell_player_1_food_on_cards" name="player_1_food_on_cards" required></td>
-
-                            <td class="bg-info"><input type="number" id="cell_player_2_food_on_cards" name="player_2_food_on_cards" required></td>
+                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_food_on_cards" name="player_1_food_on_cards" required></td>
                         </tr>
         
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-info" scope="row">Tucked cards</th>
+                            <th class="col-4 bg-info" scope="row">Tucked cards</th>
 
-                            <td class="bg-info"><input type="number" id="cell_player_1_tucked_cards" name="player_1_tucked_cards" required></td>
-
-                            <td class="bg-info"><input type="number" id="cell_player_2_tucked_cards" name="player_2_tucked_cards" required></td>
+                            <td class="col-4 bg-info"><input type="number" id="cell_player_1_tucked_cards" name="player_1_tucked_cards" required></td>
                         </tr>
         
-                        <tr>
+                        <tr class="row p-0 justify-content-center margin_auto">
 
-                            <th class="bg-success" scope="row">Total</th>
+                            <th class="col-4 bg-success" scope="row">Total</th>
 
-                            <td class="bg-success"><div type="number" id="cell_player_1_total_score" min="0" required></div></td>
-
-                            <td class="bg-success"><div type="number" id="cell_player_2_total_score" min="0" required></div></td>
+                            <td class="col-4 bg-success"><div type="number" id="cell_player_1_total_score" min="0" required></div></td>
                         </tr>
                     </tbody>
                 </table>
@@ -161,8 +151,6 @@
             <div class="is_hidden" id="data_to_submit">
 
                 <input id="input_player_1_total_score" name="player_1_total_score"/>
-
-                <input id="input_player_2_total_score" name="player_2_total_score"/>
             </div>
 
             <div class="row p-0 justify-content-center margin_auto" id="row_submit_button">
