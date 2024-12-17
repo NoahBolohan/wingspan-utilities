@@ -1,0 +1,181 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> -->
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/score_sheet_scripts.js"></script>
+</head>
+
+<body class="parallax" onload="on_load()">
+
+    <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
+
+        <div class="container-fluid mb-1" id="container_header">
+
+            <div class="row" id="row_header">
+    
+                <div class="col text-center">
+                    <h1>Score Sheet</h1>
+                </div>
+            </div>
+
+            <div class="row p-0 mt-2" id="row_expansions_header">
+				<h2>Expansions</h2>
+			</div>
+
+			<div class="row p-0 justify-content-center margin_auto" id="row_base_game_expansion">
+
+				<div class="col-6" id="col_base_game_checkbox_text">
+					Base game:
+				</div>
+
+				<input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"></input>
+				<input class="col-6" id="col_base_game_checkbox" name="base" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_european_expansion_expansion">
+
+				<div class="col-6" id="col_european_expansion_checkbox_text">
+					European Expansion:
+				</div>
+
+				<input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+				<input class="col-6" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
+
+				<div class="col-6" id="col_oceania_expansion_checkbox_text">
+					Oceania Expansion:
+				</div>
+
+				<input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+				<input class="col-6" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_asia_expansion">
+
+				<div class="col-6" id="col_asia_checkbox_text">
+					Wingspan Asia:
+				</div>
+
+				<input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+				<input class="col-6" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
+			</div>
+
+            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_score_sheet">
+
+                <table class="col-12 table table-bordered">
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="bg-info"></th>
+
+                            <th class="bg-info">
+                                <input type="text" id="cell_player_1_name" name="player_1_name" value="Player 1">
+                            </th>
+
+                            <th class="bg-info">
+                                <input type="text" id="cell_player_2_name" name="player_2_name" value="Player 2">
+                            </th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+
+                        <tr>
+
+                            <th class="bg-info">Birds</th>
+
+                            <td><input type="number" id="cell_player_1_birds" name="player_1_birds" required></td>
+
+                            <td><input type="number" id="cell_player_2_birds" name="player_2_birds" required></td>
+                        </tr>
+        
+                        <tr>
+
+                            <th class="bg-info">Bonus cards</th>
+
+                            <td><input type="number" id="cell_player_1_bonus_cards" name="player_1_bonus_cards" required></td>
+
+                            <td><input type="number" id="cell_player_2_bonus_cards" name="player_2_bonus_cards" required></td>
+                        </tr>
+        
+                        <tr>
+                            <th class="bg-info" scope="row">End-of-round goals</th>
+
+                            <td class="bg-info"><input type="number" id="cell_player_1_end-of-round_goals" name="player_1_end-of-round_goals" required></td>
+
+                            <td class="bg-info"><input type="number" id="cell_player_2_end-of-round_goals" name="player_2_end-of-round_goals" required></td>
+                        </tr>
+        
+                        <tr>
+
+                            <th class="bg-info" scope="row">Eggs</th>
+
+                            <td class="bg-info"><input type="number" id="cell_player_1_eggs" name="player_1_eggs" required></td>
+
+                            <td class="bg-info"><input type="number" id="cell_player_2_eggs" name="player_2_eggs" required></td>
+                        </tr>
+        
+                        <tr>
+
+                            <th class="bg-info" scope="row">Food on cards</th>
+
+                            <td class="bg-info"><input type="number" id="cell_player_1_food_on_cards" name="player_1_food_on_cards" required></td>
+
+                            <td class="bg-info"><input type="number" id="cell_player_2_food_on_cards" name="player_2_food_on_cards" required></td>
+                        </tr>
+        
+                        <tr>
+
+                            <th class="bg-info" scope="row">Tucked cards</th>
+
+                            <td class="bg-info"><input type="number" id="cell_player_1_tucked_cards" name="player_1_tucked_cards" required></td>
+
+                            <td class="bg-info"><input type="number" id="cell_player_2_tucked_cards" name="player_2_tucked_cards" required></td>
+                        </tr>
+        
+                        <tr>
+
+                            <th class="bg-success" scope="row">Total</th>
+
+                            <td class="bg-success"><div type="number" id="cell_player_1_total_score" min="0" required></div></td>
+
+                            <td class="bg-success"><div type="number" id="cell_player_2_total_score" min="0" required></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="is_hidden" id="data_to_submit">
+
+                <input id="input_player_1_total_score" name="player_1_total_score"/>
+
+                <input id="input_player_2_total_score" name="player_2_total_score"/>
+            </div>
+
+            <div class="row p-0 justify-content-center margin_auto" id="row_submit_button">
+
+                <button class="btn btn-primary is_hidden" id="submit" name="submit" access="false" style="default" type="submit" onclick="populate_form_data()">
+                    Submit score
+                </button>
+            </div>
+
+            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_go_back_button">
+
+                <a class="col btn btn-danger" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
+            </div>
+        </div>
+    </form>
+</body>
