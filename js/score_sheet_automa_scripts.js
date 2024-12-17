@@ -257,4 +257,13 @@ function populate_form_data() {
     if(document.getElementById("col_asia_checkbox").checked) {
         document.getElementById("col_asia_checkbox_hidden").disabled = true;
     }
+
+    // Extra card checkboxes
+    if(document.getElementById("col_automubon_society_checkbox").checked) {
+        document.getElementById("col_automubon_society_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_RAOUtoma_checkbox").checked) {
+        document.getElementById("col_RAOUtoma_checkbox_hidden").disabled = true;
+    }
 }
