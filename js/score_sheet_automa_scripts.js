@@ -240,4 +240,21 @@ function populate_form_data() {
     $("#input_automa_final_score").val(
         $("#cell_automa_final_score").text()
     )
+
+    // Expansion checkboxes
+    if(document.getElementById("col_base_game_checkbox").checked) {
+        document.getElementById("col_base_game_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_european_expansion_checkbox").checked) {
+        document.getElementById("col_european_expansion_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_oceania_expansion_checkbox").checked) {
+        document.getElementById("col_oceania_expansion_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_asia_checkbox").checked) {
+        document.getElementById("col_asia_checkbox_hidden").disabled = true;
+    }
 }
