@@ -111,11 +111,11 @@
 
                         <tr>
 
-                            <th class="bg-info"></th>
+                            <th class="bg-info" style="width:44%"></th>
 
-                            <th class="bg-info">Player</th>
+                            <th class="bg-info" style="width:28%">Player</th>
 
-                            <th class="bg-info" colspan="6">Automa</th>
+                            <th class="bg-info" colspan="6" style="width:28%">Automa</th>
                         </tr>
                     </thead>
                 
@@ -127,43 +127,41 @@
 
                             <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
 
-                            <td align="right" style="border-right-style: hidden;">
+                            <td align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                 <label for="radio_difficulty_choice_eaglet">3</label>
                             </td>
 
-                            <td align="left" style="border-right-style: hidden;">
+                            <td align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                 <input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" style="width:75%;" required/>
                                 
                             </td>
                         
-                            <td align="right" style="border-right-style: hidden;">
+                            <td align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                 <label for="radio_difficulty_choice_eagle">4</label>
                             </td>
 
-                            <td align="left" style="border-right-style: hidden;">
+                            <td align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                 <input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" style="width:75%;"/>
                             </td>
                         
-                            <td align="right" style="border-right-style: hidden;">
+                            <td align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                 <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
                             </td>
 
-                            <td align="left">
+                            <td align="left" style="border-bottom-style: hidden;">
                                 <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" style="width:75%;"/>
                             </td>
                         </tr>
                 
                         <tr>
 
-                            <td colspan="1">x</td>
-                            <td colspan="2">Secret text<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
-                            <td colspan="1" style="border-right-style: hidden;">=</td>
-                            <td colspan="2" id="cell_automa_drawn_cards"></td>
+                            <td colspan="2" align="right" style="border-right-style: hidden;">&#x2573;</td>
+                            <td colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
                         </tr>
 
                         <tr>
 
-                            <td colspan="6">Secret text<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
+                            <td colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
                         </tr>
         
                         <tr>

@@ -52,3 +52,8 @@ table td {
     padding: 10px;
     box-sizing: border-box;
   }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
