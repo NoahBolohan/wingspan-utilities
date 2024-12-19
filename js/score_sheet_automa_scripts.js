@@ -123,12 +123,20 @@ function recompute_automa_total_score() {
         case "eagle-eyed_eagle":
             face_down_card_multiplier = 5;
             break;
-    }
+    };
+
+    $("#cell_automa_drawn_cards").text(
+        face_down_card_multiplier * parseNaNOrInt(
+            $("#cell_automa_n_drawn_cards").val()
+        )
+   );
 
     $("#cell_automa_final_score").text(
 
         face_down_card_multiplier * parseNaNOrInt(
-            $("#cell_automa_birds").val()
+            $("#cell_automa_n_drawn_cards").val()
+        ) + parseNaNOrInt(
+            $("#cell_automa_played_birds").val()
         ) + parseNaNOrInt(
             $("#cell_automa_end-of-round_goals").val()
         )+ parseNaNOrInt(
@@ -136,7 +144,7 @@ function recompute_automa_total_score() {
         ) + parseNaNOrInt(
             $("#cell_automa_tucked_cards").val()
         )
-   )
+   );
 }
 
 // Update automa total score on automa difficulty changes
@@ -176,11 +184,24 @@ $(document).ready(
     }
 )
 
+// Update automa total score on automa_n_drawn_cards change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_n_drawn_cards").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
 // Update automa total score on automa_birds change
 $(document).ready(
     function() {
 
-        $("#cell_automa_birds").on(
+        $("#cell_automa_played_birds").on(
             "change",
             function() {
                 recompute_automa_total_score()
@@ -230,6 +251,11 @@ $(document).ready(
 
 // Populate certain divs before submitting form
 function populate_form_data() {
+
+    // Automa: drawn cards
+    $("#input_automa_drawn_cards").val(
+        $("#cell_automa_drawn_cards").text()
+    )
 
     // Player: final score
     $("#input_player_total_score").val(

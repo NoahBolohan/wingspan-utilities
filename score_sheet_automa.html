@@ -123,9 +123,9 @@
 
                         <tr>
 
-                            <th style="vertical-align:middle;" class="bg-info" rowspan="2">Birds</th>
+                            <th style="vertical-align:middle;" class="bg-info" rowspan="3">Birds</th>
 
-                            <td rowspan="2"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
+                            <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
 
                             <td align="right" style="border-right-style: hidden;">
                                 <label for="radio_difficulty_choice_eaglet">3</label>
@@ -155,7 +155,15 @@
                 
                         <tr>
 
-                            <td colspan="6">Secret text<input type="number" id="cell_automa_birds" name="automa_played_birds" min="0" required></td>
+                            <td colspan="1">x</td>
+                            <td colspan="2">Secret text<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
+                            <td colspan="1" style="border-right-style: hidden;">=</td>
+                            <td colspan="2" id="cell_automa_drawn_cards"></td>
+                        </tr>
+
+                        <tr>
+
+                            <td colspan="6">Secret text<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
                         </tr>
         
                         <tr>
@@ -221,11 +229,11 @@
                             <th class="bg-success" scope="row">Total</th>
 
                             <td class="bg-success">
-                                <div type="number" id="cell_player_total_score" min="0" required></div>
+                                <div id="cell_player_total_score"></div>
                             </td>
 
                             <td class="bg-success" colspan="6">
-                                <div type="number" id="cell_automa_final_score" min="0" required></div>
+                                <div id="cell_automa_final_score"></div>
                             </td>
                         </tr>
                     </tbody>
@@ -234,6 +242,7 @@
             </div>
 
             <div class="is_hidden" id="data_to_submit">
+                <input id="input_automa_drawn_cards" name="automa_drawn_cards"/>
                 <input id="input_player_total_score" name="player_total_score"/>
                 <input id="input_automa_final_score" name="automa_final_score"/>
             </div>
