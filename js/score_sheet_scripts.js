@@ -296,12 +296,12 @@ $(document).ready(
 // Populate certain divs before submitting form
 function populate_form_data() {
 
-    // Player 1: final score
+    // Player 1: total score
     $("#input_player_1_total_score").val(
         $("#cell_player_total_score").text()
     )
 
-    // Player 2: final score
+    // Player 2: total score
     $("#input_player_2_total_score").val(
         $("#cell_player_total_score").text()
     )

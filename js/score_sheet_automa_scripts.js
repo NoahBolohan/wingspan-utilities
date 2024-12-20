@@ -131,7 +131,7 @@ function recompute_automa_total_score() {
         )
    );
 
-    $("#cell_automa_final_score").text(
+    $("#cell_automa_total_score").text(
 
         face_down_card_multiplier * parseNaNOrInt(
             $("#cell_automa_n_drawn_cards").val()
@@ -257,14 +257,14 @@ function populate_form_data() {
         $("#cell_automa_drawn_cards").text()
     )
 
-    // Player: final score
+    // Player: total score
     $("#input_player_total_score").val(
         $("#cell_player_total_score").text()
     )
 
-    // Automa: final score
-    $("#input_automa_final_score").val(
-        $("#cell_automa_final_score").text()
+    // Automa: total score
+    $("#input_automa_total_score").val(
+        $("#cell_automa_total_score").text()
     )
 
     // Expansion checkboxes

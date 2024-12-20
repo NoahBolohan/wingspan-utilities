@@ -32,8 +32,8 @@ function populate_form_data() {
         $("#table_cell_laid_eggs_points").text()
     )
 
-    // Automa: final score
-    $("#automa_final_score_for_post").val(
+    // Automa: total score
+    $("#automa_total_score_for_post").val(
         $("#table_cell_total_points").text()
     )
 }
