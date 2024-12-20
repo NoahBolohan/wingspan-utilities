@@ -5,6 +5,32 @@ $(document).ready(
     }
 )
 
+function assign_submit_href() {
+
+    var data_dict = {
+        "col_base_game_checkbox" : $("#col_base_game_checkbox"),
+        $("#col_european_expansion_checkbox"),
+        $("#col_oceania_expansion_checkbox"),
+        $("#col_asia_checkbox"),
+        $("#col_automubon_society_checkbox"),
+        $("#col_RAOUtoma_checkbox"),
+
+        $("#col_difficulty_radio"),
+        $("#cell_automa_n_drawn_cards"),
+        $("#cell_automa_played_birds"),
+        $("#cell_automa_end-of-round_goals"),
+        $("#cell_automa_laid_eggs"),
+        $("#cell_automa_total_score"),
+        $("#input_automa_drawn_cards"),
+        $("#input_automa_total_score"),
+    }
+
+    $("#href_submit_to_score_sheet").attr(
+        "href",
+        "https://noahbolohan.github.io/wingspan-tracker/score_sheet_automa.html&test"
+    );
+}
+
 // Populate certain divs before submitting form
 function populate_form_data() {
 
@@ -1287,7 +1313,8 @@ $(document).ready(
         $("#button_proceed_to_game_end").on(
             "click",
             function() {
-                populate_game_end_modal()
+                populate_game_end_modal();
+                assign_submit_href();
                 $(`#modal_end_of_game`).modal("show");
             }
         )
