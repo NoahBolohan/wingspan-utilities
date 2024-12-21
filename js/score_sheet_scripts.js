@@ -26,7 +26,8 @@ $(document).ready(
                 $(`#col_button_${value}_players`).on(
                     "click",
                     function() {
-                        generate_n_score_columns(value);
+                        generate_row_headers(44);
+                        generate_n_score_columns(value, (100-44)/value);
                         $(`#modal_n_players`).modal("hide");
                     }
                 )
@@ -35,14 +36,103 @@ $(document).ready(
     }
 )
 
-function generate_n_score_columns(n_players) {
+function generate_row_headers(width) {
+
+    // Player names
+     $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`
+        }
+    ).appendTo("#row_player_names");
+
+    // Birds
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Birds"
+    ).appendTo("#row_birds");
+
+    // Bonus cards
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Bonus cards"
+    ).appendTo("#row_bonus_cards");
+
+    // End-of-round goals
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "End-of-round goals"
+    ).appendTo("#row_end-of-round_goals");
+
+    // Eggs
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Eggs"
+    ).appendTo("#row_eggs");
+
+    // Food on cards
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Food on cards"
+    ).appendTo("#row_food_on_cards");
+
+    // Tucked cards
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Tucked cards"
+    ).appendTo("#row_tucked_cards");
+
+    // Total
+    $("<th>").attr(
+        {
+            class : "bg-success",
+            style : `width:${width}%`,
+            scope : "row"
+        }
+    ).text(
+        "Total"
+    ).appendTo("#row_total");
+}
+
+function generate_n_score_columns(n_players, width) {
     for (var i=1; i <= n_players; i++) {
 
         // Player names
         var cell = $("<th>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_name`
+                class : "bg-info",
+                id : `col_player_${i}_name`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_player_names");
         
@@ -66,8 +156,9 @@ function generate_n_score_columns(n_players) {
         // Birds
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_birds`
+                class : "bg-info",
+                id : `col_player_${i}_birds`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_birds");
         
@@ -85,8 +176,9 @@ function generate_n_score_columns(n_players) {
         // Bonus cards
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_bonus_cards`
+                class : "bg-info",
+                id : `col_player_${i}_bonus_cards`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_bonus_cards");
         
@@ -104,8 +196,9 @@ function generate_n_score_columns(n_players) {
         // End-of-round goals
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_end-of-round_goals`
+                class : "bg-info",
+                id : `col_player_${i}_end-of-round_goals`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_end-of-round_goals");
         
@@ -123,8 +216,9 @@ function generate_n_score_columns(n_players) {
         // Eggs
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_eggs`
+                class : "bg-info",
+                id : `col_player_${i}_eggs`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_eggs");
         
@@ -142,8 +236,9 @@ function generate_n_score_columns(n_players) {
         // Food on cards
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_food_on_cards`
+                class : "bg-info",
+                id : `col_player_${i}_food_on_cards`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_food_on_cards");
         
@@ -161,8 +256,9 @@ function generate_n_score_columns(n_players) {
         // Tucked cards
         var cell = $("<td>").attr(
             {
-                class : "col bg-info",
-                id : `col_player_${i}_tucked_cards`
+                class : "bg-info",
+                id : `col_player_${i}_tucked_cards`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_tucked_cards");
         
@@ -180,8 +276,9 @@ function generate_n_score_columns(n_players) {
         // Total
         var cell = $("<td>").attr(
             {
-                class : "col bg-success",
-                id : `col_player_${i}_total`
+                class : "bg-success",
+                id : `col_player_${i}_total`,
+                style : `width:${width}%`
             }
         ).appendTo("#row_total");
         
