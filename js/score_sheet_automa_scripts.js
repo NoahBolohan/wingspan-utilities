@@ -361,3 +361,55 @@ function populate_form_data() {
         document.getElementById("col_RAOUtoma_checkbox_hidden").disabled = true;
     }
 }
+
+$(document).ready(
+
+    function() {
+        $("#button_reset_sheet").on(
+            "click",
+            function () {
+                
+                // Checkboxes
+                $("#col_base_game_checkbox").prop("checked",false);
+                $("#col_european_expansion_checkbox").prop("checked",false);
+                $("#col_oceania_expansion_checkbox").prop("checked",false);
+                $("#col_asia_checkbox").prop("checked",false);
+                $("#col_automubon_society_checkbox").prop("checked",false);
+                $("#col_RAOUtoma_checkbox").prop("checked",false);
+
+                // Empty player cells
+                $("#cell_player_birds").val("");
+                $("#cell_player_bonus_cards").val("");
+                $("#cell_player_end-of-round_goals").val("");
+                $("#cell_player_eggs").val("");
+                $("#cell_player_food_on_cards").val("");
+                $("#cell_player_tucked_cards").val("");
+                $("#cell_player_total_score").text("");
+
+                // Empty automa cells
+                $("input[name='difficulty']").prop("checked",false);
+                $("#cell_automa_n_drawn_cards").val("");
+                $("#cell_automa_played_birds").val("");
+                $("#cell_automa_end-of-round_goals").val("");
+                $("#cell_automa_laid_eggs").val("");
+                $("#cell_automa_tucked_cards").val("")
+                $("#cell_automa_total_score").text("");
+            }
+        )
+    }
+)
+
+$("#cell_automa_total_score").text(
+
+    face_down_card_multiplier * parseNaNOrInt(
+        $("#cell_automa_n_drawn_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_played_birds").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_end-of-round_goals").val()
+    )+ parseNaNOrInt(
+        $("#cell_automa_laid_eggs").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_tucked_cards").val()
+    )
+);
