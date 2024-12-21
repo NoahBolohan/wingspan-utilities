@@ -86,7 +86,6 @@ function prepopulate_data()
                 )
             }
         );
-
     }
 
 $(document).ready(

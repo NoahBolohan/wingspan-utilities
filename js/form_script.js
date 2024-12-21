@@ -1,4 +1,4 @@
-var sheetName = 'Sheet1'
+var sheetName = 'Score Sheet'
 var scriptProp = PropertiesService.getScriptProperties()
 
 function intialSetup () {
@@ -11,6 +11,7 @@ function doPost (e) {
   lock.tryLock(10000)
 
   try {
+    var sheetName = e.parameter["submit"]
     var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
     var sheet = doc.getSheetByName(sheetName)
 
@@ -24,7 +25,7 @@ function doPost (e) {
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
     return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': newRow}))
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': e.parameter }))
       .setMimeType(ContentService.MimeType.JSON)
   }
 
