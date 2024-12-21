@@ -135,7 +135,7 @@ function generate_n_score_columns(n_players, width) {
         var cell = $("<th>").attr(
             {
                 class : "bg-info",
-                id : `col_player_${i}_name`,
+                id : `player_${i}_name`,
                 style : `width:${width}%`
             }
         ).appendTo("#row_player_names");
