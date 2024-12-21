@@ -378,6 +378,51 @@ function assign_player_event_listeners(i) {
     )
 }
 
+$(document).ready(
+
+    function() {
+
+        $("#button_reset_sheet").on(
+            "click",
+            function () {
+                
+                // Checkboxes
+                $("#col_base_game_checkbox").prop("checked",false);
+                $("#col_european_expansion_checkbox").prop("checked",false);
+                $("#col_oceania_expansion_checkbox").prop("checked",false);
+                $("#col_asia_checkbox").prop("checked",false);
+            }
+        )
+    }
+)
+
+function reset_inputs_for_all_players() {
+
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+        $(`#input_player_${i}_name`).val("");
+        $(`#input_player_${i}_birds`).val("");
+        $(`#input_player_${i}_bonus_cards`).val("");
+        $(`#input_player_${i}_end-of-round_goals`).val("");
+        $(`#input_player_${i}_eggs`).val("");
+        $(`#input_player_${i}_food_on_cards`).val("");
+        $(`#input_player_${i}_tucked_cards`).val("");
+        $(`#div_player_${i}_total_score`).text("");
+    }
+}
+
+$(document).ready(
+
+    function () {
+        $("#button_reset_sheet").on(
+            "click",
+            function () {
+                reset_inputs_for_all_players()
+            }
+        )
+    }
+)
+
 // Populate certain divs before submitting form
 function populate_form_data() {
 
