@@ -281,7 +281,7 @@ function generate_n_score_columns(n_players, width) {
         var cell = $("<td>").attr(
             {
                 class : "bg-success",
-                id : `col_player_${i}_total`,
+                id : `col_player_${i}_total_score`,
                 style : `width:${width}%`
             }
         ).appendTo("#row_total");
@@ -289,7 +289,7 @@ function generate_n_score_columns(n_players, width) {
         $("<div>").attr(
             {
                 type : "number",
-                id : `div_player_${i}_total`
+                id : `div_player_${i}_total_score`
             }
         ).appendTo(cell);
 
@@ -297,119 +297,94 @@ function generate_n_score_columns(n_players, width) {
         $("<input>").attr(
             {
                 type : "number",
-                id : `input_player_${i}_total_score`,
+                id : `submit_player_${i}_total_score`,
                 name : `player_${i}_total_score`
             }
         ).appendTo($("#total_scores_to_submit"));
+
+        assign_player_event_listeners(i);
     }
 }
 
 // Recompute player total score
 function recompute_player_total_score(i) {
 
-    $(`#cell_player_${i}total_score`).text(
+    $(`#div_player_${i}_total_score`).text(
 
         parseNaNOrInt(
-            $(`#cell_player_${i}birds`).val()
+            $(`#input_player_${i}_birds`).val()
         ) + parseNaNOrInt(
-            $(`#cell_player_${i}bonus_cards`).val()
+            $(`#input_player_${i}_bonus_cards`).val()
         ) + parseNaNOrInt(
-            $(`#cell_player_${i}end-of-round_goals`).val()
+            $(`#input_player_${i}_end-of-round_goals`).val()
         )+ parseNaNOrInt(
-            $(`#cell_player_${i}eggs`).val()
+            $(`#input_player_${i}_eggs`).val()
         ) + parseNaNOrInt(
-            $(`#cell_player_${i}food_on_cards`).val()
+            $(`#input_player_${i}_food_on_cards`).val()
         ) + parseNaNOrInt(
-            $(`#cell_player_${i}tucked_cards`).val()
+            $(`#input_player_${i}_tucked_cards`).val()
         )
    )
 }
 
-// Update player total score on player_birds change
-$(document).ready(
-    function() {
+function assign_player_event_listeners(i) {
 
-        $(`#cell_player_${i}birds`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
+    // Update player total score on player_birds change
+    $(`#input_player_${i}_birds`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 
-// Update player total score on bonus_cards change
-$(document).ready(
-    function() {
+    // Update player total score on bonus_cards change
+    $(`#input_player_${i}_bonus_cards`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 
-        $(`#cell_player_${i}bonus_cards`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
+    // Update player total score on end-of-round_goals change
+    $(`#input_player_${i}_end-of-round_goals`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 
-// Update player total score on end-of-round_goals change
-$(document).ready(
-    function() {
+    // Update player total score on eggs change
+    $(`#input_player_${i}_eggs`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 
-        $(`#cell_player_${i}end-of-round_goals`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
+    // Update player total score on food_on_cards change
+    $(`#input_player_${i}_food_on_cards`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 
-// Update player total score on eggs change
-$(document).ready(
-    function() {
-
-        $(`#cell_player_${i}eggs`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
-
-// Update player total score on food_on_cards change
-$(document).ready(
-    function() {
-
-        $(`#cell_player_${i}food_on_cards`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
-
-// Update player total score on tucked_cards change
-$(document).ready(
-    function() {
-
-        $(`#cell_player_${i}tucked_cards`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
-)
+    // Update player total score on tucked_cards change
+    $(`#input_player_${i}_tucked_cards`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
+}
 
 // Populate certain divs before submitting form
 function populate_form_data() {
 
     // Player i: total score
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
-        $(`#input_player_${i}_total_score`).val(
-            $(`#cell_player_${i}_total_score`).text()
+        $(`#submit_player_${i}_total_score`).val(
+            $(`#div_player_${i}_total_score`).text()
         )
     }
     
