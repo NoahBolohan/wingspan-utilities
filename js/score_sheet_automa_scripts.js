@@ -31,7 +31,6 @@ function recompute_player_total_score() {
 
 function prepopulate_data()
     {
-        alert("prepopulating");
         var data_dict = {}, hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
 
