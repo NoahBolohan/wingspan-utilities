@@ -8,26 +8,44 @@ $(document).ready(
 function assign_submit_href() {
 
     var data_dict = {
-        "col_base_game_checkbox" : $("#col_base_game_checkbox"),
-        $("#col_european_expansion_checkbox"),
-        $("#col_oceania_expansion_checkbox"),
-        $("#col_asia_checkbox"),
-        $("#col_automubon_society_checkbox"),
-        $("#col_RAOUtoma_checkbox"),
-
-        $("#col_difficulty_radio"),
-        $("#cell_automa_n_drawn_cards"),
-        $("#cell_automa_played_birds"),
-        $("#cell_automa_end-of-round_goals"),
-        $("#cell_automa_laid_eggs"),
-        $("#cell_automa_total_score"),
-        $("#input_automa_drawn_cards"),
-        $("#input_automa_total_score"),
+        "col_base_game_checkbox" : $("#col_base_game_checkbox").is(":checked"),
+        "col_european_expansion_checkbox" : $("#col_european_expansion_checkbox").is(":checked"),
+        "col_oceania_expansion_checkbox" : $("#col_oceania_expansion_checkbox").is(":checked"),
+        "col_asia_checkbox" : $("#col_asia_checkbox").is(":checked"),
+        "col_automubon_society_checkbox" : $("#col_automubon_society_checkbox").is(":checked"),
+        "col_RAOUtoma_checkbox" : $("#col_RAOUtoma_checkbox").is(":checked"),
+        "col_difficulty_radio" : $("input[name='difficulty']:checked").val(),
+        "cell_automa_n_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
+        "cell_automa_played_birds" : $("#col_automa_played_birds").data("counter"),
+        "cell_automa_end-of-round_goals" : $("#col_round_1_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_2_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_3_end_cube_count").data(
+            "automa_round_end_points"
+        ) + $("#col_round_4_end_cube_count").data(
+            "automa_round_end_points"
+        ),
+        "cell_automa_laid_eggs" : $("#col_automa_eggs_count").data("counter"),
+        "cell_automa_total_score" : $("#col_automa_total_score").data("counter"),
+        "input_automa_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
+        "input_automa_total_score" : $("#col_automa_total_score").data("counter")
     }
+
+    var href_array = [];
+    $.each(
+        data_dict,
+        function(k, v) {                    
+            var str = k + "=" + v;
+            href_array.push(str);
+        }
+    
+    );
+    var href = href_array.join("&");
 
     $("#href_submit_to_score_sheet").attr(
         "href",
-        "https://noahbolohan.github.io/wingspan-tracker/score_sheet_automa.html&test"
+        "https://noahbolohan.github.io/wingspan-tracker/score_sheet_automa.html?" + href
     );
 }
 
