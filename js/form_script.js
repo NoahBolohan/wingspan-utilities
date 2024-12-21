@@ -1,9 +1,15 @@
-var sheetName = 'Score Sheet'
 var scriptProp = PropertiesService.getScriptProperties()
+var REDIRECT_URL = "https://noahbolohan.github.io/wingspan-tracker/index.html";
 
 function intialSetup () {
   var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
   scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function redirect() {
+  return HtmlService.createHtmlOutput(
+    "<script>window.top.location.href=\"" + REDIRECT_URL + "\";</script>"
+  );
 }
 
 function doPost (e) {
@@ -24,9 +30,7 @@ function doPost (e) {
 
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-    return ContentService
-      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': e.parameter }))
-      .setMimeType(ContentService.MimeType.JSON)
+    return redirect();
   }
 
   catch (e) {
