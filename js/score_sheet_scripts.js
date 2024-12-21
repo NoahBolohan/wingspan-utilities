@@ -26,11 +26,15 @@ $(document).ready(
                 $(`#col_button_${value}_players`).on(
                     "click",
                     function() {
+                        $("#row_score_sheet").data(
+                            "n_players",
+                            value
+                        );
                         generate_row_headers(44);
                         generate_n_score_columns(value, (100-44)/value);
                         $(`#modal_n_players`).modal("hide");
                     }
-                )
+                );
             }
         )
     }
@@ -288,26 +292,35 @@ function generate_n_score_columns(n_players, width) {
                 id : `div_player_${i}_total`
             }
         ).appendTo(cell);
+
+        // Total to submit
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_total_score`,
+                name : `player_${i}_total_score`
+            }
+        ).appendTo($("#total_scores_to_submit"));
     }
 }
 
 // Recompute player total score
-function recompute_player_total_score() {
+function recompute_player_total_score(i) {
 
-    $("#cell_player_total_score").text(
+    $(`#cell_player_${i}total_score`).text(
 
         parseNaNOrInt(
-            $("#cell_player_birds").val()
+            $(`#cell_player_${i}birds`).val()
         ) + parseNaNOrInt(
-            $("#cell_player_bonus_cards").val()
+            $(`#cell_player_${i}bonus_cards`).val()
         ) + parseNaNOrInt(
-            $("#cell_player_end-of-round_goals").val()
+            $(`#cell_player_${i}end-of-round_goals`).val()
         )+ parseNaNOrInt(
-            $("#cell_player_eggs").val()
+            $(`#cell_player_${i}eggs`).val()
         ) + parseNaNOrInt(
-            $("#cell_player_food_on_cards").val()
+            $(`#cell_player_${i}food_on_cards`).val()
         ) + parseNaNOrInt(
-            $("#cell_player_tucked_cards").val()
+            $(`#cell_player_${i}tucked_cards`).val()
         )
    )
 }
@@ -316,10 +329,10 @@ function recompute_player_total_score() {
 $(document).ready(
     function() {
 
-        $("#cell_player_birds").on(
+        $(`#cell_player_${i}birds`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -329,10 +342,10 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#cell_player_bonus_cards").on(
+        $(`#cell_player_${i}bonus_cards`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -342,10 +355,10 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#cell_player_end-of-round_goals").on(
+        $(`#cell_player_${i}end-of-round_goals`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -355,10 +368,10 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#cell_player_eggs").on(
+        $(`#cell_player_${i}eggs`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -368,10 +381,10 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#cell_player_food_on_cards").on(
+        $(`#cell_player_${i}food_on_cards`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -381,10 +394,10 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#cell_player_tucked_cards").on(
+        $(`#cell_player_${i}tucked_cards`).on(
             "change",
             function() {
-                recompute_player_total_score()
+                recompute_player_total_score(i)
             }
         )
     }
@@ -393,16 +406,13 @@ $(document).ready(
 // Populate certain divs before submitting form
 function populate_form_data() {
 
-    // Player 1: total score
-    $("#input_player_1_total_score").val(
-        $("#cell_player_total_score").text()
-    )
-
-    // Player 2: total score
-    $("#input_player_2_total_score").val(
-        $("#cell_player_total_score").text()
-    )
-
+    // Player i: total score
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        $(`#input_player_${i}_total_score`).val(
+            $(`#cell_player_${i}_total_score`).text()
+        )
+    }
+    
     // Expansion checkboxes
     if(document.getElementById("col_base_game_checkbox").checked) {
         document.getElementById("col_base_game_checkbox_hidden").disabled = true;
