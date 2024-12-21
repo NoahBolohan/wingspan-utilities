@@ -57,3 +57,9 @@ table {
     table-layout: fixed;
     width: 100%;
 }
+
+.input-vertical {
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+  }
