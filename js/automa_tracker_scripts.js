@@ -27,9 +27,7 @@ function assign_submit_href() {
             "automa_round_end_points"
         ),
         "cell_automa_laid_eggs" : $("#col_automa_eggs_count").data("counter"),
-        "cell_automa_total_score" : $("#col_automa_total_score").data("counter"),
-        // "input_automa_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
-        // "input_automa_total_score" : $("#col_automa_total_score").data("counter")
+        "cell_automa_total_score" : $("#col_automa_total_score").data("counter")
     }
 
     var href_array = [];

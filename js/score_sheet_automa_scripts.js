@@ -87,7 +87,6 @@ function prepopulate_data()
             }
         );
 
-        // file:///C:/Git/wingspan-tracker/score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=false&col_oceania_expansion_checkbox=false&col_asia_checkbox=false&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&col_difficulty_radio=eagle&cell_automa_n_drawn_cards=2&cell_automa_played_birds=0&cell_automa_end-of-round_goals=22&cell_automa_laid_eggs=1&cell_automa_total_score=23
     }
 
 $(document).ready(
