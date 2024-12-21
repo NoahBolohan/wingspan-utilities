@@ -1,7 +1,7 @@
 // Open with debug options
 $(document).ready(
     function() {
-        custom_show("#row_debug_mode");
+        // custom_show("#row_debug_mode");
     }
 )
 
@@ -28,8 +28,8 @@ function assign_submit_href() {
         ),
         "cell_automa_laid_eggs" : $("#col_automa_eggs_count").data("counter"),
         "cell_automa_total_score" : $("#col_automa_total_score").data("counter"),
-        "input_automa_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
-        "input_automa_total_score" : $("#col_automa_total_score").data("counter")
+        // "input_automa_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
+        // "input_automa_total_score" : $("#col_automa_total_score").data("counter")
     }
 
     var href_array = [];
@@ -41,6 +41,7 @@ function assign_submit_href() {
         }
     
     );
+
     var href = href_array.join("&");
 
     $("#href_submit_to_score_sheet").attr(

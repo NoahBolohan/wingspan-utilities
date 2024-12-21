@@ -29,6 +29,76 @@ function recompute_player_total_score() {
    )
 }
 
+function prepopulate_data()
+    {
+        var data_dict = {}, hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            data_dict[hash[0]] = hash[1];
+        }
+
+        var checkboxes = [
+            "col_base_game_checkbox",
+            "col_european_expansion_checkbox",
+            "col_oceania_expansion_checkbox",
+            "col_asia_checkbox",
+            "col_automubon_society_checkbox",
+            "col_RAOUtoma_checkbox"
+        ]
+
+        var radios = [
+            "col_difficulty_radio"
+        ]
+
+        var inputs = [
+            "cell_automa_n_drawn_cards",
+            "cell_automa_played_birds",
+            "cell_automa_end-of-round_goals",
+            "cell_automa_laid_eggs",
+            "cell_automa_total_score"
+        ]
+
+        $.each(
+            checkboxes,
+            function(idx, v) {               
+                $(`#${v}`).prop(
+                    "checked",
+                    data_dict[v] == "true"
+                )
+            }
+        );
+
+        $.each(
+            radios,
+            function(idx, v) {                    
+                $(`input:radio[value=${data_dict[v]}]`).prop("checked", true);
+            }
+        );
+
+        $.each(
+            inputs,
+            function(idx, v) {
+                $(`#${v}`).val(
+                    data_dict[v]
+                )
+            }
+        );
+
+        // file:///C:/Git/wingspan-tracker/score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=false&col_oceania_expansion_checkbox=false&col_asia_checkbox=false&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&col_difficulty_radio=eagle&cell_automa_n_drawn_cards=2&cell_automa_played_birds=0&cell_automa_end-of-round_goals=22&cell_automa_laid_eggs=1&cell_automa_total_score=23
+    }
+
+$(document).ready(
+    function () {
+        if(window.location.href.includes("html?")) {
+            prepopulate_data();
+            recompute_automa_total_score();
+        }
+    }
+)
+
 // Update player total score on player_birds change
 $(document).ready(
     function() {
