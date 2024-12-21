@@ -7,6 +7,13 @@ Web app to track Wingspan games. Designed for mobile use.
 - [Github page](https://noahbolohan.github.io/wingspan-tracker/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc/edit?gid=0#gid=0)
 
+## To-do
+
+- Have names show up more clearly for higher player-count score sheets
+- Upload image -> auto-fill score sheets
+- Redirect to main page after sheet submit
+- Sheet reset/clear button
+
 ## Have feedback/requests/issues?
 
 Please [create a new issue](https://github.com/NoahBolohan/wingspan-tracker/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
