@@ -9,7 +9,7 @@ Web app to track Wingspan games. Designed for mobile use.
 
 ## Have feedback/requests/issues?
 
-Please [create a new issue](https://github.com/jamiewilson/form-to-google-sheet/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
+Please [create a new issue](https://github.com/NoahBolohan/wingspan-tracker/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
 
 ## Related/Inspirational Articles
 
