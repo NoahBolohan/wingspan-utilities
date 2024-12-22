@@ -27,7 +27,7 @@ $(document).ready(
                     "click",
                     function() {
 
-                        var width_p = 44;
+                        var width_p = 34;
 
                         $("#row_score_sheet").data(
                             "n_players",

@@ -10,12 +10,19 @@
 
 @font-face {
     font-family: "CardenioModern";
-    src: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
+    src: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
 
 }
 
 .fonttest {
     font-family: "CardenioModern";
+}
+
+html *
+{
+   font-size: 15pt;
+   color: #000 !important;
+   font-family: "CardenioModern" !important;
 }
 
 body {
@@ -63,3 +70,15 @@ table {
     text-orientation: sideways;
     transform: rotate(180deg);
   }
+
+.nav-button {
+    font-size: 18pt;
+}
+
+h1 {
+    font-size: 25pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
