@@ -404,7 +404,7 @@ function reset_inputs_for_all_players() {
 
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
 
-        $(`#input_player_${i}_name`).val("");
+        $(`#input_player_${i}_name`).val(`Player ${i}`);
         $(`#input_player_${i}_birds`).val("");
         $(`#input_player_${i}_bonus_cards`).val("");
         $(`#input_player_${i}_end-of-round_goals`).val("");
