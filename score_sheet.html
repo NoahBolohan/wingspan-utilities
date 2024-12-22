@@ -102,7 +102,7 @@
 				<input class="col-6" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
 			</div>
 
-            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_score_sheet">
+            <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
 
                 <table class="col-12 table table-bordered">
 
@@ -133,23 +133,22 @@
 
             <div class="is_hidden" id="total_scores_to_submit"></div>
 
-            <div class="row p-0 justify-content-center margin_auto" id="row_submit_button">
+            <div class="row p-0 justify-content-center margin_auto" id="row_sheet_buttons">
 
-                <button class="btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet" access="false" style="default" type="submit" onclick="populate_form_data()">
-                    Submit score
-                </button>
-            </div>
-
-            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_reset_sheet">
-
-                <button class="btn btn-warning nav-button" type="button" id="button_reset_sheet">
+                <button class="col-5 btn btn-warning nav-button" type="button" id="button_reset_sheet">
                     Reset score sheet
+                </button>
+
+                <div class="col-1"></div>
+
+                <button class="col-5 btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet" access="false" style="default" type="submit" onclick="populate_form_data()">
+                    Submit score
                 </button>
             </div>
 
             <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_go_back_button">
 
-                <a class="col btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
+                <a class="col-6 btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
             </div>
         </div>
     </form>
