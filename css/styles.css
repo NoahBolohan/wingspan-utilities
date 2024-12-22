@@ -69,6 +69,7 @@ table {
     writing-mode: vertical-lr;
     text-orientation: sideways;
     transform: rotate(180deg);
+    /* line-height: normal; */
   }
 
 .nav-button {
@@ -90,5 +91,9 @@ h2 {
     flex-direction: column;
     text-align: center;
     border: none;
-    /* Column | row */
-  }
+}
+
+input::-webkit-input-placeholder {
+    position: relative;
+    right: 15px;
+}

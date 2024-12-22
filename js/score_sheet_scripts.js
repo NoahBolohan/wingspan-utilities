@@ -156,7 +156,7 @@ function generate_n_score_columns(n_players, width_p) {
                 type : "text",
                 id : `input_player_${i}_name`,
                 name : `player_${i}_name`,
-                value : `Player ${i}`,
+                placeholder : `Player ${i}`,
                 style : "height:80px;"
             }
         ).appendTo(div);
@@ -430,7 +430,14 @@ $(document).ready(
 // Populate certain divs before submitting form
 function populate_form_data() {
 
-    // Player i: total score
+    // Player names
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+         if ($(`#input_player_${i}_name`).val() == "") {
+            $(`#input_player_${i}_name`).val(`Player ${i}`);
+         }
+    }
+
+    // Player total scores
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
         $(`#submit_player_${i}_total_score`).val(
             $(`#div_player_${i}_total_score`).text()
