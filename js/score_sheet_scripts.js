@@ -436,6 +436,11 @@ function populate_form_data() {
             $(`#div_player_${i}_total_score`).text()
         )
     }
+
+    // Number of players
+    $("#submit_n_players").val(
+        $("#row_score_sheet").data("n_players")
+    )
     
     // Expansion checkboxes
     if(document.getElementById("col_base_game_checkbox").checked) {
