@@ -327,79 +327,90 @@
 				<input class="col-6" id="col_debug_mode_round_end_winner_checkbox" name="debug_mode_round_end_winner" type="checkbox" value="yes"></input>
 			</div>
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_checkboxes">
-    
+			<div class="row justify-content-center margin_auto" id="row_checkboxes">
+
                 <div class="col-6">
 
-                    <div class="row p-0 justify-content-center margin_auto" id="row_expansions_header">
-                        <h2>Expansions</h2>
+                  <div class="card">
+
+                    <div class="card-header py-1 text-center" id="row_expansions_header">
+                        <h2 class="p-0 m-0">Expansions</h2>
                     </div>
+
+                    <div class="card-body p-0">
+
+                        <div class="row p-0 margin_auto" id="row_base_game_expansion">
         
-                    <div class="row p-0 justify-content-center margin_auto" id="row_base_game_expansion">
-        
-                        <div class="col-11 p-0" id="col_base_game_checkbox_text">
-                            Base game:
+                            <div class="col-10 py-0 px-1" id="col_base_game_checkbox_text">
+                                Base game:
+                            </div>
+            
+                            <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_base_game_checkbox" name="base" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_base_game_checkbox" name="base" type="checkbox" value="yes"></input>
-                    </div>
-        
-                    <div class="row p-0 justify-content-center margin_auto" id="row_european_expansion_expansion">
-        
-                        <div class="col-11 p-0" id="col_european_expansion_checkbox_text">
-                            European Expansion:
+            
+                        <div class="row p-0 margin_auto" id="row_european_expansion_expansion">
+            
+                            <div class="col-10 py-0 px-1" id="col_european_expansion_checkbox_text">
+                                European Expansion:
+                            </div>
+            
+                            <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
-                    </div>
-        
-                    <div class="row p-0 justify-content-center margin_auto" id="row_oceania_expansion_expansion">
-        
-                        <div class="col-11 p-0" id="col_oceania_expansion_checkbox_text">
-                            Oceania Expansion:
+            
+                        <div class="row p-0 margin_auto" id="row_oceania_expansion_expansion">
+            
+                            <div class="col-10 py-0 px-1" id="col_oceania_expansion_checkbox_text">
+                                Oceania Expansion:
+                            </div>
+            
+                            <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
-                    </div>
-        
-                    <div class="row p-0 justify-content-center margin_auto" id="row_asia_expansion">
-        
-                        <div class="col-11 p-0" id="col_asia_checkbox_text">
-                            Wingspan Asia:
+            
+                        <div class="row p-0 margin_auto" id="row_asia">
+            
+                            <div class="col-10 py-0 px-1" id="col_asia_checkbox_text">
+                                Wingspan Asia:
+                            </div>
+            
+                            <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
                     </div>
+                  </div>
                 </div>
 
                 <div class="col-6">
 
-                    <div class="row p-0 justify-content-center margin_auto" id="row_extra_cards_header">
-                        <h2>Extra Cards</h2>
-                    </div>
+                    <div class="card">
+  
+                      <div class="card-header py-1 text-center" id="row_extra_cards_header">
+                        <h2 class="p-0 m-0">Extra cards</h2>
+                      </div>
+  
+                      <div class="card-body p-0">
+  
+                        <div class="row p-0 margin_auto" id="row_automubon_society">
         
-                    <div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
-        
-                        <div class="col-11 p-0" id="col_automubon_society_checkbox_text">
-                            Automubon society:
+                            <div class="col-10 py-0 px-1" id="col_automubon_society_checkbox_text">
+                                Automubon society:
+                            </div>
+            
+                            <input id="col_automubon_society_checkbox_hidden" name="automubon_society" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_automubon_society_checkbox_hidden" name="automubon_society" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes"></input>
-                    </div>
-        
-                    <div class="row p-0 justify-content-between margin_auto" id="row_automubon_society_">
-                                
-                        <div class="col-11 p-0" id="col_RAOUtoma_checkbox_text">
-                            RAOUtoma:
+            
+                        <div class="row p-0 margin_auto" id="row_raoutoma">
+                                    
+                            <div class="col-10 py-0 px-1" id="col_RAOUtoma_checkbox_text">
+                                RAOUtoma:
+                            </div>
+            
+                            <input id="col_RAOUtoma_checkbox_hidden" name="RAOUtoma" type="hidden" value="no"></input>
+                            <input class="col-1 py-0 px-1" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
                         </div>
-        
-                        <input id="col_RAOUtoma_checkbox_hidden" name="RAOUtoma" type="hidden" value="no"></input>
-                        <input class="col-1 p-0" id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes"></input>
                     </div>
                 </div>
             </div>
