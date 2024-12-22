@@ -402,7 +402,7 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     // }
     
     $(`#col_round_${round_number}_end_cube_count`).text(
-        `${n_cubes + base_value} (${base_value}+${n_cubes})`
+        `${n_cubes + base_value}\n(${base_value}+\u25A8\u00D7 ${n_cubes})`
     )
 }
 
@@ -1036,6 +1036,8 @@ $(document).ready(
                     "#container_automa_gameplay"
                 );
 
+                custom_hide("#row_debug_mode");
+
                 // Debug option
                 if ($("#col_debug_mode_quick_start_checkbox").is(":checked")) {
                     $("#col_debug_mode_quick_start_checkbox").prop(
@@ -1266,7 +1268,7 @@ function populate_game_end_modal() {
             $("#col_difficulty_radio").data(
                 "points_per_drawn_card"
             )
-        } * ${
+        } \u00D7 ${
             $("#col_automa_drawn_cards_count").data(
                 "counter"
             )

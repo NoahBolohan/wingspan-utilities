@@ -82,3 +82,13 @@ h1 {
 h2 {
     font-size: 20pt;
 }
+
+.centered-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    /* Column | row */
+  }

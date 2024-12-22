@@ -12,6 +12,7 @@ Web app to track Wingspan games. Designed for mobile use.
 - Upload image -> auto-fill score sheets
 - Redirect to main page after sheet submit
 - Make everything look nice
+- Disable round end buttons on select
 
 ## Have feedback/requests/issues?
 
