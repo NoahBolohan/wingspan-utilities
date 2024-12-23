@@ -415,29 +415,54 @@
                 </div>
             </div>
 
-			<div class="row p-0 mt-2" id="row_difficulty_header">
-				<h2>Difficulty</h2>
-			</div>
+			<div class="row mt-3 margin_auto" id="row_difficulty">
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_difficulty">
+                <div class="col-12 p-0">
 
-				<fieldset id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0 data-points_per_drawn_card = 0>
-					<div>
-						<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
-						<label for="radio_difficulty_choice_eaglet">Eaglet (3 points per drawn card)</label>
-					</div>
-				
-					<div>
-						<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
-						<label for="radio_difficulty_choice_eagle">Eagle (4 points per drawn card)</label>
-					</div>
-				
-					<div>
-						<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
-						<label for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle (5 points per drawn card)</label>
-					</div>
-				</fieldset>
-			</div>
+                  <div class="card">
+
+                    <div class="card-header py-1 text-center" id="row_expansions_header">
+                        <h2 class="p-0 m-0">Difficulty</h2>
+                    </div>
+
+                    <div class="card-body p-0">
+
+                        <fieldset id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0 data-points_per_drawn_card = 0>
+
+							<div class="row p-0 margin_auto" id="row_difficulty_eaglet">
+
+								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+
+									<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+								</div>
+								
+								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eaglet">Eaglet (3 points per drawn card)</label>
+							</div>
+						
+							<div class="row p-0 margin_auto" id="row_difficulty_eagle">
+
+								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+
+									<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+								</div>
+
+								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle">Eagle (4 points per drawn card)</label>
+							</div>
+						
+							<div class="row p-0 margin_auto" id="row_difficulty_eagle-eyed_eagle">
+
+								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+
+									<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+								</div>
+
+								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle (5 points per drawn card)</label>
+							</div>
+						</fieldset>
+                    </div>
+                  </div>
+                </div>
+            </div>
 
 			<div class="row p-0 mt-2" id="row_round_end_goals_header">
 				<h2>Rounds-End Goals</h2>
