@@ -18,6 +18,10 @@ Web app to track Wingspan games. Designed for mobile use.
 
 Please [create a new issue](https://github.com/NoahBolohan/wingspan-tracker/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
 
+## Credits
+
+- Background art by [Diana Lisiecka](https://www.artstation.com/dianalisiecka)
+
 ## Related/Inspirational Articles
 
 - [Google Spreadsheets as a Database – INSERT with Apps Script form POST/GET submit method](https://mashe.hawksey.info/2011/10/google-spreadsheets-as-a-database-insert-with-apps-script-form-postget-submit-method/)
