@@ -415,7 +415,7 @@
                 </div>
             </div>
 
-			<div class="row mt-3 margin_auto" id="row_difficulty">
+			<div class="row mt-4 margin_auto" id="row_difficulty">
 
                 <div class="col-12 p-0">
 
@@ -464,39 +464,91 @@
                 </div>
             </div>
 
-			<div class="row p-0 mt-2" id="row_round_end_goals_header">
-				<h2>Rounds-End Goals</h2>
-			</div>
+			<div class="row mt-4 margin_auto" id="row_round_end_goals">
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_round_info">
+                <div class="col-12 p-0">
 
-				<button class="col-3 p-0 btn btn-xs btn-info nav-button" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
-					Add round 1 end goal
-				</button>
+                  <div class="card">
 
-				<button class="col-3 p-0 btn btn-xs btn-info nav-button" id="button_round_2_end_goal" type="button" data-enable_start_game = 0>
-					Add round 2 end goal
-				</button>
+                    <div class="card-header py-1 text-center" id="row_round_end_goals_header">
+                        <h2 class="p-0 m-0">Round-end goals</h2>
+                    </div>
 
-				<button class="col-3 p-0 btn btn-xs btn-info nav-button" id="button_round_3_end_goal" type="button" data-enable_start_game = 0>
-					Add round 3 end goal
-				</button>
+                    <div class="card-body p-0">
 
-				<button class="col-3 p-0 btn btn-xs btn-info nav-button" id="button_round_4_end_goal" type="button" data-enable_start_game = 0>
-					Add round 4 end goal
-				</button>
-			</div>
+                        <div class="row p-0 justify-content-center margin_auto" id="row_round_info">
 
-			<div class="row p-0 mt-3 justify-content-center margin_auto" id="row_start_game_button">
+							<div class="col-3 p-1">
 
-				<button class="col btn btn-success nav-button" id="button_start_game" type="button" disabled = "true">
+								<div class="row p-0 justify-content-center margin_auto">
+									Round 1:
+								</div>
+
+								<div class="row p-0 justify-content-center margin_auto">
+
+									<button class="p-0 btn btn-xs btn-info round-end-goal-button" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
+										&#x2795;
+									</button>
+								</div>
+							</div>
+
+							<div class="col-3 p-1">
+
+								<div class="row p-0 justify-content-center margin_auto">
+									Round 2:
+								</div>
+
+								<div class="row p-0 justify-content-center margin_auto">
+									
+									<button class="p-0 btn btn-xs btn-info round-end-goal-button" id="button_round_2_end_goal" type="button" data-enable_start_game = 0>
+										&#x2795;
+									</button>
+								</div>
+							</div>
+
+							<div class="col-3 p-1">
+
+								<div class="row p-0 justify-content-center margin_auto">
+									Round 3:
+								</div>
+
+								<div class="row p-0 justify-content-center margin_auto">
+									
+									<button class="p-0 btn btn-xs btn-info round-end-goal-button" id="button_round_3_end_goal" type="button" data-enable_start_game = 0>
+										&#x2795;
+									</button>
+								</div>
+							</div>
+
+							<div class="col-3 p-1">
+
+								<div class="row p-0 justify-content-center margin_auto">
+									Round 4:
+								</div>
+
+								<div class="row p-0 justify-content-center margin_auto">
+									
+									<button class="p-0 btn btn-xs btn-info round-end-goal-button" id="button_round_4_end_goal" type="button" data-enable_start_game = 0>
+										&#x2795;
+									</button>
+								</div>
+							</div>
+						</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+			<div class="row p-0 mt-4 justify-content-center margin_auto" id="row_start_game_button">
+
+				<button class="col-10 btn btn-success nav-button" id="button_start_game" type="button" disabled = "true">
 					Start game
 				</button>
 			</div>
 
-			<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
+			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_go_back_button">
 
-                <a class="col btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
+                <a class="col-6 btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
             </div>
 		</div>
 

@@ -260,7 +260,6 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
     $("<img>").attr(
         {
             "src" : new_url,
-            "class" : "col-3 p-0",
             "style" : "width : 100%"
         }
     ).appendTo(
@@ -1087,6 +1086,14 @@ function generate_round_end_goal_button_for_round(round_number, round_end_goal, 
                     round_number,
                     round_end_goal,
                     data[round_end_goal]
+                );
+
+                $(`#button_round_${round_number}_end_goal`).css(
+                    {
+                        "background-color": "transparent",
+                        // "outline" : "none",
+                        "border" : "none"
+                    }
                 );
             })
 
