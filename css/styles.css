@@ -150,3 +150,19 @@ input::-webkit-input-placeholder {
     background-color: rgba(255,255,255,0.6);
     background-blend-mode: lighten;
 }
+
+body {
+    margin:0;
+    padding:0;
+
+    background-image: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/backgrounds/base_game_forest_habitat.jpg");
+
+    min-height: 99svh;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.4);
+    background-blend-mode: lighten;
+}
