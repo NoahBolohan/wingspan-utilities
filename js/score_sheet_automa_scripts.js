@@ -66,7 +66,8 @@ function prepopulate_data()
             "col_oceania_expansion_checkbox",
             "col_asia_checkbox",
             "col_automubon_society_checkbox",
-            "col_RAOUtoma_checkbox"
+            "col_RAOUtoma_checkbox",
+            "col_automasian_alliance_checkbox"
         ]
 
         var radios = [
@@ -380,6 +381,10 @@ function populate_form_data() {
     if(document.getElementById("col_RAOUtoma_checkbox").checked) {
         document.getElementById("col_RAOUtoma_checkbox_hidden").disabled = true;
     }
+
+    if(document.getElementById("col_automasian_alliance_checkbox").checked) {
+        document.getElementById("col_automasian_alliance_checkbox_hidden").disabled = true;
+    }
 }
 
 $(document).ready(
@@ -396,6 +401,7 @@ $(document).ready(
                 $("#col_asia_checkbox").prop("checked",false);
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
+                $("#col_automasian_alliance_checkbox").prop("checked",false);
 
                 // Empty player cells
                 $("#cell_player_birds").val("");

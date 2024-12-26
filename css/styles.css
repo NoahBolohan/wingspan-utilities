@@ -151,6 +151,14 @@ input::-webkit-input-placeholder {
     background-blend-mode: lighten;
 }
 
+#row_automasian_alliance {
+    background-image: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/asia.png");
+    background-position: left;
+    background-size: 130% auto;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
 body {
     margin:0;
     padding:0;
