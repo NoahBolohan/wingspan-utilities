@@ -8,7 +8,7 @@ function parseNaNOrInt(val) {
     return parsed_int;
  }
 
- // Assign a random background on load
+// Assign a random background on load
 $(document).ready(
 
     function () {
@@ -23,6 +23,38 @@ $(document).ready(
                         data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
                     })`
                 );
+            }
+        )
+    }
+)
+
+// Show duet token row
+$(document).ready(
+
+    function () {
+
+        $("#col_automasian_alliance_checkbox").change(
+            function () {
+                if ($("#col_automasian_alliance_checkbox").is(":checked")) {
+
+                    $("#row_duet_tokens").css(
+                        "visibility",
+                        "visible"
+                    );
+                } 
+                else {
+
+                    $("#row_duet_tokens").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    $("#cell_player_duet_tokens").val("");
+                    $("#cell_automa_duet_tokens").val("");
+                    
+                    recompute_player_total_score();
+                    recompute_automa_total_score();
+                }
             }
         )
     }
@@ -45,6 +77,8 @@ function recompute_player_total_score() {
             $("#cell_player_food_on_cards").val()
         ) + parseNaNOrInt(
             $("#cell_player_tucked_cards").val()
+        ) + parseNaNOrInt(
+            $("#cell_player_duet_tokens").val()
         )
    )
 }
@@ -196,6 +230,19 @@ $(document).ready(
     }
 )
 
+// Update player total score on tucked_cards change
+$(document).ready(
+    function() {
+
+        $("#cell_player_duet_tokens").on(
+            "change",
+            function() {
+                recompute_player_total_score()
+            }
+        )
+    }
+)
+
 // Recompute automa total score
 function recompute_automa_total_score() {
 
@@ -232,6 +279,8 @@ function recompute_automa_total_score() {
             $("#cell_automa_laid_eggs").val()
         ) + parseNaNOrInt(
             $("#cell_automa_tucked_cards").val()
+        ) + parseNaNOrInt(
+            $("#cell_automa_duet_tokens").val()
         )
    );
 }
@@ -338,6 +387,19 @@ $(document).ready(
     }
 )
 
+// Update automa total score on tucked_cards change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_duet_tokens").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
 // Populate certain divs before submitting form
 function populate_form_data() {
 
@@ -410,6 +472,7 @@ $(document).ready(
                 $("#cell_player_eggs").val("");
                 $("#cell_player_food_on_cards").val("");
                 $("#cell_player_tucked_cards").val("");
+                $("#cell_player_duet_tokens").val("");
                 $("#cell_player_total_score").text("");
 
                 // Empty automa cells
@@ -418,24 +481,10 @@ $(document).ready(
                 $("#cell_automa_played_birds").val("");
                 $("#cell_automa_end-of-round_goals").val("");
                 $("#cell_automa_laid_eggs").val("");
-                $("#cell_automa_tucked_cards").val("")
+                $("#cell_automa_tucked_cards").val("");
+                $("#cell_automa_duet_tokens").val("");
                 $("#cell_automa_total_score").text("");
             }
         )
     }
 )
-
-$("#cell_automa_total_score").text(
-
-    face_down_card_multiplier * parseNaNOrInt(
-        $("#cell_automa_n_drawn_cards").val()
-    ) + parseNaNOrInt(
-        $("#cell_automa_played_birds").val()
-    ) + parseNaNOrInt(
-        $("#cell_automa_end-of-round_goals").val()
-    )+ parseNaNOrInt(
-        $("#cell_automa_laid_eggs").val()
-    ) + parseNaNOrInt(
-        $("#cell_automa_tucked_cards").val()
-    )
-);
