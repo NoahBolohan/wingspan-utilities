@@ -1,0 +1,19 @@
+{
+    "backgrounds": [
+        "base_game_forest_habitat.jpg",
+        "base_game_grassland_habitat.jpg",
+        "base_game_wetland_habitat.jpg",
+        "european_expansion_forest_habitat.jpg",
+        "european_expansion_grassland_habitat.jpg",
+        "european_expansion_wetland_habitat.jpg",
+        "hills_forest_habitat.jpg",
+        "hills_grassland_habitat.jpg",
+        "hills_wetland_habitat.jpg",
+        "sakura_forest_habitat.jpg",
+        "sakura_grassland_habitat.jpg",
+        "sakura_wetland_habitat.jpg",
+        "summer_solstice_forest_habitat.jpg",
+        "summer_solstice_grassland_habitat.jpg",
+        "summer_solstice_wetland_habitat.jpg"
+    ]
+}
