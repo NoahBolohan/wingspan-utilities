@@ -8,6 +8,18 @@ function parseNaNOrInt(val) {
     return parsed_int;
 }
 
+// Custom show div
+function custom_show(div_id) {
+    $(div_id).css(
+        "visibility",
+        "visible"
+    );
+    $(div_id).css(
+        "max-height",
+        "100%"
+    );
+}
+
 // Assign a random background on load
 $(document).ready(
 
@@ -56,6 +68,7 @@ $(document).ready(
                         generate_row_headers(width_p);
                         generate_n_score_columns(value, (100-width_p)/value);
                         $(`#modal_n_players`).modal("hide");
+                        custom_show("#row_score_sheet");
                     }
                 );
             }
