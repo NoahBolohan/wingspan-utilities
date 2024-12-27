@@ -28,6 +28,58 @@ $(document).ready(
     }
 )
 
+// Show nectar row
+$(document).ready(
+
+    function () {
+
+        $("#col_oceania_expansion_checkbox").change(
+            function () {
+                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+                    $("#row_nectar").css(
+                        "visibility",
+                        "visible"
+                    );
+
+                    $(`#input_player_nectar`).prop(
+                        "required",
+                        true
+                    );
+
+                    $(`#input_automa_nectar`).prop(
+                        "required",
+                        true
+                    );
+                } 
+                else {
+
+                    $("#row_nectar").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    $(`#input_player_nectar`).prop(
+                        "required",
+                        false
+                    );
+
+                    $(`#input_automa_nectar`).prop(
+                        "required",
+                        false
+                    );
+
+                    $("#cell_player_nectar").val("");
+                    $("#cell_automa_nectar").val("");
+
+                    recompute_player_total_score();
+                    recompute_automa_total_score();
+                }
+            }
+        )
+    }
+)
+
 // Show duet token row
 $(document).ready(
 
@@ -41,12 +93,32 @@ $(document).ready(
                         "visibility",
                         "visible"
                     );
+
+                    $(`#input_player_duet_tokens`).prop(
+                        "required",
+                        true
+                    );
+
+                    $(`#input_automa_duet_tokens`).prop(
+                        "required",
+                        true
+                    );
                 } 
                 else {
 
                     $("#row_duet_tokens").css(
                         "visibility",
                         "collapse"
+                    );
+
+                    $(`#input_player_duet_tokens`).prop(
+                        "required",
+                        false
+                    );
+
+                    $(`#input_automa_duet_tokens`).prop(
+                        "required",
+                        false
                     );
 
                     $("#cell_player_duet_tokens").val("");
@@ -77,6 +149,8 @@ function recompute_player_total_score() {
             $("#cell_player_food_on_cards").val()
         ) + parseNaNOrInt(
             $("#cell_player_tucked_cards").val()
+        ) + parseNaNOrInt(
+            $("#cell_player_nectar").val()
         ) + parseNaNOrInt(
             $("#cell_player_duet_tokens").val()
         )
@@ -230,7 +304,20 @@ $(document).ready(
     }
 )
 
-// Update player total score on tucked_cards change
+// Update player total score on nectar change
+$(document).ready(
+    function() {
+
+        $("#cell_player_nectar").on(
+            "change",
+            function() {
+                recompute_player_total_score()
+            }
+        )
+    }
+)
+
+// Update player total score on duet_tokens change
 $(document).ready(
     function() {
 
@@ -279,6 +366,8 @@ function recompute_automa_total_score() {
             $("#cell_automa_laid_eggs").val()
         ) + parseNaNOrInt(
             $("#cell_automa_tucked_cards").val()
+        ) + parseNaNOrInt(
+            $("#cell_automa_nectar").val()
         ) + parseNaNOrInt(
             $("#cell_automa_duet_tokens").val()
         )
@@ -387,6 +476,19 @@ $(document).ready(
     }
 )
 
+// Update automa total score on nectar change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_nectar").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
 // Update automa total score on tucked_cards change
 $(document).ready(
     function() {
@@ -459,7 +561,7 @@ $(document).ready(
                 // Checkboxes
                 $("#col_base_game_checkbox").prop("checked",false);
                 $("#col_european_expansion_checkbox").prop("checked",false);
-                $("#col_oceania_expansion_checkbox").prop("checked",false);
+                $("#col_oceania_expansion_checkbox").prop("checked",false).trigger("change");
                 $("#col_asia_checkbox").prop("checked",false);
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
@@ -472,6 +574,7 @@ $(document).ready(
                 $("#cell_player_eggs").val("");
                 $("#cell_player_food_on_cards").val("");
                 $("#cell_player_tucked_cards").val("");
+                $("#cell_player_nectar").val("");
                 $("#cell_player_duet_tokens").val("");
                 $("#cell_player_total_score").text("");
 
@@ -482,6 +585,7 @@ $(document).ready(
                 $("#cell_automa_end-of-round_goals").val("");
                 $("#cell_automa_laid_eggs").val("");
                 $("#cell_automa_tucked_cards").val("");
+                $("#cell_automa_nectar").val("");
                 $("#cell_automa_duet_tokens").val("");
                 $("#cell_automa_total_score").text("");
             }
