@@ -463,7 +463,7 @@ $(document).ready(
                 $("#col_asia_checkbox").prop("checked",false);
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
-                $("#col_automasian_alliance_checkbox").prop("checked",false);
+                $("#col_automasian_alliance_checkbox").prop("checked",false).trigger("change");
 
                 // Empty player cells
                 $("#cell_player_birds").val("");

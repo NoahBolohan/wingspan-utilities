@@ -489,42 +489,6 @@ function assign_player_event_listeners(i) {
     }
 }
 
-$(document).ready(
-
-    function () {
-
-        $("#col_asia_checkbox").change(
-
-            function () {
-                if ($("#col_asia_checkbox").is(":checked")) {
-
-                    custom_show("#row_duet_mode");
-                }
-                else {
-
-                    custom_hide("#row_duet_mode");
-
-                    $("#col_duet_mode_checkbox").prop(
-                        "checked",
-                        false
-                    );
-
-                    $("#row_duet_tokens").css(
-                        "visibility",
-                        "collapse"
-                    );
-
-                    $("#input_player_1_duet_tokens").val("");
-                    $("#input_player_2_duet_tokens").val("");
-                    
-                    recompute_player_total_score(1);
-                    recompute_player_total_score(2);
-                }
-            }
-        )
-    }
-)
-
 // Show duet token row
 $(document).ready(
 
@@ -570,6 +534,7 @@ $(document).ready(
                 $("#col_european_expansion_checkbox").prop("checked",false);
                 $("#col_oceania_expansion_checkbox").prop("checked",false);
                 $("#col_asia_checkbox").prop("checked",false);
+                $("#col_duet_mode_checkbox").prop("checked",false).trigger("change");
             }
         )
     }
