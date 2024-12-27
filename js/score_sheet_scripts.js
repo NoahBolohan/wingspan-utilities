@@ -20,6 +20,18 @@ function custom_show(div_id) {
     );
 }
 
+// Custom hide div
+function custom_hide(div_id) {
+    $(div_id).css(
+        "visibility",
+        "hidden"
+    );
+    $(div_id).css(
+        "max-height",
+        "0"
+    );
+}
+
 // Assign a random background on load
 $(document).ready(
 
@@ -151,6 +163,17 @@ function generate_row_headers(width_p) {
     ).text(
         "Tucked cards"
     ).appendTo("#row_tucked_cards");
+
+    // Duet tokens in largest contiguous group
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width_p}%`,
+            scope : "row"
+        }
+    ).text(
+        "Duet tokens in largest contiguous group"
+    ).appendTo("#row_duet_tokens");
 
     // Total
     $("<th>").attr(
@@ -314,6 +337,39 @@ function generate_n_score_columns(n_players, width_p) {
             true
         ).appendTo(cell);
 
+        // Duet tokens in largest contiguous group
+        if (i <= 2) {
+
+            var cell = $("<td>").attr(
+                {
+                    class : "bg-info",
+                    id : `col_player_${i}_duet_tokens`,
+                    style : `width:${width_p}%`
+                }
+            ).appendTo("#row_duet_tokens");
+
+            $("<input>").attr(
+                {
+                    type : "number",
+                    id : `input_player_${i}_duet_tokens`,
+                    name : `player_${i}_duet_tokens`
+                }
+            ).prop(
+                "required",
+                true
+            ).appendTo(cell);
+        }
+        else {
+
+            var cell = $("<td>").attr(
+            {
+                class : "bg-secondary",
+                style : `width:${width_p}%`
+            }
+        ).appendTo("#row_duet_tokens");
+        }
+        
+
         // Total
         var cell = $("<td>").attr(
             {
@@ -346,21 +402,28 @@ function generate_n_score_columns(n_players, width_p) {
 // Recompute player total score
 function recompute_player_total_score(i) {
 
-    $(`#div_player_${i}_total_score`).text(
+    var total_score =  parseNaNOrInt(
+        $(`#input_player_${i}_birds`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_bonus_cards`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_end-of-round_goals`).val()
+    )+ parseNaNOrInt(
+        $(`#input_player_${i}_eggs`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_food_on_cards`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_tucked_cards`).val()
+    );
 
-        parseNaNOrInt(
-            $(`#input_player_${i}_birds`).val()
-        ) + parseNaNOrInt(
-            $(`#input_player_${i}_bonus_cards`).val()
-        ) + parseNaNOrInt(
-            $(`#input_player_${i}_end-of-round_goals`).val()
-        )+ parseNaNOrInt(
-            $(`#input_player_${i}_eggs`).val()
-        ) + parseNaNOrInt(
-            $(`#input_player_${i}_food_on_cards`).val()
-        ) + parseNaNOrInt(
-            $(`#input_player_${i}_tucked_cards`).val()
-        )
+    if (i <= 2) {
+        total_score += parseNaNOrInt(
+            $(`#input_player_${i}_duet_tokens`).val()
+        );
+    }
+
+    $(`#div_player_${i}_total_score`).text(
+        total_score
    )
 }
 
@@ -413,7 +476,86 @@ function assign_player_event_listeners(i) {
             recompute_player_total_score(i)
         }
     )
+
+    // Update player total score on duet_tokens change
+    if (i <= 2) {
+
+        $(`#input_player_${i}_duet_tokens`).on(
+            "change",
+            function() {
+                recompute_player_total_score(i)
+            }
+        )
+    }
 }
+
+$(document).ready(
+
+    function () {
+
+        $("#col_asia_checkbox").change(
+
+            function () {
+                if ($("#col_asia_checkbox").is(":checked")) {
+
+                    custom_show("#row_duet_mode");
+                }
+                else {
+
+                    custom_hide("#row_duet_mode");
+
+                    $("#col_duet_mode_checkbox").prop(
+                        "checked",
+                        false
+                    );
+
+                    $("#row_duet_tokens").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    $("#input_player_1_duet_tokens").val("");
+                    $("#input_player_2_duet_tokens").val("");
+                    
+                    recompute_player_total_score(1);
+                    recompute_player_total_score(2);
+                }
+            }
+        )
+    }
+)
+
+// Show duet token row
+$(document).ready(
+
+    function () {
+
+        $("#col_duet_mode_checkbox").change(
+            function () {
+                if ($("#col_duet_mode_checkbox").is(":checked")) {
+
+                    $("#row_duet_tokens").css(
+                        "visibility",
+                        "visible"
+                    );
+                } 
+                else {
+
+                    $("#row_duet_tokens").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    $("#input_player_1_duet_tokens").val("");
+                    $("#input_player_2_duet_tokens").val("");
+                    
+                    recompute_player_total_score(1);
+                    recompute_player_total_score(2);
+                }
+            }
+        )
+    }
+)
 
 $(document).ready(
 
@@ -445,6 +587,10 @@ function reset_inputs_for_all_players() {
         $(`#input_player_${i}_food_on_cards`).val("");
         $(`#input_player_${i}_tucked_cards`).val("");
         $(`#div_player_${i}_total_score`).text("");
+
+        if (i <= 2) {
+            $(`#input_player_${i}_duet_tokens`).val("");
+        }
     }
 }
 
