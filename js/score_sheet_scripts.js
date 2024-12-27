@@ -676,6 +676,20 @@ function populate_form_data() {
          }
     }
 
+    // Nectar
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        if ($(`#input_player_${i}_nectar`).val() == "") {
+           $(`#input_player_${i}_nectar`).val(0);
+        }
+   }
+
+   // Duet tokens
+   for (var i=1; i <= 2; i++) {
+    if ($(`#input_player_${i}_duet_tokens`).val() == "") {
+       $(`#input_player_${i}_duet_tokens`).val(0);
+    }
+}
+
     // Player total scores
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
         $(`#submit_player_${i}_total_score`).val(

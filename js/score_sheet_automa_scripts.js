@@ -510,10 +510,30 @@ function populate_form_data() {
         $("#cell_automa_drawn_cards").text()
     )
 
+    // Player: nectar
+    if ($(`#cell_player_nectar`).val() == "") {
+        $(`#cell_player_nectar`).val(0);
+    }
+
+    // Player: duet tokens
+    if ($(`#cell_player_duet_tokens`).val() == "") {
+        $(`#cell_player_duet_tokens`).val(0);
+    }
+
     // Player: total score
     $("#input_player_total_score").val(
         $("#cell_player_total_score").text()
     )
+
+    // Automa: nectar
+    if ($(`#cell_automa_nectar`).val() == "") {
+        $(`#cell_automa_nectar`).val(0);
+    }
+
+    // Automa: duet tokens
+    if ($(`#cell_automa_duet_tokens`).val() == "") {
+        $(`#cell_automa_duet_tokens`).val(0);
+    }
 
     // Automa: total score
     $("#input_automa_total_score").val(

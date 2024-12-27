@@ -13,7 +13,6 @@ Web app to track Wingspan games. Designed for mobile use.
 - Redirect to main page after sheet submit
 - Make everything look nice
 - Disable round end buttons on select
-- Dynamic nectar row to all score sheets
 - Implement duet mode in automa tracker
 - Vertical text outside score sheet row headers (amount on cards, 1 pt each)
 
