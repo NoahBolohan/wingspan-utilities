@@ -164,6 +164,17 @@ function generate_row_headers(width_p) {
         "Tucked cards"
     ).appendTo("#row_tucked_cards");
 
+    // Nectar
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width_p}%`,
+            scope : "row"
+        }
+    ).text(
+        "Nectar"
+    ).appendTo("#row_nectar");
+
     // Duet tokens in largest contiguous group
     $("<th>").attr(
         {
@@ -337,6 +348,23 @@ function generate_n_score_columns(n_players, width_p) {
             true
         ).appendTo(cell);
 
+        // Nectar
+        var cell = $("<td>").attr(
+            {
+                class : "bg-info",
+                id : `col_player_${i}_nectar`,
+                style : `width:${width_p}%`
+            }
+        ).appendTo("#row_nectar");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_nectar`,
+                name : `player_${i}_nectar`
+            }
+        ).appendTo(cell);
+
         // Duet tokens in largest contiguous group
         if (i <= 2) {
 
@@ -354,9 +382,6 @@ function generate_n_score_columns(n_players, width_p) {
                     id : `input_player_${i}_duet_tokens`,
                     name : `player_${i}_duet_tokens`
                 }
-            ).prop(
-                "required",
-                true
             ).appendTo(cell);
         }
         else {
@@ -414,6 +439,8 @@ function recompute_player_total_score(i) {
         $(`#input_player_${i}_food_on_cards`).val()
     ) + parseNaNOrInt(
         $(`#input_player_${i}_tucked_cards`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_nectar`).val()
     );
 
     if (i <= 2) {
@@ -477,6 +504,14 @@ function assign_player_event_listeners(i) {
         }
     )
 
+    // Update player total score on nectar change
+    $(`#input_player_${i}_nectar`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
+
     // Update player total score on duet_tokens change
     if (i <= 2) {
 
@@ -488,6 +523,51 @@ function assign_player_event_listeners(i) {
         )
     }
 }
+
+// Show nectar row
+$(document).ready(
+
+    function () {
+
+        $("#col_oceania_expansion_checkbox").change(
+            function () {
+                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+                    $("#row_nectar").css(
+                        "visibility",
+                        "visible"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_nectar`).prop(
+                            "required",
+                            true
+                        );
+                    }
+                } 
+                else {
+
+                    $("#row_nectar").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_nectar`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#input_player_${i}_nectar`).val("");
+                        recompute_player_total_score(i);
+
+                    }
+                }
+            }
+        )
+    }
+)
 
 // Show duet token row
 $(document).ready(
@@ -502,6 +582,14 @@ $(document).ready(
                         "visibility",
                         "visible"
                     );
+
+                    for (var i=1; i <= 2; i++) {
+
+                        $(`#input_player_${i}_duet_tokens`).prop(
+                            "required",
+                            true
+                        );
+                    }
                 } 
                 else {
 
@@ -510,11 +598,16 @@ $(document).ready(
                         "collapse"
                     );
 
-                    $("#input_player_1_duet_tokens").val("");
-                    $("#input_player_2_duet_tokens").val("");
-                    
-                    recompute_player_total_score(1);
-                    recompute_player_total_score(2);
+                    for (var i=1; i <= 2; i++) {
+
+                        $(`#input_player_${i}_duet_tokens`).prop(
+                            "required",
+                            false
+                        );
+
+                        $(`#input_player_${i}_duet_tokens`).val("");
+                        recompute_player_total_score(i);
+                    }
                 }
             }
         )
@@ -532,7 +625,7 @@ $(document).ready(
                 // Checkboxes
                 $("#col_base_game_checkbox").prop("checked",false);
                 $("#col_european_expansion_checkbox").prop("checked",false);
-                $("#col_oceania_expansion_checkbox").prop("checked",false);
+                $("#col_oceania_expansion_checkbox").prop("checked",false).trigger("change");
                 $("#col_asia_checkbox").prop("checked",false);
                 $("#col_duet_mode_checkbox").prop("checked",false).trigger("change");
             }
@@ -551,11 +644,13 @@ function reset_inputs_for_all_players() {
         $(`#input_player_${i}_eggs`).val("");
         $(`#input_player_${i}_food_on_cards`).val("");
         $(`#input_player_${i}_tucked_cards`).val("");
-        $(`#div_player_${i}_total_score`).text("");
-
+        $(`#div_player_${i}_nectar`).text("");
+        
         if (i <= 2) {
             $(`#input_player_${i}_duet_tokens`).val("");
         }
+
+        $(`#div_player_${i}_total_score`).text("");
     }
 }
 
@@ -608,5 +703,9 @@ function populate_form_data() {
 
     if(document.getElementById("col_asia_checkbox").checked) {
         document.getElementById("col_asia_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_duet_mode_checkbox").checked) {
+        document.getElementById("col_duet_mode_checkbox_hidden").disabled = true;
     }
 }
