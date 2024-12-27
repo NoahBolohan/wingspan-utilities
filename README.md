@@ -15,6 +15,9 @@ Web app to track Wingspan games. Designed for mobile use.
 - Disable round end buttons on select
 - Implement duet mode in automa tracker
 - Vertical text outside score sheet row headers (amount on cards, 1 pt each)
+- Make Automa: Gain Food images
+- Cardify automa tracker pages
+- Properly colour-code automa moves
 
 ## Have feedback/requests/issues?
 

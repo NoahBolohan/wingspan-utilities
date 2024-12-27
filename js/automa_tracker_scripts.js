@@ -666,7 +666,8 @@ function append_automa_action_row(automa_action) {
     $("<th>").attr(
         {
             scope : "row",
-            style : "width: 10%"
+            style : "width: 10%",
+            class : "bg-info"
         }
     ).text(
         $("#row_round_info").data(
