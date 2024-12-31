@@ -1,3 +1,11 @@
+$(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+    $(this).closest("li").toggleClass("active", this.checked);
+ });
+ 
+ $(document).on('click', '.allow-focus', function (e) {
+   e.stopPropagation();
+ });
+
 function parseNaNOrInt(val) {
 
     var parsed_int = parseInt(val);
@@ -6,7 +14,7 @@ function parseNaNOrInt(val) {
       return 0;
     }
     return parsed_int;
- }
+}
 
 // Assign a random background on load
 $(document).ready(
@@ -579,10 +587,6 @@ $(document).ready(
             function () {
                 
                 // Checkboxes
-                $("#col_base_game_checkbox").prop("checked",false);
-                $("#col_european_expansion_checkbox").prop("checked",false);
-                $("#col_oceania_expansion_checkbox").prop("checked",false).trigger("change");
-                $("#col_asia_checkbox").prop("checked",false);
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
                 $("#col_automasian_alliance_checkbox").prop("checked",false).trigger("change");
