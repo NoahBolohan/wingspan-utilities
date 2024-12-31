@@ -16,6 +16,29 @@ function parseNaNOrInt(val) {
     return parsed_int;
 }
 
+// Manual .active class flag (https://stackoverflow.com/questions/25016848/bootstrap-putting-checkbox-in-a-dropdown)
+$(document).ready(
+
+    function () {
+
+        $(".checkbox-menu").on(
+            "change",
+            "input[type='checkbox']",
+            function() {
+                $(this).closest("li").toggleClass("active", this.checked);
+            }
+        );
+    }
+)
+
+$(document).on(
+    "click",
+    ".allow-focus",
+    function (e) {
+        e.stopPropagation();
+    }
+);
+
 // Assign a random background on load
 $(document).ready(
 

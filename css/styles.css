@@ -191,6 +191,7 @@ textarea {
     display: block;
     padding: 0px 10px;
     clear: both;
+    white-space: nowrap;
     transition: background-color .4s ease;
 }
 
