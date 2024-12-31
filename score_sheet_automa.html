@@ -13,7 +13,7 @@
 
     <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwm0-b47heUxm6uNym732n3WV6jMX7uVLaIWoeC7tV2MnZIJFjiogWysy5mFSZBRGs1Aw/exec">
 
-        <div class="container-fluid mb-1" id="container_header">
+        <div class="container-fluid" id="container_header">
 
             <div class="row" id="row_header">
     
@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <div class="row gx-1 justify-content-center margin_auto" id="row_checkboxes">
+            <div class="row gx-3" id="row_checkboxes">
 
                 <div class="col-6 dropdown">
 
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
+            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_score_sheet">
 
                 <table class="col-12 mb-0 table table-bordered">
 
@@ -260,20 +260,22 @@
                 <input id="input_automa_total_score" name="automa_total_score"/>
             </div>
 
-            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_submit_button">
+            <div class="row gx-3 mt-3" id="row_submit_button">
 
-                <button class="col-5 btn btn-warning nav-button" type="button" id="button_reset_sheet">
-                    Reset score sheet
-                </button>
+                <div class="col-6">
+                    <button class="w-100 btn btn-warning nav-button" type="button" id="button_reset_sheet">
+                        Reset score sheet
+                    </button>
+                </div>
 
-                <div class="col-1"></div>
-
-                <button class="col-5 btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet: Automa" access="false" style="default" type="submit" onclick="populate_form_data()">
-                    Submit score
-                </button>
+                <div class="col-6">
+                    <button class="w-100 btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet: Automa" access="false" style="default" type="submit" onclick="populate_form_data()">
+                        Submit score
+                    </button>
+                </div>
             </div>
 
-            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_go_back_button">
+            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_go_back_button">
 
                 <a class="col-6 btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
             </div>
