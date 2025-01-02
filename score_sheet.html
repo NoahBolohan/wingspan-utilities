@@ -47,80 +47,72 @@
 
         <div class="container-fluid mb-1" id="container_header">
 
-            <div class="row" id="row_header">
-    
-                <div class="col text-center">
-                    <h1>Score Sheet</h1>
+            <div class="row mt-1 justify-content-center margin_auto">
+
+                <div class="col-auto p-0 card">
+
+                    <div class="py-0 card-header text-center">
+
+                        <h1 class="m-0">Score sheet</h2>
+                    </div>
                 </div>
             </div>
 
-            <div class="row justify-content-center margin_auto" id="row_checkboxes">
+            <div class="row mt-3 justify-content-center" id="row_checkboxes">
 
-                <div class="col-6">
+                <div class="col-6 dropdown">
 
-                  <div class="card">
+                    <button class="w-100 btn btn-info" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <h2 class="p-0 m-0">&#x2193; Expansions &#x2193;</h2>
+                    </button>
 
-                    <div class="card-header py-1 text-center" id="row_expansions_header">
-                        <h2 class="p-0 m-0">Expansions</h2>
-                    </div>
+                    <ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
+                    
+                        <li>
 
-                    <div class="card-body p-0">
+                            <label for="col_base_game_checkbox" id="row_base_game">
+                                Base game
+                                <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
+                                <input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
+                            </label>
+                        </li>
 
-                        <div class="row p-0 margin_auto" id="row_base_game_expansion">
-        
-                            <div class="col-10 py-0 px-1" id="col_base_game_checkbox_text">
-                                Base game:
-                            </div>
-            
-                            <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"></input>
-                            <input class="col-1 py-0 px-1" id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked></input>
-                        </div>
-            
-                        <div class="row p-0 margin_auto" id="row_european_expansion_expansion">
-            
-                            <div class="col-10 py-0 px-1" id="col_european_expansion_checkbox_text">
-                                European Expansion:
-                            </div>
-            
-                            <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
-                            <input class="col-1 py-0 px-1" id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes"></input>
-                        </div>
-            
-                        <div class="row p-0 margin_auto" id="row_oceania_expansion_expansion">
-            
-                            <div class="col-10 py-0 px-1" id="col_oceania_expansion_checkbox_text">
-                                Oceania Expansion:
-                            </div>
-            
-                            <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
-                            <input class="col-1 py-0 px-1" id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes"></input>
-                        </div>
-            
-                        <div class="row p-0 margin_auto" id="row_asia">
-            
-                            <div class="col-10 py-0 px-1" id="col_asia_checkbox_text">
-                                Wingspan Asia:
-                            </div>
-            
-                            <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
-                            <input class="col-1 py-0 px-1" id="col_asia_checkbox" name="asia" type="checkbox" value="yes"></input>
-                        </div>
+                        <li>
+                            <label for="col_european_expansion_checkbox" id="row_european_expansion">
+                                European expansion
+                                <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+                                <input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
+                            </label>
+                        </li>
 
-                        <div class="row p-0 margin_auto" id="row_duet_mode">
-            
-                            <div class="col-10 py-0 px-1" id="col_duet_mode_checkbox_text">
-                                Duet mode:
-                            </div>
-            
-                            <input id="col_duet_mode_checkbox_hidden" name="duet_mode" type="hidden" value="no"></input>
-                            <input class="col-1 py-0 px-1" id="col_duet_mode_checkbox" name="duet_mode" type="checkbox" value="yes"></input>
-                        </div>
-                    </div>
-                  </div>
+                        <li>
+                            <label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
+                                Oceania expansion
+                                <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+                                <input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label for="col_asia_checkbox" id="row_asia">
+                                Asia
+                                <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+                                <input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
+                            </label>
+                        </li>
+
+                        <li>
+                            <label for="col_duet_mode_checkbox" id="row_duet_mode">
+                                Duet mode
+                                <input id="col_duet_mode_checkbox_hidden" name="duet_mode" type="hidden" value="no"></input>
+                                <input id="col_duet_mode_checkbox" name="duet_mode" type="checkbox" value="yes">
+                            </label>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="row p-0 mt-1 justify-content-center margin_auto is_hidden" id="row_score_sheet">
+            <div class="row p-0 mt-3 justify-content-center margin_auto is_hidden" id="row_score_sheet">
 
                 <table class="col-12 mb-0 table table-bordered">
 
@@ -143,7 +135,7 @@
         
                         <tr id="row_tucked_cards"></tr>
 
-                        <tr id="row_nectar" style="visibility: collapse;"></tr>
+                        <tr id="row_nectar"></tr>
 
                         <tr id="row_duet_tokens" style="visibility: collapse;"></tr>
 
@@ -157,20 +149,22 @@
                 <input id="submit_n_players" name="n_players"/>
             </div>
 
-            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_sheet_buttons">
+            <div class="row gx-3 mt-3" id="row_reset_submit_buttons">
 
-                <button class="col-5 btn btn-warning nav-button" type="button" id="button_reset_sheet">
-                    Reset score sheet
-                </button>
+                <div class="col-6">
+                    <button class="w-100 btn btn-warning nav-button" type="button" id="button_reset_sheet">
+                        Reset score sheet
+                    </button>
+                </div>
 
-                <div class="col-1"></div>
-
-                <button class="col-5 btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet" access="false" style="default" type="submit" onclick="populate_form_data()">
-                    Submit score
-                </button>
+                <div class="col-6">
+                    <button class="w-100 btn btn-success nav-button" id="submit" name="submit" value = "Score Sheet" access="false" style="default" type="submit" onclick="populate_form_data()">
+                        Submit score
+                    </button>
+                </div>
             </div>
 
-            <div class="row p-0 mt-2 justify-content-center margin_auto" id="row_go_back_button">
+            <div class="row p-0 mt-3 justify-content-center margin_auto" id="row_go_back_button">
 
                 <a class="col-6 btn btn-primary nav-button" href="https://noahbolohan.github.io/wingspan-tracker/index.html">Return to home page</a>
             </div>

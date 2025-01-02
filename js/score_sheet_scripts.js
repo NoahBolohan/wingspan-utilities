@@ -1,3 +1,11 @@
+$(".checkbox-menu").on("change", "input[type='checkbox']", function() {
+    $(this).closest("li").toggleClass("active", this.checked);
+ });
+ 
+ $(document).on('click', '.allow-focus', function (e) {
+   e.stopPropagation();
+ });
+
 function parseNaNOrInt(val) {
 
     var parsed_int = parseInt(val);
@@ -7,6 +15,29 @@ function parseNaNOrInt(val) {
     }
     return parsed_int;
 }
+
+// Manual .active class flag (https://stackoverflow.com/questions/25016848/bootstrap-putting-checkbox-in-a-dropdown)
+$(document).ready(
+
+    function () {
+
+        $(".checkbox-menu").on(
+            "change",
+            "input[type='checkbox']",
+            function() {
+                $(this).closest("li").toggleClass("active", this.checked);
+            }
+        );
+    }
+)
+
+$(document).on(
+    "click",
+    ".allow-focus",
+    function (e) {
+        e.stopPropagation();
+    }
+);
 
 // Custom show div
 function custom_show(div_id) {
@@ -623,10 +654,10 @@ $(document).ready(
             function () {
                 
                 // Checkboxes
-                $("#col_base_game_checkbox").prop("checked",false);
-                $("#col_european_expansion_checkbox").prop("checked",false);
-                $("#col_oceania_expansion_checkbox").prop("checked",false).trigger("change");
-                $("#col_asia_checkbox").prop("checked",false);
+                $("#col_base_game_checkbox").prop("checked",true);
+                $("#col_european_expansion_checkbox").prop("checked",true);
+                $("#col_oceania_expansion_checkbox").prop("checked",true).trigger("change");
+                $("#col_asia_checkbox").prop("checked",true);
                 $("#col_duet_mode_checkbox").prop("checked",false).trigger("change");
             }
         )
