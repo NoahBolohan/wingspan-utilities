@@ -11,13 +11,13 @@ Web app to track Wingspan games. Designed for mobile use.
 
 - Upload image -> auto-fill score sheets
 - Redirect to main page after sheet submit
-- Make everything look nice
 - Disable round end buttons on select
 - Implement duet mode in automa tracker
 - Vertical text outside score sheet row headers (amount on cards, 1 pt each)
 - Make Automa: Gain Food images
 - Cardify automa tracker pages
 - Properly colour-code automa moves
+- Automarazzi
 
 ## Have feedback/requests/issues?
 
