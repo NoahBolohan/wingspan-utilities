@@ -1,0 +1,18 @@
+{
+    "1" : {
+        "side_1" : "beak_pointing_left",
+        "side_2" : "beak_pointing_right"
+    },
+    "2" : {
+        "side_1" : "rodent_and_fish_in_cost_of_birds",
+        "side_2" : "invertebrate_in_cost_of_birds"
+    },
+    "3" : {
+        "side_1" : "fruit_and_seed_in_cost_of_birds",
+        "side_2" : "no_goal"
+    },
+    "4" : {
+        "side_1" : "cubes_on_play_a_bird",
+        "side_2" : "birds_worth_3_or_less_points"
+    }
+}
