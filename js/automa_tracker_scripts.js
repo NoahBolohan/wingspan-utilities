@@ -1039,9 +1039,6 @@ $(document).ready(
                 custom_hide(
                     "#container_game_setup"
                 );
-                // custom_hide(
-                //     "#row_checkboxes"
-                // );
                 custom_show(
                     "#container_automa_gameplay"
                 );

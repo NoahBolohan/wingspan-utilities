@@ -266,7 +266,7 @@
 			</div>
 		</div>
 
-		<div class="container-fluid mb-1" id="container_header">
+		<div class="container-fluid" id="container_header">
 
 			<div class="row mt-1 justify-content-center margin_auto">
 
@@ -544,46 +544,49 @@
             </div>
 		</div>
 
-		<div class="container-fluid mb-1 is_hidden" id="container_automa_gameplay">
+		<div class="container-fluid is_hidden" id="container_automa_gameplay">
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_cube_counts">
+			<div class="mt-3 card">
 
-				<textarea class="col-3 centered-text" id="col_round_1_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+				<div class="row p-0 justify-content-center margin_auto" id="row_round_end_cube_counts">
 
-				<textarea class="col-3 centered-text" id="col_round_2_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
-
-				<textarea class="col-3 centered-text" id="col_round_3_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
-
-				<textarea class="col-3 centered-text" id="col_round_4_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+					<textarea class="col-3 centered-text" id="col_round_1_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+	
+					<textarea class="col-3 centered-text" id="col_round_2_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+	
+					<textarea class="col-3 centered-text" id="col_round_3_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+	
+					<textarea class="col-3 centered-text" id="col_round_4_end_cube_count" align="center" data-counter = 0 data-automa_round_end_points = 0 data-me_round_end_points = 0 readonly></textarea>
+				</div>
+	
+				<div class="row p-0 justify-content-center margin_auto" id="row_round_end_goals">
+	
+					<img class="col-3" id="img_round_1_end_goal">
+	
+					<img class="col-3" id="img_round_2_end_goal">
+	
+					<img class="col-3" id="img_round_3_end_goal">
+	
+					<img class="col-3" id="img_round_4_end_goal">
+				</div>
+	
+				<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_counts">
+	
+					<div class="col-2 centered-text" id="col_automa_drawn_cards_text">Drawn cards:</div>
+					<div class="col-1 centered-text" id="col_automa_drawn_cards_count" data-counter = 0>0</div>
+	
+					<div class="col-2 centered-text" id="col_automa_played_birds_text">Played birds:</div>
+					<div class="col-1 centered-text" id="col_automa_played_birds" data-counter = 0>0</div>
+	
+					<div class="col-2 centered-text" id="col_automa_eggs_text">Eggs:</div>
+					<div class="col-1 centered-text" id="col_automa_eggs_count" data-counter = 0>0</div>
+	
+					<div class="col-2 centered-text" id="col_automa_total_score_text">Total:</div>
+					<div class="col-1 centered-text" id="col_automa_total_score" data-counter = 0>0</div>
+				</div>
 			</div>
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_round_end_goals">
-
-				<img class="col-3" id="img_round_1_end_goal">
-
-				<img class="col-3" id="img_round_2_end_goal">
-
-				<img class="col-3" id="img_round_3_end_goal">
-
-				<img class="col-3" id="img_round_4_end_goal">
-			</div>
-
-			<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_counts">
-
-				<div class="col-2 centered-text" id="col_automa_drawn_cards_text">Drawn cards:</div>
-				<div class="col-1 centered-text" id="col_automa_drawn_cards_count" data-counter = 0>0</div>
-
-				<div class="col-2 centered-text" id="col_automa_played_birds_text">Played birds:</div>
-				<div class="col-1 centered-text" id="col_automa_played_birds" data-counter = 0>0</div>
-
-				<div class="col-2 centered-text" id="col_automa_eggs_text">Eggs:</div>
-				<div class="col-1 centered-text" id="col_automa_eggs_count" data-counter = 0>0</div>
-
-				<div class="col-2 centered-text" id="col_automa_total_score_text">Total:</div>
-				<div class="col-1 centered-text" id="col_automa_total_score" data-counter = 0>0</div>
-			</div>
-
-			<div class="row p-0 justify-content-center margin_auto" id="row_automa_actions">
+			<div class="row p-0 mt-3 justify-content-center margin_auto" id="row_automa_actions">
 
 				<table class="table" id="table_automa_actions">
 					<thead class="thead-dark">
