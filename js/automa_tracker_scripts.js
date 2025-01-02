@@ -161,14 +161,9 @@ $(document).ready(
 $(document).ready(
     function() {
 
-        $("#col_base_game_checkbox").prop(
-            "checked",
-            true
-        );
-
         update_round_end_goals();
         generate_round_end_goal_buttons_for_expansions(
-            $("#row_expansions_header").data("expansions_to_include")
+            $("#button_dropdown_expansions_menu").data("expansions_to_include")
         );
     }
 )
@@ -407,18 +402,10 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
     var base_value = $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
 
-    // if (n_cubes > 0) {
     $(`#col_round_${round_number}_end_cube_count`).data(
         "round_end_goal_score",
         n_cubes + base_value
     )
-    // }
-    // else {
-    //     $(`#col_round_${round_number}_end_cube_count`).data(
-    //         "round_end_goal_score",
-    //         0
-    //     )
-    // }
     
     $(`#col_round_${round_number}_end_cube_count`).text(
         `${n_cubes + base_value}\n(${base_value}+\u25A8\u00D7 ${n_cubes})`
@@ -1181,12 +1168,12 @@ function generate_round_end_goal_buttons_for_expansions(expansions_to_include) {
     $.each(
         expansions_to_include,
         function(idx,expansion) {
+
             $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/${expansion}.json`, function(data) {
 
                 Object.keys(data).forEach(
                     function (key) {
                         for (var round_number=1; round_number<=4; round_number++) {
-
                             generate_round_end_goal_button_for_round(
                                 round_number,
                                 data[key]["side_1"],
@@ -1222,11 +1209,7 @@ function update_round_end_goals() {
         expansions_to_include.push("oceania_expansion");
     }
 
-    if ($("#col_asia_checkbox").is(':checked')) {
-        expansions_to_include.push("asia");
-    }
-
-    $("#row_expansions_header").data(
+    $("#button_dropdown_expansions_menu").data(
         "expansions_to_include",
         expansions_to_include
     )
@@ -1241,7 +1224,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_expansions_header").data("expansions_to_include")
+                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
                 );
             }
            
@@ -1252,7 +1235,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_expansions_header").data("expansions_to_include")
+                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
                 );
             }
         );
@@ -1262,21 +1245,10 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#row_expansions_header").data("expansions_to_include")
+                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
                 );
             }
         );
-
-        $("#col_asia_checkbox").on(
-            "change",
-            function() {
-                update_round_end_goals();
-                generate_round_end_goal_buttons_for_expansions(
-                    $("#row_expansions_header").data("expansions_to_include")
-                );
-            }
-        );
-        
     }
 )
 
