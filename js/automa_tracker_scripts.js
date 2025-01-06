@@ -412,39 +412,58 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     )
 }
 
-function generate_food_order_string(food_order) {
+function generate_egg_td(
+    n_eggs,
+    primary_action_class
+) {
 
-    var food_order_string = "";
+    var egg_cell = $("<td>").attr(
+        {
+            class : primary_action_class,
+            style : "text-align: center;"
+        }
+    )
+
+    for (var i = 0; i < n_eggs; i++) {
+
+        $("<img>").attr(
+            {
+                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.png`),
+                "style" : "width : 10%;"
+            }
+        ).appendTo(
+            egg_cell
+        );
+    }
+
+    return egg_cell;
+}
+
+function generate_food_order_td(
+    food_order,
+    primary_action_class
+) {
+
+    var food_order_cell = $("<td>").attr(
+        {
+            class : primary_action_class,
+            style : "text-align: center; white-space : nowrap;"
+        }
+    )
 
     for (var i = 0; i < food_order.length; i++) {
 
-        switch(food_order[i]) {
-            case "invertebrate_or_seed":
-                food_order_string += "Invertebrate or Seed";
-                break;
-            case "invertebrate":
-                food_order_string += "Invertebrate";
-                break;
-            case "seed":
-                food_order_string += "Seed";
-                break;
-            case "rodent":
-                food_order_string += "Rodent";
-                break;
-            case "fish":
-                food_order_string += "Fish";
-                break;
-            case "fruit":
-                food_order_string += "Fruit";
-                break;
-        }
-
-        if (i < food_order.length - 1) {
-            food_order_string += " > ";
-        }
+        $("<img>").attr(
+            {
+                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/food_icons/${food_order[i]}.svg`),
+                "style" : "width : 16.67%; border : 1px solid #000000;"
+            }
+        ).appendTo(
+            food_order_cell
+        );
     }
 
-    return food_order_string;
+    return food_order_cell;
 }
 
 // Update automa played birds counter
@@ -668,7 +687,7 @@ function append_automa_action_row(automa_action) {
     var primary_action_text;
     var primary_action_class;
 
-    switch(automa_action["round_1"]["primary_action"]) {
+    switch(automa_action[`round_${$("#row_round_info").data("round")}`]["primary_action"]) {
 
         case "play_a_bird":
             primary_action_text = "Play a card";
@@ -681,43 +700,76 @@ function append_automa_action_row(automa_action) {
             else {
                 $(`#modal_play_a_card`).modal("show");
             }
+
+            $("<td>").attr(
+                {
+                    class : primary_action_class,
+                    style : "width: 45%"
+                }
+            ).text(
+                primary_action_text
+            ).appendTo(
+                tr
+            );
             break;
 
         case "draw_cards":
             primary_action_text = "Draw cards";
             primary_action_class = "table-info";
             update_automa_drawn_cards();
+
+            $("<td>").attr(
+                {
+                    class : primary_action_class,
+                    style : "width: 45%"
+                }
+            ).text(
+                primary_action_text
+            ).appendTo(
+                tr
+            );
             break;
 
         case "lay_eggs":
-            // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.jpg'/>";
-            primary_action_text = `Lay ${automa_action["round_1"]["number_of_eggs"]} egg(s)`;
-            primary_action_class = "table-warning";
-            update_automa_laid_eggs(automa_action["round_1"]["number_of_eggs"])
+            // // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.jpg'/>";
+            // primary_action_text = `Lay ${automa_action[`round_${$("#row_round_info").data("round")}`]["number_of_eggs"]} egg(s)`;
+            // primary_action_class = "table-warning";
+            // update_automa_laid_eggs(automa_action[`round_${$("#row_round_info").data("round")}`]["number_of_eggs"])
+
+            // $("<td>").attr(
+            //     {
+            //         class : primary_action_class,
+            //         style : "width: 45%"
+            //     }
+            // ).text(
+            //     primary_action_text
+            // ).appendTo(
+            //     tr
+            // );
+            generate_egg_td(
+                automa_action[`round_${$("#row_round_info").data("round")}`]["number_of_eggs"],
+                primary_action_class = "table-success"
+            ).appendTo(
+                tr
+            );
             break;
 
         case "gain_food":
-            primary_action_text = "Gain food: " + generate_food_order_string(automa_action["round_1"]["food_order"]);
-            primary_action_class = "table-success";
+
+            generate_food_order_td(
+                automa_action[`round_${$("#row_round_info").data("round")}`]["food_order"],
+                primary_action_class = "table-success"
+            ).appendTo(
+                tr
+            );
             break;
     }
-
-    $("<td>").attr(
-        {
-            class : primary_action_class,
-            style : "width: 45%"
-        }
-    ).text(
-        primary_action_text
-    ).appendTo(
-        tr
-    );
 
     // Append secondary automa action to row: options are place_end-of-round_cube, remove_end-of-round_cube, activate_pink_powers, none
     var secondary_action_text;
     var secondary_action_class;
 
-    switch(automa_action["round_1"]["secondary_action"]) {
+    switch(automa_action[`round_${$("#row_round_info").data("round")}`]["secondary_action"]) {
 
         case "place_end-of-round_cube":
             secondary_action_text = "Place end-of-round cube";
@@ -755,14 +807,14 @@ function append_automa_action_row(automa_action) {
     $("#table_automa_actions tbody").append(tr);
 
     // Update end-of-round cubes if necessary
-    if (automa_action["round_1"]["secondary_action"] == "place_end-of-round_cube") {
+    if (automa_action[`round_${$("#row_round_info").data("round")}`]["secondary_action"] == "place_end-of-round_cube") {
 
         update_round_end_cube_counter(
             $("#row_round_info").data("round"),
             1
         );
     }
-    else if (automa_action["round_1"]["secondary_action"] == "remove_end-of-round_cube") {
+    else if (automa_action[`round_${$("#row_round_info").data("round")}`]["secondary_action"] == "remove_end-of-round_cube") {
 
         update_round_end_cube_counter(
             $("#row_round_info").data("round"),

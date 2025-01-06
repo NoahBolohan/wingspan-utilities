@@ -7,6 +7,10 @@ Web app to track Wingspan games. Designed for mobile use.
 - [Github page](https://noahbolohan.github.io/wingspan-tracker/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc/edit?gid=0#gid=0)
 
+## Other Wingspan resources
+
+- [Wingspan Rules | Rulepop](https://wingspan.rulepop.com/)
+
 ## To-do
 
 - Upload image -> auto-fill score sheets
@@ -15,7 +19,6 @@ Web app to track Wingspan games. Designed for mobile use.
 - Implement duet mode in automa tracker
 - Implement Automa's hoard/cache and nectar in automa tracker
 - Vertical text outside score sheet row headers (amount on cards, 1 pt each)
-- Make Automa: Gain Food images
 - Cardify automa tracker pages
 - Properly colour-code automa moves
 - Automarazzi
