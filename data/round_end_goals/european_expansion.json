@@ -1,11 +1,11 @@
 {
     "1" : {
-        "side_1" : "birds_with_tucked_cards",
-        "side_2" : "food_cost_of_played_birds"
-    },
-    "2" : {
         "side_1" : "birds_in_one_row",
         "side_2" : "filled_columns"
+    },
+    "2" : {
+        "side_1" : "birds_with_tucked_cards",
+        "side_2" : "food_cost_of_played_birds"
     },
     "3" : {
         "side_1" : "birds_worth_more_than_4_points",
