@@ -341,7 +341,7 @@ function new_round(round_number) {
 // Create the automa deck for the round
 function create_automa_deck(round_number) {
 
-    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/base.json", function(data) {
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/automa_actions.json", function(data) {
 
         var automa_deck = [];
 
@@ -351,6 +351,18 @@ function create_automa_deck(round_number) {
 
                     case "automubon_society":
                         if ($("#col_automubon_society_checkbox").val() == "yes") {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+
+                    case "RAOUtoma":
+                        if ($("#col_RAOUtoma_checkbox").val() == "yes") {
+                            automa_deck.push(data[key]);
+                        }
+                        break;
+
+                    case "automasian_alliance":
+                        if ($("#col_automasian_alliance_checkbox").val() == "yes") {
                             automa_deck.push(data[key]);
                         }
                         break;
