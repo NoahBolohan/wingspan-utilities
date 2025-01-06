@@ -411,48 +411,166 @@
 
                 <div class="col-12 p-0">
 
-                  <div class="card">
+                  	<div class="card">
 
-                    <div class="card-header py-1 text-center" id="row_difficulty_header">
-                        <h2 class="p-0 m-0">Difficulty</h2>
-                    </div>
+						<div class="card-header py-1 text-center" id="row_difficulty_header">
+							<h2 class="p-0 m-0">Difficulty</h2>
+						</div>
 
-                    <div class="card-body p-0">
+						<div class="card-body p-0">
 
-                        <fieldset id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0 data-points_per_drawn_card = 0>
+							<div class="row p-0 justify-content-center margin_auto">
 
-							<div class="row p-0 margin_auto" id="row_difficulty_eaglet">
+								<fieldset class="col-6" id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0 data-points_per_drawn_card = 0>
 
-								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
-
-									<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
-								</div>
+									<div class="row p-0 mt-1 margin_auto" id="row_difficulty_eaglet">
+	
+										<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+	
+											<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+										</div>
+										
+										<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eaglet">Eaglet</label>
+									</div>
 								
-								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eaglet">Eaglet (3 points per drawn card)</label>
+									<div class="row p-0 margin_auto" id="row_difficulty_eagle">
+	
+										<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+	
+											<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+										</div>
+	
+										<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle">Eagle</label>
+									</div>
+								
+									<div class="row p-0 margin_auto" id="row_difficulty_eagle-eyed_eagle">
+	
+										<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+	
+											<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+										</div>
+	
+										<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle</label>
+									</div>
+	
+									<div class="row p-0 margin_auto" id="row_difficulty_custom">
+	
+										<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+	
+											<input type="radio" id="radio_difficulty_choice_custom" name="difficulty" value="custom" />
+										</div>
+	
+										<label class="col-11 py-0 px-1" for="radio_difficulty_choice_custom">Custom</label>
+									</div>
+								</fieldset>
+	
+								<div class="col-6">
+
+									<div class="row p-0 margin_auto">
+										<label for="col_automas_cache_checkbox" id="row_automas_cache">
+											Automa's cache
+											<input id="col_automas_cache_checkbox_hidden" name="automas_cache" type="hidden" value="no"></input>
+											<input id="col_automas_cache_checkbox" name="automas_cache" type="checkbox" value="yes">
+										</label>
+									</div>
+
+									<div class="row p-0 margin_auto">
+										<label for="col_automas_hoard_checkbox" id="row_automas_hoard">
+											Automa's hoard
+											<input id="col_automas_hoard_checkbox_hidden" name="automas_hoard" type="hidden" value="no"></input>
+											<input id="col_automas_hoard_checkbox" name="automas_hoard" type="checkbox" value="yes">
+										</label>
+									</div>
+								</div>
 							</div>
-						
-							<div class="row p-0 margin_auto" id="row_difficulty_eagle">
 
-								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+							<hr style="margin-top : 0.25rem; margin-bottom : 0.25rem;"/>
 
-									<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+							<div class="row p-0 margin_auto" id="row_automa_starting_starting_nectar_per_habitat">
+
+								<div class="col-7">
+									Starting spent nectar per habitat
 								</div>
 
-								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle">Eagle (4 points per drawn card)</label>
+								<div class="col-5">
+									
+									<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_starting_nectar_radio" name="automa_starting_nectar" data-enable_start_game = 0 data-automa_starting_nectar = 0>
+
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_starting_nectar" 
+												value="3"> 3
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_starting_nectar" 
+												value="4"> 4
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_starting_nectar" 
+												value="5"> 5
+										</label>
+									</fieldset>
+								</div>
 							</div>
-						
-							<div class="row p-0 margin_auto" id="row_difficulty_eagle-eyed_eagle">
 
-								<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+							<div class="row p-0 mt-1 margin_auto" id="row_automa_hoard_tokens">
 
-									<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+								<div class="col-7">
+									Cache / hoard tokens per egg
 								</div>
 
-								<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle (5 points per drawn card)</label>
+								<div class="col-5">
+									
+									<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_hoard_tokens_per_egg_radio" name="automa_hoard_tokens_per_egg" data-enable_start_game = 0 data-automa_hoard_tokens_per_egg = 0>
+
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_hoard_tokens_per_egg" 
+												value="5"> 5
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_hoard_tokens_per_egg" 
+												value="4"> 4
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_hoard_tokens_per_egg" 
+												value="3"> 3
+										</label>
+									</fieldset>
+								</div>
 							</div>
-						</fieldset>
-                    </div>
-                  </div>
+
+							<div class="row p-0 my-1 margin_auto" id="row_automa_face_down_bird_cards">
+
+								<div class="col-7">
+									Points per face-down bird card
+								</div>
+
+								<div class="col-5">
+									
+									<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_points_per_face_down_bird_card_radio" name="automa_points_per_face_down_bird_card" data-enable_start_game = 0 data-automa_points_per_face_down_bird_card = 0>
+
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_points_per_face_down_bird_card" 
+												value="3"> 3
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_points_per_face_down_bird_card" 
+												value="4"> 4
+										</label>
+			
+										<label class="col-4 p-0">
+											<input type="radio" name="automa_points_per_face_down_bird_card" 
+												value="5"> 5
+										</label>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+                  	</div>
                 </div>
             </div>
 

@@ -53,8 +53,8 @@ function populate_form_data() {
 
     // Automa: drawn cards
     $("#automa_drawn_cards_for_post").val(
-        $("#col_difficulty_radio").data(
-            "points_per_drawn_card"
+        $("#row_automa_points_per_face_down_bird_card_radio").data(
+            "automa_points_per_face_down_bird_card"
         ) * $("#col_automa_drawn_cards_count").data(
             "counter"
         )
@@ -172,6 +172,9 @@ $(document).ready(
 function start_game_enabler() {
     var idx_to_check = [
         "#col_difficulty_radio",
+        "#row_automa_starting_nectar_radio",
+        "#automa_hoard_tokens_per_egg",
+        "#automa_points_per_face_down_bird_card",
         "#button_round_1_end_goal",
         "#button_round_2_end_goal",
         "#button_round_3_end_goal",
@@ -216,23 +219,22 @@ $(document).ready(
                 switch($("input[name='difficulty']:checked").val()) {
 
                     case "eaglet":
-                        $("#col_difficulty_radio").data(
-                            "points_per_drawn_card",
-                            3
-                        );
+                        $("input:radio[name=automa_starting_nectar]").filter("[value=3]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=5]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=3]").prop("checked", true).trigger("change");
                         break;
                     case "eagle":
-                        $("#col_difficulty_radio").data(
-                            "points_per_drawn_card",
-                            4
-                        );
+                        $("input:radio[name=automa_starting_nectar]").filter("[value=4]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=4]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=4]").prop("checked", true).trigger("change");
                         break;
                     case "eagle-eyed_eagle":
-                        $("#col_difficulty_radio").data(
-                            "points_per_drawn_card",
-                            5
-                        );
+                        $("input:radio[name=automa_starting_nectar]").filter("[value=5]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=3]").prop("checked", true).trigger("change");
+                        $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=5]").prop("checked", true).trigger("change");
                         break;
+
+                    
                 }
 
                 start_game_enabler();
@@ -240,6 +242,176 @@ $(document).ready(
         )
     }
 )
+
+function read_difficulty_from_radio_selection() {
+
+    if (
+        (
+            $("input[name='automa_starting_nectar']:checked").val() == "3"
+        ) && (
+            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "5"
+        ) && (
+            $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "3"
+        )
+    ) {
+        $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
+    }
+    else if (
+        (
+            $("input[name='automa_starting_nectar']:checked").val() == "4"
+        ) && (
+            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "4"
+        ) && (
+            $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "4"
+        )
+    ) {
+        $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+    }
+    else if (
+        (
+            $("input[name='automa_starting_nectar']:checked").val() == "5"
+        ) && (
+            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "3"
+        ) && (
+            $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "5"
+        )
+    ) {
+        $("input:radio[name=difficulty]").filter("[value=eagle-eyed_eagle]").prop("checked", true);
+    }
+    else {
+        $("input:radio[name=difficulty]").filter("[value=custom]").prop("checked", true);
+    }
+}
+
+// Assign automa starting nectar data
+$(document).ready(
+
+    function () {
+
+        $("#row_automa_starting_nectar_radio").on(
+            "change",
+            function() {
+                $("#row_automa_starting_nectar_radio").data(
+                    "enable_start_game",
+                    1
+                );
+
+                switch($("input[name='automa_starting_nectar']:checked").val()) {
+
+                    case "3":
+                        $("#row_automa_starting_nectar_radio").data(
+                            "automa_starting_nectar",
+                            3
+                        );
+                        break;
+                    case "4":
+                        $("#row_automa_starting_nectar_radio").data(
+                            "automa_starting_nectar",
+                            4
+                        );
+                        break;
+                    case "5":
+                        $("#row_automa_starting_nectar_radio").data(
+                            "automa_starting_nectar",
+                            5
+                        );
+                        break;
+                }
+
+                read_difficulty_from_radio_selection();
+
+                start_game_enabler();
+            }
+        )
+    }
+)
+
+// Assign automa hoard tokens per egg data
+$(document).ready(
+
+    function () {
+
+        $("#row_automa_hoard_tokens_per_egg_radio").on(
+            "change",
+            function() {
+                $("#row_automa_hoard_tokens_per_egg_radio").data(
+                    "enable_start_game",
+                    1
+                );
+
+                switch($("input[name='automa_hoard_tokens_per_egg']:checked").val()) {
+
+                    case "3":
+                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                            "automa_hoard_tokens_per_egg",
+                            3
+                        );
+                        break;
+                    case "4":
+                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                            "automa_hoard_tokens_per_egg",
+                            4
+                        );
+                        break;
+                    case "5":
+                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                            "automa_hoard_tokens_per_egg",
+                            5
+                        );
+                        break;
+                }
+
+                read_difficulty_from_radio_selection();
+
+                start_game_enabler();
+            }
+        )
+    }
+)
+
+// Assign automa points per face-down bird data
+$(document).ready(
+
+    function () {
+
+        $("#row_automa_points_per_face_down_bird_card_radio").on(
+            "change",
+            function() {
+                $("#row_automa_points_per_face_down_bird_card_radio").data(
+                    "enable_start_game",
+                    1
+                );
+
+                switch($("input[name='automa_points_per_face_down_bird_card']:checked").val()) {
+
+                    case "3":
+                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                            "automa_points_per_face_down_bird_card",
+                            3
+                        );
+                        break;
+                    case "4":
+                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                            "automa_points_per_face_down_bird_card",
+                            4
+                        );
+                        break;
+                    case "5":
+                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                            "automa_points_per_face_down_bird_card",
+                            5
+                        );
+                        break;
+                }
+
+                read_difficulty_from_radio_selection();
+
+                start_game_enabler();
+            }
+        )
+    }
+)
+
 
 // Update round end goal images
 function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_base_values) {
@@ -599,8 +771,8 @@ function update_automa_total_score() {
         "counter",
         $("#col_automa_played_birds").data(
             "counter"
-        ) + $("#col_difficulty_radio").data(
-            "points_per_drawn_card"
+        ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
+            "automa_points_per_face_down_bird_card"
         ) * $("#col_automa_drawn_cards_count").data(
             "counter"
         ) + $("#col_automa_eggs_count").data(
@@ -1323,14 +1495,14 @@ function populate_game_end_modal() {
 
     $("#table_cell_drawn_cards_points").text(
         `${
-            $("#col_difficulty_radio").data(
-                "points_per_drawn_card"
+            $("#row_automa_points_per_face_down_bird_card_radio").data(
+                "automa_points_per_face_down_bird_card"
             ) * $("#col_automa_drawn_cards_count").data(
                 "counter"
             )
         } (${
-            $("#col_difficulty_radio").data(
-                "points_per_drawn_card"
+            $("#row_automa_points_per_face_down_bird_card_radio").data(
+                "automa_points_per_face_down_bird_card"
             )
         } \u00D7 ${
             $("#col_automa_drawn_cards_count").data(
@@ -1360,8 +1532,8 @@ function populate_game_end_modal() {
     $("#table_cell_total_points").text(
         $("#col_automa_played_birds").data(
             "counter"
-        ) + $("#col_difficulty_radio").data(
-            "points_per_drawn_card"
+        ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
+            "automa_points_per_face_down_bird_card"
         ) * $("#col_automa_drawn_cards_count").data(
             "counter"
         ) + $("#col_automa_eggs_count").data(
@@ -1442,11 +1614,30 @@ $(document).ready(
 
                 $("#table_automa_actions tbody").empty();
                 
+                // Reset difficulty radios
                 $("#radio_difficulty_choice_eaglet").prop('checked', false);
                 $("#radio_difficulty_choice_eagle").prop('checked', false);
                 $("#radio_difficulty_choice_eagle-eyed_eagle").prop('checked', false);
 
                 $("#col_difficulty_radio" ).data(
+                    "enable_start_game",
+                    0
+                )
+
+                $("input:radio[name=automa_starting_nectar]").prop("checked", false);
+                $("#row_automa_starting_nectar_radio" ).data(
+                    "enable_start_game",
+                    0
+                )
+
+                $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
+                $("#row_automa_hoard_tokens_per_egg_radio" ).data(
+                    "enable_start_game",
+                    0
+                )
+
+                $("input:radio[name=automa_points_per_face_down_bird_card]").prop("checked", false);
+                $("#row_automa_points_per_face_down_bird_card_radio" ).data(
                     "enable_start_game",
                     0
                 )
