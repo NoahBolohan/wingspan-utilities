@@ -170,11 +170,12 @@ $(document).ready(
 
 // Check if start game button should be enabled
 function start_game_enabler() {
+
     var idx_to_check = [
         "#col_difficulty_radio",
         "#row_automa_starting_nectar_radio",
-        "#automa_hoard_tokens_per_egg",
-        "#automa_points_per_face_down_bird_card",
+        "#row_automa_points_per_face_down_bird_card_radio",
+        "#row_automa_hoard_tokens_per_egg_radio",
         "#button_round_1_end_goal",
         "#button_round_2_end_goal",
         "#button_round_3_end_goal",
@@ -486,6 +487,26 @@ $(document).ready(
                     enable_text("#label_automa_hoard_tokens_3");
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
+
+                    $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        "enable_start_game",
+                        0
+                    );
+
+                    switch($("input[name='difficulty']:checked").val()) {
+
+                        case "eaglet":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=5]").prop("checked", true).trigger("change");
+                            break;
+                        case "eagle":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=4]").prop("checked", true).trigger("change");
+                            break;
+                        case "eagle-eyed_eagle":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=3]").prop("checked", true).trigger("change");
+                            break;
+                    }
+
+                    start_game_enabler();
                 }
                 else {
                     disable_text("#div_automa_cache_hoard_text");
@@ -494,12 +515,17 @@ $(document).ready(
                     disable_text("#label_automa_hoard_tokens_3");
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
-                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false).checkboxradio("refresh");
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
 
                     $("#row_automa_hoard_tokens_per_egg_radio").data(
-                        "automa_hoard_tokens_per_egg",
-                        0
+                        "enable_start_game",
+                        1
                     );
+
+                    read_difficulty_from_radio_selection();
+                    start_game_enabler();
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").checkboxradio("refresh");
                 }
             }
         )
@@ -526,6 +552,26 @@ $(document).ready(
                     enable_text("#label_automa_hoard_tokens_3");
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
+
+                    $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        "enable_start_game",
+                        0
+                    );
+
+                    switch($("input[name='difficulty']:checked").val()) {
+
+                        case "eaglet":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=5]").prop("checked", true).trigger("change");
+                            break;
+                        case "eagle":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=4]").prop("checked", true).trigger("change");
+                            break;
+                        case "eagle-eyed_eagle":
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=3]").prop("checked", true).trigger("change");
+                            break;
+                    }
+
+                    start_game_enabler();
                 }
                 else {
                     disable_text("#div_automa_cache_hoard_text");
@@ -534,6 +580,17 @@ $(document).ready(
                     disable_text("#label_automa_hoard_tokens_3");
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
+
+                    $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        "enable_start_game",
+                        1
+                    );
+
+                    read_difficulty_from_radio_selection();
+                    start_game_enabler();
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").checkboxradio("refresh");
                 }
             }
         )
