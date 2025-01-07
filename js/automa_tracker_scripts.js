@@ -220,18 +220,27 @@ $(document).ready(
 
                     case "eaglet":
                         $("input:radio[name=automa_starting_nectar]").filter("[value=3]").prop("checked", true).trigger("change");
-                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=5]").prop("checked", true).trigger("change");
                         $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=3]").prop("checked", true).trigger("change");
+
+                        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=5]").prop("checked", true).trigger("change");
+                        }
                         break;
                     case "eagle":
                         $("input:radio[name=automa_starting_nectar]").filter("[value=4]").prop("checked", true).trigger("change");
-                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=4]").prop("checked", true).trigger("change");
                         $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=4]").prop("checked", true).trigger("change");
+
+                        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=4]").prop("checked", true).trigger("change");
+                        }
                         break;
                     case "eagle-eyed_eagle":
                         $("input:radio[name=automa_starting_nectar]").filter("[value=5]").prop("checked", true).trigger("change");
-                        $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=3]").prop("checked", true).trigger("change");
                         $("input:radio[name=automa_points_per_face_down_bird_card]").filter("[value=5]").prop("checked", true).trigger("change");
+
+                        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+                            $("input:radio[name=automa_hoard_tokens_per_egg]").filter("[value=3]").prop("checked", true).trigger("change");
+                        }
                         break;
 
                     
@@ -249,34 +258,53 @@ function read_difficulty_from_radio_selection() {
         (
             $("input[name='automa_starting_nectar']:checked").val() == "3"
         ) && (
-            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "5"
-        ) && (
             $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "3"
         )
     ) {
-        $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
+
+        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+            if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "5") {
+                $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
+            }
+        }
+        else {
+            $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
+        }
+        
     }
     else if (
         (
             $("input[name='automa_starting_nectar']:checked").val() == "4"
         ) && (
-            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "4"
-        ) && (
             $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "4"
         )
     ) {
-        $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+
+        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+            if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "4") {
+                $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+            }
+        }
+        else {
+            $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+        }
     }
     else if (
         (
             $("input[name='automa_starting_nectar']:checked").val() == "5"
         ) && (
-            $("input[name='automa_hoard_tokens_per_egg']:checked").val() == "3"
-        ) && (
             $("input[name='automa_points_per_face_down_bird_card']:checked").val() == "5"
         )
     ) {
-        $("input:radio[name=difficulty]").filter("[value=eagle-eyed_eagle]").prop("checked", true);
+
+        if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+            if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "3") {
+                $("input:radio[name=difficulty]").filter("[value=eagle-eyed_eagle]").prop("checked", true);
+            }
+        }
+        else {
+            $("input:radio[name=difficulty]").filter("[value=eagle-eyed_eagle]").prop("checked", true);
+        }
     }
     else {
         $("input:radio[name=difficulty]").filter("[value=custom]").prop("checked", true);
@@ -412,6 +440,90 @@ $(document).ready(
     }
 )
 
+function enable_text(selector) {
+    $(selector).removeClass("disabled-text");
+    $(selector).addClass("enabled-text");
+}
+
+function disable_text(selector) {
+    $(selector).removeClass("enabled-text");
+    $(selector).addClass("disabled-text");
+}
+
+// Toggle Automa's cache/hoard row
+$(document).ready(
+
+    function () {
+
+        $("#col_automas_cache_checkbox").on(
+            "change",
+            function () {
+
+                if ($("#col_automas_cache_checkbox").is(":checked")) {
+
+                    // Uncheck Automa's hoard box
+                    $("#col_automas_hoard_checkbox").prop(
+                        "checked",
+                        false
+                    )
+                }
+
+                // Toggle Automa's cache/hoard row
+                if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+
+                    enable_text("#div_automa_cache_hoard_text");
+                    enable_text("#label_automa_hoard_tokens_5");
+                    enable_text("#label_automa_hoard_tokens_4");
+                    enable_text("#label_automa_hoard_tokens_3");
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
+                }
+                else {
+                    disable_text("#div_automa_cache_hoard_text");
+                    disable_text("#label_automa_hoard_tokens_5");
+                    disable_text("#label_automa_hoard_tokens_4");
+                    disable_text("#label_automa_hoard_tokens_3");
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
+                }
+            }
+        )
+
+        $("#col_automas_hoard_checkbox").on(
+            "change",
+            function () {
+
+                if ($("#col_automas_hoard_checkbox").is(":checked")) {
+
+                    // Uncheck Automa's hoard box
+                    $("#col_automas_cache_checkbox").prop(
+                        "checked",
+                        false
+                    )
+                }
+
+                // Toggle Automa's cache/hoard row
+                if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+
+                    enable_text("#div_automa_cache_hoard_text");
+                    enable_text("#label_automa_hoard_tokens_5");
+                    enable_text("#label_automa_hoard_tokens_4");
+                    enable_text("#label_automa_hoard_tokens_3");
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
+                }
+                else {
+                    disable_text("#div_automa_cache_hoard_text");
+                    disable_text("#label_automa_hoard_tokens_5");
+                    disable_text("#label_automa_hoard_tokens_4");
+                    disable_text("#label_automa_hoard_tokens_3");
+
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
+                }
+            }
+        )
+    }
+)
 
 // Update round end goal images
 function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_base_values) {

@@ -21,7 +21,7 @@
 html *
 {
    font-size: 15pt;
-   color: #000 !important;
+   color: #000;
    font-family: "CardenioModern" !important;
 }
 
@@ -183,4 +183,12 @@ textarea {
 .checkbox-menu li input {
     position: top;
     vertical-align: middle;
+}
+
+.disabled-text {
+    color : #EBEBE4
+}
+
+.enabled-text {
+    color : #000
 }
