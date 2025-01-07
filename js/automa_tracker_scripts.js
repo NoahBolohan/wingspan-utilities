@@ -494,6 +494,12 @@ $(document).ready(
                     disable_text("#label_automa_hoard_tokens_3");
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
+                    $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false).checkboxradio("refresh");
+
+                    $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        "automa_hoard_tokens_per_egg",
+                        0
+                    );
                 }
             }
         )
