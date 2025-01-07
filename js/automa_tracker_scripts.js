@@ -266,6 +266,9 @@ function read_difficulty_from_radio_selection() {
             if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "5") {
                 $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
             }
+            else {
+                $("input:radio[name=difficulty]").filter("[value=custom]").prop("checked", true);
+            }
         }
         else {
             $("input:radio[name=difficulty]").filter("[value=eaglet]").prop("checked", true);
@@ -284,6 +287,9 @@ function read_difficulty_from_radio_selection() {
             if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "4") {
                 $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
             }
+            else {
+                $("input:radio[name=difficulty]").filter("[value=custom]").prop("checked", true);
+            }
         }
         else {
             $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
@@ -300,6 +306,9 @@ function read_difficulty_from_radio_selection() {
         if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
             if ($("input[name='automa_hoard_tokens_per_egg']:checked").val() == "3") {
                 $("input:radio[name=difficulty]").filter("[value=eagle-eyed_eagle]").prop("checked", true);
+            }
+            else {
+                $("input:radio[name=difficulty]").filter("[value=custom]").prop("checked", true);
             }
         }
         else {
