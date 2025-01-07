@@ -1,10 +1,3 @@
-// Open with debug options
-$(document).ready(
-    function() {
-        // custom_show("#row_debug_mode");
-    }
-)
-
 function assign_submit_href() {
 
     var data_dict = {
@@ -79,49 +72,6 @@ function populate_form_data() {
     $("#automa_total_score_for_post").val(
         $("#table_cell_total_points").text()
     )
-}
-
-// Shuffle array (https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
-function shuffle(array) {
-    var current_index = array.length;
-  
-    // While there remain elements to shuffle...
-    while (current_index != 0) {
-  
-      // Pick a remaining element...
-      let random_index = Math.floor(Math.random() * current_index);
-      current_index--;
-  
-      // And swap it with the current element.
-      [array[current_index], array[random_index]] = [
-        array[random_index], array[current_index]];
-    }
-
-    return array;
-  }
-
-// Custom show div
-function custom_show(div_id) {
-    $(div_id).css(
-        "visibility",
-        "visible"
-    );
-    $(div_id).css(
-        "max-height",
-        "100%"
-    );
-}
-
-// Custom hide div
-function custom_hide(div_id) {
-    $(div_id).css(
-        "visibility",
-        "hidden"
-    );
-    $(div_id).css(
-        "max-height",
-        "0"
-    );
 }
 
 // Assign a random background on load
@@ -449,16 +399,6 @@ $(document).ready(
         )
     }
 )
-
-function enable_text(selector) {
-    $(selector).removeClass("disabled-text");
-    $(selector).addClass("enabled-text");
-}
-
-function disable_text(selector) {
-    $(selector).removeClass("enabled-text");
-    $(selector).addClass("disabled-text");
-}
 
 // Toggle Automa's cache/hoard row
 $(document).ready(
@@ -1853,137 +1793,6 @@ $(document).ready(
                 reset_automa_score_breakdown_table();
             }
         )
-    }
-)
-
-// Debug mode checkbox
-$(document).ready(
-    function() {
-        $("#col_debug_mode_checkbox").on(
-            "change",
-            function() {
-                
-                if (($("#col_debug_mode_checkbox").is(":checked"))) {
-
-                    // Debug option: quick start (Starts unchecked)
-                    custom_show("#row_debug_mode_quick_start");
-                    $("#col_debug_mode_quick_start_checkbox").prop(
-                        "checked",
-                        false
-                    )
-
-                    // Debug option: round length (Starts checked)
-                    custom_show("#row_debug_mode_round_length");
-                    $("#col_debug_mode_round_length_checkbox").prop(
-                        "checked",
-                        true
-                    )
-
-                    // Debug option: play a bird (Starts checked)
-                    custom_show("#row_debug_mode_play_a_bird");
-                    $("#col_debug_mode_play_a_bird_checkbox").prop(
-                        "checked",
-                        true
-                    )
-
-                    // Debug option: round end winner (Starts checked)
-                    custom_show("#row_debug_mode_round_end_winner");
-                    $("#col_debug_mode_round_end_winner_checkbox").prop(
-                        "checked",
-                        true
-                    )
-
-                }
-                else {
-
-                    // Debug option: quick start
-                    custom_hide("#row_debug_mode_quick_start");
-                    $("#col_debug_mode_quick_start_checkbox").prop(
-                        "checked",
-                        false
-                    )
-
-                    // Debug option: round length
-                    custom_hide("#row_debug_mode_round_length");
-                    $("#col_debug_mode_round_length_checkbox").prop(
-                        "checked",
-                        false
-                    )
-
-                    // Debug option: play a bird
-                    custom_hide("#row_debug_mode_play_a_bird");
-                    $("#col_debug_mode_play_a_bird_checkbox").prop(
-                        "checked",
-                        false
-                    )
-
-                    // Debug option: round end winner
-                    custom_hide("#row_debug_mode_round_end_winner");
-                    $("#col_debug_mode_round_end_winner_checkbox").prop(
-                        "checked",
-                        false
-                    )
-                }
-            }
-        );
-    }
-)
-
-// Debug mode: quick start functionality
-$(document).ready(
-    function() {
-        $("#col_debug_mode_quick_start_checkbox").on(
-            "change",
-            function() {
-                
-                if (($("#col_debug_mode_quick_start_checkbox").is(":checked"))) {
-
-                    $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
-                    $("#col_difficulty_radio").data(
-                        "enable_start_game",
-                        1
-                    );
-
-                    $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/base.json`, function(data) {
-
-                        update_round_end_goal_image(
-                            1,
-                            "birds_in_forest",
-                            data["birds_in_forest"]
-                        );
-    
-                        update_round_end_goal_image(
-                            2,
-                            "birds_in_grassland",
-                            data["birds_in_grassland"]
-                        );
-    
-                        update_round_end_goal_image(
-                            3,
-                            "birds_in_wetland",
-                            data["birds_in_wetland"]
-                        );
-    
-                        update_round_end_goal_image(
-                            4,
-                            "total_birds",
-                            data["total_birds"]
-                        );
-                    })
-
-                    $("#button_start_game").prop(
-                        "disabled",
-                        false
-                    );
-                }
-                else {
-                    $("#button_start_game").prop(
-                        "disabled",
-                        true
-                    );
-                }
-            }
-        );
     }
 )
 
