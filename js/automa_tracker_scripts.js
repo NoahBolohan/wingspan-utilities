@@ -622,13 +622,13 @@ function new_round(round_number) {
 
         update_round_end_cube_counter(round_number,0)
 
-        custom_show(
+        custom_show_div(
             "#row_automa_action_button"
         );
     }
     else {
 
-        custom_show(
+        custom_show_div(
             "#row_proceed_to_game_end_button"
         );
     }
@@ -1157,11 +1157,11 @@ $(document).ready(
                     );
 
                     // Show and hide buttons
-                    custom_hide(
+                    custom_hide_div(
                         "#row_automa_action_button"
                     );
 
-                    custom_show(
+                    custom_show_div(
                         "#row_end_round_button"
                     );
                 }
@@ -1314,7 +1314,7 @@ function end_round_cleanup(who_won) {
     $("#automa_score_for_round_end_modal").empty();
 
     // Show and hide buttons
-    custom_hide(
+    custom_hide_div(
         "#row_end_round_button"
     );
 
@@ -1396,15 +1396,29 @@ $(document).ready(
                 // Setup for first round
                 new_round(1);
 
-                // Show and hide buttons
-                custom_hide(
+                // Show and hide stuff
+                if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+                    custom_show_column("#col_automa_hoard_tokens_text_div");
+                }
+                else {
+                    custom_hide_column("#col_automa_hoard_tokens_text_div");
+                }
+
+                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+                    custom_show_column("#col_automa_nectar_text_div");
+                }
+                else {
+                    custom_hide_column("#col_automa_nectar_text_div");
+                }
+                
+                custom_hide_div(
                     "#container_game_setup"
                 );
-                custom_show(
+                custom_show_div(
                     "#container_automa_gameplay"
                 );
 
-                custom_hide("#row_debug_mode");
+                custom_hide_div("#row_debug_mode");
 
                 // Debug option
                 if ($("#col_debug_mode_quick_start_checkbox").is(":checked")) {
@@ -1770,10 +1784,10 @@ $(document).ready(
                 start_game_enabler();
 
                 // Show and hide buttons
-                custom_show(
+                custom_show_div(
                     "#container_game_setup"
                 );
-                custom_hide(
+                custom_hide_div(
                     "#container_automa_gameplay"
                 );
 
@@ -1781,11 +1795,11 @@ $(document).ready(
                 $("#table_automa_actions tbody").empty();
 
                 // Show and hide buttons / modals
-                custom_hide(
+                custom_hide_div(
                     "#row_end_round_button"
                 );
 
-                custom_hide(
+                custom_hide_div(
                     "#row_proceed_to_game_end_button"
                 );
 

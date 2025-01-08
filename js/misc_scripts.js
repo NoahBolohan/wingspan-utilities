@@ -18,7 +18,7 @@ function shuffle(array) {
 }
 
 // Custom show div
-function custom_show(div_id) {
+function custom_show_div(div_id) {
     $(div_id).css(
         "visibility",
         "visible"
@@ -30,7 +30,7 @@ function custom_show(div_id) {
 }
 
 // Custom hide div
-function custom_hide(div_id) {
+function custom_hide_div(div_id) {
     $(div_id).css(
         "visibility",
         "hidden"
@@ -38,6 +38,30 @@ function custom_hide(div_id) {
     $(div_id).css(
         "max-height",
         "0"
+    );
+}
+
+// Custom show bootstrap column
+function custom_show_column(column_id) {
+    $(column_id).css(
+        "visibility",
+        "visible"
+    );
+    $(column_id).css(
+        "display",
+        "block"
+    );
+}
+
+// Custom hide bootstrap column
+function custom_hide_column(column_id) {
+    $(column_id).css(
+        "visibility",
+        "hidden"
+    );
+    $(column_id).css(
+        "display",
+        "none"
     );
 }
 
