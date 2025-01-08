@@ -87,7 +87,8 @@ $(document).ready(
                 
                 if (($("#col_debug_mode_quick_start_checkbox").is(":checked"))) {
 
-                    $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true);
+                    $("input:radio[name=difficulty]").filter("[value=eagle]").prop("checked", true).trigger("change");
+
                     $("#col_difficulty_radio").data(
                         "enable_start_game",
                         1

@@ -1060,6 +1060,7 @@ function append_automa_action_row(automa_action) {
             ).appendTo(
                 tr
             );
+            update_automa_laid_eggs(automa_action[`round_${$("#row_round_info").data("round")}`]["number_of_eggs"])
             break;
 
         case "gain_food":
@@ -1080,12 +1081,12 @@ function append_automa_action_row(automa_action) {
     switch(automa_action[`round_${$("#row_round_info").data("round")}`]["secondary_action"]) {
 
         case "place_end-of-round_cube":
-            secondary_action_text = "Place end-of-round cube";
+            secondary_action_text = "\u25A8";
             secondary_action_class = "table-primary";
             break;
 
         case "remove_end-of-round_cube":
-            secondary_action_text = "Remove end-of-round cube";
+            secondary_action_text = "\u00D7";
             secondary_action_class = "table-primary";
             break;
 
@@ -1103,7 +1104,7 @@ function append_automa_action_row(automa_action) {
     $("<td>").attr(
         {
             class : secondary_action_class,
-            style : "width: 45%"
+            style : "width: 45%; text-align: center"
         }
     ).text(
         secondary_action_text
