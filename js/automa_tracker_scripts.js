@@ -912,7 +912,25 @@ function update_automa_total_score() {
         )
     );
 
+    if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+
+        $("#col_automa_total_score").data(
+            "counter",
+            $("#col_automa_played_birds").data(
+                "counter"
+            ) + Math.floor(
+                $("#col_automa_hoard_tokens_count").data(
+                    "counter"
+                ) / parseInt(
+                    $("input[name='automa_hoard_tokens_per_egg']:checked").val()
+                )
+            )
+        )
+    }
+
+
     $("#col_automa_total_score").empty();
+
     $("#col_automa_total_score").text(
         $("#col_automa_total_score").data(
             "counter"
@@ -1171,6 +1189,54 @@ $(document).ready(
     }
 )
 
+// Set an event listener for adding hoard tokens by clicking the add hoard tokens button
+$(document).ready(
+    function() {
+        $("#button_automa_add_hoard_tokens").on(
+            "click",
+            function() {
+
+                $("#modal_add_hoard_tokens").modal("show")
+            }
+        )
+    }
+)
+
+// Add hoard tokens buttons
+$(document).ready(
+    function() {
+
+        $.each(
+            ["food", "nectar", "bird_card", "egg", "bonus_card"],
+            function(idx,hoard_token_type) {
+        
+                $(`#col_button_add_${hoard_token_type}_hoard_tokens`).on(
+                    "click",
+                    function() {
+        
+                        $("#col_automa_hoard_tokens_count").data(
+                            "counter",
+                            $("#col_automa_hoard_tokens_count").data(
+                                "counter"
+                            ) + $(`#col_button_add_${hoard_token_type}_hoard_tokens`).data("n_tokens")
+                        );
+        
+                        $("#col_automa_hoard_tokens_count").text(
+                            $("#col_automa_hoard_tokens_count").data(
+                                "counter"
+                            )
+                        );
+
+                        update_automa_total_score();
+        
+                        $("#modal_add_hoard_tokens").modal("hide")
+                    }
+                )
+            }
+        )
+    }
+)
+
 // Set an event listener for performing end round cleanup by clicking the end round button
 $(document).ready(
     function() {
@@ -1399,9 +1465,11 @@ $(document).ready(
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
                     custom_show_column("#col_automa_hoard_tokens_text_div");
+                    custom_show_div("#row_automa_add_hord_tokens_button");
                 }
                 else {
                     custom_hide_column("#col_automa_hoard_tokens_text_div");
+                    custom_hide_div("#row_automa_add_hord_tokens_button");
                 }
 
                 if ($("#col_oceania_expansion_checkbox").is(":checked")) {

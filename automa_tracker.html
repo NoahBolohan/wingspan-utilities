@@ -159,6 +159,67 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade" id="modal_add_hoard_tokens">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header justify-content-center">
+	
+						<h2 class="modal-title">Choose how many hoard tokens to add:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_add_hoard_tokens">
+	
+								<div class="col-12 p-0" id="col_modal_add_hoard_tokens">
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_add_food_hoard_tokens" type="button" data-n_tokens = 1>
+											Food : 1
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_add_nectar_hoard_tokens" type="button" data-n_tokens = 2>
+											Nectar : 2
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_add_bird_card_hoard_tokens" type="button" data-n_tokens = 2>
+											Bird card : 2
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_add_egg_hoard_tokens" type="button" data-n_tokens = 3>
+											Egg : 3
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_add_bonus_card_hoard_tokens" type="button" data-n_tokens = 6>
+											Bonus card : 6
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<div class="modal fade" id="modal_end_of_round">
 	
@@ -735,7 +796,7 @@
 
 						<div class="row p-0 justify-content-center margin_auto">
 							<div class="col-10 p-0 centered-text" id="col_automa_hoard_tokens_text">Hoard tokens:</div>
-							<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens" data-counter = 0>0</div>
+							<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens_count" data-counter = 0>0</div>
 						</div>
 					</div>
 
@@ -768,6 +829,13 @@
 
 				<button class="col btn btn-primary nav-button" id="button_automa_action" type="button">
 					Automa action
+				</button>
+			</div>
+
+			<div class="row p-0 mt-1 justify-content-center margin_auto is_hidden" id="row_automa_add_hord_tokens_button">
+
+				<button class="col btn btn-warning nav-button" id="button_automa_add_hoard_tokens" type="button">
+					Add hoard tokens
 				</button>
 			</div>
 
