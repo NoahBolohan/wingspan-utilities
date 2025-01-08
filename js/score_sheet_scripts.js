@@ -668,14 +668,14 @@ function reset_inputs_for_all_players() {
 
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
 
-        $(`#input_player_${i}_name`).val(`Player ${i}`);
+        $(`#input_player_${i}_name`).val("");
         $(`#input_player_${i}_birds`).val("");
         $(`#input_player_${i}_bonus_cards`).val("");
         $(`#input_player_${i}_end-of-round_goals`).val("");
         $(`#input_player_${i}_eggs`).val("");
         $(`#input_player_${i}_food_on_cards`).val("");
         $(`#input_player_${i}_tucked_cards`).val("");
-        $(`#div_player_${i}_nectar`).text("");
+        $(`#input_player_${i}_nectar`).val("");
         
         if (i <= 2) {
             $(`#input_player_${i}_duet_tokens`).val("");
