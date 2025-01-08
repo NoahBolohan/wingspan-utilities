@@ -1237,6 +1237,57 @@ $(document).ready(
     }
 )
 
+// Set an event listener for removing hoard tokens by clicking the remove hoard tokens button
+$(document).ready(
+    function() {
+        $("#button_automa_remove_hoard_tokens").on(
+            "click",
+            function() {
+
+                $("#modal_remove_hoard_tokens").modal("show")
+            }
+        )
+    }
+)
+
+// remove hoard tokens buttons
+$(document).ready(
+    function() {
+
+        $.each(
+            ["food", "nectar", "bird_card", "egg"],
+            function(idx,hoard_token_type) {
+        
+                $(`#col_button_remove_${hoard_token_type}_hoard_tokens`).on(
+                    "click",
+                    function() {
+        
+                        $("#col_automa_hoard_tokens_count").data(
+                            "counter",
+                            Math.max(
+                                $("#col_automa_hoard_tokens_count").data(
+                                    "counter"
+                                ) - $(`#col_button_remove_${hoard_token_type}_hoard_tokens`).data("n_tokens"),
+                                0
+                            )
+                        );
+        
+                        $("#col_automa_hoard_tokens_count").text(
+                            $("#col_automa_hoard_tokens_count").data(
+                                "counter"
+                            )
+                        );
+
+                        update_automa_total_score();
+        
+                        $("#modal_remove_hoard_tokens").modal("hide")
+                    }
+                )
+            }
+        )
+    }
+)
+
 // Set an event listener for performing end round cleanup by clicking the end round button
 $(document).ready(
     function() {
@@ -1465,11 +1516,11 @@ $(document).ready(
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
                     custom_show_column("#col_automa_hoard_tokens_text_div");
-                    custom_show_div("#row_automa_add_hord_tokens_button");
+                    custom_show_div("#row_hoard_token_buttons");
                 }
                 else {
                     custom_hide_column("#col_automa_hoard_tokens_text_div");
-                    custom_hide_div("#row_automa_add_hord_tokens_button");
+                    custom_hide_div("#row_hoard_token_buttons");
                 }
 
                 if ($("#col_oceania_expansion_checkbox").is(":checked")) {

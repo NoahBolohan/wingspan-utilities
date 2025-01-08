@@ -220,6 +220,60 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade" id="modal_remove_hoard_tokens">
+	
+			<div class="modal-dialog" role="document">
+	
+				<div class="modal-content">
+	
+					<div class="modal-header justify-content-center">
+	
+						<h2 class="modal-title">Choose how many hoard tokens to remove:</h5>
+					</div>
+	
+					<div class="modal-body">
+	
+						<div class="p-0 container-fluid">
+	
+							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_remove_hoard_tokens">
+	
+								<div class="col-12 p-0" id="col_modal_remove_hoard_tokens">
+	
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_remove_food_hoard_tokens" type="button" data-n_tokens = 1>
+											Food : 1
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_remove_nectar_hoard_tokens" type="button" data-n_tokens = 1>
+											Nectar : 1
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_remove_bird_card_hoard_tokens" type="button" data-n_tokens = 1>
+											Bird card : 1
+										</button>
+									</div>
+
+									<div class="row p-0 mt-2 justify-content-center margin_auto">
+
+										<button class="col-6 btn btn-info nav-button" id="col_button_remove_egg_hoard_tokens" type="button" data-n_tokens = 2>
+											Egg : 2
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	
 		<div class="modal fade" id="modal_end_of_round">
 	
@@ -832,12 +886,20 @@
 				</button>
 			</div>
 
-			<div class="row p-0 mt-1 justify-content-center margin_auto is_hidden" id="row_automa_add_hord_tokens_button">
+			<div class="row gx-1 mt-1 is_hidden" id="row_hoard_token_buttons">
 
-				<button class="col btn btn-warning nav-button" id="button_automa_add_hoard_tokens" type="button">
-					Add hoard tokens
-				</button>
-			</div>
+                <div class="col-6">
+                    <button class="w-100 btn btn-warning nav-button" id="button_automa_remove_hoard_tokens" type="button">
+						Remove hoard tokens
+					</button>
+                </div>
+
+                <div class="col-6">
+                    <button class="w-100 btn btn-warning nav-button" id="button_automa_add_hoard_tokens" type="button">
+						Add hoard tokens
+					</button>
+                </div>
+            </div>
 
 			<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_end_round_button">
 
