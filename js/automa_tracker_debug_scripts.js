@@ -1,7 +1,7 @@
 // Open with debug options
 $(document).ready(
     function() {
-        custom_show_div("#row_debug_mode");
+        // custom_show_div("#row_debug_mode");
     }
 )
 
