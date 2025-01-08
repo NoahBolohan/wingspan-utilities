@@ -3,6 +3,11 @@
     max-height : 0;
 }
 
+.hidden_column {
+    display:none;
+    visibility:hidden;
+}
+
 .margin_auto {
     margin-left: auto;
     margin-right : auto;
