@@ -916,7 +916,7 @@ function update_automa_total_score() {
 
         $("#col_automa_total_score").data(
             "counter",
-            $("#col_automa_played_birds").data(
+            $("#col_automa_total_score").data(
                 "counter"
             ) + Math.floor(
                 $("#col_automa_hoard_tokens_count").data(
@@ -1781,29 +1781,32 @@ function populate_game_end_modal() {
         )
     )
 
-    $("#table_cell_laid_eggs_points").text(
-        $("#col_automa_eggs_count").data(
-            "counter"
+    if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+
+        $("#table_cell_laid_eggs_points").text(
+            $("#col_automa_eggs_count").data(
+                "counter"
+            ) + Math.floor(
+                $("#col_automa_hoard_tokens_count").data(
+                    "counter"
+                ) / parseInt(
+                    $("input[name='automa_hoard_tokens_per_egg']:checked").val()
+                )
+            )
         )
-    )
+    }
+    else {
+
+        $("#table_cell_laid_eggs_points").text(
+            $("#col_automa_eggs_count").data(
+                "counter"
+            )
+        )
+    }
 
     $("#table_cell_total_points").text(
-        $("#col_automa_played_birds").data(
+        $("#col_automa_total_score").data(
             "counter"
-        ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
-            "automa_points_per_face_down_bird_card"
-        ) * $("#col_automa_drawn_cards_count").data(
-            "counter"
-        ) + $("#col_automa_eggs_count").data(
-            "counter"
-        ) + $("#col_round_1_end_cube_count").data(
-            "automa_round_end_points"
-        ) + $("#col_round_2_end_cube_count").data(
-            "automa_round_end_points"
-        ) + $("#col_round_3_end_cube_count").data(
-            "automa_round_end_points"
-        ) + $("#col_round_4_end_cube_count").data(
-            "automa_round_end_points"
         )
     )
 }
