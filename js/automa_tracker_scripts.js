@@ -1189,6 +1189,107 @@ $(document).ready(
     }
 )
 
+// Automa end of round nectar checks
+function check_automa_end_of_round_nectar(n_check) {
+
+    var increment_card = $("#table_automa_actions").data(
+        "automa_deck"
+    )[$("#row_round_info").data("round_length") + n_check];
+
+    var incrementer = {
+        "1" : 0,
+        "2" : 0,
+        "3" : 0
+    }
+
+    $.each(
+
+        ["1","2","3"],
+        function (idx, nectar_spot) {
+         
+            if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "place_end-of-round_cube") {
+
+                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+1");
+                incrementer[nectar_spot] += 1;
+            }
+            else if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "remove_end-of-round_cube") {
+
+                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("-1");
+                incrementer[nectar_spot] -= 1;
+            } else {
+
+                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("0");
+            }
+        }
+    )
+
+    update_automa_nectar_counts(
+        {
+            "forest" : incrementer["1"],
+            "grassland" : incrementer["2"],
+            "wetland" : incrementer["3"]
+        },
+        "increment"
+    )
+
+    $.each(
+        ["forest", "grassland", "wetland"],
+        function(idx,board_zone) {
+            $(`#col_automa_nectar_${board_zone}_count_end_of_round_new`).text(
+                $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+            )
+        }
+    )
+
+    
+}
+
+// Update automa nectar counts
+function update_automa_nectar_counts(
+    nectar_count_dict,
+    update_type
+) {
+    $.each(
+        ["forest", "grassland", "wetland"],
+        function(idx,board_zone) {
+            if (update_type == "reset") {
+
+                $(`#col_automa_nectar_${board_zone}_count`).data(
+                    "counter",
+                    nectar_count_dict[board_zone]
+                )
+
+                $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data(
+                    "counter",
+                    nectar_count_dict[board_zone]
+                )
+            }
+            else if (update_type == "increment") {
+        
+                $(`#col_automa_nectar_${board_zone}_count`).data(
+                    "counter",
+                    Math.max(
+                        $(`#col_automa_nectar_${board_zone}_count`).data("counter") + nectar_count_dict[board_zone],
+                        0
+                    )
+                )
+
+                $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data(
+                    "counter",
+                    Math.max(
+                        $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data("counter") + nectar_count_dict[board_zone],
+                        0
+                    )
+                )
+            }
+        
+            $(`#col_automa_nectar_${board_zone}_count`).text(
+                $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+            )
+        }
+    )
+}
+
 // Set an event listener for adding hoard tokens by clicking the add hoard tokens button
 $(document).ready(
     function() {
@@ -1303,7 +1404,27 @@ $(document).ready(
                             "round_end_goal_score"
                         )
                     )
-                    $("#modal_end_of_round").modal("show");
+
+                    if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+                        $.each(
+                            ["forest", "grassland", "wetland"],
+                            function(idx,board_zone) {
+                                $(`#col_automa_nectar_${board_zone}_count_end_of_round`).text(
+                                    $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+                                )
+                            }
+                        )
+
+                        check_automa_end_of_round_nectar(1);
+                        check_automa_end_of_round_nectar(2);
+
+                        $("#modal_automa_end_of_round_nectar").modal("show");
+                    }
+                    else {
+                        $("#modal_end_of_round").modal("show");
+                    }
+                    
                 }
             }
         )
@@ -1439,6 +1560,20 @@ function end_round_cleanup(who_won) {
     new_round($("#row_round_info").data("round") + 1);
 }
 
+// Set an event listener for opening the end-of-round modal from the end-of-round nectar modal
+$(document).ready(
+    function() {
+        $("#button_automa_end_of_round_nectar_continue").on(
+            "click",
+            function() {
+
+                $("#modal_automa_end_of_round_nectar").modal("hide");
+                $("#modal_end_of_round").modal("show");
+            }
+        )
+    }
+)
+
 // Set an event listener for performing I won action by clicking the I won button
 $(document).ready(
     function() {
@@ -1515,18 +1650,31 @@ $(document).ready(
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
+
                     custom_show_column("#col_automa_hoard_tokens_text_div");
                     custom_show_div("#row_hoard_token_buttons");
                 }
                 else {
+
                     custom_hide_column("#col_automa_hoard_tokens_text_div");
                     custom_hide_div("#row_hoard_token_buttons");
                 }
 
                 if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+                    update_automa_nectar_counts(
+                        {
+                            "forest" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
+                            "grassland" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
+                            "wetland" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
+                        },
+                        "reset"
+                    );
+
                     custom_show_column("#col_automa_nectar_text_div");
                 }
                 else {
+                    
                     custom_hide_column("#col_automa_nectar_text_div");
                 }
                 
@@ -1804,6 +1952,13 @@ function populate_game_end_modal() {
         )
     }
 
+    if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+        $("#table_cell_final_nectar").text(
+            $("#col_automa_nectar_forest_count").data("counter") + $("#col_automa_nectar_grassland_count").data("counter") + $("#col_automa_nectar_wetland_count").data("counter")
+        )
+    }
+
     $("#table_cell_total_points").text(
         $("#col_automa_total_score").data(
             "counter"
@@ -1820,6 +1975,11 @@ function reset_automa_score_breakdown_table() {
 
     $("#table_cell_laid_eggs_points").empty();
 
+    if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+        $("#table_cell_final_nectar").empty();
+    }
+
     $("#table_cell_total_points").empty();
 }
 
@@ -1831,6 +1991,21 @@ $(document).ready(
             function() {
                 populate_game_end_modal();
                 assign_submit_href();
+
+                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+                    $("#game_end_automa_nectar_row").css(
+                        "visibility",
+                        "visible"
+                    );
+                }
+                else {
+                    $("#game_end_automa_nectar_row").css(
+                        "visibility",
+                        "collapse"
+                    );
+                }
+
                 $(`#modal_end_of_game`).modal("show");
             }
         )
