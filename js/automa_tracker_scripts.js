@@ -628,9 +628,23 @@ function new_round(round_number) {
     }
     else {
 
-        custom_show_div(
-            "#row_proceed_to_game_end_button"
+        custom_hide_div(
+            "#row_automa_actions"
         );
+
+        if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+
+            custom_show_div(
+                "#row_proceed_to_game_end_nectar_button"
+            );
+        }
+        else {
+            custom_show_div(
+                "#row_proceed_to_game_end_button"
+            );
+        }
+
+        
     }
 }
 
@@ -1983,30 +1997,66 @@ function reset_automa_score_breakdown_table() {
     $("#table_cell_total_points").empty();
 }
 
-// Set an event listener for proceeding to end of game by clicking the proceed to end of game button
+// Set an event listener for proceeding to end of game nectar scoring by clicking the proceed to nectar scoring button
 $(document).ready(
+
     function() {
-        $("#button_proceed_to_game_end").on(
+
+        $("#button_proceed_to_game_end_nectar_scoring").on(
             "click",
             function() {
+
+                $("#game_end_automa_nectar_row").css(
+                    "visibility",
+                    "visible"
+                );
+
+                $("#modal_nectar_scoring").modal("show");
+            }
+        )
+    }
+)
+
+// Set an event listener for proceeding to end of game by clicking the proceed to end of game button from the nectar screen
+$(document).ready(
+
+    function() {
+
+        $("#button_proceed_to_game_end_from_nectar_scoring").on(
+            "click",
+            function() {
+
                 populate_game_end_modal();
                 assign_submit_href();
 
-                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+                $("#game_end_automa_nectar_row").css(
+                    "visibility",
+                    "visible"
+                );
+                $("#modal_end_of_game").modal("show");
+            }
+        )
+    }
+)
 
-                    $("#game_end_automa_nectar_row").css(
-                        "visibility",
-                        "visible"
-                    );
-                }
-                else {
-                    $("#game_end_automa_nectar_row").css(
-                        "visibility",
-                        "collapse"
-                    );
-                }
+// Set an event listener for proceeding to end of game by clicking the proceed to end of game button
+$(document).ready(
 
-                $(`#modal_end_of_game`).modal("show");
+    function() {
+
+        $("#button_proceed_to_game_end").on(
+            "click",
+            function() {
+
+                populate_game_end_modal();
+                assign_submit_href();
+
+                $("#game_end_automa_nectar_row").css(
+                    "visibility",
+                    "collapse"
+                );
+
+                $("#modal_end_of_game").modal("show");
             }
         )
     }
@@ -2094,6 +2144,10 @@ $(document).ready(
                 // Show and hide buttons / modals
                 custom_hide_div(
                     "#row_end_round_button"
+                );
+
+                custom_hide_div(
+                    "#row_proceed_to_game_end_nectar_button"
                 );
 
                 custom_hide_div(

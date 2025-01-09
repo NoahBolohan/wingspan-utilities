@@ -77,6 +77,11 @@ table {
     /* line-height: normal; */
   }
 
+.nectar-scoring-button {
+    font-size: 15pt;
+    color: #000;
+}
+
 .nav-button {
     font-size: 18pt;
 }
