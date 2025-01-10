@@ -1588,6 +1588,98 @@ $(document).ready(
     }
 )
 
+function nectar_scoring_button_enable(nectar_scoring_button_id) {
+
+    if ($(nectar_scoring_button_id).hasClass("nectar-scoring-button-disabled")) {
+        $(nectar_scoring_button_id).removeClass("nectar-scoring-button-disabled");
+    }
+    $(nectar_scoring_button_id).addClass("nectar-scoring-button-enabled");
+}
+
+function nectar_scoring_button_disable(nectar_scoring_button_id) {
+
+    if ($(nectar_scoring_button_id).hasClass("nectar-scoring-button-enabled")) {
+        $(nectar_scoring_button_id).removeClass("nectar-scoring-button-enabled");
+    }
+    $(nectar_scoring_button_id).addClass("nectar-scoring-button-disabled");
+}
+
+$(document).ready(
+
+    $(`#button_forest_nectar_scoring_i_won`).on(
+        "click",
+        function() {
+
+            var habitat = forest;
+            var outcome = "i_won";
+
+            alert("Toggling")
+            for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
+
+                if (other_outcome == outcome) {
+
+                    alert("Enable" + forest + " " + outcome)
+                    nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
+                }
+                else {
+                    nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
+                }
+
+            }
+        }
+    )
+)
+
+// Set an event listener for performing nectar scoring I won action by clicking the nectar scoring I won button
+$(document).ready(
+
+    $.each(
+        ["forest","grassland","wetland"],
+        function(habitat_key, habitat) {
+
+            $.each(
+                ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"],
+                function (outcome_key, outcome) {
+
+                    $(`#button_${habitat}_nectar_scoring_${outcome}`).on(
+                        "click",
+                        function() {
+        
+                            alert("Toggling")
+                            for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
+        
+                                if (other_outcome == outcome) {
+
+                                    alert("Enable" + habitat + " " + outcome)
+                                    nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
+                                }
+                                else {
+                                    nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
+                                }
+        
+                            }
+                        }
+                    )
+                }
+            )
+        }
+    )
+)
+
+// Set an event listener for performing I won action by clicking the I won button
+$(document).ready(
+    function() {
+        $("#button_i_won").on(
+            "click",
+            function() {
+
+                $("#modal_end_of_round").modal("hide");
+                end_round_cleanup("me"); 
+            }
+        )
+    }
+)
+
 // Set an event listener for performing I won action by clicking the I won button
 $(document).ready(
     function() {
@@ -2009,6 +2101,18 @@ $(document).ready(
                 $("#game_end_automa_nectar_row").css(
                     "visibility",
                     "visible"
+                );
+
+                $("#nectar_scoring_forest_count").text(
+                    $("#col_automa_nectar_forest_count").data("counter")
+                );
+
+                $("#nectar_scoring_grassland_count").text(
+                    $("#col_automa_nectar_grassland_count").data("counter")
+                );
+
+                $("#nectar_scoring_wetland_count").text(
+                    $("#col_automa_nectar_wetland_count").data("counter")
                 );
 
                 $("#modal_nectar_scoring").modal("show");

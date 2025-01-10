@@ -77,9 +77,16 @@ table {
     /* line-height: normal; */
   }
 
-.nectar-scoring-button {
+.nectar-scoring-button-disabled {
     font-size: 15pt;
     color: #000;
+    opacity : 0.3;
+}
+
+.nectar-scoring-button-enabled {
+    font-size: 15pt;
+    color: #000;
+    opacity : 1;
 }
 
 .nav-button {
