@@ -20,6 +20,7 @@ function assign_submit_href() {
             "automa_round_end_points"
         ),
         "cell_automa_laid_eggs" : $("#col_automa_eggs_count").data("counter"),
+        "cell_automa_nectar" : $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score"),
         "cell_automa_total_score" : $("#col_automa_total_score").data("counter")
     }
 
