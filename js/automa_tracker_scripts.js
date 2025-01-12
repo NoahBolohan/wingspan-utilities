@@ -1604,32 +1604,6 @@ function nectar_scoring_button_disable(nectar_scoring_button_id) {
     $(nectar_scoring_button_id).addClass("nectar-scoring-button-disabled");
 }
 
-// $(document).ready(
-
-//     $(`#button_forest_nectar_scoring_i_won`).on(
-//         "click",
-//         function() {
-
-//             var habitat = forest;
-//             var outcome = "i_won";
-
-//             alert("Toggling")
-//             for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
-
-//                 if (other_outcome == outcome) {
-
-//                     alert("Enable" + forest + " " + outcome)
-//                     nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
-//                 }
-//                 else {
-//                     nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
-//                 }
-
-//             }
-//         }
-//     )
-// )
-
 // Set an event listener for performing nectar scoring I won action by clicking the nectar scoring I won button
 $(document).ready(
 
@@ -1657,7 +1631,69 @@ $(document).ready(
 
                                         nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${other_outcome}`);
                                     }
-            
+                                }
+
+                                switch (outcome) {
+
+                                    case "i_won":
+
+                                        $("#table_cell_final_nectar").data(
+                                            `user_${habitat}_nectar_score`,
+                                            5
+                                        );
+                                        if ($(`#col_automa_nectar_${habitat}_count`).data("counter") > 0) {
+
+                                            $("#table_cell_final_nectar").data(
+                                                `automa_${habitat}_nectar_score`,
+                                                2
+                                            );
+                                        }
+                                       else {
+
+                                            $("#table_cell_final_nectar").data(
+                                                `automa_${habitat}_nectar_score`,
+                                                0
+                                            );
+                                        }
+                                        
+                                        
+                                        break;
+
+                                    case "we_tied":
+
+                                        $("#table_cell_final_nectar").data(
+                                            `user_${habitat}_nectar_score`,
+                                            3
+                                        );
+                                        $("#table_cell_final_nectar").data(
+                                            `automa_${habitat}_nectar_score`,
+                                            3
+                                        );
+                                        break;
+
+                                    case "automa_won_user_scored":
+
+                                        $("#table_cell_final_nectar").data(
+                                            `user_${habitat}_nectar_score`,
+                                            2
+                                        );
+                                        $("#table_cell_final_nectar").data(
+                                            `automa_${habitat}_nectar_score`,
+                                            5
+                                        );
+                                        break;
+
+                                    case "automa_won_user_did_not_score":
+
+                                        $("#table_cell_final_nectar").data(
+                                            `user_${habitat}_nectar_score`,
+                                            0
+                                        );
+                                        $("#table_cell_final_nectar").data(
+                                            `automa_${habitat}_nectar_score`,
+                                            5
+                                        );
+                                        break;
                                 }
                             }
                         )
@@ -2063,7 +2099,7 @@ function populate_game_end_modal() {
     if ($("#col_oceania_expansion_checkbox").is(":checked")) {
 
         $("#table_cell_final_nectar").text(
-            $("#col_automa_nectar_forest_count").data("counter") + $("#col_automa_nectar_grassland_count").data("counter") + $("#col_automa_nectar_wetland_count").data("counter")
+            $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score")
         )
     }
 
