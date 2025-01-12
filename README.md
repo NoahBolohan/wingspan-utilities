@@ -22,7 +22,6 @@ Web app to track Wingspan games. Designed for mobile use.
 - Cardify automa tracker pages
 - Properly colour-code automa moves
 - Automarazzi
-- Take data off every div and make a single data dict somewhere
 
 ## Have feedback/requests/issues?
 
