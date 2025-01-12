@@ -702,7 +702,7 @@ function create_automa_deck(round_number) {
             }
         )
 
-        $("#table_automa_actions").data(
+        $("#automa_tracker_body").data(
             "automa_deck",
             shuffle(automa_deck)
         )
@@ -1176,7 +1176,7 @@ $(document).ready(
 
                     // Append new automa action to table
                     append_automa_action_row(
-                        $("#table_automa_actions").data(
+                        $("#automa_tracker_body").data(
                             "automa_deck"
                         )[$("#row_round_info").data("turn")]
                     );
@@ -1184,7 +1184,7 @@ $(document).ready(
                 else {
                     // Append new automa action to table
                     append_automa_action_row(
-                        $("#table_automa_actions").data(
+                        $("#automa_tracker_body").data(
                             "automa_deck"
                         )[$("#row_round_info").data("turn")]
                     );
@@ -1207,7 +1207,7 @@ $(document).ready(
 // Automa end of round nectar checks
 function check_automa_end_of_round_nectar(n_check) {
 
-    var increment_card = $("#table_automa_actions").data(
+    var increment_card = $("#automa_tracker_body").data(
         "automa_deck"
     )[$("#row_round_info").data("round_length") + n_check];
 
@@ -1411,7 +1411,7 @@ $(document).ready(
             "click",
             function() {
                 if ($("#col_debug_mode_round_end_winner_checkbox").is(":checked")) {
-                    
+
                     end_round_cleanup("automa_user_scored");
                 }
                 else {
