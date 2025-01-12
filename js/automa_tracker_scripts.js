@@ -725,8 +725,8 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
     var base_value = $("#automa_tracker_body").data(`automa_round_${round_number}_base_value`);
 
-    $(`#col_round_${round_number}_end_cube_count`).data(
-        "round_end_goal_score",
+    $("#automa_tracker_body").data(
+        `round_${round_number}_goal_score`,
         n_cubes + base_value
     )
     
@@ -1411,12 +1411,14 @@ $(document).ready(
             "click",
             function() {
                 if ($("#col_debug_mode_round_end_winner_checkbox").is(":checked")) {
+                    
                     end_round_cleanup("automa_user_scored");
                 }
                 else {
+
                     $("#automa_score_for_round_end_modal").text(
-                        $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
-                            "round_end_goal_score"
+                        $("#automa_tracker_body").data(
+                            `round_${$("#row_round_info").data("round")}_goal_score`
                         )
                     )
 
