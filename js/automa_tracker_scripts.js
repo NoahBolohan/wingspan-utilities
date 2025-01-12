@@ -1856,6 +1856,22 @@ $(document).ready(
                     "automa_total_score_counter",
                     0
                 );
+                $("#automa_tracker_body").data(
+                    "automa_end_of_round_1_points",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_end_of_round_2_points",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_end_of_round_3_points",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_end_of_round_4_points",
+                    0
+                );
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
