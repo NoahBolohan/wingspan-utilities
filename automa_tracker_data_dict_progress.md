@@ -10,15 +10,6 @@ button_round_1_end_goal | enable_start_game | no
 button_round_2_end_goal | enable_start_game | no
 button_round_3_end_goal | enable_start_game | no
 button_round_4_end_goal | enable_start_game | no
-col_automa_hoard_tokens_count | counter | no
-col_automa_nectar_forest_count | counter | no
-col_automa_nectar_forest_count_end_of_round | counter | TBD
-col_automa_nectar_grassland_count | counter | no
-col_automa_nectar_grassland_count_end_of_round | counter | TBD
-col_automa_nectar_wetland_count | counter | no
-col_automa_nectar_wetland_count_end_of_round | counter | TBD
-col_automa_played_birds | counter | no
-col_automa_total_score | counter | no
 col_button_add_bird_card_hoard_tokens | n_tokens | yes
 col_button_add_bonus_card_hoard_tokens | n_tokens | yes
 col_button_add_egg_hoard_tokens | n_tokens | yes

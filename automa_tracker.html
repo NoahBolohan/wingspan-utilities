@@ -35,6 +35,15 @@
 		current_turn
 		automa_drawn_cards_counter
 		automa_eggs_counter
+		automa_hoard_token_counter
+		automa_nectar_forest_counter
+		automa_nectar_forest_end_of_round_counter
+		automa_nectar_grassland_counter
+		automa_nectar_grassland_end_of_round_counter
+		automa_nectar_wetland_counter
+		automa_nectar_wetland_end_of_round_counter
+		automa_played_birds_counter
+		automa_total_score_counter
 	-->
 
     <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
@@ -325,11 +334,11 @@
 
 							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_end_of_round_nectar_current_values">
 
-								<div class="col-4 centered-text" id="col_automa_nectar_forest_count_end_of_round" data-counter = 0>0</div>
+								<div class="col-4 centered-text" id="col_automa_nectar_forest_count_end_of_round">0</div>
 
-								<div class="col-4 centered-text" id="col_automa_nectar_grassland_count_end_of_round" data-counter = 0>0</div>
+								<div class="col-4 centered-text" id="col_automa_nectar_grassland_count_end_of_round">0</div>
 
-								<div class="col-4 centered-text" id="col_automa_nectar_wetland_count_end_of_round" data-counter = 0>0</div>
+								<div class="col-4 centered-text" id="col_automa_nectar_wetland_count_end_of_round">0</div>
 							</div>
 
 							<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_automa_end_of_round_nectar_increment_1">
@@ -1046,7 +1055,7 @@
 
 						<div class="row p-0 justify-content-center margin_auto">
 							<div class="col-10 p-0 centered-text" id="col_automa_played_birds_text">Played birds:</div>
-							<div class="col-2 p-0 centered-text" id="col_automa_played_birds" data-counter = 0>0</div>
+							<div class="col-2 p-0 centered-text" id="col_automa_played_birds">0</div>
 						</div>
 					</div>
 
@@ -1065,11 +1074,11 @@
 
 						<div class="row p-0 justify-content-center margin_auto">
 							<div class="col-7 p-0 centered-text" id="col_automa_nectar_text">Nectar:</div>
-							<div class="col-1 p-0 centered-text" id="col_automa_nectar_forest_count" data-counter = 0>0</div>
+							<div class="col-1 p-0 centered-text" id="col_automa_nectar_forest_count">0</div>
 							<div class="col-1 p-0 centered-text">/</div>
-							<div class="col-1 p-0 centered-text" id="col_automa_nectar_grassland_count" data-counter = 0>0</div>
+							<div class="col-1 p-0 centered-text" id="col_automa_nectar_grassland_count">0</div>
 							<div class="col-1 p-0 centered-text">/</div>
-							<div class="col-1 p-0 centered-text" id="col_automa_nectar_wetland_count" data-counter = 0>0</div>
+							<div class="col-1 p-0 centered-text" id="col_automa_nectar_wetland_count">0</div>
 						</div>
 					</div>
 
@@ -1077,7 +1086,7 @@
 
 						<div class="row p-0 justify-content-center margin_auto">
 							<div class="col-10 p-0 centered-text" id="col_automa_hoard_tokens_text">Hoard tokens:</div>
-							<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens_count" data-counter = 0>0</div>
+							<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens_count">0</div>
 						</div>
 					</div>
 
@@ -1085,7 +1094,7 @@
 
 						<div class="row p-0 justify-content-center margin_auto">
 							<div class="col-10 p-0 centered-text" id="col_automa_total_score_text">Total:</div>
-							<div class="col-2 p-0 centered-text" id="col_automa_total_score" data-counter = 0>0</div>
+							<div class="col-2 p-0 centered-text" id="col_automa_total_score">0</div>
 						</div>
 					</div>
 				</div>

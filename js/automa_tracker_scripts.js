@@ -9,7 +9,7 @@ function assign_submit_href() {
         "col_RAOUtoma_checkbox" : $("#col_RAOUtoma_checkbox").is(":checked"),
         "col_difficulty_radio" : $("input[name='difficulty']:checked").val(),
         "cell_automa_n_drawn_cards" : $("#automa_tracker_body").data("automa_drawn_cards_counter"),
-        "cell_automa_played_birds" : $("#col_automa_played_birds").data("counter"),
+        "cell_automa_played_birds" : $("#automa_tracker_body").data("automa_played_birds_counter"),
         "cell_automa_end-of-round_goals" : $("#col_round_1_end_cube_count").data(
             "automa_round_end_points"
         ) + $("#col_round_2_end_cube_count").data(
@@ -21,7 +21,7 @@ function assign_submit_href() {
         ),
         "cell_automa_laid_eggs" : $("#automa_tracker_body").data("automa_eggs_counter"),
         "cell_automa_nectar" : $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score"),
-        "cell_automa_total_score" : $("#col_automa_total_score").data("counter")
+        "cell_automa_total_score" : $("#automa_tracker_body").data("automa_total_score_counter")
     }
 
     var href_array = [];
@@ -791,17 +791,17 @@ function generate_food_order_td(
 function update_automa_played_birds(bird_points) {
 
     if (bird_points >= 0) {
-        $("#col_automa_played_birds").data(
-            "counter",
-            $("#col_automa_played_birds").data(
-                "counter"
+        $("#automa_tracker_body").data(
+            "automa_played_birds_counter",
+            $("#automa_tracker_body").data(
+                "automa_played_birds_counter"
             ) + bird_points
         );
     
         $("#col_automa_played_birds").empty();
         $("#col_automa_played_birds").text(
-            $("#col_automa_played_birds").data(
-                "counter"
+            $("#automa_tracker_body").data(
+                "automa_played_birds_counter"
             )
         );
     }
@@ -816,15 +816,15 @@ function update_automa_played_birds(bird_points) {
 // Reset automa played birds counter
 function reset_automa_played_birds() {
 
-    $("#col_automa_played_birds").data(
-        "counter",
+    $("#automa_tracker_body").data(
+        "automa_played_birds_counter",
         0
     );
 
     $("#col_automa_played_birds").empty();
     $("#col_automa_played_birds").text(
-        $("#col_automa_played_birds").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_played_birds_counter"
         )
     );
 }
@@ -904,10 +904,10 @@ function reset_automa_laid_eggs(n_eggs) {
 // Update automa total score counter
 function update_automa_total_score() {
 
-    $("#col_automa_total_score").data(
-        "counter",
-        $("#col_automa_played_birds").data(
-            "counter"
+    $("#automa_tracker_body").data(
+        "automa_total_score_counter",
+        $("#automa_tracker_body").data(
+            "automa_played_birds_counter"
         ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
             "automa_points_per_face_down_bird_card"
         ) * $("#automa_tracker_body").data(
@@ -927,13 +927,13 @@ function update_automa_total_score() {
 
     if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
 
-        $("#col_automa_total_score").data(
-            "counter",
-            $("#col_automa_total_score").data(
-                "counter"
+        $("#automa_tracker_body").data(
+            "automa_total_score_counter",
+            $("#automa_tracker_body").data(
+                "automa_total_score_counter"
             ) + Math.floor(
-                $("#col_automa_hoard_tokens_count").data(
-                    "counter"
+                $("#automa_tracker_body").data(
+                    "automa_hoard_token_counter"
                 ) / parseInt(
                     $("input[name='automa_hoard_tokens_per_egg']:checked").val()
                 )
@@ -945,8 +945,8 @@ function update_automa_total_score() {
     $("#col_automa_total_score").empty();
 
     $("#col_automa_total_score").text(
-        $("#col_automa_total_score").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_total_score_counter"
         )
     );
 }
@@ -954,15 +954,15 @@ function update_automa_total_score() {
 // Reset automa total score counter
 function reset_automa_total_score() {
 
-    $("#col_automa_total_score").data(
-        "counter",
+    $("#automa_tracker_body").data(
+        "automa_total_score_counter",
         0
     );
 
     $("#col_automa_total_score").empty();
     $("#col_automa_total_score").text(
-        $("#col_automa_total_score").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_total_score_counter"
         )
     );
 }
@@ -1257,7 +1257,7 @@ function check_automa_end_of_round_nectar(n_check) {
         ["forest", "grassland", "wetland"],
         function(idx,board_zone) {
             $(`#col_automa_nectar_${board_zone}_count_end_of_round_new`).text(
-                $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+                $("#automa_tracker_body").data(`automa_nectar_${board_zone}_counter`)
             )
         }
     )
@@ -1275,37 +1275,37 @@ function update_automa_nectar_counts(
         function(idx,board_zone) {
             if (update_type == "reset") {
 
-                $(`#col_automa_nectar_${board_zone}_count`).data(
-                    "counter",
+                $("#automa_tracker_body").data(
+                    `automa_nectar_${board_zone}_counter`,
                     nectar_count_dict[board_zone]
                 )
 
-                $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data(
-                    "counter",
+                $("#automa_tracker_data").data(
+                    `automa_nectar_${board_zone}_end_of_round_counter`,
                     nectar_count_dict[board_zone]
                 )
             }
             else if (update_type == "increment") {
         
-                $(`#col_automa_nectar_${board_zone}_count`).data(
-                    "counter",
+                $("#automa_tracker_body").data(
+                    `automa_nectar_${board_zone}_counter`,
                     Math.max(
-                        $(`#col_automa_nectar_${board_zone}_count`).data("counter") + nectar_count_dict[board_zone],
+                        $("#automa_tracker_body").data(`automa_nectar_${board_zone}_counter`) + nectar_count_dict[board_zone],
                         0
                     )
                 )
 
-                $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data(
-                    "counter",
+                $("#automa_tracker_data").data(
+                    `automa_nectar_${board_zone}_end_of_round_counter`,
                     Math.max(
-                        $(`#col_automa_nectar_${board_zone}_count_end_of_round`).data("counter") + nectar_count_dict[board_zone],
+                        $("#automa_tracker_data").data(`automa_nectar_${board_zone}_end_of_round_counter`) + nectar_count_dict[board_zone],
                         0
                     )
                 )
             }
         
             $(`#col_automa_nectar_${board_zone}_count`).text(
-                $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+                $("#automa_tracker_body").data(`automa_nectar_${board_zone}_counter`)
             )
         }
     )
@@ -1336,16 +1336,16 @@ $(document).ready(
                     "click",
                     function() {
         
-                        $("#col_automa_hoard_tokens_count").data(
-                            "counter",
-                            $("#col_automa_hoard_tokens_count").data(
-                                "counter"
+                        $("#automa_tracker_body").data(
+                            "automa_hoard_token_counter",
+                            $("#automa_tracker_body").data(
+                                "automa_hoard_token_counter"
                             ) + $(`#col_button_add_${hoard_token_type}_hoard_tokens`).data("n_tokens")
                         );
         
                         $("#col_automa_hoard_tokens_count").text(
-                            $("#col_automa_hoard_tokens_count").data(
-                                "counter"
+                            $("#automa_tracker_body").data(
+                                "automa_hoard_token_counter"
                             )
                         );
 
@@ -1384,19 +1384,19 @@ $(document).ready(
                     "click",
                     function() {
         
-                        $("#col_automa_hoard_tokens_count").data(
-                            "counter",
+                        $("#automa_tracker_body").data(
+                            "automa_hoard_token_counter",
                             Math.max(
-                                $("#col_automa_hoard_tokens_count").data(
-                                    "counter"
+                                $("#automa_tracker_body").data(
+                                    "automa_hoard_token_counter"
                                 ) - $(`#col_button_remove_${hoard_token_type}_hoard_tokens`).data("n_tokens"),
                                 0
                             )
                         );
         
                         $("#col_automa_hoard_tokens_count").text(
-                            $("#col_automa_hoard_tokens_count").data(
-                                "counter"
+                            $("#automa_tracker_body").data(
+                                "automa_hoard_token_counter"
                             )
                         );
 
@@ -1434,7 +1434,7 @@ $(document).ready(
                             ["forest", "grassland", "wetland"],
                             function(idx,board_zone) {
                                 $(`#col_automa_nectar_${board_zone}_count_end_of_round`).text(
-                                    $(`#col_automa_nectar_${board_zone}_count`).data("counter")
+                                    $("#automa_tracker_body").data(`automa_nectar_${board_zone}_counter`)
                                 )
                             }
                         )
@@ -1807,7 +1807,43 @@ $(document).ready(
                 $("#automa_tracker_body").data(
                     "automa_eggs_counter",
                     0
-                )
+                );
+                $("#automa_tracker_body").data(
+                    "automa_hoard_token_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_forest_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_forest_end_of_round_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_grassland_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_grassland_end_of_round_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_wetland_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_wetland_end_of_round_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_played_birds_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_total_score_counter",
+                    0
+                );
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
@@ -2055,8 +2091,8 @@ $(document).ready(
 function populate_game_end_modal() {
 
     $("#table_cell_played_birds_points").text(
-        $("#col_automa_played_birds").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_played_birds_counter"
         )
     )
 
@@ -2096,8 +2132,8 @@ function populate_game_end_modal() {
             $("#automa_tracker_body").data(
                 "automa_eggs_counter"
             ) + Math.floor(
-                $("#col_automa_hoard_tokens_count").data(
-                    "counter"
+                $("#automa_tracker_body").data(
+                    "automa_hoard_token_counter"
                 ) / parseInt(
                     $("input[name='automa_hoard_tokens_per_egg']:checked").val()
                 )
@@ -2121,8 +2157,8 @@ function populate_game_end_modal() {
     }
 
     $("#table_cell_total_points").text(
-        $("#col_automa_total_score").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_total_score_counter"
         )
     )
 }
@@ -2159,15 +2195,15 @@ $(document).ready(
                 );
 
                 $("#nectar_scoring_forest_count").text(
-                    $("#col_automa_nectar_forest_count").data("counter")
+                    $("#automa_tracker_body").data("automa_nectar_forest_counter")
                 );
 
                 $("#nectar_scoring_grassland_count").text(
-                    $("#col_automa_nectar_grassland_count").data("counter")
+                    $("#automa_tracker_body").data("automa_nectar_grassland_end_of_round_counter")
                 );
 
                 $("#nectar_scoring_wetland_count").text(
-                    $("#col_automa_nectar_wetland_count").data("counter")
+                    $("#automa_tracker_body").data("automa_nectar_wetland_end_of_round_counter")
                 );
 
                 $("#modal_nectar_scoring").modal("show");
