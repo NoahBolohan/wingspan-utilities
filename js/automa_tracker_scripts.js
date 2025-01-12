@@ -595,14 +595,14 @@ function new_round(round_number) {
 
         //Debug option
         if ($("#col_debug_mode_round_length_checkbox").is(":checked")) {
-            $("#row_round_info").data(
-                "round_length",
+            $("#automa_tracker_body").data(
+                `round_${round_number}_length`,
                 1
             );
 
         } else {
-            $("#row_round_info").data(
-                "round_length",
+            $("#automa_tracker_body").data(
+                `round_${round_number}_length`,
                 $("#automa_tracker_body").data(
                     "round_lengths",
                 )[round_number + ""]
@@ -1170,7 +1170,11 @@ $(document).ready(
             "click",
             function() {
 
-                if ($("#row_round_info").data("turn") <= $("#row_round_info").data("round_length") - 2) {
+                if (
+                    $("#row_round_info").data("turn") <= $("#automa_tracker_body").data(
+                        `round_${$("#automa_tracker_body").data("current_round")}_length`
+                    ) - 2
+                ) {
 
                     // Append new automa action to table
                     append_automa_action_row(
@@ -1207,7 +1211,11 @@ function check_automa_end_of_round_nectar(n_check) {
 
     var increment_card = $("#automa_tracker_body").data(
         "automa_deck"
-    )[$("#row_round_info").data("round_length") + n_check];
+    )[
+        $("#automa_tracker_body").data(
+            `round_${$("#automa_tracker_body").data("current_round")}_length`
+        ) + n_check
+    ];
 
     var incrementer = {
         "1" : 0,
