@@ -75,6 +75,150 @@ function populate_form_data() {
     )
 }
 
+$(document).ready(
+
+    function () {
+
+        // Initialize data attributes
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_eggs_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_hoard_token_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_forest_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_forest_end_of_round_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_forest_score",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_grassland_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_grassland_end_of_round_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_grassland_score",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_wetland_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_wetland_end_of_round_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_nectar_wetland_score",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_played_birds_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_total_score_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "user_end_of_round_1_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "user_end_of_round_2_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "user_end_of_round_3_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "user_end_of_round_4_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_end_of_round_1_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_end_of_round_2_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_end_of_round_3_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "automa_end_of_round_4_points",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "round_1_cube_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "round_2_cube_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "round_3_cube_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "round_4_cube_counter",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_round_1_end_goal",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_round_2_end_goal",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_round_3_end_goal",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_round_4_end_goal",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_difficulty",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_hoard_tokens",
+            1
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_points_per_drawn_card",
+            0
+        );
+        $("#automa_tracker_body").data(
+            "enable_start_game_nectar",
+            0
+        );
+    }
+)
+
 // Assign a random background on load
 $(document).ready(
 
@@ -122,22 +266,22 @@ $(document).ready(
 // Check if start game button should be enabled
 function start_game_enabler() {
 
-    var idx_to_check = [
-        "#col_difficulty_radio",
-        "#row_automa_starting_nectar_radio",
-        "#row_automa_points_per_face_down_bird_card_radio",
-        "#row_automa_hoard_tokens_per_egg_radio",
-        "#button_round_1_end_goal",
-        "#button_round_2_end_goal",
-        "#button_round_3_end_goal",
-        "#button_round_4_end_goal"
+    var attributes_to_check = [
+        "enable_start_game_round_1_end_goal",
+		"enable_start_game_round_2_end_goal",
+		"enable_start_game_round_3_end_goal",
+		"enable_start_game_round_4_end_goal",
+		"enable_start_game_difficulty",
+		"enable_start_game_hoard_tokens",
+		"enable_start_game_points_per_drawn_card",
+		"enable_start_game_nectar",
     ]
     
     var enable_button_checker = 1;
 
-    for (var i=0; i < idx_to_check.length; i++) {
-        enable_button_checker *= $(idx_to_check[i]).data(
-            "enable_start_game"
+    for (var i=0; i < attributes_to_check.length; i++) {
+        enable_button_checker *= $("#automa_tracker_body").data(
+            attributes_to_check[i]
         );
     }
 
@@ -163,8 +307,8 @@ $(document).ready(
             "change",
             function() {
 
-                $("#col_difficulty_radio").data(
-                    "enable_start_game",
+                $("#automa_tracker_body").data(
+                    "enable_start_game_difficulty",
                     1
                 );
 
@@ -280,8 +424,8 @@ $(document).ready(
         $("#row_automa_starting_nectar_radio").on(
             "change",
             function() {
-                $("#row_automa_starting_nectar_radio").data(
-                    "enable_start_game",
+                $("#automa_tracker_body").data(
+                    "enable_start_game_nectar",
                     1
                 );
 
@@ -323,8 +467,8 @@ $(document).ready(
         $("#row_automa_hoard_tokens_per_egg_radio").on(
             "change",
             function() {
-                $("#row_automa_hoard_tokens_per_egg_radio").data(
-                    "enable_start_game",
+                $("#automa_tracker_body").data(
+                    "enable_start_game_hoard_tokens",
                     1
                 );
 
@@ -366,8 +510,8 @@ $(document).ready(
         $("#row_automa_points_per_face_down_bird_card_radio").on(
             "change",
             function() {
-                $("#row_automa_points_per_face_down_bird_card_radio").data(
-                    "enable_start_game",
+                $("#automa_tracker_body").data(
+                    "enable_start_game_points_per_drawn_card",
                     1
                 );
 
@@ -429,8 +573,8 @@ $(document).ready(
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
 
-                    $("#row_automa_hoard_tokens_per_egg_radio").data(
-                        "enable_start_game",
+                    $("#automa_tracker_body").data(
+                        "enable_start_game_hoard_tokens",
                         0
                     );
 
@@ -458,8 +602,8 @@ $(document).ready(
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
 
-                    $("#row_automa_hoard_tokens_per_egg_radio").data(
-                        "enable_start_game",
+                    $("#automa_tracker_body").data(
+                        "enable_start_game_hoard_tokens",
                         1
                     );
 
@@ -494,8 +638,8 @@ $(document).ready(
 
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", false);
 
-                    $("#row_automa_hoard_tokens_per_egg_radio").data(
-                        "enable_start_game",
+                    $("#automa_tracker_body").data(
+                        "enable_start_game_hoard_tokens",
                         0
                     );
 
@@ -523,8 +667,8 @@ $(document).ready(
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("disabled", true);
                     $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
 
-                    $("#row_automa_hoard_tokens_per_egg_radio").data(
-                        "enable_start_game",
+                    $("#automa_tracker_body").data(
+                        "enable_start_game_hoard_tokens",
                         1
                     );
 
@@ -554,8 +698,8 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
     );
 
     // Store that round end goal is chosen
-    $(`#button_round_${round_number}_end_goal`).data(
-        "enable_start_game",
+    $("#automa_tracker_body").data(
+        `enable_start_game_round_${round_number}_end_goal`,
         1
     );
 
@@ -1801,112 +1945,6 @@ $(document).ready(
                 })
 
                 // Setup for first round
-                $("#automa_tracker_body").data(
-                    "automa_drawn_cards_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_eggs_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_hoard_token_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_forest_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_forest_end_of_round_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_forest_score",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_grassland_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_grassland_end_of_round_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_grassland_score",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_wetland_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_wetland_end_of_round_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_nectar_wetland_score",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_played_birds_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_total_score_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "user_end_of_round_1_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "user_end_of_round_2_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "user_end_of_round_3_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "user_end_of_round_4_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_end_of_round_1_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_end_of_round_2_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_end_of_round_3_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "automa_end_of_round_4_points",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "round_1_cube_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "round_2_cube_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "round_3_cube_counter",
-                    0
-                );
-                $("#automa_tracker_body").data(
-                    "round_4_cube_counter",
-                    0
-                );
-
-                
                 new_round(1);
 
                 // Show and hide stuff
@@ -2263,11 +2301,11 @@ $(document).ready(
                 );
 
                 $("#nectar_scoring_grassland_count").text(
-                    $("#automa_tracker_body").data("automa_nectar_grassland_end_of_round_counter")
+                    $("#automa_tracker_body").data("automa_nectar_grassland_counter")
                 );
 
                 $("#nectar_scoring_wetland_count").text(
-                    $("#automa_tracker_body").data("automa_nectar_wetland_end_of_round_counter")
+                    $("#automa_tracker_body").data("automa_nectar_wetland_counter")
                 );
 
                 $("#modal_nectar_scoring").modal("show");
@@ -2331,8 +2369,8 @@ $(document).ready(
                 // Reset some data
                 for (var round_number = 1; round_number <= 4; round_number++) {
 
-                    $(`#button_round_${round_number}_end_goal`).data(
-                        "enable_start_game",
+                    $("#automa_tracker_body").data(
+                        `enable_start_game_round_${round_number}_end_goal`,
                         0
                     )
 
@@ -2364,26 +2402,26 @@ $(document).ready(
                 $("#radio_difficulty_choice_eagle").prop('checked', false);
                 $("#radio_difficulty_choice_eagle-eyed_eagle").prop('checked', false);
 
-                $("#col_difficulty_radio" ).data(
-                    "enable_start_game",
+                $("#automa_tracker_body" ).data(
+                    "enable_start_game_difficulty",
                     0
                 )
 
                 $("input:radio[name=automa_starting_nectar]").prop("checked", false);
-                $("#row_automa_starting_nectar_radio" ).data(
-                    "enable_start_game",
+                $("#automa_tracker_body" ).data(
+                    "enable_start_game_nectar",
                     0
                 )
 
                 $("input:radio[name=automa_hoard_tokens_per_egg]").prop("checked", false);
-                $("#row_automa_hoard_tokens_per_egg_radio" ).data(
-                    "enable_start_game",
+                $("#automa_tracker_body" ).data(
+                    "enable_start_game_hoard_tokens",
                     0
                 )
 
                 $("input:radio[name=automa_points_per_face_down_bird_card]").prop("checked", false);
-                $("#row_automa_points_per_face_down_bird_card_radio" ).data(
-                    "enable_start_game",
+                $("#automa_tracker_body" ).data(
+                    "enable_start_game_points_per_drawn_card",
                     0
                 )
 
