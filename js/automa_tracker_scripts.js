@@ -1458,7 +1458,7 @@ function end_round_cleanup(who_won) {
         // Update users round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "me_round_end_points",
-            $("#row_round_end_cube_counts").data(
+            $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#row_round_info").data("round")}`][0]
         )
@@ -1470,7 +1470,7 @@ function end_round_cleanup(who_won) {
         if (n_cubes + base_value > 0) {
             $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
                 "automa_round_end_points",
-                $("#row_round_end_cube_counts").data(
+                $("#automa_tracker_body").data(
                     "round_end_points"
                 )[`round_${$("#row_round_info").data("round")}`][1]
             )
@@ -1487,7 +1487,7 @@ function end_round_cleanup(who_won) {
         // Update user's round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "me_round_end_points",
-            $("#row_round_end_cube_counts").data(
+            $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#row_round_info").data("round")}`][1]
         )
@@ -1495,7 +1495,7 @@ function end_round_cleanup(who_won) {
         // Update automa's round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "automa_round_end_points",
-            $("#row_round_end_cube_counts").data(
+            $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#row_round_info").data("round")}`][0]
         )
@@ -1512,7 +1512,7 @@ function end_round_cleanup(who_won) {
         // Update automa's round end points
         $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data(
             "automa_round_end_points",
-            $("#row_round_end_cube_counts").data(
+            $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#row_round_info").data("round")}`][0]
         )
@@ -1526,9 +1526,9 @@ function end_round_cleanup(who_won) {
             ) > 0
         ) {
             var points = Math.floor(
-                ($("#row_round_end_cube_counts").data(
+                ($("#automa_tracker_body").data(
                     "round_end_points"
-                )[`round_${$("#row_round_info").data("round")}`][0] + $("#row_round_end_cube_counts").data(
+                )[`round_${$("#row_round_info").data("round")}`][0] + $("#automa_tracker_body").data(
                     "round_end_points"
                 )[`round_${$("#row_round_info").data("round")}`][1])/2
             )
@@ -1786,7 +1786,7 @@ $(document).ready(
 
                 $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/round_end_points.json", function(data) {
 
-                    $("#row_round_end_cube_counts").data(
+                    $("#automa_tracker_body").data(
                         "round_end_points",
                         data
                     )

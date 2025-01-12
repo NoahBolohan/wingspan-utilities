@@ -63,5 +63,3 @@ img_round_${round_number}_end_goal | round_end_goal | yes
 row_round_info | round | no
 row_round_info | round_length | no
 row_round_info | turn | no
-row_round_end_cube_counts | round_end_points | no
-button_dropdown_expansions_menu | expansions_to_include | no
