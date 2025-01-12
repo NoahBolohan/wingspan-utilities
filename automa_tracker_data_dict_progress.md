@@ -59,7 +59,6 @@ col_automa_total_score | counter | no
 
 ## from automa_tracker_scripts.js
 
-row_round_end_goals | round_lengths | no
 img_round_${round_number}_end_goal | round_end_goal | yes
 col_round_${round_number}_end_cube_count | base_values | no
 row_round_info | round | no

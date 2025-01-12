@@ -101,7 +101,7 @@ $(document).ready(
     // Read config
     $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) {
 
-        $("#row_round_end_goals").data(
+        $("#automa_tracker_body").data(
             "round_lengths",
             data["round_lengths"]
         );
@@ -603,7 +603,7 @@ function new_round(round_number) {
         } else {
             $("#row_round_info").data(
                 "round_length",
-                $("#row_round_end_goals").data(
+                $("#automa_tracker_body").data(
                     "round_lengths",
                 )[round_number + ""]
             );
