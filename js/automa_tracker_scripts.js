@@ -114,7 +114,7 @@ $(document).ready(
 
         update_round_end_goals();
         generate_round_end_goal_buttons_for_expansions(
-            $("#button_dropdown_expansions_menu").data("expansions_to_include")
+            $("#automa_tracker_body").data("expansions_to_include")
         );
     }
 )
@@ -1995,7 +1995,7 @@ function update_round_end_goals() {
         expansions_to_include.push("oceania_expansion");
     }
 
-    $("#button_dropdown_expansions_menu").data(
+    $("#automa_tracker_body").data(
         "expansions_to_include",
         expansions_to_include
     )
@@ -2010,7 +2010,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
+                    $("#automa_tracker_body").data("expansions_to_include")
                 );
             }
            
@@ -2021,7 +2021,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
+                    $("#automa_tracker_body").data("expansions_to_include")
                 );
             }
         );
@@ -2031,7 +2031,7 @@ $(document).ready(
             function() {
                 update_round_end_goals();
                 generate_round_end_goal_buttons_for_expansions(
-                    $("#button_dropdown_expansions_menu").data("expansions_to_include")
+                    $("#automa_tracker_body").data("expansions_to_include")
                 );
             }
         );
