@@ -710,17 +710,17 @@ function create_automa_deck(round_number) {
 // Increment a round counter
 function update_round_end_cube_counter(round_number,cube_increment) {
     
-    $(`#col_round_${round_number}_end_cube_count`).data(
-        "counter",
+    $("#automa_tracker_body").data(
+        `round_${round_number}_cube_counter`,
         Math.max(
             0,
-            $(`#col_round_${round_number}_end_cube_count`).data(
-                "counter"
+            $("#automa_tracker_body").data(
+                `round_${round_number}_cube_counter`
             ) + cube_increment
         )
     );
 
-    var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
+    var n_cubes = $("#automa_tracker_body").data(`round_${round_number}_cube_counter`);
     var base_value = $("#automa_tracker_body").data(`automa_round_${round_number}_base_value`);
 
     $("#automa_tracker_body").data(
@@ -1469,7 +1469,9 @@ function end_round_cleanup(who_won) {
             )[`round_${$("#automa_tracker_body").data("current_round")}`][0]
         )
 
-        var n_cubes = $(`#col_round_${$("#automa_tracker_body").data("current_round")}_end_cube_count`).data("counter");
+        var n_cubes = $("#automa_tracker_body").data(
+            `round_${$("#automa_tracker_body").data("current_round")}_cube_counter`
+        );
         var base_value = $("#automa_tracker_body").data(`automa_round_${$("#automa_tracker_body").data("current_round")}_base_value`)
 
         // Update automa's round end points (0 if automa didn't score)
@@ -1799,7 +1801,6 @@ $(document).ready(
                 })
 
                 // Setup for first round
-                new_round(1);
                 $("#automa_tracker_body").data(
                     "automa_drawn_cards_counter",
                     0
@@ -1888,6 +1889,25 @@ $(document).ready(
                     "automa_end_of_round_4_points",
                     0
                 );
+                $("#automa_tracker_body").data(
+                    "round_1_cube_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "round_2_cube_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "round_3_cube_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "round_4_cube_counter",
+                    0
+                );
+
+                
+                new_round(1);
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
@@ -2324,8 +2344,8 @@ $(document).ready(
 
                     $(`#col_round_${round_number}_end_cube_count`).empty();
 
-                    $(`#col_round_${round_number}_end_cube_count`).data(
-                        "counter",
+                    $("#automa_tracker_body").data(
+                        `round_${round_number}_cube_counter`,
                         0
                     )
                 }
