@@ -8,7 +8,7 @@ function assign_submit_href() {
         "col_automubon_society_checkbox" : $("#col_automubon_society_checkbox").is(":checked"),
         "col_RAOUtoma_checkbox" : $("#col_RAOUtoma_checkbox").is(":checked"),
         "col_difficulty_radio" : $("input[name='difficulty']:checked").val(),
-        "cell_automa_n_drawn_cards" : $("#col_automa_drawn_cards_count").data("counter"),
+        "cell_automa_n_drawn_cards" : $("#automa_tracker_body").data("automa_drawn_cards_counter"),
         "cell_automa_played_birds" : $("#col_automa_played_birds").data("counter"),
         "cell_automa_end-of-round_goals" : $("#col_round_1_end_cube_count").data(
             "automa_round_end_points"
@@ -49,8 +49,8 @@ function populate_form_data() {
     $("#automa_drawn_cards_for_post").val(
         $("#row_automa_points_per_face_down_bird_card_radio").data(
             "automa_points_per_face_down_bird_card"
-        ) * $("#col_automa_drawn_cards_count").data(
-            "counter"
+        ) * $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
         )
     )
 
@@ -832,17 +832,17 @@ function reset_automa_played_birds() {
 // Update automa drawn cards counter
 function update_automa_drawn_cards() {
 
-    $("#col_automa_drawn_cards_count").data(
-        "counter",
-        $("#col_automa_drawn_cards_count").data(
-            "counter"
+    $("#automa_tracker_body").data(
+        "automa_drawn_cards_counter",
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
         ) + 1
     );
 
     $("#col_automa_drawn_cards_count").empty();
     $("#col_automa_drawn_cards_count").text(
-        $("#col_automa_drawn_cards_count").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
         )
     );
 
@@ -852,15 +852,15 @@ function update_automa_drawn_cards() {
 // Reset automa drawn cards counter
 function reset_automa_drawn_cards() {
 
-    $("#col_automa_drawn_cards_count").data(
-        "counter",
+    $("#automa_tracker_body").data(
+        "automa_drawn_cards_counter",
         0
     );
 
     $("#col_automa_drawn_cards_count").empty();
     $("#col_automa_drawn_cards_count").text(
-        $("#col_automa_drawn_cards_count").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
         )
     );
 }
@@ -910,8 +910,8 @@ function update_automa_total_score() {
             "counter"
         ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
             "automa_points_per_face_down_bird_card"
-        ) * $("#col_automa_drawn_cards_count").data(
-            "counter"
+        ) * $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
         ) + $("#col_automa_eggs_count").data(
             "counter"
         ) + $("#col_round_1_end_cube_count").data(
@@ -1800,6 +1800,10 @@ $(document).ready(
 
                 // Setup for first round
                 new_round(1);
+                $("#automa_tracker_body").data(
+                    "automa_drawn_cards_counter",
+                    0
+                );
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
@@ -2056,16 +2060,16 @@ function populate_game_end_modal() {
         `${
             $("#row_automa_points_per_face_down_bird_card_radio").data(
                 "automa_points_per_face_down_bird_card"
-            ) * $("#col_automa_drawn_cards_count").data(
-                "counter"
+            ) * $("#automa_tracker_body").data(
+                "automa_drawn_cards_counter"
             )
         } (${
             $("#row_automa_points_per_face_down_bird_card_radio").data(
                 "automa_points_per_face_down_bird_card"
             )
         } \u00D7 ${
-            $("#col_automa_drawn_cards_count").data(
-                "counter"
+            $("#automa_tracker_body").data(
+                "automa_drawn_cards_counter"
             )
         })`
     )
