@@ -26,13 +26,9 @@ row_automa_points_per_face_down_bird_card_radio | enable_start_game | no
 row_automa_starting_nectar_radio | enable_start_game | no
 
 col_round_1_end_cube_count | counter | no
-col_round_1_end_cube_count | me_round_end_points | no
 col_round_2_end_cube_count | counter | no
-col_round_2_end_cube_count | me_round_end_points | no
 col_round_3_end_cube_count | counter | no
-col_round_3_end_cube_count | me_round_end_points | no
 col_round_4_end_cube_count | counter | no
-col_round_4_end_cube_count | me_round_end_points | no
 
 ## from automa_tracker_scripts.js
 
