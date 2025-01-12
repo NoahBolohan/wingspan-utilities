@@ -609,8 +609,8 @@ function new_round(round_number) {
             );
         }
         
-        $("#row_round_info").data(
-            "turn",
+        $("#automa_tracker_body").data(
+            "current_turn",
             0
         );
 
@@ -997,10 +997,10 @@ $(document).ready(
 function append_automa_action_row(automa_action) {
 
     // Increment turn counter
-    $("#row_round_info").data(
-        "turn",
-        $("#row_round_info").data(
-            "turn"
+    $("#automa_tracker_body").data(
+        "current_turn",
+        $("#automa_tracker_body").data(
+            "current_turn"
         ) + 1
     )
 
@@ -1015,8 +1015,8 @@ function append_automa_action_row(automa_action) {
             class : "bg-info"
         }
     ).text(
-        $("#row_round_info").data(
-            "turn"
+        $("#automa_tracker_body").data(
+            "current_turn"
         )
     ).appendTo(
         tr
@@ -1171,7 +1171,7 @@ $(document).ready(
             function() {
 
                 if (
-                    $("#row_round_info").data("turn") <= $("#automa_tracker_body").data(
+                    $("#automa_tracker_body").data("current_turn") <= $("#automa_tracker_body").data(
                         `round_${$("#automa_tracker_body").data("current_round")}_length`
                     ) - 2
                 ) {
@@ -1180,7 +1180,7 @@ $(document).ready(
                     append_automa_action_row(
                         $("#automa_tracker_body").data(
                             "automa_deck"
-                        )[$("#row_round_info").data("turn")]
+                        )[$("#automa_tracker_body").data("current_turn")]
                     );
                 }
                 else {
@@ -1188,7 +1188,7 @@ $(document).ready(
                     append_automa_action_row(
                         $("#automa_tracker_body").data(
                             "automa_deck"
-                        )[$("#row_round_info").data("turn")]
+                        )[$("#automa_tracker_body").data("current_turn")]
                     );
 
                     // Show and hide buttons

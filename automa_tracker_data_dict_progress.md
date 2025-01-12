@@ -60,4 +60,3 @@ col_automa_total_score | counter | no
 ## from automa_tracker_scripts.js
 
 img_round_${round_number}_end_goal | round_end_goal | yes
-row_round_info | turn | no
