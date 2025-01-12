@@ -10,8 +10,6 @@ button_round_1_end_goal | enable_start_game | no
 button_round_2_end_goal | enable_start_game | no
 button_round_3_end_goal | enable_start_game | no
 button_round_4_end_goal | enable_start_game | no
-col_automa_drawn_cards_count | counter | no
-col_automa_eggs_count | counter | no
 col_automa_hoard_tokens_count | counter | no
 col_automa_nectar_forest_count | counter | no
 col_automa_nectar_forest_count_end_of_round | counter | TBD

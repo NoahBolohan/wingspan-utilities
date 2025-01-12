@@ -19,7 +19,7 @@ function assign_submit_href() {
         ) + $("#col_round_4_end_cube_count").data(
             "automa_round_end_points"
         ),
-        "cell_automa_laid_eggs" : $("#col_automa_eggs_count").data("counter"),
+        "cell_automa_laid_eggs" : $("#automa_tracker_body").data("automa_eggs_counter"),
         "cell_automa_nectar" : $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score"),
         "cell_automa_total_score" : $("#col_automa_total_score").data("counter")
     }
@@ -868,17 +868,17 @@ function reset_automa_drawn_cards() {
 // Update automa laid eggs counter
 function update_automa_laid_eggs(n_eggs) {
 
-    $("#col_automa_eggs_count").data(
-        "counter",
-        $("#col_automa_eggs_count").data(
-            "counter"
+    $("#automa_tracker_body").data(
+        "automa_eggs_counter",
+        $("#automa_tracker_body").data(
+            "automa_eggs_counter"
         ) + n_eggs
     );
 
     $("#col_automa_eggs_count").empty();
     $("#col_automa_eggs_count").text(
-        $("#col_automa_eggs_count").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_eggs_counter"
         )
     );
 
@@ -888,15 +888,15 @@ function update_automa_laid_eggs(n_eggs) {
 // Reset automa laid eggs counter
 function reset_automa_laid_eggs(n_eggs) {
 
-    $("#col_automa_eggs_count").data(
-        "counter",
+    $("#automa_tracker_body").data(
+        "automa_eggs_counter",
         0
     );
 
     $("#col_automa_eggs_count").empty();
     $("#col_automa_eggs_count").text(
-        $("#col_automa_eggs_count").data(
-            "counter"
+        $("#automa_tracker_body").data(
+            "automa_eggs_counter"
         )
     );
 }
@@ -912,8 +912,8 @@ function update_automa_total_score() {
             "automa_points_per_face_down_bird_card"
         ) * $("#automa_tracker_body").data(
             "automa_drawn_cards_counter"
-        ) + $("#col_automa_eggs_count").data(
-            "counter"
+        ) + $("#automa_tracker_body").data(
+            "automa_eggs_counter"
         ) + $("#col_round_1_end_cube_count").data(
             "automa_round_end_points"
         ) + $("#col_round_2_end_cube_count").data(
@@ -1804,6 +1804,10 @@ $(document).ready(
                     "automa_drawn_cards_counter",
                     0
                 );
+                $("#automa_tracker_body").data(
+                    "automa_eggs_counter",
+                    0
+                )
 
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
@@ -2089,8 +2093,8 @@ function populate_game_end_modal() {
     if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
 
         $("#table_cell_laid_eggs_points").text(
-            $("#col_automa_eggs_count").data(
-                "counter"
+            $("#automa_tracker_body").data(
+                "automa_eggs_counter"
             ) + Math.floor(
                 $("#col_automa_hoard_tokens_count").data(
                     "counter"
@@ -2103,8 +2107,8 @@ function populate_game_end_modal() {
     else {
 
         $("#table_cell_laid_eggs_points").text(
-            $("#col_automa_eggs_count").data(
-                "counter"
+            $("#automa_tracker_body").data(
+                "automa_eggs_counter"
             )
         )
     }
