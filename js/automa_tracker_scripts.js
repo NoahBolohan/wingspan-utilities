@@ -549,7 +549,7 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
 
     // Assign round end automa base values to the round end column
     $(`#col_round_${round_number}_end_cube_count`).data(
-        "base_values",
+        "automa_end-of-round_base_values",
         round_end_goal_base_values
     );
 
@@ -723,7 +723,7 @@ function update_round_end_cube_counter(round_number,cube_increment) {
     );
 
     var n_cubes = $(`#col_round_${round_number}_end_cube_count`).data("counter");
-    var base_value = $(`#col_round_${round_number}_end_cube_count`).data("base_values")[round_number - 1]
+    var base_value = $(`#col_round_${round_number}_end_cube_count`).data("automa_end-of-round_base_values")[round_number - 1]
 
     $(`#col_round_${round_number}_end_cube_count`).data(
         "round_end_goal_score",
@@ -1462,7 +1462,7 @@ function end_round_cleanup(who_won) {
         )
 
         var n_cubes = $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("counter");
-        var base_value = $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("base_values")[$("#row_round_info").data("round") - 1]
+        var base_value = $(`#col_round_${$("#row_round_info").data("round")}_end_cube_count`).data("automa_end-of-round_base_values")[$("#row_round_info").data("round") - 1]
 
         // Update automa's round end points (0 if automa didn't score)
         if (n_cubes + base_value > 0) {
