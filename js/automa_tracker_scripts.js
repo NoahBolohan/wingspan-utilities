@@ -1604,66 +1604,68 @@ function nectar_scoring_button_disable(nectar_scoring_button_id) {
     $(nectar_scoring_button_id).addClass("nectar-scoring-button-disabled");
 }
 
-$(document).ready(
+// $(document).ready(
 
-    $(`#button_forest_nectar_scoring_i_won`).on(
-        "click",
-        function() {
+//     $(`#button_forest_nectar_scoring_i_won`).on(
+//         "click",
+//         function() {
 
-            var habitat = forest;
-            var outcome = "i_won";
+//             var habitat = forest;
+//             var outcome = "i_won";
 
-            alert("Toggling")
-            for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
+//             alert("Toggling")
+//             for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
 
-                if (other_outcome == outcome) {
+//                 if (other_outcome == outcome) {
 
-                    alert("Enable" + forest + " " + outcome)
-                    nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
-                }
-                else {
-                    nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
-                }
+//                     alert("Enable" + forest + " " + outcome)
+//                     nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
+//                 }
+//                 else {
+//                     nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
+//                 }
 
-            }
-        }
-    )
-)
+//             }
+//         }
+//     )
+// )
 
 // Set an event listener for performing nectar scoring I won action by clicking the nectar scoring I won button
 $(document).ready(
 
-    $.each(
-        ["forest","grassland","wetland"],
-        function(habitat_key, habitat) {
+    function () {
 
-            $.each(
-                ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"],
-                function (outcome_key, outcome) {
+        $.each(
+            ["forest","grassland","wetland"],
+            function(habitat_key, habitat) {
+    
+                $.each(
+                    ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"],
+                    function (outcome_key, outcome) {
+    
+                        $(`#button_${habitat}_nectar_scoring_${outcome}`).on(
+                            "click",
+                            function() {
 
-                    $(`#button_${habitat}_nectar_scoring_${outcome}`).on(
-                        "click",
-                        function() {
-        
-                            alert("Toggling")
-                            for (var other_outcome in ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
-        
-                                if (other_outcome == outcome) {
+                                for (var other_outcome of ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
+            
+                                    if (other_outcome == outcome) {
 
-                                    alert("Enable" + habitat + " " + outcome)
-                                    nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${outcome}`);
+                                        nectar_scoring_button_enable(`#button_${habitat}_nectar_scoring_${other_outcome}`);
+                                    }
+                                    else {
+
+                                        nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${other_outcome}`);
+                                    }
+            
                                 }
-                                else {
-                                    nectar_scoring_button_disable(`#button_${habitat}_nectar_scoring_${outcome}`);
-                                }
-        
                             }
-                        }
-                    )
-                }
-            )
-        }
-    )
+                        )
+                    }
+                )
+            }
+        )
+    }
 )
 
 // Set an event listener for performing I won action by clicking the I won button
