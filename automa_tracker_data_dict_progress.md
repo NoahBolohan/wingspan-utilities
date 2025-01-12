@@ -38,13 +38,6 @@ col_round_4_end_cube_count | automa_round_end_points | no
 col_round_4_end_cube_count | counter | no
 col_round_4_end_cube_count | me_round_end_points | no
 
-table_cell_final_nectar | automa_forest_nectar_score | no
-table_cell_final_nectar | automa_grassland_nectar_score | no
-table_cell_final_nectar | automa_wetland_nectar_score | no
-table_cell_final_nectar | user_forest_nectar_score | no
-table_cell_final_nectar | user_grassland_nectar_score | no
-table_cell_final_nectar | user_wetland_nectar_score | no
-
 ## from automa_tracker_scripts.js
 
 img_round_${round_number}_end_goal | round_end_goal | yes

@@ -20,7 +20,7 @@ function assign_submit_href() {
             "automa_round_end_points"
         ),
         "cell_automa_laid_eggs" : $("#automa_tracker_body").data("automa_eggs_counter"),
-        "cell_automa_nectar" : $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score"),
+        "cell_automa_nectar" : $("#automa_tracker_body").data("automa_forest_nectar_score") + $("#automa_tracker_body").data("automa_grassland_nectar_score") + $("#automa_tracker_body").data("automa_wetland_nectar_score"),
         "cell_automa_total_score" : $("#automa_tracker_body").data("automa_total_score_counter")
     }
 
@@ -1646,20 +1646,20 @@ $(document).ready(
 
                                     case "i_won":
 
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `user_${habitat}_nectar_score`,
                                             5
                                         );
                                         if ($(`#col_automa_nectar_${habitat}_count`).data("counter") > 0) {
 
-                                            $("#table_cell_final_nectar").data(
+                                            $("#automa_tracker_body").data(
                                                 `automa_${habitat}_nectar_score`,
                                                 2
                                             );
                                         }
                                        else {
 
-                                            $("#table_cell_final_nectar").data(
+                                            $("#automa_tracker_body").data(
                                                 `automa_${habitat}_nectar_score`,
                                                 0
                                             );
@@ -1670,11 +1670,11 @@ $(document).ready(
 
                                     case "we_tied":
 
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `user_${habitat}_nectar_score`,
                                             3
                                         );
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `automa_${habitat}_nectar_score`,
                                             3
                                         );
@@ -1682,11 +1682,11 @@ $(document).ready(
 
                                     case "automa_won_user_scored":
 
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `user_${habitat}_nectar_score`,
                                             2
                                         );
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `automa_${habitat}_nectar_score`,
                                             5
                                         );
@@ -1694,11 +1694,11 @@ $(document).ready(
 
                                     case "automa_won_user_did_not_score":
 
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `user_${habitat}_nectar_score`,
                                             0
                                         );
-                                        $("#table_cell_final_nectar").data(
+                                        $("#automa_tracker_body").data(
                                             `automa_${habitat}_nectar_score`,
                                             5
                                         );
@@ -1821,6 +1821,10 @@ $(document).ready(
                     0
                 );
                 $("#automa_tracker_body").data(
+                    "automa_nectar_forest_score",
+                    0
+                );
+                $("#automa_tracker_body").data(
                     "automa_nectar_grassland_counter",
                     0
                 );
@@ -1829,11 +1833,19 @@ $(document).ready(
                     0
                 );
                 $("#automa_tracker_body").data(
+                    "automa_nectar_grassland_score",
+                    0
+                );
+                $("#automa_tracker_body").data(
                     "automa_nectar_wetland_counter",
                     0
                 );
                 $("#automa_tracker_body").data(
                     "automa_nectar_wetland_end_of_round_counter",
+                    0
+                );
+                $("#automa_tracker_body").data(
+                    "automa_nectar_wetland_score",
                     0
                 );
                 $("#automa_tracker_body").data(
@@ -2152,7 +2164,7 @@ function populate_game_end_modal() {
     if ($("#col_oceania_expansion_checkbox").is(":checked")) {
 
         $("#table_cell_final_nectar").text(
-            $("#table_cell_final_nectar").data("automa_forest_nectar_score") + $("#table_cell_final_nectar").data("automa_grassland_nectar_score") + $("#table_cell_final_nectar").data("automa_wetland_nectar_score")
+            $("#automa_tracker_body").data("automa_forest_nectar_score") + $("#automa_tracker_body").data("automa_grassland_nectar_score") + $("#automa_tracker_body").data("automa_wetland_nectar_score")
         )
     }
 
