@@ -47,7 +47,7 @@ function populate_form_data() {
 
     // Automa: drawn cards
     $("#automa_drawn_cards_for_post").val(
-        $("#row_automa_points_per_face_down_bird_card_radio").data(
+        $("#automa_tracker_body").data(
             "automa_points_per_face_down_bird_card"
         ) * $("#automa_tracker_body").data(
             "automa_drawn_cards_counter"
@@ -288,19 +288,19 @@ $(document).ready(
                 switch($("input[name='automa_starting_nectar']:checked").val()) {
 
                     case "3":
-                        $("#row_automa_starting_nectar_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_starting_nectar",
                             3
                         );
                         break;
                     case "4":
-                        $("#row_automa_starting_nectar_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_starting_nectar",
                             4
                         );
                         break;
                     case "5":
-                        $("#row_automa_starting_nectar_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_starting_nectar",
                             5
                         );
@@ -331,19 +331,19 @@ $(document).ready(
                 switch($("input[name='automa_hoard_tokens_per_egg']:checked").val()) {
 
                     case "3":
-                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_hoard_tokens_per_egg",
                             3
                         );
                         break;
                     case "4":
-                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_hoard_tokens_per_egg",
                             4
                         );
                         break;
                     case "5":
-                        $("#row_automa_hoard_tokens_per_egg_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_hoard_tokens_per_egg",
                             5
                         );
@@ -374,19 +374,19 @@ $(document).ready(
                 switch($("input[name='automa_points_per_face_down_bird_card']:checked").val()) {
 
                     case "3":
-                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_points_per_face_down_bird_card",
                             3
                         );
                         break;
                     case "4":
-                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_points_per_face_down_bird_card",
                             4
                         );
                         break;
                     case "5":
-                        $("#row_automa_points_per_face_down_bird_card_radio").data(
+                        $("#automa_tracker_body").data(
                             "automa_points_per_face_down_bird_card",
                             5
                         );
@@ -908,7 +908,7 @@ function update_automa_total_score() {
         "automa_total_score_counter",
         $("#automa_tracker_body").data(
             "automa_played_birds_counter"
-        ) + $("#row_automa_points_per_face_down_bird_card_radio").data(
+        ) + $("#automa_tracker_body").data(
             "automa_points_per_face_down_bird_card"
         ) * $("#automa_tracker_body").data(
             "automa_drawn_cards_counter"
@@ -1861,9 +1861,9 @@ $(document).ready(
 
                     update_automa_nectar_counts(
                         {
-                            "forest" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
-                            "grassland" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
-                            "wetland" : $("#row_automa_starting_nectar_radio").data("automa_starting_nectar"),
+                            "forest" : $("#automa_tracker_body").data("automa_starting_nectar"),
+                            "grassland" : $("#automa_tracker_body").data("automa_starting_nectar"),
+                            "wetland" : $("#automa_tracker_body").data("automa_starting_nectar"),
                         },
                         "reset"
                     );
@@ -2098,13 +2098,13 @@ function populate_game_end_modal() {
 
     $("#table_cell_drawn_cards_points").text(
         `${
-            $("#row_automa_points_per_face_down_bird_card_radio").data(
+            $("#automa_tracker_body").data(
                 "automa_points_per_face_down_bird_card"
             ) * $("#automa_tracker_body").data(
                 "automa_drawn_cards_counter"
             )
         } (${
-            $("#row_automa_points_per_face_down_bird_card_radio").data(
+            $("#automa_tracker_body").data(
                 "automa_points_per_face_down_bird_card"
             )
         } \u00D7 ${
