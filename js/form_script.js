@@ -1,5 +1,5 @@
 var scriptProp = PropertiesService.getScriptProperties()
-var REDIRECT_URL = "https://noahbolohan.github.io/wingspan-tracker/index.html";
+var REDIRECT_URL = "https://noahbolohan.github.io/wingspan-utilities/index.html";
 
 function intialSetup () {
   var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()

@@ -94,7 +94,7 @@ $(document).ready(
                         1
                     );
 
-                    $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/base.json`, function(data) {
+                    $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/round_end_scoring/base.json`, function(data) {
 
                         update_round_end_goal_image(
                             1,

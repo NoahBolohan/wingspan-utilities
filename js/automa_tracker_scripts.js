@@ -38,7 +38,7 @@ function assign_submit_href() {
 
     $("#href_submit_to_score_sheet").attr(
         "href",
-        "https://noahbolohan.github.io/wingspan-tracker/score_sheet_automa.html?" + href
+        "https://noahbolohan.github.io/wingspan-utilities/score_sheet_automa.html?" + href
     );
 }
 
@@ -225,12 +225,12 @@ $(document).ready(
     function () {
 
         $.getJSON(
-            "https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/backgrounds/backgrounds.json",
+            "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
             function(data) {
 
                 $("body").css(
                     "background-image",
-                    `url(https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/backgrounds/${
+                    `url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
                         data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
                     })`
                 );
@@ -243,7 +243,7 @@ $(document).ready(
 $(document).ready(
 
     // Read config
-    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/config.json", function(data) {
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/config.json", function(data) {
 
         $("#automa_tracker_body").data(
             "round_lengths",
@@ -704,7 +704,7 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
     );
 
     // Assign the round end goal image to the button as well as the automa gameplay page
-    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/" + round_end_goal + ".jpg");
+    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/round_end_goals/" + round_end_goal + ".jpg");
 
     $(`#img_round_${round_number}_end_goal`).attr(
         "src",
@@ -794,7 +794,7 @@ function new_round(round_number) {
 // Create the automa deck for the round
 function create_automa_deck(round_number) {
 
-    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/automa_actions/automa_actions.json", function(data) {
+    $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/automa_actions/automa_actions.json", function(data) {
 
         var automa_deck = [];
 
@@ -893,7 +893,7 @@ function generate_egg_td(
 
         $("<img>").attr(
             {
-                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.png`),
+                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/egg.png`),
                 "style" : "width : 10%;"
             }
         ).appendTo(
@@ -920,7 +920,7 @@ function generate_food_order_td(
 
         $("<img>").attr(
             {
-                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/food_icons/${food_order[i]}.svg`),
+                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/food_icons/${food_order[i]}.svg`),
                 "style" : "width : 16.67%; border : 1px solid #000000;"
             }
         ).appendTo(
@@ -1214,7 +1214,7 @@ function append_automa_action_row(automa_action) {
             break;
 
         case "lay_eggs":
-            // // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/misc_images/egg.jpg'/>";
+            // // primary_action_text = "<img style = 'width:33%' class='img-fluid' src='https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/egg.jpg'/>";
             // primary_action_text = `Lay ${automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"]} egg(s)`;
             // primary_action_class = "table-warning";
             // update_automa_laid_eggs(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"])
@@ -1936,7 +1936,7 @@ $(document).ready(
             "click",
             function() {
 
-                $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/round_end_points.json", function(data) {
+                $.getJSON("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/round_end_scoring/round_end_points.json", function(data) {
 
                     $("#automa_tracker_body").data(
                         "round_end_points",
@@ -2001,7 +2001,7 @@ $(document).ready(
 // Generate round end choice buttons for each appropriate round end goal
 function generate_round_end_goal_button_for_round(round_number, round_end_goal, expansion) {
 
-    var new_url = encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/round_end_goals/${round_end_goal}.jpg`);
+    var new_url = encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/round_end_goals/${round_end_goal}.jpg`);
 
     var button = $("<button>").attr(
         {
@@ -2029,7 +2029,7 @@ function generate_round_end_goal_button_for_round(round_number, round_end_goal, 
         "click",
         function() {
 
-            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_scoring/${expansion}.json`, function(data) {
+            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/round_end_scoring/${expansion}.json`, function(data) {
 
                 update_round_end_goal_image(
                     round_number,
@@ -2107,7 +2107,7 @@ function generate_round_end_goal_buttons_for_expansions(expansions_to_include) {
         expansions_to_include,
         function(idx,expansion) {
 
-            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/data/round_end_goals/${expansion}.json`, function(data) {
+            $.getJSON(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/round_end_goals/${expansion}.json`, function(data) {
 
                 Object.keys(data).forEach(
                     function (key) {

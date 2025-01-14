@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "CardenioModern";
-    src: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/master/static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
+    src: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/cardenio_modern_font/CardenioModern-Regular.otf") format("opentype");
 
 }
 
@@ -121,49 +121,49 @@ input::-webkit-input-placeholder {
 }
 
 #row_base_game {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/base_game.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_european_expansion {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(122,105,168, 1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/european_expansion.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(122,105,168, 1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/european_expansion.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_oceania_expansion {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(241,177,82,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/oceania_expansion.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(241,177,82,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/oceania_expansion.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_asia {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/asia.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/asia.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_automubon_society {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/base_game.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_RAOUtoma {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(241,177,82,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/oceania_expansion.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(241,177,82,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/oceania_expansion.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_automasian_alliance {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/asia.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/asia.png");
     background-position: left;
     background-size: 130% auto;
 }
 
 #row_duet_mode {
-    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-tracker/refs/heads/main/static/box_art/asia.png");
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/asia.png");
     background-position: left;
     background-size: 130% auto;
 }
