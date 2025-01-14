@@ -1,31 +1,23 @@
 # Wingspan Utilities
 
-Web app to track Wingspan games. Designed for mobile use.
+Some of my Wingspan utilities. Includes:
+
+- **Automa tracker:** Simulate all of the Automa's actions and functionality in a game versus the Automa. Using this tool requires only the physical components the player uses (i.e., you no longer use the Automa cards, the End-of-round Goal Scoring cards, or the Current Round Tracker, or action cubes).
+- **Score sheet (Automa):** Digital score sheet for games versus the Automa. Scores can be submitted to the Google Sheets document.
+- **Score sheet:** Digital score sheet for games of 2 to 7 players. Scores can be submitted to the Google Sheets document.
 
 ## Links
 
-- [Wingspan Utilities website link](https://noahbolohan.github.io/wingspan-tracker/)
+- [Wingspan Utilities website link](https://noahbolohan.github.io/wingspan-utilities/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc/edit?gid=0#gid=0)
 
 ## Other Wingspan resources
 
 - [Wingspan Rules | Rulepop](https://wingspan.rulepop.com/)
 
-## To-do
-
-- Upload image -> auto-fill score sheets
-- Redirect to main page after sheet submit
-- Disable round end buttons on select
-- Implement duet mode in automa tracker
-- Implement Automa's hoard/cache and nectar in automa tracker
-- Vertical text outside score sheet row headers (amount on cards, 1 pt each)
-- Cardify automa tracker pages
-- Properly colour-code automa moves
-- Automarazzi
-
 ## Have feedback/requests/issues?
 
-Please [create a new issue](https://github.com/NoahBolohan/wingspan-tracker/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
+Please [create a new issue](https://github.com/NoahBolohan/wingspan-utilities/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
 
 ## Credits
 
