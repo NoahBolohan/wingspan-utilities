@@ -1,10 +1,10 @@
-# Wingspan Tracker
+# Wingspan Utilities
 
 Web app to track Wingspan games. Designed for mobile use.
 
 ## Links
 
-- [Github page](https://noahbolohan.github.io/wingspan-tracker/)
+- [Wingspan Utilities website link](https://noahbolohan.github.io/wingspan-tracker/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc/edit?gid=0#gid=0)
 
 ## Other Wingspan resources
