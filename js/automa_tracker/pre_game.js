@@ -420,12 +420,31 @@ $(document).ready(
 )
 
 // Update round end goal images
-function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_base_values) {
+function update_round_end_goal_image(
+    round_number,
+    round_end_goal,
+    round_end_goal_backside,
+    round_end_goal_base_values
+) {
+    var old_round_end_goal = "";
+    var old_round_end_goal_backside = "";
 
-    // Assign round end goal to the round end image data
-    $(`#img_round_${round_number}_end_goal`).data(
-        "round_end_goal",
+    if ($("#automa_tracker_body").data(`round_${round_number}_end_goal`)) {
+        old_round_end_goal = $("#automa_tracker_body").data(`round_${round_number}_end_goal`);
+    }
+
+    if ($("#automa_tracker_body").data(`round_${round_number}_end_goal_backside`)) {
+        old_round_end_goal_backside = $("#automa_tracker_body").data(`round_${round_number}_end_goal_backside`);
+    }
+
+    $("#automa_tracker_body").data(
+        `round_${round_number}_end_goal`,
         round_end_goal
+    );
+
+    $("#automa_tracker_body").data(
+        `round_${round_number}_end_goal_backside`,
+        round_end_goal_backside
     );
 
     // Assign round end automa base values to the round end column
@@ -459,12 +478,67 @@ function update_round_end_goal_image(round_number,round_end_goal,round_end_goal_
         `#button_round_${round_number}_end_goal`
     );
 
+    round_end_goal_button_abler(
+        round_end_goal,
+        round_end_goal_backside,
+        old_round_end_goal,
+        old_round_end_goal_backside
+    );
+
     // Check whether to enable start game button
     start_game_enabler();
 }
 
+function round_end_goal_button_abler(
+    round_end_goal,
+    round_end_goal_backside,
+    old_round_end_goal = "",
+    old_round_end_goal_backside = ""
+) {
+
+    for (var round_number of [1,2,3,4]) {
+
+        // Disable the round N end goal for all other rounds
+        $(`#button_round_${round_number}_${round_end_goal}`).prop(
+            "disabled",
+            true
+        );
+
+        // Enable the round N end goal for all other rounds
+        if (old_round_end_goal != "") {
+            
+            $(`#button_round_${round_number}_${old_round_end_goal}`).prop(
+                "disabled",
+                false
+            );
+        }
+
+        // Disable the round N end goal backside for all other rounds
+        $(
+            `#button_round_${round_number}_${round_end_goal_backside}`
+        ).prop(
+            "disabled",
+            true
+        );
+
+        // Enable the round N end goal backside for all other rounds
+        if (old_round_end_goal_backside != "") {
+            
+            $(`#button_round_${round_number}_${old_round_end_goal_backside}`).prop(
+                "disabled",
+                false
+            );
+        }
+    }
+}
+
 // Generate round end choice buttons for each appropriate round end goal
-function generate_round_end_goal_button_for_round(round_number, round_end_goal, expansion) {
+function generate_round_end_goal_button_for_round(
+    round_number,
+    round_end_goal,
+    round_end_goal_backside,
+    expansion
+) {
 
     var new_url = encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/round_end_goals/${round_end_goal}.jpg`);
 
@@ -499,6 +573,7 @@ function generate_round_end_goal_button_for_round(round_number, round_end_goal, 
                 update_round_end_goal_image(
                     round_number,
                     round_end_goal,
+                    round_end_goal_backside,
                     data[round_end_goal]
                 );
 
@@ -535,12 +610,14 @@ function generate_round_end_goal_buttons_for_expansions(expansions_to_include) {
                             generate_round_end_goal_button_for_round(
                                 round_number,
                                 data[key]["side_1"],
+                                data[key]["side_2"],
                                 expansion
                             );
 
                             generate_round_end_goal_button_for_round(
                                 round_number,
                                 data[key]["side_2"],
+                                data[key]["side_1"],
                                 expansion
                             );
                         }

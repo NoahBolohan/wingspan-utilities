@@ -210,3 +210,9 @@ textarea {
 .enabled-text {
     color : #000
 }
+
+button:disabled,
+button[disabled]{
+  border: 0px;
+  opacity: 0.1;
+}
