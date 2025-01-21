@@ -216,3 +216,8 @@ button[disabled]{
   border: 0px;
   opacity: 0.1;
 }
+
+.rowspan-vertical {
+    writing-mode: sideways-lr;
+    text-align: center;
+}
