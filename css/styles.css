@@ -74,7 +74,6 @@ table {
     writing-mode: vertical-lr;
     text-orientation: sideways;
     transform: rotate(180deg);
-    /* line-height: normal; */
   }
 
 .nectar-scoring-button-disabled {

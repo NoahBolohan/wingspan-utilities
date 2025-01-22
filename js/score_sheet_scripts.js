@@ -102,7 +102,7 @@ $(document).ready(
                     "click",
                     function() {
 
-                        var width_p = 34;
+                        var width_p = 28;
 
                         $("#row_score_sheet").data(
                             "n_players",
@@ -122,12 +122,29 @@ $(document).ready(
 function generate_row_headers(width_p) {
 
     // Player names
-     $("<th>").attr(
+    $("<td>").attr(
         {
             class : "bg-info",
-            style : `width:${width_p}%;`
+            style : `width:10%; border-right: 0px;`
         }
     ).appendTo("#row_player_names");
+
+    $("<th>").attr(
+        {
+            class : "bg-info",
+            style : `width:${width_p}%; border-left: 0px;`
+        }
+    ).appendTo("#row_player_names");
+
+    // Vertical text: Amount on cards
+    $("<td>").attr(
+        {
+            class : "bg-light rowspan-vertical",
+            rowspan : "3"
+        }
+    ).text(
+        "Amount on cards"
+    ).appendTo("#row_birds");
 
     // Birds
     $("<th>").attr(
@@ -162,6 +179,16 @@ function generate_row_headers(width_p) {
         "End-of-round goals"
     ).appendTo("#row_end-of-round_goals");
 
+    // Vertical text: 1 point each
+    $("<td>").attr(
+        {
+            class : "bg-light rowspan-vertical",
+            rowspan : "3"
+        }
+    ).text(
+        "1 point each"
+    ).appendTo("#row_eggs");
+
     // Eggs
     $("<th>").attr(
         {
@@ -195,6 +222,16 @@ function generate_row_headers(width_p) {
         "Tucked cards"
     ).appendTo("#row_tucked_cards");
 
+    // Vertical text: 5/2
+    $("<td>").attr(
+        {
+            class : "bg-light rowspan-vertical",
+            rowspan : "1"
+        }
+    ).text(
+        "5/2"
+    ).appendTo("#row_nectar");
+
     // Nectar
     $("<th>").attr(
         {
@@ -205,6 +242,16 @@ function generate_row_headers(width_p) {
     ).text(
         "Nectar"
     ).appendTo("#row_nectar");
+
+    // Vertical text: 1 point each
+    $("<td>").attr(
+        {
+            class : "bg-light rowspan-vertical",
+            rowspan : "1"
+        }
+    ).text(
+        "1 point each"
+    ).appendTo("#row_duet_tokens");
 
     // Duet tokens in largest contiguous group
     $("<th>").attr(
@@ -218,14 +265,21 @@ function generate_row_headers(width_p) {
     ).appendTo("#row_duet_tokens");
 
     // Total
-    $("<th>").attr(
+    $("<td>").attr(
         {
             class : "bg-success",
-            style : `width:${width_p}%`,
-            scope : "row"
+            style : `width:10%; border-right: 0px;`
         }
     ).text(
         "Total"
+    ).appendTo("#row_total");
+
+    $("<th>").attr(
+        {
+            class : "bg-success",
+            style : `width:${width_p}%; border-left: 0px;`,
+            scope : "row"
+        }
     ).appendTo("#row_total");
 }
 
