@@ -11,12 +11,14 @@ format:
 # Score analysis
 
 ```{r}
+#| output: false
 library(gsheet)
 library(DT)
 library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(stringr)
+library(plotly)
 
 # load functions
 lapply(
@@ -24,13 +26,54 @@ lapply(
   source
 )
 
-
 df <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=2096833443')
+df <- df |> mutate(game = 1:nrow(df), .before = 1)
+stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows()
+noah_scores <- filter(
+  stacked_player_scores,
+  Name == "Noah",
+  score_type != "total_score"
+)
+```
 
+## Row {.tabset}
+
+```{r}
+#| title: Total score
+#| out-width: 100%
+p <- ggplot(
+  noah_scores,
+  aes(
+    x = pull(noah_scores["game"]),
+    y = pull(noah_scores["score"]),
+    fill = pull(noah_scores["score_type"])
+  )
+) + 
+geom_area() +
+xlab("Game number") +
+ylab("Score") +
+labs(fill="Score types")
+
+ggplotly(p)
 ```
 
 ```{r}
-#| title: Noah's score breakdown
+#| title: Score breakdown
+#| out-width: 100%
+p <- ggplot(
+  noah_scores,
+  aes(
+    x = pull(noah_scores["game"]),
+    y = pull(noah_scores["score"]),
+    fill = pull(noah_scores["score_type"])
+  )
+) + 
+geom_area() +
+xlab("Game number") +
+ylab("Score") +
+labs(fill="Score types")
+
+ggplotly(p)
 ```
 
 ## Row
