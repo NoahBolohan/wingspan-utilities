@@ -15,6 +15,16 @@ library(gsheet)
 library(DT)
 library(dplyr)
 library(ggplot2)
+library(tidyr)
+library(stringr)
+
+# load functions
+lapply(
+  list.files("./R", full.names = TRUE),
+  source
+)
+
+
 df <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=2096833443')
 
 ```
