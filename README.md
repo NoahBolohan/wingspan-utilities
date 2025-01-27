@@ -22,6 +22,7 @@ Please [create a new issue](https://github.com/NoahBolohan/wingspan-utilities/is
 ## Credits
 
 - Background art by [Diana Lisiecka](https://www.artstation.com/dianalisiecka)
+- [gsheet package](https://github.com/maxconway/gsheet) by [Max Conway](https://github.com/maxconway)
 
 ## Related/Inspirational Articles
 

@@ -1,0 +1,62 @@
+--- 
+title: "Wingspan Utilities"
+author: "Noah Bolohan"
+format:
+  dashboard:
+    nav-buttons:
+      - icon: github
+        href: https://github.com/NoahBolohan/wingspan-utilities
+---
+
+# Score analysis
+
+```{r}
+library(gsheet)
+library(DT)
+library(dplyr)
+library(ggplot2)
+df <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=2096833443')
+
+```
+
+```{r}
+#| title: Noah's score breakdown
+```
+
+## Row
+
+```{r}
+#| title: Noah's games
+datatable(
+    filter(
+    df,
+    player_1_name == "Noah" | 
+    player_2_name == "Noah" |
+    player_3_name == "Noah" |
+    player_4_name == "Noah" |
+    player_5_name == "Noah" |
+    player_6_name == "Noah" |
+    player_7_name == "Noah"
+    )
+)
+```
+
+# Recorded games
+
+## Row {height=70%}
+
+```{r}
+#| title: Human games
+library(gsheet)
+library(DT)
+datatable(gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=2096833443'))
+```
+
+## Row {height=70%}
+
+```{r}
+#| title: Automa games
+library(gsheet)
+library(DT)
+datatable(gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=0'))
+```
