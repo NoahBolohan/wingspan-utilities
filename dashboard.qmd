@@ -19,6 +19,7 @@ library(ggplot2)
 library(tidyr)
 library(stringr)
 library(plotly)
+library(dygraphs)
 
 # load functions
 lapply(
@@ -27,34 +28,48 @@ lapply(
 )
 
 df <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc#gid=2096833443')
+
 df <- df |> mutate(game = 1:nrow(df), .before = 1)
 stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows()
+
 noah_scores <- filter(
   stacked_player_scores,
   Name == "Noah",
   score_type != "total_score"
 )
+
+noah_scores_total <- stacked_player_scores %>% filter(
+  Name == "Noah",
+  score_type == "total_score"
+) %>% arrange(game)
 ```
 
-## Row {.tabset}
+## Row
 
+### Column {width=30%}
+
+#### {.toolbar}
+
+Noah
+
+Alex
+
+Mila
+
+#### Row
+
+:::{.card title="General stats"}
+* Games played: `r eval(nrow(noah_scores_total["score"]))`
+* Max. score: `r eval(max(noah_scores_total["score"]))`
+* Min. score: `r eval(min(noah_scores_total["score"]))`
+:::
+
+### Column {.tabset}
 ```{r}
 #| title: Total score
 #| out-width: 100%
-p <- ggplot(
-  noah_scores,
-  aes(
-    x = pull(noah_scores["game"]),
-    y = pull(noah_scores["score"]),
-    fill = pull(noah_scores["score_type"])
-  )
-) + 
-geom_area() +
-xlab("Game number") +
-ylab("Score") +
-labs(fill="Score types")
-
-ggplotly(p)
+dygraph(noah_scores_total[c("game","score")], main = "Total score")%>% 
+  dyRangeSelector(dateWindow = c(nrow(noah_scores_total)-50,nrow(noah_scores_total)))
 ```
 
 ```{r}
