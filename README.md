@@ -17,7 +17,7 @@ Some of my Wingspan utilities. Includes:
 
 ## Have feedback/requests/issues?
 
-Please [create a new issue](https://github.com/NoahBolohan/wingspan-utilities/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
+Please [create a new issue](https://github.com/NoahBolohan/wingspan-utilities/issues/new?template=Blank+issue). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
 
 ## Credits
 
