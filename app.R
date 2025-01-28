@@ -1,18 +1,3 @@
---- 
-title: "Wingspan Analytics"
-filters:
-  - shinylive
-format: 
-  html:
-    page-layout: full
-embed-resources: false
-sidebar: false
-toc: false
----
-
-```{shinylive-r}
-#| standalone: true
-#| viewerHeight: 900
 library(shiny)
 library(bslib)
 library(gsheet)
@@ -149,4 +134,3 @@ server <- function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
-```

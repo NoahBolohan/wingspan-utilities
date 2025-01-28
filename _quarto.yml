@@ -1,0 +1,25 @@
+project:
+  type: website
+
+lang: en
+
+website:
+  title: Wingspan Utilities
+  back-to-top-navigation: true
+  page-navigation: true
+
+  site-url: https://noahbolohan.github.io/wingspan-utilities/
+  repo-url: https://github.com/NoahBolohan/wingspan-utilities
+  repo-actions: [issue, source]
+
+  navbar:
+    left:
+      - text: "Analytics"
+        file: dashboard.qmd
+    right:
+    - icon: git
+      menu:
+        - text: Source code
+          url: https://github.com/NoahBolohan/wingspan-utilities
+        - text: Report an issue
+          url:  https://github.com/NoahBolohan/wingspan-utilities/issues/new?template=Blank+issue
