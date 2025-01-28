@@ -1,13 +1,9 @@
 --- 
 title: "Wingspan Analytics"
+format: dashboard
 filters:
   - shinylive
-format: 
-  html:
-    page-layout: full
 embed-resources: false
-sidebar: false
-toc: false
 ---
 
 ```{shinylive-r}
