@@ -7,6 +7,7 @@ library(tidyr)
 library(stringr)
 library(plotly)
 library(readr)
+library(gt)
 
 ui <- page_sidebar(
   title = "Wingspan Analytics",
@@ -31,7 +32,7 @@ ui <- page_sidebar(
         "General stats"
       ),
       card_body(
-        textOutput(outputId = "playerGeneralStatsText")
+        gt_output(outputId = "tablePlayerStats")
       )
     ),
     navset_card_tab(
@@ -65,11 +66,51 @@ server <- function(input, output) {
   
   stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows()
   
-  output$playerGeneralStatsText <- renderText({
+  # Player stats table
+  output$tablePlayerStats <- render_gt({
     
-    input$playerName
+    player_scores_total <- stacked_player_scores %>% filter(
+      Name == input$playerName,
+      score_type == "total_score"
+    ) %>% arrange(game)
+    
+    summary_frame = data.frame(
+      Measure = c(
+        "Games played",
+        "Max score",
+        "Min score",
+        "Mean score"
+      ),
+      Value = c(
+        nrow(player_scores_total),
+        max(player_scores_total["score"]),
+        min(player_scores_total["score"]),
+        paste(
+          round(
+            colMeans(player_scores_total["score"]),
+            2
+          ),
+          " (+/-",
+          round(
+            colSdColMeans(player_scores_total["score"]),
+            2
+          ),
+          ")",
+          sep=""
+        )
+      )
+    )
+    
+    summary_frame %>%
+      gt() %>%
+      tab_header(
+        title = paste(
+          input$playerName
+        )
+      )
   })
   
+  # Player total score plot
   output$totalScorePlot <- renderPlot({
     
     player_scores_total <- stacked_player_scores %>% filter(
@@ -89,6 +130,7 @@ server <- function(input, output) {
       ylab("Score")
   })
   
+  # Player score breakdown plot
   output$scoreBreakdownPlot <- renderPlot({
     
     player_scores <- filter(
