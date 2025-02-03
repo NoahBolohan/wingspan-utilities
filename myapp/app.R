@@ -77,12 +77,20 @@ server <- function(input, output) {
     summary_frame = data.frame(
       Measure = c(
         "Games played",
+        "Games won",
+        "Win rate",
         "Max score",
         "Min score",
         "Mean score"
       ),
       Value = c(
         nrow(player_scores_total),
+        sum(player_scores_total["winner"]),
+        paste0(
+          100 *
+          sum(player_scores_total["winner"]) /
+          nrow(player_scores_total), " %"
+        ),
         max(player_scores_total["score"]),
         min(player_scores_total["score"]),
         paste(

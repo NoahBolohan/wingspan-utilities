@@ -79,7 +79,16 @@ server <- function(input, output) {
     )
 
     df <- df |> mutate(game = 1:nrow(df), .before = 1)
-    stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows()
+    stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows() |>
+        drop_na() |>
+        group_by(game) |>
+        mutate(
+            winner = case_when(
+                score >= max(score, na.rm = TRUE) ~ TRUE,
+                .default = FALSE
+            )
+        ) |>
+        ungroup()
 
     output$playerGeneralStatsText <- renderText({
 
