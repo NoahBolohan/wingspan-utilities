@@ -64,7 +64,16 @@ server <- function(input, output) {
     sheetId = 2096833443
   )
   
-  stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows()
+  stacked_player_scores <- lapply(1:7, iterative_pivot, df = df) |> bind_rows() |>
+    drop_na() |>
+    group_by(game) |>
+    mutate(
+      winner = case_when(
+        score >= max(score, na.rm = TRUE) ~ TRUE,
+        .default = FALSE
+      )
+    ) |>
+    ungroup()
   
   # Player stats table
   output$tablePlayerStats <- render_gt({
@@ -87,9 +96,12 @@ server <- function(input, output) {
         nrow(player_scores_total),
         sum(player_scores_total["winner"]),
         paste0(
-          100 *
-          sum(player_scores_total["winner"]) /
-          nrow(player_scores_total), " %"
+          round(
+            100 *
+            sum(player_scores_total["winner"]) /
+            nrow(player_scores_total),
+            2
+          ), " %"
         ),
         max(player_scores_total["score"]),
         min(player_scores_total["score"]),
@@ -163,3 +175,8 @@ server <- function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
+
+# shinylive::export(
+#   appdir = "C:/Git/wingspan-utilities/myapp",
+#   destdir = "C:/Git/wingspan-utilities/docs"
+# )
