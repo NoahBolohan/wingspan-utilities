@@ -221,3 +221,43 @@ button[disabled]{
     text-align: center;
     transform: rotate(180deg);
 }
+
+.paint-stroke-background-brown {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-brown.webp");
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.paint-stroke-background-pink {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-pink.webp");
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.paint-stroke-background-teal {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-teal.webp");
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.paint-stroke-background-white {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-white.webp");
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.paint-stroke-background-yellow {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-yellow.webp");
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
