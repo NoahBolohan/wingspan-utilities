@@ -285,9 +285,14 @@ button[disabled]{
     background-position: center;
 }
 
-#row_score_sheet {
-    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png"); 
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+td, tr, th {
+    /* background: none; */
+    opacity: 0.9;
+    border : 1px solid black;
 }
+
+/* #row_score_sheet {
+    background : url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
+    background-size : auto 100%,;
+    background-repeat : no-repeat;
+} */

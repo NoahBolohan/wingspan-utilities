@@ -124,14 +124,12 @@ function generate_row_headers(width_p) {
     // Player names
     $("<td>").attr(
         {
-            class : "bg-info",
             style : `width:10%; border-right: 0px;`
         }
     ).appendTo("#row_player_names");
 
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%; border-left: 0px;`
         }
     ).appendTo("#row_player_names");
@@ -139,7 +137,7 @@ function generate_row_headers(width_p) {
     // Vertical text: Amount on cards
     $("<td>").attr(
         {
-            class : "bg-light rowspan-vertical",
+            class : "rowspan-vertical",
             rowspan : "3"
         }
     ).text(
@@ -149,7 +147,6 @@ function generate_row_headers(width_p) {
     // Birds
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -160,7 +157,6 @@ function generate_row_headers(width_p) {
     // Bonus cards
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -171,7 +167,6 @@ function generate_row_headers(width_p) {
     // End-of-round goals
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -182,7 +177,7 @@ function generate_row_headers(width_p) {
     // Vertical text: 1 point each
     $("<td>").attr(
         {
-            class : "bg-light rowspan-vertical",
+            class : "rowspan-vertical",
             rowspan : "3"
         }
     ).text(
@@ -192,7 +187,6 @@ function generate_row_headers(width_p) {
     // Eggs
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -203,7 +197,6 @@ function generate_row_headers(width_p) {
     // Food on cards
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -214,7 +207,6 @@ function generate_row_headers(width_p) {
     // Tucked cards
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -225,7 +217,7 @@ function generate_row_headers(width_p) {
     // Vertical text: 5/2
     $("<td>").attr(
         {
-            class : "bg-light rowspan-vertical",
+            class : "rowspan-vertical",
             rowspan : "1"
         }
     ).text(
@@ -235,7 +227,6 @@ function generate_row_headers(width_p) {
     // Nectar
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -246,7 +237,7 @@ function generate_row_headers(width_p) {
     // Vertical text: 1 point each
     $("<td>").attr(
         {
-            class : "bg-light rowspan-vertical",
+            class : "rowspan-vertical",
             rowspan : "1"
         }
     ).text(
@@ -256,7 +247,6 @@ function generate_row_headers(width_p) {
     // Duet tokens in largest contiguous group
     $("<th>").attr(
         {
-            class : "bg-info",
             style : `width:${width_p}%`,
             scope : "row"
         }
@@ -267,7 +257,6 @@ function generate_row_headers(width_p) {
     // Total
     $("<td>").attr(
         {
-            class : "bg-success",
             style : `width:10%; border-right: 0px;`
         }
     ).text(
@@ -276,7 +265,6 @@ function generate_row_headers(width_p) {
 
     $("<th>").attr(
         {
-            class : "bg-success",
             style : `width:${width_p}%; border-left: 0px;`,
             scope : "row"
         }
@@ -289,7 +277,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Player names
         var cell = $("<th>").attr(
             {
-                class : "bg-info",
                 id : `player_${i}_name`,
                 style : `width:${width_p}%`
             }
@@ -316,7 +303,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Birds
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_birds`,
                 style : `width:${width_p}%`
             }
@@ -336,7 +322,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Bonus cards
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_bonus_cards`,
                 style : `width:${width_p}%`
             }
@@ -356,7 +341,6 @@ function generate_n_score_columns(n_players, width_p) {
         // End-of-round goals
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_end-of-round_goals`,
                 style : `width:${width_p}%`
             }
@@ -376,7 +360,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Eggs
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_eggs`,
                 style : `width:${width_p}%`
             }
@@ -396,7 +379,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Food on cards
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_food_on_cards`,
                 style : `width:${width_p}%`
             }
@@ -416,7 +398,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Tucked cards
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_tucked_cards`,
                 style : `width:${width_p}%`
             }
@@ -436,7 +417,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Nectar
         var cell = $("<td>").attr(
             {
-                class : "bg-info",
                 id : `col_player_${i}_nectar`,
                 style : `width:${width_p}%`
             }
@@ -455,7 +435,6 @@ function generate_n_score_columns(n_players, width_p) {
 
             var cell = $("<td>").attr(
                 {
-                    class : "bg-info",
                     id : `col_player_${i}_duet_tokens`,
                     style : `width:${width_p}%`
                 }
@@ -473,7 +452,6 @@ function generate_n_score_columns(n_players, width_p) {
 
             var cell = $("<td>").attr(
             {
-                class : "bg-secondary",
                 style : `width:${width_p}%`
             }
         ).appendTo("#row_duet_tokens");
@@ -483,7 +461,6 @@ function generate_n_score_columns(n_players, width_p) {
         // Total
         var cell = $("<td>").attr(
             {
-                class : "bg-success",
                 id : `col_player_${i}_total_score`,
                 style : `width:${width_p}%`
             }
