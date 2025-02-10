@@ -255,19 +255,12 @@ function generate_row_headers(width_p) {
     ).appendTo("#row_duet_tokens");
 
     // Total
-    $("<td>").attr(
+    $("<th>").attr(
         {
-            style : `width:10%; border-right: 0px;`
+            colspan : "2"
         }
     ).text(
         "Total"
-    ).appendTo("#row_total");
-
-    $("<th>").attr(
-        {
-            style : `width:${width_p}%; border-left: 0px;`,
-            scope : "row"
-        }
     ).appendTo("#row_total");
 }
 

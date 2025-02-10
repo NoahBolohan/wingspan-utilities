@@ -181,7 +181,14 @@ textarea {
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    border-left : 1px solid black;
+    border-right : 1px solid black;
+    border-top : 1px solid black;
 }
+
+li:nth-child(5) {
+    border-bottom : 1px solid black;
+  }
 
 .checkbox-menu li input {
     position: top;
@@ -206,6 +213,7 @@ button[disabled]{
     writing-mode: vertical-lr;
     text-align: center;
     transform: rotate(180deg);
+    border : 1px solid black;
 }
 
 .paint-stroke-background-stripe-brown {
@@ -286,7 +294,6 @@ button[disabled]{
 }
 
 td, tr, th {
-    /* background: none; */
     opacity: 0.9;
     border : 1px solid black;
 }
