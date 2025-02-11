@@ -282,7 +282,7 @@ button[disabled]{
 
 .paint-stroke-background-brush-pink-short {
     background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-pink-short.webp");
-    background-size: auto 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }

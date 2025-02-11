@@ -104,12 +104,15 @@ $(document).ready(
 
                         var width_p = 28;
 
+                        var width_player_col = (100-width_p)/value;
+
                         $("#row_score_sheet").data(
                             "n_players",
                             value
                         );
-                        generate_row_headers(width_p);
-                        generate_n_score_columns(value, (100-width_p)/value);
+                        reset_score_sheet();
+                        generate_row_headers(value, width_p, width_player_col);
+                        generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
                         custom_show_div("#row_score_sheet");
                     }
@@ -119,20 +122,125 @@ $(document).ready(
     }
 )
 
-function generate_row_headers(width_p) {
+function reset_score_sheet() {
 
-    // Player names
-    $("<td>").attr(
-        {
-            style : `width:10%; border-right: 0px;`
-        }
-    ).appendTo("#row_player_names");
+    $("#score_sheet_colgroup").empty();
+    $("#score_sheet_thead").empty();
+    $("#score_sheet_tbody").empty();
+}
 
-    $("<th>").attr(
+function generate_row_headers(n_players, width_p, width_player_col) {
+
+    $("<col>").attr(
         {
-            style : `width:${width_p}%; border-left: 0px;`
+            style : "width: 10%;"
         }
-    ).appendTo("#row_player_names");
+    ).appendTo("#score_sheet_colgroup");
+
+    $("<col>").attr(
+        {
+            style : `width:${width_p}%;`
+        }
+    ).appendTo("#score_sheet_colgroup")
+
+    for (var i=1; i <= n_players; i++) {
+        $("<col>").attr(
+            {
+                style : `width:${width_player_col}%;`
+            }
+        ).appendTo("#score_sheet_colgroup")
+    }
+
+    // Score sheet HTML thead
+    $("<tr>").attr(
+        {
+            style : "height:100px;",
+            id : "row_player_names"
+        }
+    ).appendTo("#score_sheet_thead");
+
+    // Score sheet HTML tbody
+    $("<tr>").attr(
+        {
+            id : "row_birds"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_bonus_cards"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_end-of-round_goals"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_eggs"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_food_on_cards"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_tucked_cards"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_nectar"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            style : "visibility: collapse;",
+            id : "row_duet_tokens"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            id : "row_total"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    // Player names + change n players button
+    var cell = $("<td>").attr(
+        {
+            style : `width:${width_p + 10}%; border-left: 0px;`,
+            colspan : "2"
+        }
+    )
+
+    $("<button>").attr(
+        {
+            class : "w-100 btn nav-button paint-stroke-background-brush-pink-short",
+            type : "button",
+            id : "button_change_n_players"
+        }
+    ).text(
+        "Change # of players"
+    ).appendTo(cell);
+
+    cell.appendTo("#row_player_names");
+
+    $("#button_change_n_players").on(
+        "click",
+        function () {
+            $(`#modal_n_players`).modal("show");
+        }
+    )
 
     // Vertical text: Amount on cards
     $("<td>").attr(
