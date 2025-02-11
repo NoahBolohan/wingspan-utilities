@@ -305,3 +305,5 @@ td, tr, th {
     opacity: 0.9;
     border : 1px solid black;
 }
+
+html, body {margin: 0; height: 100%; overflow: hidden}
