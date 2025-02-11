@@ -218,19 +218,18 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Player names + change n players button
     var cell = $("<td>").attr(
         {
-            style : `width:${width_p + 10}%; border-left: 0px;`,
+            style : `width:${width_p + 10}%; border-left: 0px; vertical-align: middle;`,
             colspan : "2"
         }
     )
 
     $("<button>").attr(
         {
-            class : "w-100 btn nav-button paint-stroke-background-brush-pink-short",
             type : "button",
             id : "button_change_n_players"
         }
     ).text(
-        "Change # of players"
+        "Change number of players"
     ).appendTo(cell);
 
     cell.appendTo("#row_player_names");
