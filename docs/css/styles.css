@@ -59,7 +59,11 @@ table {
 .input-vertical {
     writing-mode: vertical-lr;
     text-orientation: sideways;
-    transform: rotate(180deg);
+    -moz-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -ms-transform: scale(-1, -1);
+    transform: scale(-1, -1);
   }
 
 .nectar-scoring-button-disabled {
@@ -212,7 +216,11 @@ button[disabled]{
 .rowspan-vertical {
     writing-mode: vertical-lr;
     text-align: center;
-    transform: rotate(180deg);
+    -moz-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -ms-transform: scale(-1, -1);
+    transform: scale(-1, -1);
     border : 1px solid black;
 }
 
@@ -297,9 +305,3 @@ td, tr, th {
     opacity: 0.9;
     border : 1px solid black;
 }
-
-/* #row_score_sheet {
-    background : url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
-    background-size : auto 100%,;
-    background-repeat : no-repeat;
-} */
