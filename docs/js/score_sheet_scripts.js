@@ -788,7 +788,7 @@ $(document).ready(
                 $("#col_base_game_checkbox").prop("checked",true);
                 $("#col_european_expansion_checkbox").prop("checked",true);
                 $("#col_oceania_expansion_checkbox").prop("checked",true).trigger("change");
-                $("#col_asia_checkbox").prop("checked",true);
+                $("#col_asia_checkbox").prop("checked",false);
                 $("#col_duet_mode_checkbox").prop("checked",false).trigger("change");
             }
         )
