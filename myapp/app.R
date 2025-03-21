@@ -9,11 +9,16 @@ library(plotly)
 library(readr)
 library(gt)
 
+df <- get_score_sheet(
+  sheetId = 2096833443
+)
+
 ui <- page_sidebar(
+  
   title = "Wingspan Analytics",
   sidebar = sidebar(
     selectInput(
-      "playerName",
+      inputId = "playerName",
       label = "Select player name:",
       choices =
         c(
@@ -21,7 +26,15 @@ ui <- page_sidebar(
           "Mila",
           "Noah"
         )
-    )
+    ),
+    uiOutput("slider")
+    # sliderInput( 
+    #   inputId = "nGamesToDisplay",
+    #   label = "Last N games:",
+    #   min = 10,
+    #   max = nrow(df), 
+    #   value = 50 
+    # )
   ),
   
   layout_column_wrap(
@@ -75,13 +88,51 @@ server <- function(input, output) {
     ) |>
     ungroup()
   
+  #N-games slider
+  output$slider <- renderUI({
+    
+    player_scores_total <- stacked_player_scores %>% filter(
+      Name == input$playerName,
+      score_type == "total_score"
+    )
+    
+    sliderInput(
+      inputId = "nGamesToDisplay",
+      label = "Last N games:",
+      min = 10,
+      max = nrow(
+        player_scores_total
+      ),
+      value = min(
+        30,
+        nrow(
+          player_scores_total
+        )
+      )
+    )
+  })
+
   # Player stats table
   output$tablePlayerStats <- render_gt({
+    
+    shiny::req(input$nGamesToDisplay)
     
     player_scores_total <- stacked_player_scores %>% filter(
       Name == input$playerName,
       score_type == "total_score"
     ) %>% arrange(game)
+    
+    if (input$nGamesToDisplay != "All") {
+      player_scores_total <- tail(
+        player_scores_total,
+        min(
+          input$nGamesToDisplay,
+          nrow(
+            player_scores_total
+          )
+        )
+      )
+    }
     
     summary_frame = data.frame(
       Measure = c(
@@ -133,15 +184,22 @@ server <- function(input, output) {
   # Player total score plot
   output$totalScorePlot <- renderPlot({
     
+    shiny::req(input$nGamesToDisplay)
+    
     player_scores_total <- stacked_player_scores %>% filter(
       Name == input$playerName,
       score_type == "total_score"
-    ) %>% arrange(game)
+    ) %>% arrange(
+      game
+    ) %>% tail(
+      input$nGamesToDisplay
+    )
     
     ggplot(
       player_scores_total,
       aes(
-        x = pull(player_scores_total["game"]),
+        # x = pull(player_scores_total["game"]),
+        x = as.integer(rownames(player_scores_total)),
         y = pull(player_scores_total["score"])
       )
     ) +
@@ -153,16 +211,37 @@ server <- function(input, output) {
   # Player score breakdown plot
   output$scoreBreakdownPlot <- renderPlot({
     
+    shiny::req(input$nGamesToDisplay)
+    
     player_scores <- filter(
       stacked_player_scores,
       Name == input$playerName,
       score_type != "total_score"
+    ) %>% filter(
+      game >= min(
+        tail(
+          sort(
+            unique(
+              game
+            )
+          ),
+          input$nGamesToDisplay
+        )
+      )
+    ) %>% mutate(
+      inc_game = as.numeric(
+        factor(
+          game,
+          levels = unique(game)
+        )
+      )
     )
     
     ggplot(
       player_scores,
       aes(
-        x = pull(player_scores["game"]),
+        # x = pull(player_scores["game"]),
+        x = as.numeric(factor(game, levels = unique(game))),
         y = pull(player_scores["score"]),
         fill = pull(player_scores["score_type"])
       )
@@ -180,3 +259,5 @@ shinyApp(ui = ui, server = server)
 #   appdir = "C:/Git/wingspan-utilities/myapp",
 #   destdir = "C:/Git/wingspan-utilities/docs"
 # )
+
+# httpuv::runStaticServer("C:/Git/wingspan-utilities/docs")
