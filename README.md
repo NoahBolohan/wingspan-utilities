@@ -8,7 +8,7 @@ Some of my Wingspan utilities. Includes:
 
 ## Links
 
-- [Wingspan Utilities website link](https://noahbolohan.github.io/wingspan-utilities/)
+- [Wingspan Utilities website link](https://wingspan-utilities-vd2qp.ondigitalocean.app/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1K600qeRyYevSrMBUyevP4sZ4vRIBzq4ggCl3cLjHAvc/edit?gid=0#gid=0)
 
 ## Other Wingspan resources
