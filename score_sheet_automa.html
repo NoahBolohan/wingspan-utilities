@@ -22,7 +22,7 @@
 
                 <div class="row mt-1 justify-content-center margin_auto">
 
-                    <div class="py-0 text-center paint-stroke-background-brush-white-long">
+                    <div class="col-auto py-0 text-center paint-stroke-background-stripe-white">
 
                         <h1 class="m-0">Score sheet - Automa</h1>
                     </div>
@@ -128,7 +128,7 @@
                     
                         <tbody>
 
-                            <tr>
+                            <tr style="padding-bottom: 0px;">
 
                                 <td class="bg-light rowspan-vertical" rowspan="5">Amount on cards</td>
 
@@ -136,7 +136,7 @@
 
                                 <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
 
-                                <td class="bg-light" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="bg-light" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
                                     <label for="radio_difficulty_choice_eaglet">3</label>
                                 </td>
 
@@ -164,8 +164,8 @@
                     
                             <tr>
 
-                                <td class="bg-light" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
-                                <td colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
+                                <td class="bg-light" colspan="2" align="center" style="border-right-style: hidden; padding-top: 0px; padding-bottom: 0px;">&#x2573;</td>
+                                <td colspan="4" style="padding-top: 0px;">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
                             </tr>
 
                             <tr>
@@ -303,7 +303,7 @@
 
                 <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
-                    <a class="col-6 btn nav-button paint-stroke-background-stripe-brown" href="https://wingspan-utilities-vd2qp.ondigitalocean.app">Return to home page</a>
+                    <a class="col-auto btn nav-button paint-stroke-background-stripe-brown" href="https://wingspan-utilities-vd2qp.ondigitalocean.app">Return to home page</a>
                 </div>
             </div>
         </form>
