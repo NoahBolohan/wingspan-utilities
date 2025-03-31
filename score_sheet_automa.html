@@ -110,72 +110,72 @@
 
                 <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
 
-                    <table class="col-12 mb-0 table table-bordered">
+                    <table class="col-12 mb-0 table table-bordered score_sheet_table">
 
                         <thead>
 
                             <tr>
 
-                                <th class="bg-info" style="width:10%; border-right: 0px;"></th>
+                                <th class="bg-info score_sheet_cell_no_padding" style="width:10%; border-right: 0px;"></th>
 
-                                <th class="bg-info" style="width:24%; border-left: 0px;"></th>
+                                <th class="bg-info score_sheet_cell_no_padding" style="width:24%; border-left: 0px;"></th>
 
-                                <th class="bg-info" style="width:33%">Player</th>
+                                <th class="bg-info score_sheet_cell_no_padding" style="width:33%;">Player</th>
 
-                                <th class="bg-info" colspan="6" style="width:33%">Automa</th>
+                                <th class="bg-info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
                             </tr>
                         </thead>
                     
                         <tbody>
 
-                            <tr style="padding-bottom: 0px;">
+                            <tr>
 
                                 <td class="bg-light rowspan-vertical" rowspan="5">Amount on cards</td>
 
-                                <th style="vertical-align:middle;" class="bg-info" rowspan="3">Birds</th>
+                                <th style="vertical-align:middle;" class="bg-info score_sheet_cell_no_padding" rowspan="3">Birds</th>
 
                                 <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
 
-                                <td class="bg-light" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
+                                <td class="bg-light score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
                                     <label for="radio_difficulty_choice_eaglet">3</label>
                                 </td>
 
-                                <td class="bg-light" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="bg-light score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" style="width:75%;" required/>
                                     
                                 </td>
                             
-                                <td class="bg-light" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="bg-light score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle">4</label>
                                 </td>
 
-                                <td class="bg-light" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="bg-light score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" style="width:75%;"/>
                                 </td>
                             
-                                <td class="bg-light" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="bg-light score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
                                 </td>
 
-                                <td class="bg-light" align="left" style="border-bottom-style: hidden;">
+                                <td class="bg-light score_sheet_cell_no_padding" align="left" style="border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" style="width:75%;"/>
                                 </td>
                             </tr>
                     
                             <tr>
 
-                                <td class="bg-light" colspan="2" align="center" style="border-right-style: hidden; padding-top: 0px; padding-bottom: 0px;">&#x2573;</td>
-                                <td colspan="4" style="padding-top: 0px;">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
+                                <td class="bg-light score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
+                                <td class="score_sheet_cell_no_padding" colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
                             </tr>
 
                             <tr>
 
-                                <td colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
+                                <td class="score_sheet_cell_no_padding" colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
                             </tr>
             
                             <tr>
 
-                                <th class="bg-info">Bonus cards</th>
+                                <th class="bg-info score_sheet_cell_no_padding">Bonus cards</th>
 
                                 <td><input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0" required></td>
 
@@ -183,13 +183,13 @@
                             </tr>
             
                             <tr>
-                                <th class="bg-info" scope="row">End-of-round goals</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0" required>
                                 </td>
                                 
-                                <td class="bg-info" colspan="6">
+                                <td class="bg-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0" required>
                                 </td>
                             </tr>
@@ -198,22 +198,22 @@
 
                                 <td class="bg-light rowspan-vertical" rowspan="3">1 point each</td>
 
-                                <th class="bg-info" scope="row">Eggs</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">Eggs</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_eggs" name="player_eggs" min="0" required>
                                 </td>
 
-                                <td class="bg-info" colspan="6">
+                                <td class="bg-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0" required>
                                 </td>
                             </tr>
             
                             <tr>
 
-                                <th class="bg-info" scope="row">Food on cards</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">Food on cards</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0" required>
                                 </td>
 
@@ -222,9 +222,9 @@
             
                             <tr>
 
-                                <th class="bg-info" scope="row">Tucked cards</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0" required>
                                 </td>
 
@@ -235,13 +235,13 @@
 
                                 <td class="bg-light rowspan-vertical" rowspan="1">5/2</td>
 
-                                <th class="bg-info" scope="row">Nectar</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">Nectar</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_nectar" name="player_nectar" min="0">
                                 </td>
 
-                                <td class="bg-info" colspan="6">
+                                <td class="bg-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
                                 </td>
                             </tr>
@@ -250,20 +250,20 @@
 
                                 <td class="bg-light rowspan-vertical" rowspan="1">1 point each</td>
 
-                                <th class="bg-info" scope="row">Duet tokens in largest contiguous group</th>
+                                <th class="bg-info score_sheet_cell_no_padding" scope="row">Duet tokens in largest contiguous group</th>
 
-                                <td class="bg-info">
+                                <td class="bg-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
                                 </td>
 
-                                <td class="bg-info" colspan="6">
+                                <td class="bg-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
                                 </td>
                             </tr>
             
                             <tr>
 
-                                <th class="bg-success" scope="row" style="border-right: 0px;">Total</th>
+                                <th class="bg-success score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
 
                                 <th class="bg-success" scope="row" style="border-left: 0px;"></th>
 

@@ -255,7 +255,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Birds"
@@ -265,7 +266,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Bonus cards"
@@ -275,7 +277,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "End-of-round goals"
@@ -295,7 +298,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Eggs"
@@ -305,7 +309,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Food on cards"
@@ -315,7 +320,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Tucked cards"
@@ -335,7 +341,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Nectar"
@@ -355,7 +362,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             style : `width:${width_p}%`,
-            scope : "row"
+            scope : "row",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Duet tokens in largest contiguous group"
@@ -364,7 +372,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Total
     $("<th>").attr(
         {
-            colspan : "2"
+            colspan : "2",
+            class : "score_sheet_cell_no_padding"
         }
     ).text(
         "Total"
