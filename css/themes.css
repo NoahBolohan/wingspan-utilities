@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+    --info-color: #66c4d4;
+}
+
+[data-theme="spotted_pardalote"] {
+    --primary-color: #feca00;
+    --secondary-color: #d36328;
+    --font-color: #cb0300;
+    --bg-color: #b4b9b3;
+    --heading-color: #424847;
+    --info-color: #000100;
+}
+
+.btn-start {
+    background-color:var(--primary-color)
+}
+
+.btn-automa {
+    background-color:var(--secondary-color)
+}
+
+.btn-player {
+    background-color:var(--font-color)
+}
+
+.btn-settings {
+    background-color:var(--heading-color)
+}
