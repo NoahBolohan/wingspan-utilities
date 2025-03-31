@@ -38,13 +38,8 @@ table td {
     position: relative;
 }
 
-/* td, tr, th {
-    opacity: 0.9;
-    border : 1px solid black;
-} */
-
 .score_sheet_table td, tr, th {
-    opacity: 0.9;
+    opacity: 0.95;
     border : 1px solid black;
 }
 
@@ -311,6 +306,30 @@ button[disabled]{
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.bg-brown {
+    background-color: #c17b38!important;
+}
+
+.bg-pink {
+    background-color: #ecada9!important;
+}
+
+.bg-teal {
+    background-color: #6fbfb9!important;
+}
+
+.bg-white {
+    background-color: #fefefe!important;
+}
+
+.bg-yellow {
+    background-color: #f9d246!important;
+}
+
+.bg-purple {
+    background-color: #949cc4!important;
 }
 
 html, body {margin: 0; height: 100%; overflow: hidden}
