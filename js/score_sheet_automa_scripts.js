@@ -662,3 +662,89 @@ $(document).ready(
         )
     }
 )
+
+function update_theme(
+    theme_name
+) {
+    if (theme_name == "default") {
+        $("#div_header").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-white.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+        $("#button_dropdown_expansions_menu").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-teal.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+        $("#button_dropdown_extra_cards_menu").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-teal.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+        $(".cell_info").css(
+            "background-color",
+            "#949cc4"
+        );
+        $(".cell_vertical").css(
+            "background-color",
+            "#fefefe"
+        );
+        $(".cell_input").css(
+            "background-color",
+            "#fefefe"
+        );
+        $(".cell_disabled").css(
+            "background-color",
+            "#c17b38"
+        );
+        $(".cell_total").css(
+            "background-color",
+            "#6fbfb9"
+        );
+        $("#button_reset_sheet").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-pink.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+        $("#submit").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-yellow.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+        $("#button_return_to_home_page").css(
+            {
+                "background": "url('https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/stripe-brown.webp')",
+                "background-size": "100% 100%",
+                "background-repeat": "no-repeat",
+                "background-position": "center"
+            }
+        );
+    }
+    else {
+
+    }
+}
+
+update_theme("default");
+
+$(document).ready(
+    function() {
+        update_theme("default");
+    }
+)
