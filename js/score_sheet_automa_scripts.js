@@ -166,26 +166,35 @@ $(document).ready(
 // Recompute player total score
 function recompute_player_total_score() {
 
-    $("#cell_player_total_score").text(
+    var total_score =  parseNaNOrInt(
+        $("#cell_player_birds").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_bonus_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_end-of-round_goals").val()
+    )+ parseNaNOrInt(
+        $("#cell_player_eggs").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_food_on_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_tucked_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_nectar").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_duet_tokens").val()
+    );
 
-        parseNaNOrInt(
-            $("#cell_player_birds").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_bonus_cards").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_end-of-round_goals").val()
-        )+ parseNaNOrInt(
-            $("#cell_player_eggs").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_food_on_cards").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_tucked_cards").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_nectar").val()
-        ) + parseNaNOrInt(
-            $("#cell_player_duet_tokens").val()
+    if (total_score > 0) {
+
+        $("#cell_player_total_score").text(
+            total_score
         )
-   )
+    }
+    else {
+        $("#cell_player_total_score").text(
+            ""
+        )
+    }
 }
 
 function prepopulate_data()
@@ -386,24 +395,33 @@ function recompute_automa_total_score() {
         )
    );
 
-    $("#cell_automa_total_score").text(
+   var total_score = face_down_card_multiplier * parseNaNOrInt(
+        $("#cell_automa_n_drawn_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_played_birds").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_end-of-round_goals").val()
+    )+ parseNaNOrInt(
+        $("#cell_automa_laid_eggs").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_tucked_cards").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_nectar").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_duet_tokens").val()
+    );
+    
+    if (total_score > 0) {
 
-        face_down_card_multiplier * parseNaNOrInt(
-            $("#cell_automa_n_drawn_cards").val()
-        ) + parseNaNOrInt(
-            $("#cell_automa_played_birds").val()
-        ) + parseNaNOrInt(
-            $("#cell_automa_end-of-round_goals").val()
-        )+ parseNaNOrInt(
-            $("#cell_automa_laid_eggs").val()
-        ) + parseNaNOrInt(
-            $("#cell_automa_tucked_cards").val()
-        ) + parseNaNOrInt(
-            $("#cell_automa_nectar").val()
-        ) + parseNaNOrInt(
-            $("#cell_automa_duet_tokens").val()
+        $("#cell_automa_total_score").text(
+            total_score
         )
-   );
+    }
+    else {
+        $("#cell_automa_total_score").text(
+            ""
+        )
+    }
 }
 
 // Update automa total score on automa difficulty changes

@@ -639,9 +639,17 @@ function recompute_player_total_score(i) {
         );
     }
 
-    $(`#div_player_${i}_total_score`).text(
-        total_score
-   )
+    if (total_score > 0) {
+
+        $(`#div_player_${i}_total_score`).text(
+            total_score
+        )
+    }
+    else {
+        $(`#div_player_${i}_total_score`).text(
+            ""
+        )
+    }    
 }
 
 function assign_player_event_listeners(i) {
