@@ -351,3 +351,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     padding:0;
     cursor: pointer;
 }
+
+#button_settings {
+    background: rgb(146, 143, 143);
+}
