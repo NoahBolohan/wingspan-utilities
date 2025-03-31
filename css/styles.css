@@ -212,6 +212,10 @@ li:nth-child(5) {
     color : #000
 }
 
+.borderless {
+    border: none!important;
+}
+
 button:disabled,
 button[disabled]{
   border: 0px;
@@ -304,6 +308,13 @@ button[disabled]{
 .paint-stroke-background-brush-white-double {
     background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-double.webp"); 
     background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paint-stroke-background-brush-white-long-for-index-menu {
+    background: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 200% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }

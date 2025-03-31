@@ -1,9 +1,0 @@
-project:
-  type: website
-  output-dir: docs
-
-  render:
-    - home_page.qmd
-    - score_sheet.qmd
-    - score_sheet_automa.qmd
-    - dashboard.qmd
