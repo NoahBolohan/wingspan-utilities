@@ -354,4 +354,5 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 #button_settings {
     background: rgb(146, 143, 143);
+    outline: 1px solid black;
 }
