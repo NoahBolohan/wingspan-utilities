@@ -352,7 +352,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     cursor: pointer;
 }
 
-#button_settings {
+.button_settings {
     background: rgb(146, 143, 143);
     outline: 1px solid black;
 }

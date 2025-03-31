@@ -10,10 +10,59 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+
+    <script src="js/no_sleep.min.js"></script>
+    <script src="js/settings.js"></script>
 	<script src="js/index_scripts.js"></script>
 </head>
 
-<body class="parallax" onload="on_load()">
+<body class="parallax" onload="on_load()" id="body_index">
+
+    <div class="modal fade" id="modal_settings">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header justify-content-center" style="position:relative;">
+
+                    <h2 class="modal-title">Settings</h2>
+                    <button class="btn astext" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
+                        &#x274c;
+                    </button>
+                </div>
+
+                <div class="modal-body" id="modal_settings_body">
+
+                    <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_screen_sleep">
+
+                        <div class="col-5 p-0 align-self-center">
+                            Prevent screen sleep:
+                        </div>
+        
+                        <div class="col-2 offset-1 p-0">
+                            <label class="switch">
+                                <input type="checkbox" id="button_toggle_screen_sleep">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_innate_powers_row">
+
+                        <div class="col-2 p-0 align-self-center">
+                            <label for="theme">Theme:</label>
+                        </div>
+        
+                        <div class="col-6 p-0">
+                            <select name="theme" id="theme_options">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid" style="height:10vh; margin-top: 3vh;" id="container_header">
 
@@ -52,6 +101,19 @@
                 <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
         
                     <a class="col-auto btn borderless nav-button paint-stroke-background-stripe-yellow" href="https://wingspan-utilities-vd2qp.ondigitalocean.app/score_sheet.html">Open a score sheet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center align-content-center paint-stroke-background-brush-white-long" style="height : 10vh; margin-top: 27.5vh;" id="row_main_menu">
+
+            <div class="col-12">
+
+                <div class="row p-0 justify-content-center margin_auto" id="row_start_automa_game">
+
+                    <button class="col-auto btn borderless nav-button paint-stroke-background-stripe-brown" type="button" id="button_settings">
+                        Settings
+                    </button>
                 </div>
             </div>
         </div>

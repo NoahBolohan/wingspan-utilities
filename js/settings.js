@@ -268,7 +268,12 @@ $(document).ready(
 
         $("#theme_options").change(
             function() {
-                update_score_sheet_automa_theme(this.value)
+                if ($(document.body).attr("id") == "body_score_sheet_automa")
+                {
+                    update_score_sheet_automa_theme(this.value)
+                }
+                else {
+                }
             }
         );
     }
