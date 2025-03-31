@@ -193,6 +193,24 @@ function update_score_sheet_automa_theme(
     }
 }
 
+function to_title_case(str) {
+    return str.replace(
+        /\w\S*/g,
+        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    ).replaceAll(
+        '_',
+        ' '
+    );
+}
+
+function theme_options_sort(a, b) {
+    if ((a.text === 'Default') != (b.text === 'Default')) {
+        return a.text === 'Default' ? 1 : 1;
+    }
+    return a.text > b.text ? 1 :
+        a.text < b.text ? -1 : 0;
+}
+
 $(document).ready(
     function() {
 
@@ -201,6 +219,7 @@ $(document).ready(
             async: false,
             dataType: 'json',
             success: function (themes) {
+
                 $("#body_score_sheet_automa").data(
                     "themes",
                     themes
@@ -211,7 +230,7 @@ $(document).ready(
                         "<option>",
                         {
                             value: "default",
-                            text: "default"
+                            text: "Default"
                         }
                     )
                 );
@@ -225,7 +244,7 @@ $(document).ready(
                                 "<option>",
                                 {
                                     value: k,
-                                    text: k
+                                    text: to_title_case(k)
                                 }
                             )
                         );
@@ -233,6 +252,12 @@ $(document).ready(
                 )
             }
         });
+
+        $("#theme_options").html(
+            $("#theme_options option").sort(
+                theme_options_sort
+            )
+        )
 
         update_score_sheet_automa_theme("default");
     }
