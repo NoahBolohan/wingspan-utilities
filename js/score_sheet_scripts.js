@@ -571,7 +571,8 @@ function generate_n_score_columns(n_players, width_p) {
         var cell = $("<td>").attr(
             {
                 id : `col_player_${i}_total_score`,
-                style : `width:${width_p}%`
+                style : `width:${width_p}%`,
+                class : "score_sheet_cell_no_padding"
             }
         ).appendTo("#row_total");
         

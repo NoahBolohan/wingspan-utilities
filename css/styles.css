@@ -232,6 +232,7 @@ button[disabled]{
     -ms-transform: scale(-1, -1);
     transform: scale(-1, -1);
     border : 1px solid black;
+    vertical-align: middle;
 }
 
 .paint-stroke-background-stripe-brown {
