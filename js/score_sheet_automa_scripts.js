@@ -737,14 +737,90 @@ function update_theme(
         );
     }
     else {
+        var theme = $("#body_score_sheet_automa").data(
+            "themes"
+        )[
+            theme_name
+        ];
 
+        $("#div_header").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $("#button_dropdown_expansions_menu").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $("#button_dropdown_extra_cards_menu").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $(".cell_info").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $(".cell_vertical").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $(".cell_input").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $(".cell_disabled").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $(".cell_total").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $("#button_reset_sheet").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $("#submit").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
+        $("#button_return_to_home_page").css(
+            "background-color",
+            theme[Math.floor(Math.random() * theme.length)]
+        );
     }
 }
 
-update_theme("default");
-
 $(document).ready(
     function() {
+
+        $.ajax({
+            url: 'https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/themes.json',
+            async: false,
+            dataType: 'json',
+            success: function (themes) {
+                $("#body_score_sheet_automa").data(
+                    "themes",
+                    themes
+                );
+
+                $.each(
+                    themes,
+                    function(k,v) {
+
+                        $("theme_options").append(
+                            $(
+                                "<option>",
+                                {
+                                    value: k,
+                                    text: k
+                                }
+                            )
+                        );
+                    }
+                )
+            }
+        });
+
         update_theme("default");
     }
 )

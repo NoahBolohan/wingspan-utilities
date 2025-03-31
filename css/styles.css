@@ -344,3 +344,10 @@ button[disabled]{
 }
 
 html, body {margin: 0; height: 100%; overflow: hidden}
+
+.astext {
+    border:none !important;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}

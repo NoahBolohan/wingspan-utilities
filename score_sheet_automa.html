@@ -11,12 +11,60 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <script src="js/no_sleep.min.js"></script>
+        <script src="js/settings.js"></script>
         <script src="js/score_sheet_automa_scripts.js"></script>
     </head>
 
-    <body class="parallax" onload="on_load()">
+    <body class="parallax" id="body_score_sheet_automa">
 
         <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwm0-b47heUxm6uNym732n3WV6jMX7uVLaIWoeC7tV2MnZIJFjiogWysy5mFSZBRGs1Aw/exec">
+
+            <div class="modal fade" id="modal_settings">
+
+                <div class="modal-dialog" role="document">
+        
+                    <div class="modal-content">
+        
+                        <div class="modal-header justify-content-center" style="position:relative;">
+        
+                            <h2 class="modal-title">Settings</h2>
+                            <button class="btn astext" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
+                                &#x274c;
+                            </button>
+                        </div>
+        
+                        <div class="modal-body" id="modal_settings_body">
+    
+                            <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_screen_sleep">
+    
+                                <div class="col-5 p-0 align-self-center">
+                                    Prevent screen sleep:
+                                </div>
+                
+                                <div class="col-2 offset-1 p-0">
+                                    <label class="switch">
+                                        <input type="checkbox" id="button_toggle_screen_sleep">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_innate_powers_row">
+    
+                                <div class="col-5 p-0 align-self-center">
+                                    <label for="theme">Theme:</label>
+                                </div>
+                
+                                <div class="col-2 offset-1 p-0">
+                                    <select name="theme" id="theme_options">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="container-fluid" id="container_header">
 
@@ -30,7 +78,7 @@
 
                 <div class="row gx-3 mt-1" id="row_checkboxes">
 
-                    <div class="col-6 dropdown">
+                    <div class="col-4 dropdown">
 
                         <button class="w-100 btn borderless" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <h2 class="p-0 m-0">&#x2193; Expansions &#x2193;</h2>
@@ -73,7 +121,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-6 dropdown">
+                    <div class="col-4 dropdown">
 
                         <button class="w-100 btn borderless" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <h2 class="p-0 m-0">&#x2193; Extra cards &#x2193;</h2>
@@ -105,6 +153,13 @@
                                 </label>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="col-4">
+
+                        <button class="btn astext" type="button" id="button_settings">
+                            <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="width: 80%;">
+                        </button>
                     </div>
                 </div>
 
