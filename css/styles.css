@@ -254,6 +254,7 @@ button[disabled]{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+    opacity: 0.9;
 }
 
 .paint-stroke-background-stripe-yellow {
