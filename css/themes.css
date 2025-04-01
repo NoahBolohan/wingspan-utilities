@@ -58,7 +58,7 @@ Theme template:
     --button-score-sheet-automa-color:#d36328;
     --button-score-sheet-color:#000100;
     --button-settings-color:#cb0300;
-    --button-expansions-color:#424847;
+    --button-expansions-color:#000100;
     --button-extra-cards-color:#000100;
     --button-reset-color:#000100;
     --button-submit-color:#424847;
@@ -152,7 +152,7 @@ Theme template:
     --button-score-sheet-automa-color:#EDD03E;
     --button-score-sheet-color:#F5A200;
     --button-settings-color:#6D8600;
-    --button-expansions-color:#EDD03E;
+    --button-expansions-color:#F5A200;
     --button-extra-cards-color:#F5A200;
     --button-reset-color:#F5A200;
     --button-submit-color:#EDD03E;
@@ -163,6 +163,37 @@ Theme template:
     --cell-input-color:#F5A200;
     --cell-disabled-color:#424D0C;
     --cell-total-color:#06ABDF;
+}
+
+[data-theme="rose_crowned_fruit_dove"] {
+    --a:#BD338F;
+    --a:#EB8252;
+    --a:#F5DC83;
+    --a:#CDD4DC;
+    --a:#8098A2;
+    --a:#8FA33F;
+    --a:#5F7929;
+    --a:#014820;
+    
+    --font-color-header:#014820;
+    --font-color-buttons:#014820;
+    --heading-color:#CDD4DC;
+
+    --button-start-color:#8FA33F;
+    --button-score-sheet-automa-color:#BD338F;
+    --button-score-sheet-color:#EB8252;
+    --button-settings-color:#8098A2;
+    --button-expansions-color:#CDD4DC;
+    --button-extra-cards-color:#CDD4DC;
+    --button-reset-color:#EB8252;
+    --button-submit-color:#F5DC83;
+    --button-return-color:#8098A2;
+
+    --cell-vertical-color:#8FA33F;
+    --cell-info-color:#EB8252;
+    --cell-input-color:#F5DC83;
+    --cell-disabled-color:#BD338F;
+    --cell-total-color:#8FA33F;
 }
 
 
