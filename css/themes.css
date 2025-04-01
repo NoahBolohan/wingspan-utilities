@@ -433,3 +433,33 @@ Theme template:
     --cell-disabled-color:#D5114E;
     --cell-total-color:#0169C4;
 }
+
+[data-theme="eastern_yellow_robin"] {
+    --a:#E19E00;
+    --a:#FBEB5B;
+    --a:#85773A;
+    --a:#979EB9;
+    --a:#727B98;
+    --a:#454B56;
+    --a:#201B1E;
+
+    --font-color-headers:#201B1E;
+    --font-color-buttons:#201B1E;
+    --heading-color:#979EB9;
+
+    --button-start-color:#979EB9;
+    --button-score-sheet-automa-color:#FBEB5B;
+    --button-score-sheet-color:#E19E00;
+    --button-settings-color:#85773A;
+    --button-expansions-color:#979EB9;
+    --button-extra-cards-color:#979EB9;
+    --button-reset-color:#FBEB5B;
+    --button-submit-color:#E19E00;
+    --button-return-color:#85773A;
+
+    --cell-vertical-color:#979EB9;
+    --cell-info-color:#FBEB5B;
+    --cell-input-color:#E19E00;
+    --cell-disabled-color:#454B56;
+    --cell-total-color:#979EB9;
+}
