@@ -343,3 +343,34 @@ Theme template:
     --cell-disabled-color:#bb5645;
     --cell-total-color:#b8a53f;
 }
+
+[data-theme="princess_parrot"] {
+    --a:#7090c9;
+    --a:#8cb3de;
+    --a:#afbe9f;
+    --a:#616020;
+    --a:#6eb245;
+    --a:#214917;
+    --a:#cf2236;
+    --a:#d683ad;
+
+    --font-color-header:#214917;
+    --font-color-buttons:#214917;
+    --heading-color:#8cb3de;
+
+    --button-start-color:#7090c9;
+    --button-score-sheet-automa-color:#d683ad;
+    --button-score-sheet-color:#6eb245;
+    --button-settings-color:#afbe9f;
+    --button-expansions-color:#8cb3de;
+    --button-extra-cards-color:#8cb3de;
+    --button-reset-color:#7090c9;
+    --button-submit-color:#d683ad;
+    --button-return-color:#afbe9f;
+
+    --cell-vertical-color:#8cb3de;
+    --cell-info-color:#6eb245;
+    --cell-input-color:#d683ad;
+    --cell-disabled-color:#cf2236;
+    --cell-total-color:#8cb3de;
+}
