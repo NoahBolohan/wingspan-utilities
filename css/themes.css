@@ -79,6 +79,34 @@ Theme template:
     --cell-total-color:#b5effb;
 }
 
+[data-theme="plains_wanderer"] {
+    --font-color-header:#0d0403;
+    --font-color-buttons:#442c0e;
+    --heading-color:#ac570f;
+    --button-start-color:#d09a5e;
+    --button-score-sheet-automa-color:#e7aa01;
+    --button-score-sheet-color:#ac570f;
+    --button-settings-color:#edd8c5;
+    --button-expansions-color:#d09a5e;
+    --button-extra-cards-color:#d09a5e;
+    --button-reset-color:#d09a5e;
+    --button-submit-color:#d09a5e;
+    --button-return-color:#edd8c5;
+    --cell-vertical-color:#ac570f;
+    --cell-info-color:#e7aa01;
+    --cell-input-color:#d09a5e;
+    --cell-disabled-color:#442c0e;
+    --cell-total-color:#ac570f;
+
+    --a:#edd8c5;
+    --a:#d09a5e;
+    --a:#e7aa01;
+    --a:#ac570f;
+    --a:#73481b;
+    --a:#442c0e;
+    --a:#0d0403;
+}
+
 .header-background {
     background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
     background-size: 100% 100%;
