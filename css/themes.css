@@ -310,3 +310,36 @@ Theme template:
     --cell-disabled-color:#cd3122;
     --cell-total-color:#6c905e;
 }
+
+[data-theme="olive_backed_oriole"] {
+    --a:#8a3223;
+    --a:#bb5645;
+    --a:#d97878;
+    --a:#e2aba0;
+    --a:#d0cfe9;
+    --a:#a29eb8;
+    --a:#6c6b75;
+    --a:#b8a53f;
+    --a:#93862a;
+    --a:#4d4019;
+
+    --font-color-header:#000100;
+    --font-color-buttons:#000100;
+    --heading-color:#d0cfe9;
+
+    --button-start-color:#bb5645;
+    --button-score-sheet-automa-color:#6c6b75;
+    --button-score-sheet-color:#b8a53f;
+    --button-settings-color:#93862a;
+    --button-expansions-color:#a29eb8;
+    --button-extra-cards-color:#d0cfe9;
+    --button-reset-color:#d0cfe9;
+    --button-submit-color:#e2aba0;
+    --button-return-color:#93862a;
+
+    --cell-vertical-color:#b8a53f;
+    --cell-info-color:#6c6b75;
+    --cell-input-color:#93862a;
+    --cell-disabled-color:#bb5645;
+    --cell-total-color:#b8a53f;
+}
