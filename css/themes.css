@@ -374,3 +374,31 @@ Theme template:
     --cell-disabled-color:#cf2236;
     --cell-total-color:#8cb3de;
 }
+
+[data-theme="superb_fairy_wren"] {
+    --a:#4F3321;
+    --a:#AA7853;
+    --a:#D9C4A7;
+    --a:#B03F05;
+    --a:#020503;
+    
+    --font-color-header:#020503;
+    --font-color-buttons:#020503;
+    --heading-color:#D9C4A7;
+
+    --button-start-color:#4F3321;
+    --button-score-sheet-automa-color:#AA7853;
+    --button-score-sheet-color:#D9C4A7;
+    --button-settings-color:#B03F05;
+    --button-expansions-color:#AA7853;
+    --button-extra-cards-color:#AA7853;
+    --button-reset-color:#AA7853;
+    --button-submit-color:#D9C4A7;
+    --button-return-color:#B03F05;
+
+    --cell-vertical-color:#D9C4A7;
+    --cell-info-color:#AA7853;
+    --cell-input-color:#B03F05;
+    --cell-disabled-color:#020503;
+    --cell-total-color:#D9C4A7;
+}
