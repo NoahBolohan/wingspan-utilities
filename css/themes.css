@@ -87,7 +87,7 @@ h2 {
 Theme template:
 
 [data-theme="theme_name"] {
-    --font-color-header:;
+    --font-color-headers:;
     --font-color-buttons:;
     --heading-color:;
 
@@ -135,7 +135,7 @@ Theme template:
     --a:#424847;
     --a:#000100;
 
-    --font-color-header:#000100;
+    --font-color-headers:#000100;
     --font-color-buttons:#b4b9b3;
     --heading-color:#feca00;
 
@@ -169,7 +169,7 @@ Theme template:
     --a:#ad8d9f;
     --a:#725f77;
     
-    --font-color-header:#06213a;
+    --font-color-headers:#06213a;
     --font-color-buttons:#06213a;
     --heading-color:#b5effb;
 
@@ -199,7 +199,7 @@ Theme template:
     --a:#442c0e;
     --a:#0d0403;
 
-    --font-color-header:#0d0403;
+    --font-color-headers:#0d0403;
     --font-color-buttons:#442c0e;
     --heading-color:#ac570f;
 
@@ -229,7 +229,7 @@ Theme template:
     --a:#6D8600;
     --a:#424D0C;
 
-    --font-color-header:#00346E;
+    --font-color-headers:#00346E;
     --font-color-buttons:#00346E;
     --heading-color:#06ABDF;
 
@@ -260,7 +260,7 @@ Theme template:
     --a:#5F7929;
     --a:#014820;
     
-    --font-color-header:#014820;
+    --font-color-headers:#014820;
     --font-color-buttons:#014820;
     --heading-color:#CDD4DC;
 
@@ -290,7 +290,7 @@ Theme template:
     --a:#b8c9dc;
     --a:#2f7ab9;
     
-    --font-color-header:#000100;
+    --font-color-headers:#000100;
     --font-color-buttons:#000100;
     --heading-color:#b8c9dc;
 
@@ -323,7 +323,7 @@ Theme template:
     --a:#93862a;
     --a:#4d4019;
 
-    --font-color-header:#000100;
+    --font-color-headers:#000100;
     --font-color-buttons:#000100;
     --heading-color:#d0cfe9;
 
@@ -354,7 +354,7 @@ Theme template:
     --a:#cf2236;
     --a:#d683ad;
 
-    --font-color-header:#214917;
+    --font-color-headers:#214917;
     --font-color-buttons:#214917;
     --heading-color:#8cb3de;
 
@@ -382,7 +382,7 @@ Theme template:
     --a:#B03F05;
     --a:#020503;
     
-    --font-color-header:#020503;
+    --font-color-headers:#020503;
     --font-color-buttons:#020503;
     --heading-color:#D9C4A7;
 
@@ -401,4 +401,35 @@ Theme template:
     --cell-input-color:#B03F05;
     --cell-disabled-color:#020503;
     --cell-total-color:#D9C4A7;
+}
+
+[data-theme="southern_cassowary"] {
+    --a:#BDA14D;
+    --a:#3EBCB6;
+    --a:#0169C4;
+    --a:#153460;
+    --a:#D5114E;
+    --a:#A56EB6;
+    --a:#4B1C57;
+    --a:#09090C;
+    
+    --font-color-headers:#09090C;
+    --font-color-buttons:#BDA14D;
+    --heading-color:#09090C;
+
+    --button-start-color:#153460;
+    --button-score-sheet-automa-color:#0169C4;
+    --button-score-sheet-color:#D5114E;
+    --button-settings-color:#4B1C57;
+    --button-expansions-color:#BDA14D;
+    --button-extra-cards-color:#BDA14D;
+    --button-reset-color:#A56EB6;
+    --button-submit-color:#09090C;
+    --button-return-color:#4B1C57;
+
+    --cell-vertical-color:#0169C4;
+    --cell-info-color:#09090C;
+    --cell-input-color:#3EBCB6;
+    --cell-disabled-color:#D5114E;
+    --cell-total-color:#0169C4;
 }
