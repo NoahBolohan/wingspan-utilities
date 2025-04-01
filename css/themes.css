@@ -5,6 +5,7 @@ Theme template:
     --font-color-header:;
     --font-color-buttons:;
     --heading-color:;
+
     --button-start-color:;
     --button-score-sheet-automa-color:;
     --button-score-sheet-color:;
@@ -14,11 +15,13 @@ Theme template:
     --button-reset-color:;
     --button-submit-color:;
     --button-return-color:;
+
     --cell-vertical-color:;
     --cell-info-color:;
     --cell-input-color:;
     --cell-disabled-color:;
     --cell-total-color:;
+}
 
 */
 
@@ -40,9 +43,17 @@ Theme template:
 }
 
 [data-theme="spotted_pardalote"] {
+    --a:#feca00;
+    --a:#d36328;
+    --a:#cb0300;
+    --a:#b4b9b3;
+    --a:#424847;
+    --a:#000100;
+
     --font-color-header:#000100;
     --font-color-buttons:#b4b9b3;
     --heading-color:#feca00;
+
     --button-start-color:#424847;
     --button-score-sheet-automa-color:#d36328;
     --button-score-sheet-color:#000100;
@@ -51,7 +62,8 @@ Theme template:
     --button-extra-cards-color:#000100;
     --button-reset-color:#000100;
     --button-submit-color:#424847;
-    --button-return-color:#d36328;
+    --button-return-color:#cb0300;
+
     --cell-vertical-color:#feca00;
     --cell-info-color:#424847;
     --cell-input-color:#d36328;
@@ -60,9 +72,22 @@ Theme template:
 }
 
 [data-theme="blue_winged_kookaburra"] {
+    --a:#b5effb;
+    --a:#0b7595;
+    --a:#02407c;
+    --a:#06213a;
+    --a:#c45829;
+    --a:#9C4620;
+    --a:#622C14;
+    --a:#d4d8e3;
+    --a:#b8bcd8;
+    --a:#ad8d9f;
+    --a:#725f77;
+    
     --font-color-header:#06213a;
     --font-color-buttons:#06213a;
     --heading-color:#b5effb;
+
     --button-start-color:#0b7595;
     --button-score-sheet-automa-color:#ad8d9f;
     --button-score-sheet-color:#b8bcd8;
@@ -72,6 +97,7 @@ Theme template:
     --button-reset-color:#b8bcd8;
     --button-submit-color:#ad8d9f;
     --button-return-color:#725f77;
+
     --cell-vertical-color:#b5effb;
     --cell-info-color:#0b7595;
     --cell-input-color:#c45829;
@@ -80,9 +106,18 @@ Theme template:
 }
 
 [data-theme="plains_wanderer"] {
+    --a:#edd8c5;
+    --a:#d09a5e;
+    --a:#e7aa01;
+    --a:#ac570f;
+    --a:#73481b;
+    --a:#442c0e;
+    --a:#0d0403;
+
     --font-color-header:#0d0403;
     --font-color-buttons:#442c0e;
     --heading-color:#ac570f;
+
     --button-start-color:#d09a5e;
     --button-score-sheet-automa-color:#e7aa01;
     --button-score-sheet-color:#ac570f;
@@ -92,20 +127,44 @@ Theme template:
     --button-reset-color:#d09a5e;
     --button-submit-color:#d09a5e;
     --button-return-color:#edd8c5;
+
     --cell-vertical-color:#ac570f;
     --cell-info-color:#e7aa01;
     --cell-input-color:#d09a5e;
     --cell-disabled-color:#442c0e;
     --cell-total-color:#ac570f;
-
-    --a:#edd8c5;
-    --a:#d09a5e;
-    --a:#e7aa01;
-    --a:#ac570f;
-    --a:#73481b;
-    --a:#442c0e;
-    --a:#0d0403;
 }
+
+[data-theme="bee_eater"] {
+    --a:#00346E;
+    --a:#007CBF;
+    --a:#06ABDF;
+    --a:#EDD03E;
+    --a:#F5A200;
+    --a:#6D8600;
+    --a:#424D0C;
+
+    --font-color-header:#00346E;
+    --font-color-buttons:#00346E;
+    --heading-color:#06ABDF;
+
+    --button-start-color:#007CBF;
+    --button-score-sheet-automa-color:#EDD03E;
+    --button-score-sheet-color:#F5A200;
+    --button-settings-color:#6D8600;
+    --button-expansions-color:#EDD03E;
+    --button-extra-cards-color:#F5A200;
+    --button-reset-color:#F5A200;
+    --button-submit-color:#EDD03E;
+    --button-return-color:#6D8600;
+
+    --cell-vertical-color:#06ABDF;
+    --cell-info-color:#EDD03E;
+    --cell-input-color:#F5A200;
+    --cell-disabled-color:#424D0C;
+    --cell-total-color:#06ABDF;
+}
+
 
 .header-background {
     background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
