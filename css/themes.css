@@ -26,39 +26,41 @@ h2 {
 
 /*Buttons*/
 .btn-start {
-    background-color:var(--button-start-color)
+    background-color:var(--button-start-color);
 }
 
 .btn-score-sheet-automa {
-    background-color:var(--button-score-sheet-automa-color)
+    background-color:var(--button-score-sheet-automa-color);
 }
 
 .btn-score-sheet {
-    background-color:var(--button-score-sheet-color)
+    background-color:var(--button-score-sheet-color);
 }
 
 .btn-settings {
-    background-color:var(--button-settings-color)
+    background-color:var(--button-settings-color);
 }
 
 .btn-expansions {
-    background-color:var(--button-expansions-color)
+    background-color:var(--button-expansions-color);
+    font-size: 20pt;
 }
 
 .btn-extra-cards {
-    background-color:var(--button-extra-cards-color)
+    background-color:var(--button-extra-cards-color);
+    font-size: 20pt;
 }
 
 .btn-reset {
-    background-color:var(--button-reset-color)
+    background-color:var(--button-reset-color);
 }
 
 .btn-submit {
-    background-color:var(--button-submit-color)
+    background-color:var(--button-submit-color);
 }
 
 .btn-return {
-    background-color:var(--button-return-color)
+    background-color:var(--button-return-color);
 }
 
 /*Cells*/
