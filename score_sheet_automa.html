@@ -11,6 +11,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/themes.css" media="screen" />
 
         <script src="js/no_sleep.min.js"></script>
         <script src="js/settings.js"></script>
@@ -36,9 +37,9 @@
                         </div>
         
                         <div class="modal-body" id="modal_settings_body">
-    
+        
                             <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_screen_sleep">
-    
+        
                                 <div class="col-5 p-0 align-self-center">
                                     Prevent screen sleep:
                                 </div>
@@ -50,15 +51,18 @@
                                     </label>
                                 </div>
                             </div>
-    
+        
                             <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_toggle_innate_powers_row">
-    
+        
                                 <div class="col-2 p-0 align-self-center">
                                     <label for="theme">Theme:</label>
                                 </div>
                 
                                 <div class="col-6 p-0">
                                     <select name="theme" id="theme_options">
+                                        <option value="default">Default</option>
+                                        <option value="spotted_pardalote">Spotted Pardalote</option>
+                                        <option value="blue_winged_kookaburra">Blue-winged Kookaburra</option>
                                     </select>
                                 </div>
                             </div>
@@ -71,7 +75,7 @@
 
                 <div class="row mt-1 justify-content-center margin_auto">
 
-                    <div class="col-auto py-0 text-center" id="div_header">
+                    <div class="col-auto py-0 text-center header-background" id="div_header">
 
                         <h1 class="m-0">Score sheet - Automa</h1>
                     </div>
@@ -81,7 +85,7 @@
 
                     <div class="col-5 dropdown">
 
-                        <button class="w-100 btn borderless" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <button class="w-100 btn borderless btn-expansions" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <h2 class="p-0 m-0">&#x2193; Expansions &#x2193;</h2>
                         </button>
 
@@ -124,7 +128,7 @@
 
                     <div class="col-5 dropdown">
 
-                        <button class="w-100 btn borderless" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <button class="w-100 btn borderless btn-extra-cards" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <h2 class="p-0 m-0">&#x2193; Extra cards &#x2193;</h2>
                         </button>
 
@@ -158,7 +162,7 @@
 
                     <div class="col-2">
 
-                        <button class="btn astext button_settings" type="button" id="button_settings">
+                        <button class="btn astext btn-settings" type="button" id="button_settings">
                             <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="width: 100%;">
                         </button>
                     </div>
@@ -172,13 +176,13 @@
 
                             <tr>
 
-                                <th class="cell_info score_sheet_cell_no_padding" style="width:10%; border-right: 0px;"></th>
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:10%; border-right: 0px;"></th>
 
-                                <th class="cell_info score_sheet_cell_no_padding" style="width:24%; border-left: 0px;"></th>
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:24%; border-left: 0px;"></th>
 
-                                <th class="cell_info score_sheet_cell_no_padding" style="width:33%;">Player</th>
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:33%;">Player</th>
 
-                                <th class="cell_info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
+                                <th class="cell-info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
                             </tr>
                         </thead>
                     
@@ -186,41 +190,41 @@
 
                             <tr>
 
-                                <td class="cell_vertical rowspan-vertical" rowspan="5">Amount on cards</td>
+                                <td class="cell-vertical rowspan-vertical" rowspan="5">Amount on cards</td>
 
-                                <th style="vertical-align:middle;" class="cell_info score_sheet_cell_no_padding" rowspan="3">Birds</th>
+                                <th style="vertical-align:middle;" class="cell-info score_sheet_cell_no_padding" rowspan="3">Birds</th>
 
                                 <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
 
-                                <td class="cell_input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
                                     <label for="radio_difficulty_choice_eaglet">3</label>
                                 </td>
 
-                                <td class="cell_input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" style="width:75%;" required/>
                                     
                                 </td>
                             
-                                <td class="cell_input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle">4</label>
                                 </td>
 
-                                <td class="cell_input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" style="width:75%;"/>
                                 </td>
                             
-                                <td class="cell_input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
                                 </td>
 
-                                <td class="cell_input score_sheet_cell_no_padding" align="left" style="border-bottom-style: hidden;">
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" style="width:75%;"/>
                                 </td>
                             </tr>
                     
                             <tr>
 
-                                <td class="cell_input score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
+                                <td class="cell-input score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
                                 <td class="score_sheet_cell_no_padding" colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
                             </tr>
 
@@ -231,103 +235,103 @@
             
                             <tr>
 
-                                <th class="cell_info score_sheet_cell_no_padding">Bonus cards</th>
+                                <th class="cell-info score_sheet_cell_no_padding">Bonus cards</th>
 
                                 <td><input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0" required></td>
 
-                                <td class="cell_disabled" colspan="6"></td>
+                                <td class="cell-disabled" colspan="6"></td>
                             </tr>
             
                             <tr>
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0" required>
                                 </td>
                                 
-                                <td class="cell_info score_sheet_cell_no_padding" colspan="6">
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0" required>
                                 </td>
                             </tr>
             
                             <tr>
 
-                                <td class="cell_vertical rowspan-vertical" rowspan="3">1 point each</td>
+                                <td class="cell-vertical rowspan-vertical" rowspan="3">1 point each</td>
 
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">Eggs</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Eggs</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_eggs" name="player_eggs" min="0" required>
                                 </td>
 
-                                <td class="cell_info score_sheet_cell_no_padding" colspan="6">
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0" required>
                                 </td>
                             </tr>
             
                             <tr>
 
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">Food on cards</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Food on cards</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0" required>
                                 </td>
 
-                                <td class="cell_disabled" colspan="6"></td>
+                                <td class="cell-disabled" colspan="6"></td>
                             </tr>
             
                             <tr>
 
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0" required>
                                 </td>
 
-                                <td class="cell_disabled" colspan="6"></td>
+                                <td class="cell-disabled" colspan="6"></td>
                             </tr>
 
                             <tr id="row_nectar">
 
-                                <td class="cell_vertical rowspan-vertical" rowspan="1">5/2</td>
+                                <td class="cell-vertical rowspan-vertical" rowspan="1">5/2</td>
 
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">Nectar</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Nectar</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_nectar" name="player_nectar" min="0">
                                 </td>
 
-                                <td class="cell_info score_sheet_cell_no_padding" colspan="6">
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
                                 </td>
                             </tr>
 
                             <tr id="row_duet_tokens" style="visibility: collapse;">
 
-                                <td class="cell_vertical rowspan-vertical" rowspan="1">1 point each</td>
+                                <td class="cell-vertical rowspan-vertical" rowspan="1">1 point each</td>
 
-                                <th class="cell_info score_sheet_cell_no_padding" scope="row">Duet tokens in largest contiguous group</th>
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Duet tokens in largest contiguous group</th>
 
-                                <td class="cell_info score_sheet_cell_no_padding">
+                                <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
                                 </td>
 
-                                <td class="cell_info score_sheet_cell_no_padding" colspan="6">
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
                                 </td>
                             </tr>
             
                             <tr>
 
-                                <th class="cell_total score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
+                                <th class="cell-total score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
 
-                                <th class="cell_total" scope="row" style="border-left: 0px;"></th>
+                                <th class="cell-total" scope="row" style="border-left: 0px;"></th>
 
-                                <td class="cell_total score_sheet_cell_no_padding">
+                                <td class="cell-total score_sheet_cell_no_padding">
                                     <div id="cell_player_total_score"></div>
                                 </td>
 
-                                <td class="cell_total score_sheet_cell_no_padding" colspan="6">
+                                <td class="cell-total score_sheet_cell_no_padding" colspan="6">
                                     <div id="cell_automa_total_score"></div>
                                 </td>
                             </tr>
@@ -345,13 +349,13 @@
                 <div class="row gx-3 mt-1" id="row_reset_submit_buttons">
 
                     <div class="col-6">
-                        <button class="w-100 btn borderless nav-button" type="button" id="button_reset_sheet">
+                        <button class="w-100 btn borderless nav-button btn-reset" type="button" id="button_reset_sheet">
                             Reset score sheet
                         </button>
                     </div>
 
                     <div class="col-6">
-                        <button class="w-100 btn borderless nav-button" id="submit" name="submit" value = "Score Sheet: Automa" access="false" type="submit" onclick="populate_form_data()">
+                        <button class="w-100 btn borderless nav-button btn-submit" id="submit" name="submit" value = "Score Sheet: Automa" access="false" type="submit" onclick="populate_form_data()">
                             Submit score
                         </button>
                     </div>
@@ -359,7 +363,7 @@
 
                 <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
-                    <a class="col-auto btn borderless nav-button" href="/" id="button_return_to_home_page">Return to home page</a>
+                    <a class="col-auto btn borderless nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
                 </div>
             </div>
         </form>

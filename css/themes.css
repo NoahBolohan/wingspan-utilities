@@ -1,33 +1,165 @@
+/*
+Theme template:
+
+[data-theme="theme_name"] {
+    --font-color-header:;
+    --font-color-buttons:;
+    --heading-color:;
+    --button-start-color:;
+    --button-score-sheet-automa-color:;
+    --button-score-sheet-color:;
+    --button-settings-color:;
+    --button-expansions-color:;
+    --button-extra-cards-color:;
+    --button-reset-color:;
+    --button-submit-color:;
+    --button-return-color:;
+    --cell-vertical-color:;
+    --cell-info-color:;
+    --cell-input-color:;
+    --cell-disabled-color:;
+    --cell-total-color:;
+
+*/
+
 :root {
-    --primary-color: #302AE6;
-    --secondary-color: #536390;
-    --font-color: #424242;
-    --bg-color: #fff;
-    --heading-color: #292922;
-    --info-color: #66c4d4;
+    --font-color:#292922;
+    --heading-color:#fff;
+
+    --primary-color-1:#302AE6;
+    --primary-color-2:#302AE6;
+    --primary-color-3:#302AE6;
+    --secondary-color-1:#536390;
+    --secondary-color-2:#536390;
+    --secondary-color-3:#536390;
+    --tertiary-color-1:#424242;
+    --tertiary-color-2:#424242;
+    --tertiary-color-3:#424242;
+
+    --header-color-mix:color-mix(in srgb, var(--heading-color) 40%, transparent);
 }
 
 [data-theme="spotted_pardalote"] {
-    --primary-color: #feca00;
-    --secondary-color: #d36328;
-    --font-color: #cb0300;
-    --bg-color: #b4b9b3;
-    --heading-color: #424847;
-    --info-color: #000100;
+    --font-color-header:#000100;
+    --font-color-buttons:#b4b9b3;
+    --heading-color:#feca00;
+    --button-start-color:#424847;
+    --button-score-sheet-automa-color:#d36328;
+    --button-score-sheet-color:#000100;
+    --button-settings-color:#cb0300;
+    --button-expansions-color:#424847;
+    --button-extra-cards-color:#000100;
+    --button-reset-color:#000100;
+    --button-submit-color:#424847;
+    --button-return-color:#d36328;
+    --cell-vertical-color:#feca00;
+    --cell-info-color:#424847;
+    --cell-input-color:#d36328;
+    --cell-disabled-color:#000100;
+    --cell-total-color:#feca00;
 }
 
+[data-theme="blue_winged_kookaburra"] {
+    --font-color-header:#06213a;
+    --font-color-buttons:#06213a;
+    --heading-color:#b5effb;
+    --button-start-color:#0b7595;
+    --button-score-sheet-automa-color:#ad8d9f;
+    --button-score-sheet-color:#b8bcd8;
+    --button-settings-color:#9C4620;
+    --button-expansions-color:#b8bcd8;
+    --button-extra-cards-color:#ad8d9f;
+    --button-reset-color:#b8bcd8;
+    --button-submit-color:#ad8d9f;
+    --button-return-color:#725f77;
+    --cell-vertical-color:#b5effb;
+    --cell-info-color:#0b7595;
+    --cell-input-color:#c45829;
+    --cell-disabled-color:#02407c;
+    --cell-total-color:#b5effb;
+}
+
+.header-background {
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-background-for-index-menu { 
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    color: var(--font-color-headers);
+}
+
+h2 {
+    color: var(--font-color-headers);
+}
+
+.btn {
+    color: var(--font-color-buttons);
+}
+
+/*Buttons*/
 .btn-start {
-    background-color:var(--primary-color)
+    background-color:var(--button-start-color)
 }
 
-.btn-automa {
-    background-color:var(--secondary-color)
+.btn-score-sheet-automa {
+    background-color:var(--button-score-sheet-automa-color)
 }
 
-.btn-player {
-    background-color:var(--font-color)
+.btn-score-sheet {
+    background-color:var(--button-score-sheet-color)
 }
 
 .btn-settings {
-    background-color:var(--heading-color)
+    background-color:var(--button-settings-color)
+}
+
+.btn-expansions {
+    background-color:var(--button-expansions-color)
+}
+
+.btn-extra-cards {
+    background-color:var(--button-extra-cards-color)
+}
+
+.btn-reset {
+    background-color:var(--button-reset-color)
+}
+
+.btn-submit {
+    background-color:var(--button-submit-color)
+}
+
+.btn-return {
+    background-color:var(--button-return-color)
+}
+
+/*Cells*/
+.cell-vertical {
+    background-color:var(--cell-vertical-color)!important;
+    color:var(--font-color-header)!important;
+}
+
+.cell-info {
+    background-color:var(--cell-info-color)!important;
+    color:var(--font-color-buttons)!important;
+}
+
+.cell-input {
+    background-color:var(--cell-input-color)!important;
+}
+.cell-disabled {
+    background-color:var(--cell-disabled-color)!important;
+}
+.cell-total {
+    background-color:var(--cell-total-color)!important;
+    color:var(--font-color-header)!important;
 }
