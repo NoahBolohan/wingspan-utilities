@@ -463,3 +463,32 @@ Theme template:
     --cell-disabled-color:#454B56;
     --cell-total-color:#979EB9;
 }
+
+[data-theme="galah"] {
+    --a:#FFD2CF;
+    --a:#E9A7BB;
+    --a:#D05478;
+    --a:#AAB9CC;
+    --a:#8390A2;
+    --a:#4C5766;
+    
+    --font-color-headers:#4C5766;
+    --font-color-buttons:#4C5766;
+    --heading-color:#8390A2;
+
+    --button-start-color:#FFD2CF;
+    --button-score-sheet-automa-color:#E9A7BB;
+    --button-score-sheet-color:#D05478;
+    --button-settings-color:#8390A2;
+    --button-expansions-color:#AAB9CC;
+    --button-extra-cards-color:#AAB9CC;
+    --button-reset-color:#E9A7BB;
+    --button-submit-color:#FFD2CF;
+    --button-return-color:#8390A2;
+
+    --cell-vertical-color:#AAB9CC;
+    --cell-info-color:#E9A7BB;
+    --cell-input-color:#D05478;
+    --cell-disabled-color:#4C5766;
+    --cell-total-color:#AAB9CC;
+}
