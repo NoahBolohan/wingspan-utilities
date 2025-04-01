@@ -1,3 +1,88 @@
+.header-background {
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-background-for-index-menu { 
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    color: var(--font-color-headers);
+}
+
+h2 {
+    color: var(--font-color-headers);
+}
+
+.btn {
+    color: var(--font-color-buttons);
+}
+
+/*Buttons*/
+.btn-start {
+    background-color:var(--button-start-color)
+}
+
+.btn-score-sheet-automa {
+    background-color:var(--button-score-sheet-automa-color)
+}
+
+.btn-score-sheet {
+    background-color:var(--button-score-sheet-color)
+}
+
+.btn-settings {
+    background-color:var(--button-settings-color)
+}
+
+.btn-expansions {
+    background-color:var(--button-expansions-color)
+}
+
+.btn-extra-cards {
+    background-color:var(--button-extra-cards-color)
+}
+
+.btn-reset {
+    background-color:var(--button-reset-color)
+}
+
+.btn-submit {
+    background-color:var(--button-submit-color)
+}
+
+.btn-return {
+    background-color:var(--button-return-color)
+}
+
+/*Cells*/
+.cell-vertical {
+    background-color:var(--cell-vertical-color)!important;
+    color:var(--font-color-header)!important;
+}
+
+.cell-info {
+    background-color:var(--cell-info-color)!important;
+    color:var(--font-color-buttons)!important;
+}
+
+.cell-input {
+    background-color:var(--cell-input-color)!important;
+}
+.cell-disabled {
+    background-color:var(--cell-disabled-color)!important;
+}
+.cell-total {
+    background-color:var(--cell-total-color)!important;
+    color:var(--font-color-header)!important;
+}
+
 /*
 Theme template:
 
@@ -124,7 +209,7 @@ Theme template:
     --button-settings-color:#edd8c5;
     --button-expansions-color:#d09a5e;
     --button-extra-cards-color:#d09a5e;
-    --button-reset-color:#d09a5e;
+    --button-reset-color:#ac570f;
     --button-submit-color:#d09a5e;
     --button-return-color:#edd8c5;
 
@@ -196,88 +281,32 @@ Theme template:
     --cell-total-color:#8FA33F;
 }
 
+[data-theme="eastern_rosella"] {
+    --a:#cd3122;
+    --a:#f4c623;
+    --a:#bee183;
+    --a:#6c905e;
+    --a:#2f533c;
+    --a:#b8c9dc;
+    --a:#2f7ab9;
+    
+    --font-color-header:#000100;
+    --font-color-buttons:#000100;
+    --heading-color:#b8c9dc;
 
-.header-background {
-    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    --button-start-color:#cd3122;
+    --button-score-sheet-automa-color:#f4c623;
+    --button-score-sheet-color:#bee183;
+    --button-settings-color:#2f7ab9;
+    --button-expansions-color:#bee183;
+    --button-extra-cards-color:#bee183;
+    --button-reset-color:#cd3122;
+    --button-submit-color:#f4c623;
+    --button-return-color:#2f7ab9;
 
-.header-background-for-index-menu { 
-    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-h1 {
-    color: var(--font-color-headers);
-}
-
-h2 {
-    color: var(--font-color-headers);
-}
-
-.btn {
-    color: var(--font-color-buttons);
-}
-
-/*Buttons*/
-.btn-start {
-    background-color:var(--button-start-color)
-}
-
-.btn-score-sheet-automa {
-    background-color:var(--button-score-sheet-automa-color)
-}
-
-.btn-score-sheet {
-    background-color:var(--button-score-sheet-color)
-}
-
-.btn-settings {
-    background-color:var(--button-settings-color)
-}
-
-.btn-expansions {
-    background-color:var(--button-expansions-color)
-}
-
-.btn-extra-cards {
-    background-color:var(--button-extra-cards-color)
-}
-
-.btn-reset {
-    background-color:var(--button-reset-color)
-}
-
-.btn-submit {
-    background-color:var(--button-submit-color)
-}
-
-.btn-return {
-    background-color:var(--button-return-color)
-}
-
-/*Cells*/
-.cell-vertical {
-    background-color:var(--cell-vertical-color)!important;
-    color:var(--font-color-header)!important;
-}
-
-.cell-info {
-    background-color:var(--cell-info-color)!important;
-    color:var(--font-color-buttons)!important;
-}
-
-.cell-input {
-    background-color:var(--cell-input-color)!important;
-}
-.cell-disabled {
-    background-color:var(--cell-disabled-color)!important;
-}
-.cell-total {
-    background-color:var(--cell-total-color)!important;
-    color:var(--font-color-header)!important;
+    --cell-vertical-color:#6c905e;
+    --cell-info-color:#f4c623;
+    --cell-input-color:#b8c9dc;
+    --cell-disabled-color:#cd3122;
+    --cell-total-color:#6c905e;
 }
