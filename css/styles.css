@@ -346,10 +346,10 @@ button[disabled]{
 html, body {margin: 0; height: 100%; overflow: hidden}
 
 .astext {
-    border:none !important;
     margin:0;
     padding:0;
     cursor: pointer;
+    background-color: var(--heading-color);
 }
 
 
@@ -414,4 +414,145 @@ border-radius: 34px;
 .slider.round:before {
 border-radius: 50%;
 outline: 2px solid var(--font-color-buttons);
+}
+
+.header-background {
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-background-for-index-menu { 
+    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    color: var(--font-color-headers);
+}
+
+h2 {
+    color: var(--font-color-headers);
+}
+
+.btn {
+    color: var(--font-color-buttons);
+    outline: 1px solid var(--font-color-headers);
+}
+
+.btn:hover {
+    outline: 1px solid var(--font-color-headers);
+}
+
+
+.btn:focus {
+    outline: 1px solid var(--font-color-headers);
+}
+
+.modal-content {
+    background-color: var(--button-settings-color);
+}
+
+.modal-title {
+    color: var(--font-color-buttons);
+}
+
+.modal-header {
+    border-bottom-color: var(--font-color-headers)
+}
+
+.settings-label {
+    color: var(--font-color-buttons);
+}
+
+/*Buttons*/
+.btn-start {
+    background-color:var(--button-start-color);
+}
+
+.btn-start:hover {
+    background-color:var(--button-start-color);
+}
+
+.btn-score-sheet-automa {
+    background-color:var(--button-score-sheet-automa-color);
+}
+
+.btn-score-sheet-automa:hover {
+    background-color:var(--button-score-sheet-automa-color);
+}
+
+.btn-score-sheet {
+    background-color:var(--button-score-sheet-color);
+}
+
+.btn-score-sheet:hover {
+    background-color:var(--button-score-sheet-color);
+}
+
+.btn-settings {
+    background-color:var(--button-settings-color);
+}
+
+.btn-settings:hover {
+    background-color:var(--button-settings-color);
+}
+
+.btn-dropdown-menu {
+    font-size: 20pt;
+    background-color:var(--button-dropdown-menu-color);
+    
+}
+
+.btn-dropdown-menu:hover {
+    background-color:var(--button-dropdown-menu-color);
+}
+
+.btn-reset {
+    background-color:var(--button-reset-color);
+}
+
+.btn-reset:hover {
+    background-color:var(--button-reset-color);
+}
+
+.btn-submit {
+    background-color:var(--button-submit-color);
+}
+
+.btn-submit:hover {
+    background-color:var(--button-submit-color);
+}
+
+.btn-return {
+    background-color:var(--button-return-color);
+}
+
+.btn-return:hover {
+    background-color:var(--button-return-color);
+}
+
+/*Cells*/
+.cell-vertical {
+    background-color:var(--cell-vertical-color)!important;
+    color:var(--font-color-header)!important;
+}
+
+.cell-info {
+    background-color:var(--cell-info-color)!important;
+    color:var(--font-color-buttons)!important;
+}
+
+.cell-input {
+    background-color:var(--cell-input-color)!important;
+}
+.cell-disabled {
+    background-color:var(--cell-disabled-color)!important;
+}
+.cell-total {
+    background-color:var(--cell-total-color)!important;
+    color:var(--font-color-header)!important;
 }
