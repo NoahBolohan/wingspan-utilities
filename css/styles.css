@@ -448,6 +448,14 @@ h2 {
     color: rgba(var(--font-color-headers));
 }
 
+input {
+    color: rgba(var(--font-color-headers));
+}
+
+input::placeholder {
+    color: rgba(var(--font-color-headers),0.6);
+}
+
 .btn {
     color: rgba(var(--font-color-buttons));
     outline: 1px solid rgba(var(--font-color-headers));
@@ -628,7 +636,7 @@ h2 {
 /*Cells*/
 .cell-vertical {
     background-color:rgba(var(--cell-vertical-color))!important;
-    color:rgba(var(--font-color-header))!important;
+    color:rgba(var(--font-color-headers))!important;
 }
 
 .cell-info {
@@ -644,5 +652,5 @@ h2 {
 }
 .cell-total {
     background-color:rgba(var(--cell-total-color))!important;
-    color:rgba(var(--font-color-header))!important;
+    color:rgba(var(--font-color-headers))!important;
 }
