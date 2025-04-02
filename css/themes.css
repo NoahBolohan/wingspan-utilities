@@ -22,6 +22,28 @@ h2 {
 
 .btn {
     color: var(--font-color-buttons);
+    outline: 1px solid var(--font-color-headers);
+}
+
+.btn:focus-visible {
+    opacity: 0.8;
+    color:black;
+}
+
+.modal-content {
+    background-color: var(--button-settings-color);
+}
+
+.modal-title {
+    color: var(--font-color-buttons);
+}
+
+.modal-header {
+    border-bottom-color: var(--font-color-headers)
+}
+
+.settings-label {
+    color: var(--font-color-buttons);
 }
 
 /*Buttons*/
@@ -41,13 +63,8 @@ h2 {
     background-color:var(--button-settings-color);
 }
 
-.btn-expansions {
-    background-color:var(--button-expansions-color);
-    font-size: 20pt;
-}
-
-.btn-extra-cards {
-    background-color:var(--button-extra-cards-color);
+.btn-dropdown-menu {
+    background-color:var(--button-dropdown-menu-color);
     font-size: 20pt;
 }
 
@@ -97,8 +114,7 @@ Theme template:
     --button-score-sheet-automa-color:;
     --button-score-sheet-color:;
     --button-settings-color:;
-    --button-expansions-color:;
-    --button-extra-cards-color:;
+    --button-dropdown-menu-color:;
     --button-reset-color:;
     --button-submit-color:;
     --button-return-color:;
@@ -126,7 +142,7 @@ Theme template:
     --tertiary-color-2:#424242;
     --tertiary-color-3:#424242;
 
-    --header-color-mix:color-mix(in srgb, var(--heading-color) 40%, transparent);
+    --header-color-mix:color-mix(in srgb, var(--heading-color) 50%, transparent);
 }
 
 [data-theme="spotted_pardalote"] {
@@ -141,19 +157,18 @@ Theme template:
     --font-color-buttons:#b4b9b3;
     --heading-color:#feca00;
 
-    --button-start-color:#424847;
-    --button-score-sheet-automa-color:#d36328;
-    --button-score-sheet-color:#000100;
-    --button-settings-color:#cb0300;
-    --button-expansions-color:#000100;
-    --button-extra-cards-color:#000100;
+    --button-start-color:#d36328;
+    --button-score-sheet-automa-color:#000100;
+    --button-score-sheet-color:#cb0300;
+    --button-settings-color:#424847;
+    --button-dropdown-menu-color:#000100;
     --button-reset-color:#000100;
-    --button-submit-color:#424847;
-    --button-return-color:#cb0300;
+    --button-submit-color:#d36328;
+    --button-return-color:#424847;
 
     --cell-vertical-color:#feca00;
     --cell-info-color:#424847;
-    --cell-input-color:#d36328;
+    --cell-input-color:#cb0300;
     --cell-disabled-color:#000100;
     --cell-total-color:#feca00;
 }
@@ -179,8 +194,7 @@ Theme template:
     --button-score-sheet-automa-color:#ad8d9f;
     --button-score-sheet-color:#b8bcd8;
     --button-settings-color:#9C4620;
-    --button-expansions-color:#b8bcd8;
-    --button-extra-cards-color:#ad8d9f;
+    --button-dropdown-menu-color:#b8bcd8;
     --button-reset-color:#b8bcd8;
     --button-submit-color:#ad8d9f;
     --button-return-color:#725f77;
@@ -209,10 +223,9 @@ Theme template:
     --button-score-sheet-automa-color:#e7aa01;
     --button-score-sheet-color:#ac570f;
     --button-settings-color:#edd8c5;
-    --button-expansions-color:#d09a5e;
-    --button-extra-cards-color:#d09a5e;
+    --button-dropdown-menu-color:#d09a5e;
     --button-reset-color:#ac570f;
-    --button-submit-color:#d09a5e;
+    --button-submit-color:#e7aa01;
     --button-return-color:#edd8c5;
 
     --cell-vertical-color:#ac570f;
@@ -239,8 +252,7 @@ Theme template:
     --button-score-sheet-automa-color:#EDD03E;
     --button-score-sheet-color:#F5A200;
     --button-settings-color:#6D8600;
-    --button-expansions-color:#F5A200;
-    --button-extra-cards-color:#F5A200;
+    --button-dropdown-menu-color:#F5A200;
     --button-reset-color:#F5A200;
     --button-submit-color:#EDD03E;
     --button-return-color:#6D8600;
@@ -270,8 +282,7 @@ Theme template:
     --button-score-sheet-automa-color:#BD338F;
     --button-score-sheet-color:#EB8252;
     --button-settings-color:#8098A2;
-    --button-expansions-color:#CDD4DC;
-    --button-extra-cards-color:#CDD4DC;
+    --button-dropdown-menu-color:#CDD4DC;
     --button-reset-color:#EB8252;
     --button-submit-color:#F5DC83;
     --button-return-color:#8098A2;
@@ -300,8 +311,7 @@ Theme template:
     --button-score-sheet-automa-color:#f4c623;
     --button-score-sheet-color:#bee183;
     --button-settings-color:#2f7ab9;
-    --button-expansions-color:#bee183;
-    --button-extra-cards-color:#bee183;
+    --button-dropdown-menu-color:#bee183;
     --button-reset-color:#cd3122;
     --button-submit-color:#f4c623;
     --button-return-color:#2f7ab9;
@@ -333,9 +343,8 @@ Theme template:
     --button-score-sheet-automa-color:#6c6b75;
     --button-score-sheet-color:#b8a53f;
     --button-settings-color:#93862a;
-    --button-expansions-color:#a29eb8;
-    --button-extra-cards-color:#d0cfe9;
-    --button-reset-color:#d0cfe9;
+    --button-dropdown-menu-color:#d0cfe9;
+    --button-reset-color:#a29eb8;
     --button-submit-color:#e2aba0;
     --button-return-color:#93862a;
 
@@ -364,8 +373,7 @@ Theme template:
     --button-score-sheet-automa-color:#d683ad;
     --button-score-sheet-color:#6eb245;
     --button-settings-color:#afbe9f;
-    --button-expansions-color:#8cb3de;
-    --button-extra-cards-color:#8cb3de;
+    --button-dropdown-menu-color:#8cb3de;
     --button-reset-color:#7090c9;
     --button-submit-color:#d683ad;
     --button-return-color:#afbe9f;
@@ -392,10 +400,9 @@ Theme template:
     --button-score-sheet-automa-color:#AA7853;
     --button-score-sheet-color:#D9C4A7;
     --button-settings-color:#B03F05;
-    --button-expansions-color:#AA7853;
-    --button-extra-cards-color:#AA7853;
-    --button-reset-color:#AA7853;
-    --button-submit-color:#D9C4A7;
+    --button-dropdown-menu-color:#AA7853;
+    --button-reset-color:#D9C4A7;
+    --button-submit-color:#AA7853;
     --button-return-color:#B03F05;
 
     --cell-vertical-color:#D9C4A7;
@@ -423,10 +430,9 @@ Theme template:
     --button-score-sheet-automa-color:#0169C4;
     --button-score-sheet-color:#D5114E;
     --button-settings-color:#4B1C57;
-    --button-expansions-color:#BDA14D;
-    --button-extra-cards-color:#BDA14D;
-    --button-reset-color:#A56EB6;
-    --button-submit-color:#09090C;
+    --button-dropdown-menu-color:#09090C;
+    --button-reset-color:#09090C;
+    --button-submit-color:#A56EB6;
     --button-return-color:#4B1C57;
 
     --cell-vertical-color:#0169C4;
@@ -453,8 +459,7 @@ Theme template:
     --button-score-sheet-automa-color:#FBEB5B;
     --button-score-sheet-color:#E19E00;
     --button-settings-color:#85773A;
-    --button-expansions-color:#979EB9;
-    --button-extra-cards-color:#979EB9;
+    --button-dropdown-menu-color:#979EB9;
     --button-reset-color:#FBEB5B;
     --button-submit-color:#E19E00;
     --button-return-color:#85773A;
@@ -481,12 +486,11 @@ Theme template:
     --button-start-color:#FFD2CF;
     --button-score-sheet-automa-color:#E9A7BB;
     --button-score-sheet-color:#D05478;
-    --button-settings-color:#8390A2;
-    --button-expansions-color:#AAB9CC;
-    --button-extra-cards-color:#AAB9CC;
+    --button-settings-color:#AAB9CC;
+    --button-dropdown-menu-color:#AAB9CC;
     --button-reset-color:#E9A7BB;
     --button-submit-color:#FFD2CF;
-    --button-return-color:#8390A2;
+    --button-return-color:#AAB9CC;
 
     --cell-vertical-color:#AAB9CC;
     --cell-info-color:#E9A7BB;
