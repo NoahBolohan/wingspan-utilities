@@ -487,12 +487,28 @@ h2 {
     background-color:rgba(var(--button-start-color),0.5);
 }
 
+.btn-start:active {
+    background-color:rgba(var(--button-start-color))!important;
+}
+
+.btn-start:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
 .btn-score-sheet-automa {
     background-color:rgba(var(--button-score-sheet-automa-color));
 }
 
 .btn-score-sheet-automa:hover {
     background-color:rgba(var(--button-score-sheet-automa-color),0.5);
+}
+
+.btn-score-sheet-automa:active {
+    background-color:rgba(var(--button-score-sheet-automa-color))!important;
+}
+
+.btn-score-sheet-automa:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
 .btn-score-sheet {
@@ -503,12 +519,28 @@ h2 {
     background-color:rgba(var(--button-score-sheet-color),0.5);
 }
 
+.btn-score-sheet:active {
+    background-color:rgba(var(--button-score-sheet-color))!important;
+}
+
+.btn-score-sheet:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
 .btn-settings {
     background-color:rgba(var(--button-settings-color));
 }
 
 .btn-settings:hover {
     background-color:rgba(var(--button-settings-color),0.5);
+}
+
+.btn-settings:active {
+    background-color:rgba(var(--button-settings-color))!important;
+}
+
+.btn-settings:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
 .btn-dropdown-menu {
@@ -521,12 +553,28 @@ h2 {
     background-color:rgba(var(--button-dropdown-menu-color),0.5);
 }
 
+.btn-dropdown-menu:active {
+    background-color:rgba(var(--button-dropdown-menu-color))!important;
+}
+
+.btn-dropdown-menu:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
 .btn-reset {
     background-color:rgba(var(--button-reset-color));
 }
 
 .btn-reset:hover {
     background-color:rgba(var(--button-reset-color),0.5);
+}
+
+.btn-reset:active {
+    background-color:rgba(var(--button-reset-color))!important;
+}
+
+.btn-reset:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
 .btn-submit {
@@ -537,12 +585,28 @@ h2 {
     background-color:rgba(var(--button-submit-color),0.5);
 }
 
+.btn-submit:active {
+    background-color:rgba(var(--button-submit-color))!important;
+}
+
+.btn-submit:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
 .btn-return {
     background-color:rgba(var(--button-return-color));
 }
 
 .btn-return:hover {
     background-color:rgba(var(--button-return-color),0.5);
+}
+
+.btn-return:active {
+    background-color:rgba(var(--button-return-color))!important;
+}
+
+.btn-return:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
 /*Cells*/
