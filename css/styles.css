@@ -422,19 +422,14 @@ outline: 2px solid rgba(var(--font-color-buttons));
         rgba(var(--heading-color),0.5),
         rgba(var(--heading-color),0.5)
     ),
-    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .header-background-for-index-menu { 
-    background:linear-gradient(
-        0deg,
-        rgba(var(--heading-color),0.5),
-        rgba(var(--heading-color),0.5)
-    ),
-    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 200% 100%;
     background-repeat: no-repeat;
     background-position: center;
