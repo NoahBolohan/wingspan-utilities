@@ -39,7 +39,7 @@ table td {
 }
 
 .score_sheet_table td, tr, th {
-    opacity: 0.95;
+    /* opacity: 0.95; */
     border : 1px solid black;
 }
 
@@ -606,6 +606,22 @@ h2 {
 }
 
 .btn-return:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
+.btn-change-n-players {
+    background-color:rgba(var(--button-change-n-players-color));
+}
+
+.btn-change-n-players:hover {
+    background-color:rgba(var(--button-change-n-players-color),0.5);
+}
+
+.btn-change-n-players:active {
+    background-color:rgba(var(--button-change-n-players-color))!important;
+}
+
+.btn-change-n-players:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 

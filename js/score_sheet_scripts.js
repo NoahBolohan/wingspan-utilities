@@ -220,14 +220,16 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p + 10}%; border-left: 0px; vertical-align: middle; text-align: center;`,
             colspan : "2",
-            class : "bg-purple"
+            class : "cell-info"
         }
     )
 
     $("<button>").attr(
         {
             type : "button",
-            id : "button_change_n_players"
+            id : "button_change_n_players",
+            class : "btn btn-change-n-players",
+            style : "font-size: 15pt;"
         }
     ).text(
         "Change number of players"
@@ -245,7 +247,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Vertical text: Amount on cards
     $("<td>").attr(
         {
-            class : "bg-white rowspan-vertical",
+            class : "cell-vertical rowspan-vertical",
             rowspan : "3"
         }
     ).text(
@@ -257,7 +259,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Birds"
@@ -268,7 +270,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Bonus cards"
@@ -279,7 +281,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "End-of-round goals"
@@ -288,7 +290,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Vertical text: 1 point each
     $("<td>").attr(
         {
-            class : "bg-white rowspan-vertical",
+            class : "cell-vertical rowspan-vertical",
             rowspan : "3"
         }
     ).text(
@@ -300,7 +302,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Eggs"
@@ -311,7 +313,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Food on cards"
@@ -322,7 +324,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Tucked cards"
@@ -331,7 +333,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Vertical text: 5/2
     $("<td>").attr(
         {
-            class : "bg-white rowspan-vertical",
+            class : "cell-vertical rowspan-vertical",
             rowspan : "1"
         }
     ).text(
@@ -343,7 +345,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Nectar"
@@ -352,7 +354,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Vertical text: 1 point each
     $("<td>").attr(
         {
-            class : "bg-white rowspan-vertical",
+            class : "cell-vertical rowspan-vertical",
             rowspan : "1"
         }
     ).text(
@@ -364,7 +366,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : `width:${width_p}%`,
             scope : "row",
-            class : "bg-purple score_sheet_cell_no_padding"
+            class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
         "Duet tokens in largest contiguous group"
@@ -374,7 +376,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<th>").attr(
         {
             colspan : "2",
-            class : "bg-teal score_sheet_cell_no_padding"
+            class : "cell-total score_sheet_cell_no_padding"
         }
     ).text(
         "Total"
@@ -389,7 +391,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `player_${i}_name`,
                 style : `width:${width_p}%`,
-                class : "bg-purple"
+                class : "cell-info"
             }
         ).appendTo("#row_player_names");
         
@@ -416,7 +418,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_birds`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_birds");
         
@@ -437,7 +439,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_bonus_cards`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_bonus_cards");
         
@@ -458,7 +460,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_end-of-round_goals`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_end-of-round_goals");
         
@@ -479,7 +481,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_eggs`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_eggs");
         
@@ -500,7 +502,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_food_on_cards`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_food_on_cards");
         
@@ -521,7 +523,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_tucked_cards`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_tucked_cards");
         
@@ -542,7 +544,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_nectar`,
                 style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
             }
         ).appendTo("#row_nectar");
         
@@ -562,7 +564,7 @@ function generate_n_score_columns(n_players, width_p) {
                 {
                     id : `col_player_${i}_duet_tokens`,
                     style : `width:${width_p}%`,
-                class : "bg-white"
+                class : "cell-input"
                 }
             ).appendTo("#row_duet_tokens");
 
@@ -590,7 +592,7 @@ function generate_n_score_columns(n_players, width_p) {
             {
                 id : `col_player_${i}_total_score`,
                 style : `width:${width_p}%`,
-                class : "bg-teal score_sheet_cell_no_padding"
+                class : "cell-total score_sheet_cell_no_padding"
             }
         ).appendTo("#row_total");
         

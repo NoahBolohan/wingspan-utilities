@@ -14,6 +14,7 @@ Theme template:
     --button-reset-color:;
     --button-submit-color:;
     --button-return-color:;
+    --button-change-n-players-color:;
 
     --cell-vertical-color:;
     --cell-info-color:;
@@ -59,6 +60,7 @@ Theme template:
     --button-reset-color:#000100;
     --button-submit-color:#d36328;
     --button-return-color:#424847;
+    --button-change-n-players-color:#d36328;
 
     --cell-vertical-color:#feca00;
     --cell-info-color:#424847;
@@ -91,7 +93,8 @@ Theme template:
     --button-dropdown-menu-color:#b8bcd8;
     --button-reset-color:#b8bcd8;
     --button-submit-color:#ad8d9f;
-    --button-return-color:#725f77;
+    --button-return-color:#9C4620;
+    --button-change-n-players-color:#725f77;
 
     --cell-vertical-color:#b5effb;
     --cell-info-color:#0b7595;
@@ -118,9 +121,10 @@ Theme template:
     --button-score-sheet-color:#ac570f;
     --button-settings-color:#edd8c5;
     --button-dropdown-menu-color:#d09a5e;
-    --button-reset-color:#ac570f;
+    --button-reset-color:#d09a5e;
     --button-submit-color:#e7aa01;
     --button-return-color:#edd8c5;
+    --button-change-n-players-color:#d09a5e;
 
     --cell-vertical-color:#ac570f;
     --cell-info-color:#e7aa01;
@@ -150,6 +154,7 @@ Theme template:
     --button-reset-color:#F5A200;
     --button-submit-color:#EDD03E;
     --button-return-color:#6D8600;
+    --button-change-n-players-color:#F5A200;
 
     --cell-vertical-color:#06ABDF;
     --cell-info-color:#EDD03E;
@@ -180,6 +185,7 @@ Theme template:
     --button-reset-color:#EB8252;
     --button-submit-color:#F5DC83;
     --button-return-color:#8098A2;
+    --button-change-n-players-color:#5F7929;
 
     --cell-vertical-color:#8FA33F;
     --cell-info-color:#EB8252;
@@ -204,12 +210,12 @@ Theme template:
     --button-start-color:#cd3122;
     --button-score-sheet-automa-color:#f4c623;
     --button-score-sheet-color:#bee183;
-    /* --button-settings-color:47,122,185; */
     --button-settings-color:#2f7ab9;
     --button-dropdown-menu-color:#bee183;
     --button-reset-color:#cd3122;
     --button-submit-color:#f4c623;
     --button-return-color:#2f7ab9;
+    --button-change-n-players-color:#cd3122;
 
     --cell-vertical-color:#6c905e;
     --cell-info-color:#f4c623;
@@ -242,6 +248,7 @@ Theme template:
     --button-reset-color:#a29eb8;
     --button-submit-color:#e2aba0;
     --button-return-color:#93862a;
+    --button-change-n-players-color:#b8a53f;
 
     --cell-vertical-color:#b8a53f;
     --cell-info-color:#6c6b75;
@@ -272,6 +279,7 @@ Theme template:
     --button-reset-color:#7090c9;
     --button-submit-color:#d683ad;
     --button-return-color:#afbe9f;
+    --button-change-n-players-color:#d683ad;
 
     --cell-vertical-color:#8cb3de;
     --cell-info-color:#6eb245;
@@ -299,6 +307,7 @@ Theme template:
     --button-reset-color:#D9C4A7;
     --button-submit-color:#AA7853;
     --button-return-color:#B03F05;
+    --button-change-n-players-color:#D9C4A7;
 
     --cell-vertical-color:#D9C4A7;
     --cell-info-color:#AA7853;
@@ -329,6 +338,7 @@ Theme template:
     --button-reset-color:#09090C;
     --button-submit-color:#A56EB6;
     --button-return-color:#4B1C57;
+    --button-change-n-players-color:#D5114E;
 
     --cell-vertical-color:#0169C4;
     --cell-info-color:#09090C;
@@ -358,6 +368,7 @@ Theme template:
     --button-reset-color:#FBEB5B;
     --button-submit-color:#E19E00;
     --button-return-color:#85773A;
+    --button-change-n-players-color:#979EB9;
 
     --cell-vertical-color:#979EB9;
     --cell-info-color:#FBEB5B;
@@ -386,6 +397,7 @@ Theme template:
     --button-reset-color:#E9A7BB;
     --button-submit-color:#FFD2CF;
     --button-return-color:#AAB9CC;
+    --button-change-n-players-color:#FFD2CF;
 
     --cell-vertical-color:#AAB9CC;
     --cell-info-color:#E9A7BB;

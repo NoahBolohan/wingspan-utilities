@@ -14,6 +14,7 @@ Theme template:
     --button-reset-color:;
     --button-submit-color:;
     --button-return-color:;
+    --button-change-n-players-color:;
 
     --cell-vertical-color:;
     --cell-info-color:;
@@ -59,6 +60,7 @@ Theme template:
     --button-reset-color:0,1,0;
     --button-submit-color:211,99,40;
     --button-return-color:66,72,71;
+    --button-change-n-players-color:211,99,40;
 
     --cell-vertical-color:254,202,0;
     --cell-info-color:66,72,71;
@@ -91,7 +93,8 @@ Theme template:
     --button-dropdown-menu-color:184,188,216;
     --button-reset-color:184,188,216;
     --button-submit-color:173,141,159;
-    --button-return-color:114,95,119;
+    --button-return-color:156,70,32;
+    --button-change-n-players-color:114,95,119;
 
     --cell-vertical-color:181,239,251;
     --cell-info-color:11,117,149;
@@ -118,9 +121,10 @@ Theme template:
     --button-score-sheet-color:172,87,15;
     --button-settings-color:237,216,197;
     --button-dropdown-menu-color:208,154,94;
-    --button-reset-color:172,87,15;
+    --button-reset-color:208,154,94;
     --button-submit-color:231,170,1;
     --button-return-color:237,216,197;
+    --button-change-n-players-color:208,154,94;
 
     --cell-vertical-color:172,87,15;
     --cell-info-color:231,170,1;
@@ -150,6 +154,7 @@ Theme template:
     --button-reset-color:245,162,0;
     --button-submit-color:237,208,62;
     --button-return-color:109,134,0;
+    --button-change-n-players-color:245,162,0;
 
     --cell-vertical-color:6,171,223;
     --cell-info-color:237,208,62;
@@ -180,6 +185,7 @@ Theme template:
     --button-reset-color:235,130,82;
     --button-submit-color:245,220,131;
     --button-return-color:128,152,162;
+    --button-change-n-players-color:95,121,41;
 
     --cell-vertical-color:143,163,63;
     --cell-info-color:235,130,82;
@@ -204,12 +210,12 @@ Theme template:
     --button-start-color:205,49,34;
     --button-score-sheet-automa-color:244,198,35;
     --button-score-sheet-color:190,225,131;
-    /* --button-settings-color:47,122,185; */
     --button-settings-color:47,122,185;
     --button-dropdown-menu-color:190,225,131;
     --button-reset-color:205,49,34;
     --button-submit-color:244,198,35;
     --button-return-color:47,122,185;
+    --button-change-n-players-color:205,49,34;
 
     --cell-vertical-color:108,144,94;
     --cell-info-color:244,198,35;
@@ -242,6 +248,7 @@ Theme template:
     --button-reset-color:162,158,184;
     --button-submit-color:226,171,160;
     --button-return-color:147,134,42;
+    --button-change-n-players-color:184,165,63;
 
     --cell-vertical-color:184,165,63;
     --cell-info-color:108,107,117;
@@ -272,6 +279,7 @@ Theme template:
     --button-reset-color:112,144,201;
     --button-submit-color:214,131,173;
     --button-return-color:175,190,159;
+    --button-change-n-players-color:214,131,173;
 
     --cell-vertical-color:140,179,222;
     --cell-info-color:110,178,69;
@@ -299,6 +307,7 @@ Theme template:
     --button-reset-color:217,196,167;
     --button-submit-color:170,120,83;
     --button-return-color:176,63,5;
+    --button-change-n-players-color:217,196,167;
 
     --cell-vertical-color:217,196,167;
     --cell-info-color:170,120,83;
@@ -329,6 +338,7 @@ Theme template:
     --button-reset-color:9,9,12;
     --button-submit-color:165,110,182;
     --button-return-color:75,28,87;
+    --button-change-n-players-color:213,17,78;
 
     --cell-vertical-color:1,105,196;
     --cell-info-color:9,9,12;
@@ -358,6 +368,7 @@ Theme template:
     --button-reset-color:251,235,91;
     --button-submit-color:225,158,0;
     --button-return-color:133,119,58;
+    --button-change-n-players-color:151,158,185;
 
     --cell-vertical-color:151,158,185;
     --cell-info-color:251,235,91;
@@ -386,6 +397,7 @@ Theme template:
     --button-reset-color:233,167,187;
     --button-submit-color:255,210,207;
     --button-return-color:170,185,204;
+    --button-change-n-players-color:255,210,207;
 
     --cell-vertical-color:170,185,204;
     --cell-info-color:233,167,187;
