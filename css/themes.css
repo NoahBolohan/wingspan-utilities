@@ -25,374 +25,371 @@ Theme template:
 */
 
 :root {
-    --font-color:#292922;
+    --font-color:41,41,34;
     --heading-color:#fff;
 
-    --primary-color-1:#302AE6;
-    --primary-color-2:#302AE6;
-    --primary-color-3:#302AE6;
-    --secondary-color-1:#536390;
-    --secondary-color-2:#536390;
-    --secondary-color-3:#536390;
-    --tertiary-color-1:#424242;
-    --tertiary-color-2:#424242;
-    --tertiary-color-3:#424242;
-
-    --header-color-mix:color-mix(in srgb, var(--heading-color) 50%, transparent);
-    --button-hover-opacity:1;
+    --primary-color-1:48,42,230;
+    --primary-color-2:48,42,230;
+    --primary-color-3:48,42,230;
+    --secondary-color-1:83,99,144;
+    --secondary-color-2:83,99,144;
+    --secondary-color-3:83,99,144;
+    --tertiary-color-1:66,66,66;
+    --tertiary-color-2:66,66,66;
+    --tertiary-color-3:66,66,66;
 }
 
 [data-theme="spotted_pardalote"] {
-    --a:#feca00;
-    --a:#d36328;
-    --a:#cb0300;
-    --a:#b4b9b3;
-    --a:#424847;
-    --a:#000100;
+    --a:254,202,0;
+    --a:211,99,40;
+    --a:203,3,0;
+    --a:180,185,179;
+    --a:66,72,71;
+    --a:0,1,0;
 
-    --font-color-headers:#000100;
-    --font-color-buttons:#b4b9b3;
-    --heading-color:#feca00;
+    --font-color-headers:0,1,0;
+    --font-color-buttons:180,185,179;
+    --heading-color:254,202,0;
 
-    --button-start-color:#d36328;
-    --button-score-sheet-automa-color:#000100;
-    --button-score-sheet-color:#cb0300;
-    --button-settings-color:#424847;
-    --button-dropdown-menu-color:#000100;
-    --button-reset-color:#000100;
-    --button-submit-color:#d36328;
-    --button-return-color:#424847;
+    --button-start-color:211,99,40;
+    --button-score-sheet-automa-color:0,1,0;
+    --button-score-sheet-color:203,3,0;
+    --button-settings-color:66,72,71;
+    --button-dropdown-menu-color:0,1,0;
+    --button-reset-color:0,1,0;
+    --button-submit-color:211,99,40;
+    --button-return-color:66,72,71;
 
-    --cell-vertical-color:#feca00;
-    --cell-info-color:#424847;
-    --cell-input-color:#cb0300;
-    --cell-disabled-color:#000100;
-    --cell-total-color:#feca00;
+    --cell-vertical-color:254,202,0;
+    --cell-info-color:66,72,71;
+    --cell-input-color:203,3,0;
+    --cell-disabled-color:0,1,0;
+    --cell-total-color:254,202,0;
 }
 
 [data-theme="blue_winged_kookaburra"] {
-    --a:#b5effb;
-    --a:#0b7595;
-    --a:#02407c;
-    --a:#06213a;
-    --a:#c45829;
-    --a:#9C4620;
-    --a:#622C14;
-    --a:#d4d8e3;
-    --a:#b8bcd8;
-    --a:#ad8d9f;
-    --a:#725f77;
+    --a:181,239,251;
+    --a:11,117,149;
+    --a:2,64,124;
+    --a:6,33,58;
+    --a:196,88,41;
+    --a:156,70,32;
+    --a:98,44,20;
+    --a:212,216,227;
+    --a:184,188,216;
+    --a:173,141,159;
+    --a:114,95,119;
     
-    --font-color-headers:#06213a;
-    --font-color-buttons:#06213a;
-    --heading-color:#b5effb;
+    --font-color-headers:6,33,58;
+    --font-color-buttons:6,33,58;
+    --heading-color:181,239,251;
 
-    --button-start-color:#0b7595;
-    --button-score-sheet-automa-color:#ad8d9f;
-    --button-score-sheet-color:#b8bcd8;
-    --button-settings-color:#9C4620;
-    --button-dropdown-menu-color:#b8bcd8;
-    --button-reset-color:#b8bcd8;
-    --button-submit-color:#ad8d9f;
-    --button-return-color:#725f77;
+    --button-start-color:11,117,149;
+    --button-score-sheet-automa-color:173,141,159;
+    --button-score-sheet-color:184,188,216;
+    --button-settings-color:156,70,32;
+    --button-dropdown-menu-color:184,188,216;
+    --button-reset-color:184,188,216;
+    --button-submit-color:173,141,159;
+    --button-return-color:114,95,119;
 
-    --cell-vertical-color:#b5effb;
-    --cell-info-color:#0b7595;
-    --cell-input-color:#c45829;
-    --cell-disabled-color:#02407c;
-    --cell-total-color:#b5effb;
+    --cell-vertical-color:181,239,251;
+    --cell-info-color:11,117,149;
+    --cell-input-color:196,88,41;
+    --cell-disabled-color:2,64,124;
+    --cell-total-color:181,239,251;
 }
 
 [data-theme="plains_wanderer"] {
-    --a:#edd8c5;
-    --a:#d09a5e;
-    --a:#e7aa01;
-    --a:#ac570f;
-    --a:#73481b;
-    --a:#442c0e;
-    --a:#0d0403;
+    --a:237,216,197;
+    --a:208,154,94;
+    --a:231,170,1;
+    --a:172,87,15;
+    --a:115,72,27;
+    --a:68,44,14;
+    --a:13,4,3;
 
-    --font-color-headers:#0d0403;
-    --font-color-buttons:#442c0e;
-    --heading-color:#ac570f;
+    --font-color-headers:13,4,3;
+    --font-color-buttons:68,44,14;
+    --heading-color:172,87,15;
 
-    --button-start-color:#d09a5e;
-    --button-score-sheet-automa-color:#e7aa01;
-    --button-score-sheet-color:#ac570f;
-    --button-settings-color:#edd8c5;
-    --button-dropdown-menu-color:#d09a5e;
-    --button-reset-color:#ac570f;
-    --button-submit-color:#e7aa01;
-    --button-return-color:#edd8c5;
+    --button-start-color:208,154,94;
+    --button-score-sheet-automa-color:231,170,1;
+    --button-score-sheet-color:172,87,15;
+    --button-settings-color:237,216,197;
+    --button-dropdown-menu-color:208,154,94;
+    --button-reset-color:172,87,15;
+    --button-submit-color:231,170,1;
+    --button-return-color:237,216,197;
 
-    --cell-vertical-color:#ac570f;
-    --cell-info-color:#e7aa01;
-    --cell-input-color:#d09a5e;
-    --cell-disabled-color:#442c0e;
-    --cell-total-color:#ac570f;
+    --cell-vertical-color:172,87,15;
+    --cell-info-color:231,170,1;
+    --cell-input-color:208,154,94;
+    --cell-disabled-color:68,44,14;
+    --cell-total-color:172,87,15;
 }
 
 [data-theme="bee_eater"] {
-    --a:#00346E;
-    --a:#007CBF;
-    --a:#06ABDF;
-    --a:#EDD03E;
-    --a:#F5A200;
-    --a:#6D8600;
-    --a:#424D0C;
+    --a:0,52,110;
+    --a:0,124,191;
+    --a:6,171,223;
+    --a:237,208,62;
+    --a:245,162,0;
+    --a:109,134,0;
+    --a:66,77,12;
 
-    --font-color-headers:#00346E;
-    --font-color-buttons:#00346E;
-    --heading-color:#06ABDF;
+    --font-color-headers:0,52,110;
+    --font-color-buttons:0,52,110;
+    --heading-color:6,171,223;
 
-    --button-start-color:#007CBF;
-    --button-score-sheet-automa-color:#EDD03E;
-    --button-score-sheet-color:#F5A200;
-    --button-settings-color:#6D8600;
-    --button-dropdown-menu-color:#F5A200;
-    --button-reset-color:#F5A200;
-    --button-submit-color:#EDD03E;
-    --button-return-color:#6D8600;
+    --button-start-color:0,124,191;
+    --button-score-sheet-automa-color:237,208,62;
+    --button-score-sheet-color:245,162,0;
+    --button-settings-color:109,134,0;
+    --button-dropdown-menu-color:245,162,0;
+    --button-reset-color:245,162,0;
+    --button-submit-color:237,208,62;
+    --button-return-color:109,134,0;
 
-    --cell-vertical-color:#06ABDF;
-    --cell-info-color:#EDD03E;
-    --cell-input-color:#F5A200;
-    --cell-disabled-color:#424D0C;
-    --cell-total-color:#06ABDF;
+    --cell-vertical-color:6,171,223;
+    --cell-info-color:237,208,62;
+    --cell-input-color:245,162,0;
+    --cell-disabled-color:66,77,12;
+    --cell-total-color:6,171,223;
 }
 
 [data-theme="rose_crowned_fruit_dove"] {
-    --a:#BD338F;
-    --a:#EB8252;
-    --a:#F5DC83;
-    --a:#CDD4DC;
-    --a:#8098A2;
-    --a:#8FA33F;
-    --a:#5F7929;
-    --a:#014820;
+    --a:189,51,143;
+    --a:235,130,82;
+    --a:245,220,131;
+    --a:205,212,220;
+    --a:128,152,162;
+    --a:143,163,63;
+    --a:95,121,41;
+    --a:1,72,32;
     
-    --font-color-headers:#014820;
-    --font-color-buttons:#014820;
-    --heading-color:#CDD4DC;
+    --font-color-headers:1,72,32;
+    --font-color-buttons:1,72,32;
+    --heading-color:205,212,220;
 
-    --button-start-color:#8FA33F;
-    --button-score-sheet-automa-color:#BD338F;
-    --button-score-sheet-color:#EB8252;
-    --button-settings-color:#8098A2;
-    --button-dropdown-menu-color:#CDD4DC;
-    --button-reset-color:#EB8252;
-    --button-submit-color:#F5DC83;
-    --button-return-color:#8098A2;
+    --button-start-color:143,163,63;
+    --button-score-sheet-automa-color:189,51,143;
+    --button-score-sheet-color:235,130,82;
+    --button-settings-color:128,152,162;
+    --button-dropdown-menu-color:205,212,220;
+    --button-reset-color:235,130,82;
+    --button-submit-color:245,220,131;
+    --button-return-color:128,152,162;
 
-    --cell-vertical-color:#8FA33F;
-    --cell-info-color:#EB8252;
-    --cell-input-color:#BD338F;
-    --cell-disabled-color:#5F7929;
-    --cell-total-color:#8FA33F;
+    --cell-vertical-color:143,163,63;
+    --cell-info-color:235,130,82;
+    --cell-input-color:189,51,143;
+    --cell-disabled-color:95,121,41;
+    --cell-total-color:143,163,63;
 }
 
 [data-theme="eastern_rosella"] {
-    --a:#cd3122;
-    --a:#f4c623;
-    --a:#bee183;
-    --a:#6c905e;
-    --a:#2f533c;
-    --a:#b8c9dc;
-    --a:#2f7ab9;
+    --a:205,49,34;
+    --a:244,198,35;
+    --a:190,225,131;
+    --a:108,144,94;
+    --a:47,83,60;
+    --a:184,201,220;
+    --a:47,122,185;
     
-    --font-color-headers:#000100;
-    --font-color-buttons:#000100;
-    --heading-color:#b8c9dc;
+    --font-color-headers:0,1,0;
+    --font-color-buttons:0,1,0;
+    --heading-color:184,201,220;
 
-    --button-start-color:#cd3122;
-    --button-score-sheet-automa-color:#f4c623;
-    --button-score-sheet-color:#bee183;
+    --button-start-color:205,49,34;
+    --button-score-sheet-automa-color:244,198,35;
+    --button-score-sheet-color:190,225,131;
     /* --button-settings-color:47,122,185; */
-    --button-settings-color:#2f7ab9;
-    --button-dropdown-menu-color:#bee183;
-    --button-reset-color:#cd3122;
-    --button-submit-color:#f4c623;
-    --button-return-color:#2f7ab9;
+    --button-settings-color:47,122,185;
+    --button-dropdown-menu-color:190,225,131;
+    --button-reset-color:205,49,34;
+    --button-submit-color:244,198,35;
+    --button-return-color:47,122,185;
 
-    --cell-vertical-color:#6c905e;
-    --cell-info-color:#f4c623;
-    --cell-input-color:#b8c9dc;
-    --cell-disabled-color:#cd3122;
-    --cell-total-color:#6c905e;
+    --cell-vertical-color:108,144,94;
+    --cell-info-color:244,198,35;
+    --cell-input-color:184,201,220;
+    --cell-disabled-color:205,49,34;
+    --cell-total-color:108,144,94;
 }
 
 [data-theme="olive_backed_oriole"] {
-    --a:#8a3223;
-    --a:#bb5645;
-    --a:#d97878;
-    --a:#e2aba0;
-    --a:#d0cfe9;
-    --a:#a29eb8;
-    --a:#6c6b75;
-    --a:#b8a53f;
-    --a:#93862a;
-    --a:#4d4019;
+    --a:138,50,35;
+    --a:187,86,69;
+    --a:217,120,120;
+    --a:226,171,160;
+    --a:208,207,233;
+    --a:162,158,184;
+    --a:108,107,117;
+    --a:184,165,63;
+    --a:147,134,42;
+    --a:77,64,25;
 
-    --font-color-headers:#000100;
-    --font-color-buttons:#000100;
-    --heading-color:#d0cfe9;
+    --font-color-headers:0,1,0;
+    --font-color-buttons:0,1,0;
+    --heading-color:208,207,233;
 
-    --button-start-color:#bb5645;
-    --button-score-sheet-automa-color:#6c6b75;
-    --button-score-sheet-color:#b8a53f;
-    --button-settings-color:#93862a;
-    --button-dropdown-menu-color:#d0cfe9;
-    --button-reset-color:#a29eb8;
-    --button-submit-color:#e2aba0;
-    --button-return-color:#93862a;
+    --button-start-color:187,86,69;
+    --button-score-sheet-automa-color:108,107,117;
+    --button-score-sheet-color:184,165,63;
+    --button-settings-color:147,134,42;
+    --button-dropdown-menu-color:208,207,233;
+    --button-reset-color:162,158,184;
+    --button-submit-color:226,171,160;
+    --button-return-color:147,134,42;
 
-    --cell-vertical-color:#b8a53f;
-    --cell-info-color:#6c6b75;
-    --cell-input-color:#93862a;
-    --cell-disabled-color:#bb5645;
-    --cell-total-color:#b8a53f;
+    --cell-vertical-color:184,165,63;
+    --cell-info-color:108,107,117;
+    --cell-input-color:147,134,42;
+    --cell-disabled-color:187,86,69;
+    --cell-total-color:184,165,63;
 }
 
 [data-theme="princess_parrot"] {
-    --a:#7090c9;
-    --a:#8cb3de;
-    --a:#afbe9f;
-    --a:#616020;
-    --a:#6eb245;
-    --a:#214917;
-    --a:#cf2236;
-    --a:#d683ad;
+    --a:112,144,201;
+    --a:140,179,222;
+    --a:175,190,159;
+    --a:97,96,32;
+    --a:110,178,69;
+    --a:33,73,23;
+    --a:207,34,54;
+    --a:214,131,173;
 
-    --font-color-headers:#214917;
-    --font-color-buttons:#214917;
-    --heading-color:#8cb3de;
+    --font-color-headers:33,73,23;
+    --font-color-buttons:33,73,23;
+    --heading-color:140,179,222;
 
-    --button-start-color:#7090c9;
-    --button-score-sheet-automa-color:#d683ad;
-    --button-score-sheet-color:#6eb245;
-    --button-settings-color:#afbe9f;
-    --button-dropdown-menu-color:#8cb3de;
-    --button-reset-color:#7090c9;
-    --button-submit-color:#d683ad;
-    --button-return-color:#afbe9f;
+    --button-start-color:112,144,201;
+    --button-score-sheet-automa-color:214,131,173;
+    --button-score-sheet-color:110,178,69;
+    --button-settings-color:175,190,159;
+    --button-dropdown-menu-color:140,179,222;
+    --button-reset-color:112,144,201;
+    --button-submit-color:214,131,173;
+    --button-return-color:175,190,159;
 
-    --cell-vertical-color:#8cb3de;
-    --cell-info-color:#6eb245;
-    --cell-input-color:#d683ad;
-    --cell-disabled-color:#cf2236;
-    --cell-total-color:#8cb3de;
+    --cell-vertical-color:140,179,222;
+    --cell-info-color:110,178,69;
+    --cell-input-color:214,131,173;
+    --cell-disabled-color:207,34,54;
+    --cell-total-color:140,179,222;
 }
 
 [data-theme="superb_fairy_wren"] {
-    --a:#4F3321;
-    --a:#AA7853;
-    --a:#D9C4A7;
-    --a:#B03F05;
-    --a:#020503;
+    --a:79,51,33;
+    --a:170,120,83;
+    --a:217,196,167;
+    --a:176,63,5;
+    --a:2,5,3;
     
-    --font-color-headers:#020503;
-    --font-color-buttons:#020503;
-    --heading-color:#D9C4A7;
+    --font-color-headers:2,5,3;
+    --font-color-buttons:2,5,3;
+    --heading-color:217,196,167;
 
-    --button-start-color:#4F3321;
-    --button-score-sheet-automa-color:#AA7853;
-    --button-score-sheet-color:#D9C4A7;
-    --button-settings-color:#B03F05;
-    --button-dropdown-menu-color:#AA7853;
-    --button-reset-color:#D9C4A7;
-    --button-submit-color:#AA7853;
-    --button-return-color:#B03F05;
+    --button-start-color:79,51,33;
+    --button-score-sheet-automa-color:170,120,83;
+    --button-score-sheet-color:217,196,167;
+    --button-settings-color:176,63,5;
+    --button-dropdown-menu-color:170,120,83;
+    --button-reset-color:217,196,167;
+    --button-submit-color:170,120,83;
+    --button-return-color:176,63,5;
 
-    --cell-vertical-color:#D9C4A7;
-    --cell-info-color:#AA7853;
-    --cell-input-color:#B03F05;
-    --cell-disabled-color:#020503;
-    --cell-total-color:#D9C4A7;
+    --cell-vertical-color:217,196,167;
+    --cell-info-color:170,120,83;
+    --cell-input-color:176,63,5;
+    --cell-disabled-color:2,5,3;
+    --cell-total-color:217,196,167;
 }
 
 [data-theme="southern_cassowary"] {
-    --a:#BDA14D;
-    --a:#3EBCB6;
-    --a:#0169C4;
-    --a:#153460;
-    --a:#D5114E;
-    --a:#A56EB6;
-    --a:#4B1C57;
-    --a:#09090C;
+    --a:189,161,77;
+    --a:62,188,182;
+    --a:1,105,196;
+    --a:21,52,96;
+    --a:213,17,78;
+    --a:165,110,182;
+    --a:75,28,87;
+    --a:9,9,12;
     
-    --font-color-headers:#09090C;
-    --font-color-buttons:#BDA14D;
-    --heading-color:#09090C;
+    --font-color-headers:9,9,12;
+    --font-color-buttons:189,161,77;
+    --heading-color:9,9,12;
 
-    --button-start-color:#153460;
-    --button-score-sheet-automa-color:#0169C4;
-    --button-score-sheet-color:#D5114E;
-    --button-settings-color:#4B1C57;
-    --button-dropdown-menu-color:#09090C;
-    --button-reset-color:#09090C;
-    --button-submit-color:#A56EB6;
-    --button-return-color:#4B1C57;
+    --button-start-color:21,52,96;
+    --button-score-sheet-automa-color:1,105,196;
+    --button-score-sheet-color:213,17,78;
+    --button-settings-color:75,28,87;
+    --button-dropdown-menu-color:9,9,12;
+    --button-reset-color:9,9,12;
+    --button-submit-color:165,110,182;
+    --button-return-color:75,28,87;
 
-    --cell-vertical-color:#0169C4;
-    --cell-info-color:#09090C;
-    --cell-input-color:#3EBCB6;
-    --cell-disabled-color:#D5114E;
-    --cell-total-color:#0169C4;
+    --cell-vertical-color:1,105,196;
+    --cell-info-color:9,9,12;
+    --cell-input-color:62,188,182;
+    --cell-disabled-color:213,17,78;
+    --cell-total-color:1,105,196;
 }
 
 [data-theme="eastern_yellow_robin"] {
-    --a:#E19E00;
-    --a:#FBEB5B;
-    --a:#85773A;
-    --a:#979EB9;
-    --a:#727B98;
-    --a:#454B56;
-    --a:#201B1E;
+    --a:225,158,0;
+    --a:251,235,91;
+    --a:133,119,58;
+    --a:151,158,185;
+    --a:114,123,152;
+    --a:69,75,86;
+    --a:32,27,30;
 
-    --font-color-headers:#201B1E;
-    --font-color-buttons:#201B1E;
-    --heading-color:#979EB9;
+    --font-color-headers:32,27,30;
+    --font-color-buttons:32,27,30;
+    --heading-color:151,158,185;
 
-    --button-start-color:#979EB9;
-    --button-score-sheet-automa-color:#FBEB5B;
-    --button-score-sheet-color:#E19E00;
-    --button-settings-color:#85773A;
-    --button-dropdown-menu-color:#979EB9;
-    --button-reset-color:#FBEB5B;
-    --button-submit-color:#E19E00;
-    --button-return-color:#85773A;
+    --button-start-color:151,158,185;
+    --button-score-sheet-automa-color:251,235,91;
+    --button-score-sheet-color:225,158,0;
+    --button-settings-color:133,119,58;
+    --button-dropdown-menu-color:151,158,185;
+    --button-reset-color:251,235,91;
+    --button-submit-color:225,158,0;
+    --button-return-color:133,119,58;
 
-    --cell-vertical-color:#979EB9;
-    --cell-info-color:#FBEB5B;
-    --cell-input-color:#E19E00;
-    --cell-disabled-color:#454B56;
-    --cell-total-color:#979EB9;
+    --cell-vertical-color:151,158,185;
+    --cell-info-color:251,235,91;
+    --cell-input-color:225,158,0;
+    --cell-disabled-color:69,75,86;
+    --cell-total-color:151,158,185;
 }
 
 [data-theme="galah"] {
-    --a:#FFD2CF;
-    --a:#E9A7BB;
-    --a:#D05478;
-    --a:#AAB9CC;
-    --a:#8390A2;
-    --a:#4C5766;
+    --a:255,210,207;
+    --a:233,167,187;
+    --a:208,84,120;
+    --a:170,185,204;
+    --a:131,144,162;
+    --a:76,87,102;
     
-    --font-color-headers:#4C5766;
-    --font-color-buttons:#4C5766;
-    --heading-color:#8390A2;
+    --font-color-headers:76,87,102;
+    --font-color-buttons:76,87,102;
+    --heading-color:131,144,162;
 
-    --button-start-color:#FFD2CF;
-    --button-score-sheet-automa-color:#E9A7BB;
-    --button-score-sheet-color:#D05478;
-    --button-settings-color:#AAB9CC;
-    --button-dropdown-menu-color:#AAB9CC;
-    --button-reset-color:#E9A7BB;
-    --button-submit-color:#FFD2CF;
-    --button-return-color:#AAB9CC;
+    --button-start-color:255,210,207;
+    --button-score-sheet-automa-color:233,167,187;
+    --button-score-sheet-color:208,84,120;
+    --button-settings-color:170,185,204;
+    --button-dropdown-menu-color:170,185,204;
+    --button-reset-color:233,167,187;
+    --button-submit-color:255,210,207;
+    --button-return-color:170,185,204;
 
-    --cell-vertical-color:#AAB9CC;
-    --cell-info-color:#E9A7BB;
-    --cell-input-color:#D05478;
-    --cell-disabled-color:#4C5766;
-    --cell-total-color:#AAB9CC;
+    --cell-vertical-color:170,185,204;
+    --cell-info-color:233,167,187;
+    --cell-input-color:208,84,120;
+    --cell-disabled-color:76,87,102;
+    --cell-total-color:170,185,204;
 }

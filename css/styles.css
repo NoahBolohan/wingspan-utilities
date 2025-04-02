@@ -349,7 +349,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin:0;
     padding:0;
     cursor: pointer;
-    background-color: var(--heading-color);
+    background-color: rgba(var(--heading-color));
 }
 
 
@@ -375,7 +375,7 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: var(--heading-color);
+background-color: rgba(var(--heading-color));
 -webkit-transition: .4s;
 transition: .4s;
 }
@@ -387,17 +387,17 @@ height: 30px;
 width: 30px;
 left: 4px;
 bottom: 4px;
-background-color: var(--button-submit-color);
+background-color: rgba(var(--button-submit-color));
 -webkit-transition: .4s;
 transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: var(--cell-disabled-color);
+    background-color: rgba(var(--cell-disabled-color));
 }
 
 input:focus + .slider {
-box-shadow: 0 0 1px var(--cell-disabled-color);
+box-shadow: 0 0 1px rgba(var(--cell-disabled-color));
 }
 
 input:checked + .slider:before {
@@ -413,146 +413,156 @@ border-radius: 34px;
 
 .slider.round:before {
 border-radius: 50%;
-outline: 2px solid var(--font-color-buttons);
+outline: 2px solid rgba(var(--font-color-buttons));
 }
 
 .header-background {
-    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background:linear-gradient(
+        0deg,
+        rgba(var(--heading-color),0.5),
+        rgba(var(--heading-color),0.5)
+    ),
+    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .header-background-for-index-menu { 
-    background:linear-gradient(0deg, var(--header-color-mix), var(--header-color-mix)), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
+    background:linear-gradient(
+        0deg,
+        rgba(var(--heading-color),0.5),
+        rgba(var(--heading-color),0.5)
+    ),
+    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-white-long.webp");
     background-size: 200% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 h1 {
-    color: var(--font-color-headers);
+    color: rgba(var(--font-color-headers));
 }
 
 h2 {
-    color: var(--font-color-headers);
+    color: rgba(var(--font-color-headers));
 }
 
 .btn {
-    color: var(--font-color-buttons);
-    outline: 1px solid var(--font-color-headers);
+    color: rgba(var(--font-color-buttons));
+    outline: 1px solid rgba(var(--font-color-headers));
 }
 
 .btn:hover {
-    outline: 1px solid var(--font-color-headers);
+    outline: 1px solid rgba(var(--font-color-headers));
 }
 
 
 .btn:focus {
-    outline: 1px solid var(--font-color-headers);
+    outline: 1px solid rgba(var(--font-color-headers));
 }
 
 .modal-content {
-    background-color: var(--button-settings-color);
+    background-color: rgba(var(--button-settings-color));
 }
 
 .modal-title {
-    color: var(--font-color-buttons);
+    color: rgba(var(--font-color-buttons));
 }
 
 .modal-header {
-    border-bottom-color: var(--font-color-headers)
+    border-bottom-color: rgba(var(--font-color-headers));
 }
 
 .settings-label {
-    color: var(--font-color-buttons);
+    color: rgba(var(--font-color-buttons));
 }
 
 /*Buttons*/
 .btn-start {
-    background-color:var(--button-start-color);
+    background-color:rgba(var(--button-start-color));
 }
 
 .btn-start:hover {
-    background-color:var(--button-start-color);
+    background-color:rgba(var(--button-start-color),0.5);
 }
 
 .btn-score-sheet-automa {
-    background-color:var(--button-score-sheet-automa-color);
+    background-color:rgba(var(--button-score-sheet-automa-color));
 }
 
 .btn-score-sheet-automa:hover {
-    background-color:var(--button-score-sheet-automa-color);
+    background-color:rgba(var(--button-score-sheet-automa-color),0.5);
 }
 
 .btn-score-sheet {
-    background-color:var(--button-score-sheet-color);
+    background-color:rgba(var(--button-score-sheet-color));
 }
 
 .btn-score-sheet:hover {
-    background-color:var(--button-score-sheet-color);
+    background-color:rgba(var(--button-score-sheet-color),0.5);
 }
 
 .btn-settings {
-    background-color:var(--button-settings-color);
+    background-color:rgba(var(--button-settings-color));
 }
 
 .btn-settings:hover {
-    background-color:var(--button-settings-color);
+    background-color:rgba(var(--button-settings-color),0.5);
 }
 
 .btn-dropdown-menu {
     font-size: 20pt;
-    background-color:var(--button-dropdown-menu-color);
+    background-color:rgba(var(--button-dropdown-menu-color));
     
 }
 
 .btn-dropdown-menu:hover {
-    background-color:var(--button-dropdown-menu-color);
+    background-color:rgba(var(--button-dropdown-menu-color),0.5);
 }
 
 .btn-reset {
-    background-color:var(--button-reset-color);
+    background-color:rgba(var(--button-reset-color));
 }
 
 .btn-reset:hover {
-    background-color:var(--button-reset-color);
+    background-color:rgba(var(--button-reset-color),0.5);
 }
 
 .btn-submit {
-    background-color:var(--button-submit-color);
+    background-color:rgba(var(--button-submit-color));
 }
 
 .btn-submit:hover {
-    background-color:var(--button-submit-color);
+    background-color:rgba(var(--button-submit-color),0.5);
 }
 
 .btn-return {
-    background-color:var(--button-return-color);
+    background-color:rgba(var(--button-return-color));
 }
 
 .btn-return:hover {
-    background-color:var(--button-return-color);
+    background-color:rgba(var(--button-return-color),0.5);
 }
 
 /*Cells*/
 .cell-vertical {
-    background-color:var(--cell-vertical-color)!important;
-    color:var(--font-color-header)!important;
+    background-color:rgba(var(--cell-vertical-color))!important;
+    color:rgba(var(--font-color-header))!important;
 }
 
 .cell-info {
-    background-color:var(--cell-info-color)!important;
-    color:var(--font-color-buttons)!important;
+    background-color:rgba(var(--cell-info-color))!important;
+    color:rgba(var(--font-color-buttons))!important;
 }
 
 .cell-input {
-    background-color:var(--cell-input-color)!important;
+    background-color:rgba(var(--cell-input-color))!important;
 }
 .cell-disabled {
-    background-color:var(--cell-disabled-color)!important;
+    background-color:rgba(var(--cell-disabled-color))!important;
 }
 .cell-total {
-    background-color:var(--cell-total-color)!important;
-    color:var(--font-color-header)!important;
+    background-color:rgba(var(--cell-total-color))!important;
+    color:rgba(var(--font-color-header))!important;
 }
