@@ -1,6 +1,51 @@
 // https://github.com/richtr/NoSleep.js
 var noSleep = new NoSleep();
-var wakeLockEnabled = false;
+
+//Check local storage
+const current_theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+
+if (current_theme) {
+    document.documentElement.setAttribute(
+        "data-theme",
+        current_theme
+    );
+}
+
+const current_wake_lock = localStorage.getItem("wake_lock") ? localStorage.getItem("wake_lock") : null;
+
+if (current_wake_lock) {
+    document.documentElement.setAttribute(
+        "data-wake_lock",
+        $.parseJSON(current_wake_lock.toLowerCase())
+    );
+}
+
+$(document).ready(
+    function() {
+        if (
+            document.documentElement.getAttribute(
+                "data-wake_lock"
+            ) == "true"
+        ) {
+
+            $('#button_toggle_screen_sleep').prop(
+                "checked",
+                true
+            );
+
+            noSleep.enable();
+        }
+        else {
+
+            $('#button_toggle_screen_sleep').prop(
+                "checked",
+                false
+            );
+
+            noSleep.disable();
+        }
+    }
+)
 
 $(document).ready(
 
@@ -9,12 +54,32 @@ $(document).ready(
         $("#button_toggle_screen_sleep").on(
             "click",
             function() {
-                if (!wakeLockEnabled) {
+                if (
+                    $("#button_toggle_screen_sleep").is(":checked")
+                ) {
+
+                    document.documentElement.setAttribute(
+                        "data-wake_lock",
+                        true
+                    );
+                    localStorage.setItem(
+                        "wake_lock",
+                        true
+                    );
+
                     noSleep.enable(); // keep the screen on!
-                    wakeLockEnabled = true;
                 } else {
+
+                    document.documentElement.setAttribute(
+                        "data-wake_lock",
+                        false
+                    );
+                    localStorage.setItem(
+                        "wake_lock",
+                        false
+                    );
+
                     noSleep.disable(); // let the screen turn off.
-                    wakeLockEnabled = false;
                 }
             }
         )
@@ -29,6 +94,7 @@ $(document).ready(
             function() {
                 $("#modal_settings").modal("show");
 
+                // Check stored `theme`
                 const current_theme = document.documentElement.getAttribute(
                     "data-theme"
                 );
@@ -44,7 +110,31 @@ $(document).ready(
                     );
                 }
 
-                
+                //Check store `wake_lock`
+                const current_wake_lock = document.documentElement.getAttribute(
+                    "data-wake_lock"
+                );
+
+                if (current_wake_lock) {
+                    if (current_wake_lock == "true") {
+                        $('#button_toggle_screen_sleep').prop(
+                            "checked",
+                            true
+                        );
+                    }
+                    else {
+                        $('#button_toggle_screen_sleep').prop(
+                            "checked",
+                            false
+                        );
+                    }
+                }
+                else {
+                    $('#button_toggle_screen_sleep').prop(
+                        "checked",
+                        false
+                    );
+                }
             }
         );
     }
@@ -84,14 +174,5 @@ function switch_theme(theme) {
     localStorage.setItem(
         "theme",
         theme
-    );
-}
-
-const current_theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
-
-if (current_theme) {
-    document.documentElement.setAttribute(
-        "data-theme",
-        current_theme
     );
 }
