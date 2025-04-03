@@ -177,7 +177,7 @@ $(document).ready(
                 }
                 else {
                     $("#background_options").val(
-                        "default"
+                        "random"
                     );
                 }
             }
