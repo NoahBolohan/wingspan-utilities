@@ -2,9 +2,15 @@
 
 Some utilities to support playing the Wingspan board game. Includes:
 
-- **Automa tracker:** Simulate all of the Automa's actions and functionality in a game versus the Automa. Using this tool requires only the physical components the player uses (i.e., you no longer use the Automa cards, the End-of-round Goal Scoring cards, or the Current Round Tracker, or action cubes).
-- **Score sheet (Automa):** Digital score sheet for games versus the Automa. Scores can be submitted to the Google Sheets document.
-- **Score sheet:** Digital score sheet for games of 2 to 7 players. Scores can be submitted to the Google Sheets document.
+- **Automa tracker:** Simulate all of the Automa's actions and functionality in a game versus the Automa. Using this tool requires only the physical components the player uses (i.e., you no longer use the Automa cards, the End-of-round Goal Scoring cards, the Current Round Tracker, or action cubes).
+- **Score sheet (Automa):** Digital score sheet for games versus the Automa. Scores can be submitted to a Google Sheets document*.
+- **Score sheet:** Digital score sheet for games of 2 to 7 players. Scores can be submitted to a Google Sheets document*.
+
+Features to come:
+
+- **Automarazzi score sheet:** Digital score sheet for games versus the Automarazzi. Scores can be submitted to a Google Sheets document*.
+
+> \* Submitting to a Google Sheets document requires setting one up for yourself. You can read how to do so in TBD.
 
 The web app can be found [here](https://wingspan-utilities-vd2qp.ondigitalocean.app/).
 
