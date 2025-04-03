@@ -63,26 +63,6 @@ function custom_hide_div(div_id) {
     );
 }
 
-// Assign a random background on load
-$(document).ready(
-
-    function () {
-
-        $.getJSON(
-            "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
-            function(data) {
-
-                $("body").css(
-                    "background-image",
-                    `url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
-                        data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
-                    })`
-                );
-            }
-        )
-    }
-)
-
 // Toggle n_players modal
 $(document).ready(
     function () {
@@ -223,17 +203,6 @@ function generate_row_headers(n_players, width_p, width_player_col) {
             class : "cell-info"
         }
     )
-
-    $("<button>").attr(
-        {
-            type : "button",
-            id : "button_change_n_players",
-            class : "btn btn-change-n-players",
-            style : "font-size: 15pt;"
-        }
-    ).text(
-        "Change number of players"
-    ).appendTo(cell);
 
     cell.appendTo("#row_player_names");
 
