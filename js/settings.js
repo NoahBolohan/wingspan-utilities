@@ -187,6 +187,7 @@ function switch_theme(theme) {
     );
 
     rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
+
     let color = new Color(
         rgb_triple[0], rgb_triple[1], rgb_triple[2]
     );
@@ -198,3 +199,23 @@ function switch_theme(theme) {
     $(".header-background-for-index-menu").attr("style", filterCSS);
 
 }
+
+// Assign a random background on load
+$(document).ready(
+
+    function () {
+
+        $.getJSON(
+            "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
+            function(data) {
+
+                $("body").css(
+                    "background-image",
+                    `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
+                        data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
+                    })`
+                );
+            }
+        )
+    }
+)

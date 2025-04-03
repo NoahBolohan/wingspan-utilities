@@ -40,7 +40,7 @@ table td {
 
 .score_sheet_table td, tr, th {
     /* opacity: 0.95; */
-    border : 1px solid black;
+    border : 1px solid rgba(var(--font-color-buttons));
 }
 
 .score_sheet_cell_no_padding {
@@ -426,6 +426,10 @@ outline: 2px solid rgba(var(--font-color-buttons));
 
 .vh10 {
     height:10vh;
+}
+
+.vh5 {
+    height:5vh;
 }
 
 .header-background-for-index-menu {
