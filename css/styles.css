@@ -97,14 +97,6 @@ table {
     aspect-ratio : 1 / 1;
 }
 
-h1 {
-    font-size: 25pt;
-}
-
-h2 {
-    font-size: 20pt;
-}
-
 .centered-text {
     display: flex;
     justify-content: center;
@@ -417,24 +409,53 @@ outline: 2px solid rgba(var(--font-color-buttons));
 }
 
 .header-background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
     background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.header-background-for-index-menu { 
+.vh12 {
+    height:12vh;
+}
+
+.vh10 {
+    height:10vh;
+}
+
+.header-background-for-index-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    height:30vh;
     background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
-    background-size: 200% 100%;
+    background-size: 150% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-h1 {
+.header-content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    vertical-align: middle;
+}
+
+.h1 {
+    font-size: 25pt;
     color: rgba(var(--font-color-headers));
 }
 
-h2 {
+.h2 {
+    font-size: 20pt;
     color: rgba(var(--font-color-headers));
 }
 
@@ -644,10 +665,3 @@ input::placeholder {
     background-color:rgba(var(--cell-total-color))!important;
     color:rgba(var(--font-color-headers))!important;
 }
-
-.pixel {
-    display: inline-block;
-    background-color: #000;
-    width: 50px;
-    height: 50px;
-  }

@@ -209,15 +209,6 @@ class Solver {
 
     css(filters) {
         function fmt(idx, multiplier = 1) { return Math.round(filters[idx] * multiplier); }
-
-        // return [
-        //     ["filter",`invert(${fmt(0)}%);`],
-        //     ["filter",`sepia(${fmt(1)}%);`],
-        //     ["filter",`saturate(${fmt(2)}%);`],
-        //     ["filter",`hue-rotate(${fmt(3, 3.6)}deg);`],
-        //     ["filter",`brightness(${fmt(4)}%);`],
-        //     ["filter",`contrast(${fmt(5)}%);`],
-        // ]
-        return {"filter": `invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%)!important;`};
+        return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`
     }
 }
