@@ -343,6 +343,11 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     background-color: rgba(var(--heading-color));
 }
 
+.astext:hover {
+    background-color: rgba(var(--button-submit-color));
+
+}
+
 
 .switch {
     position: relative;
