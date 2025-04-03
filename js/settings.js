@@ -2,25 +2,6 @@
 var noSleep = new NoSleep();
 
 //Check local storage
-const current_theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
-
-if (current_theme) {
-    document.documentElement.setAttribute(
-        "data-theme",
-        current_theme
-    );
-}
-
-$(document).ready(
-    function() {
-        switch_theme(
-            document.documentElement.getAttribute(
-                "data-theme"
-            )
-        )
-    }
-)
-
 const current_wake_lock = localStorage.getItem("wake_lock") ? localStorage.getItem("wake_lock") : null;
 
 if (current_wake_lock) {
@@ -54,6 +35,44 @@ $(document).ready(
 
             noSleep.disable();
         }
+    }
+)
+
+const current_theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+
+if (current_theme) {
+    document.documentElement.setAttribute(
+        "data-theme",
+        current_theme
+    );
+}
+
+$(document).ready(
+    function() {
+        switch_theme(
+            document.documentElement.getAttribute(
+                "data-theme"
+            )
+        )
+    }
+)
+
+const current_background = localStorage.getItem("background") ? localStorage.getItem("background") : null;
+
+if (current_background) {
+    document.documentElement.setAttribute(
+        "data-background",
+        current_background
+    );
+}
+
+$(document).ready(
+    function() {
+        switch_background(
+            document.documentElement.getAttribute(
+                "data-background"
+            )
+        )
     }
 )
 
@@ -104,22 +123,6 @@ $(document).ready(
             function() {
                 $("#modal_settings").modal("show");
 
-                // Check stored `theme`
-                const current_theme = document.documentElement.getAttribute(
-                    "data-theme"
-                );
-
-                if (current_theme) {
-                    $("#theme_options").val(
-                        current_theme
-                    );
-                }
-                else {
-                    $("#theme_options").val(
-                        "default"
-                    );
-                }
-
                 //Check store `wake_lock`
                 const current_wake_lock = document.documentElement.getAttribute(
                     "data-wake_lock"
@@ -143,6 +146,38 @@ $(document).ready(
                     $('#button_toggle_screen_sleep').prop(
                         "checked",
                         false
+                    );
+                }
+
+                // Check stored `theme`
+                const current_theme = document.documentElement.getAttribute(
+                    "data-theme"
+                );
+
+                if (current_theme) {
+                    $("#theme_options").val(
+                        current_theme
+                    );
+                }
+                else {
+                    $("#theme_options").val(
+                        "default"
+                    );
+                }
+
+                // Check stored `background`
+                const current_background = document.documentElement.getAttribute(
+                    "data-background"
+                );
+
+                if (current_background) {
+                    $("#background_options").val(
+                        current_background
+                    );
+                }
+                else {
+                    $("#background_options").val(
+                        "default"
                     );
                 }
             }
@@ -200,11 +235,31 @@ function switch_theme(theme) {
 
 }
 
-// Assign a random background on load
 $(document).ready(
+    function() {
 
-    function () {
+        $("#background_options").change(
+            function() {
+                
+                switch_background(
+                    this.value
+                );
+            }
+        );
+    }
+)
 
+function switch_background(background) {
+    document.documentElement.setAttribute(
+        "data-background",
+        background
+    );
+    localStorage.setItem(
+        "background",
+        background
+    );
+
+    if (background == "random") {
         $.getJSON(
             "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
             function(data) {
@@ -218,4 +273,10 @@ $(document).ready(
             }
         )
     }
-)
+    else {
+        $("body").css(
+            "background-image",
+            `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg)`
+        );
+    }
+}
