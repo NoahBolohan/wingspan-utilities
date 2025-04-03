@@ -130,7 +130,8 @@ class Solver {
             let initial = [50, 20, 3750, 50, 100, 100];
             let result = this.spsa(A, a, c, initial, 1000);
             if(result.loss < best.loss) { best = result; }
-        } return best;
+        }
+        return best;
     }
 
     solveNarrow(wide) {
@@ -138,6 +139,7 @@ class Solver {
         const c = 2;
         const A1 = A + 1;
         const a = [0.25 * A1, 0.25 * A1, A1, 0.25 * A1, 0.2 * A1, 0.2 * A1];
+
         return this.spsa(A, a, c, wide.values, 500);
     }
 
@@ -168,7 +170,8 @@ class Solver {
 
             let loss = this.loss(values);
             if(loss < bestLoss) { best = values.slice(0); bestLoss = loss; }
-        } return { values: best, loss: bestLoss };
+        }
+        return { values: best, loss: bestLoss };
 
         function fix(value, idx) {
             let max = 100;
@@ -206,6 +209,15 @@ class Solver {
 
     css(filters) {
         function fmt(idx, multiplier = 1) { return Math.round(filters[idx] * multiplier); }
-        return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%);`;
+
+        // return [
+        //     ["filter",`invert(${fmt(0)}%);`],
+        //     ["filter",`sepia(${fmt(1)}%);`],
+        //     ["filter",`saturate(${fmt(2)}%);`],
+        //     ["filter",`hue-rotate(${fmt(3, 3.6)}deg);`],
+        //     ["filter",`brightness(${fmt(4)}%);`],
+        //     ["filter",`contrast(${fmt(5)}%);`],
+        // ]
+        return {"filter": `invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(2)}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(5)}%)!important;`};
     }
 }

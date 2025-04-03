@@ -417,12 +417,7 @@ outline: 2px solid rgba(var(--font-color-buttons));
 }
 
 .header-background {
-    background:linear-gradient(
-        0deg,
-        rgba(var(--heading-color),0.5),
-        rgba(var(--heading-color),0.5)
-    ),
-    url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
+    background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -649,3 +644,10 @@ input::placeholder {
     background-color:rgba(var(--cell-total-color))!important;
     color:rgba(var(--font-color-headers))!important;
 }
+
+.pixel {
+    display: inline-block;
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+  }

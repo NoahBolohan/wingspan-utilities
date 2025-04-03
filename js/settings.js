@@ -175,4 +175,31 @@ function switch_theme(theme) {
         "theme",
         theme
     );
+    rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
+    let color = new Color(
+        rgb_triple[0], rgb_triple[1], rgb_triple[2]
+    );
+    let solver = new Solver(color);
+    let result = solver.solve()
+    let filterCSS = result.filter;
+
+    $(".filterPixel").attr("style", "filter: " + filterCSS["filter"]);
+
+    $(".header-background").css("filter",filterCSS["filter"]);
+    $(".header-background-for-index-menu").css("filter",filterCSS["filter"]);
+    // $.each(
+    //     filterCSS,
+    //     function(k,v) {
+            
+    //         $(".header-background").css(
+    //             v[0],
+    //             v[1]
+    //         );
+    //         $(".header-background-for-index-menu").css(
+    //             v[0],
+    //             v[1]
+    //         );
+    //     }
+    // )
+    
 }
