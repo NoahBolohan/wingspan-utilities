@@ -280,7 +280,7 @@ function switch_background(background) {
                     "background-image",
                     `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
                         data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
-                    })`
+                    }),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
                 );
             }
         )
@@ -288,7 +288,7 @@ function switch_background(background) {
     else {
         $("body").css(
             "background-image",
-            `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg)`
+            `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
         );
     }
 }
