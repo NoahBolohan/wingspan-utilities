@@ -26,18 +26,63 @@ Theme template:
 */
 
 :root {
-    --font-color:#292922;
-    --heading-color:#fff;
+    --a:#eca9a5;
+    --a:#65bcb5;
+    --a:#fad243;
+    --a:#c17a35;
+    --a:#7176b6;
+    --a:#fefefe;
+    --a:#000100;
 
-    --primary-color-1:#302AE6;
-    --primary-color-2:#302AE6;
-    --primary-color-3:#302AE6;
-    --secondary-color-1:#536390;
-    --secondary-color-2:#536390;
-    --secondary-color-3:#536390;
-    --tertiary-color-1:#424242;
-    --tertiary-color-2:#424242;
-    --tertiary-color-3:#424242;
+    --font-color-headers:#000100;
+    --font-color-buttons:#000100;
+    --heading-color:#7176b6;
+
+    --button-start-color:#fad243;
+    --button-score-sheet-automa-color:#65bcb5;
+    --button-score-sheet-color:#eca9a5;
+    --button-settings-color:#c17a35;
+    --button-dropdown-menu-color:#65bcb5;
+    --button-reset-color:#65bcb5;
+    --button-submit-color:#fad243;
+    --button-return-color:#c17a35;
+    --button-change-n-players-color:#7176b6;
+
+    --cell-vertical-color:#eca9a5;
+    --cell-info-color:#fad243;
+    --cell-input-color:#65bcb5;
+    --cell-disabled-color:#7176b6;
+    --cell-total-color:#eca9a5;
+}
+
+[data-theme="default"] {
+    --a:#eca9a5;
+    --a:#65bcb5;
+    --a:#fad243;
+    --a:#c17a35;
+    --a:#7176b6;
+    --a:#fefefe;
+    --a:#000100;
+
+    --font-color-headers:#000100;
+    --font-color-buttons:#000100;
+    --heading-color:#7176b6;
+
+    --button-start-color:#fad243;
+    --button-score-sheet-automa-color:#65bcb5;
+    --button-score-sheet-color:#eca9a5;
+    --button-settings-color:#c17a35;
+    --button-dropdown-menu-color:#65bcb5;
+    --button-reset-color:#65bcb5;
+    --button-submit-color:#fad243;
+    --button-return-color:#c17a35;
+    --button-change-n-players-color:#7176b6;
+
+    --cell-vertical-color:#eca9a5;
+    --cell-info-color:#fad243;
+    --cell-input-color:#65bcb5;
+    --cell-disabled-color:#7176b6;
+    --cell-total-color:#eca9a5;
 }
 
 [data-theme="spotted_pardalote"] {

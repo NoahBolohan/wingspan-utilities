@@ -26,18 +26,63 @@ Theme template:
 */
 
 :root {
-    --font-color:41,41,34;
-    --heading-color:#fff;
+    --a:236,169,165;
+    --a:101,188,181;
+    --a:250,210,67;
+    --a:193,122,53;
+    --a:113,118,182;
+    --a:254,254,254;
+    --a:0,1,0;
 
-    --primary-color-1:48,42,230;
-    --primary-color-2:48,42,230;
-    --primary-color-3:48,42,230;
-    --secondary-color-1:83,99,144;
-    --secondary-color-2:83,99,144;
-    --secondary-color-3:83,99,144;
-    --tertiary-color-1:66,66,66;
-    --tertiary-color-2:66,66,66;
-    --tertiary-color-3:66,66,66;
+    --font-color-headers:0,1,0;
+    --font-color-buttons:0,1,0;
+    --heading-color:113,118,182;
+
+    --button-start-color:250,210,67;
+    --button-score-sheet-automa-color:101,188,181;
+    --button-score-sheet-color:236,169,165;
+    --button-settings-color:193,122,53;
+    --button-dropdown-menu-color:101,188,181;
+    --button-reset-color:101,188,181;
+    --button-submit-color:250,210,67;
+    --button-return-color:193,122,53;
+    --button-change-n-players-color:113,118,182;
+
+    --cell-vertical-color:236,169,165;
+    --cell-info-color:250,210,67;
+    --cell-input-color:101,188,181;
+    --cell-disabled-color:113,118,182;
+    --cell-total-color:236,169,165;
+}
+
+[data-theme="default"] {
+    --a:236,169,165;
+    --a:101,188,181;
+    --a:250,210,67;
+    --a:193,122,53;
+    --a:113,118,182;
+    --a:254,254,254;
+    --a:0,1,0;
+
+    --font-color-headers:0,1,0;
+    --font-color-buttons:0,1,0;
+    --heading-color:113,118,182;
+
+    --button-start-color:250,210,67;
+    --button-score-sheet-automa-color:101,188,181;
+    --button-score-sheet-color:236,169,165;
+    --button-settings-color:193,122,53;
+    --button-dropdown-menu-color:101,188,181;
+    --button-reset-color:101,188,181;
+    --button-submit-color:250,210,67;
+    --button-return-color:193,122,53;
+    --button-change-n-players-color:113,118,182;
+
+    --cell-vertical-color:236,169,165;
+    --cell-info-color:250,210,67;
+    --cell-input-color:101,188,181;
+    --cell-disabled-color:113,118,182;
+    --cell-total-color:236,169,165;
 }
 
 [data-theme="spotted_pardalote"] {

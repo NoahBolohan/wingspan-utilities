@@ -40,7 +40,13 @@ $(document).ready(
 
 const current_theme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
 
-if (current_theme) {
+if (current_theme == null) {
+    document.documentElement.setAttribute(
+        "data-theme",
+        "default"
+    );
+}
+else {
     document.documentElement.setAttribute(
         "data-theme",
         current_theme
@@ -59,7 +65,13 @@ $(document).ready(
 
 const current_background = localStorage.getItem("background") ? localStorage.getItem("background") : null;
 
-if (current_background) {
+if (current_background == null) {
+    document.documentElement.setAttribute(
+        "data-background",
+        "random"
+    );
+}
+else {
     document.documentElement.setAttribute(
         "data-background",
         current_background
