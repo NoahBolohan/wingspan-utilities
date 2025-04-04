@@ -207,12 +207,6 @@ li:nth-child(5) {
     border: none!important;
 }
 
-button:disabled,
-button[disabled]{
-  border: 0px;
-  opacity: 0.1;
-}
-
 .rowspan-vertical {
     writing-mode: vertical-lr;
     text-align: center;
@@ -619,6 +613,11 @@ input::placeholder {
 
 .btn-submit:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
+.btn-submit:disabled {
+    background-color:rgba(var(--button-submit-color));
+    opacity: 0.2;
 }
 
 .btn-return {

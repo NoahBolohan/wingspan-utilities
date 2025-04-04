@@ -1,168 +1,170 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wingspan Utilities</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/favicon.png" type="image/png">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wingspan Utilities</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/favicon.png" type="image/png">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/themes.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/themes.css" media="screen" />
 
-    <script src="js/colour_filter_computer.js"></script>
-    <script src="js/no_sleep.min.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/misc_scripts.js"></script>
-	<script src="js/index_scripts.js"></script>
-</head>
+        <script src="js/colour_filter_computer.js"></script>
+        <script src="js/no_sleep.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/misc_scripts.js"></script>
+        <script src="js/index_scripts.js"></script>
+    </head>
 
-<body class="parallax" id="body_index">
+    <body class="parallax" id="body_index">
 
-    <div class="modal fade" id="modal_settings">
+        <div class="modal fade" id="modal_settings">
 
-        <div class="modal-dialog" role="document">
+            <div class="modal-dialog" role="document">
 
-            <div class="modal-content">
+                <div class="modal-content">
 
-                <div class="modal-header justify-content-center" style="position:relative;">
+                    <div class="modal-header justify-content-center" style="position:relative;">
 
-                    <h2 class="modal-title">Settings</h2>
-                    <button class="btn astext" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
-                        &#x274c;
-                    </button>
-                </div>
-
-                <div class="modal-body" id="modal_settings_body">
-
-                    <div class="row mt-1 p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
-
-                        <div class="col-5 p-0 align-self-center settings-label">
-                            Prevent screen sleep:
-                        </div>
-        
-                        <div class="col-2 offset-5 p-0">
-                            <label class="switch">
-                                <input type="checkbox" id="button_toggle_screen_sleep">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
+                        <h2 class="modal-title">Settings</h2>
+                        <button class="btn astext" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
+                            &#x274c;
+                        </button>
                     </div>
 
-                    <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_theme">
+                    <div class="modal-body" id="modal_settings_body">
 
-                        <div class="col-5 p-0 align-self-center">
-                            <label class="settings-label" for="theme">Theme:</label>
-                        </div>
-        
-                        <div class="col-7 p-0">
-                            <select name="theme" id="theme_options" style="width:100%">
-                                <option value="default">Default</option>
-                                <option value="bee_eater">Bee Eater</option>
-                                <option value="blue_winged_kookaburra">Blue-winged Kookaburra</option>
-                                <option value="eastern_rosella">Eastern Rosella</option>
-                                <option value="eastern_yellow_robin">Eastern Yellow Robin</option>
-                                <option value="galah">Galah</option>
-                                <option value="olive_backed_oriole">Olive-backed Oriole</option>
-                                <option value="plains_wanderer">Plains Wanderer</option>
-                                <option value="princess_parrot">Princess Parrot</option>
-                                <option value="rose_crowned_fruit_dove">Rose-crowned Fruit-dove</option>
-                                <option value="southern_cassowary">Southern Cassowary</option>
-                                <option value="spotted_pardalote">Spotted Pardalote</option>
-                                <option value="superb_fairy_wren">Superb Fairy Wren</option>
-                            </select>
-                        </div>
-                    </div>
+                        <div class="row mt-1 p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
 
-                    <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
-
-                        <div class="col-5 p-0 align-self-center">
-                            <label class="settings-label" for="background">Background:</label>
+                            <div class="col-5 p-0 align-self-center settings-label">
+                                Prevent screen sleep:
+                            </div>
+            
+                            <div class="col-2 offset-5 p-0">
+                                <label class="switch">
+                                    <input type="checkbox" id="button_toggle_screen_sleep">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
                         </div>
-        
-                        <div class="col-7 p-0">
-                            <select name="background" id="background_options"  style="width:100%">
-                                <option value="random">Random</option>
-                                <option value="base_game_forest_habitat">Base Game (Forest)</option>
-                                <option value="base_game_grassland_habitat">Base Game (Grassland)</option>
-                                <option value="base_game_wetland_habitat">Base Game (Wetland)</option>
-                                <option value="european_expansion_forest_habitat">European Expansion (Forest)</option>
-                                <option value="european_expansion_grassland_habitat">European Expansion (Grassland)</option>
-                                <option value="european_expansion_wetland_habitat">European Expansion (Wetland)</option>
-                                <option value="hills_forest_habitat">Hills (Forest)</option>
-                                <option value="hills_grassland_habitat">Hills (Grassland)</option>
-                                <option value="hills_wetland_habitat">Hills (Wetland)</option>
-                                <option value="sakura_forest_habitat">Sakura (Forest)</option>
-                                <option value="sakura_grassland_habitat">Sakura (Grassland)</option>
-                                <option value="sakura_wetland_habitat">Sakura (Wetland)</option>
-                                <option value="summer_solstice_forest_habitat">Summer Solstice (Forest)</option>
-                                <option value="summer_solstice_grassland_habitat">Summer Solstice (Grassland)</option>
-                                <option value="summer_solstice_wetland_habitat">Summer Solstice (Wetland)</option>
-                            </select>
+
+                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_theme">
+
+                            <div class="col-5 p-0 align-self-center">
+                                <label class="settings-label" for="theme">Theme:</label>
+                            </div>
+            
+                            <div class="col-7 p-0">
+                                <select name="theme" id="theme_options" style="width:100%">
+                                    <option value="default">Default</option>
+                                    <option value="bee_eater">Bee Eater</option>
+                                    <option value="blue_winged_kookaburra">Blue-winged Kookaburra</option>
+                                    <option value="eastern_rosella">Eastern Rosella</option>
+                                    <option value="eastern_yellow_robin">Eastern Yellow Robin</option>
+                                    <option value="galah">Galah</option>
+                                    <option value="olive_backed_oriole">Olive-backed Oriole</option>
+                                    <option value="plains_wanderer">Plains Wanderer</option>
+                                    <option value="princess_parrot">Princess Parrot</option>
+                                    <option value="rose_crowned_fruit_dove">Rose-crowned Fruit-dove</option>
+                                    <option value="southern_cassowary">Southern Cassowary</option>
+                                    <option value="spotted_pardalote">Spotted Pardalote</option>
+                                    <option value="superb_fairy_wren">Superb Fairy Wren</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
+
+                            <div class="col-5 p-0 align-self-center">
+                                <label class="settings-label" for="background">Background:</label>
+                            </div>
+            
+                            <div class="col-7 p-0">
+                                <select name="background" id="background_options"  style="width:100%">
+                                    <option value="random">Random</option>
+                                    <option value="base_game_forest_habitat">Base Game (Forest)</option>
+                                    <option value="base_game_grassland_habitat">Base Game (Grassland)</option>
+                                    <option value="base_game_wetland_habitat">Base Game (Wetland)</option>
+                                    <option value="european_expansion_forest_habitat">European Expansion (Forest)</option>
+                                    <option value="european_expansion_grassland_habitat">European Expansion (Grassland)</option>
+                                    <option value="european_expansion_wetland_habitat">European Expansion (Wetland)</option>
+                                    <option value="hills_forest_habitat">Hills (Forest)</option>
+                                    <option value="hills_grassland_habitat">Hills (Grassland)</option>
+                                    <option value="hills_wetland_habitat">Hills (Wetland)</option>
+                                    <option value="sakura_forest_habitat">Sakura (Forest)</option>
+                                    <option value="sakura_grassland_habitat">Sakura (Grassland)</option>
+                                    <option value="sakura_wetland_habitat">Sakura (Wetland)</option>
+                                    <option value="summer_solstice_forest_habitat">Summer Solstice (Forest)</option>
+                                    <option value="summer_solstice_grassland_habitat">Summer Solstice (Grassland)</option>
+                                    <option value="summer_solstice_wetland_habitat">Summer Solstice (Wetland)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container-fluid" id="container_header">
+        <div class="container-fluid" id="container_header">
 
-        <div class="row justify-content-center align-items-center" style="height:12vh; margin-top: 3vh;" id="row_header">
+            <div class="row justify-content-center align-items-center" style="height:12vh; margin-top: 3vh;" id="row_header">
 
-            <div class="col header-background vh12"></div>
+                <div class="col header-background vh12"></div>
 
-            <div class="row justify-content-center align-items-center " style="height:5vh; margin-top: 1vh;" id="row_header_1">
+                <div class="row justify-content-center align-items-center " style="height:5vh; margin-top: 1vh;" id="row_header_1">
 
-                <div class="col-auto m-0 px-0 text-center h1 header-content">Wingspan Utilities</div>
-            </div>
-    
-            <div class="row justify-content-center align-items-center " style="height:5vh; margin-bottom: 1vh;" id="row_header_2">
-    
-                <div class="col-auto m-0 px-0 text-center h2 header-content">by Noah Bolohan</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" id="container_body">
-
-        <div class="row no-gutters justify-content-center align-content-center align-items-center" style="height : 30vh; margin-top: 9.5vh;" id="row_main_menu">
-
-            <div class="col header-background-for-index-menu"></div>
-
-            <div class="col-12 mx-0 px-0 header-content">
-                
-                <div class="row p-0 justify-content-center margin_auto" id="row_start_automa_game">
-
-                    <a class="col-auto btn nav-button btn-start" href="automa_tracker.html">Start Automa Game</a>
+                    <div class="col-auto m-0 px-0 text-center h1 header-content">Wingspan Utilities</div>
                 </div>
         
-                <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet_automa">
+                <div class="row justify-content-center align-items-center " style="height:5vh; margin-bottom: 1vh;" id="row_header_2">
         
-                    <a class="col-auto btn nav-button btn-score-sheet-automa" href="score_sheet_automa.html">Open a score sheet (Automa)</a>
-                </div>
-        
-                <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
-        
-                    <a class="col-auto btn nav-button btn-score-sheet" href="score_sheet.html">Open a score sheet</a>
+                    <div class="col-auto m-0 px-0 text-center h2 header-content">by Noah Bolohan</div>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center align-content-center align-items-center" style="height : 10vh; margin-top: 27.5vh;" id="row_main_menu">
+        <div class="container-fluid" id="container_body">
 
-            <div class="col header-background vh10"></div>
-            <div class="col-12 mx-0 px-0 header-content">
+            <div class="row no-gutters justify-content-center align-content-center align-items-center" style="height : 30vh; margin-top: 9.5vh;" id="row_main_menu">
 
-                <div class="row p-0 justify-content-center margin_auto" id="row_start_automa_game">
+                <div class="col header-background-for-index-menu"></div>
+
+                <div class="col-12 mx-0 px-0 header-content">
                     
-                    <button class="col-auto btn nav-button btn-settings" type="button" id="button_settings">
-                        Settings
-                    </button>
+                    <div class="row p-0 justify-content-center margin_auto" id="row_start_automa_game">
+
+                        <a class="col-auto btn nav-button btn-start" href="automa_tracker.html">Start Automa Game</a>
+                    </div>
+            
+                    <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet_automa">
+            
+                        <a class="col-auto btn nav-button btn-score-sheet-automa" href="score_sheet_automa.html">Open a score sheet (Automa)</a>
+                    </div>
+            
+                    <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_score_sheet">
+            
+                        <a class="col-auto btn nav-button btn-score-sheet" href="score_sheet.html">Open a score sheet</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center align-content-center align-items-center" style="height : 10vh; margin-top: 27.5vh;" id="row_main_menu">
+
+                <div class="col header-background vh10"></div>
+                <div class="col-12 mx-0 px-0 header-content">
+
+                    <div class="row p-0 justify-content-center margin_auto" id="row_start_automa_game">
+                        
+                        <button class="col-auto btn nav-button btn-settings" type="button" id="button_settings">
+                            Settings
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+</html>

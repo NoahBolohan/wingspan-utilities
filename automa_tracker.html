@@ -11,18 +11,21 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/themes.css" media="screen" />
 
 		<script src="js/colour_filter_computer.js"></script>
+        <script src="js/no_sleep.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/misc_scripts.js"></script>
 		<script src="js/automa_tracker/automa_actions.js"></script>
 		<script src="js/automa_tracker/debug_scripts.js"></script>
 		<script src="js/automa_tracker/form_scripts.js"></script>
 		<script src="js/automa_tracker/game_management.js"></script>
 		<script src="js/automa_tracker/initialize_data_attributes.js"></script>
 		<script src="js/automa_tracker/pre_game.js"></script>
-		<script src="js/misc_scripts.js"></script>
 	</head>
 
-	<body class="parallax" onload="on_load()" id="automa_tracker_body">
+	<body class="parallax" id="automa_tracker_body">
 
 		<!--
 		Data attributes of automa_tracker_body:
@@ -102,6 +105,93 @@
 				<input name="automa_end-of-round_goals" id="automa_end-of-round_goals_for_post" />
 				<input name="automa_laid_eggs" id="automa_laid_eggs_for_post" />
 				<input name="automa_total_score" id="automa_total_score_for_post" />
+			</div>
+
+			<div class="modal fade" id="modal_settings">
+
+				<div class="modal-dialog" role="document">
+	
+					<div class="modal-content">
+	
+						<div class="modal-header justify-content-center" style="position:relative;">
+	
+							<h2 class="modal-title">Settings</h2>
+							<button class="btn astext" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
+								&#x274c;
+							</button>
+						</div>
+	
+						<div class="modal-body" id="modal_settings_body">
+	
+							<div class="row mt-1 p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
+	
+								<div class="col-5 p-0 align-self-center settings-label">
+									Prevent screen sleep:
+								</div>
+				
+								<div class="col-2 offset-5 p-0">
+									<label class="switch">
+										<input type="checkbox" id="button_toggle_screen_sleep">
+										<span class="slider round"></span>
+									</label>
+								</div>
+							</div>
+	
+							<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_theme">
+	
+								<div class="col-5 p-0 align-self-center">
+									<label class="settings-label" for="theme">Theme:</label>
+								</div>
+				
+								<div class="col-7 p-0">
+									<select name="theme" id="theme_options" style="width:100%">
+										<option value="default">Default</option>
+										<option value="bee_eater">Bee Eater</option>
+										<option value="blue_winged_kookaburra">Blue-winged Kookaburra</option>
+										<option value="eastern_rosella">Eastern Rosella</option>
+										<option value="eastern_yellow_robin">Eastern Yellow Robin</option>
+										<option value="galah">Galah</option>
+										<option value="olive_backed_oriole">Olive-backed Oriole</option>
+										<option value="plains_wanderer">Plains Wanderer</option>
+										<option value="princess_parrot">Princess Parrot</option>
+										<option value="rose_crowned_fruit_dove">Rose-crowned Fruit-dove</option>
+										<option value="southern_cassowary">Southern Cassowary</option>
+										<option value="spotted_pardalote">Spotted Pardalote</option>
+										<option value="superb_fairy_wren">Superb Fairy Wren</option>
+									</select>
+								</div>
+							</div>
+	
+							<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
+	
+								<div class="col-5 p-0 align-self-center">
+									<label class="settings-label" for="background">Background:</label>
+								</div>
+				
+								<div class="col-7 p-0">
+									<select name="background" id="background_options"  style="width:100%">
+										<option value="random">Random</option>
+										<option value="base_game_forest_habitat">Base Game (Forest)</option>
+										<option value="base_game_grassland_habitat">Base Game (Grassland)</option>
+										<option value="base_game_wetland_habitat">Base Game (Wetland)</option>
+										<option value="european_expansion_forest_habitat">European Expansion (Forest)</option>
+										<option value="european_expansion_grassland_habitat">European Expansion (Grassland)</option>
+										<option value="european_expansion_wetland_habitat">European Expansion (Wetland)</option>
+										<option value="hills_forest_habitat">Hills (Forest)</option>
+										<option value="hills_grassland_habitat">Hills (Grassland)</option>
+										<option value="hills_wetland_habitat">Hills (Wetland)</option>
+										<option value="sakura_forest_habitat">Sakura (Forest)</option>
+										<option value="sakura_grassland_habitat">Sakura (Grassland)</option>
+										<option value="sakura_wetland_habitat">Sakura (Wetland)</option>
+										<option value="summer_solstice_forest_habitat">Summer Solstice (Forest)</option>
+										<option value="summer_solstice_grassland_habitat">Summer Solstice (Grassland)</option>
+										<option value="summer_solstice_wetland_habitat">Summer Solstice (Wetland)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			
 			<div class="modal fade" id="modal_round_1_end_goal_images">
@@ -669,14 +759,103 @@
 
 			<div class="container-fluid" id="container_header">
 
-				<div class="row mt-1 justify-content-center margin_auto">
+                <div class="row justify-content-center align-items-center" style="height:5vh; margin-top: 1vh;" id="row_header">
 
-					<div class="col-auto py-0 text-center paint-stroke-background-stripe-white">
-
-                        <h1 class="m-0">Automa tracker</h1>
+                    <div class="col header-background vh5"></div>
+        
+                    <div class="row justify-content-center align-items-center " style="height:5vh;" id="row_header_1">
+        
+                        <div class="col-auto m-0 px-0 text-center h1 header-content">Automa tracker</div>
                     </div>
-				</div>
-			</div>
+                </div>
+
+                <div class="row mt-1 justify-content-between align-items-center" id="row_checkboxes">
+
+                    <div class="col-5 dropdown">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            &#x2193; Expansions &#x2193;
+                        </button>
+
+                        <ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
+                        
+                            <li>
+
+                                <label for="col_base_game_checkbox" id="row_base_game">
+                                    Base game
+                                    <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
+                                    <input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_european_expansion_checkbox" id="row_european_expansion">
+                                    European expansion
+                                    <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+                                    <input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
+                                    Oceania expansion
+                                    <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+                                    <input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_asia_checkbox" id="row_asia">
+                                    Asia
+                                    <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+                                    <input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-5 dropdown">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            &#x2193; Extra cards &#x2193;
+                        </button>
+
+                        <ul class="py-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_extra_cards_menu" style="width: 92%;">
+                        
+                            <li>
+                                <label for="col_automubon_society_checkbox" id="row_automubon_society">
+                                    Automubon society
+                                    <input id="col_automubon_society_checkbox_hidden" name="automubon_society" type="hidden" value="no"></input>
+                                    <input id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_RAOUtoma_checkbox" id="row_RAOUtoma">
+                                    RAOUtoma
+                                    <input id="col_RAOUtoma_checkbox_hidden" name="RAOUtoma" type="hidden" value="no"></input>
+                                    <input id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_automasian_alliance_checkbox" id="row_automasian_alliance">
+                                    Automasian alliance
+                                    <input id="col_automasian_alliance_checkbox_hidden" name="automasian_alliance" type="hidden" value="no"></input>
+                                    <input id="col_automasian_alliance_checkbox" name="automasian_alliance" type="checkbox" value="yes">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2 text-center">
+
+                        <button class="btn astext btn-settings" type="button" id="button_settings">
+                            <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="width: 100%;">
+                        </button>
+                    </div>
+                </div>
+            </div>
 
 			<div class="container-fluid" id="container_game_setup">
 
@@ -723,86 +902,6 @@
 					</div>
 
 					<input class="col-6" id="col_debug_mode_round_end_winner_checkbox" name="debug_mode_round_end_winner" type="checkbox" value="yes"></input>
-				</div>
-
-				<div class="row gx-3 mt-1" id="row_checkboxes">
-
-					<div class="col-6 dropdown">
-
-						<button class="w-100 btn paint-stroke-background-stripe-teal" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							<h2 class="p-0 m-0">&#x2193; Expansions &#x2193;</h2>
-						</button>
-
-						<ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
-						
-							<li>
-
-								<label for="col_base_game_checkbox" id="row_base_game">
-									Base game
-									<input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
-									<input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
-								</label>
-							</li>
-
-							<li>
-								<label for="col_european_expansion_checkbox" id="row_european_expansion">
-									European expansion
-									<input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
-									<input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
-								</label>
-							</li>
-
-							<li>
-								<label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
-									Oceania expansion
-									<input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
-									<input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
-								</label>
-							</li>
-
-							<li>
-								<label for="col_asia_checkbox" id="row_asia">
-									Asia
-									<input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
-									<input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
-								</label>
-							</li>
-						</ul>
-					</div>
-
-					<div class="col-6 dropdown">
-
-						<button class="w-100 btn paint-stroke-background-stripe-teal" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							<h2 class="p-0 m-0">&#x2193; Extra cards &#x2193;</h2>
-						</button>
-
-						<ul class="py-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_extra_cards_menu" style="width: 92%;">
-						
-							<li>
-								<label for="col_automubon_society_checkbox" id="row_automubon_society">
-									Automubon society
-									<input id="col_automubon_society_checkbox_hidden" name="automubon_society" type="hidden" value="no"></input>
-									<input id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes">
-								</label>
-							</li>
-
-							<li>
-								<label for="col_RAOUtoma_checkbox" id="row_RAOUtoma">
-									RAOUtoma
-									<input id="col_RAOUtoma_checkbox_hidden" name="RAOUtoma" type="hidden" value="no"></input>
-									<input id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes">
-								</label>
-							</li>
-
-							<li>
-								<label for="col_automasian_alliance_checkbox" id="row_automasian_alliance">
-									Automasian alliance
-									<input id="col_automasian_alliance_checkbox_hidden" name="automasian_alliance" type="hidden" value="no"></input>
-									<input id="col_automasian_alliance_checkbox" name="automasian_alliance" type="checkbox" value="yes">
-								</label>
-							</li>
-						</ul>
-					</div>
 				</div>
 
 				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_difficulty">
@@ -1044,17 +1143,19 @@
 					</div>
 				</div>
 
-				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_start_game_button">
+				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
-					<button class="col-7 btn nav-button paint-stroke-background-stripe-yellow" id="button_start_game" type="button" disabled = "true">
-						Start game
-					</button>
-				</div>
+                    <div class="col-8">
+                        <button class="w-100 btn nav-button btn-submit" id="button_start_game" type="button" disabled = "true">
+                            Start Game
+                        </button>
+                    </div>
+                </div>
 
 				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
-					<a class="col-auto btn nav-button paint-stroke-background-stripe-brown" href="/">Return to home page</a>
-				</div>
+                    <a class="col-auto btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
+                </div>
 			</div>
 
 			<div class="container-fluid is_hidden" id="container_automa_gameplay">
