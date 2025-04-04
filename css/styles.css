@@ -91,11 +91,6 @@ table {
     font-size: 18pt;
 }
 
-.round-end-goal-button {
-    font-size: 15pt;
-    aspect-ratio : 1 / 1;
-}
-
 .centered-text {
     display: flex;
     justify-content: center;
@@ -193,14 +188,6 @@ li:nth-child(5) {
 .checkbox-menu li input {
     position: top;
     vertical-align: middle;
-}
-
-.disabled-text {
-    color : #EBEBE4
-}
-
-.enabled-text {
-    color : #000
 }
 
 .borderless {
@@ -343,7 +330,6 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 }
 
-
 .switch {
     position: relative;
     display: inline-block;
@@ -452,6 +438,22 @@ outline: 2px solid rgba(var(--font-color-buttons));
     vertical-align: middle;
 }
 
+label {
+    color: rgba(var(--font-color-buttons));
+}
+
+.text-color-buttons {
+    color: rgba(var(--font-color-buttons));
+}
+
+.disabled-text {
+    color: rgba(var(--font-color-buttons), 0.4);
+}
+
+.enabled-text {
+    color: rgba(var(--font-color-buttons));
+}
+
 .h1 {
     font-size: 25pt;
     color: rgba(var(--font-color-headers));
@@ -470,6 +472,7 @@ input::placeholder {
     color: rgba(var(--font-color-headers),0.6);
 }
 
+/* Buttons */
 .btn {
     color: rgba(var(--font-color-buttons));
     outline: 1px solid rgba(var(--font-color-headers));
@@ -484,7 +487,10 @@ input::placeholder {
     outline: 1px solid rgba(var(--font-color-headers));
 }
 
+
+/* Modals */
 .modal-content {
+    border:rgba(var(--font-color-buttons)) 1px solid;
     background-color: rgba(var(--button-settings-color));
 }
 
@@ -493,10 +499,26 @@ input::placeholder {
 }
 
 .modal-header {
+    background-color: rgba(var(--heading-color));
     border-bottom-color: rgba(var(--font-color-headers));
 }
 
 .settings-label {
+    color: rgba(var(--font-color-buttons));
+}
+
+/* Cards */
+.card {
+    border:rgba(var(--font-color-buttons)) 1px solid;
+}
+
+.card-header {
+    background-color: rgba(var(--button-settings-color));
+    border-bottom-color: rgba(var(--font-color-headers));
+}
+
+.card-body {
+    background-color: rgba(var(--heading-color));
     color: rgba(var(--font-color-buttons));
 }
 
@@ -649,6 +671,24 @@ input::placeholder {
 }
 
 .btn-change-n-players:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
+.btn-round-end-goal {
+    font-size: 15pt;
+    aspect-ratio : 1 / 1;
+    background-color:rgba(var(--button-settings-color));
+}
+
+.btn-round-end-goal:hover {
+    background-color:rgba(var(--button-settings-color),0.5);
+}
+
+.btn-round-end-goal:active {
+    background-color:rgba(var(--button-settings-color))!important;
+}
+
+.btn-round-end-goal:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
