@@ -40,7 +40,7 @@ $(document).on(
 );
 
 // Custom show div
-function custom_show_div(div_id) {
+function show_height_hidden(div_id) {
     $(div_id).css(
         "visibility",
         "visible"
@@ -52,7 +52,7 @@ function custom_show_div(div_id) {
 }
 
 // Custom hide div
-function custom_hide_div(div_id) {
+function hide_height_hidden(div_id) {
     $(div_id).css(
         "visibility",
         "hidden"
@@ -94,7 +94,7 @@ $(document).ready(
                         generate_row_headers(value, width_p, width_player_col);
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
-                        custom_show_div("#row_score_sheet");
+                        show_height_hidden("#row_score_sheet");
                     }
                 );
             }

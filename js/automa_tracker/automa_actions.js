@@ -615,7 +615,7 @@ function end_round_cleanup(who_won) {
     $("#automa_score_for_round_end_modal").empty();
 
     // Show and hide buttons
-    custom_hide_div(
+    hide_height_hidden(
         "#row_end_round_button"
     );
 

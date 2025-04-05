@@ -1,9 +1,9 @@
-.is_hidden {
+.height_hidden {
     visibility : hidden;
     max-height : 0;
 }
 
-.hidden_column {
+.display_hidden {
     display:none;
     visibility:hidden;
 }

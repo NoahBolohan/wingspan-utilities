@@ -1,7 +1,7 @@
 // Open with debug options
 $(document).ready(
     function() {
-        // custom_show_div("#row_debug_mode");
+        show_height_hidden("#row_debug_mode");
     }
 )
 
@@ -15,28 +15,28 @@ $(document).ready(
                 if (($("#col_debug_mode_checkbox").is(":checked"))) {
 
                     // Debug option: quick start (Starts unchecked)
-                    custom_show_div("#row_debug_mode_quick_start");
+                    show_height_hidden("#row_debug_mode_quick_start");
                     $("#col_debug_mode_quick_start_checkbox").prop(
                         "checked",
                         false
                     )
 
                     // Debug option: round length (Starts checked)
-                    custom_show_div("#row_debug_mode_round_length");
+                    show_height_hidden("#row_debug_mode_round_length");
                     $("#col_debug_mode_round_length_checkbox").prop(
                         "checked",
                         true
                     )
 
                     // Debug option: play a bird (Starts checked)
-                    custom_show_div("#row_debug_mode_play_a_bird");
+                    show_height_hidden("#row_debug_mode_play_a_bird");
                     $("#col_debug_mode_play_a_bird_checkbox").prop(
                         "checked",
                         true
                     )
 
                     // Debug option: round end winner (Starts checked)
-                    custom_show_div("#row_debug_mode_round_end_winner");
+                    show_height_hidden("#row_debug_mode_round_end_winner");
                     $("#col_debug_mode_round_end_winner_checkbox").prop(
                         "checked",
                         true
@@ -46,28 +46,28 @@ $(document).ready(
                 else {
 
                     // Debug option: quick start
-                    custom_hide_div("#row_debug_mode_quick_start");
+                    hide_height_hidden("#row_debug_mode_quick_start");
                     $("#col_debug_mode_quick_start_checkbox").prop(
                         "checked",
                         false
                     )
 
                     // Debug option: round length
-                    custom_hide_div("#row_debug_mode_round_length");
+                    hide_height_hidden("#row_debug_mode_round_length");
                     $("#col_debug_mode_round_length_checkbox").prop(
                         "checked",
                         false
                     )
 
                     // Debug option: play a bird
-                    custom_hide_div("#row_debug_mode_play_a_bird");
+                    hide_height_hidden("#row_debug_mode_play_a_bird");
                     $("#col_debug_mode_play_a_bird_checkbox").prop(
                         "checked",
                         false
                     )
 
                     // Debug option: round end winner
-                    custom_hide_div("#row_debug_mode_round_end_winner");
+                    hide_height_hidden("#row_debug_mode_round_end_winner");
                     $("#col_debug_mode_round_end_winner_checkbox").prop(
                         "checked",
                         false

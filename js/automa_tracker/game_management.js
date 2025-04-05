@@ -61,24 +61,24 @@ function new_round(round_number) {
 
         update_round_end_cube_counter(round_number,0)
 
-        custom_show_div(
+        show_height_hidden(
             "#row_automa_action_button"
         );
     }
     else {
 
-        custom_hide_div(
+        hide_height_hidden(
             "#row_automa_actions"
         );
 
         if ($("#col_oceania_expansion_checkbox").is(":checked")) {
 
-            custom_show_div(
+            show_height_hidden(
                 "#row_proceed_to_game_end_nectar_button"
             );
         }
         else {
-            custom_show_div(
+            show_height_hidden(
                 "#row_proceed_to_game_end_button"
             );
         }
@@ -229,11 +229,11 @@ $(document).ready(
                     );
 
                     // Show and hide buttons
-                    custom_hide_div(
+                    hide_height_hidden(
                         "#row_automa_action_button"
                     );
 
-                    custom_show_div(
+                    show_height_hidden(
                         "#row_end_round_button"
                     );
                 }
@@ -607,13 +607,13 @@ $(document).ready(
                 // Show and hide stuff
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
 
-                    custom_show_column("#col_automa_hoard_tokens_text_div");
-                    custom_show_div("#row_hoard_token_buttons");
+                    show_display_hidden("#col_automa_hoard_tokens_text_div");
+                    show_height_hidden("#row_hoard_token_buttons");
                 }
                 else {
 
-                    custom_hide_column("#col_automa_hoard_tokens_text_div");
-                    custom_hide_div("#row_hoard_token_buttons");
+                    hide_display_hidden("#col_automa_hoard_tokens_text_div");
+                    hide_display_hidden("#row_hoard_token_buttons");
                 }
 
                 if ($("#col_oceania_expansion_checkbox").is(":checked")) {
@@ -627,21 +627,21 @@ $(document).ready(
                         "reset"
                     );
 
-                    custom_show_column("#col_automa_nectar_text_div");
+                    show_display_hidden("#col_automa_nectar_text_div");
                 }
                 else {
                     
-                    custom_hide_column("#col_automa_nectar_text_div");
+                    hide_display_hidden("#col_automa_nectar_text_div");
                 }
                 
-                custom_hide_div(
+                hide_height_hidden(
                     "#container_game_setup"
                 );
-                custom_show_div(
+                show_height_hidden(
                     "#container_automa_gameplay"
                 );
 
-                custom_hide_div("#row_debug_mode");
+                hide_height_hidden("#row_debug_mode");
 
                 // Debug option
                 if ($("#col_debug_mode_quick_start_checkbox").is(":checked")) {
@@ -991,10 +991,10 @@ $(document).ready(
                 start_game_enabler();
 
                 // Show and hide buttons
-                custom_show_div(
+                show_height_hidden(
                     "#container_game_setup"
                 );
-                custom_hide_div(
+                hide_height_hidden(
                     "#container_automa_gameplay"
                 );
 
@@ -1002,15 +1002,15 @@ $(document).ready(
                 $("#table_automa_actions tbody").empty();
 
                 // Show and hide buttons / modals
-                custom_hide_div(
+                hide_height_hidden(
                     "#row_end_round_button"
                 );
 
-                custom_hide_div(
+                hide_height_hidden(
                     "#row_proceed_to_game_end_nectar_button"
                 );
 
-                custom_hide_div(
+                hide_height_hidden(
                     "#row_proceed_to_game_end_button"
                 );
 

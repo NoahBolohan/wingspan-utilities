@@ -99,7 +99,7 @@
 
 		<form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbxWDMl56bZtgSxCDKezzNDRlc53-5aKFjuO2G7aZZzkI-xu5Y9K5BqtULnfD6lsNnSebg/exec">
 
-			<div class="is_hidden" id="data_to_submit">
+			<div class="height_hidden" id="data_to_submit">
 				<input name="automa_drawn_cards" id="automa_drawn_cards_for_post" />
 				<input name="automa_played_birds" id="automa_played_birds_for_post" />
 				<input name="automa_end-of-round_goals" id="automa_end-of-round_goals_for_post" />
@@ -859,7 +859,7 @@
 
 			<div class="container-fluid" id="container_game_setup">
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_debug_mode">
 
 					<div class="col-6" id="col_debug_mode_checkbox_text">
 						<h2>Debug mode:</h2>
@@ -868,7 +868,7 @@
 					<input class="col-6" id="col_debug_mode_checkbox" name="debug_mode" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_quick_start">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_debug_mode_quick_start">
 
 					<div class="col-6" id="col_debug_mode_quick_start_checkbox_text">
 						Quick start:
@@ -877,7 +877,7 @@
 					<input class="col-6" id="col_debug_mode_quick_start_checkbox" name="debug_mode_quick_start" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_round_length">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_debug_mode_round_length">
 
 					<div class="col-6" id="col_debug_mode_round_length_checkbox_text">
 						Round length:
@@ -886,7 +886,7 @@
 					<input class="col-6" id="col_debug_mode_round_length_checkbox" name="debug_mode_round_length" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_play_a_bird">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_debug_mode_play_a_bird">
 
 					<div class="col-6" id="col_debug_mode_play_a_bird_checkbox_text">
 						Play a bird:
@@ -895,7 +895,7 @@
 					<input class="col-6" id="col_debug_mode_play_a_bird_checkbox" name="debug_mode_play_a_bird" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_debug_mode_round_end_winner">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_debug_mode_round_end_winner">
 
 					<div class="col-6" id="col_debug_mode_round_end_winner_checkbox_text">
 						Round-end winner:
@@ -1162,7 +1162,7 @@
                 </div>
 			</div>
 
-			<div class="container-fluid is_hidden" id="container_automa_gameplay">
+			<div class="container-fluid height_hidden" id="container_automa_gameplay">
 
 				<div class="mt-2 card">
 
@@ -1220,7 +1220,7 @@
 
 					<div class="row p-0 my-1 mx-0 justify-content-center" id="row_automa_counts_2">
 
-						<div class="col-4 hidden_column" id="col_automa_nectar_text_div">
+						<div class="col-4 display_hidden" id="col_automa_nectar_text_div">
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<div class="col-7 p-0 centered-text" id="col_automa_nectar_text">Nectar:</div>
@@ -1232,7 +1232,7 @@
 							</div>
 						</div>
 
-						<div class="col-4 hidden_column" id="col_automa_hoard_tokens_text_div">
+						<div class="col-4 display_hidden" id="col_automa_hoard_tokens_text_div">
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<div class="col-10 p-0 centered-text" id="col_automa_hoard_tokens_text">Hoard tokens:</div>
@@ -1250,7 +1250,7 @@
 					</div>
 				</div>
 
-				<div class="row gx-1 mt-1 is_hidden" id="row_hoard_token_buttons">
+				<div class="row gx-1 mt-1 height_hidden" id="row_hoard_token_buttons">
 
 					<div class="col-6">
 						<button class="w-100 btn btn-warning nav-button" id="button_automa_remove_hoard_tokens" type="button">
@@ -1287,21 +1287,21 @@
 					</button>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_end_round_button">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_end_round_button">
 
 					<button class="col btn nav-button paint-stroke-background-stripe-pink" id="button_end_round" type="button">
 						End round
 					</button>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_proceed_to_game_end_nectar_button">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_nectar_button">
 
 					<button class="col btn nav-button paint-stroke-background-stripe-pink" id="button_proceed_to_game_end_nectar_scoring" type="button">
 						Proceed to nectar scoring
 					</button>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_proceed_to_game_end_button">
+				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_button">
 
 					<button class="col btn btn-danger nav-button" id="button_proceed_to_game_end" type="button">
 						Proceed to game end
