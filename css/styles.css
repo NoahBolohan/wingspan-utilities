@@ -352,9 +352,10 @@ top: 0;
 left: 0;
 right: 0;
 bottom: 0;
-background-color: rgba(var(--heading-color));
+background-color: rgba(var(--cell-disabled-color));
 -webkit-transition: .4s;
 transition: .4s;
+outline: 1px solid rgba(var(--font-color-buttons));
 }
 
 .slider:before {
@@ -370,11 +371,11 @@ transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: rgba(var(--cell-disabled-color));
+    background-color: rgba(var(--button-submit-color));
 }
 
 input:focus + .slider {
-box-shadow: 0 0 1px rgba(var(--cell-disabled-color));
+box-shadow: 0 0 1px rgba(var(--button-submit-color));
 }
 
 input:checked + .slider:before {
@@ -491,7 +492,7 @@ input::placeholder {
 /* Modals */
 .modal-content {
     border:rgba(var(--font-color-buttons)) 1px solid;
-    background-color: rgba(var(--button-settings-color));
+    background-color: rgba(var(--card-background-color));
 }
 
 .modal-title {
@@ -499,7 +500,7 @@ input::placeholder {
 }
 
 .modal-header {
-    background-color: rgba(var(--heading-color));
+    background-color: rgba(var(--card-header-color));
     border-bottom-color: rgba(var(--font-color-headers));
 }
 
@@ -513,12 +514,12 @@ input::placeholder {
 }
 
 .card-header {
-    background-color: rgba(var(--button-settings-color));
+    background-color: rgba(var(--card-header-color));
     border-bottom-color: rgba(var(--font-color-headers));
 }
 
 .card-body {
-    background-color: rgba(var(--heading-color));
+    background-color: rgba(var(--card-background-color));
     color: rgba(var(--font-color-buttons));
 }
 
@@ -677,15 +678,15 @@ input::placeholder {
 .btn-round-end-goal {
     font-size: 15pt;
     aspect-ratio : 1 / 1;
-    background-color:rgba(var(--button-settings-color));
+    background-color:rgba(var(--button-round-end-goal-color));
 }
 
 .btn-round-end-goal:hover {
-    background-color:rgba(var(--button-settings-color),0.5);
+    background-color:rgba(var(--button-round-end-goal-color),0.5);
 }
 
 .btn-round-end-goal:active {
-    background-color:rgba(var(--button-settings-color))!important;
+    background-color:rgba(var(--button-round-end-goal-color))!important;
 }
 
 .btn-round-end-goal:focus {

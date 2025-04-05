@@ -6,6 +6,9 @@ Theme template:
     --font-color-buttons:;
     --heading-color:;
 
+    --card-header-color:;
+    --card-background-color:;
+
     --button-start-color:;
     --button-score-sheet-automa-color:;
     --button-score-sheet-color:;
@@ -15,6 +18,7 @@ Theme template:
     --button-submit-color:;
     --button-return-color:;
     --button-change-n-players-color:;
+    --button-round-end-goal-color:;
 
     --cell-vertical-color:;
     --cell-info-color:;
@@ -38,6 +42,9 @@ Theme template:
     --font-color-buttons:0,1,0;
     --heading-color:113,118,182;
 
+    --card-header-color:113,118,182;
+    --card-background-color:193,122,53;
+
     --button-start-color:250,210,67;
     --button-score-sheet-automa-color:101,188,181;
     --button-score-sheet-color:236,169,165;
@@ -47,6 +54,7 @@ Theme template:
     --button-submit-color:250,210,67;
     --button-return-color:193,122,53;
     --button-change-n-players-color:113,118,182;
+    --button-round-end-goal-color:236,169,165;
 
     --cell-vertical-color:236,169,165;
     --cell-info-color:250,210,67;
@@ -68,6 +76,9 @@ Theme template:
     --font-color-buttons:0,1,0;
     --heading-color:113,118,182;
 
+    --card-header-color:113,118,182;
+    --card-background-color:193,122,53;
+
     --button-start-color:250,210,67;
     --button-score-sheet-automa-color:101,188,181;
     --button-score-sheet-color:236,169,165;
@@ -77,6 +88,7 @@ Theme template:
     --button-submit-color:250,210,67;
     --button-return-color:193,122,53;
     --button-change-n-players-color:113,118,182;
+    --button-round-end-goal-color:236,169,165;
 
     --cell-vertical-color:236,169,165;
     --cell-info-color:250,210,67;
@@ -85,33 +97,38 @@ Theme template:
     --cell-total-color:236,169,165;
 }
 
-[data-theme="spotted_pardalote"] {
-    --a:254,202,0;
-    --a:211,99,40;
-    --a:203,3,0;
-    --a:180,185,179;
-    --a:66,72,71;
-    --a:0,1,0;
+[data-theme="bee_eater"] {
+    --a:0,52,110;
+    --a:0,124,191;
+    --a:6,171,223;
+    --a:237,208,62;
+    --a:245,162,0;
+    --a:109,134,0;
+    --a:66,77,12;
 
-    --font-color-headers:0,1,0;
-    --font-color-buttons:180,185,179;
-    --heading-color:254,202,0;
+    --font-color-headers:0,52,110;
+    --font-color-buttons:0,52,110;
+    --heading-color:6,171,223;
 
-    --button-start-color:211,99,40;
-    --button-score-sheet-automa-color:0,1,0;
-    --button-score-sheet-color:203,3,0;
-    --button-settings-color:66,72,71;
-    --button-dropdown-menu-color:0,1,0;
-    --button-reset-color:0,1,0;
-    --button-submit-color:211,99,40;
-    --button-return-color:66,72,71;
-    --button-change-n-players-color:211,99,40;
+    --card-header-color:109,134,0;
+    --card-background-color:6,171,223;
 
-    --cell-vertical-color:254,202,0;
-    --cell-info-color:66,72,71;
-    --cell-input-color:203,3,0;
-    --cell-disabled-color:0,1,0;
-    --cell-total-color:254,202,0;
+    --button-start-color:0,124,191;
+    --button-score-sheet-automa-color:237,208,62;
+    --button-score-sheet-color:245,162,0;
+    --button-settings-color:109,134,0;
+    --button-dropdown-menu-color:245,162,0;
+    --button-reset-color:245,162,0;
+    --button-submit-color:237,208,62;
+    --button-return-color:109,134,0;
+    --button-change-n-players-color:245,162,0;
+    --button-round-end-goal-color:245,162,0;
+
+    --cell-vertical-color:6,171,223;
+    --cell-info-color:237,208,62;
+    --cell-input-color:245,162,0;
+    --cell-disabled-color:66,77,12;
+    --cell-total-color:6,171,223;
 }
 
 [data-theme="blue_winged_kookaburra"] {
@@ -131,6 +148,9 @@ Theme template:
     --font-color-buttons:6,33,58;
     --heading-color:181,239,251;
 
+    --card-header-color:156,70,32;
+    --card-background-color:181,239,251;
+
     --button-start-color:11,117,149;
     --button-score-sheet-automa-color:173,141,159;
     --button-score-sheet-color:184,188,216;
@@ -140,103 +160,13 @@ Theme template:
     --button-submit-color:173,141,159;
     --button-return-color:156,70,32;
     --button-change-n-players-color:114,95,119;
+    --button-round-end-goal-color:11,117,149;
 
     --cell-vertical-color:181,239,251;
     --cell-info-color:11,117,149;
     --cell-input-color:196,88,41;
     --cell-disabled-color:2,64,124;
     --cell-total-color:181,239,251;
-}
-
-[data-theme="plains_wanderer"] {
-    --a:237,216,197;
-    --a:208,154,94;
-    --a:231,170,1;
-    --a:172,87,15;
-    --a:115,72,27;
-    --a:68,44,14;
-    --a:13,4,3;
-
-    --font-color-headers:13,4,3;
-    --font-color-buttons:68,44,14;
-    --heading-color:172,87,15;
-
-    --button-start-color:208,154,94;
-    --button-score-sheet-automa-color:231,170,1;
-    --button-score-sheet-color:172,87,15;
-    --button-settings-color:237,216,197;
-    --button-dropdown-menu-color:208,154,94;
-    --button-reset-color:208,154,94;
-    --button-submit-color:231,170,1;
-    --button-return-color:237,216,197;
-    --button-change-n-players-color:208,154,94;
-
-    --cell-vertical-color:172,87,15;
-    --cell-info-color:231,170,1;
-    --cell-input-color:208,154,94;
-    --cell-disabled-color:68,44,14;
-    --cell-total-color:172,87,15;
-}
-
-[data-theme="bee_eater"] {
-    --a:0,52,110;
-    --a:0,124,191;
-    --a:6,171,223;
-    --a:237,208,62;
-    --a:245,162,0;
-    --a:109,134,0;
-    --a:66,77,12;
-
-    --font-color-headers:0,52,110;
-    --font-color-buttons:0,52,110;
-    --heading-color:6,171,223;
-
-    --button-start-color:0,124,191;
-    --button-score-sheet-automa-color:237,208,62;
-    --button-score-sheet-color:245,162,0;
-    --button-settings-color:109,134,0;
-    --button-dropdown-menu-color:245,162,0;
-    --button-reset-color:245,162,0;
-    --button-submit-color:237,208,62;
-    --button-return-color:109,134,0;
-    --button-change-n-players-color:245,162,0;
-
-    --cell-vertical-color:6,171,223;
-    --cell-info-color:237,208,62;
-    --cell-input-color:245,162,0;
-    --cell-disabled-color:66,77,12;
-    --cell-total-color:6,171,223;
-}
-
-[data-theme="rose_crowned_fruit_dove"] {
-    --a:189,51,143;
-    --a:235,130,82;
-    --a:245,220,131;
-    --a:205,212,220;
-    --a:128,152,162;
-    --a:143,163,63;
-    --a:95,121,41;
-    --a:1,72,32;
-    
-    --font-color-headers:1,72,32;
-    --font-color-buttons:1,72,32;
-    --heading-color:205,212,220;
-
-    --button-start-color:143,163,63;
-    --button-score-sheet-automa-color:189,51,143;
-    --button-score-sheet-color:235,130,82;
-    --button-settings-color:128,152,162;
-    --button-dropdown-menu-color:205,212,220;
-    --button-reset-color:235,130,82;
-    --button-submit-color:245,220,131;
-    --button-return-color:128,152,162;
-    --button-change-n-players-color:95,121,41;
-
-    --cell-vertical-color:143,163,63;
-    --cell-info-color:235,130,82;
-    --cell-input-color:189,51,143;
-    --cell-disabled-color:95,121,41;
-    --cell-total-color:143,163,63;
 }
 
 [data-theme="eastern_rosella"] {
@@ -252,6 +182,9 @@ Theme template:
     --font-color-buttons:0,1,0;
     --heading-color:184,201,220;
 
+    --card-header-color:47,122,185;
+    --card-background-color:184,201,220;
+
     --button-start-color:205,49,34;
     --button-score-sheet-automa-color:244,198,35;
     --button-score-sheet-color:190,225,131;
@@ -261,135 +194,13 @@ Theme template:
     --button-submit-color:244,198,35;
     --button-return-color:47,122,185;
     --button-change-n-players-color:205,49,34;
+    --button-round-end-goal-color:205,49,34;
 
     --cell-vertical-color:108,144,94;
     --cell-info-color:244,198,35;
     --cell-input-color:184,201,220;
     --cell-disabled-color:205,49,34;
     --cell-total-color:108,144,94;
-}
-
-[data-theme="olive_backed_oriole"] {
-    --a:138,50,35;
-    --a:187,86,69;
-    --a:217,120,120;
-    --a:226,171,160;
-    --a:208,207,233;
-    --a:162,158,184;
-    --a:108,107,117;
-    --a:184,165,63;
-    --a:147,134,42;
-    --a:77,64,25;
-
-    --font-color-headers:0,1,0;
-    --font-color-buttons:0,1,0;
-    --heading-color:208,207,233;
-
-    --button-start-color:187,86,69;
-    --button-score-sheet-automa-color:108,107,117;
-    --button-score-sheet-color:184,165,63;
-    --button-settings-color:147,134,42;
-    --button-dropdown-menu-color:208,207,233;
-    --button-reset-color:162,158,184;
-    --button-submit-color:226,171,160;
-    --button-return-color:147,134,42;
-    --button-change-n-players-color:184,165,63;
-
-    --cell-vertical-color:184,165,63;
-    --cell-info-color:108,107,117;
-    --cell-input-color:147,134,42;
-    --cell-disabled-color:187,86,69;
-    --cell-total-color:184,165,63;
-}
-
-[data-theme="princess_parrot"] {
-    --a:112,144,201;
-    --a:140,179,222;
-    --a:175,190,159;
-    --a:97,96,32;
-    --a:110,178,69;
-    --a:33,73,23;
-    --a:207,34,54;
-    --a:214,131,173;
-
-    --font-color-headers:33,73,23;
-    --font-color-buttons:33,73,23;
-    --heading-color:140,179,222;
-
-    --button-start-color:112,144,201;
-    --button-score-sheet-automa-color:214,131,173;
-    --button-score-sheet-color:110,178,69;
-    --button-settings-color:175,190,159;
-    --button-dropdown-menu-color:140,179,222;
-    --button-reset-color:112,144,201;
-    --button-submit-color:214,131,173;
-    --button-return-color:175,190,159;
-    --button-change-n-players-color:214,131,173;
-
-    --cell-vertical-color:140,179,222;
-    --cell-info-color:110,178,69;
-    --cell-input-color:214,131,173;
-    --cell-disabled-color:207,34,54;
-    --cell-total-color:140,179,222;
-}
-
-[data-theme="superb_fairy_wren"] {
-    --a:79,51,33;
-    --a:170,120,83;
-    --a:217,196,167;
-    --a:176,63,5;
-    --a:2,5,3;
-    
-    --font-color-headers:2,5,3;
-    --font-color-buttons:2,5,3;
-    --heading-color:217,196,167;
-
-    --button-start-color:79,51,33;
-    --button-score-sheet-automa-color:170,120,83;
-    --button-score-sheet-color:217,196,167;
-    --button-settings-color:176,63,5;
-    --button-dropdown-menu-color:170,120,83;
-    --button-reset-color:217,196,167;
-    --button-submit-color:170,120,83;
-    --button-return-color:176,63,5;
-    --button-change-n-players-color:217,196,167;
-
-    --cell-vertical-color:217,196,167;
-    --cell-info-color:170,120,83;
-    --cell-input-color:176,63,5;
-    --cell-disabled-color:2,5,3;
-    --cell-total-color:217,196,167;
-}
-
-[data-theme="southern_cassowary"] {
-    --a:189,161,77;
-    --a:62,188,182;
-    --a:1,105,196;
-    --a:21,52,96;
-    --a:213,17,78;
-    --a:165,110,182;
-    --a:75,28,87;
-    --a:9,9,12;
-    
-    --font-color-headers:189,161,77;
-    --font-color-buttons:189,161,77;
-    --heading-color:9,9,12;
-
-    --button-start-color:21,52,96;
-    --button-score-sheet-automa-color:1,105,196;
-    --button-score-sheet-color:213,17,78;
-    --button-settings-color:75,28,87;
-    --button-dropdown-menu-color:9,9,12;
-    --button-reset-color:9,9,12;
-    --button-submit-color:165,110,182;
-    --button-return-color:75,28,87;
-    --button-change-n-players-color:213,17,78;
-
-    --cell-vertical-color:1,105,196;
-    --cell-info-color:9,9,12;
-    --cell-input-color:62,188,182;
-    --cell-disabled-color:213,17,78;
-    --cell-total-color:1,105,196;
 }
 
 [data-theme="eastern_yellow_robin"] {
@@ -405,6 +216,9 @@ Theme template:
     --font-color-buttons:32,27,30;
     --heading-color:151,158,185;
 
+    --card-header-color:133,119,58;
+    --card-background-color:151,158,185;
+
     --button-start-color:151,158,185;
     --button-score-sheet-automa-color:251,235,91;
     --button-score-sheet-color:225,158,0;
@@ -414,6 +228,7 @@ Theme template:
     --button-submit-color:225,158,0;
     --button-return-color:133,119,58;
     --button-change-n-players-color:151,158,185;
+    --button-round-end-goal-color:225,158,0;
 
     --cell-vertical-color:151,158,185;
     --cell-info-color:251,235,91;
@@ -434,6 +249,9 @@ Theme template:
     --font-color-buttons:76,87,102;
     --heading-color:170,185,204;
 
+    --card-header-color:233,167,187;
+    --card-background-color:170,185,204;
+
     --button-start-color:255,210,207;
     --button-score-sheet-automa-color:233,167,187;
     --button-score-sheet-color:208,84,120;
@@ -443,10 +261,252 @@ Theme template:
     --button-submit-color:255,210,207;
     --button-return-color:131,144,162;
     --button-change-n-players-color:255,210,207;
+    --button-round-end-goal-color:208,84,120;
 
     --cell-vertical-color:170,185,204;
     --cell-info-color:233,167,187;
     --cell-input-color:208,84,120;
     --cell-disabled-color:76,87,102;
     --cell-total-color:170,185,204;
+}
+
+[data-theme="olive_backed_oriole"] {
+    --a:138,50,35;
+    --a:187,86,69;
+    --a:217,120,120;
+    --a:226,171,160;
+    --a:208,207,233;
+    --a:162,158,184;
+    --a:108,107,117;
+    --a:184,165,63;
+    --a:147,134,42;
+    --a:77,64,25;
+
+    --font-color-headers:0,1,0;
+    --font-color-buttons:0,1,0;
+    --heading-color:208,207,233;
+
+    --card-header-color:147,134,42;
+    --card-background-color:208,207,233;
+
+    --button-start-color:187,86,69;
+    --button-score-sheet-automa-color:108,107,117;
+    --button-score-sheet-color:184,165,63;
+    --button-settings-color:147,134,42;
+    --button-dropdown-menu-color:208,207,233;
+    --button-reset-color:162,158,184;
+    --button-submit-color:226,171,160;
+    --button-return-color:147,134,42;
+    --button-change-n-players-color:184,165,63;
+    --button-round-end-goal-color:187,86,69;
+
+    --cell-vertical-color:184,165,63;
+    --cell-info-color:108,107,117;
+    --cell-input-color:147,134,42;
+    --cell-disabled-color:187,86,69;
+    --cell-total-color:184,165,63;
+}
+
+[data-theme="plains_wanderer"] {
+    --a:237,216,197;
+    --a:208,154,94;
+    --a:231,170,1;
+    --a:172,87,15;
+    --a:115,72,27;
+    --a:68,44,14;
+    --a:13,4,3;
+
+    --font-color-headers:13,4,3;
+    --font-color-buttons:68,44,14;
+    --heading-color:172,87,15;
+
+    --card-header-color:172,87,15;
+    --card-background-color:237,216,197;
+
+    --button-start-color:208,154,94;
+    --button-score-sheet-automa-color:231,170,1;
+    --button-score-sheet-color:172,87,15;
+    --button-settings-color:237,216,197;
+    --button-dropdown-menu-color:208,154,94;
+    --button-reset-color:208,154,94;
+    --button-submit-color:231,170,1;
+    --button-return-color:237,216,197;
+    --button-change-n-players-color:208,154,94;
+    --button-round-end-goal-color:68,44,14;
+
+    --cell-vertical-color:172,87,15;
+    --cell-info-color:231,170,1;
+    --cell-input-color:208,154,94;
+    --cell-disabled-color:68,44,14;
+    --cell-total-color:172,87,15;
+}
+
+[data-theme="princess_parrot"] {
+    --a:112,144,201;
+    --a:140,179,222;
+    --a:175,190,159;
+    --a:97,96,32;
+    --a:110,178,69;
+    --a:33,73,23;
+    --a:207,34,54;
+    --a:214,131,173;
+
+    --font-color-headers:33,73,23;
+    --font-color-buttons:33,73,23;
+    --heading-color:140,179,222;
+
+    --card-header-color:175,190,159;
+    --card-background-color:140,179,222;
+
+    --button-start-color:112,144,201;
+    --button-score-sheet-automa-color:214,131,173;
+    --button-score-sheet-color:110,178,69;
+    --button-settings-color:175,190,159;
+    --button-dropdown-menu-color:140,179,222;
+    --button-reset-color:112,144,201;
+    --button-submit-color:214,131,173;
+    --button-return-color:175,190,159;
+    --button-change-n-players-color:214,131,173;
+    --button-round-end-goal-color:207,34,54;
+
+    --cell-vertical-color:140,179,222;
+    --cell-info-color:110,178,69;
+    --cell-input-color:214,131,173;
+    --cell-disabled-color:207,34,54;
+    --cell-total-color:140,179,222;
+}
+
+[data-theme="rose_crowned_fruit_dove"] {
+    --a:189,51,143;
+    --a:235,130,82;
+    --a:245,220,131;
+    --a:205,212,220;
+    --a:128,152,162;
+    --a:143,163,63;
+    --a:95,121,41;
+    --a:1,72,32;
+    
+    --font-color-headers:1,72,32;
+    --font-color-buttons:1,72,32;
+    --heading-color:205,212,220;
+
+    --card-header-color:235,130,82;
+    --card-background-color:143,163,63;
+
+    --button-start-color:143,163,63;
+    --button-score-sheet-automa-color:189,51,143;
+    --button-score-sheet-color:235,130,82;
+    --button-settings-color:128,152,162;
+    --button-dropdown-menu-color:205,212,220;
+    --button-reset-color:235,130,82;
+    --button-submit-color:245,220,131;
+    --button-return-color:128,152,162;
+    --button-change-n-players-color:95,121,41;
+    --button-round-end-goal-color:189,51,143;
+
+    --cell-vertical-color:143,163,63;
+    --cell-info-color:235,130,82;
+    --cell-input-color:189,51,143;
+    --cell-disabled-color:95,121,41;
+    --cell-total-color:143,163,63;
+}
+
+[data-theme="southern_cassowary"] {
+    --a:189,161,77;
+    --a:62,188,182;
+    --a:1,105,196;
+    --a:21,52,96;
+    --a:213,17,78;
+    --a:165,110,182;
+    --a:75,28,87;
+    --a:9,9,12;
+    
+    --font-color-headers:189,161,77;
+    --font-color-buttons:189,161,77;
+    --heading-color:9,9,12;
+
+    --card-header-color:1,105,196;
+    --card-background-color:9,9,12;
+
+    --button-start-color:21,52,96;
+    --button-score-sheet-automa-color:1,105,196;
+    --button-score-sheet-color:213,17,78;
+    --button-settings-color:75,28,87;
+    --button-dropdown-menu-color:9,9,12;
+    --button-reset-color:9,9,12;
+    --button-submit-color:165,110,182;
+    --button-return-color:75,28,87;
+    --button-change-n-players-color:213,17,78;
+    --button-round-end-goal-color:213,17,78;
+
+    --cell-vertical-color:1,105,196;
+    --cell-info-color:9,9,12;
+    --cell-input-color:62,188,182;
+    --cell-disabled-color:213,17,78;
+    --cell-total-color:1,105,196;
+}
+
+[data-theme="spotted_pardalote"] {
+    --a:254,202,0;
+    --a:211,99,40;
+    --a:203,3,0;
+    --a:180,185,179;
+    --a:66,72,71;
+    --a:0,1,0;
+
+    --font-color-headers:0,1,0;
+    --font-color-buttons:180,185,179;
+    --heading-color:254,202,0;
+
+    --card-header-color:211,99,40;
+    --card-background-color:66,72,71;
+
+    --button-start-color:211,99,40;
+    --button-score-sheet-automa-color:0,1,0;
+    --button-score-sheet-color:203,3,0;
+    --button-settings-color:66,72,71;
+    --button-dropdown-menu-color:0,1,0;
+    --button-reset-color:0,1,0;
+    --button-submit-color:211,99,40;
+    --button-return-color:66,72,71;
+    --button-change-n-players-color:211,99,40;
+    --button-round-end-goal-color:180,185,179;
+
+    --cell-vertical-color:254,202,0;
+    --cell-info-color:66,72,71;
+    --cell-input-color:203,3,0;
+    --cell-disabled-color:0,1,0;
+    --cell-total-color:254,202,0;
+}
+
+[data-theme="superb_fairy_wren"] {
+    --a:79,51,33;
+    --a:170,120,83;
+    --a:217,196,167;
+    --a:176,63,5;
+    --a:2,5,3;
+    
+    --font-color-headers:2,5,3;
+    --font-color-buttons:2,5,3;
+    --heading-color:217,196,167;
+
+    --card-header-color:176,63,5;
+    --card-background-color:217,196,167;
+
+    --button-start-color:79,51,33;
+    --button-score-sheet-automa-color:170,120,83;
+    --button-score-sheet-color:217,196,167;
+    --button-settings-color:176,63,5;
+    --button-dropdown-menu-color:170,120,83;
+    --button-reset-color:217,196,167;
+    --button-submit-color:170,120,83;
+    --button-return-color:176,63,5;
+    --button-change-n-players-color:217,196,167;
+    --button-round-end-goal-color:79,51,33;
+
+    --cell-vertical-color:217,196,167;
+    --cell-info-color:170,120,83;
+    --cell-input-color:176,63,5;
+    --cell-disabled-color:2,5,3;
+    --cell-total-color:217,196,167;
 }
