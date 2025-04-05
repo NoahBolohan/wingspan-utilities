@@ -243,6 +243,30 @@ $(document).ready(
     }
 )
 
+$(document).ready(
+    function() {
+        $("#button_automa_score_breakdown").on(
+            "click",
+            function() {
+
+                $("#modal_automa_score_breakdown").modal("show")
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function() {
+
+        $("#button_close_modal_automa_score_breakdown").on(
+            "click",
+            function() {
+                $("#modal_automa_score_breakdown").modal("hide");
+            }
+        );
+    }
+)
+
 // Set an event listener for adding hoard tokens by clicking the add hoard tokens button
 $(document).ready(
     function() {
@@ -633,6 +657,10 @@ $(document).ready(
                     
                     hide_display_hidden("#col_automa_nectar_text_div");
                 }
+
+                hide_display_hidden("#div_dropdown_expansions_menu");
+                hide_display_hidden("#div_dropdown_extra_cards_menu");
+                show_display_hidden("#col_automa_score")
                 
                 hide_height_hidden(
                     "#container_game_setup"
@@ -736,22 +764,6 @@ $(document).ready(
         );
     }
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function populate_game_end_modal() {
 

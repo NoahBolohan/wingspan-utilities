@@ -1,11 +1,10 @@
 function generate_egg_td(
-    n_eggs,
-    primary_action_class
+    n_eggs
 ) {
 
     var egg_cell = $("<td>").attr(
         {
-            class : primary_action_class,
+            class : "cell-automa-action",
             style : "text-align: center;"
         }
     )
@@ -26,13 +25,12 @@ function generate_egg_td(
 }
 
 function generate_food_order_td(
-    food_order,
-    primary_action_class
+    food_order
 ) {
 
     var food_order_cell = $("<td>").attr(
         {
-            class : primary_action_class,
+            class : "cell-automa-action",
             style : "text-align: center; white-space : nowrap;"
         }
     )
@@ -206,6 +204,15 @@ function update_automa_total_score() {
         )
     }
 
+    $("#button_automa_score_breakdown").empty();
+
+    $("#button_automa_score_breakdown").text(
+        `Automa score: ${
+            $("#automa_tracker_body").data(
+                "automa_total_score_counter"
+            )
+        }`
+    );
 
     $("#col_automa_total_score").empty();
 
@@ -251,7 +258,7 @@ function append_automa_action_row(automa_action) {
         {
             scope : "row",
             style : "width: 10%",
-            class : "bg-info"
+            class : "cell-info"
         }
     ).text(
         $("#automa_tracker_body").data(
@@ -269,7 +276,6 @@ function append_automa_action_row(automa_action) {
 
         case "play_a_bird":
             primary_action_text = "Play a card";
-            primary_action_class = "table-light";
 
             // Debug option
             if ($("#col_debug_mode_play_a_bird_checkbox").is(":checked")) {
@@ -281,7 +287,7 @@ function append_automa_action_row(automa_action) {
 
             $("<td>").attr(
                 {
-                    class : primary_action_class,
+                    class : "cell-automa-action",
                     style : "width: 45%"
                 }
             ).text(
@@ -293,12 +299,11 @@ function append_automa_action_row(automa_action) {
 
         case "draw_cards":
             primary_action_text = "Draw cards";
-            primary_action_class = "table-info";
             update_automa_drawn_cards();
 
             $("<td>").attr(
                 {
-                    class : primary_action_class,
+                    class : "cell-automa-action",
                     style : "width: 45%"
                 }
             ).text(
@@ -310,8 +315,7 @@ function append_automa_action_row(automa_action) {
 
         case "lay_eggs":
             generate_egg_td(
-                automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"],
-                primary_action_class = "table-success"
+                automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"]
             ).appendTo(
                 tr
             );
@@ -321,8 +325,7 @@ function append_automa_action_row(automa_action) {
         case "gain_food":
 
             generate_food_order_td(
-                automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["food_order"],
-                primary_action_class = "table-success"
+                automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["food_order"]
             ).appendTo(
                 tr
             );
@@ -337,28 +340,24 @@ function append_automa_action_row(automa_action) {
 
         case "place_end-of-round_cube":
             secondary_action_text = "\u25A8";
-            secondary_action_class = "table-primary";
             break;
 
         case "remove_end-of-round_cube":
             secondary_action_text = "\u00D7";
-            secondary_action_class = "table-primary";
             break;
 
         case "activate_pink_powers":
             secondary_action_text = `Activate pink powers`
-            secondary_action_class = "table-danger";
             break;
 
         case "none":
             secondary_action_text = "";
-            secondary_action_class = "table-dark";
             break;
     }
 
     $("<td>").attr(
         {
-            class : secondary_action_class,
+            class : "cell-automa-action",
             style : "width: 45%; text-align: center"
         }
     ).text(

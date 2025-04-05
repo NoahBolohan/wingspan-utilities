@@ -61,6 +61,7 @@ Theme template:
     --cell-input-color:#65bcb5;
     --cell-disabled-color:#7176b6;
     --cell-total-color:#eca9a5;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="default"] {
@@ -95,6 +96,7 @@ Theme template:
     --cell-input-color:#65bcb5;
     --cell-disabled-color:#7176b6;
     --cell-total-color:#eca9a5;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="bee_eater"] {
@@ -129,6 +131,7 @@ Theme template:
     --cell-input-color:#F5A200;
     --cell-disabled-color:#424D0C;
     --cell-total-color:#06ABDF;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="blue_winged_kookaburra"] {
@@ -167,6 +170,7 @@ Theme template:
     --cell-input-color:#c45829;
     --cell-disabled-color:#02407c;
     --cell-total-color:#b5effb;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="eastern_rosella"] {
@@ -201,6 +205,7 @@ Theme template:
     --cell-input-color:#b8c9dc;
     --cell-disabled-color:#cd3122;
     --cell-total-color:#6c905e;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="eastern_yellow_robin"] {
@@ -235,6 +240,7 @@ Theme template:
     --cell-input-color:#E19E00;
     --cell-disabled-color:#454B56;
     --cell-total-color:#979EB9;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="galah"] {
@@ -268,6 +274,7 @@ Theme template:
     --cell-input-color:#D05478;
     --cell-disabled-color:#4C5766;
     --cell-total-color:#AAB9CC;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="olive_backed_oriole"] {
@@ -305,6 +312,7 @@ Theme template:
     --cell-input-color:#93862a;
     --cell-disabled-color:#bb5645;
     --cell-total-color:#b8a53f;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="plains_wanderer"] {
@@ -339,6 +347,7 @@ Theme template:
     --cell-input-color:#d09a5e;
     --cell-disabled-color:#442c0e;
     --cell-total-color:#ac570f;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="princess_parrot"] {
@@ -374,6 +383,7 @@ Theme template:
     --cell-input-color:#d683ad;
     --cell-disabled-color:#cf2236;
     --cell-total-color:#8cb3de;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="rose_crowned_fruit_dove"] {
@@ -409,6 +419,7 @@ Theme template:
     --cell-input-color:#BD338F;
     --cell-disabled-color:#5F7929;
     --cell-total-color:#8FA33F;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="southern_cassowary"] {
@@ -444,6 +455,7 @@ Theme template:
     --cell-input-color:#3EBCB6;
     --cell-disabled-color:#D5114E;
     --cell-total-color:#0169C4;
+    --cell-automa-action:#4C5766;
 }
 
 [data-theme="spotted_pardalote"] {
@@ -477,6 +489,7 @@ Theme template:
     --cell-input-color:#cb0300;
     --cell-disabled-color:#000100;
     --cell-total-color:#feca00;
+    --cell-automa-action:#fefefe;
 }
 
 [data-theme="superb_fairy_wren"] {
@@ -509,4 +522,5 @@ Theme template:
     --cell-input-color:#B03F05;
     --cell-disabled-color:#020503;
     --cell-total-color:#D9C4A7;
+    --cell-automa-action:#fefefe;
 }

@@ -281,6 +281,93 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="modal fade" id="modal_automa_score_breakdown">
+		
+				<div class="modal-dialog" role="document">
+		
+					<div class="modal-content">
+		
+						<div class="modal-header justify-content-center" style="position:relative;">
+
+							<h2 class="modal-title">Automa Score Breakdown</h2>
+							<button class="btn astext" id="button_close_modal_automa_score_breakdown" style="position:absolute;right:1em;" type="button">
+								&#x274c;
+							</button>
+						</div>
+		
+						<div class="modal-body">
+		
+							<div class="p-0 container-fluid">
+		
+								<div class="row p-0 mt-2 justify-content-center margin_auto" id="row_modal_play_a_card">
+		
+									<div class="col-12 p-0" id="col_modal_play_a_card">
+		
+										<div class="row p-0 mt-1 mx-0 justify-content-center" id="row_automa_counts_1">
+
+											<div class="col-4" id="col_automa_drawn_cards_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-10 p-0 centered-text" id="col_automa_drawn_cards_text">Drawn cards:</div>
+													<div class="col-2 p-0 centered-text" id="col_automa_drawn_cards_count">0</div>
+												</div>
+											</div>
+						
+											<div class="col-4" id="col_automa_played_birds_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-10 p-0 centered-text" id="col_automa_played_birds_text">Played birds:</div>
+													<div class="col-2 p-0 centered-text" id="col_automa_played_birds">0</div>
+												</div>
+											</div>
+						
+											<div class="col-4" id="col_automa_eggs_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-10 p-0 centered-text" id="col_automa_eggs_text">Eggs:</div>
+													<div class="col-2 p-0 centered-text" id="col_automa_eggs_count">0</div>
+												</div>
+											</div>
+										</div>
+						
+										<div class="row p-0 my-1 mx-0 justify-content-center" id="row_automa_counts_2">
+						
+											<div class="col-4 display_hidden" id="col_automa_nectar_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-7 p-0 centered-text" id="col_automa_nectar_text">Nectar:</div>
+													<div class="col-1 p-0 centered-text" id="col_automa_nectar_forest_count">0</div>
+													<div class="col-1 p-0 centered-text">/</div>
+													<div class="col-1 p-0 centered-text" id="col_automa_nectar_grassland_count">0</div>
+													<div class="col-1 p-0 centered-text">/</div>
+													<div class="col-1 p-0 centered-text" id="col_automa_nectar_wetland_count">0</div>
+												</div>
+											</div>
+						
+											<div class="col-4 display_hidden" id="col_automa_hoard_tokens_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-10 p-0 centered-text" id="col_automa_hoard_tokens_text">Hoard tokens:</div>
+													<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens_count">0</div>
+												</div>
+											</div>
+						
+											<div class="col-4" id="col_automa_total_score_text_div">
+						
+												<div class="row p-0 justify-content-center margin_auto">
+													<div class="col-10 p-0 centered-text" id="col_automa_total_score_text">Total:</div>
+													<div class="col-2 p-0 centered-text" id="col_automa_total_score">0</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		
 			<div class="modal fade" id="modal_play_a_card">
 		
@@ -771,7 +858,7 @@
 
                 <div class="row mt-1 justify-content-between align-items-center" id="row_checkboxes">
 
-                    <div class="col-5 dropdown">
+                    <div class="col-5 dropdown" id="div_dropdown_expansions_menu">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             &#x2193; Expansions &#x2193;
@@ -814,7 +901,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-5 dropdown">
+                    <div class="col-5 dropdown" id="div_dropdown_extra_cards_menu">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             &#x2193; Extra cards &#x2193;
@@ -846,6 +933,13 @@
                                 </label>
                             </li>
                         </ul>
+                    </div>
+
+					<div class="col-10 dropdown display_hidden" id="col_automa_score">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_automa_score_breakdown">
+                            Automa score: 0
+                        </button>
                     </div>
 
                     <div class="col-2 text-center">
@@ -1164,7 +1258,7 @@
 
 			<div class="container-fluid height_hidden" id="container_automa_gameplay">
 
-				<div class="mt-2 card">
+				<div class="mt-1 card card-body">
 
 					<div class="row p-0 m-0 justify-content-center margin_auto">
 
@@ -1189,67 +1283,6 @@
 					</div>
 				</div>
 
-				<div class="mt-1 card">
-
-					<div class="row p-0 mt-1 mx-0 justify-content-center" id="row_automa_counts_1">
-
-						<div class="col-4" id="col_automa_drawn_cards_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-10 p-0 centered-text" id="col_automa_drawn_cards_text">Drawn cards:</div>
-								<div class="col-2 p-0 centered-text" id="col_automa_drawn_cards_count">0</div>
-							</div>
-						</div>
-
-						<div class="col-4" id="col_automa_played_birds_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-10 p-0 centered-text" id="col_automa_played_birds_text">Played birds:</div>
-								<div class="col-2 p-0 centered-text" id="col_automa_played_birds">0</div>
-							</div>
-						</div>
-
-						<div class="col-4" id="col_automa_eggs_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-10 p-0 centered-text" id="col_automa_eggs_text">Eggs:</div>
-								<div class="col-2 p-0 centered-text" id="col_automa_eggs_count">0</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="row p-0 my-1 mx-0 justify-content-center" id="row_automa_counts_2">
-
-						<div class="col-4 display_hidden" id="col_automa_nectar_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-7 p-0 centered-text" id="col_automa_nectar_text">Nectar:</div>
-								<div class="col-1 p-0 centered-text" id="col_automa_nectar_forest_count">0</div>
-								<div class="col-1 p-0 centered-text">/</div>
-								<div class="col-1 p-0 centered-text" id="col_automa_nectar_grassland_count">0</div>
-								<div class="col-1 p-0 centered-text">/</div>
-								<div class="col-1 p-0 centered-text" id="col_automa_nectar_wetland_count">0</div>
-							</div>
-						</div>
-
-						<div class="col-4 display_hidden" id="col_automa_hoard_tokens_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-10 p-0 centered-text" id="col_automa_hoard_tokens_text">Hoard tokens:</div>
-								<div class="col-2 p-0 centered-text" id="col_automa_hoard_tokens_count">0</div>
-							</div>
-						</div>
-
-						<div class="col-4" id="col_automa_total_score_text_div">
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<div class="col-10 p-0 centered-text" id="col_automa_total_score_text">Total:</div>
-								<div class="col-2 p-0 centered-text" id="col_automa_total_score">0</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div class="row gx-1 mt-1 height_hidden" id="row_hoard_token_buttons">
 
 					<div class="col-6">
@@ -1267,12 +1300,12 @@
 
 				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_automa_actions">
 
-					<table class="table mt-0 mx-0 mb-2" id="table_automa_actions">
+					<table class="table mt-0 mx-0 mb-1" id="table_automa_actions">
 						<thead class="thead-dark">
 							<tr>
-								<th class="bg-info" scope="col" style="width: 15%">Turn #</th>
-								<th class="bg-info" scope="col" style="width: 45%">Primary</th>
-								<th class="bg-info" scope="col" style="width: 40%">Secondary</th>
+								<th class="cell-info" scope="col" style="width: 15%">Turn #</th>
+								<th class="cell-info" scope="col" style="width: 45%">Primary</th>
+								<th class="cell-info" scope="col" style="width: 40%">Secondary</th>
 							</tr>
 						</thead>
 						<tbody id="table_automa_actions_body">
@@ -1282,28 +1315,28 @@
 
 				<div class="row p-0 justify-content-center margin_auto" id="row_automa_action_button">
 
-					<button class="col btn nav-button paint-stroke-background-stripe-teal" id="button_automa_action" type="button">
+					<button class="col btn nav-button btn-change-n-players" id="button_automa_action" type="button">
 						Automa action
 					</button>
 				</div>
 
 				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_end_round_button">
 
-					<button class="col btn nav-button paint-stroke-background-stripe-pink" id="button_end_round" type="button">
+					<button class="col btn nav-button btn-round-end" id="button_end_round" type="button">
 						End round
 					</button>
 				</div>
 
 				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_nectar_button">
 
-					<button class="col btn nav-button paint-stroke-background-stripe-pink" id="button_proceed_to_game_end_nectar_scoring" type="button">
+					<button class="col btn nav-button btn-round-end" id="button_proceed_to_game_end_nectar_scoring" type="button">
 						Proceed to nectar scoring
 					</button>
 				</div>
 
 				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_button">
 
-					<button class="col btn btn-danger nav-button" id="button_proceed_to_game_end" type="button">
+					<button class="col btn nav-button btn-submit" id="button_proceed_to_game_end" type="button">
 						Proceed to game end
 					</button>
 				</div>

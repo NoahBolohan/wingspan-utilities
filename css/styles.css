@@ -724,6 +724,22 @@ input::placeholder {
     outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
+.btn-round-end {
+    background-color:rgba(var(--button-round-end-goal-color));
+}
+
+.btn-round-end:hover {
+    background-color:rgba(var(--button-round-end-goal-color),0.5);
+}
+
+.btn-round-end:active {
+    background-color:rgba(var(--button-round-end-goal-color))!important;
+}
+
+.btn-round-end:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
 /*Cells*/
 .cell-vertical {
     background-color:rgba(var(--cell-vertical-color))!important;
@@ -738,10 +754,17 @@ input::placeholder {
 .cell-input {
     background-color:rgba(var(--cell-input-color))!important;
 }
+
 .cell-disabled {
     background-color:rgba(var(--cell-disabled-color))!important;
 }
+
 .cell-total {
     background-color:rgba(var(--cell-total-color))!important;
+    color:rgba(var(--font-color-headers))!important;
+}
+
+.cell-automa-action {
+    background-color:rgba(var(--cell-automa-action))!important;
     color:rgba(var(--font-color-headers))!important;
 }
