@@ -608,7 +608,7 @@ $(document).ready(
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
 
                     show_display_hidden("#col_automa_hoard_tokens_text_div");
-                    show_height_hidden("#row_hoard_token_buttons");
+                    show_display_hidden("#row_hoard_token_buttons");
                 }
                 else {
 
