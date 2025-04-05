@@ -206,6 +206,15 @@ function update_automa_total_score() {
         )
     }
 
+    $("#button_automa_score_breakdown").empty();
+
+    $("#button_automa_score_breakdown").text(
+        `Automa score: ${
+            $("#automa_tracker_body").data(
+                "automa_total_score_counter"
+            )
+        }`
+    );
 
     $("#col_automa_total_score").empty();
 
