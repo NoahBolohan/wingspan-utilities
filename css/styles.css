@@ -439,6 +439,34 @@ outline: 2px solid rgba(var(--font-color-buttons));
     vertical-align: middle;
 }
 
+.plus_border {
+    --b: 5px;
+    --c: #0000 90deg,rgba(var(--font-color-buttons)) 0;
+    width: 10vw;
+    aspect-ratio: 1;
+    position: fixed;
+    z-index: 2;
+    vertical-align: middle;
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),var(--c)) 
+        calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+        calc(50%  + var(--b))   calc(50%  + var(--b));
+}
+
+.plus_inner {
+    --b: 3px;
+    --c: #0000 90deg, rgba(var(--button-submit-color)) 0;
+    width: calc(10vw - 2px);
+    aspect-ratio: 1;
+    position: fixed;
+    z-index: 3;
+    vertical-align: middle;
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),var(--c)) 
+        calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+        calc(50%  + var(--b))   calc(50%  + var(--b));
+}
+
 label {
     color: rgba(var(--font-color-buttons));
 }
@@ -475,7 +503,7 @@ input::placeholder {
 
 /* Buttons */
 .btn {
-    color: rgba(var(--font-color-buttons));
+    color: rgba(var(--font-color-buttons))!important;
     outline: 1px solid rgba(var(--font-color-headers));
 }
 
@@ -640,7 +668,7 @@ input::placeholder {
 
 .btn-submit:disabled {
     background-color:rgba(var(--button-submit-color));
-    opacity: 0.2;
+    opacity: 0.7;
 }
 
 .btn-return {
@@ -679,6 +707,9 @@ input::placeholder {
     font-size: 15pt;
     aspect-ratio : 1 / 1;
     background-color:rgba(var(--button-round-end-goal-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-round-end-goal:hover {
