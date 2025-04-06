@@ -632,12 +632,24 @@ $(document).ready(
                 if (($("#col_automas_cache_checkbox").is(":checked"))||($("#col_automas_hoard_checkbox").is(":checked"))) {
 
                     show_display_hidden("#col_automa_hoard_tokens_text_div");
-                    show_display_hidden("#row_hoard_token_buttons");
+                    show_display_hidden("#col_hoard_token_buttons");
+                    $("#col_automa_score").removeClass(
+                        "col-10"
+                    );
+                    $("#col_automa_score").addClass(
+                        "col-6"
+                    );
                 }
                 else {
 
                     hide_display_hidden("#col_automa_hoard_tokens_text_div");
-                    hide_display_hidden("#row_hoard_token_buttons");
+                    hide_display_hidden("#col_hoard_token_buttons");
+                    $("#col_automa_score").removeClass(
+                        "col-6"
+                    );
+                    $("#col_automa_score").addClass(
+                        "col-10"
+                    );
                 }
 
                 if ($("#col_oceania_expansion_checkbox").is(":checked")) {
@@ -660,6 +672,7 @@ $(document).ready(
 
                 hide_display_hidden("#div_dropdown_expansions_menu");
                 hide_display_hidden("#div_dropdown_extra_cards_menu");
+
                 show_display_hidden("#col_automa_score")
                 
                 hide_height_hidden(

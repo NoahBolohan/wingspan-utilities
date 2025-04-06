@@ -471,6 +471,10 @@ label {
     color: rgba(var(--font-color-buttons));
 }
 
+textarea {
+    color: rgba(var(--font-color-buttons));
+}
+
 .text-color-buttons {
     color: rgba(var(--font-color-buttons));
 }
@@ -737,6 +741,24 @@ input::placeholder {
 }
 
 .btn-round-end:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+}
+
+.btn-hoard-token {
+    height:3vh;
+    background-color:rgba(var(--button-dropdown-menu-color));
+    line-height: 0px;
+}
+
+.btn-hoard-token:hover {
+    background-color:rgba(var(--button-dropdown-menu-color),0.5);
+}
+
+.btn-hoard-token:active {
+    background-color:rgba(var(--button-dropdown-menu-color))!important;
+}
+
+.btn-hoard-token:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
 }
 
