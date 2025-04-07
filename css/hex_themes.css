@@ -343,9 +343,9 @@ Theme template:
     --button-return-color:#93862a;
     --button-change-n-players-color:#b8a53f;
     --button-round-end-goal-color:#b8a53f;
-    --button-player-won-color:;
-    --button-we-tied-color:;
-    --button-automa-score-color:;
+    --button-player-won-color:#a29eb8;
+    --button-we-tied-color:#e2aba0;
+    --button-automa-score-color:#bb5645;
 
     --round-end-plus-color:#d97878;
 
