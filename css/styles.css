@@ -440,7 +440,7 @@ outline: 2px solid rgba(var(--font-color-buttons));
     vertical-align: middle;
 }
 
-.plus_border {
+.plus-border {
     --b: 5px;
     --c: #0000 90deg,rgba(var(--font-color-buttons)) 0;
     width: 10vw;
@@ -454,9 +454,9 @@ outline: 2px solid rgba(var(--font-color-buttons));
         calc(50%  + var(--b))   calc(50%  + var(--b));
 }
 
-.plus_inner {
+.plus-inner {
     --b: 3px;
-    --c: #0000 90deg, rgba(var(--button-submit-color)) 0;
+    --c: #0000 90deg, rgba(var(--round-end-plus-color)) 0;
     width: calc(10vw - 2px);
     aspect-ratio: 1;
     position: fixed;
@@ -572,6 +572,11 @@ input::placeholder {
 .btn-start:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
     background-color:rgba(var(--button-start-color));
+}
+
+.btn-start:disabled {
+    background-color:rgba(var(--button-start-color));
+    opacity: 0.7;
 }
 
 .btn-score-sheet-automa {

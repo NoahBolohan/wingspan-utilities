@@ -49,11 +49,15 @@ Theme template:
     --button-score-sheet-automa-color:101,188,181;
     --button-score-sheet-color:236,169,165;
     --button-settings-color:193,122,53;
+
     --button-dropdown-menu-color:101,188,181;
     --button-reset-color:101,188,181;
     --button-submit-color:250,210,67;
     --button-return-color:193,122,53;
     --button-change-n-players-color:113,118,182;
+
+    --round-end-plus-color:101,188,181;
+    
     --button-round-end-goal-color:236,169,165;
 
     --cell-vertical-color:236,169,165;
@@ -91,6 +95,8 @@ Theme template:
     --button-change-n-players-color:113,118,182;
     --button-round-end-goal-color:236,169,165;
 
+    --round-end-plus-color:101,188,181;
+
     --cell-vertical-color:236,169,165;
     --cell-info-color:250,210,67;
     --cell-input-color:101,188,181;
@@ -124,7 +130,9 @@ Theme template:
     --button-submit-color:237,208,62;
     --button-return-color:109,134,0;
     --button-change-n-players-color:245,162,0;
-    --button-round-end-goal-color:245,162,0;
+    --button-round-end-goal-color:237,208,62;
+
+    --round-end-plus-color:109,134,0;
 
     --cell-vertical-color:6,171,223;
     --cell-info-color:237,208,62;
@@ -163,7 +171,9 @@ Theme template:
     --button-submit-color:173,141,159;
     --button-return-color:156,70,32;
     --button-change-n-players-color:114,95,119;
-    --button-round-end-goal-color:11,117,149;
+    --button-round-end-goal-color:114,95,119;
+
+    --round-end-plus-color:212,216,227;
 
     --cell-vertical-color:181,239,251;
     --cell-info-color:11,117,149;
@@ -198,7 +208,9 @@ Theme template:
     --button-submit-color:244,198,35;
     --button-return-color:47,122,185;
     --button-change-n-players-color:205,49,34;
-    --button-round-end-goal-color:205,49,34;
+    --button-round-end-goal-color:244,198,35;
+
+    --round-end-plus-color:205,49,34;
 
     --cell-vertical-color:108,144,94;
     --cell-info-color:244,198,35;
@@ -233,7 +245,9 @@ Theme template:
     --button-submit-color:225,158,0;
     --button-return-color:133,119,58;
     --button-change-n-players-color:151,158,185;
-    --button-round-end-goal-color:225,158,0;
+    --button-round-end-goal-color:251,235,91;
+
+    --round-end-plus-color:114,123,152;
 
     --cell-vertical-color:151,158,185;
     --cell-info-color:251,235,91;
@@ -268,6 +282,8 @@ Theme template:
     --button-return-color:131,144,162;
     --button-change-n-players-color:255,210,207;
     --button-round-end-goal-color:208,84,120;
+
+    --round-end-plus-color:131,144,162;
 
     --cell-vertical-color:170,185,204;
     --cell-info-color:233,167,187;
@@ -305,12 +321,14 @@ Theme template:
     --button-submit-color:226,171,160;
     --button-return-color:147,134,42;
     --button-change-n-players-color:184,165,63;
-    --button-round-end-goal-color:187,86,69;
+    --button-round-end-goal-color:184,165,63;
+
+    --round-end-plus-color:217,120,120;
 
     --cell-vertical-color:184,165,63;
     --cell-info-color:108,107,117;
     --cell-input-color:147,134,42;
-    --cell-disabled-color:187,86,69;
+    --cell-disabled-color:138,50,35;
     --cell-total-color:184,165,63;
     --cell-automa-action:254,254,254;
 }
@@ -340,7 +358,9 @@ Theme template:
     --button-submit-color:231,170,1;
     --button-return-color:237,216,197;
     --button-change-n-players-color:208,154,94;
-    --button-round-end-goal-color:68,44,14;
+    --button-round-end-goal-color:231,170,1;
+
+    --round-end-plus-color:115,72,27;
 
     --cell-vertical-color:172,87,15;
     --cell-info-color:231,170,1;
@@ -376,7 +396,9 @@ Theme template:
     --button-submit-color:214,131,173;
     --button-return-color:175,190,159;
     --button-change-n-players-color:214,131,173;
-    --button-round-end-goal-color:207,34,54;
+    --button-round-end-goal-color:110,178,69;
+
+    --round-end-plus-color:214,131,173;
 
     --cell-vertical-color:140,179,222;
     --cell-info-color:110,178,69;
@@ -414,6 +436,8 @@ Theme template:
     --button-change-n-players-color:95,121,41;
     --button-round-end-goal-color:189,51,143;
 
+    --round-end-plus-color:245,220,131;
+
     --cell-vertical-color:143,163,63;
     --cell-info-color:235,130,82;
     --cell-input-color:189,51,143;
@@ -450,6 +474,8 @@ Theme template:
     --button-change-n-players-color:213,17,78;
     --button-round-end-goal-color:213,17,78;
 
+    --round-end-plus-color:9,9,12;
+
     --cell-vertical-color:1,105,196;
     --cell-info-color:9,9,12;
     --cell-input-color:62,188,182;
@@ -484,6 +510,8 @@ Theme template:
     --button-change-n-players-color:211,99,40;
     --button-round-end-goal-color:180,185,179;
 
+    --round-end-plus-color:203,3,0;
+
     --cell-vertical-color:254,202,0;
     --cell-info-color:66,72,71;
     --cell-input-color:203,3,0;
@@ -516,6 +544,8 @@ Theme template:
     --button-return-color:176,63,5;
     --button-change-n-players-color:217,196,167;
     --button-round-end-goal-color:79,51,33;
+
+    --round-end-plus-color:176,63,5;
 
     --cell-vertical-color:217,196,167;
     --cell-info-color:170,120,83;
