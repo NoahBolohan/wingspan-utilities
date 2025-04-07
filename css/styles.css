@@ -571,6 +571,7 @@ input::placeholder {
 
 .btn-start:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-start-color));
 }
 
 .btn-score-sheet-automa {
@@ -587,6 +588,7 @@ input::placeholder {
 
 .btn-score-sheet-automa:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-score-sheet-automa-color));
 }
 
 .btn-score-sheet {
@@ -603,6 +605,7 @@ input::placeholder {
 
 .btn-score-sheet:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-score-sheet-color));
 }
 
 .btn-settings {
@@ -619,11 +622,12 @@ input::placeholder {
 
 .btn-settings:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-settings-color));
 }
 
 .btn-dropdown-menu {
     font-size: 20pt;
-    background-color:rgba(var(--button-dropdown-menu-color));
+    background-color:rgba(var(--button-dropdown-menu-color))!important;
     
 }
 
@@ -637,6 +641,7 @@ input::placeholder {
 
 .btn-dropdown-menu:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-dropdown-menu-color));
 }
 
 .btn-reset {
@@ -653,6 +658,7 @@ input::placeholder {
 
 .btn-reset:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-reset-color));
 }
 
 .btn-submit {
@@ -669,6 +675,7 @@ input::placeholder {
 
 .btn-submit:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-submit-color));
 }
 
 .btn-submit:disabled {
@@ -690,6 +697,7 @@ input::placeholder {
 
 .btn-return:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-return-color));
 }
 
 .btn-change-n-players {
@@ -706,6 +714,7 @@ input::placeholder {
 
 .btn-change-n-players:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-change-n-players-color));
 }
 
 .btn-round-end-goal {
@@ -727,6 +736,7 @@ input::placeholder {
 
 .btn-round-end-goal:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-round-end-goal-color));
 }
 
 .btn-round-end {
@@ -743,6 +753,7 @@ input::placeholder {
 
 .btn-round-end:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-round-end-goal-color));
 }
 
 .btn-hoard-token {
@@ -761,6 +772,7 @@ input::placeholder {
 
 .btn-hoard-token:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-dropdown-menu-color));
 }
 
 /*Cells*/
