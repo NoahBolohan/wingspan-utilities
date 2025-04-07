@@ -473,9 +473,16 @@ function update_round_end_goal_image(
     // Assign the round end goal image to the button as well as the automa gameplay page
     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/round_end_goals/" + round_end_goal + ".jpg");
 
-    $(`#img_round_${round_number}_end_goal`).attr(
-        "src",
-        new_url
+    $(`#div_round_${round_number}_end_goal`).empty();
+
+    $("<img>").attr(
+        {
+            "class" : "p-0 btn",
+            "src" : new_url,
+            "style" : "width : 100%"
+        }
+    ).appendTo(
+        `#div_round_${round_number}_end_goal`
     );
 
     $(`#button_round_${round_number}_end_goal`).empty();
