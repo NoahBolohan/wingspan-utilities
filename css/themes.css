@@ -506,9 +506,9 @@ Theme template:
     --button-return-color:75,28,87;
     --button-change-n-players-color:213,17,78;
     --button-round-end-goal-color:213,17,78;
-    --button-player-won-color:;
-    --button-we-tied-color:;
-    --button-automa-score-color:;
+    --button-player-won-color:1,105,196;
+    --button-we-tied-color:21,52,96;
+    --button-automa-score-color:165,110,182;
 
     --round-end-plus-color:9,9,12;
 
