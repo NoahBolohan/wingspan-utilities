@@ -191,12 +191,13 @@ function prepopulate_data()
         ]
 
         var radios = [
-            "col_difficulty_radio"
+            "col_automa_points_per_face_down_bird_card_radio"
         ]
 
         var inputs = [
             "cell_automa_n_drawn_cards",
             "cell_automa_played_birds",
+            "cell_player_end-of-round_goals",
             "cell_automa_end-of-round_goals",
             "cell_automa_laid_eggs",
             "cell_automa_nectar",
@@ -225,8 +226,8 @@ function prepopulate_data()
 
         $.each(
             radios,
-            function(idx, v) {                    
-                $(`input[name=${idx}]:radio[value=${data_dict[v]}]`).prop("checked", true);
+            function(idx, v) {              
+                $(`input[name=${v}]:radio[value=${data_dict[v]}]`).prop("checked", true);
             }
         );
 
