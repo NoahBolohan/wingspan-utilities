@@ -407,18 +407,23 @@ function check_automa_end_of_round_nectar(n_check) {
 
         ["1","2","3"],
         function (idx, nectar_spot) {
-         
-            if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "place_end-of-round_cube") {
 
-                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+1");
-                incrementer[nectar_spot] += 1;
+            if (`round_${nectar_spot}` in increment_card) {
+                if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "place_end-of-round_cube") {
+
+                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+1");
+                    incrementer[nectar_spot] += 1;
+                }
+                else if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "remove_end-of-round_cube") {
+    
+                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("-1");
+                    incrementer[nectar_spot] -= 1;
+                } else {
+    
+                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("0");
+                }
             }
-            else if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "remove_end-of-round_cube") {
-
-                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("-1");
-                incrementer[nectar_spot] -= 1;
-            } else {
-
+            else {
                 $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("0");
             }
         }
