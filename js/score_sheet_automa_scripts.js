@@ -205,18 +205,28 @@ function prepopulate_data()
 
         $.each(
             checkboxes,
-            function(idx, v) {               
-                $(`#${v}`).prop(
-                    "checked",
-                    data_dict[v] == "true"
-                )
+            function(idx, v) {
+                
+                if (data_dict[v] == "true") {
+                    $(`#${v}`).prop(
+                        "checked",
+                        true
+                    ).trigger("change");
+                }
+                else {
+                    $(`#${v}`).prop(
+                        "checked",
+                        false
+                    );
+                }
+                
             }
         );
 
         $.each(
             radios,
             function(idx, v) {                    
-                $(`input:radio[value=${data_dict[v]}]`).prop("checked", true);
+                $(`input[name=${idx}]:radio[value=${data_dict[v]}]`).prop("checked", true);
             }
         );
 
@@ -346,21 +356,25 @@ $(document).ready(
 // Recompute automa total score
 function recompute_automa_total_score() {
 
-    var face_down_card_multiplier = 0;
+    // var face_down_card_multiplier = 0;
 
-    switch($("input[name='difficulty']:checked").val()) {
+    // switch($("input[name='difficulty']:checked").val()) {
 
-        case "eaglet":
-            face_down_card_multiplier = 3;
-            break;
-        case "eagle":
-            face_down_card_multiplier = 4;
-            break;
-        case "eagle-eyed_eagle":
-            face_down_card_multiplier = 5;
-            break;
-    };
+    //     case "eaglet":
+    //         face_down_card_multiplier = 3;
+    //         break;
+    //     case "eagle":
+    //         face_down_card_multiplier = 4;
+    //         break;
+    //     case "eagle-eyed_eagle":
+    //         face_down_card_multiplier = 5;
+    //         break;
+    // };
 
+    var face_down_card_multiplier = parseInt(
+        $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
+    );
+    
     $("#cell_automa_drawn_cards").text(
         face_down_card_multiplier * parseNaNOrInt(
             $("#cell_automa_n_drawn_cards").val()

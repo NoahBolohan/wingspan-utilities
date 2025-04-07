@@ -7,7 +7,7 @@ function assign_submit_href() {
         "col_asia_checkbox" : $("#col_asia_checkbox").is(":checked"),
         "col_automubon_society_checkbox" : $("#col_automubon_society_checkbox").is(":checked"),
         "col_RAOUtoma_checkbox" : $("#col_RAOUtoma_checkbox").is(":checked"),
-        "col_difficulty_radio" : $("input[name='difficulty']:checked").val(),
+        "col_automa_points_per_face_down_bird_card_radio" : $("input[name='automa_points_per_face_down_bird_card']:checked").val(),
         "cell_automa_n_drawn_cards" : $("#automa_tracker_body").data("automa_drawn_cards_counter"),
         "cell_automa_played_birds" : $("#automa_tracker_body").data("automa_played_birds_counter"),
         "cell_automa_end-of-round_goals" : $("#automa_tracker_body").data(
@@ -24,11 +24,19 @@ function assign_submit_href() {
         "cell_automa_total_score" : $("#automa_tracker_body").data("automa_total_score_counter")
     }
 
+    alert(isNaN($("input[name='difficulty']:checked").val()))
+
     var href_array = [];
     $.each(
         data_dict,
         function(k, v) {                    
-            var str = k + "=" + v;
+            var str = k + "=";
+            if (isNaN(v)) {
+                str+="-1";
+            }
+            else {
+                str+=v;
+            }
             href_array.push(str);
         }
     
@@ -38,6 +46,6 @@ function assign_submit_href() {
 
     $("#href_submit_to_score_sheet").attr(
         "href",
-        "https://noahbolohan.github.io/wingspan-utilities/score_sheet_automa.html?" + href
+        "score_sheet_automa.html?" + href
     );
 }
