@@ -317,10 +317,11 @@ li:nth-child(5) {
     background-color: #949cc4!important;
 }
 
-html, body {margin: 0; height: 100%; overflow: hidden}
+/* html, body {margin: 0; height: 100%; overflow: hidden} */
 
 body.modal-open {
     overflow: hidden;
+    position: fixed;
 }
 
 .astext {
