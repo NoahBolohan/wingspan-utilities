@@ -3,36 +3,47 @@
 // Check if start game button should be enabled
 function start_game_enabler() {
 
-    var attributes_to_check = [
-        "enable_start_game_round_1_end_goal",
-		"enable_start_game_round_2_end_goal",
-		"enable_start_game_round_3_end_goal",
-		"enable_start_game_round_4_end_goal",
-		"enable_start_game_difficulty",
-		"enable_start_game_hoard_tokens",
-		"enable_start_game_points_per_drawn_card",
-		"enable_start_game_nectar",
-    ]
-    
-    var enable_button_checker = 1;
-
-    for (var i=0; i < attributes_to_check.length; i++) {
-        enable_button_checker *= $("#automa_tracker_body").data(
-            attributes_to_check[i]
-        );
-    }
-
-    if (enable_button_checker == 1) {
+    if (
+        $("#col_debug_mode_quick_start_checkbox").is(":checked")
+    ) {
         $("#button_start_game").prop(
             "disabled",
             false
         );
     }
     else {
-        $("#button_start_game").prop(
-            "disabled",
-            true
-        );
+
+        var attributes_to_check = [
+            "enable_start_game_round_1_end_goal",
+            "enable_start_game_round_2_end_goal",
+            "enable_start_game_round_3_end_goal",
+            "enable_start_game_round_4_end_goal",
+            "enable_start_game_difficulty",
+            "enable_start_game_hoard_tokens",
+            "enable_start_game_points_per_drawn_card",
+            "enable_start_game_nectar",
+        ]
+        
+        var enable_button_checker = 1;
+    
+        for (var i=0; i < attributes_to_check.length; i++) {
+            enable_button_checker *= $("#automa_tracker_body").data(
+                attributes_to_check[i]
+            );
+        }
+    
+        if (enable_button_checker == 1) {
+            $("#button_start_game").prop(
+                "disabled",
+                false
+            );
+        }
+        else {
+            $("#button_start_game").prop(
+                "disabled",
+                true
+            );
+        }
     }
 }
 
