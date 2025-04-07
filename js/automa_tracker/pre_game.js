@@ -591,7 +591,6 @@ function generate_round_end_goal_button_for_round(
                 $(`#button_round_${round_number}_end_goal`).css(
                     {
                         "background-color": "transparent",
-                        // "outline" : "none",
                         "border" : "none"
                     }
                 );

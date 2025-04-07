@@ -99,24 +99,30 @@ $(document).ready(
                         update_round_end_goal_image(
                             1,
                             "birds_in_forest",
+                            "eggs_in_forest",
                             data["birds_in_forest"]
                         );
+
+                        $("#button_round_1_birds_in_forest").click();
     
                         update_round_end_goal_image(
                             2,
                             "birds_in_grassland",
+                            "eggs_in_grassland",
                             data["birds_in_grassland"]
                         );
     
                         update_round_end_goal_image(
                             3,
                             "birds_in_wetland",
+                            "eggs_in_wetland",
                             data["birds_in_wetland"]
                         );
     
                         update_round_end_goal_image(
                             4,
                             "total_birds",
+                            "sets_of_eggs_in_forest_grassland_wetland",
                             data["total_birds"]
                         );
                     })
