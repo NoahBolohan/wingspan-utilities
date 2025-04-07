@@ -797,6 +797,57 @@ input::placeholder {
     background-color:rgba(var(--card-background-color));
 }
 
+.btn-player-won {
+    background-color:rgba(var(--button-player-won-color));
+}
+
+.btn-player-won:hover {
+    background-color:rgba(var(--button-player-won-color),0.5);
+}
+
+.btn-player-won:active {
+    background-color:rgba(var(--button-player-won-color))!important;
+}
+
+.btn-player-won:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-player-won-color));
+}
+
+.btn-we-tied {
+    background-color:rgba(var(--button-we-tied-color));
+}
+
+.btn-we-tied:hover {
+    background-color:rgba(var(--button-we-tied-color),0.5);
+}
+
+.btn-we-tied:active {
+    background-color:rgba(var(--button-we-tied-color))!important;
+}
+
+.btn-we-tied:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-we-tied-color));
+}
+
+.btn-automa-color {
+    background-color:rgba(var(--button-automa-score-color));
+}
+
+.btn-automa-color:hover {
+    background-color:rgba(var(--button-automa-score-color),0.5);
+}
+
+.btn-automa-color:active {
+    background-color:rgba(var(--button-automa-score-color))!important;
+}
+
+.btn-automa-color:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--button-automa-score-color));
+}
+
 /*Cells*/
 .cell-vertical {
     padding: 0!important;

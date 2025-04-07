@@ -55,6 +55,9 @@ Theme template:
     --button-submit-color:#fad243;
     --button-return-color:#c17a35;
     --button-change-n-players-color:#7176b6;
+    --button-player-won-color:#fad243;
+    --button-we-tied-color:#65bcb5;
+    --button-automa-score-color:#eca9a5;
 
     --round-end-plus-color:#65bcb5;
     
@@ -94,6 +97,9 @@ Theme template:
     --button-return-color:#c17a35;
     --button-change-n-players-color:#7176b6;
     --button-round-end-goal-color:#eca9a5;
+    --button-player-won-color:#fad243;
+    --button-we-tied-color:#65bcb5;
+    --button-automa-score-color:#eca9a5;
 
     --round-end-plus-color:#65bcb5;
 
@@ -131,6 +137,9 @@ Theme template:
     --button-return-color:#6D8600;
     --button-change-n-players-color:#F5A200;
     --button-round-end-goal-color:#EDD03E;
+    --button-player-won-color:#EDD03E;
+    --button-we-tied-color:#F5A200;
+    --button-automa-score-color:#6D8600;
 
     --round-end-plus-color:#6D8600;
 
@@ -172,6 +181,9 @@ Theme template:
     --button-return-color:#9C4620;
     --button-change-n-players-color:#725f77;
     --button-round-end-goal-color:#725f77;
+    --button-player-won-color:#c45829;
+    --button-we-tied-color:#0b7595;
+    --button-automa-score-color:#ad8d9f;
 
     --round-end-plus-color:#d4d8e3;
 
@@ -207,8 +219,11 @@ Theme template:
     --button-reset-color:#cd3122;
     --button-submit-color:#f4c623;
     --button-return-color:#2f7ab9;
-    --button-change-n-players-color:#cd3122;
+    --button-change-n-players-color:#6c905e;
     --button-round-end-goal-color:#f4c623;
+    --button-player-won-color:#f4c623;
+    --button-we-tied-color:#6c905e;
+    --button-automa-score-color:#cd3122;
 
     --round-end-plus-color:#cd3122;
 
@@ -244,8 +259,11 @@ Theme template:
     --button-reset-color:#FBEB5B;
     --button-submit-color:#E19E00;
     --button-return-color:#85773A;
-    --button-change-n-players-color:#979EB9;
+    --button-change-n-players-color:#727B98;
     --button-round-end-goal-color:#FBEB5B;
+    --button-player-won-color:#FBEB5B;
+    --button-we-tied-color:#727B98;
+    --button-automa-score-color:#E19E00;
 
     --round-end-plus-color:#727B98;
 
@@ -282,6 +300,9 @@ Theme template:
     --button-return-color:#8390A2;
     --button-change-n-players-color:#FFD2CF;
     --button-round-end-goal-color:#D05478;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#8390A2;
 
@@ -322,6 +343,9 @@ Theme template:
     --button-return-color:#93862a;
     --button-change-n-players-color:#b8a53f;
     --button-round-end-goal-color:#b8a53f;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#d97878;
 
@@ -359,6 +383,9 @@ Theme template:
     --button-return-color:#edd8c5;
     --button-change-n-players-color:#d09a5e;
     --button-round-end-goal-color:#e7aa01;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#73481b;
 
@@ -397,6 +424,9 @@ Theme template:
     --button-return-color:#afbe9f;
     --button-change-n-players-color:#d683ad;
     --button-round-end-goal-color:#6eb245;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#d683ad;
 
@@ -435,6 +465,9 @@ Theme template:
     --button-return-color:#8098A2;
     --button-change-n-players-color:#5F7929;
     --button-round-end-goal-color:#BD338F;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#F5DC83;
 
@@ -473,6 +506,9 @@ Theme template:
     --button-return-color:#4B1C57;
     --button-change-n-players-color:#D5114E;
     --button-round-end-goal-color:#D5114E;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#09090C;
 
@@ -509,6 +545,9 @@ Theme template:
     --button-return-color:#424847;
     --button-change-n-players-color:#d36328;
     --button-round-end-goal-color:#b4b9b3;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#cb0300;
 
@@ -544,6 +583,9 @@ Theme template:
     --button-return-color:#B03F05;
     --button-change-n-players-color:#D9C4A7;
     --button-round-end-goal-color:#4F3321;
+    --button-player-won-color:;
+    --button-we-tied-color:;
+    --button-automa-score-color:;
 
     --round-end-plus-color:#B03F05;
 
