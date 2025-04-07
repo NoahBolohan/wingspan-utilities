@@ -319,6 +319,10 @@ li:nth-child(5) {
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .astext {
     margin:0;
     padding:0;
