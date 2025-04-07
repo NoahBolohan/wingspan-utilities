@@ -214,14 +214,23 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     )
 
     // Vertical text: Amount on cards
-    $("<td>").attr(
+    var cell_vert_amount_on_cards = $("<td>").attr(
         {
-            class : "cell-vertical rowspan-vertical",
+            class : "cell-vertical",
             rowspan : "3"
         }
+    )
+
+    $("<div>").attr(
+        {
+            class:"cell-vertical rowspan-vertical"
+        }  
     ).text(
         "Amount on cards"
-    ).appendTo("#row_birds");
+    ).appendTo(cell_vert_amount_on_cards);
+    
+    
+    cell_vert_amount_on_cards.appendTo("#row_birds");
 
     // Birds
     $("<th>").attr(
@@ -257,14 +266,23 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).appendTo("#row_end-of-round_goals");
 
     // Vertical text: 1 point each
-    $("<td>").attr(
+    var cell_vert_1_point_each = $("<td>").attr(
         {
-            class : "cell-vertical rowspan-vertical",
+            class : "cell-vertical",
             rowspan : "3"
         }
+    )
+
+    $("<div>").attr(
+        {
+            class:"cell-vertical rowspan-vertical"
+        }  
     ).text(
         "1 point each"
-    ).appendTo("#row_eggs");
+    ).appendTo(cell_vert_1_point_each);
+    
+    
+    cell_vert_1_point_each.appendTo("#row_eggs");
 
     // Eggs
     $("<th>").attr(
@@ -300,14 +318,23 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).appendTo("#row_tucked_cards");
 
     // Vertical text: 5/2
-    $("<td>").attr(
+    var cell_vert_52 = $("<td>").attr(
         {
-            class : "cell-vertical rowspan-vertical",
+            class : "cell-vertical",
             rowspan : "1"
         }
+    )
+
+    $("<div>").attr(
+        {
+            class:"cell-vertical rowspan-vertical"
+        }  
     ).text(
         "5/2"
-    ).appendTo("#row_nectar");
+    ).appendTo(cell_vert_52);
+    
+    
+    cell_vert_52.appendTo("#row_nectar");
 
     // Nectar
     $("<th>").attr(
@@ -321,14 +348,23 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).appendTo("#row_nectar");
 
     // Vertical text: 1 point each
-    $("<td>").attr(
+    var cell_vert_1_point_each_2 = $("<td>").attr(
         {
-            class : "cell-vertical rowspan-vertical",
+            class : "cell-vertical",
             rowspan : "1"
         }
+    )
+
+    $("<div>").attr(
+        {
+            class:"cell-vertical rowspan-vertical"
+        }  
     ).text(
         "1 point each"
-    ).appendTo("#row_duet_tokens");
+    ).appendTo(cell_vert_1_point_each_2);
+    
+    
+    cell_vert_1_point_each_2.appendTo("#row_duet_tokens");
 
     // Duet tokens in largest contiguous group
     $("<th>").attr(
