@@ -422,11 +422,11 @@ Theme template:
     --button-reset-color:112,144,201;
     --button-submit-color:214,131,173;
     --button-return-color:175,190,159;
-    --button-change-n-players-color:214,131,173;
+    --button-change-n-players-color:207,34,54;
     --button-round-end-goal-color:110,178,69;
-    --button-player-won-color:;
-    --button-we-tied-color:;
-    --button-automa-score-color:;
+    --button-player-won-color:112,144,201;
+    --button-we-tied-color:110,178,69;
+    --button-automa-score-color:214,131,173;
 
     --round-end-plus-color:214,131,173;
 
