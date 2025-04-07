@@ -976,6 +976,8 @@ $(document).ready(
                     )
                 }
 
+                alert("hi")
+
                 reset_automa_played_birds();
                 reset_automa_drawn_cards();
                 reset_automa_laid_eggs();

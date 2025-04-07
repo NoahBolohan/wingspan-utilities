@@ -1,7 +1,7 @@
 // Open with debug options
 $(document).ready(
     function() {
-        // show_height_hidden("#row_debug_mode");
+        show_height_hidden("#row_debug_mode");
     }
 )
 
