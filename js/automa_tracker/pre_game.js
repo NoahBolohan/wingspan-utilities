@@ -560,9 +560,15 @@ function generate_round_end_goal_button_for_round(
 
     var new_url = encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/round_end_goals/${round_end_goal}.jpg`);
 
+    var div = $("<div>").attr(
+        {
+            class: "col-3"
+        }
+    );
+
     var button = $("<button>").attr(
         {
-            class : "col-3 btn btn-xs round_end_button",
+            class : "p-0 btn nav-button btn-round-end-goal",
             id : `button_round_${round_number}_${round_end_goal}`,
             type : "button"
         }
@@ -571,7 +577,6 @@ function generate_round_end_goal_button_for_round(
     $("<img>").attr(
         {
             "src" : new_url,
-            "class" : "col-3 p-0",
             "style" : "width : 100%"
         }
     ).appendTo(
@@ -579,6 +584,10 @@ function generate_round_end_goal_button_for_round(
     );
     
     button.appendTo(
+        div
+    );
+
+    div.appendTo(
         `#row_modal_round_${round_number}_end_buttons`
     );
 
