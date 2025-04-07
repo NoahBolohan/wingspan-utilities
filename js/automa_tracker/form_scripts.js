@@ -11,13 +11,13 @@ function assign_submit_href() {
         "cell_automa_n_drawn_cards" : $("#automa_tracker_body").data("automa_drawn_cards_counter"),
         "cell_automa_played_birds" : $("#automa_tracker_body").data("automa_played_birds_counter"),
         "cell_player_end-of-round_goals" : $("#automa_tracker_body").data(
-            "user_end_of_round_1_points"
+            "player_end_of_round_1_points"
         ) + $("#automa_tracker_body").data(
-            "user_end_of_round_2_points"
+            "player_end_of_round_2_points"
         ) + $("#automa_tracker_body").data(
-            "user_end_of_round_3_points"
+            "player_end_of_round_3_points"
         ) + $("#automa_tracker_body").data(
-            "user_end_of_round_4_points"
+            "player_end_of_round_4_points"
         ),
         "cell_automa_end-of-round_goals" : $("#automa_tracker_body").data(
             "automa_end_of_round_1_points"

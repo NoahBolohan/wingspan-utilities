@@ -60,19 +60,19 @@ $(document).ready(
             0
         );
         $("#automa_tracker_body").data(
-            "user_end_of_round_1_points",
+            "player_end_of_round_1_points",
             0
         );
         $("#automa_tracker_body").data(
-            "user_end_of_round_2_points",
+            "player_end_of_round_2_points",
             0
         );
         $("#automa_tracker_body").data(
-            "user_end_of_round_3_points",
+            "player_end_of_round_3_points",
             0
         );
         $("#automa_tracker_body").data(
-            "user_end_of_round_4_points",
+            "player_end_of_round_4_points",
             0
         );
         $("#automa_tracker_body").data(

@@ -374,7 +374,7 @@ $(document).ready(
             function() {
                 if ($("#col_debug_mode_round_end_winner_checkbox").is(":checked")) {
 
-                    end_round_cleanup("automa_user_scored");
+                    end_round_cleanup("automa_player_scored");
                 }
                 else {
 
@@ -450,14 +450,14 @@ $(document).ready(
             function(habitat_key, habitat) {
     
                 $.each(
-                    ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"],
+                    ["i_won", "we_tied", "automa_won_player_scored", "automa_won_player_did_not_score"],
                     function (outcome_key, outcome) {
     
                         $(`#button_${habitat}_nectar_scoring_${outcome}`).on(
                             "click",
                             function() {
 
-                                for (var other_outcome of ["i_won", "we_tied", "automa_won_user_scored", "automa_won_user_did_not_score"]) {
+                                for (var other_outcome of ["i_won", "we_tied", "automa_won_player_scored", "automa_won_player_did_not_score"]) {
             
                                     if (other_outcome == outcome) {
 
@@ -474,7 +474,7 @@ $(document).ready(
                                     case "i_won":
 
                                         $("#automa_tracker_body").data(
-                                            `user_${habitat}_nectar_score`,
+                                            `player_${habitat}_nectar_score`,
                                             5
                                         );
                                         if ($(`#col_automa_nectar_${habitat}_count`).data("counter") > 0) {
@@ -498,7 +498,7 @@ $(document).ready(
                                     case "we_tied":
 
                                         $("#automa_tracker_body").data(
-                                            `user_${habitat}_nectar_score`,
+                                            `player_${habitat}_nectar_score`,
                                             3
                                         );
                                         $("#automa_tracker_body").data(
@@ -507,10 +507,10 @@ $(document).ready(
                                         );
                                         break;
 
-                                    case "automa_won_user_scored":
+                                    case "automa_won_player_scored":
 
                                         $("#automa_tracker_body").data(
-                                            `user_${habitat}_nectar_score`,
+                                            `player_${habitat}_nectar_score`,
                                             2
                                         );
                                         $("#automa_tracker_body").data(
@@ -519,10 +519,10 @@ $(document).ready(
                                         );
                                         break;
 
-                                    case "automa_won_user_did_not_score":
+                                    case "automa_won_player_did_not_score":
 
                                         $("#automa_tracker_body").data(
-                                            `user_${habitat}_nectar_score`,
+                                            `player_${habitat}_nectar_score`,
                                             0
                                         );
                                         $("#automa_tracker_body").data(
@@ -571,12 +571,12 @@ $(document).ready(
 // Set an event listener for performing automa won action by clicking the automa won button (user scored)
 $(document).ready(
     function() {
-        $("#button_automa_won_user_scored").on(
+        $("#button_automa_won_player_scored").on(
             "click",
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup("automa_user_scored"); 
+                end_round_cleanup("automa_player_scored"); 
             }
         )
     }
@@ -585,12 +585,12 @@ $(document).ready(
 // Set an event listener for performing automa won action by clicking the automa won button (user did not score)
 $(document).ready(
     function() {
-        $("#button_automa_won_user_did_not_score").on(
+        $("#button_automa_won_player_did_not_score").on(
             "click",
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup("automa_user_did_not_score"); 
+                end_round_cleanup("automa_player_did_not_score"); 
             }
         )
     }

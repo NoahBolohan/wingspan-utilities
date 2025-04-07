@@ -505,7 +505,7 @@ function end_round_cleanup(who_won) {
 
         // Update users round end points
         $("#automa_tracker_body").data(
-            `user_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
+            `player_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
             $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#automa_tracker_body").data("current_round")}`][0]
@@ -532,11 +532,11 @@ function end_round_cleanup(who_won) {
             )
         }
     }
-    else if (who_won == "automa_user_scored") {
+    else if (who_won == "automa_player_scored") {
 
         // Update user's round end points
         $("#automa_tracker_body").data(
-            `user_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
+            `player_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
             $("#automa_tracker_body").data(
                 "round_end_points"
             )[`round_${$("#automa_tracker_body").data("current_round")}`][1]
@@ -551,11 +551,11 @@ function end_round_cleanup(who_won) {
         )
     }
 
-    else if (who_won == "automa_user_did_not_score") {
+    else if (who_won == "automa_player_did_not_score") {
 
         // Update user's round end points
         $("#automa_tracker_body").data(
-            `user_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
+            `player_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
             0
         )
 
@@ -588,7 +588,7 @@ function end_round_cleanup(who_won) {
         }
 
         $("#automa_tracker_body").data(
-            `user_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
+            `player_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`,
             points
         )
 
@@ -602,7 +602,7 @@ function end_round_cleanup(who_won) {
     $(`#col_round_${$("#automa_tracker_body").data("current_round")}_end_cube_count`).text(
         `Me: ${
             $("#automa_tracker_body").data(
-                `user_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`
+                `player_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`
             )
         }, Automa: ${
             $("#automa_tracker_body").data(
