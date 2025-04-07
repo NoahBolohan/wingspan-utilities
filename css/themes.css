@@ -298,11 +298,11 @@ Theme template:
     --button-reset-color:233,167,187;
     --button-submit-color:255,210,207;
     --button-return-color:131,144,162;
-    --button-change-n-players-color:255,210,207;
+    --button-change-n-players-color:208,84,120;
     --button-round-end-goal-color:208,84,120;
-    --button-player-won-color:;
-    --button-we-tied-color:;
-    --button-automa-score-color:;
+    --button-player-won-color:131,144,162;
+    --button-we-tied-color:255,210,207;
+    --button-automa-score-color:233,167,187;
 
     --round-end-plus-color:131,144,162;
 
