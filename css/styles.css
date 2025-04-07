@@ -775,6 +775,23 @@ input::placeholder {
     background-color:rgba(var(--button-dropdown-menu-color));
 }
 
+.btn-close-settings {
+    background-color:rgba(var(--card-background-color));
+}
+
+.btn-close-settings:hover {
+    background-color:rgba(var(--card-background-color),0.5);
+}
+
+.btn-close-settings:active {
+    background-color:rgba(var(--card-background-color))!important;
+}
+
+.btn-close-settings:focus {
+    outline: 1px solid rgba(var(--font-color-headers))!important;
+    background-color:rgba(var(--card-background-color));
+}
+
 /*Cells*/
 .cell-vertical {
     padding: 0!important;
