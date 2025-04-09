@@ -147,6 +147,14 @@ $(document).ready(
     }
 )
 
+$(document).ready(
+
+    function() {
+        $("#col_oceania_expansion_checkbox").trigger("change");
+        $("#col_automasian_alliance_checkbox").trigger("change");
+    }
+)
+
 
 // Recompute player total score
 function recompute_player_total_score() {

@@ -94,8 +94,9 @@ $(document).ready(
                         generate_row_headers(value, width_p, width_player_col);
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
+                        $("#col_oceania_expansion_checkbox").trigger("change");
+                        $("#col_duet_mode_checkbox").trigger("change");
                         show_height_hidden("#row_score_sheet");
-                        set_row_height_score_sheet();
                     }
                 );
             }
@@ -135,7 +136,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Score sheet HTML thead
     $("<tr>").attr(
         {
-            style : "height:11vh;",
+            style : "height:10vh;",
             id : "row_player_names"
         }
     ).appendTo("#score_sheet_thead");
@@ -143,55 +144,63 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Score sheet HTML tbody
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_birds"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_bonus_cards"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_end-of-round_goals"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_eggs"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_food_on_cards"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_tucked_cards"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
-            style : "visibility: collapse;",
+            style : "visibility:collapse;height:5vh;",
             id : "row_duet_tokens"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "visibility:collapse;height:5vh;",
             id : "row_nectar"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
+            style : "height:5vh;",
             id : "row_total"
         }
     ).appendTo("#score_sheet_tbody");
@@ -224,7 +233,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 
     $("<div>").attr(
         {
-            class:"cell-vertical rowspan-vertical"
+            class:"rowspan-vertical"
         }  
     ).text(
         "Amount on cards"
@@ -277,7 +286,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 
     $("<div>").attr(
         {
-            class:"cell-vertical rowspan-vertical"
+            class:"rowspan-vertical"
         }  
     ).text(
         "1 point each"
@@ -329,7 +338,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 
     $("<div>").attr(
         {
-            class:"cell-vertical rowspan-vertical"
+            class:"rowspan-vertical"
         }  
     ).text(
         "5/2"
@@ -397,7 +406,7 @@ function generate_n_score_columns(n_players, width_p) {
                 id : `input_player_${i}_name`,
                 name : `player_${i}_name`,
                 placeholder : `Player ${i}`,
-                style : "height:80px;"
+                style : "height:8vh;"
             }
         ).appendTo(div);
 
@@ -753,8 +762,6 @@ $(document).ready(
 
                     }
                 }
-
-                set_row_height_score_sheet();
             }
         )
     }
@@ -812,42 +819,10 @@ $(document).ready(
                         recompute_player_total_score(i);
                     }
                 }
-
-                set_row_height_score_sheet();
             }
         )
     }
 )
-
-$(document).ready(
-    
-    function() {
-        $("#col_oceania_expansion_checkbox").trigger("change");
-        $("#col_duet_mode_checkbox").trigger("change");
-
-        set_row_height_score_sheet();
-    }
-)
-
-function set_row_height_score_sheet() {
-
-    var row_count = $("#row_score_sheet tr").length - 1;
-
-    if (!$("#col_oceania_expansion_checkbox").is(":checked")) {
-        row_count-=1;
-    }
-
-    if (!$("#col_duet_mode_checkbox").is(":checked")) {
-        row_count-=1;
-    }
-
-    if (row_count > 0) {
-        $("#row_score_sheet tr").css("height",`${55/row_count}vh`);
-    }
-    else {
-        $("#row_score_sheet tr").css("height","initial");
-    }
-}
 
 $(document).ready(
 
