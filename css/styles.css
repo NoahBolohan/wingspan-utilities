@@ -411,6 +411,10 @@ outline: 2px solid rgba(var(--font-color-buttons));
     height:12vh;
 }
 
+.vh15 {
+    height:15vh;
+}
+
 .vh10 {
     height:10vh;
 }
@@ -433,6 +437,14 @@ outline: 2px solid rgba(var(--font-color-buttons));
 
 .vh20 {
     height:20vh;
+}
+
+.vh35 {
+    height:35vh;
+}
+
+.vh30 {
+    height:30vh;
 }
 
 .header-background-for-index-menu {

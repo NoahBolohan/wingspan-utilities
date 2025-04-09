@@ -870,17 +870,17 @@
 
 			<div class="container-fluid" id="container_header">
 
-                <div class="row justify-content-center align-items-center" style="height:5vh; margin-top: 1vh;" id="row_header">
+                <div class="row justify-content-center align-items-center" style="height:7vh; margin-top: 1vh;" id="row_header">
 
-                    <div class="col header-background vh5"></div>
+                    <div class="col header-background vh7"></div>
         
-                    <div class="row justify-content-center align-items-center " style="height:5vh;" id="row_header_1">
+                    <div class="row justify-content-center align-items-center " style="height:7vh;" id="row_header_1">
         
                         <div class="col-auto m-0 px-0 text-center h1 header-content">Automa tracker</div>
                     </div>
                 </div>
 
-                <div class="row mt-1 justify-content-between align-items-center" id="row_checkboxes">
+                <div class="row justify-content-between align-items-center vh7" id="row_checkboxes">
 
                     <div class="col-5 dropdown" id="div_dropdown_expansions_menu">
 
@@ -1044,163 +1044,245 @@
 					<input class="col-6" id="col_debug_mode_round_end_winner_checkbox" name="debug_mode_round_end_winner" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_difficulty">
+				<div class="vh60">
 
-					<div class="col-12 p-0">
+					<div class="row p-0 justify-content-center margin_auto" id="row_difficulty">
 
-						<div class="card">
-
-							<div class="card-header py-1 text-center" id="row_difficulty_header">
-								<h2 class="p-0 m-0 h2">Difficulty</h2>
-							</div>
-
-							<div class="card-body p-0">
-
-								<div class="row p-0 justify-content-center margin_auto">
-
-									<fieldset class="col-6" id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0>
-
-										<div class="row p-0 mt-1 margin_auto" id="row_difficulty_eaglet">
-		
-											<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center ">
-		
-												<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+						<div class="col-12">
+	
+							<div class="card">
+	
+								<div class="card-header py-1 text-center" id="row_difficulty_header">
+									<h2 class="p-0 m-0 h2">Difficulty</h2>
+								</div>
+	
+								<div class="card-body p-0">
+	
+									<div class="row p-0 justify-content-center margin_auto">
+	
+										<fieldset class="col-6" id="col_difficulty_radio" name="difficulty" data-enable_start_game = 0>
+	
+											<div class="row p-0 mt-1 margin_auto" id="row_difficulty_eaglet">
+			
+												<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center ">
+			
+													<input type="radio" id="radio_difficulty_choice_eaglet" name="difficulty" value="eaglet" />
+												</div>
+												
+												<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eaglet">Eaglet</label>
 											</div>
+										
+											<div class="row p-0 margin_auto" id="row_difficulty_eagle">
+			
+												<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+			
+													<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
+												</div>
+			
+												<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle">Eagle</label>
+											</div>
+										
+											<div class="row p-0 margin_auto" id="row_difficulty_eagle-eyed_eagle">
+			
+												<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+			
+													<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
+												</div>
+			
+												<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle</label>
+											</div>
+			
+											<div class="row p-0 margin_auto" id="row_difficulty_custom">
+			
+												<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
+			
+													<input type="radio" id="radio_difficulty_choice_custom" name="difficulty" value="custom" />
+												</div>
+			
+												<label class="col-11 py-0 px-1" for="radio_difficulty_choice_custom">Custom</label>
+											</div>
+										</fieldset>
+			
+										<div class="col-6">
+	
+											<div class="row p-0 margin_auto">
+												<label for="col_automas_cache_checkbox" id="row_automas_cache">
+													Automa's cache
+													<input id="col_automas_cache_checkbox_hidden" name="automas_cache" type="hidden" value="no"></input>
+													<input id="col_automas_cache_checkbox" name="automas_cache" type="checkbox" value="yes">
+												</label>
+											</div>
+	
+											<div class="row p-0 margin_auto">
+												<label for="col_automas_hoard_checkbox" id="row_automas_hoard">
+													Automa's hoard
+													<input id="col_automas_hoard_checkbox_hidden" name="automas_hoard" type="hidden" value="no"></input>
+													<input id="col_automas_hoard_checkbox" name="automas_hoard" type="checkbox" value="yes">
+												</label>
+											</div>
+										</div>
+									</div>
+	
+									<hr style="margin-top : 0.25rem; margin-bottom : 0.25rem;"/>
+	
+									<div class="row p-0 margin_auto" id="row_automa_starting_starting_nectar_per_habitat">
+	
+										<div class="col-7 text-color-buttons">
+											Starting spent nectar per habitat
+										</div>
+	
+										<div class="col-5">
 											
-											<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eaglet">Eaglet</label>
+											<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_starting_nectar_radio" name="automa_starting_nectar" data-enable_start_game = 0>
+	
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_starting_nectar" 
+														value="3"> 3
+												</label>
+					
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_starting_nectar" 
+														value="4"> 4
+												</label>
+					
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_starting_nectar" 
+														value="5"> 5
+												</label>
+											</fieldset>
 										</div>
-									
-										<div class="row p-0 margin_auto" id="row_difficulty_eagle">
-		
-											<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
-		
-												<input type="radio" id="radio_difficulty_choice_eagle" name="difficulty" value="eagle" />
-											</div>
-		
-											<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle">Eagle</label>
+									</div>
+	
+									<div class="row p-0 my-1 margin_auto" id="row_automa_face_down_bird_cards">
+	
+										<div class="col-7 text-color-buttons">
+											Points per face-down bird card
 										</div>
-									
-										<div class="row p-0 margin_auto" id="row_difficulty_eagle-eyed_eagle">
-		
-											<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
-		
-												<input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="difficulty" value="eagle-eyed_eagle" />
-											</div>
-		
-											<label class="col-11 py-0 px-1" for="radio_difficulty_choice_eagle-eyed_eagle">Eagle-eyed Eagle</label>
+	
+										<div class="col-5">
+											
+											<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_points_per_face_down_bird_card_radio" name="automa_points_per_face_down_bird_card" data-enable_start_game = 0>
+	
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_points_per_face_down_bird_card" 
+														value="3"> 3
+												</label>
+					
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_points_per_face_down_bird_card" 
+														value="4"> 4
+												</label>
+					
+												<label class="col-4 p-0">
+													<input type="radio" name="automa_points_per_face_down_bird_card" 
+														value="5"> 5
+												</label>
+											</fieldset>
 										</div>
-		
-										<div class="row p-0 margin_auto" id="row_difficulty_custom">
-		
-											<div  class="col-1 py-0 px-1 text-center d-flex justify-content-center">
-		
-												<input type="radio" id="radio_difficulty_choice_custom" name="difficulty" value="custom" />
-											</div>
-		
-											<label class="col-11 py-0 px-1" for="radio_difficulty_choice_custom">Custom</label>
+									</div>
+	
+									<div class="row p-0 mt-1 margin_auto" id="row_automa_hoard_tokens">
+	
+										<div class="col-7 disabled-text" id="div_automa_cache_hoard_text">
+											Cache / hoard tokens per egg
 										</div>
-									</fieldset>
-		
-									<div class="col-6">
-
-										<div class="row p-0 margin_auto">
-											<label for="col_automas_cache_checkbox" id="row_automas_cache">
-												Automa's cache
-												<input id="col_automas_cache_checkbox_hidden" name="automas_cache" type="hidden" value="no"></input>
-												<input id="col_automas_cache_checkbox" name="automas_cache" type="checkbox" value="yes">
-											</label>
-										</div>
-
-										<div class="row p-0 margin_auto">
-											<label for="col_automas_hoard_checkbox" id="row_automas_hoard">
-												Automa's hoard
-												<input id="col_automas_hoard_checkbox_hidden" name="automas_hoard" type="hidden" value="no"></input>
-												<input id="col_automas_hoard_checkbox" name="automas_hoard" type="checkbox" value="yes">
-											</label>
+	
+										<div class="col-5">
+											
+											<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_hoard_tokens_per_egg_radio" name="automa_hoard_tokens_per_egg" data-enable_start_game = 1>
+	
+												<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_5">
+													<input type="radio" name="automa_hoard_tokens_per_egg" value="5" disabled> 5
+												</label>
+					
+												<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_4">
+													<input type="radio" name="automa_hoard_tokens_per_egg" value="4" disabled> 4
+												</label>
+					
+												<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_3">
+													<input type="radio" name="automa_hoard_tokens_per_egg" value="3" disabled> 3
+												</label>
+											</fieldset>
 										</div>
 									</div>
 								</div>
-
-								<hr style="margin-top : 0.25rem; margin-bottom : 0.25rem;"/>
-
-								<div class="row p-0 margin_auto" id="row_automa_starting_starting_nectar_per_habitat">
-
-									<div class="col-7 text-color-buttons">
-										Starting spent nectar per habitat
-									</div>
-
-									<div class="col-5">
-										
-										<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_starting_nectar_radio" name="automa_starting_nectar" data-enable_start_game = 0>
-
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_starting_nectar" 
-													value="3"> 3
-											</label>
-				
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_starting_nectar" 
-													value="4"> 4
-											</label>
-				
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_starting_nectar" 
-													value="5"> 5
-											</label>
-										</fieldset>
-									</div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_round_end_goal_buttons">
+	
+						<div class="col-12">
+	
+							<div class="card">
+	
+								<div class="card-header py-1 text-center" id="row_round_end_goals_header">
+									<h2 class="p-0 m-0 h2">Round-end goals</h2>
 								</div>
-
-								<div class="row p-0 my-1 margin_auto" id="row_automa_face_down_bird_cards">
-
-									<div class="col-7 text-color-buttons">
-										Points per face-down bird card
-									</div>
-
-									<div class="col-5">
-										
-										<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_points_per_face_down_bird_card_radio" name="automa_points_per_face_down_bird_card" data-enable_start_game = 0>
-
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_points_per_face_down_bird_card" 
-													value="3"> 3
-											</label>
-				
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_points_per_face_down_bird_card" 
-													value="4"> 4
-											</label>
-				
-											<label class="col-4 p-0">
-												<input type="radio" name="automa_points_per_face_down_bird_card" 
-													value="5"> 5
-											</label>
-										</fieldset>
-									</div>
-								</div>
-
-								<div class="row p-0 mt-1 margin_auto" id="row_automa_hoard_tokens">
-
-									<div class="col-7 disabled-text" id="div_automa_cache_hoard_text">
-										Cache / hoard tokens per egg
-									</div>
-
-									<div class="col-5">
-										
-										<fieldset class="row p-0 justify-content-between margin_auto" id="row_automa_hoard_tokens_per_egg_radio" name="automa_hoard_tokens_per_egg" data-enable_start_game = 1>
-
-											<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_5">
-												<input type="radio" name="automa_hoard_tokens_per_egg" value="5" disabled> 5
-											</label>
-				
-											<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_4">
-												<input type="radio" name="automa_hoard_tokens_per_egg" value="4" disabled> 4
-											</label>
-				
-											<label class="col-4 p-0 disabled-text" id="label_automa_hoard_tokens_3">
-												<input type="radio" name="automa_hoard_tokens_per_egg" value="3" disabled> 3
-											</label>
-										</fieldset>
+	
+								<div class="card-body p-0">
+	
+									<div class="row p-0 justify-content-center margin_auto">
+	
+										<div class="col-3 p-1">
+	
+											<div class="row p-0 justify-content-center margin_auto text-color-buttons">
+												Round 1:
+											</div>
+	
+											<div class="row p-0 justify-content-center margin_auto">
+	
+												<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
+													<div class="plus-border"></div>
+													<div class="plus-inner"></div>
+												</button>
+											</div>
+										</div>
+	
+										<div class="col-3 p-1">
+	
+											<div class="row p-0 justify-content-center margin_auto text-color-buttons">
+												Round 2:
+											</div>
+	
+											<div class="row p-0 justify-content-center margin_auto">
+												
+												<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_2_end_goal" type="button" data-enable_start_game = 0>
+													<div class="plus-border"></div>
+													<div class="plus-inner"></div>
+												</button>
+											</div>
+										</div>
+	
+										<div class="col-3 p-1">
+	
+											<div class="row p-0 justify-content-center margin_auto text-color-buttons">
+												Round 3:
+											</div>
+	
+											<div class="row p-0 justify-content-center margin_auto">
+												
+												<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_3_end_goal" type="button" data-enable_start_game = 0>
+													<div class="plus-border"></div>
+													<div class="plus-inner"></div>
+												</button>
+											</div>
+										</div>
+	
+										<div class="col-3 p-1">
+	
+											<div class="row p-0 justify-content-center margin_auto text-color-buttons">
+												Round 4:
+											</div>
+	
+											<div class="row p-0 justify-content-center margin_auto">
+												
+												<button class="col-12 p-0 btn nav-button btn-round-end-goal" id="button_round_4_end_goal" type="button" data-enable_start_game = 0>
+													<div class="plus-border"></div>
+													<div class="plus-inner"></div>
+												</button>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1208,86 +1290,31 @@
 					</div>
 				</div>
 
-				<div class="row p-0 mt-1 justify-content-center margin_auto">
+				
 
-					<div class="col-12 p-0">
+				<div class="row p-0 justify-content-center margin_auto vh15">
 
-					<div class="card">
+                    <div class="col-12 align-self-center">
 
-						<div class="card-header py-1 text-center" id="row_round_end_goals_header">
-							<h2 class="p-0 m-0 h2">Round-end goals</h2>
-						</div>
+                        <div class="row p-0 justify-content-center margin_auto" id="row_reset_submit_buttons">
 
-						<div class="card-body p-0">
-
-							<div class="row p-0 justify-content-center margin_auto">
-
-								<div class="col-3 p-1">
-
-									<div class="row p-0 justify-content-center margin_auto text-color-buttons">
-										Round 1:
-									</div>
-
-									<div class="row p-0 justify-content-center margin_auto">
-
-										<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_1_end_goal" type="button" data-enable_start_game = 0>
-											<div class="plus-border"></div>
-											<div class="plus-inner"></div>
-										</button>
-									</div>
-								</div>
-
-								<div class="col-3 p-1">
-
-									<div class="row p-0 justify-content-center margin_auto text-color-buttons">
-										Round 2:
-									</div>
-
-									<div class="row p-0 justify-content-center margin_auto">
-										
-										<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_2_end_goal" type="button" data-enable_start_game = 0>
-											<div class="plus-border"></div>
-											<div class="plus-inner"></div>
-										</button>
-									</div>
-								</div>
-
-								<div class="col-3 p-1">
-
-									<div class="row p-0 justify-content-center margin_auto text-color-buttons">
-										Round 3:
-									</div>
-
-									<div class="row p-0 justify-content-center margin_auto">
-										
-										<button class="p-0 btn nav-button btn-round-end-goal" id="button_round_3_end_goal" type="button" data-enable_start_game = 0>
-											<div class="plus-border"></div>
-											<div class="plus-inner"></div>
-										</button>
-									</div>
-								</div>
-
-								<div class="col-3 p-1">
-
-									<div class="row p-0 justify-content-center margin_auto text-color-buttons">
-										Round 4:
-									</div>
-
-									<div class="row p-0 justify-content-center margin_auto">
-										
-										<button class="col-12 p-0 btn nav-button btn-round-end-goal" id="button_round_4_end_goal" type="button" data-enable_start_game = 0>
-											<div class="plus-border"></div>
-											<div class="plus-inner"></div>
-										</button>
-									</div>
-								</div>
+                            <div class="col-8">
+								<button class="w-100 btn nav-button btn-start" id="button_start_game" type="button" disabled = "true">
+									Start Game
+								</button>
 							</div>
-						</div>
-					</div>
-					</div>
-				</div>
+                        </div>
+        
+                        <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
+        
+                            <div class="col-auto align-self-center">
+                                <a class="btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
+				<!-- <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
                     <div class="col-8">
                         <button class="w-100 btn nav-button btn-start" id="button_start_game" type="button" disabled = "true">
@@ -1299,7 +1326,7 @@
 				<div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
 
                     <a class="col-auto btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
-                </div>
+                </div> -->
 			</div>
 
 			<div class="container-fluid height_hidden" id="container_automa_gameplay">
