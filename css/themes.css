@@ -17,7 +17,7 @@ Theme template:
     --button-reset-color:;
     --button-submit-color:;
     --button-return-color:;
-    --button-change-n-players-color:;
+    --button-automa-action-color:;
     --button-round-end-goal-color:;
 
     --cell-vertical-color:;
@@ -54,7 +54,7 @@ Theme template:
     --button-reset-color:101,188,181;
     --button-submit-color:250,210,67;
     --button-return-color:193,122,53;
-    --button-change-n-players-color:113,118,182;
+    --button-automa-action-color:113,118,182;
     --button-player-won-color:250,210,67;
     --button-we-tied-color:101,188,181;
     --button-automa-score-color:236,169,165;
@@ -95,7 +95,7 @@ Theme template:
     --button-reset-color:101,188,181;
     --button-submit-color:250,210,67;
     --button-return-color:193,122,53;
-    --button-change-n-players-color:113,118,182;
+    --button-automa-action-color:113,118,182;
     --button-round-end-goal-color:236,169,165;
     --button-player-won-color:250,210,67;
     --button-we-tied-color:101,188,181;
@@ -135,7 +135,7 @@ Theme template:
     --button-reset-color:245,162,0;
     --button-submit-color:237,208,62;
     --button-return-color:109,134,0;
-    --button-change-n-players-color:245,162,0;
+    --button-automa-action-color:245,162,0;
     --button-round-end-goal-color:237,208,62;
     --button-player-won-color:237,208,62;
     --button-we-tied-color:245,162,0;
@@ -179,7 +179,7 @@ Theme template:
     --button-reset-color:184,188,216;
     --button-submit-color:173,141,159;
     --button-return-color:156,70,32;
-    --button-change-n-players-color:114,95,119;
+    --button-automa-action-color:114,95,119;
     --button-round-end-goal-color:114,95,119;
     --button-player-won-color:196,88,41;
     --button-we-tied-color:11,117,149;
@@ -219,7 +219,7 @@ Theme template:
     --button-reset-color:205,49,34;
     --button-submit-color:244,198,35;
     --button-return-color:47,122,185;
-    --button-change-n-players-color:108,144,94;
+    --button-automa-action-color:108,144,94;
     --button-round-end-goal-color:244,198,35;
     --button-player-won-color:244,198,35;
     --button-we-tied-color:108,144,94;
@@ -259,7 +259,7 @@ Theme template:
     --button-reset-color:251,235,91;
     --button-submit-color:225,158,0;
     --button-return-color:133,119,58;
-    --button-change-n-players-color:114,123,152;
+    --button-automa-action-color:114,123,152;
     --button-round-end-goal-color:251,235,91;
     --button-player-won-color:251,235,91;
     --button-we-tied-color:114,123,152;
@@ -298,7 +298,7 @@ Theme template:
     --button-reset-color:233,167,187;
     --button-submit-color:255,210,207;
     --button-return-color:131,144,162;
-    --button-change-n-players-color:208,84,120;
+    --button-automa-action-color:208,84,120;
     --button-round-end-goal-color:208,84,120;
     --button-player-won-color:131,144,162;
     --button-we-tied-color:255,210,207;
@@ -341,7 +341,7 @@ Theme template:
     --button-reset-color:162,158,184;
     --button-submit-color:226,171,160;
     --button-return-color:147,134,42;
-    --button-change-n-players-color:184,165,63;
+    --button-automa-action-color:184,165,63;
     --button-round-end-goal-color:184,165,63;
     --button-player-won-color:162,158,184;
     --button-we-tied-color:226,171,160;
@@ -381,7 +381,7 @@ Theme template:
     --button-reset-color:208,154,94;
     --button-submit-color:231,170,1;
     --button-return-color:237,216,197;
-    --button-change-n-players-color:208,154,94;
+    --button-automa-action-color:208,154,94;
     --button-round-end-goal-color:231,170,1;
     --button-player-won-color:231,170,1;
     --button-we-tied-color:208,154,94;
@@ -422,7 +422,7 @@ Theme template:
     --button-reset-color:112,144,201;
     --button-submit-color:214,131,173;
     --button-return-color:175,190,159;
-    --button-change-n-players-color:207,34,54;
+    --button-automa-action-color:207,34,54;
     --button-round-end-goal-color:110,178,69;
     --button-player-won-color:112,144,201;
     --button-we-tied-color:110,178,69;
@@ -463,7 +463,7 @@ Theme template:
     --button-reset-color:235,130,82;
     --button-submit-color:245,220,131;
     --button-return-color:128,152,162;
-    --button-change-n-players-color:189,51,143;
+    --button-automa-action-color:189,51,143;
     --button-round-end-goal-color:189,51,143;
     --button-player-won-color:235,130,82;
     --button-we-tied-color:205,212,220;
@@ -504,7 +504,7 @@ Theme template:
     --button-reset-color:9,9,12;
     --button-submit-color:165,110,182;
     --button-return-color:75,28,87;
-    --button-change-n-players-color:213,17,78;
+    --button-automa-action-color:213,17,78;
     --button-round-end-goal-color:213,17,78;
     --button-player-won-color:1,105,196;
     --button-we-tied-color:21,52,96;
@@ -543,7 +543,7 @@ Theme template:
     --button-reset-color:0,1,0;
     --button-submit-color:211,99,40;
     --button-return-color:66,72,71;
-    --button-change-n-players-color:211,99,40;
+    --button-automa-action-color:211,99,40;
     --button-round-end-goal-color:180,185,179;
     --button-player-won-color:211,99,40;
     --button-we-tied-color:203,3,0;
@@ -581,7 +581,7 @@ Theme template:
     --button-reset-color:217,196,167;
     --button-submit-color:170,120,83;
     --button-return-color:176,63,5;
-    --button-change-n-players-color:217,196,167;
+    --button-automa-action-color:217,196,167;
     --button-round-end-goal-color:79,51,33;
     --button-player-won-color:79,51,33;
     --button-we-tied-color:170,120,83;

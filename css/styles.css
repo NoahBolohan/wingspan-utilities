@@ -705,23 +705,23 @@ input::placeholder {
     background-color:rgba(var(--button-return-color));
 }
 
-.btn-change-n-players {
+.btn-automa-action {
     font-size: 2.67vh;
     width:100%;
-    background-color:rgba(var(--button-change-n-players-color));
+    background-color:rgba(var(--button-automa-action-color));
 }
 
-.btn-change-n-players:hover {
-    background-color:rgba(var(--button-change-n-players-color),0.5);
+.btn-automa-action:hover {
+    background-color:rgba(var(--button-automa-action-color),0.5);
 }
 
-.btn-change-n-players:active {
-    background-color:rgba(var(--button-change-n-players-color))!important;
+.btn-automa-action:active {
+    background-color:rgba(var(--button-automa-action-color))!important;
 }
 
-.btn-change-n-players:focus {
+.btn-automa-action:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
-    background-color:rgba(var(--button-change-n-players-color));
+    background-color:rgba(var(--button-automa-action-color));
 }
 
 .btn-round-end-goal {
