@@ -78,8 +78,6 @@ $(document).ready(
                     recompute_player_total_score();
                     recompute_automa_total_score();
                 }
-
-                set_row_height_automa_score_sheet();
             }
         )
     }
@@ -144,42 +142,11 @@ $(document).ready(
                     recompute_player_total_score();
                     recompute_automa_total_score();
                 }
-
-                set_row_height_automa_score_sheet();
             }
         )
     }
 )
 
-$(document).ready(
-    
-    function() {
-        $("#col_oceania_expansion_checkbox").trigger("change");
-        $("#col_automasian_alliance_checkbox").trigger("change");
-
-        set_row_height_automa_score_sheet();
-    }
-)
-
-function set_row_height_automa_score_sheet() {
-
-    var row_count = $("#row_score_sheet tr").length;
-
-    if (!$("#col_oceania_expansion_checkbox").is(":checked")) {
-        row_count-=1;
-    }
-
-    if (!$("#col_automasian_alliance_checkbox").is(":checked")) {
-        row_count-=1;
-    }
-
-    if (row_count > 0) {
-        $("#row_score_sheet tr").css("height",`${66/row_count}vh`);
-    }
-    else {
-        $("#row_score_sheet tr").css("height","initial");
-    }
-}
 
 // Recompute player total score
 function recompute_player_total_score() {
