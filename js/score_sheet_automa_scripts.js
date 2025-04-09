@@ -135,6 +135,14 @@ $(document).ready(
     }
 )
 
+$(document).ready(
+    
+    function() {
+        $("#col_oceania_expansion_checkbox").trigger("change");
+        $("#col_automasian_alliance_checkbox").trigger("change");
+    }
+)
+
 // Recompute player total score
 function recompute_player_total_score() {
 
@@ -356,21 +364,6 @@ $(document).ready(
 
 // Recompute automa total score
 function recompute_automa_total_score() {
-
-    // var face_down_card_multiplier = 0;
-
-    // switch($("input[name='difficulty']:checked").val()) {
-
-    //     case "eaglet":
-    //         face_down_card_multiplier = 3;
-    //         break;
-    //     case "eagle":
-    //         face_down_card_multiplier = 4;
-    //         break;
-    //     case "eagle-eyed_eagle":
-    //         face_down_card_multiplier = 5;
-    //         break;
-    // };
 
     var face_down_card_multiplier = parseInt(
         $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
