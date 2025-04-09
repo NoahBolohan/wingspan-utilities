@@ -174,7 +174,7 @@ function set_row_height_automa_score_sheet() {
     }
 
     if (row_count > 0) {
-        $("#row_score_sheet tr").css("height",`${60/row_count}vh`);
+        $("#row_score_sheet tr").css("height",`${66/row_count}vh`);
     }
     else {
         $("#row_score_sheet tr").css("height","initial");

@@ -135,7 +135,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Score sheet HTML thead
     $("<tr>").attr(
         {
-            style : "height:10vh;",
+            style : "height:11vh;",
             id : "row_player_names"
         }
     ).appendTo("#score_sheet_thead");
@@ -842,7 +842,7 @@ function set_row_height_score_sheet() {
     }
 
     if (row_count > 0) {
-        $("#row_score_sheet tr").css("height",`${50/row_count}vh`);
+        $("#row_score_sheet tr").css("height",`${55/row_count}vh`);
     }
     else {
         $("#row_score_sheet tr").css("height","initial");
