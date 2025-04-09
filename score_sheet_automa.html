@@ -306,7 +306,7 @@
             
                             <tr>
 
-                                <td class="cell-vertical" rowspan="3">
+                                <td class="cell-vertical" rowspan="3" id="rowspan-vertical-1-pt-each">
                                     
                                     <div class="rowspan-vertical">
                                         1 point each
@@ -346,6 +346,19 @@
                                 <td class="cell-disabled" colspan="6"></td>
                             </tr>
 
+                            <tr id="row_duet_tokens" style="visibility: collapse;">
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Duet tokens</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
+                                </td>
+
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
+                                    <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
+                                </td>
+                            </tr>
+
                             <tr id="row_nectar" style="visibility: collapse;">
 
                                 <td class="cell-vertical" rowspan="1">
@@ -364,26 +377,6 @@
 
                                 <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
-                                </td>
-                            </tr>
-
-                            <tr id="row_duet_tokens" style="visibility: collapse;">
-
-                                <td class="cell-vertical" rowspan="1">
-                                    
-                                    <div class="rowspan-vertical">
-                                        1 point each
-                                    </div>
-                                </td>
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Duet tokens in largest contiguous group</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
-                                </td>
-
-                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
-                                    <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
                                 </td>
                             </tr>
             

@@ -867,27 +867,33 @@ input::placeholder {
     padding: 0!important;
     background-color:rgba(var(--cell-vertical-color))!important;
     color:rgba(var(--font-color-headers))!important;
+    text-align: center;
 }
 
 .cell-info {
     background-color:rgba(var(--cell-info-color))!important;
     color:rgba(var(--font-color-buttons))!important;
+    vertical-align: middle;
 }
 
 .cell-input {
     background-color:rgba(var(--cell-input-color))!important;
+    vertical-align: middle;
 }
 
 .cell-disabled {
     background-color:rgba(var(--cell-disabled-color))!important;
+    vertical-align: middle;
 }
 
 .cell-total {
     background-color:rgba(var(--cell-total-color))!important;
     color:rgba(var(--font-color-headers))!important;
+    vertical-align: middle;
 }
 
 .cell-automa-action {
     background-color:rgba(var(--cell-automa-action))!important;
     color:rgba(var(--font-color-headers))!important;
+    vertical-align: middle;
 }

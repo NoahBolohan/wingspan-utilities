@@ -76,3 +76,14 @@ function disable_text(selector) {
     $(selector).removeClass("enabled-text");
     $(selector).addClass("disabled-text");
 }
+
+function set_row_height(selector, n_rows) {
+
+    if (n_rows > 0) {
+        $(selector + " tr").css("height",`${60/n_rows}vh`);
+    }
+    else {
+        $(selector + " tr").css("height","initial");
+    }
+    
+}
