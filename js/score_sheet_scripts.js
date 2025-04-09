@@ -95,6 +95,7 @@ $(document).ready(
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
                         show_height_hidden("#row_score_sheet");
+                        set_row_height_score_sheet();
                     }
                 );
             }
@@ -134,7 +135,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Score sheet HTML thead
     $("<tr>").attr(
         {
-            style : "height:100px;",
+            style : "height:10vh;",
             id : "row_player_names"
         }
     ).appendTo("#score_sheet_thead");
@@ -178,14 +179,14 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 
     $("<tr>").attr(
         {
-            id : "row_nectar"
+            style : "visibility: collapse;",
+            id : "row_duet_tokens"
         }
     ).appendTo("#score_sheet_tbody");
 
     $("<tr>").attr(
         {
-            style : "visibility: collapse;",
-            id : "row_duet_tokens"
+            id : "row_nectar"
         }
     ).appendTo("#score_sheet_tbody");
 
@@ -269,7 +270,8 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     var cell_vert_1_point_each = $("<td>").attr(
         {
             class : "cell-vertical",
-            rowspan : "3"
+            rowspan : "3",
+            id : "rowspan-vertical-1-pt-each"
         }
     )
 
@@ -347,25 +349,6 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         "Nectar"
     ).appendTo("#row_nectar");
 
-    // Vertical text: 1 point each
-    var cell_vert_1_point_each_2 = $("<td>").attr(
-        {
-            class : "cell-vertical",
-            rowspan : "1"
-        }
-    )
-
-    $("<div>").attr(
-        {
-            class:"cell-vertical rowspan-vertical"
-        }  
-    ).text(
-        "1 point each"
-    ).appendTo(cell_vert_1_point_each_2);
-    
-    
-    cell_vert_1_point_each_2.appendTo("#row_duet_tokens");
-
     // Duet tokens in largest contiguous group
     $("<th>").attr(
         {
@@ -374,7 +357,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
             class : "cell-info score_sheet_cell_no_padding"
         }
     ).text(
-        "Duet tokens in largest contiguous group"
+        "Duet tokens"
     ).appendTo("#row_duet_tokens");
 
     // Total
@@ -569,7 +552,7 @@ function generate_n_score_columns(n_players, width_p) {
                 {
                     id : `col_player_${i}_duet_tokens`,
                     style : `width:${width_p}%`,
-                class : "cell-input"
+                    class : "cell-input"
                 }
             ).appendTo("#row_duet_tokens");
 
@@ -586,7 +569,8 @@ function generate_n_score_columns(n_players, width_p) {
 
             var cell = $("<td>").attr(
             {
-                style : `width:${width_p}%`
+                style : `width:${width_p}%`,
+                class : "cell-disabled"
             }
         ).appendTo("#row_duet_tokens");
         }
@@ -595,7 +579,7 @@ function generate_n_score_columns(n_players, width_p) {
         // Total
         var cell = $("<td>").attr(
             {
-                id : `col_player_${i}_total_score`,
+                id : `col_player_${i}_total_score`, 
                 style : `width:${width_p}%`,
                 class : "cell-total score_sheet_cell_no_padding"
             }
@@ -769,6 +753,8 @@ $(document).ready(
 
                     }
                 }
+
+                set_row_height_score_sheet();
             }
         )
     }
@@ -782,6 +768,12 @@ $(document).ready(
         $("#col_duet_mode_checkbox").change(
             function () {
                 if ($("#col_duet_mode_checkbox").is(":checked")) {
+
+                    $("#rowspan-vertical-1-pt-each").attr(
+                        {
+                            rowspan:4
+                        }
+                    );
 
                     $("#row_duet_tokens").css(
                         "visibility",
@@ -797,6 +789,12 @@ $(document).ready(
                     }
                 } 
                 else {
+
+                    $("#rowspan-vertical-1-pt-each").attr(
+                        {
+                            rowspan:3
+                        }
+                    );
 
                     $("#row_duet_tokens").css(
                         "visibility",
@@ -814,10 +812,42 @@ $(document).ready(
                         recompute_player_total_score(i);
                     }
                 }
+
+                set_row_height_score_sheet();
             }
         )
     }
 )
+
+$(document).ready(
+    
+    function() {
+        $("#col_oceania_expansion_checkbox").trigger("change");
+        $("#col_duet_mode_checkbox").trigger("change");
+
+        set_row_height_score_sheet();
+    }
+)
+
+function set_row_height_score_sheet() {
+
+    var row_count = $("#row_score_sheet tr").length - 1;
+
+    if (!$("#col_oceania_expansion_checkbox").is(":checked")) {
+        row_count-=1;
+    }
+
+    if (!$("#col_duet_mode_checkbox").is(":checked")) {
+        row_count-=1;
+    }
+
+    if (row_count > 0) {
+        $("#row_score_sheet tr").css("height",`${50/row_count}vh`);
+    }
+    else {
+        $("#row_score_sheet tr").css("height","initial");
+    }
+}
 
 $(document).ready(
 
