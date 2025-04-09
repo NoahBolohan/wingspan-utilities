@@ -61,6 +61,16 @@ function new_round(round_number) {
 
         update_round_end_cube_counter(round_number,0)
 
+        $("#button_automa_action").empty();
+
+        $("#button_automa_action").text(
+            `Automa action - ${
+                $("#automa_tracker_body").data(
+                    `round_${$("#automa_tracker_body").data("current_round")}_length`
+                )
+            } turns left`
+        )
+
         show_height_hidden(
             "#row_automa_action_button"
         );

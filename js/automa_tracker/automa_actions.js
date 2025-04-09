@@ -394,6 +394,25 @@ function append_automa_action_row(automa_action) {
             -1
         );
     }
+
+    $("#button_automa_action").empty();
+
+    var turns_left = $("#automa_tracker_body").data(
+        `round_${$("#automa_tracker_body").data("current_round")}_length`
+    ) - $("#automa_tracker_body").data(
+        "current_turn"
+    );
+
+    if (turns_left == 1) {
+        $("#button_automa_action").text(
+            `Automa action - ${turns_left} turn left`
+        );
+    }
+    else {
+        $("#button_automa_action").text(
+            `Automa action - ${turns_left} turns left`
+        );
+    }
 }
 
 // Automa end of round nectar checks
