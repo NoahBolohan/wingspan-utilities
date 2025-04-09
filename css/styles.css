@@ -38,7 +38,7 @@ table td {
     position: relative;
 }
 
-.score_sheet_table td, tr, th {
+td, tr, th {
     opacity: 0.95;
     border : 1px solid rgba(var(--font-color-buttons));
 }
@@ -453,6 +453,10 @@ outline: 2px solid rgba(var(--font-color-buttons));
 
 .vh30 {
     height:30vh;
+}
+
+.vh58 {
+    height:58vh;
 }
 
 .header-background-for-index-menu {

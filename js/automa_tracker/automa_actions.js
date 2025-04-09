@@ -250,14 +250,26 @@ function append_automa_action_row(automa_action) {
         ) + 1
     )
 
+    $("#table_automa_actions").css(
+        "height",
+        `${
+            5 + $("#automa_tracker_body").data(
+                "current_turn"
+            ) * 6.5
+        }vh`
+    );
+
     // Initialize row
-    var tr = $("<tr>");
+    var tr = $("<tr>").css(
+        "height",
+        "6.5vh"
+    );
 
     // Append turn number to row
     $("<th>").attr(
         {
             scope : "row",
-            style : "width: 10%",
+            style : "width: 10%;",
             class : "cell-info"
         }
     ).text(
@@ -270,7 +282,6 @@ function append_automa_action_row(automa_action) {
 
     // Append primary automa action to row: options are play_a_bird, draw_cards, lay_eggs, gain_food
     var primary_action_text;
-    var primary_action_class;
 
     switch(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["primary_action"]) {
 
@@ -334,7 +345,6 @@ function append_automa_action_row(automa_action) {
 
     // Append secondary automa action to row: options are place_end-of-round_cube, remove_end-of-round_cube, activate_pink_powers, none
     var secondary_action_text;
-    var secondary_action_class;
 
     switch(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["secondary_action"]) {
 
