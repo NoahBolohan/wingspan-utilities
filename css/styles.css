@@ -419,6 +419,10 @@ outline: 2px solid rgba(var(--font-color-buttons));
     height:5vh;
 }
 
+.vh7 {
+    height:7vh;
+}
+
 .vh9 {
     height:9vh;
 }
