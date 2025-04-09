@@ -880,9 +880,9 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-between align-items-center vh7" id="row_checkboxes">
+                <div class="row justify-content-between vh7" id="row_checkboxes">
 
-                    <div class="col-5 dropdown" id="div_dropdown_expansions_menu">
+                    <div class="col-5 dropdown align-self-center" id="div_dropdown_expansions_menu">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Expansions 
@@ -925,7 +925,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-5 dropdown" id="div_dropdown_extra_cards_menu">
+                    <div class="col-5 dropdown align-self-center" id="div_dropdown_extra_cards_menu">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Extra cards
@@ -959,14 +959,14 @@
                         </ul>
                     </div>
 
-					<div class="col-6 dropdown display_hidden" id="col_automa_score">
+					<div class="col-6 dropdown align-self-center display_hidden" id="col_automa_score">
 
-                        <button class="w-100 btn btn-automa-color h2" type="button" id="button_automa_score_breakdown">
+                        <button class="w-100 m-0 btn btn-automa-color h2" type="button" id="button_automa_score_breakdown">
                             Automa score: 0
                         </button>
                     </div>
 
-					<div class="col-4 p-1 card card-body display_hidden" id="col_hoard_token_buttons">
+					<div class="col-4 p-1 align-self-center card card-body display_hidden" id="col_hoard_token_buttons">
 
 						<div class="row p-0 m-0 justify-content-center margin_auto">
 							Hoard tokens:
@@ -988,7 +988,7 @@
 						</div>
                     </div>
 
-                    <div class="col-2 text-center">
+                    <div class="col-2 align-self-center text-center">
 
                         <button class="btn astext btn-settings" type="button" id="button_settings">
                             <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="width: 100%;">
@@ -1044,7 +1044,7 @@
 					<input class="col-6" id="col_debug_mode_round_end_winner_checkbox" name="debug_mode_round_end_winner" type="checkbox" value="yes"></input>
 				</div>
 
-				<div class="vh60">
+				<div class="vh66">
 
 					<div class="row p-0 justify-content-center margin_auto" id="row_difficulty">
 
@@ -1290,53 +1290,52 @@
 					</div>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto vh15">
+				<div class="row p-0 justify-content-center margin_auto vh-7" id="row_reset_submit_buttons">
 
-                    <div class="col-12 align-self-center">
+					<div class="col-8">
+						<button class="w-100 btn nav-button btn-start" id="button_start_game" type="button" disabled = "true">
+							Start Game
+						</button>
+					</div>
+				</div>
 
-                        <div class="row p-0 justify-content-center margin_auto" id="row_reset_submit_buttons">
+				<div class="row p-0 mt-1 justify-content-center margin_auto vh7" id="row_go_back_button">
 
-                            <div class="col-8">
-								<button class="w-100 btn nav-button btn-start" id="button_start_game" type="button" disabled = "true">
-									Start Game
-								</button>
-							</div>
-                        </div>
-        
-                        <div class="row p-0 mt-1 justify-content-center margin_auto" id="row_go_back_button">
-        
-                            <div class="col-auto align-self-center">
-                                <a class="btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+					<div class="col-auto">
+						<a class="btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
+					</div>
+				</div>
+
+				<div class="row vh5"></div>
 			</div>
 
 			<div class="container-fluid height_hidden" id="container_automa_gameplay">
 
-				<div class="mt-1 p-0 card card-body">
+				<div class="row p-0 justify-content-center margin_auto card card-body" id="row_round_end_goal_scores">
 
-					<div class="row p-0 m-0 justify-content-center margin_auto">
+					<div class="col-12">
 
-						<textarea class="col-3 centered-text" id="col_round_1_end_cube_count" align="center" style="resize: none;" readonly></textarea>
-		
-						<textarea class="col-3 centered-text" id="col_round_2_end_cube_count" align="center" style="resize: none;" readonly></textarea>
-		
-						<textarea class="col-3 centered-text" id="col_round_3_end_cube_count" align="center" style="resize: none;" readonly></textarea>
-		
-						<textarea class="col-3 centered-text" id="col_round_4_end_cube_count" align="center" style="resize: none;" readonly></textarea>
-					</div>
-		
-					<div class="row p-0 mb-1 justify-content-center margin_auto">
+						<div class="row p-0 m-0 justify-content-center margin_auto">
 
-						<div class="col-3" id="div_round_1_end_goal"></div>
-		
-						<div class="col-3" id="div_round_2_end_goal"></div>
-		
-						<div class="col-3" id="div_round_3_end_goal"></div>
-		
-						<div class="col-3" id="div_round_4_end_goal"></div>
+							<textarea class="col-3 centered-text" id="col_round_1_end_cube_count" align="center" style="resize: none;" readonly></textarea>
+			
+							<textarea class="col-3 centered-text" id="col_round_2_end_cube_count" align="center" style="resize: none;" readonly></textarea>
+			
+							<textarea class="col-3 centered-text" id="col_round_3_end_cube_count" align="center" style="resize: none;" readonly></textarea>
+			
+							<textarea class="col-3 centered-text" id="col_round_4_end_cube_count" align="center" style="resize: none;" readonly></textarea>
+						</div>
+			
+						<div class="row p-0 mb-1 justify-content-center margin_auto">
+	
+							<div class="col-3" id="div_round_1_end_goal"></div>
+			
+							<div class="col-3" id="div_round_2_end_goal"></div>
+			
+							<div class="col-3" id="div_round_3_end_goal"></div>
+			
+							<div class="col-3" id="div_round_4_end_goal"></div>
+						</div>
 					</div>
 				</div>
 				
@@ -1355,33 +1354,49 @@
 					</table>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto" id="row_automa_action_button">
+				<div class="row p-0 justify-content-center margin_auto vh7" id="row_automa_action_button">
 
-					<button class="col btn nav-button btn-automa-action" id="button_automa_action" type="button">
-						Automa action
-					</button>
+					<div class="col-12 p-0">
+
+						<button class="w-100 btn nav-button btn-automa-action" id="button_automa_action" type="button">
+							Automa action
+						</button>
+					</div>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_end_round_button">
+				
 
-					<button class="col btn nav-button btn-automa-color" id="button_end_round" type="button">
-						End round
-					</button>
+				<div class="row p-0 justify-content-center margin_auto height_hidden vh7" id="row_end_round_button">
+
+					<div class="col-12 p-0">
+
+						<button class="w-100 btn nav-button btn-automa-color" id="button_end_round" type="button">
+							End round
+						</button>
+					</div>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_nectar_button">
+				<div class="row p-0 justify-content-center margin_auto vh7 height_hidden" id="row_proceed_to_game_end_nectar_button">
 
-					<button class="col btn nav-button btn-automa-color" id="button_proceed_to_game_end_nectar_scoring" type="button">
-						Proceed to nectar scoring
-					</button>
+					<div class="col-12 p-0">
+
+						<button class="w-100 btn nav-button btn-automa-color" id="button_proceed_to_game_end_nectar_scoring" type="button">
+							Proceed to nectar scoring
+						</button>
+					</div>
 				</div>
 
-				<div class="row p-0 justify-content-center margin_auto height_hidden" id="row_proceed_to_game_end_button">
+				<div class="row p-0 justify-content-center margin_auto vh7 height_hidden" id="row_proceed_to_game_end_button">
 
-					<button class="col btn nav-button btn-submit" id="button_proceed_to_game_end" type="button">
-						Proceed to game end
-					</button>
+					<div class="col-12 p-0">
+
+						<button class="w-100 btn nav-button btn-submit" id="button_proceed_to_game_end" type="button">
+							Proceed to game end
+						</button>
+					</div>
 				</div>
+
+				<div class="row vh5"></div>
 			</div>
 
 		</form>
