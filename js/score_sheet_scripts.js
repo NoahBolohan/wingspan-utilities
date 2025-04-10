@@ -136,7 +136,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Score sheet HTML thead
     $("<tr>").attr(
         {
-            style : "height:10vh;",
+            style : "height:11vh;",
             id : "row_player_names"
         }
     ).appendTo("#score_sheet_thead");
@@ -406,7 +406,7 @@ function generate_n_score_columns(n_players, width_p) {
                 id : `input_player_${i}_name`,
                 name : `player_${i}_name`,
                 placeholder : `Player ${i}`,
-                style : "height:8vh;"
+                style : "height:9vh;"
             }
         ).appendTo(div);
 

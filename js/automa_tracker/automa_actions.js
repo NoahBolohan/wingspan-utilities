@@ -255,14 +255,14 @@ function append_automa_action_row(automa_action) {
         `${
             5 + $("#automa_tracker_body").data(
                 "current_turn"
-            ) * 6.5
+            ) * 6
         }vh`
     );
 
     // Initialize row
     var tr = $("<tr>").css(
         "height",
-        "6.5vh"
+        "6vh"
     );
 
     // Append turn number to row
