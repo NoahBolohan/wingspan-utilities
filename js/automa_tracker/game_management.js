@@ -81,6 +81,10 @@ function new_round(round_number) {
             "#row_automa_actions"
         );
 
+        hide_height_hidden(
+            "#row_automa_action_button"
+        );
+
         if ($("#col_oceania_expansion_checkbox").is(":checked")) {
 
             show_height_hidden(
