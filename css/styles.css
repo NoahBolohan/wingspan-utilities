@@ -487,17 +487,21 @@ textarea {
 }
 
 .hr1 {
-    color:rgba(var(--font-color-buttons));
+    border-color:rgba(var(--font-color-buttons));
     margin-top : 0.5vh;
     margin-bottom : 0.5vh;
     height:2px;
 }
 
 .hr2 {
-    color:rgba(var(--font-color-buttons));
+    border-color:rgba(var(--font-color-buttons));
     margin-top : 0.5vh;
     margin-bottom : 0.5vh;
     height:1px;
+}
+
+.vertical_line {
+    border-left: 1px solid rgba(var(--font-color-buttons));
 }
 
 
