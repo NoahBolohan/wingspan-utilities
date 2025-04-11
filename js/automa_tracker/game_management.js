@@ -393,7 +393,7 @@ $(document).ready(
                 else {
 
                     $("#automa_score_for_round_end_modal").text(
-                        $("#automa_tracker_body").data(
+                        "Automa's score: " + $("#automa_tracker_body").data(
                             `round_${$("#automa_tracker_body").data("current_round")}_goal_score`
                         )
                     )
