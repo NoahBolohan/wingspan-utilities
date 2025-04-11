@@ -52,6 +52,7 @@
 			automa_round_2_base_value
 			automa_round_3_base_value
 			automa_round_4_base_value
+			automa_round_end_points_counter
 			automa_starting_nectar
 			automa_total_score_counter
 			automa_wetland_nectar_score
@@ -285,8 +286,71 @@
 			<div class="modal fade" id="modal_automa_score_breakdown">
 		
 				<div class="modal-dialog" role="document">
-		
+
 					<div class="modal-content">
+		
+						<div class="p-1 modal-header justify-content-center" style="position:relative;">
+
+							<h2 class="modal-title h2">Automa Score Breakdown</h2>
+							<button class="btn astext btn-close-settings"" id="button_close_modal_automa_score_breakdown" style="position:absolute;right:1em;" type="button">
+								&#x274c;
+							</button>
+						</div>
+		
+						<div class="modal-body">
+		
+							<div class="p-0 container-fluid">
+		
+								<div class="row p-0 justify-content-center margin_auto" id="row_automa_score_breakdown">
+		
+									<table class="table m-0">
+		
+										<tbody>
+
+											<tr>
+												<th class="cell-info" scope="row">Drawn cards</th>
+												<td id="table_cell_current_drawn_cards_points">0</td>
+											</tr>
+		
+											<tr>
+												<th class="cell-info" scope="row">Played birds</th>
+												<td id="table_cell_current_played_birds_points">0</td>
+											</tr>
+		
+											<tr>
+												<th class="cell-info" scope="row">Round-end goals</th>
+												<td id="table_cell_current_round_end_goals_points">0</td>
+											</tr>
+		
+											<tr>
+												<th class="cell-info" scope="row">Laid eggs</th>
+												<td id="table_cell_current_laid_eggs_points">0</td>
+											</tr>
+
+											<tr id="table_row_current_automa_nectar" style="visibility: collapse;">
+												<th class="cell-info" scope="row">Nectar</th>
+												<td id="table_cell_current_nectar">0/0/0</td>
+											</tr>
+
+											<tr id="table_row_current_automa_hoard_tokens" style="visibility: collapse;">
+												<th class="cell-info" scope="row">Hoard tokens</th>
+												<td id="table_cell_current_hoard_tokens">0</td>
+											</tr>
+		
+											<tr>
+												<th class="cell-total" scope="row">Total</th>
+												<td class="cell-total" id="table_cell_current_total_points">0</td>
+											</tr>
+		
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<!-- <div class="modal-content">
 		
 						<div class="p-1 modal-header justify-content-center" style="position:relative;">
 
@@ -365,7 +429,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		

@@ -319,6 +319,9 @@ $(document).ready(
                             )
                         );
 
+                        update_automa_hoard_tokens(
+                            $(`#col_button_add_${hoard_token_type}_hoard_tokens`).data("n_tokens")
+                        );
                         update_automa_total_score();
         
                         $("#modal_add_hoard_tokens").modal("hide")
@@ -370,6 +373,7 @@ $(document).ready(
                             )
                         );
 
+                        update_automa_hoard_tokens();
                         update_automa_total_score();
         
                         $("#modal_remove_hoard_tokens").modal("hide")
@@ -647,6 +651,10 @@ $(document).ready(
 
                     show_display_hidden("#col_automa_hoard_tokens_text_div");
                     show_display_hidden("#col_hoard_token_buttons");
+                    $("#table_row_current_automa_hoard_tokens").css(
+                        "visibility",
+                        "visible"
+                    );
                     $("#col_automa_score").removeClass(
                         "col-10"
                     );
@@ -658,6 +666,10 @@ $(document).ready(
 
                     hide_display_hidden("#col_automa_hoard_tokens_text_div");
                     hide_display_hidden("#col_hoard_token_buttons");
+                    $("#table_row_current_automa_hoard_tokens").css(
+                        "visibility",
+                        "collapse"
+                    );
                     $("#col_automa_score").removeClass(
                         "col-6"
                     );
@@ -678,10 +690,18 @@ $(document).ready(
                     );
 
                     show_display_hidden("#col_automa_nectar_text_div");
+                    $("#table_row_current_automa_nectar").css(
+                        "visibility",
+                        "visible"
+                    );
                 }
                 else {
                     
                     hide_display_hidden("#col_automa_nectar_text_div");
+                    $("#table_row_current_automa_nectar").css(
+                        "visibility",
+                        "collapse"
+                    );
                 }
 
                 hide_display_hidden("#div_dropdown_expansions_menu");

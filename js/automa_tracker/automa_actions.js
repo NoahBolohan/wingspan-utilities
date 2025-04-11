@@ -50,6 +50,42 @@ function generate_food_order_td(
     return food_order_cell;
 }
 
+// Update automa drawn cards counter
+function update_automa_drawn_cards() {
+
+    $("#automa_tracker_body").data(
+        "automa_drawn_cards_counter",
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
+        ) + 1
+    );
+
+    $("#table_cell_current_drawn_cards_points").empty();
+    $("#table_cell_current_drawn_cards_points").text(
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
+        )
+    );
+
+    update_automa_total_score();
+}
+
+// Reset automa drawn cards counter
+function reset_automa_drawn_cards() {
+
+    $("#automa_tracker_body").data(
+        "automa_drawn_cards_counter",
+        0
+    );
+
+    $("#table_cell_current_drawn_cards_points").empty();
+    $("#table_cell_current_drawn_cards_points").text(
+        $("#automa_tracker_body").data(
+            "automa_drawn_cards_counter"
+        )
+    );
+}
+
 // Update automa played birds counter
 function update_automa_played_birds(bird_points) {
 
@@ -61,8 +97,8 @@ function update_automa_played_birds(bird_points) {
             ) + bird_points
         );
     
-        $("#col_automa_played_birds").empty();
-        $("#col_automa_played_birds").text(
+        $("#table_cell_current_played_birds_points").empty();
+        $("#table_cell_current_played_birds_points").text(
             $("#automa_tracker_body").data(
                 "automa_played_birds_counter"
             )
@@ -84,46 +120,10 @@ function reset_automa_played_birds() {
         0
     );
 
-    $("#col_automa_played_birds").empty();
-    $("#col_automa_played_birds").text(
+    $("#table_cell_current_played_birds_points").empty();
+    $("#table_cell_current_played_birds_points").text(
         $("#automa_tracker_body").data(
             "automa_played_birds_counter"
-        )
-    );
-}
-
-// Update automa drawn cards counter
-function update_automa_drawn_cards() {
-
-    $("#automa_tracker_body").data(
-        "automa_drawn_cards_counter",
-        $("#automa_tracker_body").data(
-            "automa_drawn_cards_counter"
-        ) + 1
-    );
-
-    $("#col_automa_drawn_cards_count").empty();
-    $("#col_automa_drawn_cards_count").text(
-        $("#automa_tracker_body").data(
-            "automa_drawn_cards_counter"
-        )
-    );
-
-    update_automa_total_score();
-}
-
-// Reset automa drawn cards counter
-function reset_automa_drawn_cards() {
-
-    $("#automa_tracker_body").data(
-        "automa_drawn_cards_counter",
-        0
-    );
-
-    $("#col_automa_drawn_cards_count").empty();
-    $("#col_automa_drawn_cards_count").text(
-        $("#automa_tracker_body").data(
-            "automa_drawn_cards_counter"
         )
     );
 }
@@ -138,8 +138,8 @@ function update_automa_laid_eggs(n_eggs) {
         ) + n_eggs
     );
 
-    $("#col_automa_eggs_count").empty();
-    $("#col_automa_eggs_count").text(
+    $("#table_cell_current_laid_eggs_points").empty();
+    $("#table_cell_current_laid_eggs_points").text(
         $("#automa_tracker_body").data(
             "automa_eggs_counter"
         )
@@ -149,19 +149,68 @@ function update_automa_laid_eggs(n_eggs) {
 }
 
 // Reset automa laid eggs counter
-function reset_automa_laid_eggs(n_eggs) {
+function reset_automa_laid_eggs() {
 
     $("#automa_tracker_body").data(
         "automa_eggs_counter",
         0
     );
 
-    $("#col_automa_eggs_count").empty();
-    $("#col_automa_eggs_count").text(
+    $("#table_cell_current_laid_eggs_points").empty();
+    $("#table_cell_current_laid_eggs_points").text(
         $("#automa_tracker_body").data(
             "automa_eggs_counter"
         )
     );
+}
+
+// Update automa round end points counter
+function update_automa_round_end_points(round_end_points) {
+
+    $("#automa_tracker_body").data(
+        "automa_round_end_points_counter",
+        $("#automa_tracker_body").data(
+            "automa_round_end_points_counter"
+        ) + round_end_points
+    );
+
+    $("#table_cell_current_round_end_goals_points").empty();
+    $("#table_cell_current_round_end_goals_points").text(
+        $("#automa_tracker_body").data(
+            "automa_round_end_points_counter"
+        )
+    );
+
+    update_automa_total_score();
+}
+
+// Reset automa round end points counter
+function reset_automa_round_end_points() {
+
+    $("#automa_tracker_body").data(
+        "automa_round_end_points_counter",
+        0
+    );
+
+    $("#table_cell_current_round_end_goals_points").empty();
+    $("#table_cell_current_round_end_goals_points").text(
+        $("#automa_tracker_body").data(
+            "automa_round_end_points_counter"
+        )
+    );
+}
+
+// Update automa hoard tokens counter
+function update_automa_hoard_tokens() {
+
+    $("#table_cell_current_hoard_tokens").empty();
+    $("#table_cell_current_hoard_tokens").text(
+        $("#automa_tracker_body").data(
+            "automa_hoard_token_counter"
+        )
+    );
+
+    update_automa_total_score();
 }
 
 // Update automa total score counter
@@ -214,9 +263,9 @@ function update_automa_total_score() {
         }`
     );
 
-    $("#col_automa_total_score").empty();
+    $("#table_cell_current_total_points").empty();
 
-    $("#col_automa_total_score").text(
+    $("#table_cell_current_total_points").text(
         $("#automa_tracker_body").data(
             "automa_total_score_counter"
         )
@@ -517,11 +566,17 @@ function update_automa_nectar_counts(
                     )
                 )
             }
-        
-            $(`#col_automa_nectar_${board_zone}_count`).text(
-                $("#automa_tracker_body").data(`automa_nectar_${board_zone}_counter`)
-            )
         }
+    )
+
+    $("table_cell_current_nectar").text(
+        `${
+            $("#automa_tracker_body").data("automa_nectar_forest_counter")
+        }/${
+            $("#automa_tracker_body").data("automa_nectar_grassland_counter")
+        }/${
+            $("#automa_tracker_body").data("automa_nectar_wetland_counter")
+        }`
     )
 }
 
