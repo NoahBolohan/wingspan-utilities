@@ -932,6 +932,8 @@ $(document).ready(
                     "visibility",
                     "visible"
                 );
+
+                $("#modal_nectar_scoring").modal("hide");
                 $("#modal_end_of_game").modal("show");
             }
         )
