@@ -203,14 +203,61 @@ function reset_automa_round_end_points() {
 // Update automa hoard tokens counter
 function update_automa_hoard_tokens() {
 
+    var plural_eggs = '';
+    var n_eggs = Math.floor(
+        $("#automa_tracker_body").data(
+            "automa_hoard_token_counter"
+        ) / parseInt(
+            $("input[name='automa_hoard_tokens_per_egg']:checked").val()
+        )
+    );
+
+    if (n_eggs != 1) {
+        plural_eggs = 's';
+    }
+
+
     $("#table_cell_current_hoard_tokens").empty();
     $("#table_cell_current_hoard_tokens").text(
         $("#automa_tracker_body").data(
             "automa_hoard_token_counter"
-        )
+        ) + ` (${
+            Math.floor(
+                $("#automa_tracker_body").data(
+                    "automa_hoard_token_counter"
+                ) / parseInt(
+                    $("input[name='automa_hoard_tokens_per_egg']:checked").val()
+                )
+            )
+        } egg${plural_eggs})`
     );
 
     update_automa_total_score();
+}
+
+// Reset automa hoard tokens counter
+function reset_automa_hoard_tokens() {
+
+    $("#automa_tracker_body").data(
+        "automa_hoard_token_counter",
+        0
+    );
+
+    $("#table_cell_current_hoard_tokens").empty();
+    $("#table_cell_current_hoard_tokens").text(
+        $("#automa_tracker_body").data(
+            "automa_hoard_token_counter"
+        ) + ` (0 eggs)`
+    );
+}
+
+// Reset automa hoard tokens counter
+function reset_automa_nectar_tokens() {
+
+    $("#table_cell_current_hoard_tokens").empty();
+    $("#table_cell_current_hoard_tokens").text(
+        0/0/0
+    );
 }
 
 // Update automa total score counter
@@ -694,7 +741,11 @@ function end_round_cleanup(who_won) {
             )
         }`
     )
-
+    update_automa_round_end_points(
+        $("#automa_tracker_body").data(
+            `automa_end_of_round_${$("#automa_tracker_body").data("current_round")}_points`
+        )
+    );
     update_automa_total_score();
     
     // Empty automa actions table and round end cube count text in modal

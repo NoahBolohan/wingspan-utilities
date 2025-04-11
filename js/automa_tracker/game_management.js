@@ -644,6 +644,13 @@ $(document).ready(
                 })
 
                 // Setup for first round
+                reset_automa_drawn_cards();
+                reset_automa_played_birds();
+                reset_automa_laid_eggs();
+                reset_automa_round_end_points()
+                reset_automa_nectar_tokens()
+                reset_automa_hoard_tokens()
+                reset_automa_total_score();
                 new_round(1);
 
                 // Show and hide stuff
@@ -1011,8 +1018,6 @@ $(document).ready(
                         0
                     )
                 }
-
-                alert("hi")
 
                 reset_automa_played_birds();
                 reset_automa_drawn_cards();
