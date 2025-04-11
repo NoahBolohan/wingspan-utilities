@@ -407,58 +407,6 @@ outline: 2px solid rgba(var(--font-color-buttons));
     background-position: center;
 }
 
-.vh12 {
-    height:12vh;
-}
-
-.vh15 {
-    height:15vh;
-}
-
-.vh10 {
-    height:10vh;
-}
-
-.vh11 {
-    height:11vh;
-}
-
-.vh5 {
-    height:5vh;
-}
-
-.vh7 {
-    height:7vh;
-}
-
-.vh9 {
-    height:9vh;
-}
-
-.vh60 {
-    height:60vh;
-}
-
-.vh66 {
-    height:66vh;
-}
-
-.vh20 {
-    height:20vh;
-}
-
-.vh35 {
-    height:35vh;
-}
-
-.vh30 {
-    height:30vh;
-}
-
-.vh58 {
-    height:58vh;
-}
-
 .header-background-for-index-menu {
     position: fixed;
     left: 0;
@@ -537,6 +485,21 @@ textarea {
     font-size: 2.67vh;
     color: rgba(var(--font-color-headers));
 }
+
+.hr1 {
+    color:rgba(var(--font-color-buttons));
+    margin-top : 0.5vh;
+    margin-bottom : 0.5vh;
+    height:2px;
+}
+
+.hr2 {
+    color:rgba(var(--font-color-buttons));
+    margin-top : 0.5vh;
+    margin-bottom : 0.5vh;
+    height:1px;
+}
+
 
 input {
     color: rgba(var(--font-color-headers));

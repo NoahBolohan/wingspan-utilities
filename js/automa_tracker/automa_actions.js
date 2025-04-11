@@ -449,11 +449,11 @@ function check_automa_end_of_round_nectar(n_check) {
                     incrementer[nectar_spot] -= 1;
                 } else {
     
-                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("0");
+                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+0");
                 }
             }
             else {
-                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("0");
+                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+0");
             }
         }
     )
