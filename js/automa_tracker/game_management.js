@@ -549,6 +549,21 @@ $(document).ready(
                                         );
                                         break;
                                 }
+
+                                if (
+                                    proceed_from_nectar_scoring_enabler()
+                                ) {
+                                    $("#button_proceed_to_game_end_from_nectar_scoring").attr(
+                                        "disabled",
+                                        false
+                                    );
+                                }
+                                else {
+                                    $("#button_proceed_to_game_end_from_nectar_scoring").attr(
+                                        "disabled",
+                                        true
+                                    );
+                                }
                             }
                         )
                     }
@@ -557,6 +572,28 @@ $(document).ready(
         )
     }
 )
+
+function proceed_from_nectar_scoring_enabler() {
+
+    var enable = true;
+
+    $.each(
+        ["forest","grassland","wetland"],
+        function(habitat_key, habitat) {
+
+            if (
+                $(`#button_${habitat}_nectar_scoring_i_won`).hasClass("nectar-scoring-button-disabled") &&
+                $(`#button_${habitat}_nectar_scoring_we_tied`).hasClass("nectar-scoring-button-disabled") &&
+                $(`#button_${habitat}_nectar_scoring_automa_won_player_scored`).hasClass("nectar-scoring-button-disabled") &&
+                $(`#button_${habitat}_nectar_scoring_automa_won_player_did_not_score`).hasClass("nectar-scoring-button-disabled")
+            ) {
+                enable = false;
+            }
+        }
+    )
+
+    return enable;
+}
 
 // Set an event listener for performing I won action by clicking the I won button
 $(document).ready(

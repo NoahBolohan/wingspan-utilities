@@ -77,13 +77,13 @@ table {
 
 .nectar-scoring-button-disabled {
     font-size: 2vh;
-    color: #000;
+    color: rgba(var(--font-color-buttons));
     opacity : 0.3;
 }
 
 .nectar-scoring-button-enabled {
     font-size: 2vh;
-    color: #000;
+    color: rgba(var(--font-color-buttons));
     opacity : 1;
 }
 
@@ -768,6 +768,11 @@ input::placeholder {
 .btn-round-end:focus {
     outline: 1px solid rgba(var(--font-color-headers))!important;
     background-color:rgba(var(--button-round-end-goal-color));
+}
+
+.btn-round-end:disabled {
+    background-color:rgba(var(--button-round-end-goal-color));
+    opacity: 0.5;
 }
 
 .btn-hoard-token {
