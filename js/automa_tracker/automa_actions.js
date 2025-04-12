@@ -62,9 +62,21 @@ function update_automa_drawn_cards() {
 
     $("#table_cell_current_drawn_cards_points").empty();
     $("#table_cell_current_drawn_cards_points").text(
-        $("#automa_tracker_body").data(
-            "automa_drawn_cards_counter"
-        )
+        `${
+            $("#automa_tracker_body").data(
+                "automa_points_per_face_down_bird_card"
+            ) * $("#automa_tracker_body").data(
+                "automa_drawn_cards_counter"
+            )
+        } (${
+            $("#automa_tracker_body").data(
+                "automa_points_per_face_down_bird_card"
+            )
+        } \u00D7 ${
+            $("#automa_tracker_body").data(
+                "automa_drawn_cards_counter"
+            )
+        })`
     );
 
     update_automa_total_score();
