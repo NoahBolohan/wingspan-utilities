@@ -572,15 +572,15 @@ $(document).ready(
     }
 )
 
-// Set an event listener for performing I won action by clicking the I won button
+// Set an event listener for performing we tied action by clicking the we tied button
 $(document).ready(
     function() {
-        $("#button_i_won").on(
+        $("#button_we_tied").on(
             "click",
             function() {
 
                 $("#modal_end_of_round").modal("hide");
-                end_round_cleanup("me"); 
+                end_round_cleanup("we_tied"); 
             }
         )
     }
@@ -609,20 +609,6 @@ $(document).ready(
 
                 $("#modal_end_of_round").modal("hide");
                 end_round_cleanup("automa_player_did_not_score"); 
-            }
-        )
-    }
-)
-
-// Set an event listener for performing we tied action by clicking the we tied button
-$(document).ready(
-    function() {
-        $("#button_we_tied").on(
-            "click",
-            function() {
-
-                $("#modal_end_of_round").modal("hide");
-                end_round_cleanup("we_tied"); 
             }
         )
     }
