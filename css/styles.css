@@ -503,7 +503,7 @@ outline: 2px solid rgba(var(--font-color-buttons));
     bottom:0;
     right:0;
     z-index:2;
-    border: 2px var(--line-style) rgba(var(--font-color-buttons));
+    border: 1px solid rgba(var(--font-color-buttons));
 }
 
 .diamond-background-nectar {

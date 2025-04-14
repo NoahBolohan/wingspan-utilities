@@ -497,18 +497,27 @@ function append_automa_action_row(automa_action) {
 
             var remove_cube_cell = $("<td>").attr(
                 {
-                    class : "cell-automa-action centered-text",
+                    class : "cell-automa-action",
                     style : "text-align: center;"
                 }
             )
-        
+
+            var remove_cube_div = $("<div>").attr(
+                {
+                    class: "centered-text",
+                    id: "remove_cube_cell_div"
+                }
+            ).appendTo(
+                remove_cube_cell
+            );
+
             $("<img>").attr(
                 {
                     "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/cube.webp"),
                     "style" : "height : 4vh;"
                 }
             ).appendTo(
-                remove_cube_cell
+                remove_cube_div
             );
 
             $("<div>").attr(
@@ -519,7 +528,7 @@ function append_automa_action_row(automa_action) {
             ).html(
                 "&#xd7;"
             ).appendTo(
-                remove_cube_cell
+                remove_cube_div
             );
 
             remove_cube_cell.appendTo(
@@ -529,26 +538,26 @@ function append_automa_action_row(automa_action) {
 
         case "activate_pink_powers":
 
-        var pink_powers_cell = $("<td>").attr(
-            {
-                class : "cell-automa-action",
-                style : "text-align: center;"
-            }
-        )
-    
-        $("<img>").attr(
-            {
-                "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/pink_powers.webp"),
-                "style" : "height : 4vh;"
-            }
-        ).appendTo(
-            pink_powers_cell
-        );
+            var pink_powers_cell = $("<td>").attr(
+                {
+                    class : "cell-automa-action",
+                    style : "text-align: center;"
+                }
+            )
+        
+            $("<img>").attr(
+                {
+                    "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/pink_powers.webp"),
+                    "style" : "height : 4vh;"
+                }
+            ).appendTo(
+                pink_powers_cell
+            );
 
-        pink_powers_cell.appendTo(
-            tr
-        );
-        break;
+            pink_powers_cell.appendTo(
+                tr
+            );
+            break;
 
         case "none":
 
