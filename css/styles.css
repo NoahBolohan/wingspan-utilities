@@ -463,14 +463,14 @@ outline: 2px solid rgba(var(--font-color-buttons));
 }
 
 .nectar-text-overlay{
-    z-index: 100;
+    z-index: 3;
     position: absolute;
     font-family: "CardenioModernBold";
     /* top: 60%; */
     /* left: 50%;
     transform: translate(-50%, -50%); */
     color: rgba(var(--font-color-buttons));
-    font-size: 8vh;
+    font-size: var(--font-size);
     -webkit-text-stroke: 1px black;
     paint-order: stroke fill;
     -ms-transform: rotate(45deg);
@@ -483,10 +483,10 @@ outline: 2px solid rgba(var(--font-color-buttons));
 }
 
 .square {
-    height: 7.07vh;
-    width: 7.07vh;
+    height: var(--length);
+    width: var(--length);
     padding: 0;
-    margin:1.75vh;
+    margin:var(--margin);
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
@@ -494,19 +494,22 @@ outline: 2px solid rgba(var(--font-color-buttons));
     display:flex;
     justify-content: center;
     align-items: center;
-    position:fixed;
-    z-index:100;
-  }
+    position:absolute;
+    bottom:0;
+    right:0;
+    z-index:2;
+    border: 2px var(--line-style) black;
+}
 
 .diamond-background-nectar {
+    height: var(--length);
+    width: var(--length);
+    margin:var(--margin);
     background: url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/food_icons/nectar.webp);
     background-repeat: no-repeat;
     background-color:#e57ea6;
     background-position: center;
-    background-size:7vh;
-    height: 10vh;
-    width: 10vh;
-    margin:-1.75vh;
+    background-size:var(--background-size);
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -544,8 +547,8 @@ textarea {
 
 .hr1 {
     border-color:rgba(var(--font-color-buttons));
-    margin-top : 0.5vh;
-    margin-bottom : 0.5vh;
+    margin-top : 1vh;
+    margin-bottom : 1vh;
     height:2px;
 }
 
