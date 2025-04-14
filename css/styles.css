@@ -464,6 +464,13 @@ outline: 2px solid rgba(var(--font-color-buttons));
         calc(50%  + var(--b))   calc(50%  + var(--b));
 }
 
+.text-overlay{
+    z-index: 3;
+    position: absolute;
+    color: rgba(var(--font-color-buttons));
+    font-size: var(--font-size);
+}
+
 .nectar-text-overlay{
     z-index: 3;
     position: absolute;

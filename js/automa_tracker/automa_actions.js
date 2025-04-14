@@ -561,6 +561,8 @@ function check_automa_end_of_round_nectar(n_check) {
         ["1","2","3"],
         function (idx, nectar_spot) {
 
+            $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).empty();
+
             if (`round_${nectar_spot}` in increment_card) {
                 if (increment_card[`round_${nectar_spot}`]["secondary_action"] == "place_end-of-round_cube") {
 
@@ -579,14 +581,26 @@ function check_automa_end_of_round_nectar(n_check) {
     
                     $("<img>").attr(
                         {
-                            "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/remove-cube.png"),
+                            "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/cube.webp"),
                             "style" : "height:5vh;"
                         }
                     ).appendTo(
                         $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`)
                     );
 
+                    $("<div>").attr(
+                        {
+                            "class" : "text-overlay",
+                            "style" : "font-size:10vh;color:red;"
+                        }
+                    ).html(
+                        "&#xd7;"
+                    ).appendTo(
+                        $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`)
+                    );
+
                     incrementer[nectar_spot] -= 1;
+
                 } else {
 
                     $("<img>").attr(
