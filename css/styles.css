@@ -475,10 +475,6 @@ outline: 2px solid rgba(var(--font-color-buttons));
     transform: rotate(45deg);
 }
 
-.habitat-overlay-background {
-    opacity: 0.75;
-}
-
 .square {
     height: var(--length);
     width: var(--length);
