@@ -572,12 +572,26 @@ function check_automa_end_of_round_nectar(n_check) {
                     $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("-1");
                     incrementer[nectar_spot] -= 1;
                 } else {
-    
-                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+0");
+
+                    $("<img>").attr(
+                        {
+                            "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/food_icons/no-food.webp"),
+                            "style" : "height:5vh;"
+                        }
+                    ).appendTo(
+                        $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`)
+                    )
                 }
             }
             else {
-                $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`).text("+0");
+                $("<img>").attr(
+                    {
+                        "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/food_icons/no-food.webp"),
+                        "style" : "height:5vh;"
+                    }
+                ).appendTo(
+                    $(`#col_automa_nectar_${nectar_spot}_count_end_of_round_increment_${n_check}`)
+                )
             }
         }
     )

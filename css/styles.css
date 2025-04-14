@@ -387,7 +387,9 @@ box-shadow: 0 0 1px rgba(var(--button-submit-color));
 
 input:checked + .slider:before {
 -webkit-transform: translateX(22px);
+-moz-transform: translateX(22px);
 -ms-transform: translateX(22px);
+-o-transform: translateX(22px);
 transform: translateX(22px);
 }
 
@@ -466,11 +468,13 @@ outline: 2px solid rgba(var(--font-color-buttons));
     z-index: 3;
     position: absolute;
     font-family: "CardenioModernBold";
-    color: rgba(var(--font-color-buttons));
+    color: #7a3850;
     font-size: var(--font-size);
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px #7a3850;
     paint-order: stroke fill;
     -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
@@ -481,6 +485,8 @@ outline: 2px solid rgba(var(--font-color-buttons));
     padding: 0;
     margin:var(--margin);
     -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     overflow: hidden;
@@ -504,6 +510,53 @@ outline: 2px solid rgba(var(--font-color-buttons));
     background-position: center;
     background-size:var(--background-size);
     -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.diamond-background-forest {
+    height: var(--length);
+    width: var(--length);
+    margin:var(--margin);
+    background: url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/forest.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:var(--background-size);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.diamond-background-grassland {
+    height: var(--length);
+    width: var(--length);
+    margin:var(--margin);
+    background: url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/grassland.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:var(--background-size);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.diamond-background-wetland {
+    height: var(--length);
+    width: var(--length);
+    margin:var(--margin);
+    background: url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/wetland.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:var(--background-size);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
