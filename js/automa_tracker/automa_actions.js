@@ -14,7 +14,7 @@ function generate_egg_td(
         $("<img>").attr(
             {
                 "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/egg.webp"),
-                "style" : "width : 10%;"
+                "style" : "height : 4vh;"
             }
         ).appendTo(
             egg_cell
@@ -40,7 +40,7 @@ function generate_food_order_td(
         $("<img>").attr(
             {
                 "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/food_icons/${food_order[i]}.svg`),
-                "style" : "width : 16.67%; border : 1px solid #000000;"
+                "style" : "width : 16.67%; border : 1px solid rgba(var(--font-color-buttons));"
             }
         ).appendTo(
             food_order_cell
@@ -394,7 +394,6 @@ function append_automa_action_row(automa_action) {
     switch(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["primary_action"]) {
 
         case "play_a_bird":
-            primary_action_text = "Play a card";
 
             // Debug option
             if ($("#col_debug_mode_play_a_bird_checkbox").is(":checked")) {
@@ -404,30 +403,47 @@ function append_automa_action_row(automa_action) {
                 $(`#modal_play_a_card`).modal("show");
             }
 
-            $("<td>").attr(
+            var played_bird_cell = $("<td>").attr(
                 {
                     class : "cell-automa-action",
-                    style : "width: 45%"
+                    style : "text-align: center;"
                 }
-            ).text(
-                primary_action_text
+            )
+        
+            $("<img>").attr(
+                {
+                    "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/bird.webp"),
+                    "style" : "height : 4vh;"
+                }
             ).appendTo(
+                played_bird_cell
+            );
+
+            played_bird_cell.appendTo(
                 tr
             );
             break;
 
         case "draw_cards":
-            primary_action_text = "Draw cards";
             update_automa_drawn_cards();
 
-            $("<td>").attr(
+            var drawn_card_cell = $("<td>").attr(
                 {
                     class : "cell-automa-action",
-                    style : "width: 45%"
+                    style : "text-align: center;"
                 }
-            ).text(
-                primary_action_text
+            )
+        
+            $("<img>").attr(
+                {
+                    "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/bird_card_back.png"),
+                    "style" : "height : 4vh;"
+                }
             ).appendTo(
+                drawn_card_cell
+            );
+
+            drawn_card_cell.appendTo(
                 tr
             );
             break;
@@ -438,7 +454,7 @@ function append_automa_action_row(automa_action) {
             ).appendTo(
                 tr
             );
-            update_automa_laid_eggs(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"])
+            update_automa_laid_eggs(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["number_of_eggs"]);
             break;
 
         case "gain_food":
