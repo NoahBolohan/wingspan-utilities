@@ -19,6 +19,12 @@
 
 }
 
+@font-face {
+    font-family: "CardenioModernBold";
+    src: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/master/static/cardenio_modern_font/CardenioModern-Bold.otf") format("opentype");
+
+}
+
 .fonttest {
     font-family: "CardenioModern";
 }
@@ -454,6 +460,24 @@ outline: 2px solid rgba(var(--font-color-buttons));
         conic-gradient(from 90deg at var(--b) var(--b),var(--c)) 
         calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
         calc(50%  + var(--b))   calc(50%  + var(--b));
+}
+
+.img-text-overlay{
+    z-index: 100;
+    position: absolute;
+    font-family: "CardenioModernBold";
+    /* top: 60%; */
+    /* left: 50%;
+    transform: translate(-50%, -50%); */
+    color: #ed4b92;
+    font-size: 7vh;
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+    
+}
+
+.habitat-overlay-background {
+    opacity: 0.75;
 }
 
 label {
