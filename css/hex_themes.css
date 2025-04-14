@@ -544,12 +544,12 @@ Theme template:
     --button-submit-color:#d36328;
     --button-return-color:#424847;
     --button-automa-action-color:#d36328;
-    --button-round-end-goal-color:#b4b9b3;
+    --button-round-end-goal-color:#cb0300;
     --button-player-won-color:#d36328;
     --button-we-tied-color:#cb0300;
     --button-automa-score-color:#424847;
 
-    --round-end-plus-color:#cb0300;
+    --round-end-plus-color:#b4b9b3;
 
     --cell-vertical-color:#feca00;
     --cell-info-color:#424847;

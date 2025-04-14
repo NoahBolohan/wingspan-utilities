@@ -466,9 +466,6 @@ outline: 2px solid rgba(var(--font-color-buttons));
     z-index: 3;
     position: absolute;
     font-family: "CardenioModernBold";
-    /* top: 60%; */
-    /* left: 50%;
-    transform: translate(-50%, -50%); */
     color: rgba(var(--font-color-buttons));
     font-size: var(--font-size);
     -webkit-text-stroke: 1px black;
@@ -498,7 +495,7 @@ outline: 2px solid rgba(var(--font-color-buttons));
     bottom:0;
     right:0;
     z-index:2;
-    border: 2px var(--line-style) black;
+    border: 2px var(--line-style) rgba(var(--font-color-buttons));
 }
 
 .diamond-background-nectar {
