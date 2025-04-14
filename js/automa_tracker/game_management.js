@@ -949,15 +949,15 @@ $(document).ready(
                 );
 
                 $("#nectar_scoring_forest_count").text(
-                    "Forest: " + $("#automa_tracker_body").data("automa_nectar_forest_counter")
+                    $("#automa_tracker_body").data("automa_nectar_forest_counter")
                 );
 
                 $("#nectar_scoring_grassland_count").text(
-                    "Grassland: " + $("#automa_tracker_body").data("automa_nectar_grassland_counter")
+                    $("#automa_tracker_body").data("automa_nectar_grassland_counter")
                 );
 
                 $("#nectar_scoring_wetland_count").text(
-                    "Wetland: " + $("#automa_tracker_body").data("automa_nectar_wetland_counter")
+                    $("#automa_tracker_body").data("automa_nectar_wetland_counter")
                 );
 
                 $("#modal_nectar_scoring").modal("show");

@@ -13,7 +13,7 @@ function generate_egg_td(
 
         $("<img>").attr(
             {
-                "src" : encodeURI(`https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/egg.png`),
+                "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/egg.webp"),
                 "style" : "width : 10%;"
             }
         ).appendTo(
