@@ -468,37 +468,102 @@ function append_automa_action_row(automa_action) {
     }
 
     // Append secondary automa action to row: options are place_end-of-round_cube, remove_end-of-round_cube, activate_pink_powers, none
-    var secondary_action_text;
-
     switch(automa_action[`round_${$("#automa_tracker_body").data("current_round")}`]["secondary_action"]) {
 
         case "place_end-of-round_cube":
-            secondary_action_text = "\u25A8";
+
+            var place_cube_cell = $("<td>").attr(
+                {
+                    class : "cell-automa-action",
+                    style : "text-align: center;"
+                }
+            )
+        
+            $("<img>").attr(
+                {
+                    "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/cube.webp"),
+                    "style" : "height : 4vh;"
+                }
+            ).appendTo(
+                place_cube_cell
+            );
+
+            place_cube_cell.appendTo(
+                tr
+            );
             break;
 
         case "remove_end-of-round_cube":
-            secondary_action_text = "\u00D7";
+
+            var remove_cube_cell = $("<td>").attr(
+                {
+                    class : "cell-automa-action centered-text",
+                    style : "text-align: center;"
+                }
+            )
+        
+            $("<img>").attr(
+                {
+                    "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/cube.webp"),
+                    "style" : "height : 4vh;"
+                }
+            ).appendTo(
+                remove_cube_cell
+            );
+
+            $("<div>").attr(
+                {
+                    "class" : "text-overlay",
+                    "style" : "font-size:8vh;color:red;"
+                }
+            ).html(
+                "&#xd7;"
+            ).appendTo(
+                remove_cube_cell
+            );
+
+            remove_cube_cell.appendTo(
+                tr
+            );
             break;
 
         case "activate_pink_powers":
-            secondary_action_text = `Activate pink powers`
-            break;
+
+        var pink_powers_cell = $("<td>").attr(
+            {
+                class : "cell-automa-action",
+                style : "text-align: center;"
+            }
+        )
+    
+        $("<img>").attr(
+            {
+                "src" : encodeURI("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/pink_powers.webp"),
+                "style" : "height : 4vh;"
+            }
+        ).appendTo(
+            pink_powers_cell
+        );
+
+        pink_powers_cell.appendTo(
+            tr
+        );
+        break;
 
         case "none":
-            secondary_action_text = "";
+
+            $("<td>").attr(
+                {
+                    class : "cell-automa-action",
+                    style : "width: 45%; text-align: center"
+                }
+            ).text(
+                "hi"
+            ).appendTo(
+                tr
+            );
             break;
     }
-
-    $("<td>").attr(
-        {
-            class : "cell-automa-action",
-            style : "width: 45%; text-align: center"
-        }
-    ).text(
-        secondary_action_text
-    ).appendTo(
-        tr
-    );
 
     // Append row(s) to table
     $("#table_automa_actions tbody").append(tr);
