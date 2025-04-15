@@ -1,5 +1,5 @@
 var scriptProp = PropertiesService.getScriptProperties()
-var REDIRECT_URL = "https://noahbolohan.github.io/wingspan-utilities/index.html";
+var REDIRECT_URL = "https://wingspan-utilities-vd2qp.ondigitalocean.app/";
 
 function intialSetup () {
   var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
@@ -8,8 +8,15 @@ function intialSetup () {
 
 function redirect() {
   return HtmlService.createHtmlOutput(
-    "<script>window.top.location.href=\"" + REDIRECT_URL + "\";</script>"
+    `<script>window.open('${REDIRECT_URL}', '_self');</script>`
   );
+}
+
+function doGet() {
+  Logger.log("GET request");
+  var template = HtmlService.createTemplateFromFile("score_sheet_automa");
+  template.url = ScriptApp.getService().getUrl();
+  return template.evaluate();
 }
 
 function doPost (e) {
@@ -30,7 +37,9 @@ function doPost (e) {
 
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-    return redirect();
+    return HtmlService.createHtmlOutput(
+      `<script>window.open('${REDIRECT_URL}', '_self');</script>`
+    );
   }
 
   catch (e) {
