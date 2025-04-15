@@ -566,8 +566,6 @@ function append_automa_action_row(automa_action) {
                     class : "cell-automa-action",
                     style : "width: 45%; text-align: center"
                 }
-            ).text(
-                "hi"
             ).appendTo(
                 tr
             );
