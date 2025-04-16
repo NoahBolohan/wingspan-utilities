@@ -573,7 +573,7 @@ outline: 2px solid rgba(var(--font-color-buttons));
     background-position: center;
     background-size: 80%;
     aspect-ratio: 1/1;
-    background-color:rgba(var(--button-reset-color));
+    background-color:rgba(var(--button-submit-color));
     vertical-align: text-top;
 }
 
