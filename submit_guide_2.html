@@ -143,7 +143,7 @@
                         <div class="card">
 
                             <div class="card-header py-1 text-center">
-                                <h2 class="p-0 m-0 h2">Overview</h2>
+                                <h2 class="p-0 m-0 h2">2. Deploying a Google Web App (a)</h2>
                             </div>
 
                             <div class="card-body p-0 how-to-card">
@@ -151,18 +151,12 @@
                                 <div class="row p-0 justify-content-center margin_auto">
 
                                     <div class="col-auto">
-                                        <p>
-                                            Note: This guide is derived from jamiewilson's <a target="_blank" rel="noopener noreferrer" href="https://github.com/jamiewilson/form-to-google-sheets">form-to-google-sheets repository</a> on Github.
-                                        </p>
-
-                                        <p>
-                                            This page will guide you through the following:
-                                            <ul>
-                                                <li>Creating a Google Sheet to store your Wingspan game scores</li>
-                                                <li>Deploying a Google Web App to post data to your Sheet</li>
-                                                <li>Attaching the deployed App script to the score sheets found throughout this Wingspan Utilities application</li>
-                                            </ul>
-                                        </p>
+                                        <ul>
+                                            <li>Click on <b>Extensions</b> > <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/800px-Google_Apps_Script.svg.png" style="height:3vh;vertical-align: sub;"><b>Apps Script</b></li>
+                                            <li>In the code editor, replace the default code with the contents of <b>form_script.gs</b> (<a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/gs/form_script.gs">link to the script on Github</a>)</li>
+                                            <li>Save the project and Run (this step may prompt authorize permissions, sometimes hidden under the <b>Advanced</b> section of the request)</li>
+                                            <li>Confirm the script ran succesfully via the execution log</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -171,10 +165,14 @@
                 </div>
             </div>
 
-            <div class="row p-0 justify-content-center margin_auto" style="height:7vh;margin-bottom:1vh;" id="row_return_button">
+            <div class="row gx-3" style="height:7vh;margin-bottom:1vh;" id="row_back_forward_buttons">
 
                 <div class="col-6 align-self-center">
-                    <a class="w-100 btn nav-button btn-submit" href="submit_guide_1.html">Next</a>
+                    <a class="w-100 btn nav-button btn-reset" href="submit_guide_1.html">Back</a>
+                </div>
+
+                <div class="col-6 align-self-center">
+                    <a class="w-100 btn nav-button btn-submit" href="submit_guide_3.html">Next</a>
                 </div>
             </div>
 

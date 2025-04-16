@@ -216,11 +216,19 @@ function prepopulate_data()
         ]
 
         var inputs = [
+            "cell_player_birds",
+            "cell_player_bonus_cards",
+            "cell_player_end-of-round_goals",
+            "cell_player_eggs",
+            "cell_player_food_on_cards",
+            "cell_player_tucked_cards",
+            "cell_player_duet_tokens",
+            "cell_player_nectar",
             "cell_automa_n_drawn_cards",
             "cell_automa_played_birds",
-            "cell_player_end-of-round_goals",
             "cell_automa_end-of-round_goals",
             "cell_automa_laid_eggs",
+            "cell_automa_duet_tokens",
             "cell_automa_nectar",
             "cell_automa_total_score"
         ]
@@ -266,6 +274,7 @@ $(document).ready(
     function () {
         if(window.location.href.includes("html?")) {
             prepopulate_data();
+            recompute_player_total_score();
             recompute_automa_total_score();
         }
     }

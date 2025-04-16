@@ -597,6 +597,10 @@ textarea {
     color: rgba(var(--font-color-headers));
 }
 
+.how-to-card * {
+    font-size:2.5vh;
+}
+
 .hr1 {
     border-color:rgba(var(--font-color-buttons));
     margin-top : 1vh;
