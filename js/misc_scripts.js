@@ -87,3 +87,46 @@ function set_row_height(selector, n_rows) {
     }
     
 }
+
+$(document).ready(
+    function() {
+
+        $(".popup_image").on(
+            "click",
+            function() {
+
+                $("#h2_header_for_popup_image_modal").text(
+                    $(this).attr(
+                        "data-header"
+                    )
+                )
+
+                $("#img_popup_image_for_modal").attr(
+                    {
+                        src: encodeURI(
+                            $(this).attr(
+                                "data-URL"
+                            )
+                        ),
+                        style: "width:100%;"
+                    }
+                )
+                
+                $("#modal_popup_image").modal("show");
+            }
+        );
+    }
+);
+
+$(document).ready(
+    function() {
+
+        $("#button_close_modal_popup_image").on(
+            "click",
+            function() {
+                
+                $("#modal_popup_image").modal("hide");
+            }
+        );
+    }
+);

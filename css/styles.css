@@ -567,6 +567,16 @@ outline: 2px solid rgba(var(--font-color-buttons));
     transform: rotate(45deg);
 }
 
+.popup_image {
+    background-image: url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/popup.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    aspect-ratio: 1/1;
+    background-color:rgba(var(--button-reset-color));
+    vertical-align: text-top;
+}
+
 label {
     color: rgba(var(--font-color-buttons));
 }

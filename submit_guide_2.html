@@ -120,6 +120,35 @@
             </div>
         </div>
 
+        <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_popup_image">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header p-0 justify-content-center" style="position:relative;">
+
+                        <h2 class="modal-title h2" id="h2_header_for_popup_image_modal"></h2>
+                        <button class="btn astext btn-close-settings" id="button_close_modal_popup_image" style="position:absolute;right:1em;" type="button">
+                            &#x274c;
+                        </button>
+                    </div>
+
+                    <div class="modal-body" id="modal_settings_body">
+
+                        <div class="row p-0 justify-content-center margin_auto">
+                            
+                            <div class="col-12">
+
+                                <img id="img_popup_image_for_modal">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid" id="container_header">
 
             <div class="row justify-content-center align-items-center" style="height:7vh; margin-top: 1vh;" id="row_header">
@@ -163,10 +192,10 @@
 
                                     <div class="col-auto">
                                         <ul>
-                                            <li>Click on <b>Extensions</b> > <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/800px-Google_Apps_Script.svg.png" style="height:3vh;vertical-align: sub;"><b>Apps Script</b></li>
+                                            <li>Click on <b>Extensions</b> > <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/800px-Google_Apps_Script.svg.png" style="height:3vh;vertical-align: sub;"><b>Apps Script</b> <button class="btn popup_image" type="button" data-header="Apps Script" data-URL="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/apps_script.png"></button></li>
                                             <li>In the code editor, replace the default code with the contents of <b>form_script.gs</b> (<a target="_blank" rel="noopener noreferrer" href="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/gs/form_script.gs">link to the script on Github</a>)</li>
-                                            <li>Save the project and Run (this step may prompt authorize permissions, sometimes hidden under the <b>Advanced</b> section of the request)</li>
-                                            <li>Confirm the script ran succesfully via the execution log</li>
+                                            <li>Save the project and Run <button class="btn popup_image" type="button" data-header="Save & run" data-URL="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/save_run.png"></button> (this step may prompt authorize permissions, sometimes hidden under the <b>Advanced</b> section of the request)</li>
+                                            <li>Confirm the script ran succesfully via the execution log <button class="btn popup_image" type="button" data-header="Execution log" data-URL="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/confirm_execution_log.png"></button></li>
                                         </ul>
                                     </div>
                                 </div>

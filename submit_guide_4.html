@@ -120,6 +120,35 @@
             </div>
         </div>
 
+        <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_popup_image">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header p-0 justify-content-center" style="position:relative;">
+
+                        <h2 class="modal-title h2" id="h2_header_for_popup_image_modal"></h2>
+                        <button class="btn astext btn-close-settings" id="button_close_modal_popup_image" style="position:absolute;right:1em;" type="button">
+                            &#x274c;
+                        </button>
+                    </div>
+
+                    <div class="modal-body" id="modal_settings_body">
+
+                        <div class="row p-0 justify-content-center margin_auto">
+                            
+                            <div class="col-12">
+
+                                <img id="img_popup_image_for_modal">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid" id="container_header">
 
             <div class="row justify-content-center align-items-center" style="height:7vh; margin-top: 1vh;" id="row_header">
@@ -145,7 +174,7 @@
 
         <div class="container-fluid" id="container_body">
 
-            <div style="height:60vh;margin-top:1vh;margin-bottom:2vh;">
+            <div style="height:53vh;margin-top:1vh;margin-bottom:2vh;">
 
                 <div class="row p-0 justify-content-center margin_auto" style="margin-bottom:2vh;" id="row_difficulty">
 
@@ -163,7 +192,7 @@
 
                                     <div class="col-auto">
                                         <ul>
-                                            <li>In the settings menu <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="height:3vh;vertical-align: sub;">of the Wingspan Utilities application, paste your <b>Web App URL</b></li>
+                                            <li>In the settings menu <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="height:3vh;vertical-align: sub;">of the Wingspan Utilities application, paste your <b>Web App URL</b> <button class="btn popup_image" type="button" data-header="Paste Web App URL" data-URL="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/paste_url.png"></button></li>
                                             <li>Alternatively, you can try submitting a score from any score sheet to be prompted to paste your <b>Web App URL</b></li>
                                             <li>Test the submission of a score sheet by clicking on the <b>Submit Score</b> button and verifying that a new row of scores is appended in the appropriate Google Sheet page (the buttons below will take you to pre-filled score sheets)</li>
                                         </ul>
@@ -175,14 +204,21 @@
                 </div>
             </div>
 
-            <div class="row gx-3" style="height:7vh;margin-bottom:1vh;" id="row_back_forward_buttons">
+            <div class="row gx-3" style="height:7vh;" id="row_back_forward_buttons">
 
                 <div class="col-6 align-self-center">
-                    <a class="w-100 btn nav-button btn-reset" href="score_sheet.html">Score Sheet</a>
+                    <a class="w-100 btn nav-button btn-submit" href="score_sheet.html">Score Sheet</a>
                 </div>
 
                 <div class="col-6 align-self-center">
-                    <a class="w-100 btn nav-button btn-reset" href="score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=true&col_oceania_expansion_checkbox=true&col_asia_checkbox=true&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&cell_player_birds=0&cell_player_bonus_cards=0&cell_player_end-of-round_goals=0&cell_player_eggs=0&cell_player_food_on_cards=0&cell_player_tucked_cards=0&cell_player_duet_tokens=0&cell_player_nectar=0&col_automa_points_per_face_down_bird_card_radio=4&cell_automa_n_drawn_cards=0&cell_automa_played_birds=0&cell_automa_end-of-round_goals=0&cell_automa_laid_eggs=0&cell_automa_duet_tokens=0&cell_automa_nectar=0">Score Sheet: Automa</a>
+                    <a class="w-100 btn nav-button btn-submit" href="score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=true&col_oceania_expansion_checkbox=true&col_asia_checkbox=true&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&cell_player_birds=0&cell_player_bonus_cards=0&cell_player_end-of-round_goals=0&cell_player_eggs=0&cell_player_food_on_cards=0&cell_player_tucked_cards=0&cell_player_duet_tokens=0&cell_player_nectar=0&col_automa_points_per_face_down_bird_card_radio=4&cell_automa_n_drawn_cards=0&cell_automa_played_birds=0&cell_automa_end-of-round_goals=0&cell_automa_laid_eggs=0&cell_automa_duet_tokens=0&cell_automa_nectar=0">Score Sheet: Automa</a>
+                </div>
+            </div>
+
+            <div class="row p-0 justify-content-center margin_auto" style="height:7vh;margin-bottom:1vh;" id="row_return_button">
+
+                <div class="col-6 align-self-center">
+                    <a class="w-100 btn nav-button btn-reset" href="submit_guide_3.html">Back</a>
                 </div>
             </div>
 
