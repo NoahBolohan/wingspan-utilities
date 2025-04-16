@@ -88,6 +88,31 @@ $(document).ready(
     }
 )
 
+const current_web_app_url = localStorage.getItem("web_app_url") ? localStorage.getItem("web_app_url") : null;
+
+if (current_web_app_url == null) {
+    document.documentElement.setAttribute(
+        "data-web_app_url",
+        ""
+    );
+}
+else {
+    document.documentElement.setAttribute(
+        "data-web_app_url",
+        current_web_app_url
+    );
+}
+
+$(document).ready(
+    function() {
+        set_web_app_url(
+            document.documentElement.getAttribute(
+                "data-web_app_url"
+            )
+        )
+    }
+)
+
 $(document).ready(
 
     function() {
@@ -192,6 +217,22 @@ $(document).ready(
                         "random"
                     );
                 }
+
+                // Check stored `web_app_url`
+                const current_web_app_url = document.documentElement.getAttribute(
+                    "data-web_app_url"
+                );
+
+                if (current_web_app_url) {
+                    $("#input_web_app_url").val(
+                        current_web_app_url
+                    );
+                }
+                else {
+                    $("#input_web_app_url").val(
+                        ""
+                    );
+                }
             }
         );
     }
@@ -291,4 +332,29 @@ function switch_background(background) {
             `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
         );
     }
+}
+
+$(document).ready(
+    function() {
+
+        $("#input_web_app_url").change(
+            function() {
+                
+                set_web_app_url(
+                    this.value
+                );
+            }
+        );
+    }
+)
+
+function set_web_app_url(web_app_url) {
+    document.documentElement.setAttribute(
+        "data-web_app_url",
+        web_app_url
+    );
+    localStorage.setItem(
+        "web_app_url",
+        web_app_url
+    );
 }
