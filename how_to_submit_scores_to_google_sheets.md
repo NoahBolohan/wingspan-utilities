@@ -8,7 +8,7 @@ This page will guide you through the following:
 + Deploying a Google Web App to post data to your Sheet
 + Attaching the deployed App script to the score sheets found throughout this Wingspan Utilities application
 
-From start to finish, this guide should take approx. 10-15 minutes to follow. It is also **recommended** to follow this guide on a desktop browser.
+From start to finish, this guide should take approx. 10-15 minutes to follow. It is also **necessary** to follow this guide on a desktop browser (Google Apps Script is hard to access/use on mobile).
 
 ## Creating a Wingspan Tracker Sheet
 

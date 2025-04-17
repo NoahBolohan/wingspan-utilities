@@ -253,6 +253,18 @@ $(document).ready(
 $(document).ready(
     function() {
 
+        $("#button_close_modal_no_web_app_url").on(
+            "click",
+            function() {
+                $("#modal_no_web_app_url").modal("hide");
+            }
+        );
+    }
+)
+
+$(document).ready(
+    function() {
+
         $("#theme_options").change(
             function() {
                 
