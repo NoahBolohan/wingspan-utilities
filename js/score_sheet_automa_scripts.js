@@ -664,28 +664,3 @@ $(document).ready(
         )
     }
 )
-
-$(document).ready(
-
-    function() {
-
-        $("#google_form").on(
-            "submit",
-            function() {
-            
-                const rxChecks = [/^https:\/\/script.google.com\/macros\/s\//,/.\/exec/],
-                word = $("#google_form").attr("action");
-                result = rxChecks.every((rx) => rx.test(word));
-        
-                if (!result) {
-                    $("#modal_no_web_app_url").modal("show");
-                    return false;
-                }
-                else {
-                    populate_form_data();
-                    return true;
-                }
-            }
-        );
-    }
-)

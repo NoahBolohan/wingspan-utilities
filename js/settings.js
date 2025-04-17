@@ -357,16 +357,57 @@ $(document).ready(
                 );
             }
         );
+
+        $("#input_web_app_url_from_submit_attempt").change(
+            function() {
+                
+                set_web_app_url(
+                    this.value
+                );
+            }
+        );
     }
 )
 
 function set_web_app_url(web_app_url) {
+
     document.documentElement.setAttribute(
         "data-web_app_url",
         web_app_url
     );
+
     localStorage.setItem(
         "web_app_url",
         web_app_url
     );
+
+    $("#google_form").attr(
+        "action",
+        web_app_url
+    )
 }
+
+$(document).ready(
+
+    function() {
+
+        $("#google_form").on(
+            "submit",
+            function() {
+            
+                const rxChecks = [/^https:\/\/script.google.com\/macros\/s\//,/.\/exec/],
+                word = $("#google_form").attr("action");
+                result = rxChecks.every((rx) => rx.test(word));
+        
+                if (!result) {
+                    $("#modal_no_web_app_url").modal("show");
+                    return false;
+                }
+                else {
+                    populate_form_data();
+                    return true;
+                }
+            }
+        );
+    }
+)
