@@ -125,3 +125,36 @@ From start to finish, this guide should take approx. 10-15 minutes to follow. It
 [Regular](https://wingspan-utilities-vd2qp.ondigitalocean.app/score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=true&col_oceania_expansion_checkbox=true&col_asia_checkbox=true&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&cell_player_birds=0&cell_player_bonus_cards=0&cell_player_end-of-round_goals=0&cell_player_eggs=0&cell_player_food_on_cards=0&cell_player_tucked_cards=0&cell_player_duet_tokens=0&cell_player_nectar=0&col_automa_points_per_face_down_bird_card_radio=4&cell_automa_n_drawn_cards=0&cell_automa_played_birds=0&cell_automa_end-of-round_goals=0&cell_automa_laid_eggs=0&cell_automa_duet_tokens=0&cell_automa_nectar=0)
 
 [Automa](https://wingspan-utilities-vd2qp.ondigitalocean.app/score_sheet_automa.html?col_base_game_checkbox=true&col_european_expansion_checkbox=true&col_oceania_expansion_checkbox=true&col_asia_checkbox=true&col_automubon_society_checkbox=false&col_RAOUtoma_checkbox=false&cell_player_birds=0&cell_player_bonus_cards=0&cell_player_end-of-round_goals=0&cell_player_eggs=0&cell_player_food_on_cards=0&cell_player_tucked_cards=0&cell_player_duet_tokens=0&cell_player_nectar=0&col_automa_points_per_face_down_bird_card_radio=4&cell_automa_n_drawn_cards=0&cell_automa_played_birds=0&cell_automa_end-of-round_goals=0&cell_automa_laid_eggs=0&cell_automa_duet_tokens=0&cell_automa_nectar=0)
+
+## Finding your Web App URL again
+
+If ever you lose your Web App Url, you can find it again as follows:
+
+<details open>
+
+<summary>Steps without screenshots</summary>
+
+1. Navigate to your copy of the Wingspan Tracker Sheet
+2. Click on `Extensions` > `Apps Script`
+3. In the top right of the page, click on `Deploy` > `Manage deployments`
+4. Under your deployment (the most recent deployment will be open by default), you will find your Wep App URL once again
+
+</details>
+
+<details>
+
+<summary>Steps with screenshots</summary>
+
+1. Navigate to your copy of the Wingspan Tracker Sheet
+
+2. Click on `Extensions` > `Apps Script`
+
+![](https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/apps_script.png)
+
+3. In the top right of the page, click on `Deploy` > `Manage deployments`
+
+![](https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/how_to_guide/manage_deployment.png)
+
+4. Under your deployment (the most recent deployment will be open by default), you will find your Wep App URL once again
+
+</details>
