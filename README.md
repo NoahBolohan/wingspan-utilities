@@ -10,7 +10,7 @@ Features to come:
 
 - **Automarazzi score sheet:** Digital score sheet for games versus the Automarazzi. Scores can be submitted to a Google Sheets document*.
 
-> \* Submitting to a Google Sheets document requires setting one up for yourself. You can read how to do so in TBD.
+> \* Submitting to a Google Sheets document requires setting one up for yourself. You can do so by following [this guide](https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md).
 
 The web app can be found [here](https://wingspan-utilities-vd2qp.ondigitalocean.app/).
 
