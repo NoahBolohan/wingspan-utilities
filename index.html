@@ -22,6 +22,90 @@
 
     <body class="parallax" id="body_index">
 
+        <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_about">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header p-0 justify-content-center" style="position:relative;">
+
+                        <h2 class="modal-title h2">About</h2>
+                        <button class="btn astext btn-close-settings" id="button_close_modal_about" style="position:absolute;right:1em;" type="button">
+                            &#x274c;
+                        </button>
+                    </div>
+
+                    <div class="modal-body" id="modal_about_body">
+
+                        <div class="row p-0 margin_auto">
+
+                            <div class="col-5 p-0 settings-label">
+                                About
+                            </div>
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+
+                            <hr class="hr2">
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+                            <div class="col-12 p-0">
+                                This application features tools to support playing Wingspan.
+                            </div>
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+                            <div class="col-12 p-0">
+                                Score sheets can submit scores to personal google Sheets documents. Read how to set up these documents <a target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">here</a>.
+                            </div>
+                        </div>
+
+                        <div class="row p-0 justify-content-center margin-auto">
+
+                            <div class="col-auto" style="text-align: center;">
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities">Source code</a>
+                            </div>
+                        </div>
+
+                        <div class="row p-0 justify-content-center margin-auto">
+
+                            <div class="col-auto" style="text-align: center;">
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/issues/new">Report an issue</a>
+                            </div>
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+
+                            <hr class="hr1">
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+
+                            <div class="col-5 p-0 settings-label">
+                                Credits
+                            </div>
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+
+                            <hr class="hr2">
+                        </div>
+
+                        <div class="row p-0 margin_auto">
+
+                            <div class="col-12 p-0">
+                                <p>
+                                    Some credits and stuff
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
 
             <div class="modal-dialog" role="document">
@@ -38,7 +122,7 @@
 
                     <div class="modal-body" id="modal_settings_body">
 
-                        <div class="row mt-1 p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
+                        <div class="row p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
 
                             <div class="col-5 p-0 align-self-center settings-label">
                                 Prevent screen sleep:
@@ -52,7 +136,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_theme">
+                        <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;" id="row_setting_choose_theme">
 
                             <div class="col-5 p-0 align-self-center">
                                 <label class="settings-label" for="theme">Theme:</label>
@@ -77,7 +161,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
+                        <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;" id="row_setting_choose_background">
 
                             <div class="col-5 p-0 align-self-center">
                                 <label class="settings-label" for="background">Background:</label>
@@ -105,7 +189,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_set_web_app_url">
+                        <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;" id="row_set_web_app_url">
 
                             <div class="col-5 p-0 align-self-center">
                                 <label class="settings-label" for="input_web_app_url">Web App URL:</label>
@@ -116,7 +200,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_web_app_url_guide">
+                        <div class="row p-0 justify-content-center margin_auto" id="row_web_app_url_guide">
         
                             <div class="col-7 offset-5 p-0" style="text-align: center;">
                                 <a class="w-100" target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">Generate a Web App URL</a>
@@ -175,11 +259,18 @@
                 <div class="col header-background" style="height:10vh;"></div>
                 <div class="col-12 mx-0 px-0 header-content">
 
-                    <div class="row p-0 justify-content-center margin_auto" style="height:7vh;" id="row_start_automa_game">
+                    <div class="row gx-3" style="height:7vh;margin-left:1vh;margin-right:1vh;">
 
-                        <div class="col-auto">
+                        <div class="col-6 align-self-center">
 
-                            <button class="btn nav-button btn-settings" type="button" id="button_settings">
+                            <button class="w-100 btn nav-button btn-settings" type="button" id="button_about">
+                                About
+                            </button>
+                        </div>
+
+                        <div class="col-6 align-self-center">
+
+                            <button class="w-100 btn nav-button btn-settings" type="button" id="button_settings">
                                 Settings
                             </button>
                         </div>
