@@ -14,15 +14,6 @@ Planned features are:
 
 - **Automarazzi score sheet:** Digital score sheet for games versus the Automarazzi.
 
-## Other Wingspan resources
-
-- [Wingspan Rules | Rulepop](https://wingspan.rulepop.com/)
-
 ## Have feedback/requests/issues?
 
 Please [create a new issue](https://github.com/NoahBolohan/wingspan-utilities/issues/new?template=Blank+issue).
-
-## Credits
-
-- Background art by [Diana Lisiecka](https://www.artstation.com/dianalisiecka)
-- [gsheet package](https://github.com/maxconway/gsheet) by [Max Conway](https://github.com/maxconway)
