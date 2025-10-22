@@ -674,27 +674,27 @@ function update_round_end_goals() {
         expansions_to_include.push("asia");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_birds_of_canada_checkbox").is(':checked')) {
         expansions_to_include.push("birds_of_canada");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_irds_of_new_zealand_checkbox").is(':checked')) {
         expansions_to_include.push("birds_of_new_zealand");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_birds_of_the_usa_checkbox").is(':checked')) {
         expansions_to_include.push("birds_of_the_usa");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_british_birds_checkbox").is(':checked')) {
         expansions_to_include.push("british_birds");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_birds_of_continental_europe_checkbox").is(':checked')) {
         expansions_to_include.push("birds_of_continental_europe");
     }
 
-    if ($("#col_oceania_expansion_checkbox").is(':checked')) {
+    if ($("#col_additional_asian_avians_checkbox").is(':checked')) {
         expansions_to_include.push("additional_asian_avians");
     }
 

@@ -206,6 +206,12 @@ function prepopulate_data()
             "col_european_expansion_checkbox",
             "col_oceania_expansion_checkbox",
             "col_asia_checkbox",
+            "col_birds_of_canada_checkbox",
+            "col_birds_of_new_zealand_checkbox",
+            "col_birds_of_the_usa_checkbox",
+            "col_british_birds_checkbox",
+            "col_birds_of_continental_europe_checkbox",
+            "col_additional_asian_avians_checkbox",
             "col_automubon_society_checkbox",
             "col_RAOUtoma_checkbox",
             "col_automasian_alliance_checkbox"
@@ -609,6 +615,30 @@ function populate_form_data() {
         document.getElementById("col_asia_checkbox_hidden").disabled = true;
     }
 
+    if(document.getElementById("col_birds_of_canada_checkbox").checked) {
+        document.getElementById("col_birds_of_canada_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_new_zealand_checkbox").checked) {
+        document.getElementById("col_birds_of_new_zealand_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_the_usa_checkbox").checked) {
+        document.getElementById("col_birds_of_the_usa_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_british_birds_checkbox").checked) {
+        document.getElementById("col_british_birds_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_continental_europe_checkbox").checked) {
+        document.getElementById("col_birds_of_continental_europe_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_additional_asian_avians_checkbox").checked) {
+        document.getElementById("col_additional_asian_avians_checkbox_hidden").disabled = true;
+    }
+
     // Extra card checkboxes
     if(document.getElementById("col_automubon_society_checkbox").checked) {
         document.getElementById("col_automubon_society_checkbox_hidden").disabled = true;
@@ -635,6 +665,12 @@ $(document).ready(
                 $("#col_european_expansion_checkbox").prop("checked",true);
                 $("#col_oceania_expansion_checkbox").prop("checked",true).trigger("change");
                 $("#col_asia_checkbox").prop("checked",true);
+                $("#col_birds_of_canada_checkbox").prop("checked",false);
+                $("#col_birds_of_new_zealand_checkbox").prop("checked",false);
+                $("#col_birds_of_the_usa_checkbox").prop("checked",false);
+                $("#col_british_birds_checkbox").prop("checked",false);
+                $("#col_birds_of_continental_europe_checkbox").prop("checked",false);
+                $("#col_additional_asian_avians_checkbox").prop("checked",false);
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
                 $("#col_automasian_alliance_checkbox").prop("checked",true).trigger("change");

@@ -838,6 +838,12 @@ $(document).ready(
                 $("#col_oceania_expansion_checkbox").prop("checked",true).trigger("change");
                 $("#col_asia_checkbox").prop("checked",true);
                 $("#col_duet_mode_checkbox").prop("checked",false).trigger("change");
+                $("#col_birds_of_canada_checkbox").prop("checked",false);
+                $("#col_birds_of_new_zealand_checkbox").prop("checked",false);
+                $("#col_birds_of_the_usa_checkbox").prop("checked",false);
+                $("#col_british_birds_checkbox").prop("checked",false);
+                $("#col_birds_of_continental_europe_checkbox").prop("checked",false);
+                $("#col_additional_asian_avians_checkbox").prop("checked",false);
             }
         )
     }
@@ -931,5 +937,29 @@ function populate_form_data() {
 
     if(document.getElementById("col_duet_mode_checkbox").checked) {
         document.getElementById("col_duet_mode_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_canada_checkbox").checked) {
+        document.getElementById("col_birds_of_canada_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_new_zealand_checkbox").checked) {
+        document.getElementById("col_birds_of_new_zealand_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_the_usa_checkbox").checked) {
+        document.getElementById("col_birds_of_the_usa_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_british_birds_checkbox").checked) {
+        document.getElementById("col_british_birds_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_birds_of_continental_europe_checkbox").checked) {
+        document.getElementById("col_birds_of_continental_europe_checkbox_hidden").disabled = true;
+    }
+
+    if(document.getElementById("col_additional_asian_avians_checkbox").checked) {
+        document.getElementById("col_additional_asian_avians_checkbox_hidden").disabled = true;
     }
 }
