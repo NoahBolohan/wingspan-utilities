@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Wingspan Automa</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/favicon.png" type="image/png">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/themes.css" media="screen" />
+
+        <script src="js/colour_filter_computer.js"></script>
+        <script src="js/no_sleep.min.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/misc_scripts.js"></script>
+        <script src="js/score_sheet_automarazzi_scripts.js"></script>
+    </head>
+
+    <body class="parallax" id="body_score_sheet_automa">
+
+        <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" action="none">
+
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
+
+                <div class="modal-dialog" role="document">
+    
+                    <div class="modal-content">
+    
+                        <div class="modal-header p-0 justify-content-center" style="position:relative;">
+    
+                            <h2 class="modal-title h2">Settings</h2>
+                            <button class="btn astext btn-close-settings" id="button_close_modal_settings" style="position:absolute;right:1em;" type="button">
+                                &#x274c;
+                            </button>
+                        </div>
+    
+                        <div class="modal-body" id="modal_settings_body">
+    
+                            <div class="row mt-1 p-0 justify-content-between margin_auto" id="row_setting_toggle_screen_sleep">
+    
+                                <div class="col-5 p-0 align-self-center settings-label">
+                                    Prevent screen sleep:
+                                </div>
+                
+                                <div class="col-2 offset-5 p-0 text-end">
+                                    <label class="switch">
+                                        <input type="checkbox" id="button_toggle_screen_sleep">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_theme">
+    
+                                <div class="col-5 p-0 align-self-center">
+                                    <label class="settings-label" for="theme">Theme:</label>
+                                </div>
+                
+                                <div class="col-7 p-0">
+                                    <select name="theme" id="theme_options" style="width:100%">
+                                        <option value="default">Default</option>
+                                        <option value="bee_eater">Bee Eater</option>
+                                        <option value="blue_winged_kookaburra">Blue-winged Kookaburra</option>
+                                        <option value="eastern_rosella">Eastern Rosella</option>
+                                        <option value="eastern_yellow_robin">Eastern Yellow Robin</option>
+                                        <option value="galah">Galah</option>
+                                        <option value="olive_backed_oriole">Olive-backed Oriole</option>
+                                        <option value="plains_wanderer">Plains Wanderer</option>
+                                        <option value="princess_parrot">Princess Parrot</option>
+                                        <option value="rose_crowned_fruit_dove">Rose-crowned Fruit-dove</option>
+                                        <option value="southern_cassowary">Southern Cassowary</option>
+                                        <option value="spotted_pardalote">Spotted Pardalote</option>
+                                        <option value="superb_fairy_wren">Superb Fairy Wren</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
+    
+                                <div class="col-5 p-0 align-self-center">
+                                    <label class="settings-label" for="background">Background:</label>
+                                </div>
+                
+                                <div class="col-7 p-0">
+                                    <select name="background" id="background_options"  style="width:100%">
+                                        <option value="random">Random</option>
+                                        <option value="base_game_forest_habitat">Base Game (Forest)</option>
+                                        <option value="base_game_grassland_habitat">Base Game (Grassland)</option>
+                                        <option value="base_game_wetland_habitat">Base Game (Wetland)</option>
+                                        <option value="european_expansion_forest_habitat">European Expansion (Forest)</option>
+                                        <option value="european_expansion_grassland_habitat">European Expansion (Grassland)</option>
+                                        <option value="european_expansion_wetland_habitat">European Expansion (Wetland)</option>
+                                        <option value="hills_forest_habitat">Hills (Forest)</option>
+                                        <option value="hills_grassland_habitat">Hills (Grassland)</option>
+                                        <option value="hills_wetland_habitat">Hills (Wetland)</option>
+                                        <option value="sakura_forest_habitat">Sakura (Forest)</option>
+                                        <option value="sakura_grassland_habitat">Sakura (Grassland)</option>
+                                        <option value="sakura_wetland_habitat">Sakura (Wetland)</option>
+                                        <option value="summer_solstice_forest_habitat">Summer Solstice (Forest)</option>
+                                        <option value="summer_solstice_grassland_habitat">Summer Solstice (Grassland)</option>
+                                        <option value="summer_solstice_wetland_habitat">Summer Solstice (Wetland)</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_set_web_app_url">
+    
+                                <div class="col-5 p-0 align-self-center">
+                                    <label class="settings-label" for="input_web_app_url">Web App URL:</label>
+                                </div>
+                
+                                <div class="col-7 p-0">
+                                    <input class="w-100" id="input_web_app_url" placeholder="Paste Web App URL here">
+                                </div>
+                            </div>
+
+							<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_web_app_url_guide">
+            
+								<div class="col-7 offset-5 p-0" style="text-align: center;">
+									<a class="w-100" target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">Generate a Web App URL</a>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_no_web_app_url">
+
+                <div class="modal-dialog" role="document">
+    
+                    <div class="modal-content">
+    
+                        <div class="modal-header p-0 justify-content-center" style="position:relative;">
+    
+                            <h2 class="modal-title h2">No Web App URL!</h2>
+                            <button class="btn astext btn-close-settings" id="button_close_modal_no_web_app_url" style="position:absolute;right:1em;" type="button">
+                                &#x274c;
+                            </button>
+                        </div>
+    
+                        <div class="modal-body" id="modal_no_web_app_url_body">
+    
+                            <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;" id="row_set_web_app_url">
+    
+                                <div class="col-12 p-0 align-self-center">
+                                    Cannot submit score to a Google Web App! Either:
+                                    <ul>
+                                        <li>No Web App URL has been shared with this application yet; or</li>
+                                        <li>An invalid Web App URL has been shared with this application</li>
+                                    </ul>
+                                    If you've already generated a Web App URL, please paste it below:
+                                </div>
+                            </div>
+
+                            <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;"></div>
+
+                                <div class="col-12 p-0">
+                                    <input class="w-100" id="input_web_app_url_from_submit_attempt" placeholder="Paste Web App URL here">
+                                </div>
+                            </div>
+
+							<div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;">
+            
+								<div class="col-12 p-0" style="text-align: center;">
+									Otherwise, <a class="w-100" target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">click here to generate a Web App URL</a>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_n_players">
+
+                <div class="modal-dialog" role="document">
+        
+                    <div class="modal-content">
+        
+                        <div class="modal-header p-0 justify-content-center">
+        
+                            <h2 class="modal-title h2">Choose how many players are in the game:</h2>
+                        </div>
+        
+                        <div class="modal-body">
+        
+                            <div class="p-0 container-fluid">
+        
+                                <div class="row gx-1 justify-content-center margin_auto" id="row_n_players_2_to_4">
+
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_2_players" type="button">2</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_3_players" type="button">3</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_4_players" type="button">4</button>
+                                    </div>
+                                </div>
+        
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_n_players_5_to_7">
+
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_5_players" type="button">5</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_6_players" type="button">6</button>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="px-0 w-100 btn nav-button btn-submit" id="col_button_7_players" type="button">7</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" id="container_header">
+
+                <div class="row justify-content-center align-items-center" style="height:7vh; margin-top: 1vh;" id="row_header">
+
+                    <div class="col header-background" style="height:7vh;"></div>
+        
+                    <div class="row justify-content-center align-items-center" style="height:7vh;" id="row_header_1">
+        
+                        <div class="col-auto m-0 px-0 text-center h1 header-content">Score sheet - Automa</div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center" style="height:7vh;" id="row_checkboxes">
+
+                    <div class="col-4 dropdown align-self-center">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Expansions
+                        </button>
+
+                        <ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
+                        
+                            <li>
+
+                                <label for="col_base_game_checkbox" id="row_base_game">
+                                    Base game
+                                    <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
+                                    <input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_european_expansion_checkbox" id="row_european_expansion">
+                                    European expansion
+                                    <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
+                                    <input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
+                                    Oceania expansion
+                                    <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
+                                    <input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_asia_checkbox" id="row_asia">
+                                    Asia
+                                    <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
+                                    <input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_birds_of_canada_checkbox" id="row_birds_of_canada">
+                                    Birds of Canada
+                                    <input id="col_birds_of_canada_checkbox_hidden" name="birds_of_canada" type="hidden" value="no"></input>
+                                    <input id="col_birds_of_canada_checkbox" name="birds_of_canada" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_birds_of_new_zealand_checkbox" id="row_birds_of_new_zealand">
+                                    Birds of New Zealand
+                                    <input id="col_birds_of_new_zealand_checkbox_hidden" name="birds_of_new_zealand" type="hidden" value="no"></input>
+                                    <input id="col_birds_of_new_zealand_checkbox" name="birds_of_new_zealand" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_birds_of_the_usa_checkbox" id="row_birds_of_the_usa">
+                                    Birds of the U.S.A.
+                                    <input id="col_birds_of_the_usa_checkbox_hidden" name="birds_of_the_usa" type="hidden" value="no"></input>
+                                    <input id="col_birds_of_the_usa_checkbox" name="birds_of_the_usa" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_british_birds_checkbox" id="row_british_birds">
+                                    British Birds
+                                    <input id="col_british_birds_checkbox_hidden" name="british_birds" type="hidden" value="no"></input>
+                                    <input id="col_british_birds_checkbox" name="british_birds" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_birds_of_continental_europe_checkbox" id="row_birds_of_continental_europe">
+                                    Birds of Continental Europe
+                                    <input id="col_birds_of_continental_europe_checkbox_hidden" name="birds_of_continental_europe" type="hidden" value="no"></input>
+                                    <input id="col_birds_of_continental_europe_checkbox" name="birds_of_continental_europe" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_additional_asian_avians_checkbox" id="row_additional_asian_avians">
+                                    Additional Asian Avians
+                                    <input id="col_additional_asian_avians_checkbox_hidden" name="additional_asian_avians" type="hidden" value="no"></input>
+                                    <input id="col_additional_asian_avians_checkbox" name="additional_asian_avians" type="checkbox" value="yes">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 dropdown align-self-center">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Extra cards
+                        </button>
+
+                        <ul class="py-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_extra_cards_menu" style="width: 92%;">
+                        
+                            <li>
+                                <label for="col_automubon_society_checkbox" id="row_automubon_society">
+                                    Automubon society
+                                    <input id="col_automubon_society_checkbox_hidden" name="automubon_society" type="hidden" value="no"></input>
+                                    <input id="col_automubon_society_checkbox" name="automubon_society" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_RAOUtoma_checkbox" id="row_RAOUtoma">
+                                    RAOUtoma
+                                    <input id="col_RAOUtoma_checkbox_hidden" name="RAOUtoma" type="hidden" value="no"></input>
+                                    <input id="col_RAOUtoma_checkbox" name="RAOUtoma" type="checkbox" value="yes">
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="col_automasian_alliance_checkbox" id="row_automasian_alliance">
+                                    Automasian alliance
+                                    <input id="col_automasian_alliance_checkbox_hidden" name="automasian_alliance" type="hidden" value="no"></input>
+                                    <input id="col_automasian_alliance_checkbox" name="automasian_alliance" type="checkbox" value="yes" checked>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_change_n_players"># Players</button>
+                    </div>
+
+                    <div class="col-2 text-center align-self-center">
+
+                        <button class="btn astext btn-settings" type="button" id="button_settings">
+                            <img src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/86920873d14d49cb59716c9b04930e996d66b930/static/icons/gear.svg" style="width: 100%;">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" id="container_body">
+
+                <div class="row p-0 justify-content-center margin_auto" style="height:60vh;margin-top:1vh;margin-bottom:2vh;" id="row_score_sheet">
+
+                    <table class="col-12 mb-0 table score_sheet_table" style="height:60vh;">
+
+                        <thead>
+
+                            <tr style="height:5vh;">
+
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:10%; border-right: 0px;"></th>
+
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:24%; border-left: 0px;"></th>
+
+                                <th class="cell-info score_sheet_cell_no_padding" style="width:33%;">Player</th>
+
+                                <th class="cell-info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>
+
+                            <tr style="height:5vh;">
+
+                                <td class="cell-vertical" rowspan="5">
+                                    
+                                    <div class="rowspan-vertical">
+                                        Amount on cards
+                                    </div>
+                                </td>
+
+                                <th style="vertical-align:middle;" class="cell-info score_sheet_cell_no_padding" rowspan="3">Birds</th>
+
+                                <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
+
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
+                                    <label for="radio_difficulty_choice_eaglet">3</label>
+                                </td>
+
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                    <input type="radio" id="radio_difficulty_choice_eaglet" name="col_automa_points_per_face_down_bird_card_radio" value="3" style="width:75%;" required/>
+                                    
+                                </td>
+                            
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                    <label for="radio_difficulty_choice_eagle">4</label>
+                                </td>
+
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                    <input type="radio" id="radio_difficulty_choice_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="4" style="width:75%;"/>
+                                </td>
+                            
+                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
+                                    <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
+                                </td>
+
+                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-bottom-style: hidden;">
+                                    <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="5" style="width:75%;"/>
+                                </td>
+                            </tr>
+                    
+                            <tr style="height:5vh;">
+
+                                <td class="cell-input score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
+                                <td class="score_sheet_cell_no_padding" colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
+                            </tr>
+
+                            <tr style="height:5vh;">
+
+                                <td class="score_sheet_cell_no_padding" colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+
+                                <th class="cell-info score_sheet_cell_no_padding">Bonus cards</th>
+
+                                <td><input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0" required></td>
+
+                                <td class="cell-disabled" colspan="6"></td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0" required>
+                                </td>
+                                
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
+                                    <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0" required>
+                                </td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+
+                                <td class="cell-vertical" rowspan="3" id="rowspan-vertical-1-pt-each">
+                                    
+                                    <div class="rowspan-vertical">
+                                        1 point each
+                                    </div>
+                                </td>
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Eggs</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_eggs" name="player_eggs" min="0" required>
+                                </td>
+
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
+                                    <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0" required>
+                                </td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Food on cards</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0" required>
+                                </td>
+
+                                <td class="cell-disabled" colspan="6"></td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0" required>
+                                </td>
+
+                                <td class="cell-disabled" colspan="6"></td>
+                            </tr>
+
+                            <tr id="row_duet_tokens" style="visibility: collapse;height:5vh;">
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Duet tokens</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
+                                </td>
+
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
+                                    <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
+                                </td>
+                            </tr>
+
+                            <tr id="row_nectar" style="visibility: collapse;height:5vh;">
+
+                                <td class="cell-vertical" rowspan="1">
+                                    
+                                    <div class="rowspan-vertical">
+                                        5/2
+                                    </div>
+                                </td>
+                                
+
+                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Nectar</th>
+
+                                <td class="cell-info score_sheet_cell_no_padding">
+                                    <input type="number" id="cell_player_nectar" name="player_nectar" min="0">
+                                </td>
+
+                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
+                                    <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
+                                </td>
+                            </tr>
+            
+                            <tr style="height:5vh;">
+
+                                <th class="cell-total score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
+
+                                <th class="cell-total" scope="row" style="border-left: 0px;"></th>
+
+                                <td class="cell-total score_sheet_cell_no_padding">
+                                    <div id="cell_player_total_score"></div>
+                                </td>
+
+                                <td class="cell-total score_sheet_cell_no_padding" colspan="6">
+                                    <div id="cell_automa_total_score"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="height_hidden" id="data_to_submit">
+                    <input id="input_automa_drawn_cards" name="automa_drawn_cards"/>
+                    <input id="input_player_total_score" name="player_total_score"/>
+                    <input id="input_automa_total_score" name="automa_total_score"/>
+                </div>
+
+                <div class="row gx-3" style="height:7vh;margin-bottom:1vh;" id="row_reset_submit_buttons">
+
+                    <div class="col-6 align-self-center">
+                        <button class="w-100 btn nav-button btn-reset" type="button" id="button_reset_sheet">
+                            Reset score sheet
+                        </button>
+                    </div>
+
+                    <div class="col-6 align-self-center">
+                        <button class="w-100 btn nav-button btn-submit" id="submit" name="submit" value = "Score Sheet: Automa" access="false" type="submit">
+                            Submit score
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row p-0 justify-content-center margin_auto" style="height:7vh;" id="row_go_back_button">
+
+                    <div class="col-auto">
+                        <a class="btn nav-button btn-return" href="/" id="button_return_to_home_page">Return to home page</a>
+                    </div>
+                </div>
+
+                <div class="row" style="height:8vh;"></div>
+            </div>
+        </form>
+    </body>
+</html>
