@@ -622,6 +622,7 @@ function generate_n_score_columns(n_players, width_p) {
     ).appendTo(div);
 
     // Birds
+    
     var cell = $("<td>").attr(
         {
             id : `col_player_${i}_birds`,
@@ -646,6 +647,7 @@ function generate_n_score_columns(n_players, width_p) {
     $("<td>").attr(
         {
             colspan : "6",
+            style : `width:${width_p}%`,
             class : "cell-disabled"
         }
     ).appendTo("#row_bonus_cards");
@@ -653,17 +655,18 @@ function generate_n_score_columns(n_players, width_p) {
     // End-of-round goals
     var cell = $("<td>").attr(
         {
-            id : `col_player_${i}_end-of-round_goals`,
+            colspan : "6",
             style : `width:${width_p}%`,
-            class : "cell-input"
+            class : "cell-input score_sheet_cell_no_padding"
         }
     ).appendTo("#row_end-of-round_goals");
     
     $("<input>").attr(
         {
             type : "number",
-            id : `input_player_${i}_end-of-round_goals`,
-            name : `player_${i}_end-of-round_goals`,
+            id : `cell_automa_end-of-round_goals`,
+            name : `automa_end-of-round_goals`,
+            min: "0",
             class : "bg-white"
         }
     ).prop(
@@ -674,17 +677,18 @@ function generate_n_score_columns(n_players, width_p) {
     // Eggs
     var cell = $("<td>").attr(
         {
-            id : `col_player_${i}_eggs`,
+            colspan: "6",
             style : `width:${width_p}%`,
-            class : "cell-input"
+            class : "cell-input score_sheet_cell_no_padding"
         }
     ).appendTo("#row_eggs");
     
     $("<input>").attr(
         {
             type : "number",
-            id : `input_player_${i}_eggs`,
-            name : `player_${i}_eggs`,
+            id : `cell_automa_laid_eggs`,
+            name : `automa_laid_eggs`,
+            min : "0",
             class : "bg-white"
         }
     ).prop(
@@ -696,6 +700,7 @@ function generate_n_score_columns(n_players, width_p) {
     $("<td>").attr(
         {
             colspan : "6",
+            style : `width:${width_p}%`,
             class : "cell-disabled"
         }
     ).appendTo("#row_food_on_cards");
@@ -704,6 +709,7 @@ function generate_n_score_columns(n_players, width_p) {
     $("<td>").attr(
         {
             colspan : "6",
+            style : `width:${width_p}%`,
             class : "cell-disabled"
         }
     ).appendTo("#row_tucked_cards");
@@ -711,17 +717,18 @@ function generate_n_score_columns(n_players, width_p) {
     // Nectar
     var cell = $("<td>").attr(
         {
-            id : `col_player_${i}_nectar`,
+            colspan : "6",
             style : `width:${width_p}%`,
-            class : "cell-input"
+            class : "cell-input score_sheet_cell_no_padding"
         }
     ).appendTo("#row_nectar");
     
     $("<input>").attr(
         {
             type : "number",
-            id : `input_player_${i}_nectar`,
-            name : `player_${i}_nectar`,
+            id : `cell_automa_nectar`,
+            name : `automa_nectar`,
+            min : "0",
             class : "bg-white"
         }
     ).appendTo(cell);
@@ -729,7 +736,7 @@ function generate_n_score_columns(n_players, width_p) {
     // Total
     var cell = $("<td>").attr(
         {
-            id : `col_player_${i}_total_score`, 
+            colspan : "6",
             style : `width:${width_p}%`,
             class : "cell-total score_sheet_cell_no_padding"
         }
@@ -738,7 +745,7 @@ function generate_n_score_columns(n_players, width_p) {
     $("<div>").attr(
         {
             type : "number",
-            id : `div_player_${i}_total_score`
+            id : `cell_automa_total_score`
         }
     ).appendTo(cell);
 
@@ -746,12 +753,12 @@ function generate_n_score_columns(n_players, width_p) {
     $("<input>").attr(
         {
             type : "number",
-            id : `submit_player_${i}_total_score`,
-            name : `player_${i}_total_score`
+            id : `submit_automa_total_score`,
+            name : `automa_total_score`
         }
     ).appendTo($("#total_scores_to_submit"));
 
-    assign_player_event_listeners(i);
+    assign_automa_event_listeners();
 }
 
 function assign_player_event_listeners(i) {
@@ -809,6 +816,65 @@ function assign_player_event_listeners(i) {
         "change",
         function() {
             recompute_player_total_score(i)
+        }
+    )
+}
+
+function assign_automa_event_listeners() {
+
+    // Update automa total score on automa_birds change
+    $(`#input_automa_birds`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on bonus_cards change
+    $(`#input_automa_bonus_cards`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on end-of-round_goals change
+    $(`#input_automa_end-of-round_goals`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on eggs change
+    $(`#input_automa_eggs`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on food_on_cards change
+    $(`#input_automa_food_on_cards`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on tucked_cards change
+    $(`#input_automa_tucked_cards`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on nectar change
+    $(`#input_automa_nectar`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
         }
     )
 }
