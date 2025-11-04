@@ -95,70 +95,6 @@ $(document).ready(
     }
 )
 
-// Show duet token row
-$(document).ready(
-
-    function () {
-
-        $("#col_automasian_alliance_checkbox").change(
-            function () {
-                if ($("#col_automasian_alliance_checkbox").is(":checked")) {
-
-                    $("#rowspan-vertical-1-pt-each").attr(
-                        {
-                            rowspan:4
-                        }
-                    );
-
-                    $("#row_duet_tokens").css(
-                        "visibility",
-                        "visible"
-                    );
-
-                    $(`#input_player_duet_tokens`).prop(
-                        "required",
-                        true
-                    );
-
-                    $(`#input_automa_duet_tokens`).prop(
-                        "required",
-                        true
-                    );
-                } 
-                else {
-
-                    $("#rowspan-vertical-1-pt-each").attr(
-                        {
-                            rowspan:3
-                        }
-                    );
-
-                    $("#row_duet_tokens").css(
-                        "visibility",
-                        "collapse"
-                    );
-
-                    $(`#input_player_duet_tokens`).prop(
-                        "required",
-                        false
-                    );
-
-                    $(`#input_automa_duet_tokens`).prop(
-                        "required",
-                        false
-                    );
-
-                    $("#cell_player_duet_tokens").val("");
-                    $("#cell_automa_duet_tokens").val("");
-                    
-                    recompute_player_total_score();
-                    recompute_automa_total_score();
-                }
-            }
-        )
-    }
-)
-
 $(document).ready(
 
     function() {
@@ -191,7 +127,6 @@ $(document).ready(
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
                         $("#col_oceania_expansion_checkbox").trigger("change");
-                        $("#col_duet_mode_checkbox").trigger("change");
                         show_height_hidden("#row_score_sheet");
                     }
                 );
@@ -277,13 +212,6 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : "height:5vh;",
             id : "row_tucked_cards"
-        }
-    ).appendTo("#score_sheet_tbody");
-
-    $("<tr>").attr(
-        {
-            style : "visibility:collapse;height:5vh;",
-            id : "row_duet_tokens"
         }
     ).appendTo("#score_sheet_tbody");
 
@@ -453,17 +381,6 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).text(
         "Nectar"
     ).appendTo("#row_nectar");
-
-    // Duet tokens in largest contiguous group
-    $("<th>").attr(
-        {
-            style : `width:${width_p}%`,
-            scope : "row",
-            class : "cell-info score_sheet_cell_no_padding"
-        }
-    ).text(
-        "Duet tokens"
-    ).appendTo("#row_duet_tokens");
 
     // Total
     $("<th>").attr(
@@ -650,37 +567,6 @@ function generate_n_score_columns(n_players, width_p) {
             }
         ).appendTo(cell);
 
-        // Duet tokens in largest contiguous group
-        if (i <= 2) {
-
-            var cell = $("<td>").attr(
-                {
-                    id : `col_player_${i}_duet_tokens`,
-                    style : `width:${width_p}%`,
-                    class : "cell-input"
-                }
-            ).appendTo("#row_duet_tokens");
-
-            $("<input>").attr(
-                {
-                    type : "number",
-                    id : `input_player_${i}_duet_tokens`,
-                    name : `player_${i}_duet_tokens`,
-                class : "bg-white"
-                }
-            ).appendTo(cell);
-        }
-        else {
-
-            var cell = $("<td>").attr(
-            {
-                style : `width:${width_p}%`,
-                class : "cell-disabled"
-            }
-        ).appendTo("#row_duet_tokens");
-        }
-        
-
         // Total
         var cell = $("<td>").attr(
             {
@@ -757,25 +643,12 @@ function generate_n_score_columns(n_players, width_p) {
     ).appendTo(cell);
 
     // Bonus cards
-    var cell = $("<td>").attr(
+    $("<td>").attr(
         {
-            id : `col_player_${i}_bonus_cards`,
-            style : `width:${width_p}%`,
-            class : "cell-input"
+            colspan : "6",
+            class : "cell-disabled"
         }
     ).appendTo("#row_bonus_cards");
-    
-    $("<input>").attr(
-        {
-            type : "number",
-            id : `input_player_${i}_bonus_cards`,
-            name : `player_${i}_bonus_cards`,
-            class : "bg-white"
-        }
-    ).prop(
-        "required",
-        true
-    ).appendTo(cell);
 
     // End-of-round goals
     var cell = $("<td>").attr(
@@ -820,46 +693,20 @@ function generate_n_score_columns(n_players, width_p) {
     ).appendTo(cell);
 
     // Food on cards
-    var cell = $("<td>").attr(
+    $("<td>").attr(
         {
-            id : `col_player_${i}_food_on_cards`,
-            style : `width:${width_p}%`,
-            class : "cell-input"
+            colspan : "6",
+            class : "cell-disabled"
         }
     ).appendTo("#row_food_on_cards");
-    
-    $("<input>").attr(
-        {
-            type : "number",
-            id : `input_player_${i}_food_on_cards`,
-            name : `player_${i}_food_on_cards`,
-            class : "bg-white"
-        }
-    ).prop(
-        "required",
-        true
-    ).appendTo(cell);
 
     // Tucked cards
-    var cell = $("<td>").attr(
+    $("<td>").attr(
         {
-            id : `col_player_${i}_tucked_cards`,
-            style : `width:${width_p}%`,
-            class : "cell-input"
+            colspan : "6",
+            class : "cell-disabled"
         }
     ).appendTo("#row_tucked_cards");
-    
-    $("<input>").attr(
-        {
-            type : "number",
-            id : `input_player_${i}_tucked_cards`,
-            name : `player_${i}_tucked_cards`,
-            class : "bg-white"
-        }
-    ).prop(
-        "required",
-        true
-    ).appendTo(cell);
 
     // Nectar
     var cell = $("<td>").attr(
@@ -878,37 +725,6 @@ function generate_n_score_columns(n_players, width_p) {
             class : "bg-white"
         }
     ).appendTo(cell);
-
-    // Duet tokens in largest contiguous group
-    if (i <= 2) {
-
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_duet_tokens`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_duet_tokens");
-
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_duet_tokens`,
-                name : `player_${i}_duet_tokens`,
-            class : "bg-white"
-            }
-        ).appendTo(cell);
-    }
-    else {
-
-        var cell = $("<td>").attr(
-        {
-            style : `width:${width_p}%`,
-            class : "cell-disabled"
-        }
-    ).appendTo("#row_duet_tokens");
-    }
-    
 
     // Total
     var cell = $("<td>").attr(
@@ -995,17 +811,6 @@ function assign_player_event_listeners(i) {
             recompute_player_total_score(i)
         }
     )
-
-    // Update player total score on duet_tokens change
-    if (i <= 2) {
-
-        $(`#input_player_${i}_duet_tokens`).on(
-            "change",
-            function() {
-                recompute_player_total_score(i)
-            }
-        )
-    }
 }
 
 // Toggle n_players modal
@@ -1035,12 +840,6 @@ function recompute_player_total_score(i) {
     ) + parseNaNOrInt(
         $(`#input_player_${i}_nectar`).val()
     );
-
-    if (i <= 2) {
-        total_score += parseNaNOrInt(
-            $(`#input_player_${i}_duet_tokens`).val()
-        );
-    }
 
     if (total_score > 0) {
 
@@ -1093,13 +892,11 @@ function prepopulate_data()
             "cell_player_eggs",
             "cell_player_food_on_cards",
             "cell_player_tucked_cards",
-            "cell_player_duet_tokens",
             "cell_player_nectar",
             "cell_automa_n_drawn_cards",
             "cell_automa_played_birds",
             "cell_automa_end-of-round_goals",
             "cell_automa_laid_eggs",
-            "cell_automa_duet_tokens",
             "cell_automa_nectar",
             "cell_automa_total_score"
         ]
@@ -1242,19 +1039,6 @@ $(document).ready(
     }
 )
 
-// Update player total score on duet_tokens change
-$(document).ready(
-    function() {
-
-        $("#cell_player_duet_tokens").on(
-            "change",
-            function() {
-                recompute_player_total_score()
-            }
-        )
-    }
-)
-
 // Recompute automa total score
 function recompute_automa_total_score() {
 
@@ -1280,8 +1064,6 @@ function recompute_automa_total_score() {
         $("#cell_automa_tucked_cards").val()
     ) + parseNaNOrInt(
         $("#cell_automa_nectar").val()
-    ) + parseNaNOrInt(
-        $("#cell_automa_duet_tokens").val()
     );
     
     if (total_score > 0) {
@@ -1412,19 +1194,6 @@ $(document).ready(
     }
 )
 
-// Update automa total score on tucked_cards change
-$(document).ready(
-    function() {
-
-        $("#cell_automa_duet_tokens").on(
-            "change",
-            function() {
-                recompute_automa_total_score()
-            }
-        )
-    }
-)
-
 // Populate certain divs before submitting form
 function populate_form_data() {
 
@@ -1438,11 +1207,6 @@ function populate_form_data() {
         $(`#cell_player_nectar`).val(0);
     }
 
-    // Player: duet tokens
-    if ($(`#cell_player_duet_tokens`).val() == "") {
-        $(`#cell_player_duet_tokens`).val(0);
-    }
-
     // Player: total score
     $("#input_player_total_score").val(
         $("#cell_player_total_score").text()
@@ -1451,11 +1215,6 @@ function populate_form_data() {
     // Automa: nectar
     if ($(`#cell_automa_nectar`).val() == "") {
         $(`#cell_automa_nectar`).val(0);
-    }
-
-    // Automa: duet tokens
-    if ($(`#cell_automa_duet_tokens`).val() == "") {
-        $(`#cell_automa_duet_tokens`).val(0);
     }
 
     // Automa: total score
@@ -1548,7 +1307,6 @@ $(document).ready(
                 $("#cell_player_food_on_cards").val("");
                 $("#cell_player_tucked_cards").val("");
                 $("#cell_player_nectar").val("");
-                $("#cell_player_duet_tokens").val("");
                 $("#cell_player_total_score").text("");
 
                 // Empty automa cells
@@ -1559,7 +1317,6 @@ $(document).ready(
                 $("#cell_automa_tucked_cards").val("");
                 $("#cell_automa_laid_eggs").val("");
                 $("#cell_automa_nectar").val("");
-                $("#cell_automa_duet_tokens").val("");
                 $("#cell_automa_total_score").text("");
             }
         )
