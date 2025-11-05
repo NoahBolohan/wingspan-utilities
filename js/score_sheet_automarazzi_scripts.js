@@ -1442,7 +1442,7 @@ function populate_form_data() {
                 "eaglet"
             );
 
-            $("#automa_points_per_face_down_bird_card").val(
+            $("#submit_automa_points_per_face_down_bird_card").val(
                 3
             );
 
@@ -1453,7 +1453,7 @@ function populate_form_data() {
                 "eagle"
             );
 
-            $("#automa_points_per_face_down_bird_card").val(
+            $("#submit_automa_points_per_face_down_bird_card").val(
                 4
             );
             
@@ -1464,7 +1464,7 @@ function populate_form_data() {
                 "eagle-eyed eagle"
             );
 
-            $("#automa_points_per_face_down_bird_card").val(
+            $("#submit_automa_points_per_face_down_bird_card").val(
                 5
             );
             

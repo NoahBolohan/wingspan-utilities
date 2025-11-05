@@ -563,6 +563,45 @@ $(document).ready(
 // Populate certain divs before submitting form
 function populate_form_data() {
 
+    // Automa: difficulty
+    switch(
+        $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
+    ) {
+        case "3":
+            $("#submit_automa_difficulty").val(
+                "eaglet"
+            );
+
+            $("#submit_automa_points_per_face_down_bird_card").val(
+                3
+            );
+
+            break;
+
+        case "4":
+            $("#submit_automa_difficulty").val(
+                "eagle"
+            );
+
+            $("#submit_automa_points_per_face_down_bird_card").val(
+                4
+            );
+            
+            break;
+
+        case "5":
+            $("#submit_automa_difficulty").val(
+                "eagle-eyed eagle"
+            );
+
+            $("#submit_automa_points_per_face_down_bird_card").val(
+                5
+            );
+            
+            break;
+
+    }
+
     // Automa: drawn cards
     $("#input_automa_drawn_cards").val(
         $("#cell_automa_drawn_cards").text()
