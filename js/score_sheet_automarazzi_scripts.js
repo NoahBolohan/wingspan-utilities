@@ -640,114 +640,51 @@ function generate_n_score_columns(n_players, width_p) {
     ).appendTo(div);
 
     // Birds
-    
-    //Difficulty: Eaglet
     var cell = $("<td>").attr(
         {
-            align: "right",
-            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
-            class : "cell-input score_sheet_cell_no_padding"
-        }
-    ).appendTo("#row_birds");
-
-    $("<label>").attr(
-        {
-            for:"radio_difficulty_choice_eaglet"
-        }
-    ).text(3).appendTo(cell);
-
-    var cell = $("<td>").attr(
-        {
-            align: "right",
+            colspan:"6",
             style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
             class : "cell-input score_sheet_cell_no_padding"
         }
     ).appendTo("#row_birds");
     
-    $("<input>").attr(
+    $("<select>").attr(
         {
-            type : "radio",
-            id : `radio_difficulty_choice_eaglet`,
-            name : `col_automa_points_per_face_down_bird_card_radio`,
-            value:"3",
-            style:"width:75%;"
+            id : `select_automa_difficulty`,
+            name : `difficulty`,
+            style:"width:100%;"
         }
-    ).prop(
-        "required",
-        true
     ).appendTo(cell);
 
-    //Difficulty: Eagle
-    var cell = $("<td>").attr(
+    $("<option>").attr(
         {
-            align: "right",
-            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
-            class : "cell-input score_sheet_cell_no_padding"
+            value:"eaglet"
         }
-    ).appendTo("#row_birds");
+    ).text(
+        "Eaglet (3 pts/card)"
+    ).appendTo(
+        "#select_automa_difficulty"
+    );
 
-    $("<label>").attr(
+    $("<option>").attr(
         {
-            for:"radio_difficulty_choice_eagle"
+            value:"eagle"
         }
-    ).text(4).appendTo(cell);
+    ).text(
+        "Eagle (4 pts/card)"
+    ).appendTo(
+        "#select_automa_difficulty"
+    );
 
-    var cell = $("<td>").attr(
+    $("<option>").attr(
         {
-            align: "right",
-            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
-            class : "cell-input score_sheet_cell_no_padding"
+            value:"eagle-eyed_eagle"
         }
-    ).appendTo("#row_birds");
-    
-    $("<input>").attr(
-        {
-            type : "radio",
-            id : `radio_difficulty_choice_eagle`,
-            name : `col_automa_points_per_face_down_bird_card_radio`,
-            value:"4",
-            style:"width:75%;"
-        }
-    ).prop(
-        "required",
-        true
-    ).appendTo(cell);
-
-    //Difficulty: Eagle-eyed Eagle
-    var cell = $("<td>").attr(
-        {
-            align: "right",
-            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
-            class : "cell-input score_sheet_cell_no_padding"
-        }
-    ).appendTo("#row_birds");
-
-    $("<label>").attr(
-        {
-            for:"radio_difficulty_choice_eagle-eyed_eagle"
-        }
-    ).text(5).appendTo(cell);
-
-    var cell = $("<td>").attr(
-        {
-            align: "right",
-            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
-            class : "cell-input score_sheet_cell_no_padding"
-        }
-    ).appendTo("#row_birds");
-    
-    $("<input>").attr(
-        {
-            type : "radio",
-            id : `radio_difficulty_choice_eagle-eyed_eagle`,
-            name : `col_automa_points_per_face_down_bird_card_radio`,
-            value:"5",
-            style:"width:75%;"
-        }
-    ).prop(
-        "required",
-        true
-    ).appendTo(cell);
+    ).text(
+        "Eagle-eyed Eagle (5 pts/card)"
+    ).appendTo(
+        "#select_automa_difficulty"
+    );
 
     // Birds 2
     var cell = $("<td>").attr(
@@ -981,28 +918,6 @@ function assign_player_event_listeners(i) {
 
 function assign_automa_event_listeners() {
 
-    // Update automa total score on automa difficulty changes
-    $("#radio_difficulty_choice_eaglet").on(
-        "change",
-        function() {
-            recompute_automa_total_score()
-        }
-    )
-
-    $("#radio_difficulty_choice_eagle").on(
-        "change",
-        function() {
-            recompute_automa_total_score()
-        }
-    )
-
-    $("#radio_difficulty_choice_eagle-eyed_eagle").on(
-        "change",
-        function() {
-            recompute_automa_total_score()
-        }
-    )
-
     // Update automa total score on automa_drawn_cards change
     $(`#cell_automa_n_drawn_cards`).on(
         "change",
@@ -1116,6 +1031,10 @@ function prepopulate_data()
             "col_automa_points_per_face_down_bird_card_radio"
         ]
 
+        var selects = [
+            "select_automa_difficulty"
+        ]
+
         var inputs = [
             "cell_player_birds",
             "cell_player_bonus_cards",
@@ -1156,6 +1075,15 @@ function prepopulate_data()
             radios,
             function(idx, v) {              
                 $(`input[name=${v}]:radio[value=${data_dict[v]}]`).prop("checked", true);
+            }
+        );
+
+        $.each(
+            selects,
+            function(idx, v) {              
+                $(`#${v}`).val(
+                    data_dict[v]
+                );
             }
         );
 
@@ -1273,9 +1201,21 @@ $(document).ready(
 // Recompute automa total score
 function recompute_automa_total_score() {
 
-    var face_down_card_multiplier = parseInt(
-        $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
-    );
+    switch(
+        $("#select_automa_difficulty").val()
+    ) {
+        case "eaglet":
+            var face_down_card_multiplier = 3;
+            break;
+        
+        case "eagle":
+            var face_down_card_multiplier = 4;
+            break;
+
+        case "eagle-eyed_eagle":
+            var face_down_card_multiplier = 5;
+            break;
+    }
     
     $("#cell_automa_drawn_cards").text(
         face_down_card_multiplier * parseNaNOrInt(
@@ -1311,39 +1251,11 @@ function recompute_automa_total_score() {
 }
 
 // Update automa total score on automa difficulty changes
-$(document).ready(
+$(document).on(
+    "change",
+    "#select_automa_difficulty",
     function() {
-
-        $("#radio_difficulty_choice_eaglet").on(
-            "change",
-            function() {
-                recompute_automa_total_score()
-            }
-        )
-    }
-)
-
-$(document).ready(
-    function() {
-
-        $("#radio_difficulty_choice_eagle").on(
-            "change",
-            function() {
-                recompute_automa_total_score()
-            }
-        )
-    }
-)
-
-$(document).ready(
-    function() {
-
-        $("#radio_difficulty_choice_eagle-eyed_eagle").on(
-            "change",
-            function() {
-                recompute_automa_total_score()
-            }
-        )
+        recompute_automa_total_score()
     }
 )
 
@@ -1435,9 +1347,9 @@ function populate_form_data() {
 
     // Automa: difficulty
     switch(
-        $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
+        $("#select_automa_difficulty").val()
     ) {
-        case "3":
+        case "eaglet":
             $("#submit_automa_difficulty").val(
                 "eaglet"
             );
@@ -1447,8 +1359,8 @@ function populate_form_data() {
             );
 
             break;
-
-        case "4":
+        
+        case "eagle":
             $("#submit_automa_difficulty").val(
                 "eagle"
             );
@@ -1459,7 +1371,7 @@ function populate_form_data() {
             
             break;
 
-        case "5":
+        case "eagle-eyed_eagle":
             $("#submit_automa_difficulty").val(
                 "eagle-eyed eagle"
             );
@@ -1469,9 +1381,7 @@ function populate_form_data() {
             );
             
             break;
-
     }
-    
 
     // Player total scores
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
@@ -1598,7 +1508,7 @@ $(document).ready(
                 $("#cell_player_total_score").text("");
 
                 // Empty automa cells
-                $("input[name='difficulty']").prop("checked",false);
+                $("#select_automa_difficulty").val("eaglet");
                 $("#cell_automa_n_drawn_cards").val("");
                 $("#cell_automa_played_birds").val("");
                 $("#cell_automa_end-of-round_goals").val("");
