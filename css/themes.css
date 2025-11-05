@@ -596,3 +596,43 @@ Theme template:
     --cell-total-color:217,196,167;
     --cell-automa-action:254,254,254;
 }
+
+[data-theme="white_browned_tit_warbler"] {
+    --a:129,117,206;
+    --a:122,170,240;
+    --a:226,163,226;
+    --a:218,181,157;
+    --a:212,90,108;
+    --a:238,226,231;
+    --a:26,16,23;
+
+    --font-color-headers:26,16,23;
+    --font-color-buttons:26,16,23;
+    --heading-color:212,90,108;
+
+    --card-header-color:212,90,108;
+    --card-background-color:218,181,157;
+
+    --button-start-color:226,163,226;
+    --button-score-sheet-automa-color:122,170,240;
+    --button-score-sheet-color:129,117,206;
+    --button-settings-color:218,181,157;
+    --button-dropdown-menu-color:122,170,240;
+    --button-reset-color:122,170,240;
+    --button-submit-color:226,163,226;
+    --button-return-color:218,181,157;
+    --button-automa-action-color:212,90,108;
+    --button-round-end-goal-color:129,117,206;
+    --button-player-won-color:226,163,226;
+    --button-we-tied-color:122,170,240;
+    --button-automa-score-color:129,117,206;
+
+    --round-end-plus-color:122,170,240;
+
+    --cell-vertical-color:129,117,206;
+    --cell-info-color:226,163,226;
+    --cell-input-color:122,170,240;
+    --cell-disabled-color:212,90,108;
+    --cell-total-color:129,117,206;
+    --cell-automa-action:238,226,231;
+}
