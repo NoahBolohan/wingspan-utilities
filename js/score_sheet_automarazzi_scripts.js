@@ -981,56 +981,62 @@ function assign_player_event_listeners(i) {
 
 function assign_automa_event_listeners() {
 
-    // Update automa total score on automa_birds change
-    $(`#input_automa_birds`).on(
+    // Update automa total score on automa difficulty changes
+    $("#radio_difficulty_choice_eaglet").on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on bonus_cards change
-    $(`#input_automa_bonus_cards`).on(
+    $("#radio_difficulty_choice_eagle").on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on end-of-round_goals change
-    $(`#input_automa_end-of-round_goals`).on(
+    $("#radio_difficulty_choice_eagle-eyed_eagle").on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on eggs change
-    $(`#input_automa_eggs`).on(
+    // Update automa total score on automa_drawn_cards change
+    $(`#cell_automa_n_drawn_cards`).on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on food_on_cards change
-    $(`#input_automa_food_on_cards`).on(
+    // Update automa total score on automa_played_birds change
+    $(`#cell_automa_played_birds`).on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on tucked_cards change
-    $(`#input_automa_tucked_cards`).on(
+    // Update automa total score on automa_end-of-round_goals change
+    $(`#cell_automa_end-of-round_goals`).on(
         "change",
         function() {
             recompute_automa_total_score()
         }
     )
 
-    // Update automa total score on nectar change
-    $(`#input_automa_nectar`).on(
+    // Update automa total score on automa_eggs change
+    $(`#cell_automa_laid_eggs`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
+
+    // Update automa total score on automa_nectar change
+    $(`#cell_automa_nectar`).on(
         "change",
         function() {
             recompute_automa_total_score()
@@ -1421,6 +1427,63 @@ $(document).ready(
 
 // Populate certain divs before submitting form
 function populate_form_data() {
+
+    // Number of players
+    $("#submit_n_players").val(
+        $("#row_score_sheet").data("n_players")
+    )
+
+    // Automa: difficulty
+    switch(
+        $("input[name='col_automa_points_per_face_down_bird_card_radio']:checked").val()
+    ) {
+        case "3":
+            $("#submit_automa_difficulty").val(
+                "eaglet"
+            );
+
+            $("#automa_points_per_face_down_bird_card").val(
+                3
+            );
+
+            break;
+
+        case "4":
+            $("#submit_automa_difficulty").val(
+                "eagle"
+            );
+
+            $("#automa_points_per_face_down_bird_card").val(
+                4
+            );
+            
+            break;
+
+        case "5":
+            $("#submit_automa_difficulty").val(
+                "eagle-eyed eagle"
+            );
+
+            $("#automa_points_per_face_down_bird_card").val(
+                5
+            );
+            
+            break;
+
+    }
+    
+
+    // Player total scores
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        $(`#submit_player_${i}_total_score`).val(
+            $(`#div_player_${i}_total_score`).text()
+        )
+    }
+
+    // Automa: total score
+    $(`#submit_automa_total_score`).val(
+        $(`#cell_automa_total_score`).text()
+    )
 
     // Automa: drawn cards
     $("#input_automa_drawn_cards").val(

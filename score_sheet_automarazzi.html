@@ -387,191 +387,16 @@
                         <thead id="score_sheet_thead"></thead>
                     
                         <tbody id="score_sheet_tbody"></tbody>
-
-                        <!-- <thead>
-
-                            <tr style="height:5vh;">
-
-                                <th class="cell-info score_sheet_cell_no_padding" style="width:10%; border-right: 0px;"></th>
-
-                                <th class="cell-info score_sheet_cell_no_padding" style="width:24%; border-left: 0px;"></th>
-
-                                <th class="cell-info score_sheet_cell_no_padding" style="width:33%;">Player</th>
-
-                                <th class="cell-info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
-                            </tr>
-                        </thead> -->
-                    
-                        <!-- <tbody>
-
-                            <tr style="height:5vh;">
-
-                                <td class="cell-vertical" rowspan="5">
-                                    
-                                    <div class="rowspan-vertical">
-                                        Amount on cards
-                                    </div>
-                                </td>
-
-                                <th style="vertical-align:middle;" class="cell-info score_sheet_cell_no_padding" rowspan="3">Birds</th>
-
-                                <td rowspan="3"><input type="number" id="cell_player_birds" name="player_birds" min="0" required></td>
-
-                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden; ">
-                                    <label for="radio_difficulty_choice_eaglet">3</label>
-                                </td>
-
-                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
-                                    <input type="radio" id="radio_difficulty_choice_eaglet" name="col_automa_points_per_face_down_bird_card_radio" value="3" style="width:75%;" required/>
-                                    
-                                </td>
-                            
-                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
-                                    <label for="radio_difficulty_choice_eagle">4</label>
-                                </td>
-
-                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
-                                    <input type="radio" id="radio_difficulty_choice_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="4" style="width:75%;"/>
-                                </td>
-                            
-                                <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
-                                    <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
-                                </td>
-
-                                <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-bottom-style: hidden;">
-                                    <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="5" style="width:75%;"/>
-                                </td>
-                            </tr>
-                    
-                            <tr style="height:5vh;">
-
-                                <td class="cell-input score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
-                                <td class="score_sheet_cell_no_padding" colspan="4">x<input type="number" id="cell_automa_n_drawn_cards" name="automa_n_drawn_cards" min="0" required></td>
-                            </tr>
-
-                            <tr style="height:5vh;">
-
-                                <td class="score_sheet_cell_no_padding" colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-
-                                <th class="cell-info score_sheet_cell_no_padding">Bonus cards</th>
-
-                                <td><input type="number" id="cell_player_bonus_cards" name="player_bonus_cards" min="0" required></td>
-
-                                <td class="cell-disabled" colspan="6"></td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0" required>
-                                </td>
-                                
-                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
-                                    <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0" required>
-                                </td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-
-                                <td class="cell-vertical" rowspan="3" id="rowspan-vertical-1-pt-each">
-                                    
-                                    <div class="rowspan-vertical">
-                                        1 point each
-                                    </div>
-                                </td>
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Eggs</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_eggs" name="player_eggs" min="0" required>
-                                </td>
-
-                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
-                                    <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0" required>
-                                </td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Food on cards</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_food_on_cards" name="player_food_on_cards" min="0" required>
-                                </td>
-
-                                <td class="cell-disabled" colspan="6"></td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_tucked_cards" name="player_tucked_cards" min="0" required>
-                                </td>
-
-                                <td class="cell-disabled" colspan="6"></td>
-                            </tr>
-
-                            <tr id="row_duet_tokens" style="visibility: collapse;height:5vh;">
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Duet tokens</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_duet_tokens" name="player_duet_tokens" min="0">
-                                </td>
-
-                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
-                                    <input type="number" id="cell_automa_duet_tokens" name="automa_duet_tokens" min="0">
-                                </td>
-                            </tr>
-
-                            <tr id="row_nectar" style="visibility: collapse;height:5vh;">
-
-                                <td class="cell-vertical" rowspan="1">
-                                    
-                                    <div class="rowspan-vertical">
-                                        5/2
-                                    </div>
-                                </td>
-                                
-
-                                <th class="cell-info score_sheet_cell_no_padding" scope="row">Nectar</th>
-
-                                <td class="cell-info score_sheet_cell_no_padding">
-                                    <input type="number" id="cell_player_nectar" name="player_nectar" min="0">
-                                </td>
-
-                                <td class="cell-info score_sheet_cell_no_padding" colspan="6">
-                                    <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
-                                </td>
-                            </tr>
-            
-                            <tr style="height:5vh;">
-
-                                <th class="cell-total score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
-
-                                <th class="cell-total" scope="row" style="border-left: 0px;"></th>
-
-                                <td class="cell-total score_sheet_cell_no_padding">
-                                    <div id="cell_player_total_score"></div>
-                                </td>
-
-                                <td class="cell-total score_sheet_cell_no_padding" colspan="6">
-                                    <div id="cell_automa_total_score"></div>
-                                </td>
-                            </tr>
-                        </tbody> -->
                     </table>
 
                 </div>
 
                 <div class="height_hidden" id="total_scores_to_submit">
                     <input id="submit_n_players" name="n_players">
+                    <input id="submit_automa_difficulty" name="difficulty">
+                    <input id="submit_automa_starting_nectar" name="automa_starting_nectar" value="4">
+                    <input id="submit_automa_hoard_tokens_per_egg" name="automa_hoard_tokens_per_egg" value="3">
+                    <input id="automa_points_per_face_down_bird_card" name="automa_points_per_face_down_bird_card">
                 </div>
 
                 <div class="row gx-3" style="height:7vh;margin-bottom:1vh;" id="row_reset_submit_buttons">
@@ -583,7 +408,7 @@
                     </div>
 
                     <div class="col-6 align-self-center">
-                        <button class="w-100 btn nav-button btn-submit" id="submit" name="submit" value = "Score Sheet: Automa" access="false" type="submit">
+                        <button class="w-100 btn nav-button btn-submit" id="submit" name="submit" value = "Score Sheet: Automarazzi" access="false" type="submit">
                             Submit score
                         </button>
                     </div>
