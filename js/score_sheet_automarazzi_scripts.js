@@ -690,8 +690,17 @@ function generate_n_score_columns(n_players, width_p) {
     var cell = $("<td>").attr(
         {
             colspan : "2",
-            align: "left",
-            style : `width:${width_p/3}%; border-right-style: hidden;`,
+            align: "center",
+            style : `width:${width_p/3}%; border-right-style: hidden;font-size:${
+                Math.pow(
+                    width_p,
+                    1/(
+                        2*parseNaNOrInt(
+                            $("#row_score_sheet").data("n_players")
+                        )
+                    )
+                )
+            }vw;`,
             class : "cell-input score_sheet_cell_no_padding"
         }
     ).html(
