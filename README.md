@@ -8,11 +8,8 @@ The Winspan Utilities application includes the following features:
 
 - **Automa tracker:** Simulate all of the Automa's actions and functionality in a game versus the Automa. Using this tool requires only the physical components the player uses (i.e., you no longer use the Automa cards, the End-of-round Goal Scoring cards, the Current Round Tracker, or action cubes).
 - **Score sheet (Automa):** Digital score sheet for games versus the Automa.
+- **Score sheet (Automarazzi):** Digital score sheet for games versus the Automarazzi.
 - **Score sheet:** Digital score sheet for games of 2 to 7 players.
-
-Planned features are:
-
-- **Automarazzi score sheet:** Digital score sheet for games versus the Automarazzi.
 
 ## Have feedback/requests/issues?
 
