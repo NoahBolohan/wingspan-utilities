@@ -183,6 +183,20 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     $("<tr>").attr(
         {
             style : "height:5vh;",
+            id : "row_birds_2"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            style : "height:5vh;",
+            id : "row_birds_3"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            style : "height:5vh;",
             id : "row_bonus_cards"
         }
     ).appendTo("#score_sheet_tbody");
@@ -251,7 +265,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     var cell_vert_amount_on_cards = $("<td>").attr(
         {
             class : "cell-vertical",
-            rowspan : "3"
+            rowspan : "5"
         }
     )
 
@@ -269,6 +283,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     // Birds
     $("<th>").attr(
         {
+            rowspan : "3",
             style : `width:${width_p}%`,
             scope : "row",
             class : "cell-info score_sheet_cell_no_padding"
@@ -426,6 +441,7 @@ function generate_n_score_columns(n_players, width_p) {
         // Birds
         var cell = $("<td>").attr(
             {
+                rowspan: "3",
                 id : `col_player_${i}_birds`,
                 style : `width:${width_p}%`,
                 class : "cell-input"
@@ -437,6 +453,7 @@ function generate_n_score_columns(n_players, width_p) {
                 type : "number",
                 id : `input_player_${i}_birds`,
                 name : `player_${i}_birds`,
+                min:"0",
                 class : "bg-white"
             }
         ).prop(
@@ -598,6 +615,7 @@ function generate_n_score_columns(n_players, width_p) {
     // Automarazzi column
     var cell = $("<th>").attr(
         {
+            colspan: "6",
             id : `player_${i}_name`,
             style : `width:${width_p}%`,
             class : "cell-info"
@@ -623,20 +641,161 @@ function generate_n_score_columns(n_players, width_p) {
 
     // Birds
     
+    //Difficulty: Eaglet
     var cell = $("<td>").attr(
         {
-            id : `col_player_${i}_birds`,
-            style : `width:${width_p}%`,
-            class : "cell-input"
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_birds");
+
+    $("<label>").attr(
+        {
+            for:"radio_difficulty_choice_eaglet"
+        }
+    ).text(3).appendTo(cell);
+
+    var cell = $("<td>").attr(
+        {
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
         }
     ).appendTo("#row_birds");
     
     $("<input>").attr(
         {
+            type : "radio",
+            id : `radio_difficulty_choice_eaglet`,
+            name : `col_automa_points_per_face_down_bird_card_radio`,
+            value:"3",
+            style:"width:75%;"
+        }
+    ).prop(
+        "required",
+        true
+    ).appendTo(cell);
+
+    //Difficulty: Eagle
+    var cell = $("<td>").attr(
+        {
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_birds");
+
+    $("<label>").attr(
+        {
+            for:"radio_difficulty_choice_eagle"
+        }
+    ).text(4).appendTo(cell);
+
+    var cell = $("<td>").attr(
+        {
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_birds");
+    
+    $("<input>").attr(
+        {
+            type : "radio",
+            id : `radio_difficulty_choice_eagle`,
+            name : `col_automa_points_per_face_down_bird_card_radio`,
+            value:"4",
+            style:"width:75%;"
+        }
+    ).prop(
+        "required",
+        true
+    ).appendTo(cell);
+
+    //Difficulty: Eagle-eyed Eagle
+    var cell = $("<td>").attr(
+        {
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_birds");
+
+    $("<label>").attr(
+        {
+            for:"radio_difficulty_choice_eagle-eyed_eagle"
+        }
+    ).text(5).appendTo(cell);
+
+    var cell = $("<td>").attr(
+        {
+            align: "right",
+            style : `width:${width_p/6}%; border-right-style: hidden; border-bottom-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_birds");
+    
+    $("<input>").attr(
+        {
+            type : "radio",
+            id : `radio_difficulty_choice_eagle-eyed_eagle`,
+            name : `col_automa_points_per_face_down_bird_card_radio`,
+            value:"5",
+            style:"width:75%;"
+        }
+    ).prop(
+        "required",
+        true
+    ).appendTo(cell);
+
+    // Birds 2
+    var cell = $("<td>").attr(
+        {
+            colspan : "2",
+            align: "left",
+            style : `width:${width_p/3}%; border-right-style: hidden;`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).html(
+        "&#x2573;"
+    ).appendTo("#row_birds_2");
+
+    var cell = $("<td>").attr(
+        {
+            colspan : "4",
+            style : `width:${2*width_p/3}%;`,
+            class : "score_sheet_cell_no_padding"
+        }
+    ).text("x").appendTo("#row_birds_2");
+    
+    $("<input>").attr(
+        {
             type : "number",
-            id : `input_player_${i}_birds`,
-            name : `player_${i}_birds`,
-            class : "bg-white"
+            id : `cell_automa_n_drawn_cards`,
+            name : `automa_n_drawn_cards`,
+            min:"0"
+        }
+    ).prop(
+        "required",
+        true
+    ).appendTo(cell);
+
+    // Birds 3
+    var cell = $("<td>").attr(
+        {
+            colspan : "6",
+            style : `width:${width_p}%;`,
+            class : "score_sheet_cell_no_padding"
+        }
+    ).text("x").appendTo("#row_birds_3");
+    
+    $("<input>").attr(
+        {
+            type : "number",
+            id : `cell_automa_played_birds`,
+            name : `automa_played_birds`,
+            min:"0"
         }
     ).prop(
         "required",
