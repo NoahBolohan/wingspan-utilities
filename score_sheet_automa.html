@@ -24,6 +24,74 @@
 
         <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" action="none">
 
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_expansions">
+
+                <div class="modal-dialog" role="document">
+    
+                    <div class="modal-content">
+    
+                        <div class="modal-header p-0 justify-content-center" style="position:relative;">
+    
+                            <h2 class="modal-title h2">Expansions</h2>
+                            <button class="btn astext btn-close-settings" id="button_close_modal_expansions" style="position:absolute;right:1em;" type="button">
+                                &#x274c;
+                            </button>
+                        </div>
+    
+                        <div class="modal-body" id="modal_expansions_body">
+    
+                            <div class="p-0 container-fluid">
+        
+                                <div class="row gx-1 margin_auto h1" id="row_expansions_title">
+                                    Expansions
+                                </div>
+        
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_expansions_1">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_base" type="checkbox">
+                                        <label class="expansion_toggle toggle_base" for="toggle_base">
+                                            Base
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_european_expansion" type="checkbox">
+                                        <label class="expansion_toggle toggle_european_expansion" for="toggle_european_expansion">
+                                            European<br>Expansion
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_expansions_2">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_oceania_expansion" type="checkbox">
+                                        <label class="expansion_toggle toggle_oceania_expansion" for="toggle_oceania_expansion">
+                                            Oceania<br>Expansion
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_asia" type="checkbox">
+                                        <label class="expansion_toggle toggle_asia" for="toggle_asia">
+                                            Asia
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-1 margin_auto h1" id="row_fan_packs_title">
+                                    Fan-Designed Bird Promo Packs
+                                </div>
+        
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_fan_packs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
 
                 <div class="modal-dialog" role="document">
@@ -190,7 +258,14 @@
 
                 <div class="row justify-content-between align-items-center" style="height:7vh;" id="row_checkboxes">
 
-                    <div class="col-5 dropdown align-self-center">
+                    <div class="col-5 text-center align-self-center">
+
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions">
+                            Expansions
+                        </button>
+                    </div>
+
+                    <!-- <div class="col-5 dropdown align-self-center">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Expansions
@@ -279,7 +354,7 @@
                                 </label>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
                     <div class="col-5 dropdown align-self-center">
 
