@@ -1021,10 +1021,9 @@ input::placeholder {
 /* Expansion toggle checkboxes */
 label.expansion_toggle {
   display: flex;
-  border: 1px solid transparent;
-  border-radius: 6px;
+  border: 1px solid rgba(var(--font-color-buttons));
+  border-radius: 3vw;
   overflow: hidden;
-  background-color: #eee;
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
@@ -1035,13 +1034,8 @@ label.expansion_toggle {
   font-size: 2.5vh;
 }
 
-label.expansion_toggle {
-    border: 1px solid rgba(var(--font-color-buttons));
-}
-
 label.toggle_base {
     background-color: rgba(177,210,199,0.5);
-    border: 1px solid rgba(var(--font-color-buttons));
 }
 
 label.toggle_european_expansion {
@@ -1057,28 +1051,24 @@ label.toggle_asia {
 }
 
 input.expansion_toggle_input:checked+label.toggle_base {
-    content:"";
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
     background-position: top;
     background-size: 100% auto;
 }
 
 input.expansion_toggle_input:checked+label.toggle_european_expansion {
-    content:"";
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 30%,rgba(122,105,168, 1) 60%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/european_expansion.png");
     background-position: bottom;
     background-size: 100% auto;
 }
 
 input.expansion_toggle_input:checked+label.toggle_oceania_expansion {
-    content:"";
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 30%,rgba(241,177,82,1) 60%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/oceania_expansion.png");
     background-position: bottom;
     background-size: 100% auto;
 }
 
 input.expansion_toggle_input:checked+label.toggle_asia {
-    content:"";
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/asia.png");
     background-position: bottom;
     background-size: 100% auto;
