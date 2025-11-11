@@ -246,13 +246,13 @@
                                     </select>
                                 </div>
                             </div>
-    
+
                             <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_setting_choose_background">
-    
+
                                 <div class="col-5 p-0 align-self-center">
                                     <label class="settings-label" for="background">Background:</label>
                                 </div>
-                
+
                                 <div class="col-7 p-0">
                                     <select name="background" id="background_options"  style="width:100%">
                                         <option value="random">Random</option>
@@ -274,20 +274,20 @@
                                     </select>
                                 </div>
                             </div>
-    
+
                             <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_set_web_app_url">
-    
+
                                 <div class="col-5 p-0 align-self-center">
                                     <label class="settings-label" for="input_web_app_url">Web App URL:</label>
                                 </div>
-                
+
                                 <div class="col-7 p-0">
                                     <input class="w-100" id="input_web_app_url" placeholder="Paste Web App URL here">
                                 </div>
                             </div>
 
 							<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_web_app_url_guide">
-            
+
 								<div class="col-7 offset-5 p-0" style="text-align: center;">
 									<a class="w-100" target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">Generate a Web App URL</a>
 								</div>
@@ -300,21 +300,21 @@
             <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_no_web_app_url">
 
                 <div class="modal-dialog" role="document">
-    
+
                     <div class="modal-content">
-    
+
                         <div class="modal-header p-0 justify-content-center" style="position:relative;">
-    
+
                             <h2 class="modal-title h2">No Web App URL!</h2>
                             <button class="btn astext btn-close-settings" id="button_close_modal_no_web_app_url" style="position:absolute;right:1em;" type="button">
                                 &#x274c;
                             </button>
                         </div>
-    
+
                         <div class="modal-body" id="modal_no_web_app_url_body">
-    
+
                             <div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;" id="row_set_web_app_url">
-    
+
                                 <div class="col-12 p-0 align-self-center">
                                     Cannot submit score to a Google Web App! Either:
                                     <ul>
@@ -333,7 +333,7 @@
                             </div>
 
 							<div class="row p-0 justify-content-center margin_auto" style="margin-top:1vh;">
-            
+
 								<div class="col-12 p-0" style="text-align: center;">
 									Otherwise, <a class="w-100" target="_blank" rel="noopener noreferrer" href="https://github.com/NoahBolohan/wingspan-utilities/blob/main/how_to_submit_scores_to_google_sheets.md">click here to generate a Web App URL</a>
 								</div>
@@ -348,9 +348,9 @@
                 <div class="row justify-content-center align-items-center" style="height:7vh; margin-top: 1vh;" id="row_header">
 
                     <div class="col header-background" style="height:7vh;"></div>
-        
+
                     <div class="row justify-content-center align-items-center" style="height:7vh;" id="row_header_1">
-        
+
                         <div class="col-auto m-0 px-0 text-center h1 header-content">Score sheet - Automa</div>
                     </div>
                 </div>
@@ -364,97 +364,6 @@
                         </button>
                     </div>
 
-                    <!-- <div class="col-5 dropdown align-self-center">
-
-                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Expansions
-                        </button>
-
-                        <ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
-                        
-                            <li>
-
-                                <label for="col_base_game_checkbox" id="row_base_game">
-                                    Base game
-                                    <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
-                                    <input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_european_expansion_checkbox" id="row_european_expansion">
-                                    European expansion
-                                    <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
-                                    <input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
-                                    Oceania expansion
-                                    <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
-                                    <input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_asia_checkbox" id="row_asia">
-                                    Asia
-                                    <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
-                                    <input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_canada_checkbox" id="row_birds_of_canada">
-                                    Birds of Canada
-                                    <input id="col_birds_of_canada_checkbox_hidden" name="birds_of_canada" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_canada_checkbox" name="birds_of_canada" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_new_zealand_checkbox" id="row_birds_of_new_zealand">
-                                    Birds of New Zealand
-                                    <input id="col_birds_of_new_zealand_checkbox_hidden" name="birds_of_new_zealand" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_new_zealand_checkbox" name="birds_of_new_zealand" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_the_usa_checkbox" id="row_birds_of_the_usa">
-                                    Birds of the U.S.A.
-                                    <input id="col_birds_of_the_usa_checkbox_hidden" name="birds_of_the_usa" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_the_usa_checkbox" name="birds_of_the_usa" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_british_birds_checkbox" id="row_british_birds">
-                                    British Birds
-                                    <input id="col_british_birds_checkbox_hidden" name="british_birds" type="hidden" value="no"></input>
-                                    <input id="col_british_birds_checkbox" name="british_birds" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_continental_europe_checkbox" id="row_birds_of_continental_europe">
-                                    Birds of Continental Europe
-                                    <input id="col_birds_of_continental_europe_checkbox_hidden" name="birds_of_continental_europe" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_continental_europe_checkbox" name="birds_of_continental_europe" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_additional_asian_avians_checkbox" id="row_additional_asian_avians">
-                                    Additional Asian Avians
-                                    <input id="col_additional_asian_avians_checkbox_hidden" name="additional_asian_avians" type="hidden" value="no"></input>
-                                    <input id="col_additional_asian_avians_checkbox" name="additional_asian_avians" type="checkbox" value="yes">
-                                </label>
-                            </li>
-                        </ul>
-                    </div> -->
-
                     <div class="col-5 dropdown align-self-center">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -462,7 +371,7 @@
                         </button>
 
                         <ul class="py-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_extra_cards_menu" style="width: 92%;">
-                        
+
                             <li>
                                 <label for="col_automubon_society_checkbox" id="row_automubon_society">
                                     Automubon society
@@ -517,13 +426,13 @@
                                 <th class="cell-info score_sheet_cell_no_padding" colspan="6" style="width:33%;">Automa</th>
                             </tr>
                         </thead>
-                    
+
                         <tbody>
 
                             <tr style="height:5vh;">
 
                                 <td class="cell-vertical" rowspan="5">
-                                    
+
                                     <div class="rowspan-vertical">
                                         Amount on cards
                                     </div>
@@ -539,9 +448,9 @@
 
                                 <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eaglet" name="col_automa_points_per_face_down_bird_card_radio" value="3" style="width:75%;" required/>
-                                    
+
                                 </td>
-                            
+
                                 <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle">4</label>
                                 </td>
@@ -549,7 +458,7 @@
                                 <td class="cell-input score_sheet_cell_no_padding" align="left" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <input type="radio" id="radio_difficulty_choice_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="4" style="width:75%;"/>
                                 </td>
-                            
+
                                 <td class="cell-input score_sheet_cell_no_padding" align="right" style="border-right-style: hidden; border-bottom-style: hidden;">
                                     <label for="radio_difficulty_choice_eagle-eyed_eagle">5</label>
                                 </td>
@@ -558,7 +467,7 @@
                                     <input type="radio" id="radio_difficulty_choice_eagle-eyed_eagle" name="col_automa_points_per_face_down_bird_card_radio" value="5" style="width:75%;"/>
                                 </td>
                             </tr>
-                    
+
                             <tr style="height:5vh;">
 
                                 <td class="cell-input score_sheet_cell_no_padding" colspan="2" align="center" style="border-right-style: hidden;">&#x2573;</td>
@@ -569,7 +478,7 @@
 
                                 <td class="score_sheet_cell_no_padding" colspan="6">x<input type="number" id="cell_automa_played_birds" name="automa_played_birds" min="0" required></td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
 
                                 <th class="cell-info score_sheet_cell_no_padding">Bonus cards</th>
@@ -578,23 +487,23 @@
 
                                 <td class="cell-disabled" colspan="6"></td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
                                 <th class="cell-info score_sheet_cell_no_padding" scope="row">End-of-round goals</th>
 
                                 <td class="cell-info score_sheet_cell_no_padding">
                                     <input type="number" id="cell_player_end-of-round_goals" name="player_end-of-round_goals" min="0" required>
                                 </td>
-                                
+
                                 <td class="cell-info score_sheet_cell_no_padding" colspan="6">
                                     <input type="number" id="cell_automa_end-of-round_goals" name="automa_end-of-round_goals" min="0" required>
                                 </td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
 
                                 <td class="cell-vertical" rowspan="3" id="rowspan-vertical-1-pt-each">
-                                    
+
                                     <div class="rowspan-vertical">
                                         1 point each
                                     </div>
@@ -610,7 +519,7 @@
                                     <input type="number" id="cell_automa_laid_eggs" name="automa_laid_eggs" min="0" required>
                                 </td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
 
                                 <th class="cell-info score_sheet_cell_no_padding" scope="row">Food on cards</th>
@@ -621,7 +530,7 @@
 
                                 <td class="cell-disabled" colspan="6"></td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
 
                                 <th class="cell-info score_sheet_cell_no_padding" scope="row">Tucked cards</th>
@@ -649,12 +558,11 @@
                             <tr id="row_nectar" style="visibility: collapse;height:5vh;">
 
                                 <td class="cell-vertical" rowspan="1">
-                                    
+
                                     <div class="rowspan-vertical">
                                         5/2
                                     </div>
                                 </td>
-                                
 
                                 <th class="cell-info score_sheet_cell_no_padding" scope="row">Nectar</th>
 
@@ -666,7 +574,7 @@
                                     <input type="number" id="cell_automa_nectar" name="automa_nectar" min="0">
                                 </td>
                             </tr>
-            
+
                             <tr style="height:5vh;">
 
                                 <th class="cell-total score_sheet_cell_no_padding" scope="row" style="border-right: 0px;">Total</th>
