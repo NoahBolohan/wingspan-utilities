@@ -1075,6 +1075,67 @@ input.expansion_toggle_input:checked+label.toggle_asia {
     background-size: 100% auto;
 }
 
+label.toggle_birds_of_canada {
+    background-color: rgba(208,73,44,0.5);
+}
+
+label.toggle_birds_of_new_zealand {
+    background-color: rgba(65,67,66,0.5);
+}
+
+label.toggle_birds_of_the_usa {
+    background-color: rgba(56,81,111,0.5);
+}
+
+label.toggle_british_birds {
+    background-color: rgba(135,67,92,0.5);
+}
+
+label.toggle_birds_of_continental_europe {
+    background-color: rgba(47,83,157,0.5);
+}
+
+label.toggle_additional_asian_avians {
+    background-color: rgba(182,53,47,0.5);
+}
+
+input.expansion_toggle_input:checked+label.toggle_birds_of_canada {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(208,73,44,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/birds_of_canada.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+input.expansion_toggle_input:checked+label.toggle_birds_of_new_zealand {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(65,67,66,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/birds_of_new_zealand.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+input.expansion_toggle_input:checked+label.toggle_birds_of_the_usa {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(56,81,111,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/birds_of_the_usa.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+input.expansion_toggle_input:checked+label.toggle_british_birds {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(135,67,92,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/british_birds.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+input.expansion_toggle_input:checked+label.toggle_birds_of_continental_europe {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(47,83,157,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/birds_of_continental_europe.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+input.expansion_toggle_input:checked+label.toggle_additional_asian_avians {
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 10%,rgba(182,53,47,1) 50%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/additional_asian_avians.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+
 /*Cells*/
 .cell-vertical {
     padding: 0!important;
