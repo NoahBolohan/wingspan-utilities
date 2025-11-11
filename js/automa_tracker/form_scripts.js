@@ -5,6 +5,7 @@ function assign_submit_href() {
         "toggle_european_expansion" : $("#toggle_european_expansion").is(":checked"),
         "toggle_oceania_expansion" : $("#toggle_oceania_expansion").is(":checked"),
         "toggle_asia" : $("#toggle_asia").is(":checked"),
+        "toggle_duet_mode" : $("#toggle_duet_mode").is(":checked"),
         "toggle_birds_of_canada" : $("#toggle_birds_of_canada").is(":checked"),
         "toggle_birds_of_new_zealand" : $("#toggle_birds_of_new_zealand").is(":checked"),
         "toggle_birds_of_the_usa" : $("#toggle_birds_of_the_usa").is(":checked"),
