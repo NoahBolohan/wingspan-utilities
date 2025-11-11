@@ -42,7 +42,7 @@
 
                             <div class="p-0 container-fluid">
 
-                                <div class="row gx-1 margin_auto justify-content-center" id="row_expansions_overall_select_select">
+                                <div class="row gx-1 margin_auto justify-content-center" id="row_expansions_overall_select">
 
                                     <div class="col-5 text-center align-self-center">
 
@@ -101,7 +101,18 @@
                                     </div>
                                 </div>
 
-                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_expansions_select_select">
+                                <div class="row mt-1 margin_auto justify-content-center display_hidden" id="row_duet_mode_toggle">
+
+                                    <div class="col-4 offset-7">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_duet_mode_hidden" name="duet_mode" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_duet_mode" name="duet_mode" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_duet_mode" for="toggle_duet_mode">
+                                            Duet mode
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_expansions_select">
 
                                     <div class="col-5 text-center align-self-center">
 
@@ -179,7 +190,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_promo_packs_select_select">
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_promo_packs_select">
 
                                     <div class="col-5 text-center align-self-center">
 

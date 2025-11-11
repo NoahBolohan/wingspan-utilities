@@ -1051,6 +1051,11 @@ label.toggle_asia {
     background-color: rgba(225,129,134,0.5);
 }
 
+label.toggle_duet_mode {
+    justify-content: center;
+    background-color: rgba(225,129,134,0.5);
+}
+
 input.expansion_toggle_input:checked+label.toggle_base {
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(177,210,199,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/base_game.png");
     background-position: top;
@@ -1073,6 +1078,10 @@ input.expansion_toggle_input:checked+label.toggle_asia {
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 40%,rgba(225,129,134,1) 70%), url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/asia.png");
     background-position: bottom;
     background-size: 100% auto;
+}
+
+input.expansion_toggle_input:checked+label.toggle_duet_mode {
+    background-color: rgba(var(--button-submit-color));
 }
 
 label.toggle_birds_of_canada {

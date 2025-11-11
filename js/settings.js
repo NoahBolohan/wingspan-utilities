@@ -297,6 +297,10 @@ $(document).ready(
                         );
                     }
                 );
+
+                show_display_hidden(
+                    "#row_duet_mode_toggle"
+                );
             }
         );
 
@@ -325,6 +329,15 @@ $(document).ready(
                         );
                     }
                 );
+
+                hide_display_hidden(
+                    "#row_duet_mode_toggle"
+                );
+
+                $("#toggle_duet_mode").prop(
+                    "checked",
+                    false
+                )
             }
         );
 
@@ -346,6 +359,10 @@ $(document).ready(
                             true
                         );
                     }
+                );
+
+                show_display_hidden(
+                    "#row_duet_mode_toggle"
                 );
             }
         );
@@ -369,8 +386,40 @@ $(document).ready(
                         );
                     }
                 );
+
+                hide_display_hidden(
+                    "#row_duet_mode_toggle"
+                );
+
+                $("#toggle_duet_mode").prop(
+                    "checked",
+                    false
+                )
             }
         );
+
+        $("#toggle_asia").on(
+            "change",
+            function() {
+                if (
+                    $("#toggle_asia").prop("checked") == true
+                ) {
+                    show_display_hidden(
+                        "#row_duet_mode_toggle"
+                    );
+                }
+                else {
+                    hide_display_hidden(
+                        "#row_duet_mode_toggle"
+                    );
+
+                    $("#toggle_duet_mode").prop(
+                        "checked",
+                        false
+                    )
+                }
+            }
+        )
 
         $("#button_promo_packs_select_all").on(
             "click",

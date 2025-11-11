@@ -108,6 +108,183 @@
 				<input name="automa_total_score" id="automa_total_score_for_post" />
 			</div>
 
+			<div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_expansions">
+
+                <div class="modal-dialog" role="document">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header p-0 justify-content-center" style="position:relative;">
+
+                            <h2 class="modal-title h2">Expansions & Extra Cards</h2>
+                            <button class="btn astext btn-close-settings" id="button_close_modal_expansions" style="position:absolute;right:1em;" type="button">
+                                &#x274c;
+                            </button>
+                        </div>
+
+                        <div class="modal-body" id="modal_expansions_body">
+
+                            <div class="p-0 container-fluid">
+
+                                <div class="row gx-1 margin_auto justify-content-center" id="row_expansions_overall_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_overall_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 offset-1 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_overall_deselect_all">
+                                            Deselect all
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-2 margin_auto h1" id="row_expansions_title">
+                                    Expansions
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_expansions_1">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_base_hidden" name="base" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_base" name="base" type="checkbox" value="yes" checked>
+                                        <label class="expansion_toggle toggle_base" for="toggle_base">
+                                            Base
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_european_expansion_hidden" name="european_expansion" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_european_expansion" name="european_expansion" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_european_expansion" for="toggle_european_expansion">
+                                            European<br>Expansion
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_expansions_2">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_oceania_expansion_hidden" name="oceania_expansion" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_oceania_expansion" name="oceania_expansion" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_oceania_expansion" for="toggle_oceania_expansion">
+                                            Oceania<br>Expansion
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_asia_hidden" name="asia" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_asia" name="asia" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_asia" for="toggle_asia">
+                                            Asia
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_expansions_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_deselect_all">
+                                            Deselect all
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-2 margin_auto h1" id="row_fan_packs_title">
+                                    Fan-Designed Bird Promo Packs
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_fan_packs_1">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_canada_hidden" name="birds_of_canada" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_canada" name="birds_of_canada" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_birds_of_canada" for="toggle_birds_of_canada">
+                                            Birds of<br>Canada
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_new_zealand_hidden" name="birds_of_new_zealand" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_new_zealand" name="birds_of_new_zealand" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_birds_of_new_zealand" for="toggle_birds_of_new_zealand">
+                                            Birds of<br>New Zealand
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_fan_packs_2">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_the_usa_hidden" name="birds_of_the_usa" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_the_usa" name="birds_of_the_usa" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_birds_of_the_usa" for="toggle_birds_of_the_usa">
+                                            Birds of<br>the USA
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_british_birds_hidden"name="british_birds" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_british_birds"name="british_birds" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_british_birds" for="toggle_british_birds">
+                                            British<br>Birds
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_fan_packs_3">
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_continental_europe_hidden" name="birds_of_continental_europe" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_birds_of_continental_europe" name="birds_of_continental_europe" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_birds_of_continental_europe" for="toggle_birds_of_continental_europe">
+                                            Birds of<br>Continental Europe
+                                        </label>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_additional_asian_avians_hidden" name="additional_asian_avians" type="hidden" value="no">
+                                        <input class="expansion_toggle_input display_hidden" id="toggle_additional_asian_avians" name="additional_asian_avians" type="checkbox" value="yes">
+                                        <label class="expansion_toggle toggle_additional_asian_avians" for="toggle_additional_asian_avians">
+                                            Additional<br>Asian Avians
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_promo_packs_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_promo_packs_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_promo_packs_deselect_all">
+                                            Deselect all
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 			<div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
 
                 <div class="modal-dialog" role="document">
@@ -946,95 +1123,11 @@
 
                 <div class="row justify-content-between" style="height:7vh;" id="row_checkboxes">
 
-                    <div class="col-5 dropdown align-self-center" id="div_dropdown_expansions_menu">
+                    <div class="col-5 text-center align-self-center">
 
-                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_expansions_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Expansions 
+                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions">
+                            Expansions
                         </button>
-
-                        <ul class="p-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_expansions_menu" style="width: 92%;">
-                        
-                            <li>
-
-                                <label for="col_base_game_checkbox" id="row_base_game">
-                                    Base game
-                                    <input id="col_base_game_checkbox_hidden" name="base" type="hidden" value="no"/>
-                                    <input id="col_base_game_checkbox" name="base" type="checkbox" value="yes" checked/>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_european_expansion_checkbox" id="row_european_expansion">
-                                    European expansion
-                                    <input id="col_european_expansion_checkbox_hidden" name="european_expansion" type="hidden" value="no"></input>
-                                    <input id="col_european_expansion_checkbox" name="european_expansion" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_oceania_expansion_checkbox" id="row_oceania_expansion">
-                                    Oceania expansion
-                                    <input id="col_oceania_expansion_checkbox_hidden" name="oceania_expansion" type="hidden" value="no"></input>
-                                    <input id="col_oceania_expansion_checkbox" name="oceania_expansion" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_asia_checkbox" id="row_asia">
-                                    Asia
-                                    <input id="col_asia_checkbox_hidden" name="asia" type="hidden" value="no"></input>
-                                    <input id="col_asia_checkbox" name="asia" type="checkbox" value="yes" checked>
-                                </label>
-                            </li>
-
-							<li>
-                                <label for="col_birds_of_canada_checkbox" id="row_birds_of_canada">
-                                    Birds of Canada
-                                    <input id="col_birds_of_canada_checkbox_hidden" name="birds_of_canada" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_canada_checkbox" name="birds_of_canada" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_new_zealand_checkbox" id="row_birds_of_new_zealand">
-                                    Birds of New Zealand
-                                    <input id="col_birds_of_new_zealand_checkbox_hidden" name="birds_of_new_zealand" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_new_zealand_checkbox" name="birds_of_new_zealand" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_the_usa_checkbox" id="row_birds_of_the_usa">
-                                    Birds of the U.S.A.
-                                    <input id="col_birds_of_the_usa_checkbox_hidden" name="birds_of_the_usa" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_the_usa_checkbox" name="birds_of_the_usa" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_british_birds_checkbox" id="row_british_birds">
-                                    British Birds
-                                    <input id="col_british_birds_checkbox_hidden" name="british_birds" type="hidden" value="no"></input>
-                                    <input id="col_british_birds_checkbox" name="british_birds" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_birds_of_continental_europe_checkbox" id="row_birds_of_continental_europe">
-                                    Birds of Continental Europe
-                                    <input id="col_birds_of_continental_europe_checkbox_hidden" name="birds_of_continental_europe" type="hidden" value="no"></input>
-                                    <input id="col_birds_of_continental_europe_checkbox" name="birds_of_continental_europe" type="checkbox" value="yes">
-                                </label>
-                            </li>
-
-                            <li>
-                                <label for="col_additional_asian_avians_checkbox" id="row_additional_asian_avians">
-                                    Additional Asian Avians
-                                    <input id="col_additional_asian_avians_checkbox_hidden" name="additional_asian_avians" type="hidden" value="no"></input>
-                                    <input id="col_additional_asian_avians_checkbox" name="additional_asian_avians" type="checkbox" value="yes">
-                                </label>
-                            </li>
-                        </ul>
                     </div>
 
                     <div class="col-5 dropdown align-self-center" id="div_dropdown_extra_cards_menu">
