@@ -259,16 +259,164 @@ $(document).ready(
                 $("#modal_expansions").modal("show");
             }
         );
+
+        $("#button_close_modal_expansions").on(
+            "click",
+            function() {
+                $("#modal_expansions").modal("hide");
+            }
+        );
     }
 )
 
 $(document).ready(
     function() {
 
-        $("#button_close_modal_expansions").on(
+        $("#button_expansions_overall_select_all").on(
             "click",
             function() {
-                $("#modal_expansions").modal("hide");
+
+                $.each(
+                    [
+                        "#toggle_base",
+                        "#toggle_european_expansion",
+                        "#toggle_oceania_expansion",
+                        "#toggle_asia",
+                        "#toggle_birds_of_canada",
+                        "#toggle_birds_of_new_zealand",
+                        "#toggle_birds_of_the_usa",
+                        "#toggle_british_birds",
+                        "#toggle_birds_of_continental_europe",
+                        "#toggle_additional_asian_avians"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            true
+                        );
+                    }
+                );
+            }
+        );
+
+        $("#button_expansions_overall_deselect_all").on(
+            "click",
+            function() {
+
+                $.each(
+                    [
+                        "#toggle_base",
+                        "#toggle_european_expansion",
+                        "#toggle_oceania_expansion",
+                        "#toggle_asia",
+                        "#toggle_birds_of_canada",
+                        "#toggle_birds_of_new_zealand",
+                        "#toggle_birds_of_the_usa",
+                        "#toggle_british_birds",
+                        "#toggle_birds_of_continental_europe",
+                        "#toggle_additional_asian_avians"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            false
+                        );
+                    }
+                );
+            }
+        );
+
+        $("#button_expansions_select_all").on(
+            "click",
+            function() {
+
+                $.each(
+                    [
+                        "#toggle_base",
+                        "#toggle_european_expansion",
+                        "#toggle_oceania_expansion",
+                        "#toggle_asia"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            true
+                        );
+                    }
+                );
+            }
+        );
+
+        $("#button_expansions_deselect_all").on(
+            "click",
+            function() {
+
+                $.each(
+                    [
+                        "#toggle_base",
+                        "#toggle_european_expansion",
+                        "#toggle_oceania_expansion",
+                        "#toggle_asia"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            false
+                        );
+                    }
+                );
+            }
+        );
+
+        $("#button_promo_packs_select_all").on(
+            "click",
+            function() {
+
+                $.each(
+                    [
+                        "#toggle_birds_of_canada",
+                        "#toggle_birds_of_new_zealand",
+                        "#toggle_birds_of_the_usa",
+                        "#toggle_british_birds",
+                        "#toggle_birds_of_continental_europe",
+                        "#toggle_additional_asian_avians"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            true
+                        );
+                    }
+                );
+            }
+        );
+
+        $("#button_promo_packs_deselect_all").on(
+            "click",
+            function() {
+
+                $.each(
+                    [
+                        "#toggle_birds_of_canada",
+                        "#toggle_birds_of_new_zealand",
+                        "#toggle_birds_of_the_usa",
+                        "#toggle_british_birds",
+                        "#toggle_birds_of_continental_europe",
+                        "#toggle_additional_asian_avians"
+                    ],
+                    function(idx, v) {
+
+                        $(v).prop(
+                            "checked",
+                            false
+                        );
+                    }
+                );
             }
         );
     }
@@ -291,7 +439,6 @@ $(document).ready(
 
         $("#theme_options").change(
             function() {
-                
                 switch_theme(
                     this.value
                 );
@@ -329,7 +476,7 @@ $(document).ready(
 
         $("#background_options").change(
             function() {
-                
+
                 switch_background(
                     this.value
                 );
@@ -375,7 +522,7 @@ $(document).ready(
 
         $("#input_web_app_url").change(
             function() {
-                
+
                 set_web_app_url(
                     this.value
                 );
@@ -384,7 +531,7 @@ $(document).ready(
 
         $("#input_web_app_url_from_submit_attempt").change(
             function() {
-                
+
                 set_web_app_url(
                     this.value
                 );
@@ -418,11 +565,11 @@ $(document).ready(
         $("#google_form").on(
             "submit",
             function() {
-            
+
                 const rxChecks = [/^https:\/\/script.google.com\/macros\/s\//,/.\/exec/],
                 word = $("#google_form").attr("action");
                 result = rxChecks.every((rx) => rx.test(word));
-        
+
                 if (!result) {
                     $("#modal_no_web_app_url").modal("show");
                     return false;

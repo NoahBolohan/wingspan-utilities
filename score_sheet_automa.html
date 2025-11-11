@@ -27,25 +27,42 @@
             <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_expansions">
 
                 <div class="modal-dialog" role="document">
-    
+
                     <div class="modal-content">
-    
+
                         <div class="modal-header p-0 justify-content-center" style="position:relative;">
-    
-                            <h2 class="modal-title h2">Expansions</h2>
+
+                            <h2 class="modal-title h2">Expansions & Extra Cards</h2>
                             <button class="btn astext btn-close-settings" id="button_close_modal_expansions" style="position:absolute;right:1em;" type="button">
                                 &#x274c;
                             </button>
                         </div>
-    
+
                         <div class="modal-body" id="modal_expansions_body">
-    
+
                             <div class="p-0 container-fluid">
-        
-                                <div class="row gx-1 margin_auto h1" id="row_expansions_title">
+
+                                <div class="row gx-1 margin_auto justify-content-center" id="row_expansions_overall_select_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_overall_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 offset-1 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_overall_deselect_all">
+                                            Deselect all
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-2 margin_auto h1" id="row_expansions_title">
                                     Expansions
                                 </div>
-        
+
                                 <div class="row gx-1 mt-1 justify-content-center margin_auto" id="row_expansions_1">
 
                                     <div class="col-6">
@@ -80,7 +97,24 @@
                                     </div>
                                 </div>
 
-                                <div class="row gx-1 mt-1 margin_auto h1" id="row_fan_packs_title">
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_expansions_select_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions_deselect_all">
+                                            Deselect all
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-1 mt-2 margin_auto h1" id="row_fan_packs_title">
                                     Fan-Designed Bird Promo Packs
                                 </div>
 
@@ -132,6 +166,23 @@
                                         <label class="expansion_toggle toggle_additional_asian_avians" for="toggle_additional_asian_avians">
                                             Additional<br>Asian Avians
                                         </label>
+                                    </div>
+                                </div>
+
+                                <div class="row gx-2 mt-2 margin_auto justify-content-center" id="row_promo_packs_select_select">
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_promo_packs_select_all">
+                                            Select all
+                                        </button>
+                                    </div>
+
+                                    <div class="col-5 text-center align-self-center">
+
+                                        <button class="w-100 btn btn-dropdown-menu" type="button" id="button_promo_packs_deselect_all">
+                                            Deselect all
+                                        </button>
                                     </div>
                                 </div>
                             </div>
