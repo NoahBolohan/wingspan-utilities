@@ -638,45 +638,25 @@ function populate_form_data() {
     )
 
     // Expansion checkboxes
-    if(document.getElementById("col_base_game_checkbox").checked) {
-        document.getElementById("col_base_game_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_european_expansion_checkbox").checked) {
-        document.getElementById("col_european_expansion_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_oceania_expansion_checkbox").checked) {
-        document.getElementById("col_oceania_expansion_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_asia_checkbox").checked) {
-        document.getElementById("col_asia_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_birds_of_canada_checkbox").checked) {
-        document.getElementById("col_birds_of_canada_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_birds_of_new_zealand_checkbox").checked) {
-        document.getElementById("col_birds_of_new_zealand_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_birds_of_the_usa_checkbox").checked) {
-        document.getElementById("col_birds_of_the_usa_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_british_birds_checkbox").checked) {
-        document.getElementById("col_british_birds_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_birds_of_continental_europe_checkbox").checked) {
-        document.getElementById("col_birds_of_continental_europe_checkbox_hidden").disabled = true;
-    }
-
-    if(document.getElementById("col_additional_asian_avians_checkbox").checked) {
-        document.getElementById("col_additional_asian_avians_checkbox_hidden").disabled = true;
-    }
+    $.each(
+        [
+            "base",
+            "european_expansion",
+            "oceania_expansion",
+            "asia",
+            "birds_of_canada",
+            "birds_of_new_zealand",
+            "birds_of_the_usa",
+            "british_birds",
+            "birds_of_continental_europe",
+            "additional_asian_avians"
+        ],
+        function(idx,v) {
+            if(document.getElementById(`toggle_${v}`).checked) {
+                document.getElementById(`toggle_${v}_hidden`).disabled = true;
+            }
+        }
+    )
 
     // Extra card checkboxes
     if(document.getElementById("col_automubon_society_checkbox").checked) {
@@ -698,21 +678,23 @@ $(document).ready(
         $("#button_reset_sheet").on(
             "click",
             function () {
-                
-                // Checkboxes
-                $("#col_base_game_checkbox").prop("checked",true);
-                $("#col_european_expansion_checkbox").prop("checked",true);
-                $("#col_oceania_expansion_checkbox").prop("checked",true).trigger("change");
-                $("#col_asia_checkbox").prop("checked",true);
-                $("#col_birds_of_canada_checkbox").prop("checked",false);
-                $("#col_birds_of_new_zealand_checkbox").prop("checked",false);
-                $("#col_birds_of_the_usa_checkbox").prop("checked",false);
-                $("#col_british_birds_checkbox").prop("checked",false);
-                $("#col_birds_of_continental_europe_checkbox").prop("checked",false);
-                $("#col_additional_asian_avians_checkbox").prop("checked",false);
+
+                // Expansions
+                $("#toggle_base").prop("checked",true);
+                $("#toggle_european_expansion").prop("checked",false);
+                $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
+                $("#toggle_asia").prop("checked",false);
+                $("#toggle_birds_of_canada").prop("checked",false);
+                $("#toggle_birds_of_new_zealand").prop("checked",false);
+                $("#toggle_birds_of_the_usa").prop("checked",false);
+                $("#toggle_british_birds").prop("checked",false);
+                $("#toggle_birds_of_continental_europe").prop("checked",false);
+                $("#toggle_additional_asian_avians").prop("checked",false);
+
+                // Extra cards
                 $("#col_automubon_society_checkbox").prop("checked",false);
                 $("#col_RAOUtoma_checkbox").prop("checked",false);
-                $("#col_automasian_alliance_checkbox").prop("checked",true).trigger("change");
+                $("#col_automasian_alliance_checkbox").prop("checked",false).trigger("change");
 
                 // Empty player cells
                 $("#cell_player_birds").val("");
