@@ -394,7 +394,7 @@ $(document).ready(
                 $("#toggle_duet_mode").prop(
                     "checked",
                     false
-                )
+                ).trigger("change")
             }
         );
 
@@ -416,7 +416,7 @@ $(document).ready(
                     $("#toggle_duet_mode").prop(
                         "checked",
                         false
-                    )
+                    ).trigger("change")
                 }
             }
         )

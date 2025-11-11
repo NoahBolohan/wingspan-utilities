@@ -36,9 +36,9 @@ $(document).ready(
 
     function () {
 
-        $("#col_oceania_expansion_checkbox").change(
+        $("#toggle_oceania_expansion").change(
             function () {
-                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+                if ($("#toggle_oceania_expansion").is(":checked")) {
 
                     $("#row_nectar").css(
                         "visibility",
@@ -54,7 +54,7 @@ $(document).ready(
                         "required",
                         true
                     );
-                } 
+                }
                 else {
 
                     $("#row_nectar").css(
@@ -88,9 +88,9 @@ $(document).ready(
 
     function () {
 
-        $("#col_automasian_alliance_checkbox").change(
+        $("#toggle_duet_mode").change(
             function () {
-                if ($("#col_automasian_alliance_checkbox").is(":checked")) {
+                if ($("#toggle_duet_mode").is(":checked")) {
 
                     $("#rowspan-vertical-1-pt-each").attr(
                         {
@@ -150,8 +150,8 @@ $(document).ready(
 $(document).ready(
 
     function() {
-        $("#col_oceania_expansion_checkbox").trigger("change");
-        $("#col_automasian_alliance_checkbox").trigger("change");
+        $("#toggle_oceania_expansion").trigger("change");
+        $("#toggle_duet_mode").trigger("change");
     }
 )
 
@@ -202,16 +202,17 @@ function prepopulate_data()
         }
 
         var checkboxes = [
-            "col_base_game_checkbox",
-            "col_european_expansion_checkbox",
-            "col_oceania_expansion_checkbox",
-            "col_asia_checkbox",
-            "col_birds_of_canada_checkbox",
-            "col_birds_of_new_zealand_checkbox",
-            "col_birds_of_the_usa_checkbox",
-            "col_british_birds_checkbox",
-            "col_birds_of_continental_europe_checkbox",
-            "col_additional_asian_avians_checkbox",
+            "toggle_base_game",
+            "toggle_european_expansion",
+            "toggle_oceania_expansion",
+            "toggle_asia",
+            "toggle_duet_mode",
+            "toggle_birds_of_canada",
+            "toggle_birds_of_new_zealand",
+            "toggle_birds_of_the_usa",
+            "toggle_british_birds",
+            "toggle_birds_of_continental_europe",
+            "toggle_additional_asian_avians",
             "col_automubon_society_checkbox",
             "col_RAOUtoma_checkbox",
             "col_automasian_alliance_checkbox"
