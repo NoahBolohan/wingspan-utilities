@@ -48,9 +48,9 @@ $(document).ready(
 
     function () {
 
-        $("#col_oceania_expansion_checkbox").change(
+        $("#toggle_oceania_expansion").change(
             function () {
-                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+                if ($("#toggle_oceania_expansion").is(":checked")) {
 
                     $("#row_nectar").css(
                         "visibility",
@@ -98,7 +98,7 @@ $(document).ready(
 $(document).ready(
 
     function() {
-        $("#col_oceania_expansion_checkbox").trigger("change");
+        $("#toggle_oceania_expansion").trigger("change");
         $("#col_automasian_alliance_checkbox").trigger("change");
     }
 )
@@ -126,7 +126,7 @@ $(document).ready(
                         generate_row_headers(value, width_p, width_player_col);
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
-                        $("#col_oceania_expansion_checkbox").trigger("change");
+                        $("#toggle_oceania_expansion").trigger("change");
                         show_height_hidden("#row_score_sheet");
                     }
                 );
@@ -1023,7 +1023,7 @@ function prepopulate_data()
         var checkboxes = [
             "col_base_game_checkbox",
             "col_european_expansion_checkbox",
-            "col_oceania_expansion_checkbox",
+            "toggle_oceania_expansion",
             "col_asia_checkbox",
             "col_birds_of_canada_checkbox",
             "col_birds_of_new_zealand_checkbox",

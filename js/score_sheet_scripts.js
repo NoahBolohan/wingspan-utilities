@@ -94,8 +94,8 @@ $(document).ready(
                         generate_row_headers(value, width_p, width_player_col);
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
-                        $("#col_oceania_expansion_checkbox").trigger("change");
-                        $("#col_duet_mode_checkbox").trigger("change");
+                        $("#toggle_oceania_expansion").trigger("change");
+                        $("#toggle_duet_mode").trigger("change");
                         show_height_hidden("#row_score_sheet");
                     }
                 );
@@ -727,9 +727,9 @@ $(document).ready(
 
     function () {
 
-        $("#col_oceania_expansion_checkbox").change(
+        $("#toggle_oceania_expansion").change(
             function () {
-                if ($("#col_oceania_expansion_checkbox").is(":checked")) {
+                if ($("#toggle_oceania_expansion").is(":checked")) {
 
                     $("#row_nectar").css(
                         "visibility",
@@ -772,9 +772,9 @@ $(document).ready(
 
     function () {
 
-        $("#col_duet_mode_checkbox").change(
+        $("#toggle_duet_mode").change(
             function () {
-                if ($("#col_duet_mode_checkbox").is(":checked")) {
+                if ($("#toggle_duet_mode").is(":checked")) {
 
                     $("#rowspan-vertical-1-pt-each").attr(
                         {

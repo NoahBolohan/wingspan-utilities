@@ -295,6 +295,8 @@ $(document).ready(
                             "checked",
                             true
                         );
+
+                        $(v).trigger("change");
                     }
                 );
 
@@ -327,6 +329,8 @@ $(document).ready(
                             "checked",
                             false
                         );
+
+                        $(v).trigger("change");
                     }
                 );
 
@@ -358,6 +362,8 @@ $(document).ready(
                             "checked",
                             true
                         );
+
+                        $(v).trigger("change");
                     }
                 );
 
@@ -384,6 +390,8 @@ $(document).ready(
                             "checked",
                             false
                         );
+
+                        $(v).trigger("change");
                     }
                 );
 
@@ -440,6 +448,8 @@ $(document).ready(
                             "checked",
                             true
                         );
+
+                        $(v).trigger("change");
                     }
                 );
             }
@@ -464,6 +474,8 @@ $(document).ready(
                             "checked",
                             false
                         );
+
+                        $(v).trigger("change");
                     }
                 );
             }
