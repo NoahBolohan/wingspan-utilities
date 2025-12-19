@@ -31,6 +31,53 @@ $(document).on(
     }
 );
 
+$(document).ready(
+
+    function() {
+
+        var expansion_names = {
+            "base":"base_game.png",
+            "european_expansion":"european_expansion.png",
+            "oceania_expansion":"oceania_expansion.png",
+            "asia":"asia.png",
+            "duet_mode":"asia.png",
+            "birds_of_canada":"birds_of_canada.png",
+            "birds_of_new_zealand":"birds_of_new_zealand.png",
+            "birds_of_the_usa":"birds_of_the_usa.png",
+            "british_birds":"british_birds.png",
+            "birds_of_continental_europe":"birds_of_continental_europe.png",
+            "additional_asian_avians":"additional_asian_avians.png"
+        };
+
+        for(
+            var key in expansion_names
+        ) {
+            $(`#toggle_${key}`).change(
+                function() {
+
+                    var chosen_expansions = "";
+
+                    for(
+                        var key_2 in expansion_names
+                    ) {
+
+                        if (
+                            $(`#toggle_${key_2}`).is(":checked")
+                        ) {
+
+                            chosen_expansions += `<img src='https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/${expansion_names[key_2]}' style='width:2.5vh;height:2.5vh;object-fit:cover;margin-right:0.5vh;border:1px solid rgba(var(--font-color-headers))'>`
+                        }
+                    }
+
+                    $("#cell_chosen_expansions").html(
+                        chosen_expansions
+                    );
+                }
+            )
+        }
+    }
+)
+
 // Show nectar row
 $(document).ready(
 
@@ -682,17 +729,17 @@ $(document).ready(
             function () {
 
                 // Expansions
-                $("#toggle_base").prop("checked",true);
-                $("#toggle_european_expansion").prop("checked",false);
-                $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
-                $("#toggle_asia").prop("checked",false);
-                $("#toggle_duet_mode").prop("checked",false);
-                $("#toggle_birds_of_canada").prop("checked",false);
-                $("#toggle_birds_of_new_zealand").prop("checked",false);
-                $("#toggle_birds_of_the_usa").prop("checked",false);
-                $("#toggle_british_birds").prop("checked",false);
-                $("#toggle_birds_of_continental_europe").prop("checked",false);
-                $("#toggle_additional_asian_avians").prop("checked",false);
+                // $("#toggle_base").prop("checked",true);
+                // $("#toggle_european_expansion").prop("checked",false);
+                // $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
+                // $("#toggle_asia").prop("checked",false);
+                // $("#toggle_duet_mode").prop("checked",false);
+                // $("#toggle_birds_of_canada").prop("checked",false);
+                // $("#toggle_birds_of_new_zealand").prop("checked",false);
+                // $("#toggle_birds_of_the_usa").prop("checked",false);
+                // $("#toggle_british_birds").prop("checked",false);
+                // $("#toggle_birds_of_continental_europe").prop("checked",false);
+                // $("#toggle_additional_asian_avians").prop("checked",false);
 
                 // Extra cards
                 $("#col_automubon_society_checkbox").prop("checked",false);
