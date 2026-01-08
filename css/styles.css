@@ -493,6 +493,25 @@ outline: 2px solid rgba(var(--font-color-buttons));
         calc(50%  + var(--b))   calc(50%  + var(--b));
 }
 
+.close-x {
+    --b: 5px;
+    --c: #0000 90deg, rgba(var(--font-color-buttons)) 0;
+    width: 6vw;
+    align-self: center;
+    aspect-ratio: 1;
+    z-index: 2;
+    vertical-align: middle;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),var(--c)) 
+        calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+        calc(50%  + var(--b))   calc(50%  + var(--b));
+}
+
 .text-overlay{
     z-index: 3;
     position: absolute;
