@@ -53,6 +53,7 @@ $(document).ready(
             "oceania_expansion":"oceania_expansion.png",
             "asia":"asia.png",
             "duet_mode":"asia.png",
+            "americas_expansion":"americas_expansion.png",
             "birds_of_canada":"birds_of_canada.png",
             "birds_of_new_zealand":"birds_of_new_zealand.png",
             "birds_of_the_usa":"birds_of_the_usa.png",
@@ -1068,16 +1069,17 @@ function prepopulate_data()
         }
 
         var checkboxes = [
-            "col_base_game_checkbox",
-            "col_european_expansion_checkbox",
+            "toggle_base_game",
+            "toggle_european_expansion",
             "toggle_oceania_expansion",
-            "col_asia_checkbox",
-            "col_birds_of_canada_checkbox",
-            "col_birds_of_new_zealand_checkbox",
-            "col_birds_of_the_usa_checkbox",
-            "col_british_birds_checkbox",
-            "col_birds_of_continental_europe_checkbox",
-            "col_additional_asian_avians_checkbox",
+            "toggle_asia",
+            "toggle_americas_expansion",
+            "toggle_birds_of_canada",
+            "toggle_birds_of_new_zealand",
+            "toggle_birds_of_the_usa",
+            "toggle_british_birds",
+            "toggle_birds_of_continental_europe",
+            "toggle_additional_asian_avians",
             "col_automubon_society_checkbox",
             "col_RAOUtoma_checkbox",
             "col_automasian_alliance_checkbox"
@@ -1483,6 +1485,7 @@ function populate_form_data() {
             "european_expansion",
             "oceania_expansion",
             "asia",
+            "americas_expansion",
             "birds_of_canada",
             "birds_of_new_zealand",
             "birds_of_the_usa",
@@ -1523,6 +1526,7 @@ $(document).ready(
                 // $("#toggle_european_expansion").prop("checked",false);
                 // $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
                 // $("#toggle_asia").prop("checked",false);
+                // $("#toggle_americas_expansion").prop("checked",false);
                 // $("#toggle_birds_of_canada").prop("checked",false);
                 // $("#toggle_birds_of_new_zealand").prop("checked",false);
                 // $("#toggle_birds_of_the_usa").prop("checked",false);

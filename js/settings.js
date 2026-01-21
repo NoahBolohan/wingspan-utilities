@@ -282,6 +282,7 @@ $(document).ready(
                         "#toggle_european_expansion",
                         "#toggle_oceania_expansion",
                         "#toggle_asia",
+                        "#toggle_americas_expansion",
                         "#toggle_birds_of_canada",
                         "#toggle_birds_of_new_zealand",
                         "#toggle_birds_of_the_usa",
@@ -316,6 +317,7 @@ $(document).ready(
                         "#toggle_european_expansion",
                         "#toggle_oceania_expansion",
                         "#toggle_asia",
+                        "#toggle_americas_expansion",
                         "#toggle_birds_of_canada",
                         "#toggle_birds_of_new_zealand",
                         "#toggle_birds_of_the_usa",
@@ -354,7 +356,8 @@ $(document).ready(
                         "#toggle_base",
                         "#toggle_european_expansion",
                         "#toggle_oceania_expansion",
-                        "#toggle_asia"
+                        "#toggle_asia",
+                        "#toggle_americas_expansion"
                     ],
                     function(idx, v) {
 
@@ -382,7 +385,8 @@ $(document).ready(
                         "#toggle_base",
                         "#toggle_european_expansion",
                         "#toggle_oceania_expansion",
-                        "#toggle_asia"
+                        "#toggle_asia",
+                        "#toggle_americas_expansion"
                     ],
                     function(idx, v) {
 

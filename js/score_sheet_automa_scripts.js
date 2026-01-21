@@ -41,6 +41,7 @@ $(document).ready(
             "oceania_expansion":"oceania_expansion.png",
             "asia":"asia.png",
             "duet_mode":"asia.png",
+            "americas_expansion":"americas_expansion.png",
             "birds_of_canada":"birds_of_canada.png",
             "birds_of_new_zealand":"birds_of_new_zealand.png",
             "birds_of_the_usa":"birds_of_the_usa.png",
@@ -254,6 +255,7 @@ function prepopulate_data()
             "toggle_oceania_expansion",
             "toggle_asia",
             "toggle_duet_mode",
+            "toggle_americas_expansion",
             "toggle_birds_of_canada",
             "toggle_birds_of_new_zealand",
             "toggle_birds_of_the_usa",
@@ -693,6 +695,7 @@ function populate_form_data() {
             "oceania_expansion",
             "asia",
             "duet_mode",
+            "americas_expansion",
             "birds_of_canada",
             "birds_of_new_zealand",
             "birds_of_the_usa",
@@ -734,6 +737,7 @@ $(document).ready(
                 // $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
                 // $("#toggle_asia").prop("checked",false);
                 // $("#toggle_duet_mode").prop("checked",false);
+                // $("#toggle_americas_expansion").prop("checked",false);
                 // $("#toggle_birds_of_canada").prop("checked",false);
                 // $("#toggle_birds_of_new_zealand").prop("checked",false);
                 // $("#toggle_birds_of_the_usa").prop("checked",false);

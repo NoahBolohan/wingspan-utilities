@@ -73,6 +73,7 @@ $(document).ready(
             "oceania_expansion":"oceania_expansion.png",
             "asia":"asia.png",
             "duet_mode":"asia.png",
+            "americas_expansion":"americas_expansion.png",
             "birds_of_canada":"birds_of_canada.png",
             "birds_of_new_zealand":"birds_of_new_zealand.png",
             "birds_of_the_usa":"birds_of_the_usa.png",
@@ -884,6 +885,7 @@ $(document).ready(
                 // $("#toggle_european_expansion").prop("checked",false);
                 // $("#toggle_oceania_expansion").prop("checked",false).trigger("change");
                 // $("#toggle_asia").prop("checked",false);
+                // $("#toggle_americas_expansion").prop("checked",false);
                 // $("#toggle_birds_of_canada").prop("checked",false);
                 // $("#toggle_birds_of_new_zealand").prop("checked",false);
                 // $("#toggle_birds_of_the_usa").prop("checked",false);
@@ -971,6 +973,7 @@ function populate_form_data() {
             "european_expansion",
             "oceania_expansion",
             "asia",
+            "americas_expansion",
             "birds_of_canada",
             "birds_of_new_zealand",
             "birds_of_the_usa",
