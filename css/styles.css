@@ -45,7 +45,7 @@ table td {
 }
 
 td, tr, th {
-    opacity: 0.95;
+    /* opacity: 0.95; */
     border : 1px solid rgba(var(--font-color-buttons));
 }
 
