@@ -63,30 +63,30 @@ $(document).ready(
     }
 )
 
-const current_background = localStorage.getItem("background") ? localStorage.getItem("background") : null;
+// const current_background = localStorage.getItem("background") ? localStorage.getItem("background") : null;
 
-if (current_background == null) {
-    document.documentElement.setAttribute(
-        "data-background",
-        "random"
-    );
-}
-else {
-    document.documentElement.setAttribute(
-        "data-background",
-        current_background
-    );
-}
+// if (current_background == null) {
+//     document.documentElement.setAttribute(
+//         "data-background",
+//         "random"
+//     );
+// }
+// else {
+//     document.documentElement.setAttribute(
+//         "data-background",
+//         current_background
+//     );
+// }
 
-$(document).ready(
-    function() {
-        switch_background(
-            document.documentElement.getAttribute(
-                "data-background"
-            )
-        )
-    }
-)
+// $(document).ready(
+//     function() {
+//         switch_background(
+//             document.documentElement.getAttribute(
+//                 "data-background"
+//             )
+//         )
+//     }
+// )
 
 const current_web_app_url = localStorage.getItem("web_app_url") ? localStorage.getItem("web_app_url") : null;
 
@@ -203,20 +203,20 @@ $(document).ready(
                 }
 
                 // Check stored `background`
-                const current_background = document.documentElement.getAttribute(
-                    "data-background"
-                );
+                // const current_background = document.documentElement.getAttribute(
+                //     "data-background"
+                // );
 
-                if (current_background) {
-                    $("#background_options").val(
-                        current_background
-                    );
-                }
-                else {
-                    $("#background_options").val(
-                        "random"
-                    );
-                }
+                // if (current_background) {
+                //     $("#background_options").val(
+                //         current_background
+                //     );
+                // }
+                // else {
+                //     $("#background_options").val(
+                //         "random"
+                //     );
+                // }
 
                 // Check stored `web_app_url`
                 const current_web_app_url = document.documentElement.getAttribute(
@@ -522,65 +522,65 @@ function switch_theme(theme) {
         theme
     );
 
-    rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
+    // rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
 
-    let color = new Color(
-        rgb_triple[0], rgb_triple[1], rgb_triple[2]
-    );
-    let solver = new Solver(color);
-    let result = solver.solve()
-    let filterCSS = result.filter;
+    // let color = new Color(
+    //     rgb_triple[0], rgb_triple[1], rgb_triple[2]
+    // );
+    // let solver = new Solver(color);
+    // let result = solver.solve()
+    // let filterCSS = result.filter;
 
-    $(".header-background").attr("style", filterCSS);
-    $(".header-background-for-index-menu").attr("style", filterCSS);
+    // $(".header-background").attr("style", filterCSS);
+    // $(".header-background-for-index-menu").attr("style", filterCSS);
 
 }
 
-$(document).ready(
-    function() {
+// $(document).ready(
+//     function() {
 
-        $("#background_options").change(
-            function() {
+//         $("#background_options").change(
+//             function() {
 
-                switch_background(
-                    this.value
-                );
-            }
-        );
-    }
-)
+//                 switch_background(
+//                     this.value
+//                 );
+//             }
+//         );
+//     }
+// )
 
-function switch_background(background) {
-    document.documentElement.setAttribute(
-        "data-background",
-        background
-    );
-    localStorage.setItem(
-        "background",
-        background
-    );
+// function switch_background(background) {
+//     document.documentElement.setAttribute(
+//         "data-background",
+//         background
+//     );
+//     localStorage.setItem(
+//         "background",
+//         background
+//     );
 
-    if (background == "random") {
-        $.getJSON(
-            "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
-            function(data) {
+//     if (background == "random") {
+//         $.getJSON(
+//             "https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/data/backgrounds/backgrounds.json",
+//             function(data) {
 
-                $("body").css(
-                    "background-image",
-                    `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
-                        data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
-                    }),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
-                );
-            }
-        )
-    }
-    else {
-        $("body").css(
-            "background-image",
-            `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
-        );
-    }
-}
+//                 $("body").css(
+//                     "background-image",
+//                     `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${
+//                         data["backgrounds"][Math.floor(Math.random() * data["backgrounds"].length)]
+//                     }),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
+//                 );
+//             }
+//         )
+//     }
+//     else {
+//         $("body").css(
+//             "background-image",
+//             `linear-gradient(rgba(255, 255, 255, 0.5) 15vh, rgba(255, 255, 255, 0) 27.5vh), url(https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/${background}.jpg),linear-gradient(rgba(255, 255, 255, 0) 72.5vh, rgba(255, 255, 255, 0.5) 85vh)`
+//         );
+//     }
+// }
 
 $(document).ready(
     function() {

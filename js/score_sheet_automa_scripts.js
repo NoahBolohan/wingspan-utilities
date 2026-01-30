@@ -36,18 +36,33 @@ $(document).ready(
     function() {
 
         var expansion_names = {
-            "base":"base_game.png",
-            "european_expansion":"european_expansion.png",
-            "oceania_expansion":"oceania_expansion.png",
-            "asia":"asia.png",
-            "duet_mode":"asia.png",
-            "americas_expansion":"americas_expansion.png",
-            "birds_of_canada":"birds_of_canada.png",
-            "birds_of_new_zealand":"birds_of_new_zealand.png",
-            "birds_of_the_usa":"birds_of_the_usa.png",
-            "british_birds":"british_birds.png",
-            "birds_of_continental_europe":"birds_of_continental_europe.png",
-            "additional_asian_avians":"additional_asian_avians.png"
+            "base":"--base-color",
+            "european_expansion":"--european-expansion-color",
+            "oceania_expansion":"--oceania_expansion-color",
+            "asia":"--asia-color",
+            "duet_mode":"--asia-color",
+            "americas_expansion":"--americas-expansion-color",
+            "birds_of_canada":"--birds-of-canada-color",
+            "birds_of_new_zealand":"--birds-of-new-zealand-color",
+            "birds_of_the_usa":"--birds-of-the-usa-color",
+            "british_birds":"--british-birds-color",
+            "birds_of_continental_europe":"--birds-of-continental-europe-color",
+            "additional_asian_avians":"--additional-asian-avians-color"
+        };
+
+        var expansion_codes = {
+            "base":"B",
+            "european_expansion":"EE",
+            "oceania_expansion":"OE",
+            "asia":"A",
+            "duet_mode":"DM",
+            "americas_expansion":"AE",
+            "birds_of_canada":"CA",
+            "birds_of_new_zealand":"NZ",
+            "birds_of_the_usa":"US",
+            "british_birds":"BB",
+            "birds_of_continental_europe":"CE",
+            "additional_asian_avians":"AA"
         };
 
         for(
@@ -56,7 +71,7 @@ $(document).ready(
             $(`#toggle_${key}`).change(
                 function() {
 
-                    var chosen_expansions = "";
+                    $("#cell_chosen_expansions").empty();
 
                     for(
                         var key_2 in expansion_names
@@ -66,13 +81,15 @@ $(document).ready(
                             $(`#toggle_${key_2}`).is(":checked")
                         ) {
 
-                            chosen_expansions += `<img src='https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/box_art/${expansion_names[key_2]}' style='width:2.5vh;height:2.5vh;object-fit:cover;margin-right:0.5vh;border:1px solid rgba(var(--font-color-headers))'>`
+                            $("<div>").attr(
+                                {
+                                    style: `width:6vw;height:6vw;object-fit:cover;border:1px solid rgba(var(--font-color-headers));background-color:rgba(var(${expansion_names[key_2]}));text-align:center;align-items: center;`
+                                }
+                            ).text(
+                                expansion_codes[key_2]
+                            ).appendTo("#cell_chosen_expansions");
                         }
                     }
-
-                    $("#cell_chosen_expansions").html(
-                        chosen_expansions
-                    );
                 }
             )
         }

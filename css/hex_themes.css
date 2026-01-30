@@ -38,6 +38,19 @@ Theme template:
     --a:#fefefe;
     --a:#000100;
 
+    --base-color:#b1d2c7;
+    --european-expansion-color:#7a69a8;
+    --oceania-expansion-color:#f1b152;
+    --asia-color:#e18186;
+    --duet-mode-color:#e18186;
+    --americas-expansion-color:#72c375;
+    --birds-of-canada-color:#d0492c;
+    --birds-of-new-zealand-color:#414342;
+    --birds-of-the-usa-color:#38516f;
+    --british-birds-color:#87435c;
+    --birds-of-continental-europe-color:#2f539d;
+    --additional-asian-avians-color:#b6352f;
+
     --font-color-headers:#000100;
     --font-color-buttons:#000100;
     --heading-color:#7176b6;
