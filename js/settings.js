@@ -253,6 +253,30 @@ $(document).ready(
 $(document).ready(
     function() {
 
+        $("#button_date").on(
+            "click",
+            function() {
+                $("#modal_date").modal("show");
+            }
+        );
+    }
+)
+
+$(document).ready(
+    function() {
+
+        $("#button_close_modal_date").on(
+            "click",
+            function() {
+                $("#modal_date").modal("hide");
+            }
+        );
+    }
+)
+
+$(document).ready(
+    function() {
+
         $("#button_expansions").on(
             "click",
             function() {
