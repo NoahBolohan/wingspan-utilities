@@ -231,6 +231,45 @@
                 </div>
             </div>
 
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_date">
+
+                <div class="modal-dialog" role="document">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header p-2 justify-content-center" style="position:relative;">
+
+                            <h2 class="modal-title h2">Date</h2>
+                            <button class="btn btn-settings" id="button_close_modal_date" style="position:absolute;right:0.5rem;">
+                                <div class="close-x"></div>
+                            </button>
+                        </div>
+
+                        <div class="modal-body" id="modal_date_body">
+
+                            <div class="p-0 container-fluid">
+
+                                <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_set_web_app_url">
+
+                                    <div class="col-3 p-0 align-self-center">
+                                        <label class="settings-label" for="timestamp">Game date:</label>
+                                    </div>
+
+                                    <div class="col-2 p-0">
+                                        <input
+                                        type="date"
+                                        id="timestamp"
+                                        name="timestamp"
+                                        min="2020-01-01"
+                                        max="9999-12-31" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
 
                 <div class="modal-dialog" role="document">
@@ -461,7 +500,14 @@
                         </button>
                     </div>
 
-                    <div class="offset-3 col-2 text-center">
+                    <div class="offset-1 col-2 text-center align-self-center">
+
+                        <button class="w-100 btn astext btn-settings p-1" type="button" id="button_date">
+                            <img src="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/monthly-calendar.svg" style="width:100%;">
+                        </button>
+                    </div>
+
+                    <div class="col-2 text-center">
 
                         <button class="btn astext btn-settings" type="button" id="button_settings">
                             <img src="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/gear.svg" style="width: 100%;">

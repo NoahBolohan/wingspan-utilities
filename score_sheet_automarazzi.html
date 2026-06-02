@@ -220,6 +220,45 @@
                 </div>
             </div>
 
+            <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_date">
+
+                <div class="modal-dialog" role="document">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header p-2 justify-content-center" style="position:relative;">
+
+                            <h2 class="modal-title h2">Date</h2>
+                            <button class="btn btn-settings" id="button_close_modal_date" style="position:absolute;right:0.5rem;">
+                                <div class="close-x"></div>
+                            </button>
+                        </div>
+
+                        <div class="modal-body" id="modal_date_body">
+
+                            <div class="p-0 container-fluid">
+
+                                <div class="row mt-1 p-0 justify-content-center margin_auto" id="row_set_web_app_url">
+
+                                    <div class="col-3 p-0 align-self-center">
+                                        <label class="settings-label" for="timestamp">Game date:</label>
+                                    </div>
+
+                                    <div class="col-2 p-0">
+                                        <input
+                                        type="date"
+                                        id="timestamp"
+                                        name="timestamp"
+                                        min="2020-01-01"
+                                        max="9999-12-31" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="modal fade" data-bs-backdrop="static" data-keyboard="false" id="modal_settings">
 
                 <div class="modal-dialog" role="document">
@@ -435,17 +474,17 @@
 
                 <div class="row justify-content-between align-items-center" style="height:7vh;" id="row_checkboxes">
 
-                    <div class="col-4 text-center align-self-center">
+                    <div class="col-3 text-center align-self-center">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_expansions">
-                            Expansions
+                            Xpacs
                         </button>
                     </div>
 
-                    <div class="col-4 dropdown align-self-center">
+                    <div class="col-3 dropdown align-self-center">
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_dropdown_extra_cards_menu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Extra cards
+                            Cards
                         </button>
 
                         <ul class="py-0 dropdown-menu checkbox-menu allow-focus" aria-labelledby="button_dropdown_extra_cards_menu" style="width: 92%;">
@@ -480,6 +519,13 @@
 
                         <button class="w-100 btn btn-dropdown-menu" type="button" id="button_change_n_players" style="height:5.53vh;width:10.84vw;">
                             <img src="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/person.svg" style="height:2.05vh;">
+                        </button>
+                    </div>
+
+                    <div class="col-2 text-center align-self-center">
+
+                        <button class="w-100 btn astext btn-settings p-1" type="button" id="button_date">
+                            <img src="https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/misc_images/monthly-calendar.svg" style="width:100%;">
                         </button>
                     </div>
 
