@@ -364,31 +364,58 @@ border-radius: 34px;
 border-radius: 50%;
 outline: 2px solid rgba(var(--font-color-buttons));
 }
-/* 
-.header-background {
+
+.header-background-7 {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: -1;
     display: block;
+    height: 7vh;
     background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.header-background-for-index-menu {
+.header-background-10 {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: -1;
     display: block;
-    height:30vh;
+    height: 10vh;
+    background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-background-12 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    height: 12vh;
+    background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-background-30 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    height: 30vh;
     background:url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/paint_strokes/brush-black-long.png");
     background-size: 150% 100%;
     background-repeat: no-repeat;
     background-position: center;
-} */
+}
 
 .header-content {
     position: fixed;

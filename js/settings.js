@@ -546,17 +546,19 @@ function switch_theme(theme) {
         theme
     );
 
-    // rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
+    rgb_triple = window.getComputedStyle(document.body).getPropertyValue('--heading-color').split(',');
 
-    // let color = new Color(
-    //     rgb_triple[0], rgb_triple[1], rgb_triple[2]
-    // );
-    // let solver = new Solver(color);
-    // let result = solver.solve()
-    // let filterCSS = result.filter;
+    let color = new Color(
+        rgb_triple[0], rgb_triple[1], rgb_triple[2]
+    );
+    let solver = new Solver(color);
+    let result = solver.solve()
+    let filterCSS = result.filter;
 
-    // $(".header-background").attr("style", filterCSS);
-    // $(".header-background-for-index-menu").attr("style", filterCSS);
+    $(".header-background-7").attr("style", filterCSS);
+    $(".header-background-10").attr("style", filterCSS);
+    $(".header-background-12").attr("style", filterCSS);
+    $(".header-background-30").attr("style", filterCSS);
 
 }
 
