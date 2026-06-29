@@ -161,6 +161,7 @@ $(document).ready(
                         $(`#modal_n_players`).modal("hide");
                         $("#toggle_oceania_expansion").trigger("change");
                         $("#toggle_duet_mode").trigger("change");
+                        $("#toggle_americas_expansion").trigger("change");
                         show_height_hidden("#row_score_sheet");
                     }
                 );
