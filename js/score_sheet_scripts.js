@@ -432,7 +432,7 @@ function generate_row_headers(n_players, width_p, width_player_col) {
             class:"rowspan-vertical"
         }  
     ).text(
-        "5/2"
+        "Total"
     ).appendTo(cell_vert_total);
     
     
