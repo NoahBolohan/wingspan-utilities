@@ -122,10 +122,13 @@ $(document).ready(
                         "visible"
                     );
 
-                    $(`#input_player_nectar`).prop(
-                        "required",
-                        true
-                    );
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_nectar`).prop(
+                            "required",
+                            true
+                        );
+                    }
 
                     $(`#input_automa_nectar`).prop(
                         "required",
@@ -139,20 +142,83 @@ $(document).ready(
                         "collapse"
                     );
 
-                    $(`#input_player_nectar`).prop(
-                        "required",
-                        false
-                    );
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_nectar`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#input_player_${i}_nectar`).val("");
+                        recompute_player_total_score(i);
+
+                    }
 
                     $(`#input_automa_nectar`).prop(
                         "required",
                         false
                     );
 
-                    $("#cell_player_nectar").val("");
                     $("#cell_automa_nectar").val("");
 
-                    recompute_player_total_score();
+                    recompute_automa_total_score();
+                }
+            }
+        )
+    }
+)
+
+// Show hummingbird track
+$(document).ready(
+
+    function () {
+
+        $("#toggle_americas_expansion").change(
+            function () {
+                if ($("#toggle_americas_expansion").is(":checked")) {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "visible"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_hummingbird_track`).prop(
+                            "required",
+                            true
+                        );
+                    }
+
+                    $(`#input_automa_hummingbird_track`).prop(
+                        "required",
+                        true
+                    );
+                }
+                else {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_hummingbird_track`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#input_player_${i}_hummingbird_track`).val("");
+                        recompute_player_total_score(i);
+
+                    }
+
+                    $(`#input_automa_hummingbird_track`).prop(
+                        "required",
+                        false
+                    );
+
+                    $("#cell_automa_hummingbird_track").val("");
+
                     recompute_automa_total_score();
                 }
             }
@@ -165,6 +231,7 @@ $(document).ready(
     function() {
         $("#toggle_oceania_expansion").trigger("change");
         $("#col_automasian_alliance_checkbox").trigger("change");
+        $("#toggle_americas_expansion").trigger("change");
     }
 )
 
@@ -192,6 +259,7 @@ $(document).ready(
                         generate_n_score_columns(value, width_player_col);
                         $(`#modal_n_players`).modal("hide");
                         $("#toggle_oceania_expansion").trigger("change");
+                        $("#toggle_americas_expansion").trigger("change");
                         show_height_hidden("#row_score_sheet");
                     }
                 );
@@ -298,6 +366,13 @@ function generate_row_headers(n_players, width_p, width_player_col) {
         {
             style : "visibility:collapse;height:5vh;",
             id : "row_nectar"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
+            style : "visibility:collapse;height:5vh;",
+            id : "row_hummingbird_track"
         }
     ).appendTo("#score_sheet_tbody");
 
@@ -451,6 +526,25 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     
     cell_vert_52.appendTo("#row_nectar");
 
+    // Vertical text: Total
+    var cell_vert_total = $("<td>").attr(
+        {
+            class : "cell-vertical",
+            rowspan : "1"
+        }
+    )
+
+    $("<div>").attr(
+        {
+            class:"rowspan-vertical"
+        }  
+    ).text(
+        "Total"
+    ).appendTo(cell_vert_total);
+    
+    
+    cell_vert_total.appendTo("#row_hummingbird_track");
+
     // Nectar
     $("<th>").attr(
         {
@@ -461,6 +555,17 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).text(
         "Nectar"
     ).appendTo("#row_nectar");
+
+    // Hummingbird Track
+    $("<th>").attr(
+        {
+            style : `width:${width_p}%`,
+            scope : "row",
+            class : "cell-info score_sheet_cell_no_padding"
+        }
+    ).text(
+        "Hummingbird Track"
+    ).appendTo("#row_hummingbird_track");
 
     // Total
     $("<th>").attr(
@@ -645,6 +750,24 @@ function generate_n_score_columns(n_players, width_p) {
                 type : "number",
                 id : `input_player_${i}_nectar`,
                 name : `player_${i}_nectar`,
+                class : "bg-white"
+            }
+        ).appendTo(cell);
+
+        // Hummingbird Track
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_hummingbird_track`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_hummingbird_track");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_hummingbird_track`,
+                name : `player_${i}_hummingbird_track`,
                 class : "bg-white"
             }
         ).appendTo(cell);
@@ -903,6 +1026,25 @@ function generate_n_score_columns(n_players, width_p) {
         }
     ).appendTo(cell);
 
+    // Hummingbird Track
+    var cell = $("<td>").attr(
+        {
+            colspan : "6",
+            style : `width:${width_p}%`,
+            class : "cell-input score_sheet_cell_no_padding"
+        }
+    ).appendTo("#row_hummingbird_track");
+    
+    $("<input>").attr(
+        {
+            type : "number",
+            id : `cell_automa_hummingbird_track`,
+            name : `automa_hummingbird_track`,
+            min : "0",
+            class : "bg-white"
+        }
+    ).appendTo(cell);
+
     // Total
     var cell = $("<td>").attr(
         {
@@ -988,6 +1130,14 @@ function assign_player_event_listeners(i) {
             recompute_player_total_score(i)
         }
     )
+
+    // Update player total score on hummingbird_track change
+    $(`#input_player_${i}_hummingbird_track`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 }
 
 function assign_automa_event_listeners() {
@@ -1031,6 +1181,14 @@ function assign_automa_event_listeners() {
             recompute_automa_total_score()
         }
     )
+
+    // Update automa total score on automa_hummingbird_track change
+    $(`#cell_automa_hummingbird_track`).on(
+        "change",
+        function() {
+            recompute_automa_total_score()
+        }
+    )
 }
 
 // Toggle n_players modal
@@ -1059,6 +1217,8 @@ function recompute_player_total_score(i) {
         $(`#input_player_${i}_tucked_cards`).val()
     ) + parseNaNOrInt(
         $(`#input_player_${i}_nectar`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_hummingbird_track`).val()
     );
 
     if (total_score > 0) {
@@ -1118,11 +1278,13 @@ function prepopulate_data()
             "cell_player_food_on_cards",
             "cell_player_tucked_cards",
             "cell_player_nectar",
+            "cell_player_hummingbird_track",
             "cell_automa_n_drawn_cards",
             "cell_automa_played_birds",
             "cell_automa_end-of-round_goals",
             "cell_automa_laid_eggs",
             "cell_automa_nectar",
+            "cell_automa_hummingbird_track",
             "cell_automa_total_score"
         ]
 
@@ -1310,6 +1472,8 @@ function recompute_automa_total_score() {
         $("#cell_automa_tucked_cards").val()
     ) + parseNaNOrInt(
         $("#cell_automa_nectar").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_hummingbird_track").val()
     );
     
     if (total_score > 0) {
@@ -1412,8 +1576,56 @@ $(document).ready(
     }
 )
 
+// Update automa total score on hummingbird_track change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_hummingbird_track").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
 // Populate certain divs before submitting form
 function populate_form_data() {
+
+    // Player names
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+         if ($(`#input_player_${i}_name`).val() == "") {
+            $(`#input_player_${i}_name`).val(`Player ${i}`);
+         }
+    }
+
+    // Nectar
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        if ($(`#input_player_${i}_nectar`).val() == "") {
+           $(`#input_player_${i}_nectar`).val(0);
+        }
+    }
+
+    // Duet tokens
+    for (var i=1; i <= 2; i++) {
+        if ($(`#input_player_${i}_duet_tokens`).val() == "") {
+        $(`#input_player_${i}_duet_tokens`).val(0);
+        }
+    }
+
+    // Hummingbird Track
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        if ($(`#input_player_${i}_hummingbird_track`).val() == "") {
+        $(`#input_player_${i}_hummingbird_track`).val(0);
+        }
+    }
+
+    // Player total scores
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        $(`#submit_player_${i}_total_score`).val(
+            $(`#div_player_${i}_total_score`).text()
+        )
+    }
 
     // Number of players
     $("#submit_n_players").val(
@@ -1458,13 +1670,6 @@ function populate_form_data() {
             break;
     }
 
-    // Player total scores
-    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
-        $(`#submit_player_${i}_total_score`).val(
-            $(`#div_player_${i}_total_score`).text()
-        )
-    }
-
     // Automa: total score
     $(`#submit_automa_total_score`).val(
         $(`#cell_automa_total_score`).text()
@@ -1473,16 +1678,6 @@ function populate_form_data() {
     // Automa: drawn cards
     $("#input_automa_drawn_cards").val(
         $("#cell_automa_drawn_cards").text()
-    )
-
-    // Player: nectar
-    if ($(`#cell_player_nectar`).val() == "") {
-        $(`#cell_player_nectar`).val(0);
-    }
-
-    // Player: total score
-    $("#input_player_total_score").val(
-        $("#cell_player_total_score").text()
     )
 
     // Automa: nectar

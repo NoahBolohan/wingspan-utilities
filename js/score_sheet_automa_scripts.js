@@ -212,11 +212,64 @@ $(document).ready(
     }
 )
 
+// Show hummingbird track
+$(document).ready(
+
+    function () {
+
+        $("#toggle_americas_expansion").change(
+            function () {
+                if ($("#toggle_americas_expansion").is(":checked")) {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "visible"
+                    );
+
+                    $(`#input_player_hummingbird_track`).prop(
+                        "required",
+                        true
+                    );
+
+                    $(`#input_automa_hummingbird_track`).prop(
+                        "required",
+                        true
+                    );
+                }
+                else {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    $(`#input_player_hummingbird_track`).prop(
+                        "required",
+                        false
+                    );
+
+                    $(`#input_automa_hummingbird_track`).prop(
+                        "required",
+                        false
+                    );
+
+                    $("#cell_player_hummingbird_track").val("");
+                    $("#cell_automa_hummingbird_track").val("");
+
+                    recompute_player_total_score();
+                    recompute_automa_total_score();
+                }
+            }
+        )
+    }
+)
+
 $(document).ready(
 
     function() {
         $("#toggle_oceania_expansion").trigger("change");
         $("#toggle_duet_mode").trigger("change");
+        $("#toggle_americas_expansion").trigger("change");
     }
 )
 
@@ -240,6 +293,8 @@ function recompute_player_total_score() {
         $("#cell_player_nectar").val()
     ) + parseNaNOrInt(
         $("#cell_player_duet_tokens").val()
+    ) + parseNaNOrInt(
+        $("#cell_player_hummingbird_track").val()
     );
 
     if (total_score > 0) {
@@ -457,6 +512,19 @@ $(document).ready(
     }
 )
 
+// Update player total score on hummingbird_track change
+$(document).ready(
+    function() {
+
+        $("#cell_player_hummingbird_track").on(
+            "change",
+            function() {
+                recompute_player_total_score()
+            }
+        )
+    }
+)
+
 // Recompute automa total score
 function recompute_automa_total_score() {
 
@@ -484,6 +552,8 @@ function recompute_automa_total_score() {
         $("#cell_automa_nectar").val()
     ) + parseNaNOrInt(
         $("#cell_automa_duet_tokens").val()
+    ) + parseNaNOrInt(
+        $("#cell_automa_hummingbird_track").val()
     );
     
     if (total_score > 0) {
@@ -619,6 +689,19 @@ $(document).ready(
     function() {
 
         $("#cell_automa_duet_tokens").on(
+            "change",
+            function() {
+                recompute_automa_total_score()
+            }
+        )
+    }
+)
+
+// Update automa total score on hummingbird_track change
+$(document).ready(
+    function() {
+
+        $("#cell_automa_hummingbird_track").on(
             "change",
             function() {
                 recompute_automa_total_score()

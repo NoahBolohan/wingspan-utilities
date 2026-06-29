@@ -265,6 +265,13 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 
     $("<tr>").attr(
         {
+            style : "visibility:collapse;height:5vh;",
+            id : "row_hummingbird_track"
+        }
+    ).appendTo("#score_sheet_tbody");
+
+    $("<tr>").attr(
+        {
             style : "height:5vh;",
             id : "row_total"
         }
@@ -412,6 +419,25 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     
     cell_vert_52.appendTo("#row_nectar");
 
+    // Vertical text: Total
+    var cell_vert_total = $("<td>").attr(
+        {
+            class : "cell-vertical",
+            rowspan : "1"
+        }
+    )
+
+    $("<div>").attr(
+        {
+            class:"rowspan-vertical"
+        }  
+    ).text(
+        "5/2"
+    ).appendTo(cell_vert_total);
+    
+    
+    cell_vert_total.appendTo("#row_hummingbird_track");
+
     // Nectar
     $("<th>").attr(
         {
@@ -433,6 +459,17 @@ function generate_row_headers(n_players, width_p, width_player_col) {
     ).text(
         "Duet tokens"
     ).appendTo("#row_duet_tokens");
+
+    // Hummingbird Track
+    $("<th>").attr(
+        {
+            style : `width:${width_p}%`,
+            scope : "row",
+            class : "cell-info score_sheet_cell_no_padding"
+        }
+    ).text(
+        "Hummingbird Track"
+    ).appendTo("#row_hummingbird_track");
 
     // Total
     $("<th>").attr(
@@ -642,13 +679,30 @@ function generate_n_score_columns(n_players, width_p) {
         else {
 
             var cell = $("<td>").attr(
-            {
-                style : `width:${width_p}%`,
-                class : "cell-disabled"
-            }
-        ).appendTo("#row_duet_tokens");
+                {
+                    style : `width:${width_p}%`,
+                    class : "cell-disabled"
+                }
+            ).appendTo("#row_duet_tokens");
         }
+
+        // Hummingbird Track
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_nectar`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_hummingbird_track");
         
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_hummingbird_track`,
+                name : `player_${i}_hummingbird_track`,
+                class : "bg-white"
+            }
+        ).appendTo(cell);
 
         // Total
         var cell = $("<td>").attr(
@@ -696,6 +750,8 @@ function recompute_player_total_score(i) {
         $(`#input_player_${i}_tucked_cards`).val()
     ) + parseNaNOrInt(
         $(`#input_player_${i}_nectar`).val()
+    ) + parseNaNOrInt(
+        $(`#input_player_${i}_hummingbird_track`).val()
     );
 
     if (i <= 2) {
@@ -785,6 +841,14 @@ function assign_player_event_listeners(i) {
             }
         )
     }
+
+    // Update player total score on hummingbird_track change
+    $(`#input_player_${i}_hummingbird_track`).on(
+        "change",
+        function() {
+            recompute_player_total_score(i)
+        }
+    )
 }
 
 // Show nectar row
@@ -889,6 +953,51 @@ $(document).ready(
     }
 )
 
+// Show hummingbird_track row
+$(document).ready(
+
+    function () {
+
+        $("#toggle_americas_expansion").change(
+            function () {
+                if ($("#toggle_americas_expansion").is(":checked")) {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "visible"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_hummingbird_track`).prop(
+                            "required",
+                            true
+                        );
+                    }
+                } 
+                else {
+
+                    $("#row_hummingbird_track").css(
+                        "visibility",
+                        "collapse"
+                    );
+
+                    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+
+                        $(`#input_player_${i}_hummingbird_track`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#input_player_${i}_hummingbird_track`).val("");
+                        recompute_player_total_score(i);
+
+                    }
+                }
+            }
+        )
+    }
+)
+
 $(document).ready(
 
     function() {
@@ -962,14 +1071,21 @@ function populate_form_data() {
         if ($(`#input_player_${i}_nectar`).val() == "") {
            $(`#input_player_${i}_nectar`).val(0);
         }
-   }
-
-   // Duet tokens
-   for (var i=1; i <= 2; i++) {
-    if ($(`#input_player_${i}_duet_tokens`).val() == "") {
-       $(`#input_player_${i}_duet_tokens`).val(0);
     }
-}
+
+    // Duet tokens
+    for (var i=1; i <= 2; i++) {
+        if ($(`#input_player_${i}_duet_tokens`).val() == "") {
+        $(`#input_player_${i}_duet_tokens`).val(0);
+        }
+    }
+
+    // Hummingbird Track
+    for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
+        if ($(`#input_player_${i}_hummingbird_track`).val() == "") {
+        $(`#input_player_${i}_hummingbird_track`).val(0);
+        }
+    }
 
     // Player total scores
     for (var i=1; i <= $("#row_score_sheet").data("n_players"); i++) {
