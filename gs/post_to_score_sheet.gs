@@ -8,7 +8,7 @@ function intialSetup () {
 
 function redirect() {
   return HtmlService.createHtmlOutput(
-    `<script>window.open('${REDIRECT_URL}', '_self');</script>`
+    `<script>window.open('${REDIRECT_URL}', '_top');</script>`
   );
 }
 
@@ -32,13 +32,18 @@ function doPost (e) {
     var nextRow = sheet.getLastRow() + 1
 
     var newRow = headers.map(function(header) {
-      return header === 'timestamp' ? new Date() : e.parameter[header]
+      return (header === 'timestamp' && e.parameter[header] == '') ? new Date() : e.parameter[header]
+      return e.parameter[header]
     })
 
     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
+    // return HtmlService.createHtmlOutput(
+    //   "<script>window.location.href='https://wingspan-utilities-vd2qp.ondigitalocean.app/';</script>"
+    // );
+
     return HtmlService.createHtmlOutput(
-      `<script>window.open('${REDIRECT_URL}', '_self');</script>`
+      '<style>body {background-image: url("https://raw.githubusercontent.com/NoahBolohan/wingspan-utilities/refs/heads/main/static/backgrounds/base_game_forest_habitat.jpg");div {background-color: yellow;}</style><div>Go back to return to the Score Sheet!</div>'
     );
   }
 
