@@ -248,7 +248,7 @@ $(document).ready(
 
                         var width_p = 28;
 
-                        var width_player_col = (100-width_p)/(value + 1);
+                        var width_player_col = (90-width_p)/(value + 1);
 
                         $("#row_score_sheet").data(
                             "n_players",
@@ -288,6 +288,14 @@ function generate_row_headers(n_players, width_p, width_player_col) {
             style : `width:${width_p}%;`
         }
     ).appendTo("#score_sheet_colgroup")
+
+    for (var i=1; i <= 6; i++) {
+        $("<col>").attr(
+            {
+                style : `width:${width_player_col/6}%;`
+            }
+        ).appendTo("#score_sheet_colgroup")
+    }
 
     for (var i=1; i <= n_players; i++) {
         $("<col>").attr(
@@ -579,226 +587,6 @@ function generate_row_headers(n_players, width_p, width_player_col) {
 }
 
 function generate_n_score_columns(n_players, width_p) {
-    for (var i=1; i <= n_players; i++) {
-
-        // Player names
-        var cell = $("<th>").attr(
-            {
-                id : `player_${i}_name`,
-                style : `width:${width_p}%`,
-                class : "cell-info"
-            }
-        ).appendTo("#row_player_names");
-        
-        var div = $("<div>").attr(
-            {
-                class : "row p-0 justify-content-center margin_auto",
-                id : `row_player_${i}_name`
-            }
-        ).appendTo(cell);
-
-        $("<input>").attr(
-            {
-                class : "bg-white col-12 input-vertical",
-                type : "text",
-                id : `input_player_${i}_name`,
-                name : `player_${i}_name`,
-                placeholder : `Player ${i}`,
-                style : "height:9vh;"
-            }
-        ).appendTo(div);
-
-        // Birds
-        var cell = $("<td>").attr(
-            {
-                rowspan: "3",
-                id : `col_player_${i}_birds`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_birds");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_birds`,
-                name : `player_${i}_birds`,
-                min:"0",
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // Bonus cards
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_bonus_cards`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_bonus_cards");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_bonus_cards`,
-                name : `player_${i}_bonus_cards`,
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // End-of-round goals
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_end-of-round_goals`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_end-of-round_goals");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_end-of-round_goals`,
-                name : `player_${i}_end-of-round_goals`,
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // Eggs
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_eggs`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_eggs");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_eggs`,
-                name : `player_${i}_eggs`,
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // Food on cards
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_food_on_cards`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_food_on_cards");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_food_on_cards`,
-                name : `player_${i}_food_on_cards`,
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // Tucked cards
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_tucked_cards`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_tucked_cards");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_tucked_cards`,
-                name : `player_${i}_tucked_cards`,
-                class : "bg-white"
-            }
-        ).prop(
-            "required",
-            true
-        ).appendTo(cell);
-
-        // Nectar
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_nectar`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_nectar");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_nectar`,
-                name : `player_${i}_nectar`,
-                class : "bg-white"
-            }
-        ).appendTo(cell);
-
-        // Hummingbird Track
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_hummingbird_track`,
-                style : `width:${width_p}%`,
-                class : "cell-input"
-            }
-        ).appendTo("#row_hummingbird_track");
-        
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `input_player_${i}_hummingbird_track`,
-                name : `player_${i}_hummingbird_track`,
-                class : "bg-white"
-            }
-        ).appendTo(cell);
-
-        // Total
-        var cell = $("<td>").attr(
-            {
-                id : `col_player_${i}_total_score`, 
-                style : `width:${width_p}%`,
-                class : "cell-total score_sheet_cell_no_padding"
-            }
-        ).appendTo("#row_total");
-        
-        $("<div>").attr(
-            {
-                type : "number",
-                id : `div_player_${i}_total_score`
-            }
-        ).appendTo(cell);
-
-        // Total to submit
-        $("<input>").attr(
-            {
-                type : "number",
-                id : `submit_player_${i}_total_score`,
-                name : `player_${i}_total_score`
-            }
-        ).appendTo($("#total_scores_to_submit"));
-
-        assign_player_event_listeners(i);
-    }
 
     // Automarazzi column
     var cell = $("<th>").attr(
@@ -1071,6 +859,227 @@ function generate_n_score_columns(n_players, width_p) {
     ).appendTo($("#total_scores_to_submit"));
 
     assign_automa_event_listeners();
+
+    for (var i=1; i <= n_players; i++) {
+
+        // Player names
+        var cell = $("<th>").attr(
+            {
+                id : `player_${i}_name`,
+                style : `width:${width_p}%`,
+                class : "cell-info"
+            }
+        ).appendTo("#row_player_names");
+        
+        var div = $("<div>").attr(
+            {
+                class : "row p-0 justify-content-center margin_auto",
+                id : `row_player_${i}_name`
+            }
+        ).appendTo(cell);
+
+        $("<input>").attr(
+            {
+                class : "bg-white col-12 input-vertical",
+                type : "text",
+                id : `input_player_${i}_name`,
+                name : `player_${i}_name`,
+                placeholder : `Player ${i}`,
+                style : "height:9vh;"
+            }
+        ).appendTo(div);
+
+        // Birds
+        var cell = $("<td>").attr(
+            {
+                rowspan: "3",
+                id : `col_player_${i}_birds`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_birds");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_birds`,
+                name : `player_${i}_birds`,
+                min:"0",
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // Bonus cards
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_bonus_cards`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_bonus_cards");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_bonus_cards`,
+                name : `player_${i}_bonus_cards`,
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // End-of-round goals
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_end-of-round_goals`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_end-of-round_goals");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_end-of-round_goals`,
+                name : `player_${i}_end-of-round_goals`,
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // Eggs
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_eggs`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_eggs");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_eggs`,
+                name : `player_${i}_eggs`,
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // Food on cards
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_food_on_cards`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_food_on_cards");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_food_on_cards`,
+                name : `player_${i}_food_on_cards`,
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // Tucked cards
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_tucked_cards`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_tucked_cards");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_tucked_cards`,
+                name : `player_${i}_tucked_cards`,
+                class : "bg-white"
+            }
+        ).prop(
+            "required",
+            true
+        ).appendTo(cell);
+
+        // Nectar
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_nectar`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_nectar");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_nectar`,
+                name : `player_${i}_nectar`,
+                class : "bg-white"
+            }
+        ).appendTo(cell);
+
+        // Hummingbird Track
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_hummingbird_track`,
+                style : `width:${width_p}%`,
+                class : "cell-input"
+            }
+        ).appendTo("#row_hummingbird_track");
+        
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `input_player_${i}_hummingbird_track`,
+                name : `player_${i}_hummingbird_track`,
+                class : "bg-white"
+            }
+        ).appendTo(cell);
+
+        // Total
+        var cell = $("<td>").attr(
+            {
+                id : `col_player_${i}_total_score`, 
+                style : `width:${width_p}%`,
+                class : "cell-total score_sheet_cell_no_padding"
+            }
+        ).appendTo("#row_total");
+        
+        $("<div>").attr(
+            {
+                type : "number",
+                id : `div_player_${i}_total_score`
+            }
+        ).appendTo(cell);
+
+        // Total to submit
+        $("<input>").attr(
+            {
+                type : "number",
+                id : `submit_player_${i}_total_score`,
+                name : `player_${i}_total_score`
+            }
+        ).appendTo($("#total_scores_to_submit"));
+
+        assign_player_event_listeners(i);
+    }
 }
 
 function assign_player_event_listeners(i) {
